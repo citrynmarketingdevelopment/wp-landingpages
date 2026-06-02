@@ -1,0 +1,432 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+  .wp-shortcode-page {
+    --bg: #f4efe8;
+    --panel: rgba(255, 255, 255, 0.72);
+    --panel-strong: rgba(255, 255, 255, 0.9);
+    --text: #17202b;
+    --muted: #56606b;
+    --line: rgba(23, 32, 43, 0.1);
+    --accent: #ff7a59;
+    --accent-2: #2f6fed;
+    --shadow: 0 24px 70px rgba(18, 24, 33, 0.12);
+    min-height: 100vh;
+    padding: 32px;
+    box-sizing: border-box;
+    color: var(--text);
+    font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(255, 122, 89, 0.18), transparent 28%),
+      radial-gradient(circle at 80% 10%, rgba(47, 111, 237, 0.16), transparent 26%),
+      linear-gradient(135deg, #f8f3ec 0%, #f2efe8 45%, #eef4ff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wp-shortcode-page::before,
+  .wp-shortcode-page::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(6px);
+    pointer-events: none;
+  }
+
+  .wp-shortcode-page::before {
+    width: 320px;
+    height: 320px;
+    background: rgba(255, 122, 89, 0.16);
+    top: -120px;
+    right: -70px;
+  }
+
+  .wp-shortcode-page::after {
+    width: 260px;
+    height: 260px;
+    background: rgba(47, 111, 237, 0.14);
+    bottom: -90px;
+    left: -100px;
+  }
+
+  .wp-shortcode-page__shell {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 64px);
+    display: grid;
+    align-items: center;
+  }
+
+  .wp-shortcode-page__grid {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .wp-shortcode-page__hero,
+  .wp-shortcode-page__panel {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+  }
+
+  .wp-shortcode-page__hero {
+    border-radius: 32px;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 620px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wp-shortcode-page__hero::before {
+    content: "";
+    position: absolute;
+    inset: auto -12% -25% auto;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 122, 89, 0.15), transparent 68%);
+    pointer-events: none;
+  }
+
+  .wp-shortcode-page__eyebrow {
+    display: inline-flex;
+    align-self: flex-start;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid rgba(23, 32, 43, 0.12);
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .wp-shortcode-page__eyebrow-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #ffb36b);
+    box-shadow: 0 0 0 5px rgba(255, 122, 89, 0.12);
+  }
+
+  .wp-shortcode-page__title {
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.93;
+    letter-spacing: -0.06em;
+    margin: 0;
+    max-width: 9ch;
+  }
+
+  .wp-shortcode-page__lead {
+    margin: 22px 0 0;
+    max-width: 58ch;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .wp-shortcode-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .wp-shortcode-page__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+
+  .wp-shortcode-page__button:hover {
+    transform: translateY(-2px);
+  }
+
+  .wp-shortcode-page__button--primary {
+    color: white;
+    background: linear-gradient(135deg, var(--accent), #ff986d);
+    box-shadow: 0 18px 35px rgba(255, 122, 89, 0.28);
+  }
+
+  .wp-shortcode-page__button--secondary {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(23, 32, 43, 0.1);
+  }
+
+  .wp-shortcode-page__meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .wp-shortcode-page__stat {
+    background: rgba(255, 255, 255, 0.64);
+    border: 1px solid rgba(23, 32, 43, 0.08);
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  .wp-shortcode-page__stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  .wp-shortcode-page__stat-label {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .wp-shortcode-page__panel {
+    border-radius: 32px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 620px;
+    background: var(--panel-strong);
+  }
+
+  .wp-shortcode-page__panel-card {
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 247, 252, 0.96));
+    border: 1px solid rgba(23, 32, 43, 0.08);
+    padding: 22px;
+  }
+
+  .wp-shortcode-page__panel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .wp-shortcode-page__panel-kicker {
+    margin: 0 0 8px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .wp-shortcode-page__panel-title {
+    margin: 0;
+    font-size: 1.35rem;
+    letter-spacing: -0.04em;
+  }
+
+  .wp-shortcode-page__badge {
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: rgba(47, 111, 237, 0.12);
+    color: var(--accent-2);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .wp-shortcode-page__list {
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+
+  .wp-shortcode-page__list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .wp-shortcode-page__check {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 122, 89, 0.12);
+    color: var(--accent);
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .wp-shortcode-page__preview {
+    margin-top: auto;
+    border-radius: 24px;
+    padding: 22px;
+    background:
+      linear-gradient(135deg, rgba(255, 122, 89, 0.12), rgba(47, 111, 237, 0.12)),
+      #ffffff;
+    border: 1px solid rgba(23, 32, 43, 0.08);
+  }
+
+  .wp-shortcode-page__preview-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid rgba(23, 32, 43, 0.08);
+  }
+
+  .wp-shortcode-page__preview-row:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .wp-shortcode-page__preview-label {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .wp-shortcode-page__preview-value {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  @media (max-width: 980px) {
+    .wp-shortcode-page {
+      padding: 18px;
+    }
+
+    .wp-shortcode-page__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wp-shortcode-page__hero,
+    .wp-shortcode-page__panel {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .wp-shortcode-page__hero,
+    .wp-shortcode-page__panel {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .wp-shortcode-page__meta {
+      grid-template-columns: 1fr;
+    }
+
+    .wp-shortcode-page__actions {
+      flex-direction: column;
+    }
+
+    .wp-shortcode-page__button {
+      width: 100%;
+    }
+  }
+</style>
+
+<section class="wp-shortcode-page">
+  <div class="wp-shortcode-page__shell">
+    <div class="wp-shortcode-page__grid">
+      <article class="wp-shortcode-page__hero">
+        <div>
+          <div class="wp-shortcode-page__eyebrow">
+            <span class="wp-shortcode-page__eyebrow-dot"></span>
+            WordPress shortcode layout
+          </div>
+          <h1 class="wp-shortcode-page__title">Modern landing page, built for a shortcode.</h1>
+          <p class="wp-shortcode-page__lead">
+            This layout is fully self-contained, uses inline styling, and is designed to drop
+            cleanly into a WordPress page without a &lt;head&gt; wrapper.
+          </p>
+          <div class="wp-shortcode-page__actions">
+            <a class="wp-shortcode-page__button wp-shortcode-page__button--primary" href="#">
+              Primary Action
+            </a>
+            <a class="wp-shortcode-page__button wp-shortcode-page__button--secondary" href="#">
+              Secondary Action
+            </a>
+          </div>
+        </div>
+
+        <div class="wp-shortcode-page__meta">
+          <div class="wp-shortcode-page__stat">
+            <span class="wp-shortcode-page__stat-value">01</span>
+            <span class="wp-shortcode-page__stat-label">Fully responsive with a strong desktop and mobile layout.</span>
+          </div>
+          <div class="wp-shortcode-page__stat">
+            <span class="wp-shortcode-page__stat-value">02</span>
+            <span class="wp-shortcode-page__stat-label">Self-contained CSS that does not require theme edits.</span>
+          </div>
+          <div class="wp-shortcode-page__stat">
+            <span class="wp-shortcode-page__stat-value">03</span>
+            <span class="wp-shortcode-page__stat-label">Styled to feel more premium than a default content block.</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="wp-shortcode-page__panel">
+        <div class="wp-shortcode-page__panel-card">
+          <p class="wp-shortcode-page__panel-kicker">What this gives you</p>
+          <div class="wp-shortcode-page__panel-top">
+            <div>
+              <h2 class="wp-shortcode-page__panel-title">A polished test block</h2>
+            </div>
+            <div class="wp-shortcode-page__badge">Ready</div>
+          </div>
+          <ul class="wp-shortcode-page__list">
+            <li class="wp-shortcode-page__list-item">
+              <span class="wp-shortcode-page__check">+</span>
+              Bold typography and layered gradients for a modern look.
+            </li>
+            <li class="wp-shortcode-page__list-item">
+              <span class="wp-shortcode-page__check">+</span>
+              Glass-style panels with subtle depth and clean spacing.
+            </li>
+            <li class="wp-shortcode-page__list-item">
+              <span class="wp-shortcode-page__check">+</span>
+              Full-height composition so it reads like a complete page section.
+            </li>
+          </ul>
+        </div>
+
+        <div class="wp-shortcode-page__preview">
+          <div class="wp-shortcode-page__preview-row">
+            <span class="wp-shortcode-page__preview-label">Layout</span>
+            <span class="wp-shortcode-page__preview-value">Hero + sidebar</span>
+          </div>
+          <div class="wp-shortcode-page__preview-row">
+            <span class="wp-shortcode-page__preview-label">Use case</span>
+            <span class="wp-shortcode-page__preview-value">Shortcode embed</span>
+          </div>
+          <div class="wp-shortcode-page__preview-row">
+            <span class="wp-shortcode-page__preview-label">Goal</span>
+            <span class="wp-shortcode-page__preview-value">Test styled content</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
