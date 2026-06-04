@@ -1,0 +1,762 @@
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --blue: #214a83;
+      --blue-dark: #16355f;
+      --blue-soft: #edf4ff;
+      --orange: #ff9447;
+      --orange-soft: #ffd5b5;
+      --ink: #18314f;
+      --copy: #56708e;
+      --line: rgba(33, 74, 131, .12);
+      --white: #fff;
+      --shadow: 0 22px 60px rgba(22, 53, 95, .14);
+      --max: 1160px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%)
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .page {
+      overflow: visible
+    }
+
+    .wrap {
+      width: min(calc(100% - 28px), var(--max));
+      margin: 0 auto
+    }
+
+    .section {
+      padding: 42px 0
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow)
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--orange)
+    }
+
+    .hero {
+      position: relative;
+      padding: 42px 0 24px
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(22, 53, 95, .98), rgba(56, 111, 182, .95));
+      clip-path: ellipse(120% 100% at 50% 0)
+    }
+
+    .hero .wrap {
+      position: relative
+    }
+
+    .hero-grid,
+    .split,
+    .dual,
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .hero-copy {
+      color: var(--white);
+      padding: 18px 0
+    }
+
+    .hero-copy h1,
+    .heading h2,
+    .cta h2 {
+      margin: 0;
+      line-height: .98;
+      letter-spacing: -.04em
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--white) !important
+    }
+
+    .cta h2 {
+      color: var(--white) !important
+    }
+
+    .hero-copy h1 span {
+      color: #ffb36a !important;
+      font-style: italic
+    }
+
+    .hero-copy p,
+    .heading p,
+    .panel p,
+    .faq-body,
+    .cta p {
+      line-height: 1.85
+    }
+
+    .hero-copy p {
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, .88);
+      max-width: 680px
+    }
+
+    .chips,
+    .actions,
+    .stats,
+    .cards,
+    .faq,
+    .link-list {
+      display: grid;
+      gap: 14px
+    }
+
+    .chips {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 24px 0 0
+    }
+
+    .chip {
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .14);
+      text-align: center;
+      font-weight: 600;
+      font-size: .92rem
+    }
+
+    .actions {
+      grid-template-columns: repeat(2, max-content);
+      margin: 28px 0 0
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .2s transform ease
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px)
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--blue-dark)
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .28);
+      color: var(--white)
+    }
+
+    .stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 28px 0 0
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .14)
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.22rem
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, .8);
+      font-size: .92rem;
+      line-height: 1.55
+    }
+
+    .hero-visual img,
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .hero-visual img {
+      min-height: 520px;
+      border-radius: 32px;
+      box-shadow: 0 28px 70px rgba(7, 23, 44, .24)
+    }
+
+    .float {
+      margin: -72px 0 0 18px;
+      padding: 22px;
+      max-width: 320px;
+      position: relative;
+      z-index: 2
+    }
+
+    .float strong,
+    .mini strong {
+      display: block;
+      color: var(--blue-dark);
+      font-size: 1rem
+    }
+
+    .float ul,
+    .checks {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px
+    }
+
+    .float li,
+    .checks li {
+      position: relative;
+      padding-left: 24px;
+      line-height: 1.6;
+      color: var(--copy)
+    }
+
+    .float li:before,
+    .checks li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--orange), var(--blue))
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: -10px;
+      position: relative;
+      z-index: 3
+    }
+
+    .mini {
+      padding: 26px
+    }
+
+    .mini p,
+    .tile span {
+      margin: 10px 0 0;
+      color: var(--copy);
+      line-height: 1.75
+    }
+
+    .mini .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--orange), var(--blue));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 800
+    }
+
+    .heading {
+      max-width: 760px;
+      margin-bottom: 24px
+    }
+
+    .heading h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--blue-dark)
+    }
+
+    .heading p {
+      margin: 16px 0 0;
+      color: var(--copy)
+    }
+
+    .panel,
+    .media,
+    .cta {
+      padding: 34px
+    }
+
+    .checks li {
+      font-weight: 600
+    }
+
+    .checks li:before {
+      content: "+";
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      top: 2px;
+      background: rgba(255, 213, 181, .85);
+      color: var(--blue-dark);
+      font-size: .78rem;
+      font-weight: 800
+    }
+
+    .media img {
+      min-height: 420px;
+      border-radius: 22px
+    }
+
+    .caption {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-weight: 600;
+      line-height: 1.6
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px
+    }
+
+    .tile {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff 0%, #f5f9ff 100%);
+      border: 1px solid var(--line)
+    }
+
+    .tile strong {
+      display: block;
+      color: var(--blue-dark)
+    }
+
+    .dual {
+      align-items: start
+    }
+
+    .quote {
+      padding: 34px;
+      background: linear-gradient(180deg, #fff 0%, #f6f9ff 100%)
+    }
+
+    .quote strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--blue-dark);
+      font-size: 1.06rem
+    }
+
+    .quote p {
+      margin: 0;
+      color: var(--copy);
+      line-height: 1.85
+    }
+
+    .link-list {
+      grid-template-columns: 1fr
+    }
+
+    .link {
+      display: block;
+      padding: 20px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fff 0%, #f2f7ff 100%);
+      border: 1px solid var(--line);
+      transition: .2s transform ease, .2s border-color ease
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      transform: translateX(4px);
+      border-color: rgba(255, 148, 71, .42)
+    }
+
+    .link strong {
+      display: block;
+      color: var(--blue-dark)
+    }
+
+    .link span {
+      display: block;
+      margin-top: 8px;
+      color: var(--copy);
+      line-height: 1.65;
+      font-size: .94rem
+    }
+
+    .faq {
+      grid-template-columns: 1fr
+    }
+
+    .faq-item {
+      overflow: hidden
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 22px 26px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      position: relative
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none
+    }
+
+    .faq-item summary:after {
+      content: "+";
+      position: absolute;
+      right: 26px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--orange)
+    }
+
+    .faq-item[open] summary:after {
+      content: "-"
+    }
+
+    .faq-body {
+      padding: 0 26px 22px;
+      color: var(--copy)
+    }
+
+    .cta {
+      background: linear-gradient(120deg, rgba(22, 53, 95, .98), rgba(56, 111, 182, .96));
+      color: var(--white)
+    }
+
+    .cta p {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, .84);
+      max-width: 740px
+    }
+
+    @media (max-width:980px) {
+
+      .hero-grid,
+      .split,
+      .dual,
+      .cta-grid,
+      .cards,
+      .tiles,
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      .actions {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .float {
+        margin: 18px 0 0;
+        max-width: none
+      }
+    }
+
+    @media (max-width:680px) {
+      .wrap {
+        width: min(calc(100% - 18px), var(--max))
+      }
+
+      .section {
+        padding: 32px 0
+      }
+
+      .panel,
+      .media,
+      .mini,
+      .quote,
+      .cta {
+        padding: 24px
+      }
+
+      .hero-copy h1,
+      .heading h2,
+      .cta h2 {
+        letter-spacing: -.03em
+      }
+
+      .chips,
+      .actions {
+        grid-template-columns: 1fr
+      }
+
+      .btn {
+        width: 100%
+      }
+
+      .hero-visual img,
+      .media img {
+        min-height: 300px
+      }
+    }
+  </style>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Arizona Workforce Support For Healthcare Practices</p>
+          <h1>HR Services <span>Arizona</span></h1>
+          <p>Optimax helps physician groups, specialty clinics, surgery centers, and multi-location healthcare
+            organizations strengthen their workforce with practical HR support, staffing structure, and onboarding
+            guidance. For practices looking for HR Services Arizona support, we bring together healthcare experience,
+            operational perspective, and workforce discipline that help teams stay organized as they grow.</p>
+          <div class="chips">
+            <div class="chip">Staffing support</div>
+            <div class="chip">Onboarding structure</div>
+            <div class="chip">Workforce planning</div>
+            <div class="chip">Healthcare HR</div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://optimaxcs.net/contact-us/">Schedule a Consultation</a>
+            <a class="btn btn-secondary" href="https://optimaxcs.net/human-resources-and-staffing/">View HR &amp; Staffing
+              Services</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>People-focused</strong><span>HR support built for healthcare practice operations.</span>
+            </div>
+            <div class="stat"><strong>Growth-ready</strong><span>Workforce structure that supports expanding provider teams.</span></div>
+            <div class="stat"><strong>Healthcare aligned</strong><span>Support that fits the pace and demands of medical organizations.</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://optimaxcs.net/wp-content/uploads/2026/04/optimax-arizona.webp"
+            alt="HR services Arizona for healthcare practices" loading="eager">
+          <div class="float card">
+            <strong>What Arizona practices need</strong>
+            <ul>
+              <li>Stronger staffing support and clearer workforce processes.</li>
+              <li>Onboarding structure that helps new team members integrate faster.</li>
+              <li>HR guidance that scales with providers, locations, and growth plans.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap cards">
+        <article class="mini card">
+          <div class="icon">1</div>
+          <strong>Workforce Structure</strong>
+          <p>Role clarity, onboarding flow, and day-to-day HR support help teams work more consistently.
+          </p>
+        </article>
+        <article class="mini card">
+          <div class="icon">2</div>
+          <strong>Staffing Support</strong>
+          <p>Growing healthcare teams need practical help with staffing coordination and operational alignment.</p>
+        </article>
+        <article class="mini card">
+          <div class="icon">3</div>
+          <strong>Operational Visibility</strong>
+          <p>Leadership gets clearer insight into workforce gaps, onboarding needs, and team support priorities.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Healthcare Workforce Support</p>
+          <h2>HR Arizona</h2>
+          <p>HR Arizona support works best when staffing processes, onboarding steps, role expectations, and team
+            structure are handled with consistency. Optimax helps Arizona practices improve workforce organization so
+            day-to-day operations stay steadier as the practice grows.</p>
+        </div>
+        <div class="split">
+          <div class="panel card">
+            <p>Our HR Arizona approach is designed for healthcare organizations that need dependable people support
+              and clearer workforce structure. We look at where staffing pressure is affecting operations, how
+              onboarding can be improved, and what support systems are needed to help teams stay aligned.</p>
+            <p>Whether you need help supporting internal staff, organizing HR workflows, or building a stronger
+              staffing process, Optimax can tailor support around provider growth, team size, and operational demands.</p>
+            <ul class="checks">
+              <li>Onboarding support and clearer role-based workforce processes.</li>
+              <li>Staffing coordination that reduces operational strain on growing teams.</li>
+              <li>HR structure that supports day-to-day healthcare practice operations.</li>
+              <li>Leadership visibility into staffing needs, growth pressure, and support priorities.</li>
+            </ul>
+          </div>
+          <div class="media card">
+            <img src="https://optimaxcs.net/wp-content/uploads/2026/03/Service-wheel-new.webp"
+              alt="HR company Arizona healthcare staffing and workforce support" loading="lazy">
+            <div class="caption">Structured HR support helps Arizona practices create stronger teams and more stable operations.</div>
+          </div>
+        </div>
+        <div class="tiles">
+          <div class="tile"><strong>Onboarding Flow</strong><span>Help new hires integrate faster with clearer expectations and more consistent process steps.</span></div>
+          <div class="tile"><strong>Staffing Coordination</strong><span>Support provider growth and team expansion without letting workforce gaps disrupt operations.</span></div>
+          <div class="tile"><strong>HR Visibility</strong><span>Give leadership clearer insight into workforce needs, support pressure, and operational priorities.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Healthcare HR Partner Support</p>
+          <h2>HR Company Arizona</h2>
+          <p>An HR Company Arizona practices can rely on should do more than fill an administrative gap. The right
+            partner should support staffing structure, help improve workforce organization, communicate clearly with
+            leadership, and understand the realities of healthcare operations.</p>
+        </div>
+        <div class="dual">
+          <div class="panel card">
+            <p>For practices comparing an HR Company Arizona option, the difference often comes down to responsiveness,
+              healthcare familiarity, and the ability to support real staffing and onboarding needs instead of offering
+              generic HR language. Optimax supports organizations that need dependable workforce guidance as they grow.</p>
+            <p>That becomes especially important when a practice is adding providers, opening locations, or trying to
+              create a more stable team structure without overloading leadership and office staff.</p>
+            <ul class="checks">
+              <li>Scalable HR support for single-site and multi-provider healthcare organizations.</li>
+              <li>Consistent communication around staffing needs, support gaps, and workforce priorities.</li>
+              <li>Healthcare-focused HR structure rather than generic business-only guidance.</li>
+              <li>Practical support that helps leadership make better staffing and growth decisions.</li>
+            </ul>
+          </div>
+          <div class="link-list">
+            <a class="link" href="https://optimaxcs.net/human-resources-and-staffing/"><strong>HR &amp; Staffing Services</strong><span>Connect this page to the live HR service page for internal relevance and conversions.</span></a>
+            <a class="link" href="https://optimaxcs.net/consulting-services/"><strong>Consulting &amp; MSO Services</strong><span>Support workforce planning with broader operational guidance when needed.</span></a>
+            <a class="link" href="https://optimaxcs.net/contact-us/"><strong>Contact Optimax</strong><span>Give Arizona practices a direct path to discuss HR support and staffing needs.</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Healthcare Workforce Perspective</p>
+          <h2>Why Arizona Practices Choose Optimax for HR Support</h2>
+          <p>HR services work better when the team supporting staffing and workforce structure understands the
+            operational realities of provider practices. Optimax brings healthcare experience, workflow discipline, and
+            practical support that help HR efforts fit the way practices actually operate.</p>
+        </div>
+        <div class="dual">
+          <div class="quote card">
+            <strong>What this means in practice</strong>
+            <p>Workforce performance is affected by more than hiring alone. Onboarding consistency, role clarity,
+              staffing pressure, operational communication, and leadership bandwidth all influence how stable a team
+              feels and how efficiently the practice runs.</p>
+            <p style="margin-top:16px">Optimax helps Arizona organizations bring those moving pieces together so HR
+              support improves staffing stability, reduces avoidable friction, and creates a steadier operating rhythm.</p>
+          </div>
+          <div class="link-list">
+            <a class="link" href="https://optimaxcs.net/about-us/"><strong>About Optimax</strong><span>Reinforce healthcare-focused credibility and service depth.</span></a>
+            <a class="link" href="https://optimaxcs.net/resources/"><strong>Optimax Resources</strong><span>Support the page with relevant internal links that avoid any development URLs.</span></a>
+            <a class="link" href="https://optimaxcs.net/contact-us/"><strong>Contact Optimax</strong><span>Keep the conversion path aligned with live site pages only.</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">SEO Support Content</p>
+          <h2>Frequently Asked Questions About HR Services in Arizona</h2>
+          <p>These FAQ entries support search intent around HR Services Arizona while reinforcing the connection
+            between staffing support, onboarding structure, and healthcare practice operations.</p>
+        </div>
+        <div class="faq">
+          <details class="faq-item card" open>
+            <summary>What do HR services in Arizona include?</summary>
+            <div class="faq-body">HR services can include staffing support, onboarding structure, role alignment,
+              employee process guidance, and workforce planning for healthcare practices.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>How can an HR company in Arizona help a healthcare practice?</summary>
+            <div class="faq-body">An HR company can help a healthcare practice improve hiring workflows, support
+              onboarding, reduce internal process gaps, and build a more stable workforce structure.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Can Optimax support growing healthcare teams in Arizona?</summary>
+            <div class="faq-body">Yes. Optimax supports growing healthcare teams with HR services tailored to provider
+              growth, staffing pressure, and operational demands.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>When should a practice bring in outside HR support?</summary>
+            <div class="faq-body">Outside HR support is often useful when a practice is growing, adding providers,
+              struggling with staffing organization, or needs better onboarding and workforce structure.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta card">
+          <div class="cta-grid">
+            <div>
+              <p class="eyebrow">Build A Stronger Workforce Structure</p>
+              <h2>Need HR Services in Arizona That Support Staffing Stability and Practice Growth?</h2>
+              <p>Connect with Optimax for HR services that help Arizona practices improve workforce organization,
+                strengthen staffing support, and grow with more confidence.
+              </p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://optimaxcs.net/contact-us/">Request a Strategy Call</a>
+              <a class="btn btn-secondary" href="https://optimaxcs.net/about-us/">Meet Optimax</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+

@@ -1,0 +1,764 @@
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --blue: #214a83;
+      --blue-dark: #16355f;
+      --blue-soft: #edf4ff;
+      --orange: #ff9447;
+      --orange-soft: #ffd5b5;
+      --ink: #18314f;
+      --copy: #56708e;
+      --line: rgba(33, 74, 131, .12);
+      --white: #fff;
+      --shadow: 0 22px 60px rgba(22, 53, 95, .14);
+      --max: 1160px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%)
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .page {
+      overflow: visible
+    }
+
+    .wrap {
+      width: min(calc(100% - 28px), var(--max));
+      margin: 0 auto
+    }
+
+    .section {
+      padding: 42px 0
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow)
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--orange)
+    }
+
+    .hero {
+      position: relative;
+      padding: 42px 0 24px
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(22, 53, 95, .98), rgba(56, 111, 182, .95));
+      clip-path: ellipse(120% 100% at 50% 0)
+    }
+
+    .hero .wrap {
+      position: relative
+    }
+
+    .hero-grid,
+    .split,
+    .dual,
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .hero-copy {
+      color: var(--white);
+      padding: 18px 0
+    }
+
+    .hero-copy h1,
+    .heading h2,
+    .cta h2 {
+      margin: 0;
+      line-height: .98;
+      letter-spacing: -.04em
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--white) !important
+    }
+
+    .cta h2 {
+      color: var(--white) !important
+    }
+
+    .hero-copy h1 span {
+      color: #ffb36a !important;
+      font-style: italic
+    }
+
+    .hero-copy p,
+    .heading p,
+    .panel p,
+    .faq-body,
+    .cta p {
+      line-height: 1.85
+    }
+
+    .hero-copy p {
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, .88);
+      max-width: 680px
+    }
+
+    .chips,
+    .actions,
+    .stats,
+    .cards,
+    .faq,
+    .link-list {
+      display: grid;
+      gap: 14px
+    }
+
+    .chips {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 24px 0 0
+    }
+
+    .chip {
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .14);
+      text-align: center;
+      font-weight: 600;
+      font-size: .92rem
+    }
+
+    .actions {
+      grid-template-columns: repeat(2, max-content);
+      margin: 28px 0 0
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .2s transform ease
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px)
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--blue-dark)
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .28);
+      color: var(--white)
+    }
+
+    .stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 28px 0 0
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .14)
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.22rem
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, .8);
+      font-size: .92rem;
+      line-height: 1.55
+    }
+
+    .hero-visual img,
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .hero-visual img {
+      min-height: 520px;
+      border-radius: 32px;
+      box-shadow: 0 28px 70px rgba(7, 23, 44, .24)
+    }
+
+    .float {
+      margin: -72px 0 0 18px;
+      padding: 22px;
+      max-width: 320px;
+      position: relative;
+      z-index: 2
+    }
+
+    .float strong,
+    .mini strong {
+      display: block;
+      color: var(--blue-dark);
+      font-size: 1rem
+    }
+
+    .float ul,
+    .checks {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px
+    }
+
+    .float li,
+    .checks li {
+      position: relative;
+      padding-left: 24px;
+      line-height: 1.6;
+      color: var(--copy)
+    }
+
+    .float li:before,
+    .checks li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--orange), var(--blue))
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: -10px;
+      position: relative;
+      z-index: 3
+    }
+
+    .mini {
+      padding: 26px
+    }
+
+    .mini p,
+    .tile span {
+      margin: 10px 0 0;
+      color: var(--copy);
+      line-height: 1.75
+    }
+
+    .mini .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--orange), var(--blue));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 800
+    }
+
+    .heading {
+      max-width: 760px;
+      margin-bottom: 24px
+    }
+
+    .heading h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--blue-dark)
+    }
+
+    .heading p {
+      margin: 16px 0 0;
+      color: var(--copy)
+    }
+
+    .panel,
+    .media,
+    .cta {
+      padding: 34px
+    }
+
+    .checks li {
+      font-weight: 600
+    }
+
+    .checks li:before {
+      content: "+";
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      top: 2px;
+      background: rgba(255, 213, 181, .85);
+      color: var(--blue-dark);
+      font-size: .78rem;
+      font-weight: 800
+    }
+
+    .media img {
+      min-height: 420px;
+      border-radius: 22px
+    }
+
+    .caption {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-weight: 600;
+      line-height: 1.6
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px
+    }
+
+    .tile {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff 0%, #f5f9ff 100%);
+      border: 1px solid var(--line)
+    }
+
+    .tile strong {
+      display: block;
+      color: var(--blue-dark)
+    }
+
+    .dual {
+      align-items: start
+    }
+
+    .quote {
+      padding: 34px;
+      background: linear-gradient(180deg, #fff 0%, #f6f9ff 100%)
+    }
+
+    .quote strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--blue-dark);
+      font-size: 1.06rem
+    }
+
+    .quote p {
+      margin: 0;
+      color: var(--copy);
+      line-height: 1.85
+    }
+
+    .link-list {
+      grid-template-columns: 1fr
+    }
+
+    .link {
+      display: block;
+      padding: 20px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fff 0%, #f2f7ff 100%);
+      border: 1px solid var(--line);
+      transition: .2s transform ease, .2s border-color ease
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      transform: translateX(4px);
+      border-color: rgba(255, 148, 71, .42)
+    }
+
+    .link strong {
+      display: block;
+      color: var(--blue-dark)
+    }
+
+    .link span {
+      display: block;
+      margin-top: 8px;
+      color: var(--copy);
+      line-height: 1.65;
+      font-size: .94rem
+    }
+
+    .faq {
+      grid-template-columns: 1fr
+    }
+
+    .faq-item {
+      overflow: hidden
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 22px 26px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      position: relative
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none
+    }
+
+    .faq-item summary:after {
+      content: "+";
+      position: absolute;
+      right: 26px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--orange)
+    }
+
+    .faq-item[open] summary:after {
+      content: "-"
+    }
+
+    .faq-body {
+      padding: 0 26px 22px;
+      color: var(--copy)
+    }
+
+    .cta {
+      background: linear-gradient(120deg, rgba(22, 53, 95, .98), rgba(56, 111, 182, .96));
+      color: var(--white)
+    }
+
+    .cta p {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, .84);
+      max-width: 740px
+    }
+
+    @media (max-width:980px) {
+
+      .hero-grid,
+      .split,
+      .dual,
+      .cta-grid,
+      .cards,
+      .tiles,
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      .actions {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .float {
+        margin: 18px 0 0;
+        max-width: none
+      }
+    }
+
+    @media (max-width:680px) {
+      .wrap {
+        width: min(calc(100% - 18px), var(--max))
+      }
+
+      .section {
+        padding: 32px 0
+      }
+
+      .panel,
+      .media,
+      .mini,
+      .quote,
+      .cta {
+        padding: 24px
+      }
+
+      .hero-copy h1,
+      .heading h2,
+      .cta h2 {
+        letter-spacing: -.03em
+      }
+
+      .chips,
+      .actions {
+        grid-template-columns: 1fr
+      }
+
+      .btn {
+        width: 100%
+      }
+
+      .hero-visual img,
+      .media img {
+        min-height: 300px
+      }
+    }
+  </style>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Las Vegas Medical Billing Support For Healthcare Practices</p>
+          <h1>Medical Billing Services <span>Las Vegas, NV</span></h1>
+          <p>Optimax helps physician groups, specialty clinics, surgery centers, and multi-location healthcare
+            organizations strengthen reimbursement with disciplined claim flow, AR follow-up, and billing oversight.
+            For practices looking for medical billing services Las Vegas NV support, we bring together healthcare
+            experience, billing accuracy, and performance visibility that support steadier collections.</p>
+          <div class="chips">
+            <div class="chip">Charge entry</div>
+            <div class="chip">Clean claims</div>
+            <div class="chip">AR follow-up</div>
+            <div class="chip">Patient billing</div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://optimaxcs.net/contact-us/">Schedule a Consultation</a>
+            <a class="btn btn-secondary" href="https://optimaxcs.net/revenue-cycle-management/">View Revenue Cycle
+              Services</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>Claim-ready</strong><span>Structured workflows that support cleaner submissions.</span>
+            </div>
+            <div class="stat"><strong>Follow-up focus</strong><span>AR attention that keeps delayed payments from stalling.</span></div>
+            <div class="stat"><strong>Healthcare aligned</strong><span>Billing support built for provider practices and growth.</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://optimaxcs.net/wp-content/uploads/2026/04/optimax-las-vegas.webp"
+            alt="medical billing services Las Vegas NV for healthcare practices" loading="eager">
+          <div class="float card">
+            <strong>What Las Vegas practices need</strong>
+            <ul>
+              <li>More accurate billing and fewer preventable claim delays.</li>
+              <li>Consistent AR follow-up and visibility into outstanding balances.</li>
+              <li>Billing support that scales with providers, locations, and claim volume.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap cards">
+        <article class="mini card">
+          <div class="icon">1</div>
+          <strong>Billing Accuracy</strong>
+          <p>Demographics, charge details, and claim preparation are handled with discipline so clean claims move out faster.
+          </p>
+        </article>
+        <article class="mini card">
+          <div class="icon">2</div>
+          <strong>Claim Follow-Up</strong>
+          <p>Denials, unpaid claims, and payer delays are tracked closely so revenue does not sit untouched in AR.</p>
+        </article>
+        <article class="mini card">
+          <div class="icon">3</div>
+          <strong>Reporting Insight</strong>
+          <p>Leadership gets a clearer view into billing trends, problem areas, and opportunities to strengthen collections.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Practice Billing Performance</p>
+          <h2>Medical Billing Las Vegas, NV</h2>
+          <p>Medical billing Las Vegas NV support works best when charge entry, claim submission, payer follow-up, patient
+            balance workflows, and reporting are handled with consistency. Optimax helps Las Vegas practices tighten the
+            billing process so collections improve without adding avoidable administrative drag.</p>
+        </div>
+        <div class="split">
+          <div class="panel card">
+            <p>Our medical billing Las Vegas NV approach is designed for healthcare organizations that need dependable
+              billing execution and stronger visibility into collections. We look closely at where claims are slowing
+              down, what errors are causing preventable rework, and how AR activity can be improved without disrupting
+              day-to-day operations.</p>
+            <p>Whether you need a full medical billing partner or support for a stretched internal team, Optimax can
+              tailor workflows around specialty mix, staffing capacity, and payer demands.</p>
+            <ul class="checks">
+              <li>Accurate charge entry and cleaner claim submission workflows.</li>
+              <li>Denial review, AR follow-up, and payer response tracking.</li>
+              <li>Payment posting support, patient statements, and balance handling.</li>
+              <li>Reporting that helps leadership monitor billing performance and collections.</li>
+            </ul>
+          </div>
+          <div class="media card">
+            <img src="https://optimaxcs.net/wp-content/uploads/2026/03/Service-wheel-new.webp"
+              alt="medical billing Las Vegas NV workflow and claims support" loading="lazy">
+            <div class="caption">Structured medical billing helps Las Vegas practices keep claims moving and collections more predictable.</div>
+          </div>
+        </div>
+        <div class="tiles">
+          <div class="tile"><strong>Claim preparation</strong><span>Reduce errors by tightening patient data, charge details, and submission readiness.</span></div>
+          <div class="tile"><strong>Accounts receivable follow-up</strong><span>Stay on top of unpaid claims, denials, and payer delays before they age out.</span></div>
+          <div class="tile"><strong>Patient billing and reporting</strong><span>Support statements, balances, and reporting that make billing performance easier to manage.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Practice Support With Accountability</p>
+          <h2>Medical Billing Companies Las Vegas, NV</h2>
+          <p>Medical billing companies Las Vegas NV practices evaluate should do more than send claims. The right partner
+            should improve billing accuracy, stay on top of AR, communicate clearly about performance, and support the
+            financial goals of the practice without creating more administrative confusion.</p>
+        </div>
+        <div class="dual">
+          <div class="panel card">
+            <p>For practices comparing medical billing companies Las Vegas NV options, the difference often comes down to
+              responsiveness, reporting quality, and the ability to work within real healthcare workflows. Optimax
+              supports organizations that need a dependable billing partner, a supplement to in-house staff, or a more
+              structured approach to claim flow and collections.</p>
+            <p>That is especially important when a practice is growing, adding providers, or dealing with billing
+              inconsistencies that are slowing reimbursement and consuming staff time.</p>
+            <ul class="checks">
+              <li>Scalable billing support for single-site and multi-provider organizations.</li>
+              <li>Consistent communication around claim status, denials, and collections.</li>
+              <li>Healthcare-focused workflows rather than generic outsourced processing.</li>
+              <li>Performance visibility that helps leadership make informed billing decisions.</li>
+            </ul>
+          </div>
+          <div class="link-list">
+            <a class="link" href="https://optimaxcs.net/revenue-cycle-management/"><strong>Revenue Cycle Management</strong><span>Connect medical billing with broader reimbursement strategy and AR performance support.</span></a>
+            <a class="link" href="https://optimaxcs.net/credentialing/"><strong>Credentialing</strong><span>Support provider readiness and payer enrollment that affect billing continuity.</span></a>
+            <a class="link" href="https://optimaxcs.net/contact-us/"><strong>Contact Optimax</strong><span>Give Las Vegas practices a direct conversion path for billing support discussions.</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Healthcare-Focused Billing Perspective</p>
+          <h2>Why Las Vegas Practices Choose Optimax for Medical Billing Support</h2>
+          <p>Medical billing services work better when the team handling claims understands the operational realities of
+            provider practices. Optimax brings healthcare experience, workflow discipline, and reporting insight that
+            help billing support fit the way practices actually operate.</p>
+        </div>
+        <div class="dual">
+          <div class="quote card">
+            <strong>What this means in practice</strong>
+            <p>Billing performance is affected by more than claim submission alone. Documentation habits, staffing
+              gaps, payer rules, patient communication, and internal follow-up all influence how quickly claims are
+              paid and how much staff time is consumed in the process.</p>
+            <p style="margin-top:16px">Optimax helps Las Vegas organizations bring those moving pieces together so medical
+              billing support improves collections, reduces avoidable rework, and creates a steadier operating rhythm.</p>
+          </div>
+          <div class="link-list">
+            <a class="link" href="https://optimaxcs.net/consulting-services/"><strong>Consulting &amp; MSO Services</strong><span>Explore additional operational support that can complement medical billing performance.</span></a>
+            <a class="link" href="https://optimaxcs.net/human-resources-and-staffing/"><strong>HR &amp; Staffing Services</strong><span>Support the workforce planning and staffing side of healthcare operations.</span></a>
+            <a class="link" href="https://optimaxcs.net/about-us/"><strong>About Optimax</strong><span>Reinforce healthcare-focused credibility and service depth.</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">SEO Support Content</p>
+          <h2>Frequently Asked Questions About Medical Billing Services in Las Vegas, NV</h2>
+          <p>These FAQ entries support search intent around medical billing services Las Vegas NV while reinforcing the
+            connection between billing accuracy, AR follow-up, and healthcare practice support.</p>
+        </div>
+        <div class="faq">
+          <details class="faq-item card" open>
+            <summary>What do medical billing services in Las Vegas, NV include?</summary>
+            <div class="faq-body">Medical billing services typically include charge entry, claim submission, denial
+              follow-up, payment posting, patient statement workflows, and reporting that helps practices improve collections.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>How do medical billing companies in Las Vegas, NV help practices?</summary>
+            <div class="faq-body">Medical billing companies help practices improve billing accuracy, reduce claim
+              delays, stay on top of accounts receivable, and give leadership better visibility into billing performance.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Can Optimax support specialty and multi-provider practices in Las Vegas?</summary>
+            <div class="faq-body">Yes. Optimax supports specialty practices and growing provider groups with medical
+              billing workflows tailored to staffing needs, claim volume, and payer mix.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>When should a practice outsource medical billing services?</summary>
+            <div class="faq-body">Outsourcing is often useful when staff capacity is stretched, claim delays are growing,
+              denials are not being followed consistently, or leadership needs stronger billing visibility and accountability.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta card">
+          <div class="cta-grid">
+            <div>
+              <p class="eyebrow">Build A Stronger Billing Operation</p>
+              <h2>Need Medical Billing Services in Las Vegas, NV That Support Cleaner Claims and Stronger Collections?</h2>
+              <p>Connect with Optimax for medical billing services that help Las Vegas practices improve billing accuracy,
+                reduce follow-up friction, and strengthen collections with more confidence.
+              </p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://optimaxcs.net/contact-us/">Request a Strategy Call</a>
+              <a class="btn btn-secondary" href="https://optimaxcs.net/about-us/">Meet Optimax</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
