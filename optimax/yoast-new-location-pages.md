@@ -46,6 +46,28 @@ These entries are written to stay within practical Yoast length targets for titl
 - Meta title: `Payroll Services San Diego, CA | Optimax`
 - Meta description: `Payroll services in San Diego, CA for healthcare practices needing payroll support, reporting visibility, and process consistency.`
 
+## Los Angeles, CA
+
+### `revenue-cycle-management-los-angeles-ca.html`
+- Focus keyphrase: `RCM services Los Angeles CA`
+- Meta title: `RCM Services Los Angeles, CA | Optimax`
+- Meta description: `RCM services in Los Angeles, CA with revenue cycle management, business consulting, and healthcare consulting for stronger cash flow.`
+
+### `medical-billing-services-los-angeles-ca.html`
+- Focus keyphrase: `medical billing services Los Angeles CA`
+- Meta title: `Medical Billing Services Los Angeles, CA | Optimax`
+- Meta description: `Medical billing services in Los Angeles, CA with claim submission, AR follow-up, and reporting support for healthcare practices.`
+
+### `hr-services-los-angeles-ca.html`
+- Focus keyphrase: `HR services Los Angeles CA`
+- Meta title: `HR Services Los Angeles, CA | Optimax`
+- Meta description: `HR services in Los Angeles, CA for healthcare practices needing staffing support, onboarding guidance, and workforce structure.`
+
+### `payroll-services-los-angeles-ca.html`
+- Focus keyphrase: `Payroll services Los Angeles CA`
+- Meta title: `Payroll Services Los Angeles, CA | Optimax`
+- Meta description: `Payroll services in Los Angeles, CA for healthcare practices needing payroll support, reporting visibility, and process consistency.`
+
 ## Arizona
 
 ### `revenue-cycle-management-arizona.html`
