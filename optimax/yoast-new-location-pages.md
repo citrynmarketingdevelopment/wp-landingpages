@@ -68,6 +68,13 @@ These entries are written to stay within practical Yoast length targets for titl
 - Meta title: `Payroll Services Los Angeles, CA | Optimax`
 - Meta description: `Payroll services in Los Angeles, CA for healthcare practices needing payroll support, reporting visibility, and process consistency.`
 
+## Bakersfield, CA
+
+### `medical-billing-services-bakersfield-ca.html`
+- Focus keyphrase: `medical billing services Bakersfield CA`
+- Meta title: `Medical Billing Services Bakersfield, CA | Optimax`
+- Meta description: `Medical billing services in Bakersfield, CA with claim submission, AR follow-up, and reporting support for healthcare practices.`
+
 ## Arizona
 
 ### `revenue-cycle-management-arizona.html`
