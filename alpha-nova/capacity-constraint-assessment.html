@@ -1,0 +1,1152 @@
+<style>
+    :root {
+      --black: #070707;
+      --charcoal: #111114;
+      --charcoal-2: #1a1a1f;
+      --red: #d71920;
+      --red-dark: #9f1018;
+      --red-soft: #fff0f1;
+      --white: #ffffff;
+      --off-white: #f7f7f7;
+      --light: #f3f3f3;
+      --muted: #6d6d6d;
+      --border: #e4e4e4;
+      --shadow: 0 12px 35px rgba(0,0,0,.11);
+      --radius: 10px;
+      --container: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    p { margin: 0 0 18px; }
+
+    .an-container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--black), var(--red));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(215,25,32,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: var(--red);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 1;
+      box-shadow: 0 10px 24px rgba(215,25,32,.25), inset 0 0 0 1px rgba(255,255,255,.18);
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--red-dark);
+      box-shadow: 0 14px 30px rgba(159,16,24,.3), inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+
+    .btn.dark { background: var(--black); }
+    .btn.dark:hover { background: var(--red); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 36%, rgba(215,25,32,.24), transparent 28%),
+        linear-gradient(135deg, #08080a 0%, #15151c 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 105px 0 95px;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: .5;
+    }
+
+    .gear-watermark {
+      position: absolute;
+      right: 5%;
+      top: 42px;
+      width: 300px;
+      height: 300px;
+      opacity: .08;
+      border: 34px dashed #fff;
+      border-radius: 50%;
+      animation: slowspin 38s linear infinite;
+    }
+
+    @keyframes slowspin { to { transform: rotate(360deg); } }
+
+    .hero .an-container { position: relative; z-index: 2; max-width: 920px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(215,25,32,.12);
+      color: #ffced2;
+      border: 1px solid rgba(215,25,32,.35);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 { margin: 0; line-height: 1.08; }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 78px);
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .accent { color: var(--red); }
+
+    .hero-sub {
+      max-width: 720px;
+      margin: 0 auto 12px;
+      font-size: clamp(18px, 2.2vw, 25px);
+      font-weight: 700;
+      color: rgba(255,255,255,.92);
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      font-size: 17px;
+      color: rgba(255,255,255,.72);
+    }
+
+    .microcopy {
+      margin-top: 14px;
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section { padding: 76px 0; }
+
+    .section-light { background: #f7f7f7; }
+    .section-soft { background: linear-gradient(180deg, #fff 0%, #f7f7f7 100%); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+
+    .section-head {
+      max-width: 790px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      letter-spacing: -0.035em;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 0;
+    }
+
+    .section-dark .section-head p { color: rgba(255,255,255,.72); }
+
+    .trust {
+      background: #f7f7f7;
+      padding: 38px 0 44px;
+      text-align: center;
+    }
+
+    .trust p {
+      color: #424242;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .logo-pill {
+      min-height: 58px;
+      border: 1px solid #dedede;
+      background: #fff;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #7b7b7b;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 45px rgba(0,0,0,.13); }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--red-soft);
+      color: var(--red);
+      margin: 0 auto 18px;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .card p { color: var(--muted); font-size: 14px; text-align: center; margin: 0; }
+
+    .center-cta {
+      text-align: center;
+      margin-top: 34px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .copy-block h2 {
+      font-size: clamp(28px, 3.6vw, 45px);
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .copy-block p { color: var(--muted); font-size: 16px; }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 34px;
+      color: #303030;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .check-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .visual-card {
+      min-height: 360px;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(215,25,32,.9), rgba(10,10,10,.9)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 2px, transparent 2px 12px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 26px;
+      color: #fff;
+    }
+
+    .visual-card:before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 28px dashed rgba(255,255,255,.22);
+      border-radius: 50%;
+      right: -70px;
+      top: -60px;
+    }
+
+    .visual-card:after {
+      content: "SYSTEM CONSTRAINT MAP";
+      position: absolute;
+      left: 26px;
+      top: 26px;
+      font-size: 12px;
+      letter-spacing: .16em;
+      font-weight: 900;
+      opacity: .7;
+    }
+
+    .visual-card strong {
+      position: relative;
+      z-index: 2;
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+      max-width: 340px;
+    }
+
+    .steps { display: grid; gap: 54px; }
+
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .step:nth-child(even) { grid-template-columns: 320px 1fr; }
+    .step:nth-child(even) .step-copy { order: 2; }
+
+    .step-copy .label {
+      color: var(--red);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    .step-copy h3 { font-size: 24px; margin-bottom: 12px; font-weight: 900; }
+    .step-copy p { color: var(--muted); font-size: 15px; }
+
+    .note {
+      display: inline-block;
+      border-left: 4px solid var(--red);
+      background: #fff;
+      padding: 11px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);
+    }
+
+    .step-visual {
+      height: 250px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .step-visual .factory {
+      width: 175px;
+      height: 120px;
+      position: relative;
+      border-bottom: 28px solid var(--black);
+      border-left: 18px solid var(--black);
+      border-right: 18px solid var(--black);
+    }
+
+    .step-visual .factory:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -60px;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(135deg, transparent 0 20%, var(--red) 20% 35%, transparent 35% 50%, var(--red) 50% 65%, transparent 65%);
+    }
+
+    .step-visual .flow {
+      width: 180px;
+      height: 180px;
+      border: 18px solid #111;
+      border-right-color: var(--red);
+      border-bottom-color: var(--red);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .step-visual .flow:after {
+      content: "";
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--red);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 18px rgba(215,25,32,.14);
+    }
+
+    .step-visual .roadmap {
+      width: 210px;
+      height: 150px;
+      background: linear-gradient(90deg, var(--black) 0 24%, transparent 24% 38%, var(--red) 38% 62%, transparent 62% 76%, var(--black) 76% 100%);
+      border-radius: 10px;
+      opacity: .92;
+      position: relative;
+    }
+
+    .step-visual .roadmap:after {
+      content: "90 DAY RAMP-UP";
+      position: absolute;
+      inset: auto 18px 18px;
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: .08em;
+    }
+
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .deliverable {
+      background: #fff;
+      color: var(--charcoal);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.2);
+      border-top: 5px solid var(--red);
+    }
+
+    .deliverable h3 { font-size: 21px; margin-bottom: 14px; font-weight: 900; }
+    .deliverable p { color: var(--muted); font-size: 15px; }
+    .deliverable ul { margin: 18px 0 0; padding-left: 18px; color: #333; font-size: 14px; }
+    .deliverable li { margin-bottom: 8px; }
+
+    .compare-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .compare-col { padding: 34px; }
+    .compare-col + .compare-col { border-left: 1px solid var(--border); }
+    .compare-col h3 { font-size: 20px; margin-bottom: 18px; font-weight: 900; }
+    .compare-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .compare-list li { position: relative; padding-left: 31px; font-size: 14px; color: #333; font-weight: 700; }
+    .compare-list li:before { position: absolute; left: 0; top: 0; font-weight: 900; }
+    .no-list li:before { content: "✕"; color: var(--red); }
+    .yes-list li:before { content: "✓"; color: var(--red); }
+
+    .quote-callout {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-callout:before {
+      content: "“";
+      position: absolute;
+      left: 24px;
+      top: -30px;
+      color: rgba(215,25,32,.55);
+      font-size: 160px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .quote-callout p {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.22;
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: -.025em;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .decision {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .decision .num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--black);
+      color: #fff;
+      margin: 0 auto 14px;
+      font-weight: 900;
+    }
+
+    .decision h3 { font-size: 17px; font-weight: 900; }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #fff;
+      color: var(--charcoal);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    }
+
+    .stars { color: var(--red); letter-spacing: 2px; margin-bottom: 12px; font-size: 14px; }
+    .testimonial p { color: #444; font-size: 14px; }
+    .testimonial strong { display: block; margin-top: 16px; font-size: 14px; }
+
+    .faq {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 24px;
+      font-weight: 900;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: "+"; color: var(--red); font-size: 26px; line-height: 1; }
+    details[open] summary:after { content: "–"; }
+    details p { padding: 0 24px 22px; color: var(--muted); margin: 0; }
+
+    .form-section {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(215,25,32,.24), transparent 26%),
+        linear-gradient(135deg, #060606, #15151a);
+      color: #fff;
+      padding-bottom: 90px;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .form-copy h2 {
+      font-size: clamp(32px, 4vw, 54px);
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .form-copy p { color: rgba(255,255,255,.74); font-size: 17px; }
+
+    .form-panel {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.3);
+      overflow: hidden;
+      min-height: 690px;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .form-panel-header {
+      background: var(--red);
+      color: #fff;
+      padding: 18px 22px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .iframe-holder { height: 622px; }
+
+    .footer {
+      background: #030303;
+      color: rgba(255,255,255,.66);
+      text-align: center;
+      padding: 30px 0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1000px) {
+      .card-grid, .decision-grid { grid-template-columns: repeat(2, 1fr); }
+      .deliverables, .testimonials { grid-template-columns: 1fr; }
+      .step, .step:nth-child(even) { grid-template-columns: 1fr; gap: 28px; }
+      .step:nth-child(even) .step-copy { order: initial; }
+      .step-visual { max-width: 420px; width: 100%; margin: 0 auto; }
+      .form-wrap, .two-col { grid-template-columns: 1fr; }
+      .visual-card { min-height: 300px; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { min-height: auto; padding: 14px 0; flex-direction: column; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; font-size: 13px; }
+      .nav-links .hide-sm { display: none; }
+      .hero { padding: 72px 0 70px; }
+      section { padding: 58px 0; }
+      .logos { grid-template-columns: repeat(2, 1fr); }
+      .card-grid, .decision-grid, .compare-box { grid-template-columns: 1fr; }
+      .compare-col + .compare-col { border-left: 0; border-top: 1px solid var(--border); }
+      .quote-callout { padding: 32px 24px; }
+      .form-panel { min-height: 650px; }
+      .gear-watermark { right: -120px; opacity: .05; }
+    }
+
+    @media (max-width: 460px) {
+      .an-container { width: min(var(--container), calc(100% - 28px)); }
+      .brand { font-size: 14px; }
+      .nav-links { gap: 10px; }
+      .btn { width: 100%; max-width: 310px; }
+      .card, .deliverable, .compare-col, .testimonial { padding: 24px 20px; }
+    }
+
+
+    /* Divi code module safety overrides */
+    #alpha-nova-lp {
+      width: 100%;
+      max-width: none;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    #alpha-nova-lp, #alpha-nova-lp * { box-sizing: border-box; }
+
+    #alpha-nova-lp .an-container {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    #alpha-nova-lp .hero {
+      display: block !important;
+      min-height: auto !important;
+      background:
+        radial-gradient(circle at 80% 36%, rgba(215,25,32,.24), transparent 28%),
+        linear-gradient(135deg, #08080a 0%, #15151c 100%) !important;
+      color: #ffffff !important;
+    }
+
+    #alpha-nova-lp .hero .an-container {
+      max-width: 920px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    #alpha-nova-lp .hero h1,
+    #alpha-nova-lp .hero p,
+    #alpha-nova-lp .hero .microcopy {
+      background: transparent !important;
+      color: inherit;
+    }
+
+    #alpha-nova-lp .hero .hero-sub { color: rgba(255,255,255,.92) !important; }
+    #alpha-nova-lp .hero .hero-copy { color: rgba(255,255,255,.72) !important; }
+    #alpha-nova-lp .hero .microcopy { color: rgba(255,255,255,.68) !important; }
+
+  </style>
+<main id="alpha-nova-lp">
+    <section class="hero">
+      <div class="gear-watermark" aria-hidden="true"></div>
+      <div class="an-container">
+        <div class="eyebrow">Manufacturing Growth Readiness</div>
+        <h1>Capacity Constraint <span class="accent">Assessment™</span></h1>
+        <p class="hero-sub">Identify exactly what is limiting throughput, growth, and delivery performance in your operation.</p>
+        <p class="hero-copy">Most manufacturers do not have a demand problem. They have a hidden constraint problem. One or two invisible bottlenecks may be quietly determining how much revenue you can fulfill.</p>
+        <a class="btn" href="#request-assessment">Request Your Assessment</a>
+        <div class="microcopy">Built for manufacturing leaders who need clarity before scaling.</div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="an-container">
+        <p>Trusted by dozens of manufacturers nationwide</p>
+        <div class="logos" aria-label="Client logo placeholders">
+          <div class="logo-pill">Customer Logo</div>
+          <div class="logo-pill">Customer Logo</div>
+          <div class="logo-pill">Customer Logo</div>
+          <div class="logo-pill">Customer Logo</div>
+          <div class="logo-pill">Customer Logo</div>
+          <div class="logo-pill">Customer Logo</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assessment" class="section-soft">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>Most Manufacturers Do Not Have a Demand Problem. They Have a <span class="accent">Hidden Constraint</span> Problem.</h2>
+          <p>The issue is not effort. It is constraint visibility.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="icon">↗</div>
+            <h3>Revenue You Can Fulfill</h3>
+            <p>Understand how much customer demand your operation can actually support.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⏱</div>
+            <h3>Delivery Under Growth</h3>
+            <p>See whether on-time delivery can hold as load and complexity increase.</p>
+          </article>
+          <article class="card">
+            <div class="icon">$</div>
+            <h3>Margin Being Burned</h3>
+            <p>Find where expediting, overtime, rework, and inefficiency are eroding profit.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⚙</div>
+            <h3>Expansion Risk</h3>
+            <p>Determine whether growth will stabilize operations or create new constraints.</p>
+          </article>
+        </div>
+        <div class="center-cta">
+          <a class="btn" href="#request-assessment">Find My Constraint</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="an-container two-col">
+        <div class="copy-block">
+          <h2>Who This Assessment Is <span class="accent">For</span></h2>
+          <p>This is designed for manufacturing leaders experiencing one or more operational symptoms that suggest the plant is stretched but not clearly understood.</p>
+          <ul class="check-list">
+            <li>“We’re always at capacity but still missing demand”</li>
+            <li>Overtime is increasing but output is not</li>
+            <li>On-time delivery is inconsistent under load</li>
+            <li>Adding labor has not solved throughput issues</li>
+            <li>Growth is being accepted cautiously due to operational risk</li>
+            <li>The plant feels “full” but not clearly understood</li>
+          </ul>
+        </div>
+        <div class="visual-card">
+          <strong>If growth is being debated internally due to operational uncertainty, this assessment is appropriate.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>What the Capacity Constraint Assessment <span class="accent">Does</span></h2>
+          <p>The Capacity Constraint Assessment is a structured evaluation of your production system to identify where true system constraints exist, what is limiting throughput across your value stream, where capacity is being lost, misallocated, or masked, whether constraints are machine, labor, flow, scheduling, or policy-driven, and the real capacity ceiling of your current operating model.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-copy">
+              <div class="label">Step 1</div>
+              <h3>Identify the True System Constraints</h3>
+              <p>We separate symptoms from actual constraints across your value stream, resources, production flow, scheduling, and operating policies.</p>
+              <span class="note">This is not a general operational review. It is a constraint identification exercise built for decision-making.</span>
+            </div>
+            <div class="step-visual" aria-hidden="true"><div class="factory"></div></div>
+          </article>
+
+          <article class="step">
+            <div class="step-copy">
+              <div class="label">Step 2</div>
+              <h3>Map Lost, Misallocated, or Masked Capacity</h3>
+              <p>We uncover where capacity is being consumed by delays, waiting, rework, materials, flow interruptions, equipment utilization, and labor utilization gaps.</p>
+              <span class="note">Most manufacturers have more capacity than they realize.</span>
+            </div>
+            <div class="step-visual" aria-hidden="true"><div class="flow"></div></div>
+          </article>
+
+          <article class="step">
+            <div class="step-copy">
+              <div class="label">Step 3</div>
+              <h3>Clarify the Real Capacity Ceiling</h3>
+              <p>We help leadership understand whether the current system can support near-term growth, where the ceiling is, and what must change first.</p>
+              <span class="note">You leave with clarity on where to focus and why it matters.</span>
+            </div>
+            <div class="step-visual" aria-hidden="true"><div class="roadmap"></div></div>
+          </article>
+        </div>
+        <div class="center-cta">
+          <a class="btn" href="#request-assessment">Request More Information</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables" class="section-dark">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>What You Get From the <span class="accent">Assessment</span></h2>
+          <p>Clear findings, prioritized opportunities, and a practical path to unlock additional capacity with the system you already have.</p>
+        </div>
+        <div class="deliverables">
+          <article class="deliverable">
+            <h3>1. Operational Capacity Assessment</h3>
+            <p>Gain a clear understanding of where capacity is being constrained across your operation. Through a structured review of your value stream, production processes, resources, and workflows, we identify:</p>
+            <ul>
+              <li>Primary and secondary bottlenecks</li>
+              <li>Areas where flow is being disrupted</li>
+              <li>Capacity limitations across labor, equipment, materials, and processes</li>
+              <li>Constraints that are limiting throughput, responsiveness, and growth</li>
+            </ul>
+            <p class="small-copy">The result is a clear picture of what is currently preventing your operation from producing more with the resources you already have.</p>
+          </article>
+          <article class="deliverable">
+            <h3>2. Operational Assessment</h3>
+            <p>Most manufacturers have more capacity than they realize. Hidden within everyday operations are inefficiencies that consume resources, create delays, and limit throughput. The assessment uncovers opportunities to improve operational performance and reclaim lost capacity without significant capital investment.</p>
+            <ul>
+              <li>Eliminate waste and non-value-added activities</li>
+              <li>Improve workflow and process efficiency</li>
+              <li>Reduce delays, waiting, and rework</li>
+              <li>Improve utilization of labor and equipment</li>
+              <li>Increase throughput using existing resources</li>
+            </ul>
+            <p class="small-copy">The goal is simple: create additional capacity that can be used to absorb growth, improve service levels, and increase profitability.</p>
+          </article>
+          <article class="deliverable">
+            <h3>3. Ramp-Up Plan</h3>
+            <p>Knowing your constraints is only valuable if you have a plan to address them. Based on the assessment findings, you receive a practical roadmap outlining the changes required to support your growth objectives.</p>
+            <ul>
+              <li>Priority improvement initiatives</li>
+              <li>Recommended actions to elevate identified constraints</li>
+              <li>Capacity improvement opportunities ranked by impact</li>
+              <li>Short-, medium-, and long-term recommendations</li>
+              <li>Key milestones needed to achieve growth targets</li>
+            </ul>
+            <p class="small-copy">You leave with a clear understanding of what must change, where to focus first, and how to build the operational capacity required to support future demand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>This Is Not Another Generic <span class="accent">Operational Review</span></h2>
+          <p>The assessment is focused on one question: what is currently constraining your ability to produce more output with your existing system?</p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-col">
+            <h3>What This Is Not</h3>
+            <ul class="compare-list no-list">
+              <li>A generic Lean assessment</li>
+              <li>A cultural survey</li>
+              <li>A KPI dashboard review</li>
+              <li>A theoretical efficiency study</li>
+            </ul>
+          </div>
+          <div class="compare-col">
+            <h3>What This Is</h3>
+            <ul class="compare-list yes-list">
+              <li>A constraint identification exercise</li>
+              <li>A capacity visibility assessment</li>
+              <li>A decision-making tool for growth</li>
+              <li>A practical path to unlock throughput</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>Why Constraint Visibility <span class="accent">Matters Now</span></h2>
+          <p>Most manufacturing systems do not fail from lack of demand. They fail from misidentified constraints, locally optimized improvements, and hidden capacity loss.</p>
+        </div>
+        <div class="quote-callout">
+          <p>Growth gets approved based on sales confidence, but executed against operational uncertainty. This assessment closes that gap.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>What You’ll Be Able to <span class="accent">Decide</span></h2>
+          <p>At the end of the assessment, leadership can make clearer decisions about capacity, investment, and growth risk.</p>
+        </div>
+        <div class="decision-grid">
+          <article class="decision">
+            <div class="num">1</div>
+            <h3>Where to invest to unlock throughput</h3>
+          </article>
+          <article class="decision">
+            <div class="num">2</div>
+            <h3>Whether you have real capacity or only the appearance of it</h3>
+          </article>
+          <article class="decision">
+            <div class="num">3</div>
+            <h3>Which constraint must be elevated or redesigned first</h3>
+          </article>
+          <article class="decision">
+            <div class="num">4</div>
+            <h3>Whether your system can support near-term growth plans</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>Manufacturers Use the Assessment to Find What’s <span class="accent">Really Limiting Growth</span></h2>
+          <p>Replace these placeholders with approved client testimonials when available.</p>
+        </div>
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“The assessment helped us see where capacity was actually being lost and gave our leadership team a clear path forward.”</p>
+            <strong>Manufacturing Leader</strong>
+          </article>
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“We were treating symptoms. Alpha Nova helped us focus on the constraint that mattered most.”</p>
+            <strong>Operations Executive</strong>
+          </article>
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“The findings changed how we thought about growth, investment, and our real production ceiling.”</p>
+            <strong>Plant Leadership Team</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-light">
+      <div class="an-container">
+        <div class="section-head">
+          <h2>Frequently Asked <span class="accent">Questions</span></h2>
+          <p>Common questions manufacturing leaders ask before requesting a Capacity Constraint Assessment.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>How is this different from a Lean assessment?</summary>
+            <p>Most Lean assessments evaluate a broad range of operational practices and improvement opportunities. The Capacity Constraint Assessment focuses on one specific question: what is currently limiting our ability to produce more output and support future growth? Rather than evaluating every aspect of the business, we focus on identifying the constraints, inefficiencies, and capacity limitations that are restricting throughput and growth.</p>
+          </details>
+          <details>
+            <summary>We already know our bottleneck. Why do we need an assessment?</summary>
+            <p>Many manufacturers believe they know their bottleneck. In reality, what appears to be the constraint is often a symptom of a deeper issue elsewhere in the system. Organizations may invest in equipment, add labor, or expand facilities only to discover the true constraint was in scheduling, material flow, quality, changeovers, planning, or management systems. This assessment helps ensure resources are invested where they will create the greatest impact.</p>
+          </details>
+          <details>
+            <summary>Will this disrupt day-to-day operations?</summary>
+            <p>No. The assessment is designed to minimize disruption while gathering the information necessary to understand how work flows through the operation. Most of the work involves observation, data review, leadership discussions, and targeted process analysis. Your team continues running the business while we evaluate how the system performs.</p>
+          </details>
+          <details>
+            <summary>How long does the assessment take?</summary>
+            <p>Most assessments are completed within 2–4 weeks depending on facility size, complexity, and data availability. At the conclusion, findings, recommendations, and the Ramp-Up Plan are presented to your leadership team.</p>
+          </details>
+          <details>
+            <summary>Do we need accurate capacity data to participate?</summary>
+            <p>No. Many manufacturers struggle with incomplete or inconsistent capacity information. Part of the assessment process is validating assumptions and developing a realistic understanding of operational capacity. We work with the data available and supplement it through observation, interviews, and analysis.</p>
+          </details>
+          <details>
+            <summary>What types of manufacturers benefit most from this assessment?</summary>
+            <p>The Capacity Constraint Assessment is designed for manufacturers that are experiencing growth or preparing for growth, running near capacity, missing delivery commitments, increasing overtime without seeing corresponding output gains, considering capital investments or expansion, or unsure whether current operations can support future demand. It is particularly valuable for organizations that feel operationally stretched but lack clarity on what is driving the pressure.</p>
+          </details>
+          <details>
+            <summary>Will you recommend equipment purchases?</summary>
+            <p>Only if the data supports it. Many capacity constraints can be addressed through process improvements, scheduling changes, workflow redesign, labor utilization improvements, or management system enhancements. The objective is to identify the most effective path to additional capacity—not automatically recommend capital expenditures.</p>
+          </details>
+          <details>
+            <summary>What happens after the assessment?</summary>
+            <p>You receive an Operational Capacity Assessment, Operational Assessment findings, capacity improvement opportunities, an executive findings presentation, and a Ramp-Up Plan. Some organizations use the findings internally. Others engage Alpha Nova to help implement the recommended improvements and accelerate results. The choice is entirely yours.</p>
+          </details>
+          <details>
+            <summary>What kind of results can we expect?</summary>
+            <p>Every operation is different, but manufacturers commonly uncover opportunities to increase throughput, improve on-time delivery, reduce overtime, improve labor productivity, reduce lead times, and create additional capacity without adding significant overhead.</p>
+          </details>
+          <details>
+            <summary>How do we know if this is right for us?</summary>
+            <p>If your leadership team is asking questions such as “Can we handle more business?”, “Why are we constantly stretched despite adding resources?”, “Where should we invest to support growth?”, “What is limiting throughput?”, or “Are we truly at capacity?”, then the Capacity Constraint Assessment is likely a good fit. The assessment is built to answer those questions with data, analysis, and a practical path forward.</p>
+          </details>
+          <details>
+            <summary>What if we are planning significant growth over the next 12–24 months?</summary>
+            <p>That is exactly when this assessment delivers the greatest value. Many manufacturers discover capacity limitations only after growth has already exposed them. By identifying constraints before they become critical, leadership can make informed decisions, reduce risk, and build a stronger foundation for sustainable growth. The best time to address a constraint is before it becomes the reason you miss a major opportunity.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="request-assessment" class="form-section">
+      <div class="an-container form-wrap">
+        <div class="form-copy">
+          <div class="eyebrow">Request More Information</div>
+          <h2>Ready to Unlock Capacity for Your Next <span class="accent">Growth Stage?</span></h2>
+          <p>Join dozens of manufacturers who have used the Capacity Constraint Assessment to identify constraints, unlock hidden capacity, and remove obstacles to growth.</p>
+          <ul class="check-list">
+            <li>Identify what is limiting throughput</li>
+            <li>Clarify whether your current system can support growth</li>
+            <li>Prioritize what needs to change first</li>
+            <li>Build a practical ramp-up path for future demand</li>
+          </ul>
+        </div>
+        <div class="form-panel">
+          <div class="form-panel-header">Capacity Constraint Assessment Offer</div>
+          <div class="iframe-holder">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/k6sdENxmdgt8pWzoSkXm"
+              style="width:100%;height:100%;border:none;border-radius:3px"
+              id="inline-k6sdENxmdgt8pWzoSkXm"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Capacity Constraint Assessment Offer"
+              data-height="622"
+              data-layout-iframe-id="inline-k6sdENxmdgt8pWzoSkXm"
+              data-form-id="k6sdENxmdgt8pWzoSkXm"
+              title="Capacity Constraint Assessment Offer">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
