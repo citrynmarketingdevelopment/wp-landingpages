@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Fandry &amp; Co. | Healthcare Development &amp; Management Consulting</title>
-<meta name="description" content="Fandry & Co. (FCo) delivers strategic solutions for the development and management of healthcare organizations — financial planning, marketing, operations, and scalable growth.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#050806;--bg-2:#0A1410;--bg-3:#08110D;
@@ -51,7 +41,6 @@
   .ico{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;flex-shrink:0;background:linear-gradient(160deg,rgba(52,232,158,.16),rgba(18,80,55,.2));border:1px solid var(--glass-bd);color:var(--glow);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 24px rgba(52,232,158,.14);}
   .ico svg{width:26px;height:26px;}
 
-  /* HERO */
   .phero{position:relative;overflow:hidden;padding:154px 0 76px;}
   .phero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1920&auto=format&fit=crop');background-size:cover;background-position:center;}
   .phero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(5,8,6,.96),rgba(5,10,7,.82) 50%,rgba(8,30,20,.6)),radial-gradient(circle at 82% 20%,rgba(52,232,158,.2),transparent 42%);}
@@ -61,9 +50,9 @@
   .phero h1 .grad{background:linear-gradient(120deg,var(--mint),var(--glow) 60%);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .phero p{color:var(--muted);font-size:clamp(1rem,1.3vw,1.12rem);max-width:58ch;margin-top:18px;}
   .crumbs{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted-2);margin-bottom:22px;}
-  .crumbs a{text-decoration:none;color:var(--muted-2);}.crumbs a:hover{color:var(--glow);}
+  .crumbs a{text-decoration:none;color:var(--muted-2);}
+  .crumbs a:hover{color:var(--glow);}
 
-  /* MISSION */
   .mission{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
   .mission .panel{padding:28px 26px;}
   .mission .panel p{color:var(--muted);font-size:1.06rem;}
@@ -71,7 +60,6 @@
   .mission .lead-panel{background:linear-gradient(160deg,rgba(18,80,55,.28),rgba(8,17,13,.5));}
   .mission .lead-panel p{color:var(--fg);font-size:1.12rem;}
 
-  /* TEAMS */
   .teams{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px;}
   .team{padding:26px 24px;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);}
   .team:hover{transform:translateY(-6px);border-color:var(--glass-bd-strong);box-shadow:var(--shadow),var(--glow-shadow);}
@@ -79,7 +67,6 @@
   .team h3{font-size:1.22rem;}
   .team p{color:var(--muted);font-size:15px;}
 
-  /* VALUES + STATS */
   .values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
   .value{padding:26px 22px;}
   .value h4{font-size:1.16rem;margin:20px 0 10px;}
@@ -90,33 +77,28 @@
   .stat-band b .u{color:var(--glow);}
   .stat-band span{color:var(--muted-2);font-size:13.5px;}
 
-  /* CTA */
-  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-  [data-reveal].in-view{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important;}}
+  [data-reveal]{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  html.dgs-js [data-reveal]{opacity:0;transform:translateY(22px);}
+  html.dgs-js [data-reveal].in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){html.dgs-js [data-reveal]{opacity:1!important;transform:none!important;transition:none!important;}}
 
   @media (max-width:1024px){.values{grid-template-columns:1fr;}.stat-band{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:860px){.mission,.teams{grid-template-columns:1fr;gap:22px;}}
   @media (max-width:560px){.stat-band{grid-template-columns:1fr 1fr;}.team .top{flex-direction:column;align-items:flex-start;}}
 </style>
-</head>
-<body>
-<div id="site-header"></div>
 
 <main>
-  <!-- HERO -->
   <section class="phero">
     <div class="phero-bg"></div>
     <span class="orb a"></span>
     <div class="container phero-inner">
-      <div class="crumbs"><a href="home.html">Home</a> <span>/</span> <span style="color:var(--muted);">About</span></div>
+      <div class="crumbs"><a href="/home">Home</a> <span>/</span> <span style="color:var(--muted);">About</span></div>
       <span class="eyebrow" data-reveal>About FCo</span>
       <h1 data-reveal>Empowering healthcare to <span class="grad">evolve and prosper</span></h1>
       <p data-reveal>Fandry &amp; Co. delivers strategic solutions for the development and management of healthcare organizations &mdash; with specialty services across finance, marketing, operations, and growth for private-practice medical groups of any size and specialty.</p>
     </div>
   </section>
 
-  <!-- MISSION -->
   <section class="section">
     <div class="container">
       <div class="center" style="max-width:680px;margin-bottom:50px;" data-reveal>
@@ -135,7 +117,6 @@
     </div>
   </section>
 
-  <!-- TEAMS -->
   <section class="section tint">
     <div class="container">
       <div class="center" style="max-width:680px;" data-reveal>
@@ -160,7 +141,7 @@
         </div>
         <div class="glass glass-premium team" data-reveal>
           <div class="top">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 1.4-1.2 1.8-2.5 2.2-1.3.4-2.5.8-2.5 2.2a2.5 2 0 0 0 5 0"/></svg></span>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 1.4-1.2 1.8-2.5 2.2-1.3.4-2.5.8-2.5 2.2a2.5 2.5 0 0 0 5 0"/></svg></span>
             <h3>Financial Services</h3>
           </div>
           <p>Billing and accounting-based program improvement and development &mdash; including factoring and revenue cycle optimization &mdash; to strengthen the financial foundation of your organization.</p>
@@ -176,7 +157,6 @@
     </div>
   </section>
 
-  <!-- VALUES -->
   <section class="section">
     <div class="container">
       <div class="center" style="max-width:660px;" data-reveal>
@@ -208,34 +188,36 @@
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
 </main>
 
-<div id="site-footer"></div>
-
 <script>
-  async function inject(id,file){try{const r=await fetch(file);if(r.ok){document.getElementById(id).innerHTML=await r.text();}}catch(e){}}
-  function initHeader(){
-    var header=document.getElementById('siteHeader'),ham=document.getElementById('hamburger'),scrim=document.getElementById('sheetScrim');
-    var onScroll=function(){if(header)header.classList.toggle('scrolled',window.scrollY>24);};
-    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-    function toggleMenu(open){document.body.classList.toggle('menu-open',open);if(ham)ham.setAttribute('aria-expanded',open?'true':'false');}
-    if(ham)ham.addEventListener('click',function(){toggleMenu(!document.body.classList.contains('menu-open'));});
-    if(scrim)scrim.addEventListener('click',function(){toggleMenu(false);});
-    document.querySelectorAll('.mobile-sheet a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
-    var page=(location.pathname.replace(/\/+$/,'').split('/').pop()||'home').replace(/\.html$/,'')||'home';
-    document.querySelectorAll('[data-nav]').forEach(function(a){if(a.getAttribute('data-nav')===page)a.classList.add('active');});
-  }
-  function initFooter(){var y=document.getElementById('footYear');if(y)y.textContent=new Date().getFullYear();}
+  document.documentElement.classList.add('dgs-js');
+
   function initReveal(){
     var els=document.querySelectorAll('[data-reveal]');
-    if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in-view');});return;}
-    document.querySelectorAll('.teams,.values,.stat-band').forEach(function(grp){Array.prototype.forEach.call(grp.children,function(c,i){if(c.hasAttribute('data-reveal'))c.dataset.delay=i*70;});});
-    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.style.transitionDelay=(en.target.dataset.delay||0)+'ms';en.target.classList.add('in-view');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in-view');});
+      return;
+    }
+    document.querySelectorAll('.teams,.values,.stat-band').forEach(function(grp){
+      Array.prototype.forEach.call(grp.children,function(c,i){
+        if(c.hasAttribute('data-reveal')) c.dataset.delay=i*70;
+      });
+    });
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.style.transitionDelay=(en.target.dataset.delay||0)+'ms';
+          en.target.classList.add('in-view');
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){io.observe(e);});
   }
-  (async function(){await inject('site-header','header.html');initHeader();await inject('site-footer','footer.html');initFooter();initReveal();})();
+
+  initReveal();
+  requestAnimationFrame(function(){
+    document.documentElement.classList.add('loaded');
+  });
 </script>
-</body>
-</html>
