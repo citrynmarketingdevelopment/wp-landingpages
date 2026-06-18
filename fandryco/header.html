@@ -1,0 +1,137 @@
+<!-- ============ FANDRY & CO. — SHARED HEADER (injected via fetch) ============ -->
+<style>
+  :root{
+    --ink:#050806;--bg-2:#0A1410;--bg-3:#08110D;
+    --green-900:#0B3D2E;--green-700:#0F6B43;--green-500:#16A86B;--green-400:#2BD17E;
+    --glow:#34E89E;--mint:#7CFFD4;--cta:linear-gradient(135deg,#34E89E 0%,#0F9B6C 100%);
+    --glass:rgba(255,255,255,.05);--glass-2:rgba(18,80,55,.18);
+    --glass-bd:rgba(124,255,212,.16);--glass-bd-strong:rgba(124,255,212,.32);
+    --fg:#EAF6EF;--muted:#9DB5AA;--muted-2:#6E867B;
+    --blur:18px;--radius:20px;--radius-sm:12px;
+    --glow-shadow:0 0 40px rgba(52,232,158,.25);--shadow:0 24px 60px rgba(0,0,0,.45);
+    --container:1180px;--ease:cubic-bezier(.22,1,.36,1);
+  }
+
+  .site-header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    transition:background .35s var(--ease), backdrop-filter .35s var(--ease), border-color .35s var(--ease), padding .35s var(--ease);
+    background:linear-gradient(180deg, rgba(5,8,6,.55), rgba(5,8,6,0));
+    border-bottom:1px solid transparent;
+  }
+  .site-header.scrolled{
+    background:rgba(6,12,9,.72);
+    backdrop-filter:blur(16px) saturate(1.3);
+    -webkit-backdrop-filter:blur(16px) saturate(1.3);
+    border-bottom:1px solid var(--glass-bd);
+  }
+  .nav{
+    width:min(var(--container),calc(100% - 40px));margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:15px 0;transition:padding .35s var(--ease);
+  }
+  .scrolled .nav{padding:10px 0;}
+
+  /* Brand */
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--fg);}
+  .brand-mark{
+    position:relative;width:40px;height:40px;border-radius:13px;display:grid;place-items:center;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.02em;color:#04130C;
+    background:var(--cta);box-shadow:0 8px 22px rgba(15,155,108,.45), inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .brand-mark::after{content:"";position:absolute;inset:-2px;border-radius:15px;border:1px solid var(--glass-bd-strong);opacity:.6;}
+  .brand-text{display:flex;flex-direction:column;line-height:1;}
+  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;}
+  .brand-sub{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);margin-top:4px;}
+
+  /* Links */
+  .nav-links{display:flex;align-items:center;gap:6px;}
+  .nav-links a{
+    position:relative;color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;
+    padding:8px 14px;border-radius:999px;transition:color .2s var(--ease), background .2s var(--ease);
+  }
+  .nav-links a:hover{color:var(--fg);background:var(--glass);}
+  .nav-links a.active{color:var(--fg);}
+  .nav-links a.active::after{
+    content:"";position:absolute;left:15px;right:15px;bottom:3px;height:2px;border-radius:2px;
+    background:var(--cta);box-shadow:0 0 10px var(--glow);
+  }
+
+  .nav-actions{display:flex;align-items:center;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;justify-content:center;cursor:pointer;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14px;text-decoration:none;
+    border-radius:999px;padding:12px 20px;min-height:44px;border:1px solid transparent;
+    transition:transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+  }
+  .btn:focus-visible{outline:2px solid var(--glow);outline-offset:2px;}
+  .btn-primary{position:relative;overflow:hidden;color:#04130C;background:var(--cta);box-shadow:0 10px 28px rgba(15,155,108,.4), var(--glow-shadow);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(15,155,108,.5), 0 0 50px rgba(52,232,158,.4);}
+  .btn-primary::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .6s var(--ease);}
+  .btn-primary:hover::before{left:140%;}
+
+  /* Hamburger */
+  .hamburger{display:none;width:46px;height:46px;border-radius:13px;cursor:pointer;
+    background:var(--glass);border:1px solid var(--glass-bd);place-items:center;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--fg);border-radius:2px;position:relative;transition:.3s var(--ease);}
+  .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--fg);border-radius:2px;transition:.3s var(--ease);}
+  .hamburger span::before{top:-6px;} .hamburger span::after{top:6px;}
+  .menu-open .hamburger span{background:transparent;}
+  .menu-open .hamburger span::before{top:0;transform:rotate(45deg);}
+  .menu-open .hamburger span::after{top:0;transform:rotate(-45deg);}
+
+  /* Mobile sheet */
+  .mobile-sheet{
+    position:fixed;inset:0 0 0 auto;width:min(86vw,340px);z-index:1001;
+    transform:translateX(100%);transition:transform .4s var(--ease);
+    background:rgba(7,14,10,.92);backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+    border-left:1px solid var(--glass-bd);padding:96px 26px 32px;display:flex;flex-direction:column;gap:8px;
+  }
+  .menu-open .mobile-sheet{transform:translateX(0);}
+  .mobile-sheet a{color:var(--fg);text-decoration:none;font-size:18px;font-weight:500;padding:15px 14px;border-radius:14px;transition:background .2s var(--ease);}
+  .mobile-sheet a:hover,.mobile-sheet a.active{background:var(--glass);}
+  .mobile-sheet a.active{color:var(--glow);}
+  .mobile-sheet .btn{margin-top:14px;}
+  .sheet-scrim{position:fixed;inset:0;z-index:1000;background:rgba(2,6,4,.5);opacity:0;visibility:hidden;transition:.3s var(--ease);}
+  .menu-open .sheet-scrim{opacity:1;visibility:visible;}
+
+  @media (max-width:900px){
+    .nav-links,.nav-actions .btn{display:none;}
+    .hamburger{display:grid;}
+  }
+</style>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="home.html" aria-label="Fandry & Co. home">
+      <span class="brand-mark" aria-hidden="true">FCo</span>
+      <span class="brand-text">
+        <span class="brand-name">FANDRY&nbsp;&amp;&nbsp;CO.</span>
+        <span class="brand-sub">Healthcare Consulting</span>
+      </span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="home.html" data-nav="home">Home</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="contact.html">Book a Consultation
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="sheet-scrim" id="sheetScrim"></div>
+<aside class="mobile-sheet" id="mobileSheet" aria-label="Mobile menu">
+  <a href="home.html" data-nav="home">Home</a>
+  <a href="services.html" data-nav="services">Services</a>
+  <a href="about.html" data-nav="about">About</a>
+  <a href="contact.html" data-nav="contact">Contact</a>
+  <a class="btn btn-primary" href="contact.html">Book a Consultation</a>
+</aside>

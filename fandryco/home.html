@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fandry &amp; Co. - Healthcare &amp; Business Development, Management &amp; Growth</title>
+<meta name="description" content="Fandry &amp; Co. delivers healthcare consulting solutions across operations, financial strategy, marketing, and growth for private-practice medical groups nationwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#050806;--bg-2:#0A1410;--bg-3:#08110D;
+    --green-900:#0B3D2E;--green-700:#0F6B43;--green-500:#16A86B;--green-400:#2BD17E;
+    --glow:#34E89E;--mint:#7CFFD4;--cta:linear-gradient(135deg,#34E89E 0%,#0F9B6C 100%);
+    --glass:rgba(255,255,255,.05);--glass-2:rgba(18,80,55,.18);
+    --glass-bd:rgba(124,255,212,.16);--glass-bd-strong:rgba(124,255,212,.32);
+    --fg:#EAF6EF;--muted:#9DB5AA;--muted-2:#6E867B;
+    --blur:18px;--radius:20px;--radius-sm:12px;
+    --glow-shadow:0 0 40px rgba(52,232,158,.25);--shadow:0 24px 60px rgba(0,0,0,.45);
+    --container:1180px;--ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--ink);color:var(--fg);
+    font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0;color:var(--fg);}
+  p{margin:0;}
+  .container{width:min(var(--container),calc(100% - 40px));margin-inline:auto;}
+  .section{position:relative;padding:clamp(56px,7vw,92px) 0;}
+  .section.tint{background:linear-gradient(180deg,var(--bg-3),var(--ink));}
+  .center{text-align:center;margin-inline:auto;}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;justify-content:center;cursor:pointer;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;
+    border-radius:999px;padding:13px 24px;min-height:48px;border:1px solid transparent;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease);}
+  .btn:focus-visible{outline:2px solid var(--glow);outline-offset:2px;}
+  .btn-primary{position:relative;overflow:hidden;color:#04130C;background:var(--cta);box-shadow:0 10px 28px rgba(15,155,108,.4),var(--glow-shadow);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(15,155,108,.5),0 0 50px rgba(52,232,158,.4);}
+  .btn-primary::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .6s var(--ease);}
+  .btn-primary:hover::before{left:140%;}
+  .btn-ghost{background:var(--glass);color:var(--fg);border-color:var(--glass-bd);}
+  .btn-ghost:hover{border-color:var(--glass-bd-strong);transform:translateY(-2px);box-shadow:var(--glow-shadow);}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--glow);margin-bottom:14px;}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px var(--glow);}
+  .h-sec{font-size:clamp(1.8rem,3.5vw,2.7rem);}
+  .lead{color:var(--muted);font-size:clamp(.98rem,1.2vw,1.08rem);max-width:62ch;margin-top:14px;}
+  .glass{background:linear-gradient(160deg,var(--glass),var(--glass-2));
+    backdrop-filter:blur(var(--blur)) saturate(1.25);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.25);
+    border:1px solid var(--glass-bd);border-radius:var(--radius);
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.06);}
+  .glass-premium{
+    background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(18,80,55,.34));
+    backdrop-filter:blur(44px) saturate(1.55);
+    -webkit-backdrop-filter:blur(44px) saturate(1.55);
+    border:1px solid rgba(124,255,212,.34);
+    box-shadow:0 30px 72px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12),0 0 46px rgba(52,232,158,.18);
+  }
+  .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;flex-shrink:0;
+    background:linear-gradient(160deg,rgba(52,232,158,.16),rgba(18,80,55,.2));
+    border:1px solid var(--glass-bd);color:var(--glow);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 24px rgba(52,232,158,.14);}
+  .ico svg{width:24px;height:24px;}
+  .orb{position:absolute;border-radius:50%;filter:blur(82px);pointer-events:none;z-index:0;}
+
+  .hero{
+    --hero-photo:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1920&auto=format&fit=crop');
+    position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;padding:136px 0 72px;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;background-image:var(--hero-photo);background-size:cover;background-position:center;}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(110deg,rgba(5,8,6,.97) 0%,rgba(5,10,7,.88) 42%,rgba(8,30,20,.56) 100%),
+      radial-gradient(circle at 80% 24%,rgba(52,232,158,.2),transparent 38%);}
+  .hero .orb.h1{width:460px;height:460px;background:radial-gradient(circle,var(--glow),transparent 60%);opacity:.24;top:-100px;right:-90px;}
+  .hero .orb.h2{width:400px;height:400px;background:radial-gradient(circle,var(--green-700),transparent 60%);opacity:.24;bottom:-130px;left:-100px;}
+  .hero-inner{position:relative;z-index:2;width:min(var(--container),calc(100% - 40px));margin-inline:auto;}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.8fr);gap:30px;align-items:center;}
+  .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;
+    background:var(--glass);border:1px solid var(--glass-bd);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    font-size:13px;color:var(--muted);margin-bottom:22px;}
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow);}
+  .hero h1{font-size:clamp(1.72rem,3.15vw,2.4rem);font-weight:700;max-width:18.5ch;line-height:1.02;padding-bottom:.06em;text-shadow:0 0 60px rgba(52,232,158,.16);}
+  .hero h1 .line{display:block;}
+  .hero h1 .grad{background:linear-gradient(120deg,var(--mint),var(--glow) 60%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-sub{color:var(--muted);font-size:clamp(.98rem,1.25vw,1.08rem);max-width:52ch;margin-top:16px;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+  .hero-side{position:relative;display:grid;gap:14px;align-self:center;z-index:3;}
+  .hero-panel{
+    padding:22px 22px;
+    position:relative;
+    z-index:3;
+    background:rgba(7,14,10,.16);
+    backdrop-filter:blur(18px) saturate(1.2);
+    -webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-color:rgba(124,255,212,.52);
+    box-shadow:0 34px 78px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.2),0 0 70px rgba(52,232,158,.28);
+    isolation:isolate;
+    overflow:hidden;
+    background-clip:padding-box;
+  }
+  .hero-panel::before,
+  .hero-mini::before{
+    content:"";
+    position:absolute;
+    inset:-30px;
+    background-image:var(--hero-photo);
+    background-size:cover;
+    background-position:center;
+    filter:blur(24px) saturate(1.12) brightness(.72);
+    transform:scale(1.18);
+    opacity:.72;
+    pointer-events:none;
+  }
+  .hero-panel::after,
+  .hero-mini::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(160deg,rgba(7,14,10,.2),rgba(7,14,10,.12)),
+      radial-gradient(circle at 18% 18%, rgba(124,255,212,.18), transparent 38%),
+      radial-gradient(circle at 82% 78%, rgba(52,232,158,.12), transparent 36%);
+    pointer-events:none;
+  }
+  .hero-panel > *,
+  .hero-mini > *{position:relative;z-index:1;}
+  .hero-panel strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;color:var(--fg);margin-bottom:10px;}
+  .hero-panel p{color:var(--muted);font-size:14.5px;}
+  .hero-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .hero-mini{
+    padding:18px;
+    position:relative;
+    background:rgba(7,14,10,.16);
+    backdrop-filter:blur(18px) saturate(1.2);
+    -webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border-color:rgba(124,255,212,.52);
+    box-shadow:0 34px 78px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.2),0 0 70px rgba(52,232,158,.28);
+    isolation:isolate;
+    overflow:hidden;
+    background-clip:padding-box;
+  }
+  .hero-mini b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.4rem;color:var(--glow);}
+  .hero-mini span{display:block;margin-top:6px;color:var(--muted);font-size:13.5px;line-height:1.45;}
+
+  @keyframes pulseGlow{
+    0%,100%{transform:scale(1);box-shadow:0 0 10px rgba(52,232,158,.8),0 0 0 0 rgba(52,232,158,.35);}
+    50%{transform:scale(1.15);box-shadow:0 0 16px rgba(52,232,158,1),0 0 0 10px rgba(52,232,158,0);}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero-badge .dot{animation:pulseGlow 2.4s ease-in-out infinite;}
+  }
+
+  .reveal-up{opacity:0;transform:translateY(20px);}
+  @media (prefers-reduced-motion:no-preference){
+    .loaded .reveal-up{animation:up .7s var(--ease) forwards;}
+    .loaded .reveal-up.d1{animation-delay:.08s;}.loaded .reveal-up.d2{animation-delay:.16s;}
+    .loaded .reveal-up.d3{animation-delay:.24s;}.loaded .reveal-up.d4{animation-delay:.32s;}
+  }
+  @keyframes up{to{opacity:1;transform:none;}}
+
+  .framework{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch;}
+  .framework-main{padding:28px 28px;}
+  .framework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
+  .framework-card{padding:18px;border-radius:16px;background:rgba(7,14,10,.38);border:1px solid rgba(124,255,212,.1);}
+  .framework-card h3{font-size:1rem;margin:14px 0 8px;}
+  .framework-card p{color:var(--muted);font-size:14px;line-height:1.65;}
+  .framework-side{display:grid;gap:14px;}
+  .signal-card{padding:22px 22px;}
+  .signal-card .label{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:10px;}
+  .signal-card strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.45rem;line-height:1.15;margin-bottom:10px;}
+  .signal-card p{color:var(--muted);font-size:14px;}
+
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:34px;align-items:center;}
+  .about-visual{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    aspect-ratio:4/5;
+    min-height:520px;
+    border:1px solid var(--glass-bd);
+    box-shadow:var(--shadow);
+  }
+  .about-visual img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    position:absolute;
+    inset:0;
+  }
+  .about-visual .vlay{position:absolute;inset:0;background:linear-gradient(165deg,rgba(5,8,6,.16),rgba(8,30,20,.58));}
+  .about-visual .vcard{position:absolute;left:18px;right:18px;bottom:18px;padding:18px 20px;border-radius:16px;
+    background:rgba(7,14,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--glass-bd);}
+  .about-visual .vcard b{font-family:'Space Grotesk',sans-serif;color:var(--fg);font-size:16px;}
+  .about-visual .vcard p{color:var(--muted);font-size:13.5px;margin-top:6px;}
+  .about-copy p{color:var(--muted);font-size:1rem;margin-top:16px;}
+  .about-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px;}
+  .about-points span{display:flex;align-items:center;gap:8px;padding:11px 14px;border-radius:14px;background:var(--glass);border:1px solid var(--glass-bd);font-size:13.5px;color:var(--fg);}
+  .about-points svg{color:var(--glow);}
+
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;}
+  .card{display:flex;flex-direction:column;padding:24px 22px;text-decoration:none;color:inherit;
+    transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);}
+  .card:hover{transform:translateY(-6px);border-color:var(--glass-bd-strong);box-shadow:var(--shadow),var(--glow-shadow);}
+  .card h3{font-size:1.05rem;margin:18px 0 8px;}
+  .card p{color:var(--muted);font-size:14px;flex-grow:1;}
+  .card .more{margin-top:16px;display:inline-flex;align-items:center;gap:7px;color:var(--glow);font-weight:600;font-size:13.5px;}
+  .card .more svg{transition:transform .2s var(--ease);}
+  .card:hover .more svg{transform:translateX(4px);}
+
+  .industry-wrap{display:grid;grid-template-columns:.86fr 1.14fr;gap:22px;align-items:start;}
+  .industry-copy{padding:26px 26px;}
+  .industry-copy p{color:var(--muted);font-size:15px;line-height:1.75;}
+  .industry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .ind{padding:20px;border-radius:18px;background:linear-gradient(160deg,var(--glass),var(--glass-2));border:1px solid var(--glass-bd);}
+  .ind b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1rem;color:var(--fg);}
+  .ind span{display:block;margin-top:8px;color:var(--muted);font-size:13.5px;line-height:1.55;}
+
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+  .pillar{padding:28px 24px;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);}
+  .pillar:hover{transform:translateY(-6px);border-color:var(--glass-bd-strong);box-shadow:var(--shadow),var(--glow-shadow);}
+  .pillar h3{font-size:1.12rem;margin:18px 0 10px;}
+  .pillar p{color:var(--muted);font-size:14px;}
+
+  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  [data-reveal].in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    [data-reveal]{opacity:1!important;transform:none!important;transition:none!important;}
+    .reveal-up{opacity:1!important;transform:none!important;animation:none!important;}
+  }
+
+  @media (max-width:1024px){
+    .hero-grid,.framework,.about-grid,.industry-wrap{grid-template-columns:1fr;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .pillars{grid-template-columns:1fr;}
+    .framework-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .hero{min-height:auto;padding:120px 0 56px;}
+    .hero-inner{width:min(var(--container),calc(100% - 24px));}
+    .hero-grid{gap:20px;}
+    .hero-badge{font-size:9px;padding:7px 10px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:clip;gap:6px;}
+    .hero h1{font-size:clamp(1.45rem,6.4vw,1.85rem);max-width:none;width:100%;line-height:1;letter-spacing:-.03em;}
+    .hero h1 .line{display:inline;}
+    .hero-mini-grid,.industry-grid,.about-points{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .cards{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <span class="orb h1"></span>
+    <span class="orb h2"></span>
+    <div class="hero-inner">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-badge reveal-up"><span class="dot"></span> Nationwide solutions for private-practice medical groups</span>
+          <h1 class="reveal-up d1"><span class="line">Healthcare &amp; Business Development.</span><span class="line grad">Management. Growth.</span></h1>
+          <p class="hero-sub reveal-up d2">Fandry &amp; Co. provides strategic solutions for the development and management of healthcare organizations, helping practices strengthen operations, improve performance, and build scalable growth.</p>
+          <div class="hero-cta reveal-up d3">
+            <a class="btn btn-primary" href="contact.html">Book a Consultation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost" href="services.html">Explore Services</a>
+          </div>
+        </div>
+        <div class="hero-side reveal-up d4">
+          <div class="glass glass-premium hero-panel">
+            <strong>Advisory that connects the full practice.</strong>
+            <p>Operations, financial planning, relationship-driven marketing, and new program development all working from one coordinated growth strategy.</p>
+          </div>
+          <div class="hero-mini-grid">
+            <div class="glass glass-premium hero-mini"><b>4</b><span>Specialty service areas working together</span></div>
+            <div class="glass glass-premium hero-mini"><b>All</b><span>Practice sizes and medical specialties supported</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:28px;">
+    <div class="container">
+      <div class="framework">
+        <div class="glass framework-main" data-reveal>
+          <span class="eyebrow">How FCo Works</span>
+          <h2 class="h-sec">A tighter way to see what makes your practice stronger</h2>
+          <p class="lead">Instead of treating growth, finance, and operations as separate problems, we build around the areas that most directly affect long-term performance and quality of care.</p>
+          <div class="framework-grid">
+            <div class="framework-card">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="13" y="7" width="3" height="11"/></svg></span>
+              <h3>Data-Driven Decisions</h3>
+              <p>Performance reviews, KPI tracking, and operational audits that replace guesswork with clarity.</p>
+            </div>
+            <div class="framework-card">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <h3>Tailored Strategies</h3>
+              <p>Customized frameworks shaped around your specialty, market position, internal systems, and goals.</p>
+            </div>
+            <div class="framework-card">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 4v6M17 4v6M5 11h14v9H5z"/></svg></span>
+              <h3>End-to-End Execution</h3>
+              <p>Planning, implementation, and refinement across the systems that keep your organization moving.</p>
+            </div>
+          </div>
+        </div>
+        <div class="framework-side">
+        <div class="glass glass-premium signal-card" data-reveal>
+            <span class="label">Built for healthcare</span>
+            <strong>From private practices to multi-specialty groups.</strong>
+            <p>Our work is rooted in healthcare, with solutions that improve business performance while supporting patient-centered care.</p>
+          </div>
+        <div class="glass glass-premium signal-card" data-reveal>
+            <span class="label">Nationwide reach</span>
+            <strong>Support that scales with your organization.</strong>
+            <p>FCo partners with teams across the country on growth planning, program launches, operational systems, and practice development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" id="about">
+    <div class="container about-grid">
+      <div class="about-visual" data-reveal>
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="Business consulting meeting in a modern office" loading="lazy" width="1200" height="1500">
+        <div class="vlay"></div>
+        <div class="vcard">
+          <b>Built around the realities of modern medicine</b>
+          <p>Strategic support for healthcare organizations navigating growth, efficiency, and long-term sustainability.</p>
+        </div>
+      </div>
+      <div class="about-copy" data-reveal>
+        <span class="eyebrow">About Fandry &amp; Co.</span>
+        <h2 class="h-sec">Solutions for healthcare development, management, and long-term growth</h2>
+        <p>Fandry &amp; Co. is a consulting firm focused on optimizing operations, finance, and growth strategy for healthcare organizations. From private practices to multi-specialty medical groups, we help streamline systems, improve performance, and support long-term scalability.</p>
+        <p>With deep experience in the healthcare industry, we deliver solutions that empower providers to lead with efficiency and impact while aligning business goals with patient-centered care.</p>
+        <div class="about-points">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Operations consulting</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Financial services &amp; strategy</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Marketing development</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Scalable growth strategies</span>
+        </div>
+        <div style="margin-top:24px;"><a class="btn btn-ghost" href="about.html">More About FCo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center" style="max-width:700px;" data-reveal>
+        <span class="eyebrow">Core Services</span>
+        <h2 class="h-sec">Specialized support across the systems that drive practice performance</h2>
+        <p class="lead center">Each service area can stand on its own, but the strongest results come when strategy, execution, and growth are aligned across the organization.</p>
+      </div>
+      <div class="cards">
+        <a class="glass card" href="services.html#operations" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 16 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+          <h3>Operations Consulting</h3>
+          <p>Workflow improvement, system optimization, and strategic implementation that make day-to-day operations more efficient and scalable.</p>
+          <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="glass card" href="services.html#finance" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></span>
+          <h3>Financial Services</h3>
+          <p>Budget planning, revenue cycle optimization, and profitability strategy designed to support healthier, more sustainable growth.</p>
+          <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="glass card" href="services.html#marketing" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+          <h3>Marketing &amp; Media</h3>
+          <p>Relationship-based marketing, brand development, and patient growth strategies that improve visibility and strengthen referral pathways.</p>
+          <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="glass card" href="services.html#hr" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <h3>HR &amp; Compliance</h3>
+          <p>Infrastructure, onboarding, policy, and compliance guidance that protects the business while supporting a healthier team culture.</p>
+          <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="container">
+      <div class="industry-wrap">
+        <div class="glass industry-copy" data-reveal>
+          <span class="eyebrow">Industries We Support</span>
+          <h2 class="h-sec">Tailored solutions with a specialized focus in healthcare</h2>
+          <p>At Fandry &amp; Co., we bring tailored solutions to a range of industries, with a specialized focus in healthcare. Our experience spans medical, legal, nonprofit, and professional service sectors, allowing us to adapt, solve complex challenges, and drive results no matter the field.</p>
+        </div>
+        <div class="industry-grid">
+          <div class="ind" data-reveal><b>Healthcare</b><span>Private practices and medical groups seeking stronger systems, better performance, and scalable growth.</span></div>
+          <div class="ind" data-reveal><b>Law</b><span>Professional-service firms that need operational clarity, business development, and sustainable expansion support.</span></div>
+          <div class="ind" data-reveal><b>Startups</b><span>Emerging organizations building structure, market visibility, and growth frameworks from the ground up.</span></div>
+          <div class="ind" data-reveal><b>Nonprofits</b><span>Mission-driven teams balancing service impact with healthier operations and long-term sustainability.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center" style="max-width:660px;" data-reveal>
+        <span class="eyebrow">Why FCo</span>
+        <h2 class="h-sec">Measured strategy, customized execution, and nationwide perspective</h2>
+      </div>
+      <div class="pillars">
+        <div class="glass glass-premium pillar" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="13" y="7" width="3" height="11"/></svg></span>
+          <h3>Data-Driven Decisions</h3>
+          <p>We ground recommendations in real performance data so every move has a purpose and a measurable outcome.</p>
+        </div>
+        <div class="glass glass-premium pillar" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Tailored Strategies</h3>
+          <p>Every engagement is shaped around your specialty, growth stage, current systems, and the outcomes that matter most.</p>
+        </div>
+        <div class="glass glass-premium pillar" data-reveal>
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+          <h3>Nationwide Experience</h3>
+          <p>Cross-market perspective helps us build stronger systems and smarter growth plans for organizations across the country.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+  async function inject(id,file){
+    try{const r=await fetch(file);if(r.ok){document.getElementById(id).innerHTML=await r.text();}}
+    catch(e){}
+  }
+  function initHeader(){
+    var header=document.getElementById('siteHeader');
+    var ham=document.getElementById('hamburger');
+    var scrim=document.getElementById('sheetScrim');
+    var onScroll=function(){if(header)header.classList.toggle('scrolled',window.scrollY>24);};
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+    function toggleMenu(open){
+      document.body.classList.toggle('menu-open',open);
+      if(ham)ham.setAttribute('aria-expanded',open?'true':'false');
+    }
+    if(ham)ham.addEventListener('click',function(){toggleMenu(!document.body.classList.contains('menu-open'));});
+    if(scrim)scrim.addEventListener('click',function(){toggleMenu(false);});
+    document.querySelectorAll('.mobile-sheet a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
+    var page=(location.pathname.split('/').pop()||'home.html').replace('.html','')||'home';
+    document.querySelectorAll('[data-nav]').forEach(function(a){if(a.getAttribute('data-nav')===page)a.classList.add('active');});
+  }
+  function initFooter(){
+    var y=document.getElementById('footYear');if(y)y.textContent=new Date().getFullYear();
+  }
+  function initReveal(){
+    var els=document.querySelectorAll('[data-reveal]');
+    if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in-view');});return;}
+    document.querySelectorAll('.cards,.pillars,.industry-grid').forEach(function(grp){
+      Array.prototype.forEach.call(grp.children,function(c,i){if(c.hasAttribute('data-reveal'))c.dataset.delay=i*60;});
+    });
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.style.transitionDelay=(en.target.dataset.delay||0)+'ms';
+          en.target.classList.add('in-view');
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  }
+  (async function(){
+    await inject('site-header','header.html');
+    initHeader();
+    await inject('site-footer','footer.html');
+    initFooter();
+    initReveal();
+    requestAnimationFrame(function(){document.body.classList.add('loaded');});
+  })();
+</script>
+</body>
+</html>
