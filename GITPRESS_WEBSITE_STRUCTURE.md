@@ -115,7 +115,7 @@ Allowed:
 <header>...</header>
 <nav>...</nav>
 mobile menu markup
-<script> header behavior only </script>
+stable IDs/classes/data attributes for the GitPress Managed canvas to bind
 ```
 
 Not allowed:
@@ -128,16 +128,21 @@ Not allowed:
 <main>
 <footer>
 page-specific sections
+critical inline JavaScript required for navigation to work
 ```
 
-The header file should own:
+The header file should provide stable markup hooks for:
 
 ```txt
-scroll class behavior
+scrolled header state
 hamburger/menu behavior
 mobile drawer behavior
 active nav link behavior
 ```
+
+But the header file should **not be the only place where critical navigation JavaScript lives**. GitPress may sanitize fetched header/footer fragments and strip inline scripts.
+
+In GitPress Managed mode, the GitPress Managed canvas/plugin or an approved shared asset should bootstrap global header behavior after the managed header is rendered.
 
 Page body files should not initialize the header.
 
@@ -150,7 +155,7 @@ Allowed:
 ```txt
 <style> footer-specific CSS </style>
 <footer>...</footer>
-<script> footer-only behavior, such as year updater </script>
+stable IDs/classes for footer enhancements, such as a year element
 ```
 
 Not allowed:
@@ -505,7 +510,7 @@ Allowed:
 reveal animations
 sliders if lightweight
 form enhancement
-header/footer behavior in header/footer partials
+page-specific enhancements
 ```
 
 Avoid:
@@ -527,6 +532,63 @@ document.getElementById('site-header').innerHTML = ...
 ```
 
 GitPress Managed already renders header/footer.
+
+### GitPress Managed header interactivity
+
+In GitPress Managed mode, do **not** rely on inline `<script>` tags inside `header.html` or `footer.html` for critical navigation behavior.
+
+GitPress may sanitize fetched GitHub HTML fragments before rendering. This means inline scripts inside managed header/footer partials can be stripped, leaving the markup visible but non-functional.
+
+Correct pattern:
+
+```txt
+header.html
+= stable header markup, mobile menu markup, IDs/classes/data attributes, header CSS
+
+GitPress Managed canvas/plugin or approved shared asset
+= binds hamburger/menu behavior after the managed header output renders
+```
+
+Expected header hooks agents should preserve:
+
+```txt
+#siteHeader
+#hamburger
+#sheetScrim
+#mobileSheet
+.mobile-sheet
+[data-nav]
+body.menu-open
+.site-header.scrolled
+```
+
+The GitPress Managed canvas/plugin should handle:
+
+```txt
+hamburger click
+scrim click to close
+Escape key to close
+mobile nav link click to close
+aria-expanded updates
+scrolled header state
+active nav state
+duplicate-binding guard
+```
+
+Avoid:
+
+```html
+<script>
+  document.getElementById('hamburger').addEventListener('click', ...)
+</script>
+```
+
+inside `header.html` as the only source of menu behavior.
+
+Do not loosen GitPress sanitization just to allow arbitrary header scripts.
+
+Do not duplicate global header behavior scripts inside `home.html`, `about.html`, `services.html`, or `contact.html`.
+
 
 ### Avoid hiding content when JS fails
 
@@ -790,6 +852,8 @@ Avoid these:
 full standalone HTML documents inside page body files
 JavaScript header/footer injection
 fetch('header.html') from page body
+required hamburger/menu JavaScript that only exists inside header.html
+critical footer JavaScript that only exists inside footer.html
 hidden content dependent on JS loading
 fake form placeholders instead of real shortcodes
 hardcoded .html links for WordPress navigation
@@ -815,6 +879,11 @@ page body content displays
 icons render
 buttons/links work
 mobile menu works
+hamburger is clickable
+scrim closes mobile menu
+Escape closes mobile menu
+mobile nav link click closes mobile menu
+aria-expanded updates correctly
 forms render
 forms submit if testing is approved
 SEO meta remains correct
@@ -842,30 +911,88 @@ admin bar appears for logged-in admins if supported
 ```html
 <style>
   .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+  .mobile-sheet { transform: translateX(100%); }
+  .menu-open .mobile-sheet { transform: translateX(0); }
 </style>
 
 <header class="site-header" id="siteHeader">
   <nav class="nav" aria-label="Primary">
     <a class="brand" href="/home">Brand</a>
-    <a href="/services">Services</a>
-    <a href="/contact">Contact</a>
+
+    <div class="nav-links">
+      <a href="/home" data-nav="home">Home</a>
+      <a href="/services" data-nav="services">Services</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
   </nav>
 </header>
 
-<script>
-(function(){
-  if (window.__gitpressHeaderInit) return;
-  window.__gitpressHeaderInit = true;
+<div class="sheet-scrim" id="sheetScrim"></div>
 
-  var header = document.getElementById('siteHeader');
-  function onScroll(){
-    if (header) header.classList.toggle('scrolled', window.scrollY > 24);
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-</script>
+<aside class="mobile-sheet" id="mobileSheet" aria-label="Mobile menu">
+  <a href="/home" data-nav="home">Home</a>
+  <a href="/services" data-nav="services">Services</a>
+  <a href="/contact" data-nav="contact">Contact</a>
+</aside>
 ```
+Do not rely on an inline script in this partial for critical mobile-menu behavior. The GitPress Managed canvas/plugin should bind the hamburger, scrim, Escape, scroll state, and active nav behavior after this markup renders.
+
+## 18. CSS Integrity Rule
+
+### Agents must preserve valid CSS syntax exactly.
+
+Watch for accidental broken values like:
+
+/* Bad */
+rgba(15,155,108,4)
+rgba(255,255,255,55)
+rgba(52,232,158,24)
+
+/* Good */
+rgba(15,155,108,.4)
+rgba(255,255,255,.55)
+rgba(52,232,158,.24)
+
+Also watch for broken selectors:
+
+/* Bad */
+.mobile-sheet a:hover,mobile-sheet a.active {}
+.hero-grid,framework,about-grid {}
+
+/* Good */
+.mobile-sheet a:hover,
+.mobile-sheet a.active {}
+
+.hero-grid,
+.framework,
+.about-grid {}
+
+Before pushing, search for obvious CSS corruption:
+
+rgba\([^)]*,[0-9]\)
+[^.]mobile-sheet
+[^.]framework
+[^.]industry-grid
+Final Deployment Checklist
+
+After any GitPress website change:
+
+confirm webhook succeeds or purge GitPress cache manually
+hard refresh browser
+test desktop
+test mobile
+test hamburger menu
+test icons
+test form render
+test form submission only if approved
+test header/footer duplication
+test links
+test SEO meta remains correct
+
 
 ### GitPress Managed Page Body Partial
 
