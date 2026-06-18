@@ -224,6 +224,11 @@
       margin-bottom: 0;
     }
 
+    .white-heading,
+    .white-heading .accent {
+      color: var(--white);
+    }
+
     .section-dark .section-head p { color: rgba(255,255,255,.72); }
 
     .trust {
@@ -233,30 +238,37 @@
     }
 
     .trust p {
-      color: #424242;
-      font-size: 14px;
-      margin-bottom: 20px;
+      color: var(--charcoal);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
     }
 
     .logos {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       align-items: center;
     }
 
     .logo-pill {
-      min-height: 58px;
-      border: 1px solid #dedede;
-      background: #fff;
-      border-radius: 8px;
+      min-height: 72px;
+      border: 0;
+      background: transparent;
+      border-radius: 0;
       display: grid;
       place-items: center;
-      color: #7b7b7b;
-      font-weight: 900;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .logo-pill img {
+      max-width: 100%;
+      max-height: 46px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
     .card-grid {
@@ -332,7 +344,8 @@
       padding-left: 34px;
       color: #303030;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .check-list li:before {
@@ -521,7 +534,7 @@
 
     .deliverable h3 { font-size: 21px; margin-bottom: 14px; font-weight: 900; }
     .deliverable p { color: var(--muted); font-size: 15px; }
-    .deliverable ul { margin: 18px 0 0; padding-left: 18px; color: #333; font-size: 14px; }
+    .deliverable ul { margin: 18px 0 0; padding-left: 18px; color: #333; font-size: 13px; line-height: 1.5; }
     .deliverable li { margin-bottom: 8px; }
 
     .compare-box {
@@ -540,7 +553,7 @@
     .compare-col + .compare-col { border-left: 1px solid var(--border); }
     .compare-col h3 { font-size: 20px; margin-bottom: 18px; font-weight: 900; }
     .compare-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-    .compare-list li { position: relative; padding-left: 31px; font-size: 14px; color: #333; font-weight: 700; }
+    .compare-list li { position: relative; padding-left: 31px; font-size: 13px; line-height: 1.5; color: #333; font-weight: 700; }
     .compare-list li:before { position: absolute; left: 0; top: 0; font-weight: 900; }
     .no-list li:before { content: "✕"; color: var(--red); }
     .yes-list li:before { content: "✓"; color: var(--red); }
@@ -572,7 +585,7 @@
     .quote-callout p {
       position: relative;
       z-index: 2;
-      font-size: clamp(22px, 3vw, 34px);
+      font-size: clamp(15px, 2vw, 24px);
       line-height: 1.22;
       font-weight: 900;
       margin: 0;
@@ -681,6 +694,8 @@
     }
 
     .form-copy p { color: rgba(255,255,255,.74); font-size: 17px; }
+    .form-section .form-copy .check-list li { color: var(--white) !important; }
+    .form-section .form-copy .check-list li:before { color: var(--white) !important; }
 
     .form-panel {
       background: #fff;
@@ -729,7 +744,8 @@
       .card-grid, .decision-grid, .compare-box { grid-template-columns: 1fr; }
       .compare-col + .compare-col { border-left: 0; border-top: 1px solid var(--border); }
       .quote-callout { padding: 32px 24px; }
-      .form-panel { min-height: 650px; }
+      .form-panel { min-height: 980px; }
+      .iframe-holder { height: 920px; }
       .gear-watermark { right: -120px; opacity: .05; }
     }
 
@@ -807,14 +823,20 @@
 
     <section class="trust">
       <div class="an-container">
-        <p>Trusted by dozens of manufacturers nationwide</p>
-        <div class="logos" aria-label="Client logo placeholders">
-          <div class="logo-pill">Customer Logo</div>
-          <div class="logo-pill">Customer Logo</div>
-          <div class="logo-pill">Customer Logo</div>
-          <div class="logo-pill">Customer Logo</div>
-          <div class="logo-pill">Customer Logo</div>
-          <div class="logo-pill">Customer Logo</div>
+        <p>Trusted by manufacturers nationwide</p>
+        <div class="logos" aria-label="Client logos">
+          <div class="logo-pill">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/5842a770a6515b1e0ad75afe.png" alt="Client logo 1">
+          </div>
+          <div class="logo-pill">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/u1_logo.png" alt="Client logo 2">
+          </div>
+          <div class="logo-pill">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/AdobeStock_96801275-Converted.png" alt="Client logo 3">
+          </div>
+          <div class="logo-pill">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/orkin.png" alt="Client logo 4">
+          </div>
         </div>
       </div>
     </section>
@@ -919,7 +941,7 @@
     <section id="deliverables" class="section-dark">
       <div class="an-container">
         <div class="section-head">
-          <h2>What You Get From the <span class="accent">Assessment</span></h2>
+          <h2 class="white-heading">What You Get From the <span class="accent">Assessment</span></h2>
           <p>Clear findings, prioritized opportunities, and a practical path to unlock additional capacity with the system you already have.</p>
         </div>
         <div class="deliverables">
@@ -1033,7 +1055,7 @@
     <section class="section-dark">
       <div class="an-container">
         <div class="section-head">
-          <h2>Manufacturers Use the Assessment to Find What’s <span class="accent">Really Limiting Growth</span></h2>
+          <h2 class="white-heading">Manufacturers Use the Assessment to Find What’s <span class="accent">Really Limiting Growth</span></h2>
           <p>Replace these placeholders with approved client testimonials when available.</p>
         </div>
         <div class="testimonials">
@@ -1139,7 +1161,7 @@
               data-deactivation-type="neverDeactivate"
               data-deactivation-value=""
               data-form-name="Capacity Constraint Assessment Offer"
-              data-height="622"
+              data-height="920"
               data-layout-iframe-id="inline-k6sdENxmdgt8pWzoSkXm"
               data-form-id="k6sdENxmdgt8pWzoSkXm"
               title="Capacity Constraint Assessment Offer">
