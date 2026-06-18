@@ -266,10 +266,15 @@
     .hero-badge{font-size:9px;padding:7px 10px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:clip;gap:6px;}
     .hero h1{font-size:clamp(1.45rem,6.4vw,1.85rem);max-width:none;width:100%;line-height:1;letter-spacing:-.03em;}
     .hero h1 .line{display:inline;}
-    .hero-mini-grid,.industry-grid,.about-points{grid-template-columns:1fr;}
+    .hero-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .hero-mini{padding:14px;}
+    .hero-mini b{font-size:1rem;}
+    .hero-mini span{font-size:11px;line-height:1.35;margin-top:5px;}
+    .industry-grid,.about-points{grid-template-columns:1fr;}
   }
   @media (max-width:560px){
     .cards{grid-template-columns:1fr;}
+    .hero-mini-grid{gap:8px;}
   }
 </style>
 
@@ -296,8 +301,8 @@
             <p>Operations, financial planning, relationship-driven marketing, and new program development all working from one coordinated growth strategy.</p>
           </div>
           <div class="hero-mini-grid">
-            <div class="glass glass-premium hero-mini"><b>4</b><span>Specialty service areas working together</span></div>
-            <div class="glass glass-premium hero-mini"><b>All</b><span>Practice sizes and medical specialties supported</span></div>
+            <div class="glass glass-premium hero-mini"><b>Integrated</b><span>One strategy across operations, finance, and growth</span></div>
+            <div class="glass glass-premium hero-mini"><b>Tailored</b><span>Support shaped around your specialty and size</span></div>
           </div>
         </div>
       </div>

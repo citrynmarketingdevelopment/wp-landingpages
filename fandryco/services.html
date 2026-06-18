@@ -48,7 +48,8 @@
   .phero .orb.a{width:420px;height:420px;background:radial-gradient(circle,var(--glow),transparent 60%);opacity:.2;top:-150px;right:-90px;}
   .phero-inner{position:relative;z-index:2;}
   .phero-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:end;max-width:840px;}
-  .phero h1{font-size:clamp(1.95rem,4vw,3rem);font-weight:700;max-width:13ch;line-height:.98;text-shadow:0 0 60px rgba(52,232,158,.16);}
+  .phero h1{font-size:clamp(1.95rem,4vw,3rem);font-weight:700;max-width:none;width:min(100%,15ch);line-height:.98;text-shadow:0 0 60px rgba(52,232,158,.16);}
+  .phero h1 .line{display:block;}
   .phero h1 .grad{background:linear-gradient(120deg,var(--mint),var(--glow) 60%);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .phero p{color:var(--muted);font-size:clamp(1rem,1.3vw,1.12rem);max-width:58ch;margin-top:18px;}
   .service-nav{display:grid;grid-template-columns:.82fr 1.18fr;gap:18px;align-items:start;}
@@ -91,6 +92,8 @@
     .services-grid,.service-links{grid-template-columns:1fr;}
   }
   @media (max-width:720px){
+    .phero h1{max-width:none;width:100%;line-height:1;letter-spacing:-.03em;}
+    .phero h1 .line{display:inline;}
     .steps{grid-template-columns:1fr;}
   }
 </style>
@@ -104,7 +107,7 @@
         <div>
           <div class="crumbs"><a href="/home">Home</a> <span>/</span> <span style="color:var(--muted);">Services</span></div>
           <span class="eyebrow" data-reveal>Services</span>
-          <h1 data-reveal>Strategic service lines built to <span class="grad">move the whole practice forward</span></h1>
+          <h1 data-reveal><span class="line">Strategic service lines built to</span><span class="line grad">move the whole practice forward</span></h1>
           <p data-reveal>FCo delivers targeted consulting across operations, financial strategy, marketing, and HR support, with each service area designed to improve performance and strengthen long-term growth.</p>
           <div style="margin-top:28px;" data-reveal>
             <a class="btn btn-primary" href="/contact">Book a Consultation
