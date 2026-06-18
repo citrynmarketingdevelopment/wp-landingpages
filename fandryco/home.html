@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fandry &amp; Co. - Healthcare &amp; Business Development, Management &amp; Growth</title>
-<meta name="description" content="Fandry &amp; Co. delivers healthcare consulting solutions across operations, financial strategy, marketing, and growth for private-practice medical groups nationwide.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#050806;--bg-2:#0A1410;--bg-3:#08110D;
@@ -23,41 +13,62 @@
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;background:var(--ink);color:var(--fg);
-    font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;
+    margin:0;
+    background:var(--ink);
+    color:var(--fg);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   a{color:inherit;}
   img{max-width:100%;display:block;}
-  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0;color:var(--fg);}
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-.02em;
+    line-height:1.08;
+    margin:0;
+    color:var(--fg);
+  }
   p{margin:0;}
   .container{width:min(var(--container),calc(100% - 40px));margin-inline:auto;}
   .section{position:relative;padding:clamp(56px,7vw,92px) 0;}
   .section.tint{background:linear-gradient(180deg,var(--bg-3),var(--ink));}
   .center{text-align:center;margin-inline:auto;}
 
-  .btn{display:inline-flex;align-items:center;gap:9px;justify-content:center;cursor:pointer;
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;justify-content:center;cursor:pointer;
     font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;
     border-radius:999px;padding:13px 24px;min-height:48px;border:1px solid transparent;
-    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease);}
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease);
+  }
   .btn:focus-visible{outline:2px solid var(--glow);outline-offset:2px;}
   .btn-primary{position:relative;overflow:hidden;color:#04130C;background:var(--cta);box-shadow:0 10px 28px rgba(15,155,108,.4),var(--glow-shadow);}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(15,155,108,.5),0 0 50px rgba(52,232,158,.4);}
-  .btn-primary::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
-    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .6s var(--ease);}
+  .btn-primary::before{
+    content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .6s var(--ease);
+  }
   .btn-primary:hover::before{left:140%;}
   .btn-ghost{background:var(--glass);color:var(--fg);border-color:var(--glass-bd);}
   .btn-ghost:hover{border-color:var(--glass-bd-strong);transform:translateY(-2px);box-shadow:var(--glow-shadow);}
 
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--glow);margin-bottom:14px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--glow);margin-bottom:14px;
+  }
   .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px var(--glow);}
   .h-sec{font-size:clamp(1.8rem,3.5vw,2.7rem);}
   .lead{color:var(--muted);font-size:clamp(.98rem,1.2vw,1.08rem);max-width:62ch;margin-top:14px;}
-  .glass{background:linear-gradient(160deg,var(--glass),var(--glass-2));
-    backdrop-filter:blur(var(--blur)) saturate(1.25);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.25);
-    border:1px solid var(--glass-bd);border-radius:var(--radius);
-    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.06);}
+  .glass{
+    background:linear-gradient(160deg,var(--glass),var(--glass-2));
+    backdrop-filter:blur(var(--blur)) saturate(1.25);
+    -webkit-backdrop-filter:blur(var(--blur)) saturate(1.25);
+    border:1px solid var(--glass-bd);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.06);
+  }
   .glass-premium{
     background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(18,80,55,.34));
     backdrop-filter:blur(44px) saturate(1.55);
@@ -65,9 +76,11 @@
     border:1px solid rgba(124,255,212,.34);
     box-shadow:0 30px 72px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12),0 0 46px rgba(52,232,158,.18);
   }
-  .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;flex-shrink:0;
+  .ico{
+    width:50px;height:50px;border-radius:14px;display:grid;place-items:center;flex-shrink:0;
     background:linear-gradient(160deg,rgba(52,232,158,.16),rgba(18,80,55,.2));
-    border:1px solid var(--glass-bd);color:var(--glow);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 24px rgba(52,232,158,.14);}
+    border:1px solid var(--glass-bd);color:var(--glow);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 24px rgba(52,232,158,.14);
+  }
   .ico svg{width:24px;height:24px;}
   .orb{position:absolute;border-radius:50%;filter:blur(82px);pointer-events:none;z-index:0;}
 
@@ -76,16 +89,20 @@
     position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;padding:136px 0 72px;
   }
   .hero-bg{position:absolute;inset:0;z-index:0;background-image:var(--hero-photo);background-size:cover;background-position:center;}
-  .hero-bg::after{content:"";position:absolute;inset:0;
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
     background:linear-gradient(110deg,rgba(5,8,6,.97) 0%,rgba(5,10,7,.88) 42%,rgba(8,30,20,.56) 100%),
-      radial-gradient(circle at 80% 24%,rgba(52,232,158,.2),transparent 38%);}
+      radial-gradient(circle at 80% 24%,rgba(52,232,158,.2),transparent 38%);
+  }
   .hero .orb.h1{width:460px;height:460px;background:radial-gradient(circle,var(--glow),transparent 60%);opacity:.24;top:-100px;right:-90px;}
   .hero .orb.h2{width:400px;height:400px;background:radial-gradient(circle,var(--green-700),transparent 60%);opacity:.24;bottom:-130px;left:-100px;}
   .hero-inner{position:relative;z-index:2;width:min(var(--container),calc(100% - 40px));margin-inline:auto;}
   .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.8fr);gap:30px;align-items:center;}
-  .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;
     background:var(--glass);border:1px solid var(--glass-bd);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    font-size:13px;color:var(--muted);margin-bottom:22px;}
+    font-size:13px;color:var(--muted);margin-bottom:22px;
+  }
   .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow);}
   .hero h1{font-size:clamp(1.72rem,3.15vw,2.4rem);font-weight:700;max-width:18.5ch;line-height:1.02;padding-bottom:.06em;text-shadow:0 0 60px rgba(52,232,158,.16);}
   .hero h1 .line{display:block;}
@@ -158,13 +175,23 @@
     .hero-badge .dot{animation:pulseGlow 2.4s ease-in-out infinite;}
   }
 
-  .reveal-up{opacity:0;transform:translateY(20px);}
-  @media (prefers-reduced-motion:no-preference){
-    .loaded .reveal-up{animation:up .7s var(--ease) forwards;}
-    .loaded .reveal-up.d1{animation-delay:.08s;}.loaded .reveal-up.d2{animation-delay:.16s;}
-    .loaded .reveal-up.d3{animation-delay:.24s;}.loaded .reveal-up.d4{animation-delay:.32s;}
-  }
+  .reveal-up,
+  [data-reveal]{opacity:1;transform:none;}
   @keyframes up{to{opacity:1;transform:none;}}
+  html.dgs-js .reveal-up{opacity:0;transform:translateY(20px);}
+  html.dgs-js [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  @media (prefers-reduced-motion:no-preference){
+    html.dgs-js.loaded .reveal-up{animation:up .7s var(--ease) forwards;}
+    html.dgs-js.loaded .reveal-up.d1{animation-delay:.08s;}
+    html.dgs-js.loaded .reveal-up.d2{animation-delay:.16s;}
+    html.dgs-js.loaded .reveal-up.d3{animation-delay:.24s;}
+    html.dgs-js.loaded .reveal-up.d4{animation-delay:.32s;}
+  }
+  html.dgs-js [data-reveal].in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    html.dgs-js .reveal-up,
+    html.dgs-js [data-reveal]{opacity:1!important;transform:none!important;transition:none!important;animation:none!important;}
+  }
 
   .framework{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch;}
   .framework-main{padding:28px 28px;}
@@ -180,25 +207,17 @@
 
   .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:34px;align-items:center;}
   .about-visual{
-    position:relative;
-    border-radius:var(--radius);
-    overflow:hidden;
-    aspect-ratio:4/5;
-    min-height:520px;
-    border:1px solid var(--glass-bd);
-    box-shadow:var(--shadow);
+    position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;min-height:520px;
+    border:1px solid var(--glass-bd);box-shadow:var(--shadow);
   }
   .about-visual img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center center;
-    position:absolute;
-    inset:0;
+    width:100%;height:100%;object-fit:cover;object-position:center center;position:absolute;inset:0;
   }
   .about-visual .vlay{position:absolute;inset:0;background:linear-gradient(165deg,rgba(5,8,6,.16),rgba(8,30,20,.58));}
-  .about-visual .vcard{position:absolute;left:18px;right:18px;bottom:18px;padding:18px 20px;border-radius:16px;
-    background:rgba(7,14,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--glass-bd);}
+  .about-visual .vcard{
+    position:absolute;left:18px;right:18px;bottom:18px;padding:18px 20px;border-radius:16px;
+    background:rgba(7,14,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--glass-bd);
+  }
   .about-visual .vcard b{font-family:'Space Grotesk',sans-serif;color:var(--fg);font-size:16px;}
   .about-visual .vcard p{color:var(--muted);font-size:13.5px;margin-top:6px;}
   .about-copy p{color:var(--muted);font-size:1rem;margin-top:16px;}
@@ -207,8 +226,10 @@
   .about-points svg{color:var(--glow);}
 
   .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;}
-  .card{display:flex;flex-direction:column;padding:24px 22px;text-decoration:none;color:inherit;
-    transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);}
+  .card{
+    display:flex;flex-direction:column;padding:24px 22px;text-decoration:none;color:inherit;
+    transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);
+  }
   .card:hover{transform:translateY(-6px);border-color:var(--glass-bd-strong);box-shadow:var(--shadow),var(--glow-shadow);}
   .card h3{font-size:1.05rem;margin:18px 0 8px;}
   .card p{color:var(--muted);font-size:14px;flex-grow:1;}
@@ -230,13 +251,6 @@
   .pillar h3{font-size:1.12rem;margin:18px 0 10px;}
   .pillar p{color:var(--muted);font-size:14px;}
 
-  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-  [data-reveal].in-view{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){
-    [data-reveal]{opacity:1!important;transform:none!important;transition:none!important;}
-    .reveal-up{opacity:1!important;transform:none!important;animation:none!important;}
-  }
-
   @media (max-width:1024px){
     .hero-grid,.framework,.about-grid,.industry-wrap{grid-template-columns:1fr;}
     .cards{grid-template-columns:repeat(2,1fr);}
@@ -256,9 +270,6 @@
     .cards{grid-template-columns:1fr;}
   }
 </style>
-</head>
-<body>
-<div id="site-header"></div>
 
 <main>
   <section class="hero">
@@ -272,9 +283,9 @@
           <h1 class="reveal-up d1"><span class="line">Healthcare &amp; Business Development.</span><span class="line grad">Management. Growth.</span></h1>
           <p class="hero-sub reveal-up d2">Fandry &amp; Co. provides strategic solutions for the development and management of healthcare organizations, helping practices strengthen operations, improve performance, and build scalable growth.</p>
           <div class="hero-cta reveal-up d3">
-            <a class="btn btn-primary" href="contact.html">Book a Consultation
+            <a class="btn btn-primary" href="/contact">Book a Consultation
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn-ghost" href="services.html">Explore Services</a>
+            <a class="btn btn-ghost" href="/services">Explore Services</a>
           </div>
         </div>
         <div class="hero-side reveal-up d4">
@@ -317,12 +328,12 @@
           </div>
         </div>
         <div class="framework-side">
-        <div class="glass glass-premium signal-card" data-reveal>
+          <div class="glass glass-premium signal-card" data-reveal>
             <span class="label">Built for healthcare</span>
             <strong>From private practices to multi-specialty groups.</strong>
             <p>Our work is rooted in healthcare, with solutions that improve business performance while supporting patient-centered care.</p>
           </div>
-        <div class="glass glass-premium signal-card" data-reveal>
+          <div class="glass glass-premium signal-card" data-reveal>
             <span class="label">Nationwide reach</span>
             <strong>Support that scales with your organization.</strong>
             <p>FCo partners with teams across the country on growth planning, program launches, operational systems, and practice development.</p>
@@ -353,7 +364,7 @@
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Marketing development</span>
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Scalable growth strategies</span>
         </div>
-        <div style="margin-top:24px;"><a class="btn btn-ghost" href="about.html">More About FCo
+        <div style="margin-top:24px;"><a class="btn btn-ghost" href="/about">More About FCo
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </div>
@@ -367,25 +378,25 @@
         <p class="lead center">Each service area can stand on its own, but the strongest results come when strategy, execution, and growth are aligned across the organization.</p>
       </div>
       <div class="cards">
-        <a class="glass card" href="services.html#operations" data-reveal>
+        <a class="glass card" href="/services#operations" data-reveal>
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 16 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
           <h3>Operations Consulting</h3>
           <p>Workflow improvement, system optimization, and strategic implementation that make day-to-day operations more efficient and scalable.</p>
           <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="glass card" href="services.html#finance" data-reveal>
+        <a class="glass card" href="/services#finance" data-reveal>
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></span>
           <h3>Financial Services</h3>
           <p>Budget planning, revenue cycle optimization, and profitability strategy designed to support healthier, more sustainable growth.</p>
           <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="glass card" href="services.html#marketing" data-reveal>
+        <a class="glass card" href="/services#marketing" data-reveal>
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
           <h3>Marketing &amp; Media</h3>
           <p>Relationship-based marketing, brand development, and patient growth strategies that improve visibility and strengthen referral pathways.</p>
           <span class="more">Learn more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="glass card" href="services.html#hr" data-reveal>
+        <a class="glass card" href="/services#hr" data-reveal>
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
           <h3>HR &amp; Compliance</h3>
           <p>Infrastructure, onboarding, policy, and compliance guidance that protects the business while supporting a healthier team culture.</p>
@@ -438,40 +449,21 @@
       </div>
     </div>
   </section>
-
 </main>
 
-<div id="site-footer"></div>
-
 <script>
-  async function inject(id,file){
-    try{const r=await fetch(file);if(r.ok){document.getElementById(id).innerHTML=await r.text();}}
-    catch(e){}
-  }
-  function initHeader(){
-    var header=document.getElementById('siteHeader');
-    var ham=document.getElementById('hamburger');
-    var scrim=document.getElementById('sheetScrim');
-    var onScroll=function(){if(header)header.classList.toggle('scrolled',window.scrollY>24);};
-    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-    function toggleMenu(open){
-      document.body.classList.toggle('menu-open',open);
-      if(ham)ham.setAttribute('aria-expanded',open?'true':'false');
-    }
-    if(ham)ham.addEventListener('click',function(){toggleMenu(!document.body.classList.contains('menu-open'));});
-    if(scrim)scrim.addEventListener('click',function(){toggleMenu(false);});
-    document.querySelectorAll('.mobile-sheet a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
-    var page=(location.pathname.replace(/\/+$/,'').split('/').pop()||'home').replace(/\.html$/,'')||'home';
-    document.querySelectorAll('[data-nav]').forEach(function(a){if(a.getAttribute('data-nav')===page)a.classList.add('active');});
-  }
-  function initFooter(){
-    var y=document.getElementById('footYear');if(y)y.textContent=new Date().getFullYear();
-  }
+  document.documentElement.classList.add('dgs-js');
+
   function initReveal(){
     var els=document.querySelectorAll('[data-reveal]');
-    if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in-view');});return;}
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in-view');});
+      return;
+    }
     document.querySelectorAll('.cards,.pillars,.industry-grid').forEach(function(grp){
-      Array.prototype.forEach.call(grp.children,function(c,i){if(c.hasAttribute('data-reveal'))c.dataset.delay=i*60;});
+      Array.prototype.forEach.call(grp.children,function(c,i){
+        if(c.hasAttribute('data-reveal')) c.dataset.delay=i*60;
+      });
     });
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
@@ -484,14 +476,9 @@
     },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){io.observe(e);});
   }
-  (async function(){
-    await inject('site-header','header.html');
-    initHeader();
-    await inject('site-footer','footer.html');
-    initFooter();
-    initReveal();
-    requestAnimationFrame(function(){document.body.classList.add('loaded');});
-  })();
+
+  initReveal();
+  requestAnimationFrame(function(){
+    document.documentElement.classList.add('loaded');
+  });
 </script>
-</body>
-</html>
