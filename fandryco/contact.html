@@ -221,7 +221,7 @@
     if(ham)ham.addEventListener('click',function(){toggleMenu(!document.body.classList.contains('menu-open'));});
     if(scrim)scrim.addEventListener('click',function(){toggleMenu(false);});
     document.querySelectorAll('.mobile-sheet a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
-    var page=(location.pathname.split('/').pop()||'home.html').replace('.html','')||'home';
+    var page=(location.pathname.replace(/\/+$/,'').split('/').pop()||'home').replace(/\.html$/,'')||'home';
     document.querySelectorAll('[data-nav]').forEach(function(a){if(a.getAttribute('data-nav')===page)a.classList.add('active');});
   }
   function initFooter(){var y=document.getElementById('footYear');if(y)y.textContent=new Date().getFullYear();}
