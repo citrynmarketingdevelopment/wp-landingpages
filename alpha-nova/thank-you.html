@@ -150,20 +150,23 @@
     color: var(--red);
     margin-bottom: 14px;
   }
-  .anty-card h3 {
+  .anty-title {
+    display: block;
     margin: 0 0 18px;
     font-size: 17px;
     font-weight: 800;
     line-height: 1.35;
     color: var(--charcoal);
   }
+  .anty-card:hover .anty-title { color: var(--red); }
   .anty-readmore {
+    display: inline-block;
     margin-top: auto;
     font-size: 14px;
     font-weight: 800;
     color: var(--red);
   }
-  .anty-card:hover .anty-readmore { color: var(--red-dark); }
+  .anty-readmore:hover { color: var(--red-dark); }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px) {
@@ -190,9 +193,9 @@
   <section class="anty-blog">
     <h2>Check Out Some Of Our Latest Blog Posts</h2>
     <div class="anty-grid">
-      <a class="anty-card" href="https://alphanovaconsulting.com/optimizing-performance-how-to-implement-tiered-daily-management-for-kpi-review-in-manufacturing/" target="_blank" rel="noopener"><span class="anty-tag">Lean Daily Management</span><h3>Optimizing Performance: How to Implement Tiered Daily Management for KPI Review in Manufacturing</h3><span class="anty-readmore">Read article &rarr;</span></a>
-      <a class="anty-card" href="https://alphanovaconsulting.com/bridging-the-gap-convincing-traditional-manufacturing-leaders-to-embrace-lean-daily-management/" target="_blank" rel="noopener"><span class="anty-tag">Leadership</span><h3>Bridging the Gap: Convincing Traditional Manufacturing Leaders to Embrace Lean Daily Management</h3><span class="anty-readmore">Read article &rarr;</span></a>
-      <a class="anty-card" href="https://alphanovaconsulting.com/optimizing-execution-how-manufacturers-get-the-most-out-of-manufacturing-kpis/" target="_blank" rel="noopener"><span class="anty-tag">Manufacturing KPIs</span><h3>Optimizing Execution: How Manufacturers Get the Most Out of Manufacturing KPIs</h3><span class="anty-readmore">Read article &rarr;</span></a>
+      <div class="anty-card"><span class="anty-tag">Lean Daily Management</span><a class="anty-title" href="https://alphanovaconsulting.com/optimizing-performance-how-to-implement-tiered-daily-management-for-kpi-review-in-manufacturing/" target="_blank" rel="noopener">Optimizing Performance: How to Implement Tiered Daily Management for KPI Review in Manufacturing</a><a class="anty-readmore" href="https://alphanovaconsulting.com/optimizing-performance-how-to-implement-tiered-daily-management-for-kpi-review-in-manufacturing/" target="_blank" rel="noopener">Read article &rarr;</a></div>
+      <div class="anty-card"><span class="anty-tag">Leadership</span><a class="anty-title" href="https://alphanovaconsulting.com/bridging-the-gap-convincing-traditional-manufacturing-leaders-to-embrace-lean-daily-management/" target="_blank" rel="noopener">Bridging the Gap: Convincing Traditional Manufacturing Leaders to Embrace Lean Daily Management</a><a class="anty-readmore" href="https://alphanovaconsulting.com/bridging-the-gap-convincing-traditional-manufacturing-leaders-to-embrace-lean-daily-management/" target="_blank" rel="noopener">Read article &rarr;</a></div>
+      <div class="anty-card"><span class="anty-tag">Manufacturing KPIs</span><a class="anty-title" href="https://alphanovaconsulting.com/optimizing-execution-how-manufacturers-get-the-most-out-of-manufacturing-kpis/" target="_blank" rel="noopener">Optimizing Execution: How Manufacturers Get the Most Out of Manufacturing KPIs</a><a class="anty-readmore" href="https://alphanovaconsulting.com/optimizing-execution-how-manufacturers-get-the-most-out-of-manufacturing-kpis/" target="_blank" rel="noopener">Read article &rarr;</a></div>
     </div>
   </section>
 </div>
