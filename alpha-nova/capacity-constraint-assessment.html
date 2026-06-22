@@ -137,11 +137,13 @@
       position: absolute;
       right: 5%;
       top: 42px;
-      width: 300px;
-      height: 300px;
-      opacity: .08;
-      border: 34px dashed #fff;
-      border-radius: 50%;
+      width: 320px;
+      height: 320px;
+      opacity: .1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
       animation: slowspin 38s linear infinite;
     }
 
@@ -332,21 +334,23 @@
     .copy-block p { color: var(--muted); font-size: 16px; }
 
     .check-list {
-      list-style: none;
-      padding: 0;
+      list-style: none !important;
+      padding: 0 !important;
       margin: 22px 0 0;
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
     .check-list li {
+      list-style: none !important;
       position: relative;
-      padding-left: 34px;
+      padding-left: 36px;
       color: #303030;
       font-weight: 700;
-      font-size: 13px;
-      line-height: 1.45;
+      font-size: 17px;
+      line-height: 1.5;
     }
+    .check-list li:before { list-style: none; }
 
     .check-list li:before {
       content: "✓";
@@ -384,10 +388,13 @@
       position: absolute;
       width: 240px;
       height: 240px;
-      border: 28px dashed rgba(255,255,255,.22);
-      border-radius: 50%;
-      right: -70px;
-      top: -60px;
+      opacity: .22;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      right: -55px;
+      top: -45px;
     }
 
     .visual-card:after {
@@ -552,8 +559,8 @@
     .compare-col { padding: 34px; }
     .compare-col + .compare-col { border-left: 1px solid var(--border); }
     .compare-col h3 { font-size: 20px; margin-bottom: 18px; font-weight: 900; }
-    .compare-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-    .compare-list li { position: relative; padding-left: 31px; font-size: 13px; line-height: 1.5; color: #333; font-weight: 700; }
+    .compare-list { list-style: none !important; padding: 0 !important; margin: 0; display: grid; gap: 14px; }
+    .compare-list li { list-style: none !important; position: relative; padding-left: 33px; font-size: 17px; line-height: 1.5; color: #333; font-weight: 700; }
     .compare-list li:before { position: absolute; left: 0; top: 0; font-weight: 900; }
     .no-list li:before { content: "✕"; color: var(--red); }
     .yes-list li:before { content: "✓"; color: var(--red); }
@@ -691,7 +698,9 @@
       letter-spacing: -.04em;
       margin-bottom: 18px;
       font-weight: 900;
+      color: var(--white);
     }
+    .form-copy h2 .accent { color: var(--red); }
 
     .form-copy p { color: rgba(255,255,255,.74); font-size: 17px; }
     .form-section .form-copy .check-list li { color: var(--white) !important; }
@@ -976,7 +985,7 @@
         </div>
         <div class="deliverables">
           <article class="deliverable">
-            <h3>1. Operational Capacity Assessment</h3>
+            <h3>1. Clarity on Current Capacity Constraints</h3>
             <p>Gain a clear understanding of where capacity is being constrained across your operation. Through a structured review of your value stream, production processes, resources, and workflows, we identify:</p>
             <ul>
               <li>Primary and secondary bottlenecks</li>
@@ -987,7 +996,7 @@
             <p class="small-copy">The result is a clear picture of what is currently preventing your operation from producing more with the resources you already have.</p>
           </article>
           <article class="deliverable">
-            <h3>2. Operational Assessment</h3>
+            <h3>2. Opportunities to Increase Capacity</h3>
             <p>Most manufacturers have more capacity than they realize. Hidden within everyday operations are inefficiencies that consume resources, create delays, and limit throughput. The assessment uncovers opportunities to improve operational performance and reclaim lost capacity without significant capital investment.</p>
             <ul>
               <li>Eliminate waste and non-value-added activities</li>
@@ -999,7 +1008,7 @@
             <p class="small-copy">The goal is simple: create additional capacity that can be used to absorb growth, improve service levels, and increase profitability.</p>
           </article>
           <article class="deliverable">
-            <h3>3. Ramp-Up Plan</h3>
+            <h3>3. A Roadmap to Achieve Growth Targets</h3>
             <p>Knowing your constraints is only valuable if you have a plan to address them. Based on the assessment findings, you receive a practical roadmap outlining the changes required to support your growth objectives.</p>
             <ul>
               <li>Priority improvement initiatives</li>
