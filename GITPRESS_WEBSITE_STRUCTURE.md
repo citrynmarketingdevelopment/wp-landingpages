@@ -507,6 +507,29 @@ If using Google Fonts, prefer loading them in the managed header or a shared glo
 
 If a page partial includes font links, ensure GitPress sanitizer allows them or move them to the managed header/plugin settings.
 
+#### `@import` Google Fonts break on live because WordPress encodes `&` → `&amp;`
+
+A combined Google Fonts `@import` that joins multiple families (or appends `&display=swap`) uses `&` as the separator. When the fragment is rendered through WordPress/GitPress, the `&` is HTML-encoded to `&amp;`:
+
+```css
+/* what you wrote (works standalone) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400&family=Poppins:wght@400;700&display=swap');
+
+/* what WordPress serves (broken — fonts fail to load) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400&amp;family=Poppins:wght@400;700&amp;display=swap');
+```
+
+Inside a CSS `@import url('...')`, `&amp;` is **not** decoded back to `&` (CSS does not process HTML entities), so the URL is malformed and the font silently fails — headings fall back to Arial/Helvetica. This looks identical locally (raw file keeps `&`) and only breaks once served through WordPress. Classic "looks right on local server, wrong on live" symptom.
+
+Fix: **never put `&` in an `@import` URL inside a fragment.** Split into one single-family import per font and drop `&display=swap` (weights are separated by `;`, which is not encoded):
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800');
+```
+
+(A `<link rel="stylesheet" href="...&...">` tag would survive, because HTML *attributes* decode `&amp;`→`&` — but GitPress may strip `<link>` from fragments, so the no-`&` `@import` is the most reliable in-fragment option. Best of all: load the fonts once in the managed header.)
+
 ### Fixed headers
 
 If `header.html` uses `position: fixed`, page body content needs top spacing or hero padding.
