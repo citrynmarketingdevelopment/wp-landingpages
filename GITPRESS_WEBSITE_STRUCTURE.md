@@ -427,6 +427,80 @@ body * { margin: 0; padding: 0; }
 html, body { overflow: hidden; }
 ```
 
+### Divi / theme CSS overrides your page (important)
+
+A scoped page partial (e.g. everything under `.cred-page`) can look perfect in a standalone browser preview but render **wrong inside WordPress**, because the Divi theme (and WordPress core) ship aggressive global rules that target bare element selectors (`h1`–`h6`, `p`, `a`, `ul`) with high specificity and `!important`. These out-specify normal scoped rules.
+
+Symptoms seen in the wild:
+
+```txt
+heading colors flip to a dark theme color (e.g. white headings render black)
+vertical spacing drifts: Divi injects `p { padding-bottom: 1em }`, heading margins, and `body { line-height: 1.7em }`
+manually-added inline `style="..."` spacing disappears (GitPress sanitizer strips inline style attributes)
+buttons/links pick up theme link colors
+```
+
+These problems are invisible in a local preview and only appear once the fragment is rendered through Divi. **Always verify on the actual WordPress/staging page, not just standalone.**
+
+Fix pattern (defensive, proven):
+
+1. **Reset inherited element styling inside your scope** so Divi's injected spacing/colors can't leak in:
+
+```css
+.cred-page h1, .cred-page h2, .cred-page h3, .cred-page h4, .cred-page h5, .cred-page h6,
+.cred-page p, .cred-page ul, .cred-page ol, .cred-page li, .cred-page figure, .cred-page blockquote {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+}
+```
+
+2. **Add `!important` to text-color declarations** that must hold. Divi commonly forces heading/text colors with `!important`, so a plain scoped rule loses. This is heavy-handed but is the same pattern Divi's own exported CSS uses, and it is the reliable way to keep colors correct in GitPress-on-Divi:
+
+```css
+.cred-page .feature h3 { color: #fff !important; }
+.cred-page .section h2 { color: var(--blue) !important; }
+```
+
+3. **Never rely on inline `style="..."`** for anything that matters — the GitPress sanitizer can strip it. Move it to a class in the `<style>` block.
+
+Keep the `!important` usage targeted (colors and a few critical spacing values), not blanket `body * { ... !important }`. Scope every rule under the page prefix.
+
+#### Before you blame Divi: confirm the live page is actually running your latest file
+
+A CSS fix can look like it "didn't work" / "is still being overridden" when the real problem is that **GitPress is still serving a cached copy of the old fragment**. Clearing the WordPress page cache (or your browser cache) does **not** force GitPress to re-fetch from GitHub — GitPress caches the fetched GitHub file content on a separate layer. So your new commit is live on GitHub but the rendered page is still the previous version.
+
+This is easy to misdiagnose as a Divi specificity problem. It is not. Verify which version is live before changing any CSS:
+
+1. **Put a version marker at the top of every fragment** and bump it on each change:
+
+```html
+<!-- webhook retrigger 2026-06-23 -->
+```
+
+2. **Fetch the rendered page source and grep for your marker** (and for a unique new rule, e.g. a freshly added class or `!important` declaration):
+
+```bash
+curl -s -A "Mozilla/5.0" "https://SITE/slug/" | grep -o "webhook retrigger 2026-06-[0-9][0-9]"
+```
+
+If the marker shows the **old** date (or your new rule is absent), the page is stale — the CSS is fine and the fix is simply not deployed yet. Do **not** add more `!important`.
+
+3. **Force GitPress to re-pull**, then re-check:
+
+```txt
+re-fire the GitHub webhook (or push a trivial commit to bump the marker)
+purge GitPress's GitHub/content cache (not just the WP page cache)
+wait out the GitPress cache TTL if no manual purge is available
+raw GitHub CDN can also lag a few minutes after push
+```
+
+Only after the live source shows your new marker **and** the rule is still visibly overridden should you treat it as a real Divi specificity fight (and apply the reset + targeted `!important` above).
+
 ### Font loading
 
 If using Google Fonts, prefer loading them in the managed header or a shared global asset so they are not duplicated on every page.
