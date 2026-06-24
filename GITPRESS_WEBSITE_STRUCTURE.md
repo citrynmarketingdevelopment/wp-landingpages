@@ -544,6 +544,32 @@ Example:
 
 Do not rely on WordPress/Divi header spacing in GitPress Managed mode.
 
+### Theme-wrapped full-width `article` reset
+
+On GitPress pages using:
+
+```json
+{
+  "render_mode": "theme_wrapped",
+  "full_width_content": true
+}
+```
+
+the plugin injects a broad top-gap removal rule for:
+
+```css
+body.dgs-theme-wrapped.dgs-full-width-content article,
+body.dgs-theme-wrapped.dgs-full-width-content .type-page,
+body.dgs-theme-wrapped.dgs-full-width-content .hentry {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+```
+
+This can affect nested `article` components inside the page body, not just the outer WordPress post wrapper. Example: testimonial cards built as `<article class="t-card">` can lose their intended `padding-top` on live even when they look correct locally.
+
+If this happens, prefer a page-level override scoped to the affected component first. Do not patch the plugin broadly unless the issue repeats across multiple pages and we have time to safely narrow the selector in GitPress itself.
+
 ---
 
 ## 9. Icons
