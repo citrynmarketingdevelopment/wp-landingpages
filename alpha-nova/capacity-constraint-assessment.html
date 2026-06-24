@@ -187,6 +187,15 @@
       color: rgba(255,255,255,.92);
     }
 
+    .hero-support {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: clamp(20px, 2.4vw, 32px);
+      font-weight: 800;
+      line-height: 1.3;
+      color: rgba(255,255,255,.96);
+    }
+
     .hero-copy {
       max-width: 700px;
       margin: 0 auto 28px;
@@ -241,36 +250,40 @@
 
     .trust p {
       color: var(--charcoal);
-      font-size: 16px;
-      font-weight: 700;
+      font-size: clamp(22px, 2.2vw, 34px);
+      font-weight: 800;
       letter-spacing: -0.01em;
-      margin-bottom: 24px;
+      margin-bottom: 34px;
     }
 
     .logos {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      align-items: center;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
     }
 
     .logo-pill {
-      min-height: 72px;
-      border: 0;
-      background: transparent;
-      border-radius: 0;
+      min-height: 104px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.96);
+      border-radius: 18px;
       display: grid;
       place-items: center;
-      padding: 0;
-      box-shadow: none;
+      padding: 18px 20px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
     }
 
     .logo-pill img {
       max-width: 100%;
-      max-height: 46px;
+      max-height: 56px;
       width: auto;
       height: auto;
       object-fit: contain;
+    }
+
+    .logo-pill.tall img {
+      max-height: 72px;
     }
 
     .card-grid {
@@ -635,16 +648,23 @@
     }
 
     .testimonial {
-      background: #fff;
-      color: var(--charcoal);
       border-radius: var(--radius);
-      padding: 26px;
+      padding: 0;
+      overflow: hidden;
       box-shadow: 0 12px 30px rgba(0,0,0,.2);
+      align-self: start;
     }
 
-    .stars { color: var(--red); letter-spacing: 2px; margin-bottom: 12px; font-size: 14px; }
-    .testimonial p { color: #444; font-size: 14px; }
-    .testimonial strong { display: block; margin-top: 16px; font-size: 14px; }
+    .testimonial-photo {
+      line-height: 0;
+      background: transparent;
+    }
+
+    .testimonial-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .faq {
       max-width: 920px;
@@ -756,6 +776,7 @@
       .form-panel { min-height: 980px; }
       .iframe-holder { height: 920px; }
       .gear-watermark { right: -120px; opacity: .05; }
+      .logo-pill { min-height: 92px; padding: 16px; }
     }
 
     @media (max-width: 460px) {
@@ -764,6 +785,7 @@
       .nav-links { gap: 10px; }
       .btn { width: 100%; max-width: 310px; }
       .card, .deliverable, .compare-col, .testimonial { padding: 24px 20px; }
+      .logos { grid-template-columns: 1fr; }
     }
 
 
@@ -814,6 +836,7 @@
 
     #alpha-nova-lp .hero .hero-sub { color: rgba(255,255,255,.92) !important; }
     #alpha-nova-lp .hero .hero-copy { color: rgba(255,255,255,.72) !important; }
+    #alpha-nova-lp .hero .hero-support { color: rgba(255,255,255,.96) !important; }
     #alpha-nova-lp .hero .microcopy { color: rgba(255,255,255,.68) !important; }
 
   </style>
@@ -821,12 +844,10 @@
     <section class="hero">
       <div class="gear-watermark" aria-hidden="true"></div>
       <div class="an-container">
-        <div class="eyebrow">Manufacturing Growth Readiness</div>
-        <h1>Capacity Constraint <span class="accent">Assessment™</span></h1>
+        <h1>Capacity Constraint <span class="accent">Assessment&trade;</span></h1>
         <p class="hero-sub">Identify exactly what is limiting throughput, growth, and delivery performance in your operation.</p>
-        <p class="hero-copy">Most manufacturers do not have a demand problem. They have a hidden constraint problem. One or two invisible bottlenecks may be quietly determining how much revenue you can fulfill.</p>
+        <p class="hero-support">Built for manufacturing leaders who need clarity before scaling.</p>
         <a class="btn" href="#request-assessment">Request Your Assessment</a>
-        <div class="microcopy">Built for manufacturing leaders who need clarity before scaling.</div>
       </div>
     </section>
 
@@ -835,16 +856,43 @@
         <p>Trusted by manufacturers nationwide</p>
         <div class="logos" aria-label="Client logos">
           <div class="logo-pill">
-            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/5842a770a6515b1e0ad75afe.png" alt="Client logo 1">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/5842a770a6515b1e0ad75afe.png" alt="SpaceX logo">
           </div>
           <div class="logo-pill">
-            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/u1_logo.png" alt="Client logo 2">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/u1_logo.png" alt="United 1 logo">
           </div>
           <div class="logo-pill">
-            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/AdobeStock_96801275-Converted.png" alt="Client logo 3">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/AdobeStock_96801275-Converted.png" alt="Enventives logo">
           </div>
           <div class="logo-pill">
-            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/orkin.png" alt="Client logo 4">
+            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/orkin.png" alt="Orkin Canada logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/mtron.png" alt="MtronPTI logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/waco.png" alt="Waco Boon logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/double-l.png" alt="Double L logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/adb-safegate.png" alt="ADB Safegate logo">
+          </div>
+          <div class="logo-pill tall">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/viron.png" alt="Viron International logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/schumacher.png" alt="Schumacher logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/prodos.png" alt="Prodos Capital logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/american.png" alt="American Anchor Bolt Manufacturing logo">
+          </div>
+          <div class="logo-pill">
+            <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/salt.png" alt="Salt Creek Capital logo">
           </div>
         </div>
       </div>
@@ -1094,24 +1142,24 @@
     <section class="section-dark">
       <div class="an-container">
         <div class="section-head">
-          <h2 class="white-heading">Manufacturers Use the Assessment to Find What’s <span class="accent">Really Limiting Growth</span></h2>
-          <p>Replace these placeholders with approved client testimonials when available.</p>
+          <h2 class="white-heading">Manufacturers Use the Assessment to Find What&rsquo;s <span class="accent">Really Limiting Growth</span></h2>
+          <p>Leadership teams trust Alpha Nova to uncover the real operational barriers behind missed output, delivery strain, and stalled growth.</p>
         </div>
         <div class="testimonials">
           <article class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>“The assessment helped us see where capacity was actually being lost and gave our leadership team a clear path forward.”</p>
-            <strong>Manufacturing Leader</strong>
+            <div class="testimonial-photo">
+              <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/19.-Douglas-Song-1.jpg" alt="Douglas Song">
+            </div>
           </article>
           <article class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>“We were treating symptoms. Alpha Nova helped us focus on the constraint that mattered most.”</p>
-            <strong>Operations Executive</strong>
+            <div class="testimonial-photo">
+              <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/8.-Kurt-Richardson-1.jpg" alt="Kurt Richardson">
+            </div>
           </article>
           <article class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>“The findings changed how we thought about growth, investment, and our real production ceiling.”</p>
-            <strong>Plant Leadership Team</strong>
+            <div class="testimonial-photo">
+              <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/2.-George-Smith-1.jpg" alt="George Smith">
+            </div>
           </article>
         </div>
       </div>
