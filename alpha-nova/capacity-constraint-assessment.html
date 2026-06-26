@@ -235,6 +235,275 @@
       margin-bottom: 0;
     }
 
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .section-copy {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-copy p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0 0 18px;
+    }
+
+    .section-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .availability-copy {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+
+    .availability-lead {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.7;
+    }
+
+    .availability-lead strong {
+      color: var(--charcoal);
+      font-weight: 900;
+    }
+
+    .availability-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .availability-item {
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 34px rgba(0,0,0,.07);
+      padding: 24px 24px 22px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .availability-item:before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 0;
+      width: 52px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff6c5f, var(--red));
+    }
+
+    .availability-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .availability-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .availability-item strong {
+      color: var(--charcoal);
+      font-weight: 900;
+    }
+
+    .availability-foot {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(215,25,32,.08), rgba(255,255,255,.8));
+      border: 1px solid rgba(215,25,32,.12);
+      color: var(--charcoal);
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .benchmark-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .benchmark-copy {
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 26px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.08);
+      padding: 42px 40px;
+      text-align: left;
+    }
+
+    .benchmark-copy p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+
+    .benchmark-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 0 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .benchmark-list li {
+      list-style: none !important;
+      position: relative;
+      padding-left: 24px;
+      color: var(--charcoal);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .benchmark-list li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .6em;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 0 rgba(215,25,32,.45);
+      transform: translateY(-50%);
+      animation: benchmarkPulse 1.9s ease-out infinite;
+    }
+
+    .benchmark-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .benchmark-visual {
+      position: relative;
+      min-height: 100%;
+      border-radius: 26px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(215,25,32,.24), transparent 34%),
+        linear-gradient(160deg, #17181c 0%, #0b0c10 100%);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 40px rgba(0,0,0,.14);
+      padding: 28px;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .benchmark-visual:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 26px 26px;
+      pointer-events: none;
+    }
+
+    .benchmark-dashboard {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 100%;
+      min-height: 100%;
+      align-items: center;
+    }
+
+    .benchmark-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      height: 320px;
+    }
+
+    .benchmark-bar {
+      flex: 1;
+      min-width: 0;
+      min-height: 36px;
+      border-radius: 18px 18px 8px 8px;
+      background: linear-gradient(180deg, #ff544d 0%, #d71920 100%);
+      box-shadow: 0 14px 30px rgba(215,25,32,.24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benchmark-bar:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.26), transparent 48%);
+    }
+
+    .benchmark-bar.one { height: 42%; }
+    .benchmark-bar.two { height: 58%; }
+    .benchmark-bar.three { height: 74%; }
+    .benchmark-bar.four { height: 88%; }
+
+    .benchmark-bars-labels {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+      color: rgba(255,255,255,.72);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .benchmark-bars-wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-content: end;
+      padding: 24px 22px 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    @keyframes benchmarkPulse {
+      0% { box-shadow: 0 0 0 0 rgba(215,25,32,.42); }
+      70% { box-shadow: 0 0 0 10px rgba(215,25,32,0); }
+      100% { box-shadow: 0 0 0 0 rgba(215,25,32,0); }
+    }
+
     .white-heading,
     .white-heading .accent {
       color: var(--white);
@@ -411,7 +680,7 @@
     }
 
     .visual-card:after {
-      content: "SYSTEM CONSTRAINT MAP";
+      content: "CAPACITY CONSTRAINT ASSESSMENT";
       position: absolute;
       left: 26px;
       top: 26px;
@@ -760,7 +1029,10 @@
       .step:nth-child(even) .step-copy { order: initial; }
       .step-visual { max-width: 420px; width: 100%; margin: 0 auto; }
       .form-wrap, .two-col { grid-template-columns: 1fr; }
+      .availability-panel { grid-template-columns: 1fr; }
+      .benchmark-layout { grid-template-columns: 1fr; }
       .visual-card { min-height: 300px; }
+      .benchmark-visual { min-height: 360px; }
     }
 
     @media (max-width: 760px) {
@@ -777,6 +1049,11 @@
       .iframe-holder { height: 920px; }
       .gear-watermark { right: -120px; opacity: .05; }
       .logo-pill { min-height: 92px; padding: 16px; }
+      .availability-lead { font-size: 19px; }
+      .availability-foot { font-size: 17px; padding: 18px 20px; }
+      .benchmark-copy, .benchmark-visual { padding: 28px 24px; }
+      .benchmark-bars { height: 240px; }
+      .benchmark-list li { font-size: 18px; }
     }
 
     @media (max-width: 460px) {
@@ -845,7 +1122,7 @@
       <div class="gear-watermark" aria-hidden="true"></div>
       <div class="an-container">
         <h1>Capacity Constraint <span class="accent">Assessment&trade;</span></h1>
-        <p class="hero-sub">Identify exactly what is limiting throughput, growth, and delivery performance in your operation.</p>
+        <p class="hero-sub">Before you invest in additional equipment, facilities, or labor, determine whether the capacity you need is already hiding inside your operation.</p>
         <p class="hero-support">Built for manufacturing leaders who need clarity before scaling.</p>
         <a class="btn" href="#request-assessment">Request Your Assessment</a>
       </div>
@@ -901,18 +1178,18 @@
     <section id="assessment" class="section-soft">
       <div class="an-container">
         <div class="section-head">
-          <h2>Most Manufacturers Do Not Have a Demand Problem. They Have a <span class="accent">Hidden Constraint</span> Problem.</h2>
+          <h2>What Happens If You Don't Address Capacity Gaps in the Next 6 Months?</h2>
           <p>The issue is not effort. It is constraint visibility.</p>
         </div>
         <div class="card-grid">
           <article class="card">
             <div class="icon">↗</div>
-            <h3>Revenue You Can Fulfill</h3>
+            <h3>Missed Growth Opportunities</h3>
             <p>Understand how much customer demand your operation can actually support.</p>
           </article>
           <article class="card">
             <div class="icon">⏱</div>
-            <h3>Delivery Under Growth</h3>
+            <h3>Customer Service Levels May Suffer</h3>
             <p>See whether on-time delivery can hold as load and complexity increase.</p>
           </article>
           <article class="card">
@@ -985,42 +1262,26 @@
     <section class="section-light">
       <div class="an-container">
         <div class="section-head">
+          <div class="eyebrow">Limited Availability</div>
           <h2>What the Capacity Constraint Assessment <span class="accent">Does</span></h2>
-          <p>The Capacity Constraint Assessment is a structured evaluation of your production system to identify where true system constraints exist, what is limiting throughput across your value stream, where capacity is being lost, misallocated, or masked, whether constraints are machine, labor, flow, scheduling, or policy-driven, and the real capacity ceiling of your current operating model.</p>
         </div>
-        <div class="steps">
-          <article class="step">
-            <div class="step-copy">
-              <div class="label">Step 1</div>
-              <h3>Identify the True System Constraints</h3>
-              <p>We separate symptoms from actual constraints across your value stream, resources, production flow, scheduling, and operating policies.</p>
-              <span class="note">This is not a general operational review. It is a constraint identification exercise built for decision-making.</span>
+        <div class="availability-copy">
+          <p class="availability-lead">Every Constraint Capacity Assessment&trade; is <strong>led by senior consultants</strong> and includes <strong>on-site observation, executive interviews, and custom analysis</strong> tailored to your operation.</p>
+          <div class="availability-panel">
+            <div class="availability-item">
+              <div class="availability-kicker">Executive-Led</div>
+              <p>To protect quality and maintain meaningful executive involvement, we <strong>limit participation to five manufacturers per quarter.</strong></p>
             </div>
-            <div class="step-visual" aria-hidden="true"><div class="factory"></div></div>
-          </article>
-
-          <article class="step">
-            <div class="step-copy">
-              <div class="label">Step 2</div>
-              <h3>Map Lost, Misallocated, or Masked Capacity</h3>
-              <p>We uncover where capacity is being consumed by delays, waiting, rework, materials, flow interruptions, equipment utilization, and labor utilization gaps.</p>
-              <span class="note">Most manufacturers have more capacity than they realize.</span>
+            <div class="availability-item">
+              <div class="availability-kicker">Engagement Window</div>
+              <p>Most engagements are completed within <strong>2-4 weeks</strong>, giving leadership clarity without dragging the process out.</p>
             </div>
-            <div class="step-visual" aria-hidden="true"><div class="flow"></div></div>
-          </article>
-
-          <article class="step">
-            <div class="step-copy">
-              <div class="label">Step 3</div>
-              <h3>Clarify the Real Capacity Ceiling</h3>
-              <p>We help leadership understand whether the current system can support near-term growth, where the ceiling is, and what must change first.</p>
-              <span class="note">You leave with clarity on where to focus and why it matters.</span>
+            <div class="availability-item">
+              <div class="availability-kicker">Next Step</div>
+              <p><strong>Request more information</strong> to determine fit, review current availability, and see whether this is the right next move.</p>
             </div>
-            <div class="step-visual" aria-hidden="true"><div class="roadmap"></div></div>
-          </article>
-        </div>
-        <div class="center-cta">
-          <a class="btn" href="#request-assessment">Request More Information</a>
+          </div>
+          <div class="availability-foot">Designed for leadership teams that want clear answers before committing to additional labor, equipment, or expansion.</div>
         </div>
       </div>
     </section>
@@ -1074,27 +1335,40 @@
     <section class="section-light">
       <div class="an-container">
         <div class="section-head">
+          <div class="eyebrow">Bonus: Manufacturing Performance Benchmark Report</div>
           <h2>This Is Not Another Generic <span class="accent">Operational Review</span></h2>
           <p>The assessment is focused on one question: what is currently constraining your ability to produce more output with your existing system?</p>
         </div>
-        <div class="compare-box">
-          <div class="compare-col">
-            <h3>What This Is Not</h3>
-            <ul class="compare-list no-list">
-              <li>A generic Lean assessment</li>
-              <li>A cultural survey</li>
-              <li>A KPI dashboard review</li>
-              <li>A theoretical efficiency study</li>
+        <div class="benchmark-layout">
+          <div class="benchmark-copy">
+            <p>In addition to your Constraint Capacity Assessment&trade;, you'll receive a comparative analysis of key performance indicators against industry peers, including:</p>
+            <ul class="benchmark-list">
+              <li>Revenue Growth</li>
+              <li>EBITDA Performance</li>
+              <li>Inventory Turns</li>
+              <li>Efficiency</li>
+              <li>Gross Margins</li>
+              <li>And many others</li>
             </ul>
+            <p>Because improvement opportunities are easier to identify when you understand how your operation compares to others in the market.</p>
           </div>
-          <div class="compare-col">
-            <h3>What This Is</h3>
-            <ul class="compare-list yes-list">
-              <li>A constraint identification exercise</li>
-              <li>A capacity visibility assessment</li>
-              <li>A decision-making tool for growth</li>
-              <li>A practical path to unlock throughput</li>
-            </ul>
+          <div class="benchmark-visual" aria-hidden="true">
+            <div class="benchmark-dashboard">
+              <div class="benchmark-bars-wrap">
+                <div class="benchmark-bars">
+                  <div class="benchmark-bar one"></div>
+                  <div class="benchmark-bar two"></div>
+                  <div class="benchmark-bar three"></div>
+                  <div class="benchmark-bar four"></div>
+                </div>
+                <div class="benchmark-bars-labels">
+                  <span>Growth</span>
+                  <span>Margin</span>
+                  <span>Turns</span>
+                  <span>Efficiency</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1115,25 +1389,25 @@
     <section class="section-light">
       <div class="an-container">
         <div class="section-head">
-          <h2>What You’ll Be Able to <span class="accent">Decide</span></h2>
-          <p>At the end of the assessment, leadership can make clearer decisions about capacity, investment, and growth risk.</p>
+          <h2>What Would Additional Capacity Mean for Your <span class="accent">Business?</span></h2>
+          <p>What would happen if your operation could support:</p>
         </div>
         <div class="decision-grid">
           <article class="decision">
             <div class="num">1</div>
-            <h3>Where to invest to unlock throughput</h3>
+            <h3>More revenue without adding equipment or labor</h3>
           </article>
           <article class="decision">
             <div class="num">2</div>
-            <h3>Whether you have real capacity or only the appearance of it</h3>
+            <h3>Higher margins without capital expenditures</h3>
           </article>
           <article class="decision">
             <div class="num">3</div>
-            <h3>Which constraint must be elevated or redesigned first</h3>
+            <h3>Better delivery performance without additional overtime</h3>
           </article>
           <article class="decision">
             <div class="num">4</div>
-            <h3>Whether your system can support near-term growth plans</h3>
+            <h3>Smarter capital investment decisions</h3>
           </article>
         </div>
       </div>
