@@ -1,0 +1,495 @@
+<!-- webhook retrigger 2026-06-26 -->
+<!-- PWC city hub: psychiatrist-la-jolla-ca | SEO title: Psychiatrist in La Jolla, CA | Psychiatric Wellness Center -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800');
+
+  .pwc-page{
+    --brand:#39657e; --brand-light:#6aa2b9; --brand-dark:#305e78;
+    --tint:#e3edef; --tint-soft:#f4f8fa; --green:#799d4c; --green-dark:#688a3f;
+    --ink:#26404e; --copy:#55707d; --white:#fff;
+    --line:rgba(57,101,126,.16); --shadow:0 16px 40px rgba(48,94,120,.12); --max:1160px;
+    font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--white); -webkit-font-smoothing:antialiased;
+  }
+  .pwc-page *{box-sizing:border-box}
+  /* defensive reset so Divi/theme element rules can't leak in (guide section 8) */
+  .pwc-page h1,.pwc-page h2,.pwc-page h3,.pwc-page h4,.pwc-page h5,.pwc-page h6,
+  .pwc-page p,.pwc-page ul,.pwc-page ol,.pwc-page li,.pwc-page figure,.pwc-page figcaption,.pwc-page blockquote{
+    margin:0;padding:0;color:inherit;font-family:inherit;line-height:inherit;text-transform:none;letter-spacing:normal;
+  }
+  .pwc-page img{max-width:100%;display:block}
+  .pwc-page a{text-decoration:none;color:inherit}
+  .pwc-page .wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+  .pwc-page .section{padding:56px 0}
+  .pwc-page .section.tint{background:var(--tint-soft)}
+  .pwc-page .card{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+  .pwc-page .eyebrow{margin:0 0 14px!important;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)!important}
+  .pwc-page h1,.pwc-page h2,.pwc-page h3{font-weight:700;line-height:1.2;color:var(--brand-dark)!important}
+
+  /* buttons: pill / uppercase / letter-spaced (matches reference "Book an Appointment") */
+  .pwc-page .actions{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
+  .pwc-page .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border-radius:100px;font-weight:700;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+  .pwc-page .btn:hover,.pwc-page .btn:focus-visible{transform:translateY(-2px)}
+  .pwc-page .btn-primary{background:var(--brand);color:var(--white)!important;box-shadow:0 12px 24px rgba(57,101,126,.26)}
+  .pwc-page .btn-primary:hover{background:var(--brand-dark)}
+  .pwc-page .btn-secondary{background:var(--white);color:var(--brand)!important;border:1.5px solid var(--brand-light)}
+  .pwc-page .btn-secondary:hover{border-color:var(--brand);background:var(--tint-soft)}
+  .pwc-page .btn-light{background:var(--white);color:var(--brand-dark)!important}
+  .pwc-page .btn-outline{background:transparent;color:var(--white)!important;border:1.5px solid rgba(255,255,255,.6)}
+  .pwc-page .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+  /* hero: light tint + photo, dark slate text (reference et_pb_bg_layout_light) */
+  .pwc-page .hero{background:linear-gradient(100deg,var(--tint) 0%,var(--tint-soft) 60%,var(--white) 100%);padding:62px 0;border-bottom:1px solid var(--line)}
+  .pwc-page .hero-grid,.pwc-page .split,.pwc-page .cta-grid,.pwc-page .band-grid,.pwc-page .contact-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:38px;align-items:center}
+  .pwc-page .hero-copy h1{font-size:clamp(1.85rem,3.4vw,2.85rem);color:var(--brand-dark)!important}
+  .pwc-page .hero-copy .lead{margin:20px 0 0;color:var(--copy)!important;line-height:1.85;max-width:600px;font-size:1.04rem}
+  .pwc-page .hero-visual img{width:100%;height:100%;object-fit:cover;min-height:400px;border-radius:18px;box-shadow:0 24px 50px rgba(48,94,120,.2)}
+
+  /* credibility trust bar: clean slate band, no overlap */
+  .pwc-page .strip{background:var(--brand)}
+  .pwc-page .creds{display:grid;grid-template-columns:repeat(4,1fr)}
+  .pwc-page .cred{padding:26px;border-left:1px solid rgba(255,255,255,.16)}
+  .pwc-page .cred:first-child{border-left:0;padding-left:0}
+  .pwc-page .cred strong{display:block;color:var(--white)!important;font-size:1.02rem;margin-bottom:5px}
+  .pwc-page .cred span{color:rgba(255,255,255,.84)!important;font-size:.88rem;line-height:1.5}
+
+  /* intro lead */
+  .pwc-page .lead-block{max-width:860px}
+  .pwc-page .lead-block p{color:var(--copy)!important;line-height:1.85;font-size:1.06rem;margin-bottom:14px!important}
+  .pwc-page .lead-block p:last-child{margin-bottom:0!important}
+
+  /* mini cards */
+  .pwc-page .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .pwc-page .mini{padding:30px}
+  .pwc-page .mini .icon{width:46px;height:46px;border-radius:12px;background:var(--tint);display:grid;place-items:center;color:var(--brand)!important;font-size:1.1rem;font-weight:800;margin-bottom:18px}
+  .pwc-page .mini strong{display:block;color:var(--brand-dark)!important;font-size:1.1rem;margin-bottom:10px}
+  .pwc-page .mini p{color:var(--copy)!important;line-height:1.7}
+
+  /* section heading */
+  .pwc-page .heading{max-width:760px;margin-bottom:30px}
+  .pwc-page .heading h2{font-size:clamp(1.55rem,2.5vw,2.15rem);color:var(--brand-dark)!important}
+  .pwc-page .heading p{margin-top:16px!important;color:var(--copy)!important;line-height:1.8}
+
+  /* split panels */
+  .pwc-page .split{align-items:stretch}
+  .pwc-page .split.flip .panel{order:2}
+  .pwc-page .panel{padding:34px}
+  .pwc-page .panel p{color:var(--copy)!important;line-height:1.85;margin-bottom:14px!important}
+  .pwc-page .panel p:last-of-type{margin-bottom:0!important}
+  .pwc-page .aside{padding:32px;background:var(--tint);border-color:transparent}
+  .pwc-page .aside strong{display:block;color:var(--brand-dark)!important;font-size:1.05rem;margin-bottom:16px}
+  .pwc-page .checks{list-style:none;display:grid;gap:12px}
+  .pwc-page .checks li{position:relative;padding-left:30px;line-height:1.6;color:var(--copy)!important;font-weight:600}
+  .pwc-page .checks li:before{content:"";position:absolute;left:0;top:2px;width:19px;height:19px;border-radius:50%;background:var(--green);opacity:.16}
+  .pwc-page .checks li:after{content:"";position:absolute;left:7px;top:6px;width:5px;height:9px;border-right:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(42deg)}
+  .pwc-page .panel .checks{margin-top:20px}
+
+  /* media */
+  .pwc-page .media{padding:0;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(135deg,var(--brand) 0%,var(--brand-light) 100%)}
+  .pwc-page .media img{width:100%;flex:1;object-fit:cover;min-height:320px}
+  .pwc-page .media .caption{margin:0;padding:18px 22px;background:var(--white);color:var(--brand-dark)!important;font-weight:600;line-height:1.55;font-size:.93rem;border-top:1px solid var(--line)}
+  .pwc-page .media-gen{background:linear-gradient(135deg,var(--brand-dark),var(--green))}
+
+  /* serving band */
+  .pwc-page .band{padding:38px;background:var(--tint)}
+  .pwc-page .band-copy h2{font-size:clamp(1.5rem,2.3vw,2rem);color:var(--brand-dark)!important}
+  .pwc-page .band-copy p{margin-top:14px!important;color:var(--copy)!important;line-height:1.8}
+  .pwc-page .band-copy p+p{margin-top:12px!important}
+  .pwc-page .band .media{border-radius:14px;min-height:280px}
+
+  /* contact */
+  .pwc-page .contact{padding:34px}
+  .pwc-page .nap{padding:16px 0;border-bottom:1px solid var(--line)}
+  .pwc-page .nap:first-child{padding-top:0}
+  .pwc-page .nap strong{display:block;color:var(--green)!important;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+  .pwc-page .nap p{color:var(--ink)!important;font-size:1.05rem;font-weight:600}
+  .pwc-page .nap a{color:var(--brand)!important}
+  .pwc-page .hours{padding:34px;background:var(--brand);border-color:transparent}
+  .pwc-page .hours strong{display:block;color:var(--white)!important;font-size:1.08rem;margin-bottom:18px}
+  .pwc-page .hours .checks li{color:rgba(255,255,255,.92)!important;font-weight:500}
+  .pwc-page .hours .checks li:before{background:var(--white);opacity:.22}
+  .pwc-page .hours .checks li:after{border-color:var(--white)}
+
+  /* faq */
+  .pwc-page .faq{display:grid;gap:14px}
+  .pwc-page .faq-item{overflow:hidden}
+  .pwc-page .faq-item summary{cursor:pointer;list-style:none;padding:22px 56px 22px 26px;font-weight:700;color:var(--brand-dark)!important;position:relative}
+  .pwc-page .faq-item summary::-webkit-details-marker{display:none}
+  .pwc-page .faq-item summary:after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--green)!important;font-weight:700}
+  .pwc-page .faq-item[open] summary:after{content:"\2013"}
+  .pwc-page .faq-body{padding:0 26px 24px;color:var(--copy)!important;line-height:1.8}
+
+  /* link list */
+  .pwc-page .link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .pwc-page .link{display:block;padding:24px;border-radius:14px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease}
+  .pwc-page .link:hover,.pwc-page .link:focus-visible{transform:translateY(-3px);border-color:var(--brand-light)}
+  .pwc-page .link strong{display:block;color:var(--brand-dark)!important;font-size:1.06rem}
+  .pwc-page .link span{display:block;margin-top:8px;color:var(--copy)!important;line-height:1.6;font-size:.93rem}
+
+  /* cta band */
+  .pwc-page .cta{padding:46px;border-radius:18px;background:linear-gradient(120deg,var(--brand-dark),var(--brand) 70%,var(--brand-light));color:var(--white)}
+  .pwc-page .cta-grid{align-items:center}
+  .pwc-page .cta h2{font-size:clamp(1.5rem,2.4vw,2.05rem);color:var(--white)!important}
+  .pwc-page .cta .eyebrow{color:#cfe0e6!important}
+  .pwc-page .cta p{margin-top:14px!important;color:rgba(255,255,255,.9)!important;line-height:1.8}
+
+  /* reveal (content visible without JS, guide section 10) */
+  .pwc-page [data-reveal]{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+  html.dgs-js .pwc-page [data-reveal]{opacity:0;transform:translateY(20px)}
+  html.dgs-js .pwc-page [data-reveal].in-view{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .pwc-page .hero-grid,.pwc-page .split,.pwc-page .cta-grid,.pwc-page .band-grid,.pwc-page .contact-grid,
+    .pwc-page .cards,.pwc-page .creds,.pwc-page .link-list{grid-template-columns:1fr}
+    .pwc-page .split.flip .panel{order:0}
+    .pwc-page .cred{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0}
+    .pwc-page .cred:first-child{border-top:0}
+    .pwc-page .hero-visual{margin-top:8px}
+  }
+  @media(max-width:680px){
+    .pwc-page .wrap{width:min(calc(100% - 22px),var(--max))}
+    .pwc-page .section{padding:40px 0}
+    .pwc-page .panel,.pwc-page .aside,.pwc-page .mini,.pwc-page .cta,.pwc-page .band,.pwc-page .contact,.pwc-page .hours{padding:26px}
+    .pwc-page .btn{width:100%}
+    .pwc-page .hero-visual img,.pwc-page .media img{min-height:260px}
+  }
+</style>
+
+<main class="pwc-page">
+    <section class="hero" data-reveal>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Cultivating Wellness for a Healthier Community</p>
+          <h1>Psychiatrist in La Jolla, CA</h1>
+        <p class="lead">Psychiatric Wellness Center provides compassionate adult psychiatry and personalized mental health care for patients in La Jolla, CA and nearby communities. Our team focuses on helping adults feel heard, supported, and involved in their treatment plan. Whether you are seeking help for adult ADHD, anxiety, panic attacks, women's mental health concerns, postpartum symptoms, perimenopause related mood changes, or general medication management, our goal is to provide thoughtful care that supports your path toward wellness.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/contact-san-diego/">Book an Appointment</a>
+            <a class="btn btn-secondary" href="tel:7606884080">Call (760) 688-4080</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://psychwellnesscenter.com/wp-content/uploads/2024/10/Psychiatrist-san-diego-CA.webp" alt="Psychiatrist in La Jolla, CA - Psychiatric Wellness Center" loading="eager" decoding="async" width="700" height="500">
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" data-reveal>
+      <div class="wrap creds">
+        <div class="cred"><strong>UCLA &amp; USC-trained</strong><span>Physicians with training from prestigious institutions.</span></div>
+        <div class="cred"><strong>Patient-centered</strong><span>Individualized care plans built around your goals.</span></div>
+        <div class="cred"><strong>In-network options</strong><span>Insurance-friendly access to psychiatric care.</span></div>
+        <div class="cred"><strong>In-person &amp; online</strong><span>Visit our Encinitas office or meet by telehealth.</span></div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="lead-block">
+        <p>La Jolla patients often look for discreet, thoughtful psychiatric care that fits into a busy personal, academic, professional, or family schedule. Mental health concerns can affect focus, sleep, motivation, relationships, and overall quality of life. A psychiatrist can help evaluate symptoms, discuss treatment options, and create a care plan that fits your needs. The Encinitas office and telehealth options help make psychiatric care accessible for patients in and around La Jolla.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap cards">
+        <article class="mini card">
+          <div class="icon" aria-hidden="true">1</div>
+          <strong>Adult Psychiatry &amp; Medication Management</strong>
+          <p>Evaluation, diagnosis, and ongoing medication management built around your individual needs.</p>
+        </article>
+        <article class="mini card">
+          <div class="icon" aria-hidden="true">2</div>
+          <strong>Adult ADHD Treatment</strong>
+          <p>Focused evaluation and treatment for adults managing focus, organization, and follow-through.</p>
+        </article>
+        <article class="mini card">
+          <div class="icon" aria-hidden="true">3</div>
+          <strong>Anxiety &amp; Panic Support</strong>
+          <p>Care for racing thoughts, constant worry, and panic symptoms so you can feel steadier.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+      <div class="heading" data-reveal>
+        <p class="eyebrow">Adult Psychiatry</p>
+        <h2>Adult Psychiatry and Medication Management Near La Jolla</h2>
+        <p>For adults searching for a psychiatrist in La Jolla, CA, Psychiatric Wellness Center offers evaluation and ongoing care for a variety of mental health concerns. Treatment may include diagnostic clarification, medication management, supportive therapy, lifestyle recommendations, and coordination with other providers when appropriate. Every patient's needs are different, so care is built around the individual rather than a one-size-fits-all approach.</p>
+      </div>
+        <div class="split">
+        <div class="panel card">
+        <p>Medication management can be an important part of psychiatric care for some patients. Our providers take time to understand symptoms, health history, current medications, goals, and concerns before discussing treatment options. The focus is always on safe, informed, and personalized care.</p>
+        <ul class="checks">
+          <li>Diagnostic clarification and individualized care plans</li>
+          <li>Safe, informed medication management</li>
+          <li>Supportive therapy and lifestyle guidance</li>
+          <li>Coordination with your other providers when helpful</li>
+        </ul>
+        </div>
+      <figure class="media card">
+        <img src="https://psychwellnesscenter.com/wp-content/uploads/2024/10/Psychiatrist-Encinitas-CA.webp" alt="Psychiatrist near La Jolla, CA at Psychiatric Wellness Center" loading="lazy" decoding="async" width="700" height="500">
+        <figcaption class="caption">Compassionate, patient-centered psychiatry serving La Jolla and North County San Diego.</figcaption>
+      </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-reveal>
+      <div class="wrap">
+      <div class="heading" data-reveal>
+        <p class="eyebrow">Adult ADHD</p>
+        <h2>Adult ADHD Treatment Near La Jolla</h2>
+        <p>Adults with ADHD may experience difficulty with focus, organization, time management, follow-through, restlessness, impulsivity, or feeling mentally overwhelmed. These challenges can affect work, school, home life, and relationships. Psychiatric Wellness Center provides adult ADHD evaluation and treatment near La Jolla, including care for patients looking for ADHD medication management and support with daily functioning.</p>
+      </div>
+        <div class="split flip">
+        <div class="panel card">
+        <p>ADHD can also overlap with anxiety, depression, sleep concerns, burnout, and hormonal changes. A careful evaluation helps identify what may be contributing to symptoms so that treatment can be more targeted. For some patients, treatment may include medication. For others, it may also involve behavioral strategies, therapy referrals, lifestyle adjustments, or additional support.</p>
+        </div>
+        <aside class="aside card">
+          <strong>What care can include</strong>
+        <ul class="checks">
+          <li>Adult ADHD evaluation and diagnosis</li>
+          <li>ADHD medication management</li>
+          <li>Strategies for focus, organization, and follow-through</li>
+          <li>Support when ADHD overlaps with anxiety or mood</li>
+        </ul>
+        </aside>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-reveal>
+      <div class="wrap">
+      <div class="heading" data-reveal>
+        <p class="eyebrow">Anxiety &amp; Panic</p>
+        <h2>Anxiety and Panic Attack Treatment Near La Jolla</h2>
+        <p>Anxiety can show up as racing thoughts, constant worry, muscle tension, trouble sleeping, irritability, avoidance, or difficulty feeling calm. Panic attacks may feel sudden and intense, sometimes including shortness of breath, chest tightness, dizziness, shaking, or fear that something is seriously wrong. Patients searching for anxiety treatment or panic attack treatment near La Jolla can work with a psychiatrist to better understand symptoms and explore treatment options.</p>
+      </div>
+        <div class="split">
+        <div class="panel card">
+        <p>Treatment for anxiety and panic symptoms may include medication management, coping strategies, therapy recommendations, and support for identifying patterns that make symptoms worse. The goal is to help patients regain a greater sense of stability, confidence, and control in daily life.</p>
+        <ul class="checks">
+          <li>Care for worry, tension, and racing thoughts</li>
+          <li>Panic attack evaluation and treatment</li>
+          <li>Medication management when appropriate</li>
+          <li>Coping strategies and therapy referrals</li>
+        </ul>
+        </div>
+      <figure class="media card media-gen">
+        <img src="https://psychwellnesscenter.com/wp-content/uploads/2026/06/san-diego-coast-wellness.webp" alt="Anxiety and panic treatment for La Jolla, CA patients" loading="lazy" decoding="async" width="700" height="500">
+        <figcaption class="caption">Support to help you feel calmer, steadier, and more in control day to day.</figcaption>
+      </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-reveal>
+      <div class="wrap">
+      <div class="heading" data-reveal>
+        <p class="eyebrow">Women's Mental Health</p>
+        <h2>Women's Mental Health Support Near La Jolla</h2>
+        <p>Women may experience mental health concerns connected to life transitions, stress, relationships, career demands, pregnancy, postpartum changes, perimenopause, menopause, trauma, or hormonal shifts. Psychiatric Wellness Center provides women's mental health support near La Jolla with a compassionate and individualized approach.</p>
+      </div>
+        <div class="split flip">
+        <div class="panel card">
+        <p>Care may include support for anxiety, depression, mood changes, adult ADHD in women, professional burnout, postpartum symptoms, and perimenopause related emotional changes. Our team works with patients to understand the full picture, including symptoms, health history, lifestyle, and personal goals.</p>
+        </div>
+        <aside class="aside card">
+          <strong>What care can include</strong>
+        <ul class="checks">
+          <li>Anxiety, depression, and mood support</li>
+          <li>Adult ADHD in women</li>
+          <li>Postpartum and perimenopause concerns</li>
+          <li>Care through stress and life transitions</li>
+        </ul>
+        </aside>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-reveal>
+      <div class="wrap">
+      <div class="heading" data-reveal>
+        <p class="eyebrow">Postpartum &amp; Perimenopause</p>
+        <h2>Postpartum and Perimenopause Mental Health Near La Jolla</h2>
+        <p>Postpartum depression and postpartum anxiety can affect mood, sleep, energy, bonding, confidence, and day-to-day functioning. These symptoms are treatable, and support is available. Psychiatric Wellness Center provides care for patients near La Jolla who may be experiencing emotional changes after childbirth, pregnancy loss, or major family transitions.</p>
+      </div>
+        <div class="split">
+        <div class="panel card">
+        <p>Perimenopause and menopause can also bring mood changes, anxiety, sleep disruption, irritability, and changes in mental clarity. For some patients, these symptoms may feel confusing or disruptive. Psychiatric care can help evaluate what is happening and provide treatment options that support emotional wellness during this stage of life.</p>
+        </div>
+        <aside class="aside card">
+          <strong>What care can include</strong>
+        <ul class="checks">
+          <li>Postpartum depression and anxiety care</li>
+          <li>Support after pregnancy loss or transitions</li>
+          <li>Perimenopause and menopause mood changes</li>
+          <li>Treatment options that fit this stage of life</li>
+        </ul>
+        </aside>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-reveal>
+      <div class="wrap">
+      <div class="heading" data-reveal>
+        <p class="eyebrow">Telehealth Psychiatry</p>
+        <h2>Telehealth Psychiatry for La Jolla Patients</h2>
+        <p>Psychiatric Wellness Center offers telehealth psychiatry appointments when appropriate for the patient and type of care needed. Telehealth can be helpful for adults in La Jolla who need a more flexible option for follow-up visits, medication management, ADHD care, anxiety support, women's mental health, postpartum care, or perimenopause concerns.</p>
+      </div>
+        <div class="split flip">
+        <div class="panel card">
+        <p>Not every appointment or situation is the right fit for telehealth, but for many patients, online psychiatry can make it easier to stay consistent with care. The team can help determine whether telehealth is appropriate based on your needs.</p>
+        </div>
+        <aside class="aside card">
+          <strong>What care can include</strong>
+        <ul class="checks">
+          <li>Flexible online follow-up visits</li>
+          <li>Medication management from home</li>
+          <li>ADHD, anxiety, and women's health support</li>
+          <li>Guidance on whether telehealth fits your care</li>
+        </ul>
+        </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="band card">
+          <div class="band-grid">
+            <div class="band-copy">
+              <p class="eyebrow">Local Psychiatric Care</p>
+              <h2>Psychiatric Wellness Center Serving La Jolla and Nearby Communities</h2>
+        <p>Psychiatric Wellness Center serves patients in La Jolla and nearby areas including La Jolla, University City, Del Mar, Carmel Valley, and the greater San Diego area. The practice provides care for adults seeking mental health services, psychiatric evaluation, medication management, and ongoing support for conditions such as adult psychiatry, ADHD treatment, anxiety care, women's mental health, postpartum concerns, perimenopause related mood changes, and telehealth psychiatry.</p>
+        <p>If you are looking for psychiatric care, the first step is reaching out to schedule an appointment or learn more about available options. The team is here to provide support, answer general questions, and help you take the next step toward care.</p>
+              <div class="actions">
+                <a class="btn btn-primary" href="/contact-san-diego/">Schedule a Consultation Now</a>
+              </div>
+            </div>
+                  <figure class="media card media-gen">
+        <img src="https://psychwellnesscenter.com/wp-content/uploads/2026/06/san-diego-skyline-wellness.webp" alt="Mental health care for La Jolla and nearby San Diego communities" loading="lazy" decoding="async" width="700" height="500">
+        <figcaption class="caption">Proudly serving La Jolla and the surrounding North County San Diego communities.</figcaption>
+      </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Visit or Contact Us</p>
+          <h2>Psychiatric Wellness Center Near La Jolla</h2>
+          <p>Reach out to schedule an appointment, ask a general question, or learn more about in-person and telehealth psychiatry options for La Jolla patients.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact card">
+            <div class="nap">
+              <strong>Office</strong>
+              <p>169 Saxony Rd., Suite 103, Encinitas, CA 92024</p>
+            </div>
+            <div class="nap">
+              <strong>Phone</strong>
+              <p><a href="tel:7606884080">(760) 688-4080</a></p>
+            </div>
+            <div class="nap">
+              <strong>Email</strong>
+              <p><a href="mailto:info@psychwellnesscenter.com">info@psychwellnesscenter.com</a></p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="/contact-san-diego/">Book an Appointment</a>
+              <a class="btn btn-secondary" href="tel:7606884080">Call (760) 688-4080</a>
+            </div>
+          </div>
+          <div class="hours card">
+            <strong>What to expect</strong>
+            <ul class="checks">
+              <li>A compassionate, patient-centered first conversation.</li>
+              <li>Time to understand your symptoms, history, and goals.</li>
+              <li>A care plan tailored to you, not a one-size-fits-all approach.</li>
+              <li>In-person visits in Encinitas or telehealth when appropriate.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Common Questions</p>
+          <h2>FAQs About Seeing a Psychiatrist Near La Jolla</h2>
+        </div>
+        <div class="faq">
+        <details class="faq-item card" open>
+          <summary>Do I need a psychiatrist if I live in La Jolla?</summary>
+          <div class="faq-body">If you live in La Jolla and are experiencing symptoms that affect your mood, focus, sleep, relationships, work, or daily functioning, a psychiatric evaluation may be helpful. A psychiatrist can assess your symptoms and discuss treatment options based on your needs.</div>
+        </details>
+        <details class="faq-item card">
+          <summary>Does Psychiatric Wellness Center provide ADHD treatment near La Jolla?</summary>
+          <div class="faq-body">Yes. Psychiatric Wellness Center provides adult ADHD evaluation and treatment for patients near La Jolla. Treatment may include medication management, behavioral strategies, and support for managing symptoms in daily life.</div>
+        </details>
+        <details class="faq-item card">
+          <summary>Can I get help for anxiety or panic attacks near La Jolla?</summary>
+          <div class="faq-body">Yes. The practice provides care for anxiety and panic symptoms. Treatment may include medication management, therapy recommendations, and coping strategies based on your symptoms and goals.</div>
+        </details>
+        <details class="faq-item card">
+          <summary>Do you offer women's mental health support near La Jolla?</summary>
+          <div class="faq-body">Yes. Psychiatric Wellness Center supports women through concerns such as anxiety, depression, ADHD, postpartum symptoms, perimenopause related mood changes, stress, and life transitions.</div>
+        </details>
+        <details class="faq-item card">
+          <summary>Is telehealth available for La Jolla patients?</summary>
+          <div class="faq-body">Telehealth appointments may be available when appropriate. The team can help determine whether online psychiatry is a good fit based on the type of visit and your care needs.</div>
+        </details>
+        <details class="faq-item card">
+          <summary>What should I do if symptoms feel urgent or unsafe?</summary>
+          <div class="faq-body">If you are experiencing a medical emergency, thoughts of harming yourself or someone else, or feel unable to stay safe, call 911 or go to the nearest emergency room immediately. Online content should not replace emergency care.</div>
+        </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Explore More Care</p>
+          <h2>Related Psychiatric Services</h2>
+        </div>
+        <div class="link-list">
+          <a class="link" href="/adult-adhd-in-san-diego/"><strong>Adult ADHD Treatment</strong><span>Dedicated evaluation and treatment for adults managing ADHD symptoms.</span></a>
+          <a class="link" href="/womens-health-in-san-diego/"><strong>Women's Mental Health</strong><span>Support for anxiety, mood changes, postpartum, and perimenopause concerns.</span></a>
+          <a class="link" href="/postpartum-depression-treatment-in-san-diego/"><strong>Postpartum Depression Treatment</strong><span>Compassionate care for emotional changes after childbirth and pregnancy.</span></a>
+          <a class="link" href="/psychiatrist-san-diego/"><strong>Main Psychiatrist Page</strong><span>Explore our full psychiatry services across San Diego and North County.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" data-reveal>
+      <div class="wrap">
+        <div class="cta">
+          <div class="cta-grid">
+            <div>
+              <p class="eyebrow">Take the Next Step</p>
+              <h2>Looking for a Psychiatrist in La Jolla, CA?</h2>
+              <p>If you are looking for a psychiatrist near La Jolla, Psychiatric Wellness Center is here to help. Contact our team to learn more about appointments, telehealth options, and personalized psychiatric care.</p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-light" href="/contact-san-diego/">Book an Appointment</a>
+              <a class="btn btn-outline" href="tel:7606884080">Call (760) 688-4080</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+<script>
+  (function(){
+    document.documentElement.classList.add('dgs-js');
+    function reveal(){
+      var els=document.querySelectorAll('.pwc-page [data-reveal]');
+      if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in-view')});return;}
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in-view');io.unobserve(x.target);}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+      els.forEach(function(e){io.observe(e)});
+    }
+    if(document.readyState!=='loading')reveal();else document.addEventListener('DOMContentLoaded',reveal);
+  })();
+</script>
