@@ -1,0 +1,487 @@
+<!-- vg-mojave v1 2026-06-30 -->
+<style>
+  /* Single-family @import per font, no "&" (GitPress/WordPress encodes & -> &amp; and breaks combined imports) */
+  @import url('https://fonts.googleapis.com/css2?family=Alata');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800');
+
+  .vg-mojave {
+    --vg-green: #295A54;
+    --vg-green-dark: #1d403c;
+    --vg-teal: #7EBEC5;
+    --vg-red: #D82B38;
+    --vg-ink: #222;
+    --vg-muted: #5a6360;
+    --vg-bg: #ffffff;
+    --vg-bg-soft: #f4f6f5;
+    --vg-line: #e3e8e6;
+    --vg-head: 'Alata', Helvetica, Arial, sans-serif;
+    --vg-body: 'Poppins', Helvetica, Arial, sans-serif;
+    --vg-btn: 'Inter', Helvetica, Arial, sans-serif;
+    font-family: var(--vg-body);
+    color: var(--vg-ink);
+    line-height: 1.65;
+  }
+
+  /* --- Anti-Divi reset (scoped): stop theme spacing/colors/transforms leaking in --- */
+  .vg-mojave h1, .vg-mojave h2, .vg-mojave h3, .vg-mojave h4, .vg-mojave h5, .vg-mojave h6,
+  .vg-mojave p, .vg-mojave ul, .vg-mojave ol, .vg-mojave li, .vg-mojave figure,
+  .vg-mojave blockquote, .vg-mojave a, .vg-mojave summary, .vg-mojave details {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .vg-mojave ul { list-style: none; }
+  .vg-mojave a { text-decoration: none; }
+  .vg-mojave *, .vg-mojave *::before, .vg-mojave *::after { box-sizing: border-box; }
+  .vg-mojave img { max-width: 100%; height: auto; display: block; }
+
+  .vg-mojave .vg-wrap { width: 90%; max-width: 1180px; margin: 0 auto; }
+
+  .vg-mojave h2 {
+    font-family: var(--vg-head);
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: 1.12;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--vg-green) !important;
+  }
+  .vg-mojave h3 {
+    font-family: var(--vg-head);
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--vg-ink) !important;
+  }
+  .vg-mojave p { color: var(--vg-muted) !important; font-size: 16px; }
+  .vg-mojave .vg-lead { font-size: 18px; }
+
+  /* Inline content links (not buttons, which live outside <p>) */
+  .vg-mojave p a {
+    color: var(--vg-green) !important;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .2s ease;
+  }
+  .vg-mojave p a:hover { color: var(--vg-red) !important; }
+
+  /* --- Buttons (square, green, Inter 700, hover -> black) --- */
+  .vg-mojave .vg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--vg-btn);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .4px;
+    padding: 11px 22px;
+    border-radius: 0;
+    border: 2px solid var(--vg-green);
+    background: var(--vg-green);
+    color: #fff !important;
+    cursor: pointer;
+    transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+  }
+  .vg-mojave .vg-btn:hover { background: #000; border-color: #000; color: #fff !important; }
+  .vg-mojave .vg-btn--ghost {
+    background: transparent;
+    border-color: #fff;
+    color: #fff !important;
+  }
+  .vg-mojave .vg-btn--ghost:hover { background: #fff; border-color: #fff; color: var(--vg-green) !important; }
+  .vg-mojave .vg-btn--ghost-green {
+    background: transparent;
+    border-color: var(--vg-green);
+    color: var(--vg-green) !important;
+  }
+  .vg-mojave .vg-btn--ghost-green:hover { background: var(--vg-green); color: #fff !important; }
+
+  /* --- Hero --- */
+  .vg-mojave .vg-hero {
+    position: relative;
+    padding: 150px 0 96px;
+    background-image:
+      linear-gradient(180deg, rgba(0,0,0,.72) 12%, rgba(41,90,84,.55) 70%, rgba(41,90,84,.78) 100%),
+      url('https://valorguardsecurity.com/wp-content/uploads/2025/02/valor-guard-security-company-footer.webp');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid var(--vg-green);
+  }
+  .vg-mojave .vg-hero h1 {
+    font-family: var(--vg-head);
+    text-transform: uppercase;
+    color: #fff !important;
+    font-size: clamp(34px, 6vw, 72px);
+    line-height: .98;
+    letter-spacing: 4px;
+    text-shadow: 0 0 .3em rgba(0,0,0,.4);
+    max-width: 16ch;
+  }
+  .vg-mojave .vg-hero .vg-eyebrow {
+    display: inline-block;
+    font-family: var(--vg-btn);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vg-teal) !important;
+    margin-bottom: 18px;
+  }
+  .vg-mojave .vg-hero p {
+    color: rgba(255,255,255,.92) !important;
+    font-size: 18px;
+    max-width: 60ch;
+    margin-top: 18px;
+  }
+  .vg-mojave .vg-hero .vg-cta-row { margin-top: 34px; }
+
+  .vg-mojave .vg-cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  /* --- Section rhythm --- */
+  .vg-mojave .vg-section { padding: 72px 0; }
+  .vg-mojave .vg-section--soft { background: var(--vg-bg-soft); }
+  .vg-mojave .vg-section__head { max-width: 760px; margin-bottom: 40px; }
+  .vg-mojave .vg-section__head p { margin-top: 16px; }
+  .vg-mojave .vg-section__head .vg-kicker {
+    display: inline-block;
+    font-family: var(--vg-btn);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--vg-red) !important;
+    margin-bottom: 14px;
+  }
+  .vg-mojave .vg-section p + p { margin-top: 14px; }
+
+  /* --- Property-type chips --- */
+  .vg-mojave .vg-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+  .vg-mojave .vg-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #fff;
+    border: 1px solid var(--vg-line);
+    border-left: 3px solid var(--vg-green);
+    padding: 12px 16px;
+    font-family: var(--vg-btn);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--vg-ink) !important;
+  }
+  .vg-mojave .vg-chip svg { width: 16px; height: 16px; color: var(--vg-green); flex: none; }
+
+  /* --- Services grid --- */
+  .vg-mojave .vg-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .vg-mojave .vg-card {
+    background: #fff;
+    border: 1px solid var(--vg-line);
+    border-top: 4px solid var(--vg-green);
+    padding: 32px 30px;
+  }
+  .vg-mojave .vg-card .vg-ico {
+    width: 54px;
+    height: 54px;
+    border-radius: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(41,90,84,.08);
+    color: var(--vg-green);
+    margin-bottom: 18px;
+  }
+  .vg-mojave .vg-card .vg-ico svg { width: 26px; height: 26px; display: block; }
+  .vg-mojave .vg-card h3 { margin-bottom: 12px; }
+  .vg-mojave .vg-card p { font-size: 15px; }
+
+  /* --- Why-choose checklist --- */
+  .vg-mojave .vg-why {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 30px;
+    margin-top: 36px;
+  }
+  .vg-mojave .vg-why li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-family: var(--vg-body);
+    font-size: 16px;
+    color: var(--vg-ink) !important;
+    font-weight: 500;
+  }
+  .vg-mojave .vg-why li svg {
+    width: 22px; height: 22px; flex: none; color: var(--vg-green); margin-top: 2px;
+  }
+
+  /* --- Reassurance band --- */
+  .vg-mojave .vg-band {
+    background: var(--vg-green);
+    color: #fff;
+    padding: 64px 0;
+    text-align: center;
+  }
+  .vg-mojave .vg-band h2 { color: #fff !important; }
+  .vg-mojave .vg-band p { color: rgba(255,255,255,.9) !important; max-width: 62ch; margin: 18px auto 0; }
+  .vg-mojave .vg-band .vg-cta-row { justify-content: center; margin-top: 30px; }
+
+  /* --- FAQ --- */
+  .vg-mojave .vg-faq { max-width: 860px; margin-top: 36px; }
+  .vg-mojave .vg-faq details {
+    border: 1px solid var(--vg-line);
+    border-left: 3px solid var(--vg-green);
+    background: #fff;
+    margin-bottom: 12px;
+  }
+  .vg-mojave .vg-faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 22px;
+    font-family: var(--vg-btn);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--vg-ink) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .vg-mojave .vg-faq summary::-webkit-details-marker { display: none; }
+  .vg-mojave .vg-faq summary .vg-plus {
+    flex: none; width: 22px; height: 22px; color: var(--vg-green); transition: transform .25s ease;
+  }
+  .vg-mojave .vg-faq details[open] summary .vg-plus { transform: rotate(45deg); }
+  .vg-mojave .vg-faq .vg-faq__body { padding: 0 22px 22px; }
+  .vg-mojave .vg-faq .vg-faq__body p { font-size: 15px; }
+
+  /* --- Closing CTA --- */
+  .vg-mojave .vg-closing {
+    text-align: center;
+    padding: 80px 0;
+    background: var(--vg-bg-soft);
+    border-top: 5px solid var(--vg-green);
+  }
+  .vg-mojave .vg-closing p { max-width: 58ch; margin: 18px auto 0; }
+  .vg-mojave .vg-closing .vg-cta-row { justify-content: center; margin-top: 32px; }
+
+  /* --- Reveal animation: visible by default, enhanced only when JS present --- */
+  .vg-mojave [data-reveal] { opacity: 1; transform: none; }
+  html.dgs-js .vg-mojave [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  html.dgs-js .vg-mojave [data-reveal].in-view { opacity: 1; transform: none; }
+
+  /* --- Responsive --- */
+  @media (max-width: 860px) {
+    .vg-mojave .vg-grid,
+    .vg-mojave .vg-why { grid-template-columns: 1fr; }
+    .vg-mojave .vg-hero { padding: 120px 0 72px; }
+    .vg-mojave .vg-section { padding: 56px 0; }
+  }
+  @media (max-width: 520px) {
+    .vg-mojave .vg-btn { width: 100%; justify-content: center; }
+    .vg-mojave .vg-cta-row { flex-direction: column; }
+  }
+</style>
+
+<main class="vg-mojave">
+
+  <!-- 1. HERO -->
+  <section class="vg-hero">
+    <div class="vg-wrap" data-reveal>
+      <span class="vg-eyebrow">Veteran-Led Private Security &middot; Mojave, CA</span>
+      <h1>Private Security in Mojave, CA</h1>
+      <p class="vg-lead">ValorGuard provides professional private security in Mojave, CA for businesses, properties, events, energy sites, commercial locations, and community spaces that need dependable protection. As a BSIS-licensed and insured private security company, our team helps clients create safer environments through visible security presence, proactive monitoring, and customized protection plans.</p>
+      <div class="vg-cta-row">
+        <a class="vg-btn" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. VETERAN-LED INTRO + PROPERTY TYPES -->
+  <section class="vg-section">
+    <div class="vg-wrap">
+      <div class="vg-section__head" data-reveal>
+        <span class="vg-kicker">Security Guard Company</span>
+        <h2>Security Guard Company Serving Mojave, CA</h2>
+        <p>Every property has different security needs. Some businesses need an officer on-site during operating hours. Others need after-hours patrol, parking lot checks, event coverage, or protection for large outdoor sites.</p>
+        <p>ValorGuard works with clients in Mojave and surrounding Central Valley communities to create security coverage based on location, schedule, risk level, and the type of property being protected. For large outdoor energy locations, we also provide <a href="/solar-field-security/">solar field security for energy sites</a>.</p>
+      </div>
+
+      <h3>Our Mojave Security Services May Support</h3>
+      <ul class="vg-chips" data-reveal>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Commercial properties</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Business parks</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Parking lots</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Energy and solar sites</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Agricultural properties</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Housing developments</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Industrial sites</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Private events</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Community events</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Temporary job sites</li>
+        <li class="vg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vacant or high-risk properties</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. SERVICES GRID -->
+  <section class="vg-section vg-section--soft">
+    <div class="vg-wrap">
+      <div class="vg-section__head" data-reveal>
+        <span class="vg-kicker">What We Provide</span>
+        <h2>Private Security Services in Mojave</h2>
+        <p>ValorGuard is built on the core values of strength, resiliency, and steadfast dedication. Our veteran-led team brings the discipline and problem-solving mindset of military service into the private security industry.</p>
+      </div>
+
+      <div class="vg-grid">
+        <article class="vg-card" data-reveal>
+          <span class="vg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m9 16 2 2 4-4"/></svg></span>
+          <h3>Event Security in Mojave, CA</h3>
+          <p>ValorGuard provides event security for private events, business gatherings, community events, and temporary locations that need organized protection. We help manage access points, monitor entrances and exits, deter disruptive behavior, support perimeter awareness, and provide a visible presence &mdash; without making guests uncomfortable.</p>
+        </article>
+
+        <article class="vg-card" data-reveal>
+          <span class="vg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v3l2 2"/></svg></span>
+          <h3>Security Patrol Services in Mojave</h3>
+          <p>Our <a href="/patrol/">security patrol services</a> are a smart option for properties that need regular monitoring without a full-time stationary officer. We provide scheduled and randomized patrols to help deter trespassing, vandalism, theft, and unauthorized access &mdash; checking gates, parking lots, perimeters, access points, and vacant spaces.</p>
+        </article>
+
+        <article class="vg-card" data-reveal>
+          <span class="vg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+          <h3>Commercial &amp; Property Security</h3>
+          <p>Our <a href="/commercial/">commercial security services</a> help businesses and property owners in Mojave protect assets, employees, visitors, and operations. We help protect against theft, vandalism, trespassing, after-hours activity, and unauthorized access &mdash; built around your property layout, high-risk areas, and hours of concern.</p>
+        </article>
+
+        <article class="vg-card" data-reveal>
+          <span class="vg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg></span>
+          <h3>Veteran-Led Private Security</h3>
+          <p>We believe security should be professional, proactive, and dependable. Our officers are trained to maintain a strong presence, communicate clearly, identify vulnerabilities, and help prevent issues before they escalate &mdash; a security partner property owners, managers, and event organizers can trust.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY CHOOSE -->
+  <section class="vg-section">
+    <div class="vg-wrap">
+      <div class="vg-section__head" data-reveal>
+        <span class="vg-kicker">Why ValorGuard</span>
+        <h2>Why Choose ValorGuard for Security in Mojave?</h2>
+        <p>Choosing between security guard companies in Mojave, CA means finding a team that is licensed, insured, trained, and reliable. ValorGuard offers a professional security approach backed by veteran-led values and local Central Valley experience.</p>
+      </div>
+
+      <ul class="vg-why" data-reveal>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>BSIS-licensed and insured private security</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Veteran-led officers with a disciplined approach</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Event security, patrol services, and property protection</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Customized security plans based on real site needs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Visible deterrence for businesses and events</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Professional communication and dependable service</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Support for commercial, energy, agricultural, and industrial properties</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>24/7 support for security concerns and emergencies</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. REASSURANCE BAND -->
+  <section class="vg-band">
+    <div class="vg-wrap" data-reveal>
+      <h2>Private Security Built to Protect Your Property</h2>
+      <p>ValorGuard focuses on prevention. Our team works to identify potential issues, monitor vulnerable areas, and provide a security presence that helps reduce risk before incidents happen. Whether your Mojave property needs a short-term event security plan, recurring patrol coverage, or ongoing private security services, ValorGuard can help create a practical solution.</p>
+      <div class="vg-cta-row">
+        <a class="vg-btn vg-btn--ghost" href="/contact">Request a Security Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <section class="vg-section vg-section--soft">
+    <div class="vg-wrap">
+      <div class="vg-section__head" data-reveal>
+        <span class="vg-kicker">FAQ</span>
+        <h2>Frequently Asked Questions About Security Services in Mojave, CA</h2>
+      </div>
+
+      <div class="vg-faq" data-reveal>
+        <details>
+          <summary>Does ValorGuard provide private security in Mojave, CA?
+            <svg class="vg-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="vg-faq__body"><p>Yes. ValorGuard provides private security in Mojave, CA for businesses, events, commercial properties, energy sites, and other locations that need professional protection.</p></div>
+        </details>
+        <details>
+          <summary>Does ValorGuard offer event security in Mojave?
+            <svg class="vg-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="vg-faq__body"><p>Yes. ValorGuard provides event security for private events, business gatherings, community events, and temporary locations in Mojave and surrounding areas.</p></div>
+        </details>
+        <details>
+          <summary>What types of properties can ValorGuard protect in Mojave?
+            <svg class="vg-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="vg-faq__body"><p>ValorGuard can support commercial properties, parking lots, industrial sites, solar and energy sites, agricultural locations, housing developments, events, and other properties with security needs.</p></div>
+        </details>
+        <details>
+          <summary>Does ValorGuard provide security patrol in Mojave?
+            <svg class="vg-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="vg-faq__body"><p>Yes. ValorGuard offers scheduled and randomized patrol services to help monitor properties, deter criminal activity, and identify security concerns.</p></div>
+        </details>
+        <details>
+          <summary>Is ValorGuard licensed and insured?
+            <svg class="vg-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="vg-faq__body"><p>Yes. ValorGuard is a BSIS-licensed and insured private security company serving communities throughout the California Central Valley.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CLOSING CTA -->
+  <section class="vg-closing">
+    <div class="vg-wrap" data-reveal>
+      <h2>Get Private Security Services in Mojave, CA</h2>
+      <p>If you need private security in Mojave, CA, <a href="/contact/">contact ValorGuard</a> today. Our team can review your security concerns, discuss your property or event needs, and recommend the right level of coverage. ValorGuard is ready to help protect your business, event, property, and community with professional security services you can depend on.</p>
+      <div class="vg-cta-row">
+        <a class="vg-btn" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  (function () {
+    document.documentElement.classList.add('dgs-js');
+    var els = document.querySelectorAll('.vg-mojave [data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in-view'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
