@@ -229,6 +229,53 @@
       font-weight: 900;
     }
 
+    .section-head .accent-red {
+      color: var(--red);
+    }
+
+    .tm-sup {
+      font-size: .48em;
+      vertical-align: super;
+      line-height: 0;
+      letter-spacing: 0;
+      margin-left: .08em;
+    }
+
+    .availability-head h2 {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .benchmark-head .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .35ch;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--charcoal);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+
+    .benchmark-head .eyebrow .bonus-prefix {
+      color: var(--charcoal);
+    }
+
+    .benchmark-head .eyebrow .bonus-rest {
+      color: var(--red);
+    }
+
+    .benchmark-head h2 {
+      font-size: clamp(30px, 4.3vw, 56px);
+      letter-spacing: -0.05em;
+      line-height: .98;
+    }
+
     .section-head p {
       color: var(--muted);
       font-size: 17px;
@@ -353,6 +400,11 @@
       grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
       gap: 28px;
       align-items: stretch;
+    }
+
+    .benchmark-layout--solo {
+      grid-template-columns: 1fr;
+      max-width: 760px;
     }
 
     .benchmark-copy {
@@ -922,15 +974,17 @@
       overflow: hidden;
       box-shadow: 0 12px 30px rgba(0,0,0,.2);
       align-self: start;
+      background: #0b0b0d;
     }
 
     .testimonial-photo {
       line-height: 0;
-      background: transparent;
+      background: #0b0b0d;
     }
 
     .testimonial-photo img {
-      width: 100%;
+      width: calc(100% + 2px);
+      margin: -1px;
       height: auto;
       display: block;
     }
@@ -1043,6 +1097,7 @@
       section { padding: 58px 0; }
       .logos { grid-template-columns: repeat(2, 1fr); }
       .card-grid, .decision-grid, .compare-box { grid-template-columns: 1fr; }
+      .benchmark-layout--solo { max-width: none; }
       .compare-col + .compare-col { border-left: 0; border-top: 1px solid var(--border); }
       .quote-callout { padding: 32px 24px; }
       .form-panel { min-height: 980px; }
@@ -1142,9 +1197,6 @@
             <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/AdobeStock_96801275-Converted.png" alt="Enventives logo">
           </div>
           <div class="logo-pill">
-            <img src="https://alphanovaconsulting.com/wp-content/uploads/2018/04/orkin.png" alt="Orkin Canada logo">
-          </div>
-          <div class="logo-pill">
             <img src="http://alphanovaconsulting.com/wp-content/uploads/2026/06/mtron.png" alt="MtronPTI logo">
           </div>
           <div class="logo-pill">
@@ -1178,7 +1230,7 @@
     <section id="assessment" class="section-soft">
       <div class="an-container">
         <div class="section-head">
-          <h2>What Happens If You Don't Address Capacity Gaps in the Next 6 Months?</h2>
+          <h2>What Happens If You Don't<br>Address Capacity Gaps <span class="accent-red">in the</span><br><span class="accent-red">Next 6 Months?</span></h2>
           <p>The issue is not effort. It is constraint visibility.</p>
         </div>
         <div class="card-grid">
@@ -1232,7 +1284,7 @@
     <section class="section-soft">
       <div class="an-container">
         <div class="section-head">
-          <h2>Why Manufacturers Choose the <span class="accent">Capacity Constraint Assessment</span></h2>
+          <h2>Why Manufacturers Choose the <span class="accent">Capacity Constraint Assessment<sup class="tm-sup">TM</sup></span></h2>
         </div>
         <div class="card-grid">
           <article class="card">
@@ -1261,7 +1313,7 @@
 
     <section class="section-light">
       <div class="an-container">
-        <div class="section-head">
+        <div class="section-head availability-head">
           <div class="eyebrow">Limited Availability</div>
           <h2>What the Capacity Constraint Assessment <span class="accent">Does</span></h2>
         </div>
@@ -1334,12 +1386,12 @@
 
     <section class="section-light">
       <div class="an-container">
-        <div class="section-head">
-          <div class="eyebrow">Bonus: Manufacturing Performance Benchmark Report</div>
-          <h2>This Is Not Another Generic <span class="accent">Operational Review</span></h2>
+        <div class="section-head benchmark-head">
+          <div class="eyebrow"><span class="bonus-prefix">Bonus:</span> <span class="bonus-rest">Manufacturing Performance Benchmark Report</span></div>
+          <h2>This Is Not Another Generic<br><span class="accent">Operational Review</span></h2>
           <p>The assessment is focused on one question: what is currently constraining your ability to produce more output with your existing system?</p>
         </div>
-        <div class="benchmark-layout">
+        <div class="benchmark-layout benchmark-layout--solo">
           <div class="benchmark-copy">
             <p>In addition to your Constraint Capacity Assessment&trade;, you'll receive a comparative analysis of key performance indicators against industry peers, including:</p>
             <ul class="benchmark-list">
@@ -1351,24 +1403,6 @@
               <li>And many others</li>
             </ul>
             <p>Because improvement opportunities are easier to identify when you understand how your operation compares to others in the market.</p>
-          </div>
-          <div class="benchmark-visual" aria-hidden="true">
-            <div class="benchmark-dashboard">
-              <div class="benchmark-bars-wrap">
-                <div class="benchmark-bars">
-                  <div class="benchmark-bar one"></div>
-                  <div class="benchmark-bar two"></div>
-                  <div class="benchmark-bar three"></div>
-                  <div class="benchmark-bar four"></div>
-                </div>
-                <div class="benchmark-bars-labels">
-                  <span>Growth</span>
-                  <span>Margin</span>
-                  <span>Turns</span>
-                  <span>Efficiency</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
