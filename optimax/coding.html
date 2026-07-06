@@ -835,51 +835,68 @@
     text-align: right;
   }
 
+  .coding-page .cta-final .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    align-items: stretch;
+  }
+
   .coding-page .cta-final {
     background: #f9fbff;
   }
 
-  .coding-page .cta-shell {
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(320px, .78fr);
-    gap: 34px;
-    align-items: start;
-    padding: 42px;
-    border-radius: 8px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow);
+  .coding-page .cta-copy {
+    background: linear-gradient(118deg, #0d2335 0%, #14405f 60%, #1c5478 100%);
+    border-radius: 20px;
+    padding: 54px 48px;
+    min-height: 420px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .coding-page .cta-copy .eyebrow {
+    margin-bottom: 14px;
   }
 
   .coding-page .cta-copy h2 {
-    color: var(--navy) !important;
+    color: var(--white) !important;
     font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
-    font-size: clamp(2rem, 3vw, 2.9rem);
-    font-weight: 800;
-    line-height: 1.08;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
   }
 
   .coding-page .cta-copy p {
-    margin-top: 16px;
-    color: var(--copy) !important;
-    line-height: 1.75;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .88) !important;
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 
   .coding-page .cta-copy strong {
-    color: var(--navy) !important;
+    color: var(--white) !important;
     font-weight: 900;
   }
 
   .coding-page .form-shell {
-    min-height: 240px;
-    padding: 20px;
-    border-radius: 8px;
-    background: var(--soft);
-    border: 1px solid var(--line);
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
   }
 
   .coding-page .form-embed {
+    margin: 0;
     width: 100%;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px 22px;
+    text-align: left;
+    border: 1px solid rgba(33, 74, 131, .12);
+    box-shadow: 0 20px 42px rgba(13, 35, 53, .14);
   }
 
   @media (min-width: 981px) {
@@ -897,7 +914,7 @@
     .coding-page .stats-layout,
     .coding-page .audit-grid,
     .coding-page .roi-grid,
-    .coding-page .cta-shell {
+    .coding-page .cta-final .wrap {
       grid-template-columns: 1fr;
     }
 
@@ -965,8 +982,16 @@
     .coding-page .content-card,
     .coding-page .audit-panel,
     .coding-page .stat-card,
-    .coding-page .cta-shell {
+    .coding-page .cta-copy {
       padding: 24px;
+    }
+
+    .coding-page .cta-copy {
+      min-height: 0;
+    }
+
+    .coding-page .form-embed {
+      padding: 20px 18px;
     }
 
     .coding-page .feature-tile {
@@ -1034,7 +1059,7 @@
   <section class="feature-band" aria-label="Optimax coding approach">
     <div class="wrap">
       <div class="feature-grid">
-        <article class="feature-tile">
+        <div class="feature-tile">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <path d="M9 11 12 14 22 4"/>
@@ -1045,8 +1070,8 @@
             <h3>Certified Review</h3>
             <p>Experienced coding professionals review claims, documentation, modifiers, and medical necessity.</p>
           </div>
-        </article>
-        <article class="feature-tile">
+        </div>
+        <div class="feature-tile">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 3v18h18"/>
@@ -1057,8 +1082,8 @@
             <h3>Revenue Integrity</h3>
             <p>Find denial drivers, missed reimbursement, and leakage patterns before they compound.</p>
           </div>
-        </article>
-        <article class="feature-tile">
+        </div>
+        <div class="feature-tile">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 20h9"/>
@@ -1069,7 +1094,7 @@
             <h3>Provider Education</h3>
             <p>Turn audit findings into practical feedback providers can use at the point of documentation.</p>
           </div>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1096,7 +1121,7 @@
             <div class="impact-example">
               <div class="impact-example-title">Financial Impact Example for $3M Practice</div>
               <div class="impact-calc">
-                <article class="impact-step">
+                <div class="impact-step">
                   <span class="impact-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M3 21h18"/>
@@ -1109,9 +1134,9 @@
                   </span>
                   <strong>$3,000,000</strong>
                   <span>Practice with $3 million annual revenue</span>
-                </article>
+                </div>
                 <span class="impact-arrow" aria-hidden="true">&rarr;</span>
-                <article class="impact-step impact-step--rate">
+                <div class="impact-step impact-step--rate">
                   <span class="impact-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M7 3h8l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
@@ -1123,9 +1148,9 @@
                   </span>
                   <strong>8%</strong>
                   <span>First-pass denial rate</span>
-                </article>
+                </div>
                 <span class="impact-arrow" aria-hidden="true">&rarr;</span>
-                <article class="impact-risk">
+                <div class="impact-risk">
                   <span>Annual revenue at risk</span>
                   <strong>$240,000</strong>
                   <span>in denied claims annually</span>
@@ -1135,28 +1160,28 @@
                     <i></i>
                     <i></i>
                   </div>
-                </article>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="stat-stack">
-          <article class="stat-card featured">
+          <div class="stat-card featured">
             <span class="stat-kicker">McKinsey Claim Denial Benchmark</span>
             <strong>5% to 15%</strong>
             <p>The average initial claim denial rate for ambulatory practices is between 5% and 15%. For a practice with $3M in annual revenue and an 8% first-pass denial rate, that equates to $240,000 in denied claims annually.</p>
-          </article>
-          <article class="stat-card">
+          </div>
+          <div class="stat-card">
             <span class="stat-kicker">AMA Coding Accuracy Estimate</span>
             <strong>Up to 12%</strong>
             <p>The American Medical Association estimates that up to 12% of medical claims are submitted with inaccurate coding.</p>
-          </article>
-          <article class="stat-card">
+          </div>
+          <div class="stat-card">
             <span class="stat-kicker">MGMA StatPoll Revenue Leakage</span>
             <strong>Key Driver</strong>
             <p>An MGMA StatPoll identifies coding inaccuracies and documentation issues as a key driver of revenue leakage.</p>
-          </article>
+          </div>
         </div>
       </div>
     </div>
@@ -1170,7 +1195,7 @@
       </div>
 
       <div class="card-grid">
-        <article class="content-card">
+        <div class="content-card">
           <span class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 3v18h18"/>
@@ -1179,8 +1204,8 @@
           </span>
           <h3>Declining Reimbursement</h3>
           <p>Stable patient volume with lower collections may indicate coding inaccuracies, missed charges, or documentation gaps that suppress payment.</p>
-        </article>
-        <article class="content-card">
+        </div>
+        <div class="content-card">
           <span class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 9v4"/>
@@ -1190,8 +1215,8 @@
           </span>
           <h3>Increasing Denials</h3>
           <p>Coding-related denials create avoidable rework, delayed cash, higher cost to collect, and lost revenue when claims are not corrected.</p>
-        </article>
-        <article class="content-card">
+        </div>
+        <div class="content-card">
           <span class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
@@ -1200,7 +1225,7 @@
           </span>
           <h3>Compliance Exposure</h3>
           <p>Inconsistent coding and documentation patterns may increase risk during payer reviews, audits, and reimbursement recoupment activity.</p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1293,7 +1318,7 @@
   </section>
 
   <section id="contact" class="section cta-final">
-    <div class="wrap cta-shell">
+    <div class="wrap">
       <div class="cta-copy">
         <p class="eyebrow">Request a Coding Assessment</p>
         <h2>Protect Revenue Before It Walks Out the Door</h2>
