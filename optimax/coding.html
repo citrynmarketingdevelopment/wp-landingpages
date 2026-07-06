@@ -841,7 +841,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 26px;
-    align-items: stretch;
+    align-items: start;
   }
 
   .coding-page .cta-final {
@@ -852,11 +852,13 @@
     background: linear-gradient(118deg, #0d2335 0%, #14405f 60%, #1c5478 100%);
     border-radius: 20px;
     padding: 54px 48px;
-    min-height: 420px;
+    min-height: 0;
+    height: fit-content;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: start;
   }
 
   .coding-page .cta-copy .eyebrow {
