@@ -241,25 +241,34 @@
       margin-left: .08em;
     }
 
-    .availability-head h2 {
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+    .availability-head .eyebrow {
+      display: block;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--charcoal);
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      text-transform: none;
+      margin: 0 0 14px;
     }
 
     .benchmark-head .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .35ch;
+      display: block;
       padding: 0;
       background: transparent;
       border: 0;
       border-radius: 0;
       color: var(--charcoal);
-      font-size: 14px;
+      font-size: clamp(30px, 4.3vw, 56px);
       font-weight: 900;
-      letter-spacing: .08em;
-      margin-bottom: 10px;
+      letter-spacing: -0.05em;
+      line-height: .98;
+      text-transform: none;
+      margin: 0 0 14px;
     }
 
     .benchmark-head .eyebrow .bonus-prefix {
@@ -268,12 +277,6 @@
 
     .benchmark-head .eyebrow .bonus-rest {
       color: var(--red);
-    }
-
-    .benchmark-head h2 {
-      font-size: clamp(30px, 4.3vw, 56px);
-      letter-spacing: -0.05em;
-      line-height: .98;
     }
 
     .section-head p {
@@ -980,13 +983,15 @@
     .testimonial-photo {
       line-height: 0;
       background: #0b0b0d;
+      overflow: hidden;
     }
 
     .testimonial-photo img {
-      width: calc(100% + 2px);
-      margin: -1px;
+      width: 100%;
       height: auto;
       display: block;
+      transform: scale(1.01);
+      transform-origin: center;
     }
 
     .faq {
@@ -1314,8 +1319,7 @@
     <section class="section-light">
       <div class="an-container">
         <div class="section-head availability-head">
-          <div class="eyebrow">Limited Availability</div>
-          <h2>What the Capacity Constraint Assessment <span class="accent">Does</span></h2>
+          <h2 class="eyebrow">Limited <span class="accent">Availability</span></h2>
         </div>
         <div class="availability-copy">
           <p class="availability-lead">Every Constraint Capacity Assessment&trade; is <strong>led by senior consultants</strong> and includes <strong>on-site observation, executive interviews, and custom analysis</strong> tailored to your operation.</p>
@@ -1387,8 +1391,7 @@
     <section class="section-light">
       <div class="an-container">
         <div class="section-head benchmark-head">
-          <div class="eyebrow"><span class="bonus-prefix">Bonus:</span> <span class="bonus-rest">Manufacturing Performance Benchmark Report</span></div>
-          <h2>This Is Not Another Generic<br><span class="accent">Operational Review</span></h2>
+          <h2 class="eyebrow"><span class="bonus-prefix">Bonus:</span> <span class="bonus-rest">Manufacturing Performance Benchmark Report</span></h2>
           <p>The assessment is focused on one question: what is currently constraining your ability to produce more output with your existing system?</p>
         </div>
         <div class="benchmark-layout benchmark-layout--solo">
