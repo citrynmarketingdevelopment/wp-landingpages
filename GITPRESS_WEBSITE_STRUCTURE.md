@@ -396,6 +396,36 @@ Avoid static `.html` links unless intentionally linking to raw files:
 <a href="services.html">Services</a>
 ```
 
+### Avoid `article` for internal cards on theme-wrapped full-width pages
+
+On pages using:
+
+```json
+{
+  "render_mode": "theme_wrapped",
+  "full_width_content": true
+}
+```
+
+default to `<div>` for visual cards, tiles, stat boxes, testimonials, and infographic steps unless the content truly needs `article` semantics.
+
+Why:
+
+```txt
+the GitPress plugin injects a broad `article { padding-top: 0 !important; margin-top: 0 !important; }` reset in this mode
+nested card components that use `<article>` can lose their intended top padding on the live WordPress page
+```
+
+Safe default:
+
+```html
+<div class="feature-card">...</div>
+<div class="stat-card">...</div>
+<div class="testimonial-card">...</div>
+```
+
+Use `<article>` only when it is actually an independently meaningful content unit, and then verify the live page in WordPress.
+
 ---
 
 ## 8. CSS Rules
@@ -568,7 +598,14 @@ body.dgs-theme-wrapped.dgs-full-width-content .hentry {
 
 This can affect nested `article` components inside the page body, not just the outer WordPress post wrapper. Example: testimonial cards built as `<article class="t-card">` can lose their intended `padding-top` on live even when they look correct locally.
 
-If this happens, prefer a page-level override scoped to the affected component first. Do not patch the plugin broadly unless the issue repeats across multiple pages and we have time to safely narrow the selector in GitPress itself.
+Preferred prevention:
+
+```txt
+on theme_wrapped + full_width_content pages, do not use nested `<article>` for design-only cards, tiles, stat boxes, feature bands, infographic steps, or testimonials
+use `<div>` for those components by default
+```
+
+If an existing page already uses nested `<article>` and live padding is being stripped, prefer a page-level override scoped to the affected component first. Do not patch the plugin broadly unless the issue repeats across multiple pages and we have time to safely narrow the selector in GitPress itself.
 
 ---
 
