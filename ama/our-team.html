@@ -586,52 +586,6 @@
     transform: rotate(180deg);
   }
 
-  /* ---------- COMMITTEE ---------- */
-  .ama-team .committee-band {
-    background: linear-gradient(180deg, rgba(153, 157, 206, .10) 0%, rgba(153, 157, 206, .04) 100%);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 84px 0;
-    margin-top: 40px;
-  }
-
-  .ama-team .committee-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-  .ama-team .committee-chip {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 16px 18px;
-    box-shadow: 0 6px 18px rgba(102, 106, 160, .08);
-    transition: transform .3s ease, box-shadow .3s ease;
-  }
-
-  .ama-team .committee-chip:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 26px rgba(102, 106, 160, .15);
-  }
-
-  .ama-team .committee-chip svg {
-    width: 17px;
-    height: 17px;
-    flex: 0 0 auto;
-    color: var(--gold);
-  }
-
-  .ama-team .committee-chip span {
-    font-family: 'Faustina', Georgia, serif;
-    font-size: 1.02rem;
-    color: var(--ink) !important;
-    line-height: 1.3;
-  }
-
   /* ---------- CLOSING CTA ---------- */
   .ama-team .cta-final {
     padding: 96px 0 110px;
@@ -727,10 +681,6 @@
       grid-template-columns: 1fr;
     }
 
-    .ama-team .committee-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
     .ama-team .team-hero .wing-l,
     .ama-team .team-hero .wing-r {
       width: 140px;
@@ -750,10 +700,6 @@
 
     .ama-team .team-hero {
       padding: 0 0 60px;
-    }
-
-    .ama-team .committee-grid {
-      grid-template-columns: 1fr;
     }
 
     .ama-team .board-card {
@@ -1096,89 +1042,6 @@
           </div>
         </details>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ COMMITTEE MEMBERS ============ -->
-  <section class="committee-band">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
-          </svg>
-          Our village
-        </span>
-        <h2>Committee Members</h2>
-        <p>The generous hands and hearts who make our events, programs, and mission possible.</p>
-      </div>
-
-      <div class="committee-grid" data-reveal>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Monty Gonzales</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Ashley Nettles</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Sarah Jane &amp; Jeff Goens</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Corey Manos</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Becky Brown</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Makenzie &amp; Brock Beeney</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Jaisyn &amp; Keith Hough</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Zach Lomely</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Joe Barajas</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Whitney &amp; Brock Bivens</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Haley &amp; Ross Hough</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Rita &amp; Richard Antongiovanni</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Brian Antongiovanni</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Charles Washington</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Kanisha Martin</span>
-        </div>
-        <div class="committee-chip">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
-          <span>Shellie &amp; Brandon Billings</span>
-        </div>
       </div>
     </div>
   </section>
