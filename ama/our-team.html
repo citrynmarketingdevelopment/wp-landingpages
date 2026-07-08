@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<!-- webhook retrigger 2026-07-07 -->
+<!-- webhook retrigger 2026-07-07b -->
 <style>
   /* Single-family imports with NO "&" — WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -400,6 +392,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    align-items: start;
   }
 
   .ama-team .board-card {
@@ -468,6 +461,76 @@
   .ama-team .board-card .bio p {
     margin-top: 15px;
     font-size: .99rem;
+  }
+
+  /* Read-more: full bios stay visible when JS fails; collapse is a JS-on
+     enhancement only (html.dgs-js), per the GitPress no-hidden-content rule. */
+  .ama-team .bio-clip {
+    position: relative;
+  }
+
+  html.dgs-js .ama-team .board-card .bio-clip {
+    max-height: 178px;
+    overflow: hidden;
+    transition: max-height .65s cubic-bezier(.22, .61, .36, 1);
+  }
+
+  html.dgs-js .ama-team .board-card .bio-clip::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 84px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), #FFFFFF 88%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity .45s ease;
+  }
+
+  html.dgs-js .ama-team .board-card.open .bio-clip {
+    max-height: 3000px;
+  }
+
+  html.dgs-js .ama-team .board-card.open .bio-clip::after {
+    opacity: 0;
+  }
+
+  .ama-team .bio-toggle {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--peri-deep) !important;
+    transition: color .3s ease;
+  }
+
+  html.dgs-js .ama-team .bio-toggle {
+    display: inline-flex;
+  }
+
+  .ama-team .bio-toggle:hover {
+    color: var(--peri-ink) !important;
+  }
+
+  .ama-team .bio-toggle svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+    transition: transform .4s ease;
+  }
+
+  .ama-team .board-card.open .bio-toggle svg {
+    transform: rotate(180deg);
   }
 
   /* ---------- COMMITTEE ---------- */
@@ -695,14 +758,7 @@
       <div class="ed-card" data-reveal>
         <div class="ed-photo">
           <div class="ph-frame">
-            <!-- PHOTO: Ashley — replace this .ph-mark block with:
-                 <img src="PHOTO_URL_HERE" alt="Ashley, Executive Director of Amelia Molloy's Angels"> -->
-            <div class="ph-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 5c-6 0-11 2.5-14 7 2 .5 4 .3 6-.5-1.5 2-3.5 3.2-6 3.5 1.5 1 3.4 1.3 5.5.8-1.2 1.5-2.8 2.4-5 2.7 1.8 1.2 4 1.4 6.5.5C17.5 17.5 20.5 12.5 21 5Z"/>
-              </svg>
-              <span>Ashley</span>
-            </div>
+            <img src="https://ameliamolloysangels.com/wp-content/uploads/2022/07/ashley.jpg" alt="Ashley, Executive Director of Amelia Molloy's Angels">
           </div>
         </div>
 
@@ -759,7 +815,7 @@
               <span class="role-badge">President</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-jenny">
             <p>Hello there! Let me introduce myself &mdash; I&rsquo;m Jenny McLean. I am a native of Bakersfield and
               have worked in Marketing/Sales for over 30 years. My husband and I have been married for 26 years. Our
               infertility journey spanned five years, including four miscarriages and many procedures that didn&rsquo;t
@@ -773,21 +829,23 @@
               He sheds light when there seems to be none. My hope, through Amelia Molloy&rsquo;s Angels, is to pay it
               forward from personal blessings and walk through others&rsquo; infertility journeys together.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-jenny">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
         <div class="board-card" data-reveal>
           <div class="board-top">
             <div class="ph-frame">
-              <!-- PHOTO: Cathy — replace this .ph-mark block with:
-                   <img src="PHOTO_URL_HERE" alt="Cathy Gonzales, Vice President"> -->
-              <div class="ph-mark" aria-hidden="true"><span>C</span></div>
+              <img src="https://ameliamolloysangels.com/wp-content/uploads/2022/07/cathy2.jpeg" alt="Cathy Gonzales, Vice President" loading="lazy">
             </div>
             <div>
               <h3>Cathy</h3>
               <span class="role-badge">Vice President</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-cathy">
             <p>Hi, I am Cathy Gonzales, Amelia Molloy&rsquo;s grandmother. I am currently employed with the Kern High
               School District as a System Application Specialist. My husband Monty and I have been married for 35
               years. We have four beautiful daughters, six grandchildren, one in heaven, and one on the way in
@@ -799,21 +857,23 @@
               other families by raising awareness and support to help relieve the financial burden of IVF, surrogacy,
               and adoption.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-cathy">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
         <div class="board-card" data-reveal>
           <div class="board-top">
             <div class="ph-frame">
-              <!-- PHOTO: Michael — replace this .ph-mark block with:
-                   <img src="PHOTO_URL_HERE" alt="Michael, Treasurer"> -->
-              <div class="ph-mark" aria-hidden="true"><span>M</span></div>
+              <img src="https://ameliamolloysangels.com/wp-content/uploads/2022/07/Mike.jpg" alt="Michael, Treasurer" loading="lazy">
             </div>
             <div>
               <h3>Michael</h3>
               <span class="role-badge">Treasurer</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-michael">
             <p>I was born and raised in Bakersfield, CA. Currently, I am employed by Grimmway Farms as a Sales
               Associate. I have been married to my wife Ashley since 2020. We have one daughter Amelia, who is in
               heaven, and also have our dog Rudy.</p>
@@ -826,21 +886,23 @@
               of hope. Although Amelia may not be with us on earth, this foundation will share the love and happiness
               Amelia has given us and will continue to give us from high above.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-michael">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
         <div class="board-card" data-reveal>
           <div class="board-top">
             <div class="ph-frame">
-              <!-- PHOTO: Liz — replace this .ph-mark block with:
-                   <img src="PHOTO_URL_HERE" alt="Liz Layne, Secretary"> -->
-              <div class="ph-mark" aria-hidden="true"><span>L</span></div>
+              <img src="https://ameliamolloysangels.com/wp-content/uploads/2023/12/unnamed.jpg" alt="Liz Layne, Secretary" loading="lazy">
             </div>
             <div>
               <h3>Liz</h3>
               <span class="role-badge">Secretary</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-liz">
             <p>Hi, I am Liz Layne. My husband and I celebrated our 10 year wedding anniversary in June and live in
               Bakersfield, CA with our dogs Gus and Lois Layne.</p>
             <p>For many years I focused on my career, and worked for several non-profit organizations before finding my
@@ -856,6 +918,10 @@
               community has to offer. I am here to help and serve those struggling with infertility in any way I
               can.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-liz">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
         <div class="board-card" data-reveal>
@@ -870,7 +936,7 @@
               <span class="role-badge">Chairperson</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-jackie">
             <p>Hello, I&rsquo;m Jackie Lomely. I&rsquo;ve been happily married to my husband, Zach Lomely, for two
               years, and we share our lives with our cherished fur baby, Penny. I&rsquo;m excited to join the board of
               Amelia Molloy&rsquo;s Angels, having been deeply moved by the organization&rsquo;s events and its
@@ -882,21 +948,23 @@
               commitment to this important cause. I look forward to contributing to the continued success and growth
               of Amelia Molloy&rsquo;s Angels.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-jackie">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
         <div class="board-card" data-reveal>
           <div class="board-top">
             <div class="ph-frame">
-              <!-- PHOTO: Justin — replace this .ph-mark block with:
-                   <img src="PHOTO_URL_HERE" alt="Justin, Chairperson"> -->
-              <div class="ph-mark" aria-hidden="true"><span>J</span></div>
+              <img src="https://ameliamolloysangels.com/wp-content/uploads/2023/12/Justin-Layne.jpg" alt="Justin, Chairperson" loading="lazy">
             </div>
             <div>
               <h3>Justin</h3>
               <span class="role-badge">Chairperson</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-justin">
             <p>I was born and raised in Bakersfield, CA, but I have had the privilege to call many places home during
               my college years. I met my wife almost 15 years ago, and we have been married for over a decade now.
               Though our lives have been amazing, we have had one missing piece, never being able to conceive a child
@@ -909,6 +977,10 @@
               pain, fear, and doubt but is there with you through it all. I am honored to be on this board and use my
               abilities to reach as many people as we can.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-justin">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
         <div class="board-card" data-reveal>
@@ -923,7 +995,7 @@
               <span class="role-badge">Chairperson</span>
             </div>
           </div>
-          <div class="bio">
+          <div class="bio bio-clip" id="bio-jannessie">
             <p>Hello, I am Jannessie. I&rsquo;ve been happily married to my husband, Joe, for many years. I enjoy
               spending time cooking, gardening, and with my family and friends. I&rsquo;m actively involved in my
               community.</p>
@@ -933,6 +1005,10 @@
               Molloy&rsquo;s Angels provide. I am eager to contribute to a nonprofit that enhances the quality of life
               and supports family building in our community.</p>
           </div>
+          <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-jannessie">
+            <span class="bio-toggle-label">Read my story</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
         </div>
 
       </div>
@@ -1077,7 +1153,23 @@
   }
 
   amaTeamInitReveal();
-</script>
 
-</body>
-</html>
+  function amaTeamInitBioToggles() {
+    var cards = document.querySelectorAll('.ama-team .board-card');
+    cards.forEach(function (card) {
+      var btn = card.querySelector('.bio-toggle');
+      if (!btn) { return; }
+      btn.addEventListener('click', function () {
+        var open = card.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        var label = btn.querySelector('.bio-toggle-label');
+        if (label) { label.textContent = open ? 'Show less' : 'Read my story'; }
+        if (!open) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+  }
+
+  amaTeamInitBioToggles();
+</script>
