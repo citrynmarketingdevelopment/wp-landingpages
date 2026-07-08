@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-07-08 -->
+<!-- webhook retrigger 2026-07-08b -->
 <style>
   /* Single-family imports with NO "&" — WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -30,6 +30,14 @@
       radial-gradient(900px 480px at -12% 30%, rgba(203, 169, 107, .07), rgba(203, 169, 107, 0) 60%),
       linear-gradient(180deg, #FBFBFE 0%, #F7F7FC 55%, #FDFDFB 100%);
     overflow-x: hidden;
+  }
+
+  /* GitPress theme-wrapped full-width pages can zero out top padding on the
+     first <section>. Put the hero offset on the page root instead. */
+  .ama-donate::before {
+    content: '';
+    display: block;
+    block-size: 96px;
   }
 
   .ama-donate *,
@@ -225,7 +233,7 @@
   /* ---------- HERO ---------- */
   .ama-donate .donate-hero {
     position: relative;
-    padding: 96px 0 64px;
+    padding: 0 0 64px;
     text-align: center;
   }
 
@@ -781,8 +789,12 @@
       font-size: 16px;
     }
 
+    .ama-donate::before {
+      block-size: 64px;
+    }
+
     .ama-donate .donate-hero {
-      padding: 64px 0 44px;
+      padding: 0 0 44px;
     }
 
     .ama-donate .donate-hero .hero-lede {

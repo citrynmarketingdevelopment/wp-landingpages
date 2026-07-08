@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-07-08 -->
+<!-- webhook retrigger 2026-07-08b -->
 <style>
   /* Single-family imports with NO "&" — WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -30,6 +30,14 @@
       radial-gradient(900px 480px at -10% 22%, rgba(203, 169, 107, .07), rgba(203, 169, 107, 0) 60%),
       linear-gradient(180deg, #FBFBFE 0%, #F7F7FC 55%, #FDFDFB 100%);
     overflow-x: hidden;
+  }
+
+  /* GitPress theme-wrapped full-width pages can zero out top padding on the
+     first <section>. Put the hero offset on the page root instead. */
+  .ama-team::before {
+    content: '';
+    display: block;
+    block-size: clamp(132px, 15vw, 160px);
   }
 
   .ama-team *,
@@ -205,8 +213,7 @@
   /* ---------- HERO ---------- */
   .ama-team .team-hero {
     position: relative;
-    /* Extra top room keeps the hero clear of the sticky theme header in GitPress. */
-    padding: clamp(132px, 15vw, 160px) 0 86px;
+    padding: 0 0 86px;
     text-align: center;
   }
 
@@ -466,15 +473,27 @@
     font-size: .99rem;
   }
 
-  /* Read-more uses native <details>/<summary> so it survives live sanitization. */
+  /* Read-more uses a native checkbox + label toggle so card content stays visible
+     before expansion and the interaction does not depend on JS. */
+  .ama-team .bio-toggle-state {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    inline-size: 1px;
+    block-size: 1px;
+  }
+
   .ama-team .bio-clip {
     position: relative;
+  }
+
+  .ama-team .board-card .bio-toggle-state:not(:checked) ~ .bio-clip {
     max-height: 178px;
     overflow: hidden;
     transition: max-height .65s cubic-bezier(.22, .61, .36, 1);
   }
 
-  .ama-team .board-card .bio-clip::after {
+  .ama-team .board-card .bio-toggle-state:not(:checked) ~ .bio-clip::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -487,16 +506,15 @@
     transition: opacity .45s ease;
   }
 
-  .ama-team details.board-card[open] .bio-clip {
+  .ama-team .board-card .bio-toggle-state:checked ~ .bio-clip {
     max-height: 3000px;
   }
 
-  .ama-team details.board-card[open] .bio-clip::after {
+  .ama-team .board-card .bio-toggle-state:checked ~ .bio-clip::after {
     opacity: 0;
   }
 
   .ama-team .bio-toggle {
-    order: 3;
     align-self: flex-start;
     display: inline-flex;
     align-items: center;
@@ -517,19 +535,11 @@
     user-select: none;
   }
 
-  .ama-team .bio-toggle::-webkit-details-marker {
-    display: none;
-  }
-
-  .ama-team .bio-toggle::marker {
-    content: '';
-  }
-
   .ama-team .bio-toggle:hover {
     color: var(--peri-ink) !important;
   }
 
-  .ama-team .bio-toggle:focus-visible {
+  .ama-team .bio-toggle-state:focus-visible ~ .bio-toggle {
     outline: 2px solid rgba(111, 116, 174, .42);
     outline-offset: 4px;
     border-radius: 999px;
@@ -546,15 +556,15 @@
     display: none;
   }
 
-  .ama-team details.board-card[open] .bio-toggle-more {
+  .ama-team .board-card .bio-toggle-state:checked ~ .bio-toggle .bio-toggle-more {
     display: none;
   }
 
-  .ama-team details.board-card[open] .bio-toggle-less {
+  .ama-team .board-card .bio-toggle-state:checked ~ .bio-toggle .bio-toggle-less {
     display: inline;
   }
 
-  .ama-team details.board-card[open] .bio-toggle svg {
+  .ama-team .board-card .bio-toggle-state:checked ~ .bio-toggle svg {
     transform: rotate(180deg);
   }
 
@@ -716,8 +726,12 @@
       font-size: 16px;
     }
 
+    .ama-team::before {
+      block-size: 112px;
+    }
+
     .ama-team .team-hero {
-      padding: 112px 0 60px;
+      padding: 0 0 60px;
     }
 
     .ama-team .committee-grid {
@@ -828,12 +842,8 @@
 
       <div class="board-grid">
 
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
-            <span class="bio-toggle-more">Learn more</span>
-            <span class="bio-toggle-less">Show less</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-jenny">
           <div class="board-top">
             <div class="ph-frame">
               <!-- PHOTO: Jenny — replace this .ph-mark block with:
@@ -859,14 +869,15 @@
               He sheds light when there seems to be none. My hope, through Amelia Molloy&rsquo;s Angels, is to pay it
               forward from personal blessings and walk through others&rsquo; infertility journeys together.</p>
           </div>
-        </details>
-
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
+          <label class="bio-toggle" for="toggle-jenny">
             <span class="bio-toggle-more">Learn more</span>
             <span class="bio-toggle-less">Show less</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+          </label>
+        </div>
+
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-cathy">
           <div class="board-top">
             <div class="ph-frame">
               <img src="https://ameliamolloysangels.com/wp-content/uploads/2022/07/cathy2.jpeg" alt="Cathy Gonzales, Vice President" loading="lazy">
@@ -888,14 +899,15 @@
               other families by raising awareness and support to help relieve the financial burden of IVF, surrogacy,
               and adoption.</p>
           </div>
-        </details>
-
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
+          <label class="bio-toggle" for="toggle-cathy">
             <span class="bio-toggle-more">Learn more</span>
             <span class="bio-toggle-less">Show less</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+          </label>
+        </div>
+
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-michael">
           <div class="board-top">
             <div class="ph-frame">
               <img src="https://ameliamolloysangels.com/wp-content/uploads/2022/07/Mike.jpg" alt="Michael, Treasurer" loading="lazy">
@@ -918,14 +930,15 @@
               of hope. Although Amelia may not be with us on earth, this foundation will share the love and happiness
               Amelia has given us and will continue to give us from high above.</p>
           </div>
-        </details>
-
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
+          <label class="bio-toggle" for="toggle-michael">
             <span class="bio-toggle-more">Learn more</span>
             <span class="bio-toggle-less">Show less</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+          </label>
+        </div>
+
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-liz">
           <div class="board-top">
             <div class="ph-frame">
               <img src="https://ameliamolloysangels.com/wp-content/uploads/2023/12/unnamed.jpg" alt="Liz Layne, Secretary" loading="lazy">
@@ -951,14 +964,15 @@
               community has to offer. I am here to help and serve those struggling with infertility in any way I
               can.</p>
           </div>
-        </details>
-
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
+          <label class="bio-toggle" for="toggle-liz">
             <span class="bio-toggle-more">Learn more</span>
             <span class="bio-toggle-less">Show less</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+          </label>
+        </div>
+
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-jackie">
           <div class="board-top">
             <div class="ph-frame">
               <!-- PHOTO: Jackie — replace this .ph-mark block with:
@@ -982,14 +996,15 @@
               commitment to this important cause. I look forward to contributing to the continued success and growth
               of Amelia Molloy&rsquo;s Angels.</p>
           </div>
-        </details>
-
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
+          <label class="bio-toggle" for="toggle-jackie">
             <span class="bio-toggle-more">Learn more</span>
             <span class="bio-toggle-less">Show less</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+          </label>
+        </div>
+
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-justin">
           <div class="board-top">
             <div class="ph-frame">
               <img src="https://ameliamolloysangels.com/wp-content/uploads/2023/12/Justin-Layne.jpg" alt="Justin, Chairperson" loading="lazy">
@@ -1012,14 +1027,15 @@
               pain, fear, and doubt but is there with you through it all. I am honored to be on this board and use my
               abilities to reach as many people as we can.</p>
           </div>
-        </details>
-
-        <details class="board-card" data-reveal>
-          <summary class="bio-toggle">
+          <label class="bio-toggle" for="toggle-justin">
             <span class="bio-toggle-more">Learn more</span>
             <span class="bio-toggle-less">Show less</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
+          </label>
+        </div>
+
+        <div class="board-card" data-reveal>
+          <input class="bio-toggle-state" type="checkbox" id="toggle-jannessie">
           <div class="board-top">
             <div class="ph-frame">
               <!-- PHOTO: Jannessie — replace this .ph-mark block with:
@@ -1041,7 +1057,12 @@
               Molloy&rsquo;s Angels provide. I am eager to contribute to a nonprofit that enhances the quality of life
               and supports family building in our community.</p>
           </div>
-        </details>
+          <label class="bio-toggle" for="toggle-jannessie">
+            <span class="bio-toggle-more">Learn more</span>
+            <span class="bio-toggle-less">Show less</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </label>
+        </div>
 
       </div>
     </div>
