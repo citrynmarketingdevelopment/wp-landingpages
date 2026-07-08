@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-07-08 -->
+<!-- webhook retrigger 2026-07-08b -->
 <style>
   /* Single-family imports with NO "&" — WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -264,7 +264,8 @@
   /* ---------- HERO ---------- */
   .ama-home .home-hero {
     position: relative;
-    padding: 96px 0 72px;
+    /* Extra top room keeps the hero clear of the sticky theme header in GitPress. */
+    padding: clamp(126px, 14vw, 152px) 0 72px;
   }
 
   .ama-home .hero-grid {
@@ -830,7 +831,7 @@
     }
 
     .ama-home .home-hero {
-      padding: 60px 0 48px;
+      padding: 104px 0 48px;
     }
 
     .ama-home .stat-pill {
