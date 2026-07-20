@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <!-- GitPress partial: alpha nova manufacturing capacity planning v2026-07-20 -->
 <style>
   .an-cap-page,
@@ -220,6 +212,37 @@
     font-weight: 600;
   }
 
+  .an-cap-page .takeaways-table {
+    table-layout: auto;
+    border-color: #111;
+  }
+
+  .an-cap-page .takeaways-table th,
+  .an-cap-page .takeaways-table td {
+    border-color: #111;
+  }
+
+  .an-cap-page .takeaways-table th:first-child,
+  .an-cap-page .takeaways-table td:first-child {
+    width: 26%;
+  }
+
+  .an-cap-page .takeaways-table th:last-child,
+  .an-cap-page .takeaways-table td:last-child {
+    width: 74%;
+  }
+
+  .an-cap-page .takeaways-table td {
+    padding: 9px 24px;
+    font-size: 16px;
+  }
+
+  .an-cap-page .takeaways-table td:first-child {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-weight: 500;
+  }
+
   .an-cap-cta {
     display: block;
     margin: 24px auto 30px;
@@ -227,7 +250,8 @@
   }
 
   .an-cap-cta img {
-    width: 100%;
+    width: 100% !important;
+    max-width: none !important;
     margin: 0 auto;
     border: 0;
   }
@@ -346,7 +370,7 @@
 
       <h2>Key Takeaways</h2>
       <div class="an-table-wrap">
-        <table>
+        <table class="takeaways-table">
           <thead>
             <tr>
               <th>DIMENSION</th>
@@ -591,7 +615,7 @@
       </ul>
 
       <div class="an-video">
-        <iframe loading="lazy" title="Improve Your Manufacturing Lead Time By 50% By Doing This One Thing" src="https://www.youtube.com/embed/YAVoixjzLBY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe loading="lazy" title="Improve Your Manufacturing Lead Time By 50% By Doing This One Thing" src="https://www.youtube.com/embed/YAVoixjzLBY?si=KlxKzoeHa1Al_W87" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
       <ol start="2">
@@ -670,6 +694,3 @@
     </div>
   </div>
 </main>
-
-</body>
-</html>
