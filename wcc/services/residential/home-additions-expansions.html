@@ -1,4 +1,4 @@
-<!-- wcc build: 2026-07-24 | page: home-additions-expansions | render_mode: theme_wrapped -->
+<!-- wcc build: 2026-07-29 | page: home-additions-expansions | render_mode: theme_wrapped -->
 <style>
 /* ============================================================
    West Coast Construction Group shared design system (v2)
@@ -417,6 +417,7 @@
 }
 .wcc-ba__radio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 .wcc-ba__btn {
+  display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--font-head); text-transform: uppercase; letter-spacing: .12em;
   font-size: .8rem; font-weight: 500; padding: .72em 1.5em; border-radius: 999px;
   color: var(--ink); cursor: pointer; user-select: none;
@@ -759,12 +760,33 @@
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
       var radios = sec.querySelectorAll('.wcc-ba__radio');
+      var buttons = sec.querySelectorAll('.wcc-ba__btn');
       if (!radios.length) return;
       function sync() {
         var checked = sec.querySelector('.wcc-ba__radio:checked');
-        sec.classList.toggle('show-before', !!checked && checked.value === 'before');
+        var showBefore = !!checked && checked.value === 'before';
+        sec.classList.toggle('show-before', showBefore);
+        buttons.forEach(function (btn) {
+          var state = btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after');
+          btn.setAttribute('aria-pressed', state === (showBefore ? 'before' : 'after') ? 'true' : 'false');
+        });
+      }
+      function setState(state) {
+        radios.forEach(function (radio) { radio.checked = radio.value === state; });
+        sync();
       }
       radios.forEach(function (r) { r.addEventListener('change', sync); });
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function (event) {
+          event.preventDefault();
+          setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
+        });
+        btn.addEventListener('keydown', function (event) {
+          if (event.key !== ' ' && event.key !== 'Enter') return;
+          event.preventDefault();
+          setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
+        });
+      });
       sync();
     });
   }

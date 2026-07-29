@@ -415,6 +415,7 @@
 }
 .wcc-ba__radio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 .wcc-ba__btn {
+  display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--font-head); text-transform: uppercase; letter-spacing: .12em;
   font-size: .8rem; font-weight: 500; padding: .72em 1.5em; border-radius: 999px;
   color: var(--ink); cursor: pointer; user-select: none;

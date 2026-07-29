@@ -120,12 +120,33 @@
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
       var radios = sec.querySelectorAll('.wcc-ba__radio');
+      var buttons = sec.querySelectorAll('.wcc-ba__btn');
       if (!radios.length) return;
       function sync() {
         var checked = sec.querySelector('.wcc-ba__radio:checked');
-        sec.classList.toggle('show-before', !!checked && checked.value === 'before');
+        var showBefore = !!checked && checked.value === 'before';
+        sec.classList.toggle('show-before', showBefore);
+        buttons.forEach(function (btn) {
+          var state = btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after');
+          btn.setAttribute('aria-pressed', state === (showBefore ? 'before' : 'after') ? 'true' : 'false');
+        });
+      }
+      function setState(state) {
+        radios.forEach(function (radio) { radio.checked = radio.value === state; });
+        sync();
       }
       radios.forEach(function (r) { r.addEventListener('change', sync); });
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function (event) {
+          event.preventDefault();
+          setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
+        });
+        btn.addEventListener('keydown', function (event) {
+          if (event.key !== ' ' && event.key !== 'Enter') return;
+          event.preventDefault();
+          setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
+        });
+      });
       sync();
     });
   }

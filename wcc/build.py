@@ -226,10 +226,12 @@ def before_after_section(b):
               f'<legend class="visually-hidden">Show before or after photos</legend>'
               f'<input class="wcc-ba__radio" type="radio" name="wcc-ba-state" '
               f'id="wcc-ba-before" value="before">'
-              f'<label class="wcc-ba__btn wcc-ba__btn--before" for="wcc-ba-before">Before</label>'
+              f'<label class="wcc-ba__btn wcc-ba__btn--before" for="wcc-ba-before" '
+              f'data-ba-state="before" role="button" tabindex="0" aria-pressed="false">Before</label>'
               f'<input class="wcc-ba__radio" type="radio" name="wcc-ba-state" '
               f'id="wcc-ba-after" value="after" checked>'
-              f'<label class="wcc-ba__btn wcc-ba__btn--after" for="wcc-ba-after">After</label>'
+              f'<label class="wcc-ba__btn wcc-ba__btn--after" for="wcc-ba-after" '
+              f'data-ba-state="after" role="button" tabindex="0" aria-pressed="true">After</label>'
               f'</fieldset>')
 
     return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec"><div class="wcc-wrap">'
