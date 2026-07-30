@@ -22,7 +22,7 @@ SITE = DATA["site"]
 IDX  = DATA["pageIndex"]
 BASE = "https://wccgrp.com"   # confirmed from live asset URLs on the old pages
 MARK = datetime.date.today().isoformat()
-REVISION = "gitpress-interactions-2026-07-29-v5"
+REVISION = "gitpress-interactions-2026-07-29-v6"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -204,7 +204,7 @@ def video_gallery_section(v):
             f'</div>{note}</div></section>')
 
 def before_after_section(b):
-    """Toggle gallery sized for vertical photos. Native radio inputs keep the
+    """Toggle gallery sized for vertical photos. Native details elements keep the
        crossfade working when WordPress strips or blocks JavaScript."""
     cards = ""
     for it in b["items"]:
@@ -223,15 +223,12 @@ def before_after_section(b):
 
     note = f'<p class="wcc-ba__note">{e(b["note"])}</p>' if b.get("note") else ""
 
-    switch = (f'<fieldset class="wcc-ba__switch" aria-label="Show before or after photos">'
-              f'<legend class="visually-hidden">Show before or after photos</legend>'
-              f'<label class="wcc-ba__btn wcc-ba__btn--before">'
-              f'<input class="wcc-ba__radio wcc-ba__radio--before" type="radio" '
-              f'name="wcc-ba-state" value="before"><span>Before</span></label>'
-              f'<label class="wcc-ba__btn wcc-ba__btn--after">'
-              f'<input class="wcc-ba__radio wcc-ba__radio--after" type="radio" '
-              f'name="wcc-ba-state" value="after" checked><span>After</span></label>'
-              f'</fieldset>')
+    switch = (f'<div class="wcc-ba__switch" role="group" aria-label="Show before or after photos">'
+              f'<details class="wcc-ba__state wcc-ba__state--before" name="wcc-ba-state">'
+              f'<summary class="wcc-ba__btn wcc-ba__btn--before">Before</summary></details>'
+              f'<details class="wcc-ba__state wcc-ba__state--after" name="wcc-ba-state" open>'
+              f'<summary class="wcc-ba__btn wcc-ba__btn--after">After</summary></details>'
+              f'</div>')
 
     return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec" data-ba-state="after"><div class="wcc-wrap">'
             f'<div class="wcc-ba__head">'

@@ -119,9 +119,10 @@
   /* ---- before/after toggle ---- */
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
-      var radios = sec.querySelectorAll('.wcc-ba__radio');
+      var states = sec.querySelectorAll('.wcc-ba__state');
       var buttons = sec.querySelectorAll('.wcc-ba__btn');
-      if (!radios.length) return;
+      var radios = sec.querySelectorAll('.wcc-ba__radio');
+      if (!states.length && !radios.length) return;
 
       function setState(state) {
         var showBefore = state === 'before';
@@ -141,6 +142,18 @@
         sec.querySelectorAll('.wcc-ba__img--after, .wcc-ba__pill--after').forEach(function (el) {
           el.style.opacity = showBefore ? '0' : '1';
         });
+      }
+
+      if (states.length) {
+        states.forEach(function (item) {
+          item.addEventListener('toggle', function () {
+            if (item.open) {
+              setState(item.classList.contains('wcc-ba__state--before') ? 'before' : 'after');
+            }
+          });
+        });
+        setState(sec.querySelector('.wcc-ba__state--before[open]') ? 'before' : 'after');
+        return;
       }
 
       radios.forEach(function (radio) {
