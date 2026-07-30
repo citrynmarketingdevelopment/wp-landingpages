@@ -1,0 +1,579 @@
+<!-- webhook retrigger 2026-07-30 -->
+<!-- PWC page: reviews | SEO title: Our Reviews | Psychiatric Wellness Center -->
+<!--
+  ============================================================================
+  BEFORE THIS PAGE GOES LIVE: fill in every {{TOKEN}} below.
+  Search this file for "{{" to find them all. See pwc/reviews-fill-in-notes.md.
+    {{RATING}}              e.g. 4.9   (your live Google Business Profile rating)
+    {{REVIEW_COUNT}}        e.g. 63    (your live Google review count)
+    {{GOOGLE_PROFILE_URL}}  link to your Google Business Profile reviews tab
+    {{GOOGLE_REVIEW_URL}}   your "write a review" short link (g.page/r/.../review)
+    {{REVIEW_n_TEXT}}       the verbatim text of Google review n
+    {{REVIEW_n_NAME}}       the reviewer's name as it appears on Google
+    {{REVIEW_n_INITIAL}}    that reviewer's first initial (shown in the avatar)
+    {{REVIEW_n_DATE}}       e.g. "March 2026"
+  Delete any review card you do not have text for - the grid reflows on its own.
+  ============================================================================
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800');
+
+  .pwc-page{
+    --brand:#39657e; --brand-light:#6aa2b9; --brand-dark:#305e78;
+    --tint:#e3edef; --tint-soft:#f4f8fa; --green:#799d4c; --green-dark:#688a3f;
+    --ink:#26404e; --copy:#55707d; --white:#fff; --star:#e8a33d;
+    --line:rgba(57,101,126,.16); --shadow:0 16px 40px rgba(48,94,120,.12); --max:1160px;
+    font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--white); -webkit-font-smoothing:antialiased;
+  }
+  .pwc-page *{box-sizing:border-box}
+  /* defensive reset so Divi/theme element rules can't leak in (guide section 8) */
+  .pwc-page h1,.pwc-page h2,.pwc-page h3,.pwc-page h4,.pwc-page h5,.pwc-page h6,
+  .pwc-page p,.pwc-page ul,.pwc-page ol,.pwc-page li,.pwc-page figure,.pwc-page figcaption,.pwc-page blockquote{
+    margin:0;padding:0;color:inherit;font-family:inherit;line-height:inherit;text-transform:none;letter-spacing:normal;
+  }
+  .pwc-page img{max-width:100%;display:block}
+  .pwc-page a{text-decoration:none;color:inherit}
+  .pwc-page .wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+  .pwc-page .section{padding:56px 0}
+  .pwc-page .section.tint{background:var(--tint-soft)}
+  .pwc-page .card{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+  .pwc-page .eyebrow{margin:0 0 14px!important;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)!important}
+  .pwc-page h1,.pwc-page h2,.pwc-page h3{font-weight:700;line-height:1.2;color:var(--brand-dark)!important}
+
+  /* buttons: pill / uppercase / letter-spaced (matches reference "Book an Appointment") */
+  .pwc-page .actions{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
+  .pwc-page .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border-radius:100px;font-weight:700;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+  .pwc-page .btn:hover,.pwc-page .btn:focus-visible{transform:translateY(-2px)}
+  .pwc-page .btn-primary{background:var(--brand);color:var(--white)!important;box-shadow:0 12px 24px rgba(57,101,126,.26)}
+  .pwc-page .btn-primary:hover{background:var(--brand-dark)}
+  .pwc-page .btn-secondary{background:var(--white);color:var(--brand)!important;border:1.5px solid var(--brand-light)}
+  .pwc-page .btn-secondary:hover{border-color:var(--brand);background:var(--tint-soft)}
+  .pwc-page .btn-light{background:var(--white);color:var(--brand-dark)!important}
+  .pwc-page .btn-outline{background:transparent;color:var(--white)!important;border:1.5px solid rgba(255,255,255,.6)}
+  .pwc-page .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+  /* hero: light tint, dark slate text (reference et_pb_bg_layout_light) */
+  .pwc-page .hero{background:linear-gradient(100deg,var(--tint) 0%,var(--tint-soft) 60%,var(--white) 100%);padding:62px 0;border-bottom:1px solid var(--line)}
+  .pwc-page .hero-grid,.pwc-page .split,.pwc-page .cta-grid,.pwc-page .band-grid,.pwc-page .contact-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:38px;align-items:center}
+  .pwc-page .hero-copy h1{font-size:clamp(1.85rem,3.4vw,2.85rem);color:var(--brand-dark)!important}
+  .pwc-page .hero-copy .lead{margin:20px 0 0;color:var(--copy)!important;line-height:1.85;max-width:600px;font-size:1.04rem}
+
+  /* credibility trust bar: clean slate band, no overlap */
+  .pwc-page .strip{background:var(--brand)}
+  .pwc-page .creds{display:grid;grid-template-columns:repeat(4,1fr)}
+  .pwc-page .cred{padding:26px;border-left:1px solid rgba(255,255,255,.16)}
+  .pwc-page .cred:first-child{border-left:0;padding-left:0}
+  .pwc-page .cred strong{display:block;color:var(--white)!important;font-size:1.02rem;margin-bottom:5px}
+  .pwc-page .cred span{color:rgba(255,255,255,.84)!important;font-size:.88rem;line-height:1.5}
+
+  /* intro lead */
+  .pwc-page .lead-block{max-width:860px}
+  .pwc-page .lead-block p{color:var(--copy)!important;line-height:1.85;font-size:1.06rem;margin-bottom:14px!important}
+  .pwc-page .lead-block p:last-child{margin-bottom:0!important}
+
+  /* section heading */
+  .pwc-page .heading{max-width:760px;margin-bottom:30px}
+  .pwc-page .heading h2{font-size:clamp(1.55rem,2.5vw,2.15rem);color:var(--brand-dark)!important}
+  .pwc-page .heading p{margin-top:16px!important;color:var(--copy)!important;line-height:1.8}
+
+  /* checks list */
+  .pwc-page .checks{list-style:none;display:grid;gap:12px}
+  .pwc-page .checks li{position:relative;padding-left:30px;line-height:1.6;color:var(--copy)!important;font-weight:600}
+  .pwc-page .checks li:before{content:"";position:absolute;left:0;top:2px;width:19px;height:19px;border-radius:50%;background:var(--green);opacity:.16}
+  .pwc-page .checks li:after{content:"";position:absolute;left:7px;top:6px;width:5px;height:9px;border-right:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(42deg)}
+
+  /* contact */
+  .pwc-page .contact{padding:34px}
+  .pwc-page .nap{padding:16px 0;border-bottom:1px solid var(--line)}
+  .pwc-page .nap:first-child{padding-top:0}
+  .pwc-page .nap strong{display:block;color:var(--green)!important;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+  .pwc-page .nap p{color:var(--ink)!important;font-size:1.05rem;font-weight:600}
+  .pwc-page .nap a{color:var(--brand)!important}
+  .pwc-page .hours{padding:34px;background:var(--brand);border-color:transparent}
+  .pwc-page .hours strong{display:block;color:var(--white)!important;font-size:1.08rem;margin-bottom:18px}
+  .pwc-page .hours .checks li{color:rgba(255,255,255,.92)!important;font-weight:500}
+  .pwc-page .hours .checks li:before{background:var(--white);opacity:.22}
+  .pwc-page .hours .checks li:after{border-color:var(--white)}
+
+  /* faq */
+  .pwc-page .faq{display:grid;gap:14px}
+  .pwc-page .faq-item{overflow:hidden}
+  .pwc-page .faq-item summary{cursor:pointer;list-style:none;padding:22px 56px 22px 26px;font-weight:700;color:var(--brand-dark)!important;position:relative}
+  .pwc-page .faq-item summary::-webkit-details-marker{display:none}
+  .pwc-page .faq-item summary:after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--green)!important;font-weight:700}
+  .pwc-page .faq-item[open] summary:after{content:"\2013"}
+  .pwc-page .faq-body{padding:0 26px 24px;color:var(--copy)!important;line-height:1.8}
+
+  /* link list */
+  .pwc-page .link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .pwc-page .link{display:block;padding:24px;border-radius:14px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease}
+  .pwc-page .link:hover,.pwc-page .link:focus-visible{transform:translateY(-3px);border-color:var(--brand-light)}
+  .pwc-page .link strong{display:block;color:var(--brand-dark)!important;font-size:1.06rem}
+  .pwc-page .link span{display:block;margin-top:8px;color:var(--copy)!important;line-height:1.6;font-size:.93rem}
+
+  /* cta band */
+  .pwc-page .cta{padding:46px;border-radius:18px;background:linear-gradient(120deg,var(--brand-dark),var(--brand) 70%,var(--brand-light));color:var(--white)}
+  .pwc-page .cta-grid{align-items:center}
+  .pwc-page .cta h2{font-size:clamp(1.5rem,2.4vw,2.05rem);color:var(--white)!important}
+  .pwc-page .cta .eyebrow{color:#cfe0e6!important}
+  .pwc-page .cta p{margin-top:14px!important;color:rgba(255,255,255,.9)!important;line-height:1.8}
+
+  /* ---- reviews specific ---- */
+
+  /* star row */
+  .pwc-page .stars{display:inline-flex;gap:4px;line-height:0}
+  .pwc-page .stars svg{width:20px;height:20px;display:block;fill:var(--star)}
+
+  /* google wordmark chip */
+  .pwc-page .gmark{display:inline-flex;align-items:center;gap:9px;padding:9px 17px;border-radius:100px;background:var(--white);border:1px solid var(--line);font-weight:700;font-size:.83rem;letter-spacing:.02em;color:var(--brand-dark)!important}
+  .pwc-page .gmark svg{width:17px;height:17px;display:block;flex:none}
+
+  /* hero rating summary panel */
+  .pwc-page .rating{padding:38px 34px;text-align:center}
+  .pwc-page .rating .rate-num{display:block;font-size:clamp(3rem,7vw,4rem);font-weight:800;line-height:1;color:var(--brand-dark)!important}
+  .pwc-page .rating .stars{margin:16px 0 12px}
+  .pwc-page .rating .stars svg{width:26px;height:26px}
+  .pwc-page .rating .meta{color:var(--copy)!important;line-height:1.7;font-size:.98rem}
+  .pwc-page .rating .gmark{margin-top:22px}
+  .pwc-page .rating .rate-actions{margin-top:26px;display:grid;gap:12px}
+
+  /* review card grid */
+  .pwc-page .rev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .pwc-page .rev{padding:30px;display:flex;flex-direction:column}
+  .pwc-page .rev .stars{margin:0 0 18px;align-self:flex-start}
+  /* border:0 is required - Divi ships `blockquote{border-left:5px solid}` + a blue border-color */
+  .pwc-page .rev blockquote{flex:1;border:0;color:var(--copy)!important;line-height:1.8;font-size:.99rem}
+  .pwc-page .rev .who{display:flex;align-items:center;gap:13px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+  .pwc-page .rev .avatar{width:42px;height:42px;border-radius:50%;background:var(--tint);display:grid;place-items:center;flex:none;color:var(--brand)!important;font-size:1.02rem;font-weight:800}
+  .pwc-page .rev .who strong{display:block;color:var(--brand-dark)!important;font-size:.99rem;line-height:1.4}
+  .pwc-page .rev .who .when{display:block;margin-top:3px;color:var(--copy)!important;font-size:.83rem;line-height:1.4}
+  .pwc-page .rev-more{margin-top:30px;display:flex;justify-content:center}
+
+  /* source note */
+  .pwc-page .source-note{margin-top:22px!important;color:var(--copy)!important;font-size:.87rem;line-height:1.7;text-align:center}
+
+  /* leave-a-review band */
+  .pwc-page .band{padding:38px;background:var(--tint)}
+  .pwc-page .band-copy h2{font-size:clamp(1.5rem,2.3vw,2rem);color:var(--brand-dark)!important}
+  .pwc-page .band-copy p{margin-top:14px!important;color:var(--copy)!important;line-height:1.8}
+  .pwc-page .steps{display:grid;gap:14px;margin-top:4px}
+  .pwc-page .step{display:flex;align-items:flex-start;gap:15px}
+  .pwc-page .step .num{width:34px;height:34px;border-radius:10px;background:var(--brand);color:var(--white)!important;display:grid;place-items:center;font-size:.92rem;font-weight:800;flex:none}
+  .pwc-page .step p{color:var(--copy)!important;line-height:1.65;padding-top:5px}
+
+  /* reveal (content visible without JS, guide section 10) */
+  .pwc-page [data-reveal]{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+  html.dgs-js .pwc-page [data-reveal]{opacity:0;transform:translateY(20px)}
+  html.dgs-js .pwc-page [data-reveal].in-view{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .pwc-page .hero-grid,.pwc-page .split,.pwc-page .cta-grid,.pwc-page .band-grid,.pwc-page .contact-grid,
+    .pwc-page .creds,.pwc-page .link-list,.pwc-page .rev-grid{grid-template-columns:1fr}
+    .pwc-page .cred{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0}
+    .pwc-page .cred:first-child{border-top:0}
+  }
+  @media(max-width:680px){
+    .pwc-page .wrap{width:min(calc(100% - 22px),var(--max))}
+    .pwc-page .section{padding:40px 0}
+    .pwc-page .cta,.pwc-page .band,.pwc-page .contact,.pwc-page .hours,.pwc-page .rev,.pwc-page .rating{padding:26px}
+    .pwc-page .btn{width:100%}
+  }
+</style>
+
+<main class="pwc-page">
+    <section class="hero" data-reveal>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">In Our Patients' Words</p>
+          <h1>Our Reviews</h1>
+          <p class="lead">Choosing a psychiatrist is a personal decision, and hearing from people who have already made that decision can help. Below are reviews left by our patients on Google, shared exactly as they were written. They reflect what matters most to us: that people feel heard, supported, and genuinely involved in their own care.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/contact-san-diego/">Book an Appointment</a>
+            <a class="btn btn-secondary" href="tel:7606884080">Call (760) 688-4080</a>
+          </div>
+        </div>
+        <div class="rating card">
+          <span class="rate-num">{{RATING}}</span>
+          <span class="stars" role="img" aria-label="Rated {{RATING}} out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+          </span>
+          <p class="meta">Average rating from {{REVIEW_COUNT}} patient reviews on Google.</p>
+          <span class="gmark">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+              <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+              <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+              <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+            </svg>
+            Google Business Profile
+          </span>
+          <div class="rate-actions">
+            <a class="btn btn-primary" href="{{GOOGLE_PROFILE_URL}}" target="_blank" rel="noopener nofollow">Read All Reviews</a>
+            <a class="btn btn-secondary" href="{{GOOGLE_REVIEW_URL}}" target="_blank" rel="noopener nofollow">Leave a Review</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" data-reveal>
+      <div class="wrap creds">
+        <div class="cred"><strong>UCLA &amp; USC-trained</strong><span>Physicians with training from prestigious institutions.</span></div>
+        <div class="cred"><strong>Patient-centered</strong><span>Individualized care plans built around your goals.</span></div>
+        <div class="cred"><strong>In-network options</strong><span>Insurance-friendly access to psychiatric care.</span></div>
+        <div class="cred"><strong>In-person &amp; online</strong><span>Visit our Encinitas office or meet by telehealth.</span></div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="lead-block">
+          <p>Every review below was written by a real patient on our Google Business Profile. We do not edit them, and we do not pick and choose only the perfect ones. If you would like to see the full and current set, including anything posted since this page was last updated, you can read them all directly on Google.</p>
+          <p>If we have cared for you, sharing your experience helps other people in San Diego and North County decide whether to take that first step toward psychiatric care. We are grateful for every patient who takes the time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading" data-reveal>
+          <p class="eyebrow">Patient Reviews</p>
+          <h2>What Patients Say About Psychiatric Wellness Center</h2>
+          <p>Reviews from our Google Business Profile, shared as written.</p>
+        </div>
+        <div class="rev-grid">
+
+          <!-- REVIEW 1 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>Practice is well organized and responds quickly. Intake and other docs were easy to navigate. Telehealth link came promptly and the appointment was connected effortlessly. Dr. Kharkar was knowledgeable, easy-going, and friendly. Highly recommend!!</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">L</span>
+              <span>
+                <strong>Lei Shapiro</strong>
+                <span class="when">Google review &middot; January 2026</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 2 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>Dr. Kharkar is smart, thoughtful, and very capable, with a warm, approachable style that immediately puts you at ease. She's clear and direct while still being kind and collaborative. I felt truly heard and supported, and I left my appointment feeling confident and cared for. An excellent psychiatrist who balances expertise with genuine human connection.</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">H</span>
+              <span>
+                <strong>Hat Capper</strong>
+                <span class="when">Google review &middot; January 2026</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 3 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>Dr Kharkar was patient, thorough, and friendly during my sister&rsquo;s intake interviews. She listened carefully and made excellent recommendations/changes as to my sister&rsquo;s medication needs. I appreciated her care and caution.</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">H</span>
+              <span>
+                <strong>Hilarie Schmalz</strong>
+                <span class="when">Google review &middot; December 2025</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 4 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>I had my first in-person visit with Dr. Kharkar and felt comfortable right from the start. She is warm, welcoming, and highly professional. She was very thorough, truly listened, and took a thoughtful, collaborative approach when creating a starting point for my treatment plan. I left feeling heard, supported, and confident moving forward. Highly recommend.</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">M</span>
+              <span>
+                <strong>Marie Belknap</strong>
+                <span class="when">Google review &middot; December 2025</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 5 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>Dr. Kharhur is amazing. She took the time to truly listen, understand my concerns, and offer thoughtful guidance that felt tailored to my needs. Having to find a new Dr. is always stressful and peeks my anxiety but I never felt rushed or dismissed. Her insight, compassion, and professionalism made a real difference. Highly recommend.</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">E</span>
+              <span>
+                <strong>Elizabeth Winzer</strong>
+                <span class="when">Google review &middot; November 2025</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 6 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>I am so happy to have found Dr Kharkar! She is wonderful. She listened to me and we were able to come up with a plan that will serve me well. She is kind and so attentive as well as empathetic and so understanding. Highly recommend her.</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">B</span>
+              <span>
+                <strong>Barb Beach</strong>
+                <span class="when">Google review &middot; August 2025</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 7 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>Love her, amazing doctor very helpful and way to talk to! Definitely recommend</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">S</span>
+              <span>
+                <strong>Samantha Black</strong>
+                <span class="when">Google review &middot; July 2025</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 8 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>The staff is very kind and understanding! My appointment was over an hour long, I felt heard and am very happy with Psychiatric Wellness Centrr!</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">S</span>
+              <span>
+                <strong>shayna stolte</strong>
+                <span class="when">Google review &middot; July 2025</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- REVIEW 9 -->
+          <div class="rev card">
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            </span>
+            <blockquote>I had a great experience every step of the way! The staff were caring and responsive. I was seen by Dr. Kharkar in less than a week! Highly recommend this Wellness Center!</blockquote>
+            <div class="who">
+              <span class="avatar" aria-hidden="true">L</span>
+              <span>
+                <strong>Lauren Williams</strong>
+                <span class="when">Google review &middot; June 2025</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="rev-more">
+          <a class="btn btn-primary" href="{{GOOGLE_PROFILE_URL}}" target="_blank" rel="noopener nofollow">Read All Reviews on Google</a>
+        </div>
+        <p class="source-note">Reviews are reproduced from our Google Business Profile as written by the reviewer. Individual experiences vary, and a review is not a promise of any particular treatment outcome.</p>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="band card">
+          <div class="band-grid">
+            <div class="band-copy">
+              <p class="eyebrow">Share Your Experience</p>
+              <h2>Leave Us a Review</h2>
+              <p>If Psychiatric Wellness Center has been part of your care, a few sentences about your experience can help someone else in San Diego or North County feel confident about reaching out. It takes about a minute.</p>
+              <div class="actions">
+                <a class="btn btn-primary" href="{{GOOGLE_REVIEW_URL}}" target="_blank" rel="noopener nofollow">Write a Google Review</a>
+              </div>
+            </div>
+            <div class="steps">
+              <div class="step">
+                <span class="num" aria-hidden="true">1</span>
+                <p>Select <strong>Write a Google Review</strong> and sign in to your Google account.</p>
+              </div>
+              <div class="step">
+                <span class="num" aria-hidden="true">2</span>
+                <p>Choose a star rating and write a few sentences about your experience.</p>
+              </div>
+              <div class="step">
+                <span class="num" aria-hidden="true">3</span>
+                <p>Post your review. Please leave out any private health details you would rather keep confidential.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Visit or Contact Us</p>
+          <h2>Ready to Become Our Next Patient?</h2>
+          <p>Reach out to schedule an appointment, ask a general question, or learn more about in-person and telehealth psychiatry options.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact card">
+            <div class="nap">
+              <strong>Office</strong>
+              <p>169 Saxony Rd., Suite 103, Encinitas, CA 92024</p>
+            </div>
+            <div class="nap">
+              <strong>Phone</strong>
+              <p><a href="tel:7606884080">(760) 688-4080</a></p>
+            </div>
+            <div class="nap">
+              <strong>Email</strong>
+              <p><a href="mailto:info@psychwellnesscenter.com">info@psychwellnesscenter.com</a></p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="/contact-san-diego/">Book an Appointment</a>
+              <a class="btn btn-secondary" href="tel:7606884080">Call (760) 688-4080</a>
+            </div>
+          </div>
+          <div class="hours card">
+            <strong>What to expect</strong>
+            <ul class="checks">
+              <li>A compassionate, patient-centered first conversation.</li>
+              <li>Time to understand your symptoms, history, and goals.</li>
+              <li>A care plan tailored to you, not a one-size-fits-all approach.</li>
+              <li>In-person visits in Encinitas or telehealth when appropriate.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Common Questions</p>
+          <h2>About Our Reviews</h2>
+        </div>
+        <div class="faq">
+          <details class="faq-item card" open>
+            <summary>Where do these reviews come from?</summary>
+            <div class="faq-body">Every review on this page was written by a patient on our Google Business Profile. We reproduce them as written and link to the full, current set on Google so you can read them all, including any posted after this page was last updated.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Do you offer anything in exchange for a review?</summary>
+            <div class="faq-body">No. We never offer discounts, gifts, or any other incentive in exchange for a review, and we do not ask patients to change or remove what they have written. Honest feedback is the only kind that is useful to the next patient.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Will my review reveal that I am a patient here?</summary>
+            <div class="faq-body">A Google review is public and appears under whatever name is on your Google account, so please share only what you are comfortable making public. You are welcome to keep your review general and leave out any specific health details.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Can a review tell me whether treatment will work for me?</summary>
+            <div class="faq-body">No. Reviews describe one person's individual experience and are not a prediction or promise of any particular outcome. The most reliable way to know whether we are a good fit for you is a psychiatric evaluation, where we can discuss your symptoms, history, and goals directly.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>How do I share concerns instead of posting publicly?</summary>
+            <div class="faq-body">If something about your care did not go well, we would genuinely like to hear it directly. Call our office at <a href="tel:7606884080">(760) 688-4080</a> or email <a href="mailto:info@psychwellnesscenter.com">info@psychwellnesscenter.com</a> so we can look into it.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>What should I do if symptoms feel urgent or unsafe?</summary>
+            <div class="faq-body">If you are experiencing a medical emergency, thoughts of harming yourself or someone else, or feel unable to stay safe, call 911 or go to the nearest emergency room immediately. Online content should not replace emergency care.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Explore More Care</p>
+          <h2>Related Psychiatric Services</h2>
+        </div>
+        <div class="link-list">
+          <a class="link" href="/adult-adhd-in-san-diego/"><strong>Adult ADHD Treatment</strong><span>Dedicated evaluation and treatment for adults managing ADHD symptoms.</span></a>
+          <a class="link" href="/womens-health-in-san-diego/"><strong>Women's Mental Health</strong><span>Support for anxiety, mood changes, postpartum, and perimenopause concerns.</span></a>
+          <a class="link" href="/for-referring-clinicians/"><strong>For Referring Clinicians</strong><span>How therapists, physicians, and other providers can send us a referral.</span></a>
+          <a class="link" href="/psychiatrist-san-diego/"><strong>Main Psychiatrist Page</strong><span>Explore our full psychiatry services across San Diego and North County.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" data-reveal>
+      <div class="wrap">
+        <div class="cta">
+          <div class="cta-grid">
+            <div>
+              <p class="eyebrow">Take the Next Step</p>
+              <h2>Care That Patients Recommend</h2>
+              <p>If what you have read here sounds like the kind of care you are looking for, our team is ready to help. Contact Psychiatric Wellness Center to learn more about appointments, telehealth options, and personalized psychiatric care.</p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-light" href="/contact-san-diego/">Book an Appointment</a>
+              <a class="btn btn-outline" href="tel:7606884080">Call (760) 688-4080</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+<script>
+  (function(){
+    document.documentElement.classList.add('dgs-js');
+    function reveal(){
+      var els=document.querySelectorAll('.pwc-page [data-reveal]');
+      if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in-view')});return;}
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in-view');io.unobserve(x.target);}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+      els.forEach(function(e){io.observe(e)});
+    }
+    if(document.readyState!=='loading')reveal();else document.addEventListener('DOMContentLoaded',reveal);
+  })();
+</script>

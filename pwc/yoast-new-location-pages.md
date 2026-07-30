@@ -65,3 +65,24 @@ Focus keyphrase, meta title, and meta description below are taken from each city
 - Focus keyphrase: `psychiatrist Escondido CA`
 - Meta title: `Psychiatrist in Escondido, CA | Psychiatric Wellness Center`
 - Meta description: `Psychiatrist near Escondido, CA offering adult psychiatry, ADHD medication management, anxiety treatment, women's mental health, postpartum support, perimenopause care, and telehealth appointments.`
+
+---
+
+# Non-Location Pages (added 2026-07-30)
+
+Drafted here rather than pulled from a `.docx`, since these two pages have no source doc.
+Both descriptions are already inside Google's ~155-character display window.
+
+## Our Reviews
+
+### `reviews.html` → `/reviews/`
+- Focus keyphrase: `Psychiatric Wellness Center reviews`
+- Meta title: `Our Reviews | Psychiatric Wellness Center`
+- Meta description: `Read Google reviews from Psychiatric Wellness Center patients in San Diego and North County, and see what to expect from our psychiatric care.`
+
+## For Referring Clinicians
+
+### `for-referring-clinicians.html` → `/for-referring-clinicians/`
+- Focus keyphrase: `psychiatric referrals San Diego`
+- Meta title: `For Referring Clinicians | Psychiatric Wellness Center`
+- Meta description: `Refer a patient for psychiatric care in San Diego. Accepting new patients with intakes within 1-2 weeks. Call (760) 688-4080 to send a referral.`

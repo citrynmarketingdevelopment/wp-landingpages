@@ -30,6 +30,23 @@ GitPress page level (not inside the shortcode — per `GITPRESS_WEBSITE_STRUCTUR
 | `/psychiatrist-oceanside-ca/` | `pwc/psychiatrist-oceanside-ca.html` | `[divi_github_content owner="citrynmarketingdevelopment" repo="wp-landingpages" branch="main" path="pwc/psychiatrist-oceanside-ca.html" format="html"]` |
 | `/psychiatrist-escondido-ca/` | `pwc/psychiatrist-escondido-ca.html` | `[divi_github_content owner="citrynmarketingdevelopment" repo="wp-landingpages" branch="main" path="pwc/psychiatrist-escondido-ca.html" format="html"]` |
 
+## Additional pages (added 2026-07-30)
+
+Same render mode and settings as the city hubs (`theme_wrapped` / `replace` / full width).
+Both are meant to become top-level menu items ("tabs") in the PWC nav.
+
+| Live slug | GitHub file | Shortcode |
+|---|---|---|
+| `/reviews/` | `pwc/reviews.html` | `[divi_github_content owner="citrynmarketingdevelopment" repo="wp-landingpages" branch="main" path="pwc/reviews.html" format="html"]` |
+| `/for-referring-clinicians/` | `pwc/for-referring-clinicians.html` | `[divi_github_content owner="citrynmarketingdevelopment" repo="wp-landingpages" branch="main" path="pwc/for-referring-clinicians.html" format="html"]` |
+
+> **`/reviews/` is not publish-ready as committed.** It contains `{{TOKEN}}` placeholders for the
+> review text, rating, review count, and Google links. Fill them in first — see
+> `reviews-fill-in-notes.md`. `/for-referring-clinicians/` has no placeholders and is ready to wire up.
+
+After both pages are live, add them to the WordPress menu. `/reviews/` and
+`/for-referring-clinicians/` already cross-link to each other's related-services blocks.
+
 ## After wiring each page
 
 1. Set Yoast fields from `yoast-new-location-pages.md`.

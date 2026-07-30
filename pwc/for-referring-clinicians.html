@@ -1,0 +1,570 @@
+<!-- webhook retrigger 2026-07-30 -->
+<!-- PWC page: for-referring-clinicians | SEO title: For Referring Clinicians | Psychiatric Wellness Center -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800');
+
+  .pwc-page{
+    --brand:#39657e; --brand-light:#6aa2b9; --brand-dark:#305e78;
+    --tint:#e3edef; --tint-soft:#f4f8fa; --green:#799d4c; --green-dark:#688a3f;
+    --ink:#26404e; --copy:#55707d; --white:#fff;
+    --line:rgba(57,101,126,.16); --shadow:0 16px 40px rgba(48,94,120,.12); --max:1160px;
+    font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--white); -webkit-font-smoothing:antialiased;
+  }
+  .pwc-page *{box-sizing:border-box}
+  /* defensive reset so Divi/theme element rules can't leak in (guide section 8) */
+  .pwc-page h1,.pwc-page h2,.pwc-page h3,.pwc-page h4,.pwc-page h5,.pwc-page h6,
+  .pwc-page p,.pwc-page ul,.pwc-page ol,.pwc-page li,.pwc-page figure,.pwc-page figcaption,.pwc-page blockquote{
+    margin:0;padding:0;color:inherit;font-family:inherit;line-height:inherit;text-transform:none;letter-spacing:normal;
+  }
+  .pwc-page img{max-width:100%;display:block}
+  .pwc-page a{text-decoration:none;color:inherit}
+  .pwc-page .wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+  .pwc-page .section{padding:56px 0}
+  .pwc-page .section.tint{background:var(--tint-soft)}
+  .pwc-page .card{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+  .pwc-page .eyebrow{margin:0 0 14px!important;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)!important}
+  .pwc-page h1,.pwc-page h2,.pwc-page h3{font-weight:700;line-height:1.2;color:var(--brand-dark)!important}
+
+  /* buttons: pill / uppercase / letter-spaced (matches reference "Book an Appointment") */
+  .pwc-page .actions{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
+  .pwc-page .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border-radius:100px;font-weight:700;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+  .pwc-page .btn:hover,.pwc-page .btn:focus-visible{transform:translateY(-2px)}
+  .pwc-page .btn-primary{background:var(--brand);color:var(--white)!important;box-shadow:0 12px 24px rgba(57,101,126,.26)}
+  .pwc-page .btn-primary:hover{background:var(--brand-dark)}
+  .pwc-page .btn-secondary{background:var(--white);color:var(--brand)!important;border:1.5px solid var(--brand-light)}
+  .pwc-page .btn-secondary:hover{border-color:var(--brand);background:var(--tint-soft)}
+  .pwc-page .btn-light{background:var(--white);color:var(--brand-dark)!important}
+  .pwc-page .btn-outline{background:transparent;color:var(--white)!important;border:1.5px solid rgba(255,255,255,.6)}
+  .pwc-page .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+  /* hero: light tint + photo, dark slate text (reference et_pb_bg_layout_light) */
+  .pwc-page .hero{background:linear-gradient(100deg,var(--tint) 0%,var(--tint-soft) 60%,var(--white) 100%);padding:62px 0;border-bottom:1px solid var(--line)}
+  .pwc-page .hero-grid,.pwc-page .split,.pwc-page .cta-grid,.pwc-page .band-grid,.pwc-page .contact-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:38px;align-items:center}
+  .pwc-page .hero-copy h1{font-size:clamp(1.85rem,3.4vw,2.85rem);color:var(--brand-dark)!important}
+  .pwc-page .hero-copy .lead{margin:20px 0 0;color:var(--copy)!important;line-height:1.85;max-width:600px;font-size:1.04rem}
+  .pwc-page .hero-visual img{width:100%;height:100%;object-fit:cover;min-height:400px;border-radius:18px;box-shadow:0 24px 50px rgba(48,94,120,.2)}
+
+  /* credibility trust bar: clean slate band, no overlap */
+  .pwc-page .strip{background:var(--brand)}
+  .pwc-page .creds{display:grid;grid-template-columns:repeat(4,1fr)}
+  .pwc-page .cred{padding:26px;border-left:1px solid rgba(255,255,255,.16)}
+  .pwc-page .cred:first-child{border-left:0;padding-left:0}
+  .pwc-page .cred strong{display:block;color:var(--white)!important;font-size:1.02rem;margin-bottom:5px}
+  .pwc-page .cred span{color:rgba(255,255,255,.84)!important;font-size:.88rem;line-height:1.5}
+
+  /* intro lead */
+  .pwc-page .lead-block{max-width:860px}
+  .pwc-page .lead-block p{color:var(--copy)!important;line-height:1.85;font-size:1.06rem;margin-bottom:14px!important}
+  .pwc-page .lead-block p:last-child{margin-bottom:0!important}
+
+  /* mini cards */
+  .pwc-page .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .pwc-page .mini{padding:30px}
+  .pwc-page .mini .icon{width:46px;height:46px;border-radius:12px;background:var(--tint);display:grid;place-items:center;color:var(--brand)!important;font-size:1.1rem;font-weight:800;margin-bottom:18px}
+  .pwc-page .mini strong{display:block;color:var(--brand-dark)!important;font-size:1.1rem;margin-bottom:10px}
+  .pwc-page .mini p{color:var(--copy)!important;line-height:1.7}
+
+  /* section heading */
+  .pwc-page .heading{max-width:760px;margin-bottom:30px}
+  .pwc-page .heading h2{font-size:clamp(1.55rem,2.5vw,2.15rem);color:var(--brand-dark)!important}
+  .pwc-page .heading p{margin-top:16px!important;color:var(--copy)!important;line-height:1.8}
+
+  /* split panels */
+  .pwc-page .split{align-items:stretch}
+  .pwc-page .split.flip .panel{order:2}
+  .pwc-page .panel{padding:34px}
+  .pwc-page .panel p{color:var(--copy)!important;line-height:1.85;margin-bottom:14px!important}
+  .pwc-page .panel p:last-of-type{margin-bottom:0!important}
+  .pwc-page .aside{padding:32px;background:var(--tint);border-color:transparent}
+  .pwc-page .aside strong{display:block;color:var(--brand-dark)!important;font-size:1.05rem;margin-bottom:16px}
+  .pwc-page .checks{list-style:none;display:grid;gap:12px}
+  .pwc-page .checks li{position:relative;padding-left:30px;line-height:1.6;color:var(--copy)!important;font-weight:600}
+  .pwc-page .checks li:before{content:"";position:absolute;left:0;top:2px;width:19px;height:19px;border-radius:50%;background:var(--green);opacity:.16}
+  .pwc-page .checks li:after{content:"";position:absolute;left:7px;top:6px;width:5px;height:9px;border-right:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(42deg)}
+  .pwc-page .panel .checks{margin-top:20px}
+
+  /* media */
+  .pwc-page .media{padding:0;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(135deg,var(--brand) 0%,var(--brand-light) 100%)}
+  .pwc-page .media img{width:100%;flex:1;object-fit:cover;min-height:320px}
+  .pwc-page .media .caption{margin:0;padding:18px 22px;background:var(--white);color:var(--brand-dark)!important;font-weight:600;line-height:1.55;font-size:.93rem;border-top:1px solid var(--line)}
+  .pwc-page .media-gen{background:linear-gradient(135deg,var(--brand-dark),var(--green))}
+
+  /* serving band */
+  .pwc-page .band{padding:38px;background:var(--tint)}
+  .pwc-page .band-copy h2{font-size:clamp(1.5rem,2.3vw,2rem);color:var(--brand-dark)!important}
+  .pwc-page .band-copy p{margin-top:14px!important;color:var(--copy)!important;line-height:1.8}
+  .pwc-page .band-copy p+p{margin-top:12px!important}
+  .pwc-page .band .media{border-radius:14px;min-height:280px}
+
+  /* contact */
+  .pwc-page .contact{padding:34px}
+  .pwc-page .nap{padding:16px 0;border-bottom:1px solid var(--line)}
+  .pwc-page .nap:first-child{padding-top:0}
+  .pwc-page .nap strong{display:block;color:var(--green)!important;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+  .pwc-page .nap p{color:var(--ink)!important;font-size:1.05rem;font-weight:600}
+  .pwc-page .nap a{color:var(--brand)!important}
+  .pwc-page .hours{padding:34px;background:var(--brand);border-color:transparent}
+  .pwc-page .hours strong{display:block;color:var(--white)!important;font-size:1.08rem;margin-bottom:18px}
+  .pwc-page .hours .checks li{color:rgba(255,255,255,.92)!important;font-weight:500}
+  .pwc-page .hours .checks li:before{background:var(--white);opacity:.22}
+  .pwc-page .hours .checks li:after{border-color:var(--white)}
+
+  /* faq */
+  .pwc-page .faq{display:grid;gap:14px}
+  .pwc-page .faq-item{overflow:hidden}
+  .pwc-page .faq-item summary{cursor:pointer;list-style:none;padding:22px 56px 22px 26px;font-weight:700;color:var(--brand-dark)!important;position:relative}
+  .pwc-page .faq-item summary::-webkit-details-marker{display:none}
+  .pwc-page .faq-item summary:after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--green)!important;font-weight:700}
+  .pwc-page .faq-item[open] summary:after{content:"\2013"}
+  .pwc-page .faq-body{padding:0 26px 24px;color:var(--copy)!important;line-height:1.8}
+
+  /* link list */
+  .pwc-page .link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .pwc-page .link{display:block;padding:24px;border-radius:14px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease}
+  .pwc-page .link:hover,.pwc-page .link:focus-visible{transform:translateY(-3px);border-color:var(--brand-light)}
+  .pwc-page .link strong{display:block;color:var(--brand-dark)!important;font-size:1.06rem}
+  .pwc-page .link span{display:block;margin-top:8px;color:var(--copy)!important;line-height:1.6;font-size:.93rem}
+
+  /* cta band */
+  .pwc-page .cta{padding:46px;border-radius:18px;background:linear-gradient(120deg,var(--brand-dark),var(--brand) 70%,var(--brand-light));color:var(--white)}
+  .pwc-page .cta-grid{align-items:center}
+  .pwc-page .cta h2{font-size:clamp(1.5rem,2.4vw,2.05rem);color:var(--white)!important}
+  .pwc-page .cta .eyebrow{color:#cfe0e6!important}
+  .pwc-page .cta p{margin-top:14px!important;color:rgba(255,255,255,.9)!important;line-height:1.8}
+
+  /* ---- referring-clinicians specific ---- */
+
+  /* shared icon chip (guide section 9) */
+  .pwc-page .ico{width:50px;height:50px;border-radius:14px;background:var(--tint);display:grid;place-items:center;color:var(--brand)!important;flex:none}
+  .pwc-page .ico svg{width:24px;height:24px;display:block}
+
+  /* hero side panel: availability + direct referral lines */
+  .pwc-page .avail{padding:34px;background:linear-gradient(150deg,var(--brand-dark),var(--brand) 72%,var(--brand-light));border-color:transparent;color:var(--white)}
+  .pwc-page .avail .pill{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:100px;background:rgba(255,255,255,.14);font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--white)!important}
+  .pwc-page .avail .pill i{width:9px;height:9px;border-radius:50%;background:#a8d275;display:block}
+  .pwc-page .avail h2{margin-top:20px!important;font-size:1.35rem;color:var(--white)!important}
+  .pwc-page .avail .sub{margin-top:12px!important;color:rgba(255,255,255,.88)!important;line-height:1.75;font-size:.98rem}
+  .pwc-page .direct{margin-top:26px;display:grid;gap:12px}
+  .pwc-page .direct a{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);transition:background-color .2s ease,transform .2s ease}
+  .pwc-page .direct a:hover,.pwc-page .direct a:focus-visible{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+  .pwc-page .direct .ico{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.16);color:var(--white)!important}
+  .pwc-page .direct .ico svg{width:21px;height:21px}
+  .pwc-page .direct strong{display:block;color:var(--white)!important;font-size:1.02rem;word-break:break-word}
+  .pwc-page .direct span{display:block;margin-top:3px;color:rgba(255,255,255,.78)!important;font-size:.79rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+
+  /* who we work with */
+  .pwc-page .who-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .pwc-page .who-tile{padding:24px;display:flex;align-items:center;gap:16px}
+  .pwc-page .who-tile strong{color:var(--brand-dark)!important;font-size:1.02rem;line-height:1.4}
+
+  /* how to refer: numbered steps */
+  .pwc-page .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .pwc-page .step{padding:30px}
+  .pwc-page .step .num{width:46px;height:46px;border-radius:12px;background:var(--brand);color:var(--white)!important;display:grid;place-items:center;font-size:1.08rem;font-weight:800;margin-bottom:18px}
+  .pwc-page .step strong{display:block;color:var(--brand-dark)!important;font-size:1.1rem;margin-bottom:10px}
+  .pwc-page .step p{color:var(--copy)!important;line-height:1.75}
+  .pwc-page .step p a{color:var(--brand)!important;font-weight:700}
+
+  /* reasons to refer */
+  .pwc-page .reason{padding:30px}
+  .pwc-page .reason .ico{margin-bottom:18px}
+  .pwc-page .reason strong{display:block;color:var(--brand-dark)!important;font-size:1.1rem;margin-bottom:10px}
+  .pwc-page .reason p{color:var(--copy)!important;line-height:1.75}
+
+  /* reveal (content visible without JS, guide section 10) */
+  .pwc-page [data-reveal]{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+  html.dgs-js .pwc-page [data-reveal]{opacity:0;transform:translateY(20px)}
+  html.dgs-js .pwc-page [data-reveal].in-view{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .pwc-page .hero-grid,.pwc-page .split,.pwc-page .cta-grid,.pwc-page .band-grid,.pwc-page .contact-grid,
+    .pwc-page .cards,.pwc-page .creds,.pwc-page .link-list,
+    .pwc-page .who-grid,.pwc-page .steps{grid-template-columns:1fr}
+    .pwc-page .split.flip .panel{order:0}
+    .pwc-page .cred{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0}
+    .pwc-page .cred:first-child{border-top:0}
+    .pwc-page .hero-visual{margin-top:8px}
+  }
+  @media(max-width:680px){
+    .pwc-page .wrap{width:min(calc(100% - 22px),var(--max))}
+    .pwc-page .section{padding:40px 0}
+    .pwc-page .panel,.pwc-page .aside,.pwc-page .mini,.pwc-page .cta,.pwc-page .band,.pwc-page .contact,.pwc-page .hours,
+    .pwc-page .avail,.pwc-page .step,.pwc-page .reason,.pwc-page .who-tile{padding:26px}
+    .pwc-page .btn{width:100%}
+    .pwc-page .hero-visual img,.pwc-page .media img{min-height:260px}
+  }
+</style>
+
+<main class="pwc-page">
+    <section class="hero" data-reveal>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Collaborative Care Partners</p>
+          <h1>For Referring Clinicians</h1>
+          <p class="lead">We appreciate your trust in our services, thank you for being here. At Psychiatric Wellness Center, we value collaborative care and strive to be a reliable resource for therapists, primary care physicians, OB/GYNs, psychologists, neurologists, and other healthcare professionals across San Diego and North County.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:7606884080">Call (760) 688-4080</a>
+            <a class="btn btn-secondary" href="mailto:info@psychwellnesscenter.com">Email a Referral</a>
+          </div>
+        </div>
+        <div class="avail card">
+          <span class="pill"><i aria-hidden="true"></i>Accepting New Patients</span>
+          <h2>Intakes seen within 1&ndash;2 weeks</h2>
+          <p class="sub">We are currently accepting new patients and can get intakes seen within 1&ndash;2 weeks. To send us referrals directly, please contact us by phone or email.</p>
+          <div class="direct">
+            <a href="tel:7606884080">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <span>
+                <strong>(760) 688-4080</strong>
+                <span>Call our referral line</span>
+              </span>
+            </a>
+            <a href="mailto:info@psychwellnesscenter.com">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m2 7 10 6 10-6"/>
+                </svg>
+              </span>
+              <span>
+                <strong>info@psychwellnesscenter.com</strong>
+                <span>Send records securely</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" data-reveal>
+      <div class="wrap creds">
+        <div class="cred"><strong>1&ndash;2 week intakes</strong><span>Timely access for the patients you refer.</span></div>
+        <div class="cred"><strong>UCLA &amp; USC-trained</strong><span>Physicians with training from prestigious institutions.</span></div>
+        <div class="cred"><strong>Open communication</strong><span>We coordinate with you throughout treatment.</span></div>
+        <div class="cred"><strong>In-person &amp; online</strong><span>Encinitas office visits or telehealth appointments.</span></div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="lead-block">
+          <p>We believe the best psychiatric care occurs through open communication, timely access, and coordinated treatment. Our goal is to provide comprehensive psychiatric evaluations and evidence-based treatment while working closely with referring clinicians to ensure continuity of care.</p>
+          <p>Whether you are referring a patient for diagnostic clarification, medication management, or ongoing psychiatric treatment, we appreciate your trust and are committed to providing exceptional care.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading" data-reveal>
+          <p class="eyebrow">How to Refer</p>
+          <h2>Sending Us a Referral Takes One Call or One Email</h2>
+          <p>There is no referral portal to learn and no lengthy paperwork packet. Reach out however is easiest for your office, and our team will take it from there.</p>
+        </div>
+        <div class="steps">
+          <div class="step card">
+            <div class="num" aria-hidden="true">1</div>
+            <strong>Contact us directly</strong>
+            <p>Call <a href="tel:7606884080">(760) 688-4080</a> or email <a href="mailto:info@psychwellnesscenter.com">info@psychwellnesscenter.com</a> with the patient's name, contact information, and the reason for referral.</p>
+          </div>
+          <div class="step card">
+            <div class="num" aria-hidden="true">2</div>
+            <strong>We reach out to the patient</strong>
+            <p>Our team contacts the patient to schedule their intake, confirm insurance and benefits, and answer questions about what to expect at the first visit.</p>
+          </div>
+          <div class="step card">
+            <div class="num" aria-hidden="true">3</div>
+            <strong>We coordinate care with you</strong>
+            <p>With the patient's authorization, we share evaluation findings and treatment updates so your care and ours stay aligned over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="heading" data-reveal>
+          <p class="eyebrow">Reasons to Refer</p>
+          <h2>What We Can Take On for Your Patients</h2>
+          <p>Whether you are referring a patient for diagnostic clarification, medication management, or ongoing psychiatric treatment, our team provides comprehensive evaluation and evidence-based care.</p>
+        </div>
+        <div class="cards">
+          <div class="reason card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1"/>
+                <path d="m9 14 2 2 4-4"/>
+              </svg>
+            </span>
+            <strong>Diagnostic clarification</strong>
+            <p>Comprehensive psychiatric evaluation when a presentation is complex, overlapping, or has not responded as expected to current treatment.</p>
+          </div>
+          <div class="reason card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/>
+                <path d="m8.5 8.5 7 7"/>
+              </svg>
+            </span>
+            <strong>Medication management</strong>
+            <p>Initiation, adjustment, simplification, or ongoing monitoring of psychiatric medication with careful attention to history, goals, and tolerability.</p>
+          </div>
+          <div class="reason card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 1 1-2.64-6.36"/>
+                <path d="M21 3v6h-6"/>
+              </svg>
+            </span>
+            <strong>Ongoing psychiatric treatment</strong>
+            <p>Longitudinal follow-up for patients who need continued psychiatric care alongside the therapy or primary care you are already providing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading" data-reveal>
+          <p class="eyebrow">Who We Partner With</p>
+          <h2>A Reliable Psychiatric Resource for Your Practice</h2>
+          <p>At Psychiatric Wellness Center, we value collaborative care and strive to be a reliable resource for the clinicians who refer to us.</p>
+        </div>
+        <div class="who-grid">
+          <div class="who-tile card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </span>
+            <strong>Therapists &amp; Counselors</strong>
+          </div>
+          <div class="who-tile card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 8v8"/>
+                <path d="M8 12h8"/>
+              </svg>
+            </span>
+            <strong>Primary Care Physicians</strong>
+          </div>
+          <div class="who-tile card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 0 0 0-7.1z"/>
+              </svg>
+            </span>
+            <strong>OB/GYNs</strong>
+          </div>
+          <div class="who-tile card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </span>
+            <strong>Psychologists</strong>
+          </div>
+          <div class="who-tile card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </span>
+            <strong>Neurologists</strong>
+          </div>
+          <div class="who-tile card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <strong>Other Healthcare Professionals</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="heading" data-reveal>
+          <p class="eyebrow">Continuity of Care</p>
+          <h2>How We Work Alongside Referring Clinicians</h2>
+          <p>We believe the best psychiatric care occurs through open communication, timely access, and coordinated treatment. Referring a patient to us should never mean losing visibility into their care.</p>
+        </div>
+        <div class="split">
+          <div class="panel card">
+            <p>When you refer a patient, our goal is to strengthen the care you are already providing rather than replace it. We complete a comprehensive psychiatric evaluation, discuss findings and options with the patient, and build an evidence-based treatment plan around their history, goals, and circumstances.</p>
+            <p>With the patient's written authorization, we communicate with your office about the evaluation, the treatment plan, and meaningful changes along the way, so the patient is not left to relay clinical information between practices.</p>
+            <ul class="checks">
+              <li>Comprehensive psychiatric evaluations</li>
+              <li>Evidence-based, individualized treatment plans</li>
+              <li>Coordination with therapy and primary care</li>
+              <li>Clear communication back to the referring clinician</li>
+            </ul>
+          </div>
+          <figure class="media card">
+            <img src="https://psychwellnesscenter.com/wp-content/uploads/2024/10/Psychiatrist-Encinitas-CA.webp" alt="Psychiatric Wellness Center providers collaborating with referring clinicians in Encinitas, CA" loading="lazy" decoding="async" width="700" height="500">
+            <figcaption class="caption">Collaborative, patient-centered psychiatry serving San Diego and North County.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="heading" data-reveal>
+          <p class="eyebrow">Areas of Focus</p>
+          <h2>Presentations We Commonly See</h2>
+          <p>Our practice focuses on adult psychiatry, with particular depth in adult ADHD, anxiety and panic, and women's mental health across the reproductive lifespan.</p>
+        </div>
+        <div class="split flip">
+          <div class="panel card">
+            <p>If you are unsure whether a particular patient is a good fit, calling our office is usually the fastest way to find out. Our team can talk through the referral, confirm whether we are the right setting for that level of care, and let you know current intake availability before the patient is contacted.</p>
+            <p>For patients who need a higher level of care than an outpatient practice can safely provide, we will say so directly and help point the referral in a more appropriate direction.</p>
+          </div>
+          <aside class="aside card">
+            <strong>Common referral reasons</strong>
+            <ul class="checks">
+              <li>Adult ADHD evaluation and medication management</li>
+              <li>Anxiety, panic, and treatment-resistant symptoms</li>
+              <li>Women's mental health and perinatal psychiatry</li>
+              <li>Postpartum depression and postpartum anxiety</li>
+              <li>Perimenopause and menopause mood changes</li>
+              <li>Diagnostic clarification for complex presentations</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Send a Referral</p>
+          <h2>Contact Our Referral Line</h2>
+          <p>Reach out by phone or email to send a referral, check current intake availability, or ask whether a patient is a good fit for our practice.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact card">
+            <div class="nap">
+              <strong>Office</strong>
+              <p>169 Saxony Rd., Suite 103, Encinitas, CA 92024</p>
+            </div>
+            <div class="nap">
+              <strong>Phone</strong>
+              <p><a href="tel:7606884080">(760) 688-4080</a></p>
+            </div>
+            <div class="nap">
+              <strong>Email</strong>
+              <p><a href="mailto:info@psychwellnesscenter.com">info@psychwellnesscenter.com</a></p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="tel:7606884080">Call (760) 688-4080</a>
+              <a class="btn btn-secondary" href="mailto:info@psychwellnesscenter.com">Email a Referral</a>
+            </div>
+          </div>
+          <div class="hours card">
+            <strong>Helpful to include with a referral</strong>
+            <ul class="checks">
+              <li>Patient name, phone number, and preferred contact method.</li>
+              <li>Reason for referral and the clinical question you want answered.</li>
+              <li>Relevant history, current medications, and prior psychiatric treatment.</li>
+              <li>Your name, practice, and the best way to reach you back.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Common Questions</p>
+          <h2>FAQs for Referring Clinicians</h2>
+        </div>
+        <div class="faq">
+          <details class="faq-item card" open>
+            <summary>Are you currently accepting new patients?</summary>
+            <div class="faq-body">Yes. We are currently accepting new patients and can typically get intakes seen within 1&ndash;2 weeks. If you would like to confirm current availability before sending a referral, call our office at <a href="tel:7606884080">(760) 688-4080</a>.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>How do I send a referral?</summary>
+            <div class="faq-body">To send us referrals directly, please contact us at <a href="tel:7606884080">(760) 688-4080</a> or email us at <a href="mailto:info@psychwellnesscenter.com">info@psychwellnesscenter.com</a>. Include the patient's name, contact information, and the reason for referral, and our team will reach out to the patient to schedule.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Will I receive updates about my patient?</summary>
+            <div class="faq-body">Yes. With the patient's written authorization, we communicate evaluation findings, the treatment plan, and meaningful changes back to the referring clinician. We believe the best psychiatric care occurs through open communication and coordinated treatment.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Do you see patients in person or by telehealth?</summary>
+            <div class="faq-body">Both. Patients can be seen in person at our Encinitas office or by telehealth when appropriate for their needs and the type of visit. Our team helps determine which format fits a given patient.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>Do you continue to work with the patient's therapist?</summary>
+            <div class="faq-body">Yes. Many of the patients referred to us are already engaged in therapy, and we consider that an asset. We coordinate with therapists, primary care physicians, OB/GYNs, and other treating clinicians so that psychiatric care complements the work already underway.</div>
+          </details>
+          <details class="faq-item card">
+            <summary>What if a patient needs urgent or emergency care?</summary>
+            <div class="faq-body">Our practice is an outpatient psychiatric setting and is not equipped for emergencies. If a patient is experiencing a medical emergency, thoughts of harming themselves or someone else, or is unable to stay safe, they should call 911 or go to the nearest emergency room immediately.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" data-reveal>
+      <div class="wrap">
+        <div class="heading">
+          <p class="eyebrow">Explore Our Services</p>
+          <h2>Where We Can Help Your Patients</h2>
+        </div>
+        <div class="link-list">
+          <a class="link" href="/adult-adhd-in-san-diego/"><strong>Adult ADHD Treatment</strong><span>Evaluation and medication management for adults managing ADHD symptoms.</span></a>
+          <a class="link" href="/womens-health-in-san-diego/"><strong>Women's Mental Health</strong><span>Support for anxiety, mood changes, postpartum, and perimenopause concerns.</span></a>
+          <a class="link" href="/postpartum-depression-treatment-in-san-diego/"><strong>Postpartum Depression Treatment</strong><span>Compassionate care for emotional changes after childbirth and pregnancy.</span></a>
+          <a class="link" href="/psychiatrist-san-diego/"><strong>Main Psychiatrist Page</strong><span>Explore our full psychiatry services across San Diego and North County.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" data-reveal>
+      <div class="wrap">
+        <div class="cta">
+          <div class="cta-grid">
+            <div>
+              <p class="eyebrow">Thank You for Your Trust</p>
+              <h2>Ready to Refer a Patient?</h2>
+              <p>We appreciate your trust in our services. We are currently accepting new patients and can get intakes seen within 1&ndash;2 weeks. Contact us directly and our team will take it from there.</p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-light" href="tel:7606884080">Call (760) 688-4080</a>
+              <a class="btn btn-outline" href="mailto:info@psychwellnesscenter.com">Email a Referral</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+<script>
+  (function(){
+    document.documentElement.classList.add('dgs-js');
+    function reveal(){
+      var els=document.querySelectorAll('.pwc-page [data-reveal]');
+      if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in-view')});return;}
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in-view');io.unobserve(x.target);}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+      els.forEach(function(e){io.observe(e)});
+    }
+    if(document.readyState!=='loading')reveal();else document.addEventListener('DOMContentLoaded',reveal);
+  })();
+</script>
