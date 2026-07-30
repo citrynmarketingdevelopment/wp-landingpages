@@ -749,6 +749,111 @@ Do not loosen GitPress sanitization just to allow arbitrary header scripts.
 
 Do not duplicate global header behavior scripts inside `home.html`, `about.html`, `services.html`, or `contact.html`.
 
+### Interactive toggles and open/close states
+
+For GitPress pages rendered inside WordPress/Divi, **do not make critical open/close or before/after behavior depend on JavaScript, inline `onclick`, hidden radio inputs, label clicks, or hash links**.
+
+Why:
+
+```txt
+WordPress/GitPress/Divi can sanitize inline scripts and attributes
+theme/plugin layers can move, wrap, or intercept click targets
+label/input or hash-based toggles can look active locally but fail live
+the page can show the correct styling while the underlying state never changes
+```
+
+Preferred pattern:
+
+```txt
+use native browser state first
+use CSS to read that native state
+use JavaScript only as progressive enhancement
+verify on the live WordPress page, not only local preview
+```
+
+Use native `<details>/<summary>` for:
+
+```txt
+FAQ accordions
+show/hide panels
+before/after toggles
+single-choice segmented states
+any UI where one panel/image/state opens and another closes
+```
+
+For mutually exclusive states, use sibling `<details>` elements with the same `name` attribute and set the default with `open`:
+
+```html
+<div class="before-after" data-state="after">
+  <div class="ba-switch" role="group" aria-label="Show before or after photos">
+    <details class="ba-state ba-state-before" name="ba-state">
+      <summary class="ba-button">Before</summary>
+    </details>
+
+    <details class="ba-state ba-state-after" name="ba-state" open>
+      <summary class="ba-button">After</summary>
+    </details>
+  </div>
+
+  <div class="ba-frame">
+    <img class="ba-image ba-image-before" src="before.webp" alt="Before project photo">
+    <img class="ba-image ba-image-after" src="after.webp" alt="After project photo">
+  </div>
+</div>
+```
+
+Then style from native state:
+
+```css
+.before-after .ba-image-before { opacity: 0; }
+.before-after .ba-image-after { opacity: 1; }
+
+.before-after:has(.ba-state-before[open]) .ba-image-before { opacity: 1 !important; }
+.before-after:has(.ba-state-before[open]) .ba-image-after { opacity: 0 !important; }
+
+.before-after:has(.ba-state-before[open]) .ba-state-before .ba-button,
+.before-after:not(:has(.ba-state-before[open])) .ba-state-after .ba-button {
+  background: var(--accent);
+  color: var(--ink);
+}
+```
+
+JavaScript may mirror the native state into classes or `data-state`, but the UI must still work when the script is removed:
+
+```js
+document.querySelectorAll('.before-after').forEach(function (section) {
+  section.querySelectorAll('.ba-state').forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (item.open) {
+        section.dataset.state = item.classList.contains('ba-state-before') ? 'before' : 'after';
+      }
+    });
+  });
+});
+```
+
+Avoid for critical toggles:
+
+```html
+<!-- fragile in GitPress/Divi -->
+<input type="radio" hidden>
+<label for="...">Before</label>
+<a href="#before">Before</a>
+<button onclick="...">Before</button>
+```
+
+Testing rule:
+
+```txt
+test with normal JavaScript
+test with the page script removed
+test with JavaScript disabled when practical
+test the rendered WordPress page after GitPress cache clears
+confirm the build/version marker in live page source before debugging further
+```
+
+If the live source contains the latest marker but native `<details>/<summary>` toggles still do not open, inspect for an overlay, pseudo-element, or theme wrapper physically intercepting the click target.
+
 
 ### Avoid hiding content when JS fails
 
