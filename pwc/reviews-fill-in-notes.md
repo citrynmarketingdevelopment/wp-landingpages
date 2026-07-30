@@ -7,9 +7,13 @@ reproduced exactly as capitalized on Google (a couple are lowercase by the revie
 and typos in the original text (e.g. "Psychiatric Wellness Centrr") were kept verbatim rather than
 corrected, per the page's own claim that reviews are shown "as written."
 
-Four **placeholder tokens** remain — business facts that only you can supply. Nothing on this page
-should go live until every `{{TOKEN}}` is replaced — a token left in place will render literally
-as `{{RATING}}` on the page.
+The hero rating panel (the big number + star average + review count card) was removed at the
+user's request on 2026-07-30 — the hero is now a single centered column with no side panel. That
+also removed the `{{RATING}}` and `{{REVIEW_COUNT}}` tokens along with it, since they only existed
+inside that panel; the dead `.rating` / `.gmark` / `.rate-num` / `.rate-actions` CSS was deleted
+too. Two **placeholder tokens** remain — business facts that only you can supply. Nothing on this
+page should go live until every `{{TOKEN}}` is replaced — a token left in place will render
+literally as `{{GOOGLE_PROFILE_URL}}` on the page.
 
 Find them all:
 
@@ -27,12 +31,10 @@ Google" buttons cover that by sending people to the live profile.
 
 ## Tokens still needed
 
-| Token | What to put there |
-|---|---|
-| `{{RATING}}` | Your live Google Business Profile rating, e.g. `4.9` |
-| `{{REVIEW_COUNT}}` | Your live Google review count, e.g. `63` |
-| `{{GOOGLE_PROFILE_URL}}` | Link to your Google Business Profile reviews tab |
-| `{{GOOGLE_REVIEW_URL}}` | Your "write a review" short link (Google Business Profile → Ask for reviews → copy link, format `https://g.page/r/…/review`) |
+| Token | What to put there | Where it's used |
+|---|---|---|
+| `{{GOOGLE_PROFILE_URL}}` | Link to your Google Business Profile reviews tab | "Read All Reviews on Google" button below the grid |
+| `{{GOOGLE_REVIEW_URL}}` | Your "write a review" short link (Google Business Profile → Ask for reviews → copy link, format `https://g.page/r/…/review`) | "Write a Google Review" button in the Leave Us a Review band |
 
 There are 9 review card slots (`<!-- REVIEW 1 -->` … `<!-- REVIEW 9 -->`), already filled in. Use
 fewer or more if the review set changes later:
@@ -52,7 +54,6 @@ fewer or more if the review set changes later:
 
 Every card is hard-coded to 5 stars (five `<svg>` elements inside `.stars`). For a 4-star review,
 delete one `<svg>` and change `aria-label="5 out of 5 stars"` to `aria-label="4 out of 5 stars"`.
-The hero panel's star row is separate and does the same thing.
 
 ## Rules to keep the page honest
 
@@ -60,8 +61,6 @@ The hero panel's star row is separate and does the same thing.
   reviews to fill the grid — the page states in three places that these are real Google reviews,
   and the FAQ says outright that nothing is offered in exchange for one. Fewer real cards beats
   six invented ones.
-- `{{RATING}}` and `{{REVIEW_COUNT}}` are a claim about your business. Re-check them against the
-  live profile whenever you touch this page.
 - The `.source-note` line under the grid and the FAQ ("Do you offer anything in exchange for a
   review?", "Can a review tell me whether treatment will work for me?") are there deliberately —
   healthcare testimonial pages draw scrutiny. Keep them.
@@ -71,6 +70,6 @@ The hero panel's star row is separate and does the same thing.
 
 ## Keeping it current
 
-Re-check the page ~2× a year: refresh `{{RATING}}` / `{{REVIEW_COUNT}}`, swap in newer reviews,
-bump the `<!-- webhook retrigger YYYY-MM-DD -->` marker on line 1, push, and confirm the new
-marker appears in the live page source before debugging anything.
+Re-check the page ~2× a year: swap in newer reviews, bump the
+`<!-- webhook retrigger YYYY-MM-DD -->` marker on line 1, push, and confirm the new marker
+appears in the live page source before debugging anything.

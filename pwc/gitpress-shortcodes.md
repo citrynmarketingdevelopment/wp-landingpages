@@ -40,8 +40,9 @@ Both are meant to become top-level menu items ("tabs") in the PWC nav.
 | `/reviews/` | `pwc/reviews.html` | `[divi_github_content owner="citrynmarketingdevelopment" repo="wp-landingpages" branch="main" path="pwc/reviews.html" format="html"]` |
 | `/for-referring-clinicians/` | `pwc/for-referring-clinicians.html` | `[divi_github_content owner="citrynmarketingdevelopment" repo="wp-landingpages" branch="main" path="pwc/for-referring-clinicians.html" format="html"]` |
 
-> **`/reviews/` is not publish-ready as committed.** It contains `{{TOKEN}}` placeholders for the
-> review text, rating, review count, and Google links. Fill them in first — see
+> **`/reviews/` is not publish-ready as committed.** Review content is filled in, but it still
+> contains `{{TOKEN}}` placeholders for the Google profile URL and the "write a review" URL.
+> Fill them in first — see
 > `reviews-fill-in-notes.md`. `/for-referring-clinicians/` has no placeholders and is ready to wire up.
 
 After both pages are live, add them to the WordPress menu. `/reviews/` and
