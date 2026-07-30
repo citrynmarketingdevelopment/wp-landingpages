@@ -186,12 +186,6 @@
     text-align: center;
   }
 
-  .an-cap-page .plain-first td:first-child {
-    background: #fff;
-    color: #333 !important;
-    font-weight: 400;
-  }
-
   .an-cap-page .center-table {
     max-width: none;
     margin-left: auto;
@@ -202,6 +196,10 @@
     max-width: none;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .an-cap-page .an-value-table td:last-child {
+    text-align: center;
   }
 
   .an-cap-page .loss-table td {
@@ -245,6 +243,7 @@
 
   .an-cap-cta {
     display: block;
+    width: 80%;
     margin: 24px auto 30px;
     text-decoration: none !important;
   }
@@ -282,6 +281,17 @@
 
   .an-final-links li {
     margin: 0;
+  }
+
+  .an-final-links a {
+    display: block;
+    height: clamp(200px, 22vw, 260px);
+  }
+
+  .an-final-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   @media (max-width: 767px) {
@@ -439,7 +449,7 @@
       <p>A plant may be capable of producing 1 million units annually, but that does not tell leadership whether the business can support $60 million or $110 million in revenue.</p>
 
       <h3>3.1 Revenue Capacity Formula.</h3>
-      <div class="an-table-wrap small-table">
+      <div class="an-table-wrap small-table an-value-table">
         <table>
           <thead><tr><th>METRIC</th><th>FORMULA</th></tr></thead>
           <tbody><tr><td>Revenue Capacity</td><td>Effective Capacity x Average Selling Price</td></tr></tbody>
@@ -448,26 +458,26 @@
 
       <p><strong>Example: Revenue Capacity</strong></p>
       <h3>3.2 A More Strategic Capacity Calculation.</h3>
-      <div class="an-table-wrap small-table">
+      <div class="an-table-wrap small-table an-value-table">
         <table>
           <thead><tr><th>METRIC</th><th>VALUE</th></tr></thead>
           <tbody>
             <tr><td>Effective production capacity</td><td>1,000,000 units/year</td></tr>
-            <tr class="plain-first"><td>Average selling price</td><td>$95/unit</td></tr>
-            <tr class="plain-first"><td>Revenue capacity</td><td>$95,000,000/year</td></tr>
+            <tr><td>Average selling price</td><td>$95/unit</td></tr>
+            <tr><td>Revenue capacity</td><td>$95,000,000/year</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2>4. The Product Mix Reality.</h2>
       <p>Most mid-market manufacturers are not constrained by a single product. They are constrained by a product mix. For example, a facility may determine:</p>
-      <div class="an-table-wrap small-table">
+      <div class="an-table-wrap small-table an-value-table">
         <table>
           <thead><tr><th>SCENARIO</th><th>REVENUE CAPACITY</th></tr></thead>
           <tbody>
             <tr><td>Current Mix</td><td>$90 Million</td></tr>
-            <tr class="plain-first"><td>Improved Scheduling and Setups</td><td>$98 Million</td></tr>
-            <tr class="plain-first"><td>Optimized Bottleneck</td><td>$105 Million</td></tr>
+            <tr><td>Improved Scheduling and Setups</td><td>$98 Million</td></tr>
+            <tr><td>Optimized Bottleneck</td><td>$105 Million</td></tr>
           </tbody>
         </table>
       </div>
@@ -487,16 +497,16 @@
       </div>
 
       <p><strong>Monthly Capacity Example</strong></p>
-      <div class="an-table-wrap center-table">
+      <div class="an-table-wrap center-table an-value-table">
         <table>
           <thead><tr><th>METRIC</th><th>VALUE</th></tr></thead>
           <tbody>
             <tr><td>Shifts</td><td>2</td></tr>
-            <tr class="plain-first"><td>Hours/Day</td><td>16</td></tr>
-            <tr class="plain-first"><td>Working Days</td><td>22</td></tr>
-            <tr class="plain-first"><td>Hours/Month</td><td>352</td></tr>
-            <tr class="plain-first"><td>Machine Rate</td><td>120 Units/hour</td></tr>
-            <tr class="plain-first"><td>Theoretical Capacity</td><td>42,240 Units/month</td></tr>
+            <tr><td>Hours/Day</td><td>16</td></tr>
+            <tr><td>Working Days</td><td>22</td></tr>
+            <tr><td>Hours/Month</td><td>352</td></tr>
+            <tr><td>Machine Rate</td><td>120 Units/hour</td></tr>
+            <tr><td>Theoretical Capacity</td><td>42,240 Units/month</td></tr>
           </tbody>
         </table>
       </div>
@@ -529,7 +539,7 @@
             <tr><td>70%</td><td>Significant growth capacity available.</td></tr>
             <tr><td>80%-85%</td><td>Often a healthy operating range.</td></tr>
             <tr><td>90%+</td><td>Risk of instability increases.</td></tr>
-            <tr class="plain-first"><td>95%-100%</td><td>Lead times, quality, and margin pressure often emerge.</td></tr>
+            <tr><td>95%-100%</td><td>Lead times, quality, and margin pressure often emerge.</td></tr>
           </tbody>
         </table>
       </div>
@@ -646,7 +656,7 @@
             <tr><td>Lead</td><td>Invest before demand arrives.</td></tr>
             <tr><td>Lag</td><td>Invest after demand exceeds capacity.</td></tr>
             <tr><td>Match</td><td>Add capacity incrementally.</td></tr>
-            <tr class="plain-first"><td>Adjust</td><td>Continuously rebalance resources.</td></tr>
+            <tr><td>Adjust</td><td>Continuously rebalance resources.</td></tr>
           </tbody>
         </table>
       </div>
