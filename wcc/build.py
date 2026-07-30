@@ -22,7 +22,7 @@ SITE = DATA["site"]
 IDX  = DATA["pageIndex"]
 BASE = "https://wccgrp.com"   # confirmed from live asset URLs on the old pages
 MARK = datetime.date.today().isoformat()
-REVISION = "gitpress-interactions-2026-07-29-v3"
+REVISION = "gitpress-interactions-2026-07-29-v5"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -204,8 +204,8 @@ def video_gallery_section(v):
             f'</div>{note}</div></section>')
 
 def before_after_section(b):
-    """Toggle gallery sized for vertical photos. Hash-backed controls keep the
-       crossfade usable when WordPress interferes with form labels."""
+    """Toggle gallery sized for vertical photos. Native radio inputs keep the
+       crossfade working when WordPress strips or blocks JavaScript."""
     cards = ""
     for it in b["items"]:
         cards += (
@@ -223,17 +223,17 @@ def before_after_section(b):
 
     note = f'<p class="wcc-ba__note">{e(b["note"])}</p>' if b.get("note") else ""
 
-    targets = (f'<span class="wcc-ba__target wcc-ba__target--before" id="wcc-ba-before"></span>'
-               f'<span class="wcc-ba__target wcc-ba__target--after" id="wcc-ba-after"></span>')
-    switch = (f'<div class="wcc-ba__switch" role="group" aria-label="Show before or after photos">'
-              f'<a class="wcc-ba__btn wcc-ba__btn--before" href="#wcc-ba-before" '
-              f'data-ba-state="before" role="button" aria-pressed="false">Before</a>'
-              f'<a class="wcc-ba__btn wcc-ba__btn--after is-active" href="#wcc-ba-after" '
-              f'data-ba-state="after" role="button" aria-pressed="true">After</a>'
-              f'</div>')
+    switch = (f'<fieldset class="wcc-ba__switch" aria-label="Show before or after photos">'
+              f'<legend class="visually-hidden">Show before or after photos</legend>'
+              f'<label class="wcc-ba__btn wcc-ba__btn--before">'
+              f'<input class="wcc-ba__radio wcc-ba__radio--before" type="radio" '
+              f'name="wcc-ba-state" value="before"><span>Before</span></label>'
+              f'<label class="wcc-ba__btn wcc-ba__btn--after">'
+              f'<input class="wcc-ba__radio wcc-ba__radio--after" type="radio" '
+              f'name="wcc-ba-state" value="after" checked><span>After</span></label>'
+              f'</fieldset>')
 
-    return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec show-after" data-ba-state="after"><div class="wcc-wrap">'
-            f'{targets}'
+    return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec" data-ba-state="after"><div class="wcc-wrap">'
             f'<div class="wcc-ba__head">'
             f'<div class="wcc-ba__intro" data-reveal><p class="kicker">{e(b["kicker"])}</p>'
             f'<h2 class="wcc-heading-standard">{e(b["h2"])}</h2>'

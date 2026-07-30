@@ -119,8 +119,9 @@
   /* ---- before/after toggle ---- */
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
+      var radios = sec.querySelectorAll('.wcc-ba__radio');
       var buttons = sec.querySelectorAll('.wcc-ba__btn');
-      if (!buttons.length) return;
+      if (!radios.length) return;
 
       function setState(state) {
         var showBefore = state === 'before';
@@ -129,10 +130,9 @@
         sec.classList.toggle('show-after', !showBefore);
 
         buttons.forEach(function (btn) {
-          var state = btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after');
-          var active = state === (showBefore ? 'before' : 'after');
+          var btnState = btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after';
+          var active = btnState === (showBefore ? 'before' : 'after');
           btn.classList.toggle('is-active', active);
-          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
 
         sec.querySelectorAll('.wcc-ba__img--before, .wcc-ba__pill--before').forEach(function (el) {
@@ -143,20 +143,14 @@
         });
       }
 
-      buttons.forEach(function (btn) {
-        btn.addEventListener('click', function (event) {
-          event.preventDefault();
-          setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
-        });
-        btn.addEventListener('keydown', function (event) {
-          if (event.key !== ' ' && event.key !== 'Enter') return;
-          event.preventDefault();
-          setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
+      radios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          if (radio.checked) setState(radio.value);
         });
       });
 
-      var beforeTarget = sec.querySelector('.wcc-ba__target--before');
-      var initial = beforeTarget && window.location.hash === '#' + beforeTarget.id ? 'before' : (sec.dataset.baState || 'after');
+      var checked = sec.querySelector('.wcc-ba__radio:checked');
+      var initial = checked ? checked.value : (sec.dataset.baState || 'after');
       setState(initial);
     });
   }
