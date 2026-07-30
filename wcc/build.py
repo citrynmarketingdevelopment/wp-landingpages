@@ -22,6 +22,7 @@ SITE = DATA["site"]
 IDX  = DATA["pageIndex"]
 BASE = "https://wccgrp.com"   # confirmed from live asset URLs on the old pages
 MARK = datetime.date.today().isoformat()
+REVISION = "gitpress-interactions-2026-07-29-v2"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -145,11 +146,11 @@ def faq_block(faqs):
     items = ""
     for i, f in enumerate(faqs):
         items += (
-            f'<div class="wcc-faq__item">'
-            f'<button class="wcc-faq__q" aria-expanded="false" aria-controls="fa-{i}">'
-            f'<span>{e(f["q"])}</span><span class="wcc-faq__icon" aria-hidden="true"></span></button>'
-            f'<div class="wcc-faq__a" id="fa-{i}"><div class="wcc-faq__a-inner"><p>{rich(f["a"])}</p></div></div>'
-            f'</div>')
+            f'<details class="wcc-faq__item">'
+            f'<summary class="wcc-faq__q">'
+            f'<span>{e(f["q"])}</span><span class="wcc-faq__icon" aria-hidden="true"></span></summary>'
+            f'<div class="wcc-faq__a"><div class="wcc-faq__a-inner"><p>{rich(f["a"])}</p></div></div>'
+            f'</details>')
     return items
 
 def related_block(ids, heading="Related services"):
@@ -187,8 +188,8 @@ def video_gallery_section(v):
     return (f'<section class="wcc-section wcc-section--dark wcc-video" data-video data-video-gallery>'
             f'<div class="wcc-wrap">'
             f'<div data-reveal><p class="kicker">{e(v["kicker"])}</p>'
-            f'<h2 style="margin:12px 0 14px;max-width:22ch">{e(v["h2"])}</h2>'
-            f'<p class="lede" style="margin-bottom:38px;max-width:62ch">{e(v["intro"])}</p></div>'
+            f'<h2 class="wcc-vg__heading">{e(v["h2"])}</h2>'
+            f'<p class="lede wcc-vg__intro">{e(v["intro"])}</p></div>'
             f'<div class="wcc-vg">'
             f'<div class="wcc-vg__stage" data-reveal>'
             f'<div class="wcc-video__frame">'
@@ -203,8 +204,8 @@ def video_gallery_section(v):
             f'</div>{note}</div></section>')
 
 def before_after_section(b):
-    """Toggle gallery sized for vertical photos. Radio inputs + CSS :has() drive the
-       crossfade, so it needs no JavaScript and keeps native radio keyboard support."""
+    """Toggle gallery sized for vertical photos. Direct-child radio inputs and
+       general-sibling CSS keep the crossfade working when GitPress strips JS."""
     cards = ""
     for it in b["items"]:
         cards += (
@@ -222,47 +223,53 @@ def before_after_section(b):
 
     note = f'<p class="wcc-ba__note">{e(b["note"])}</p>' if b.get("note") else ""
 
+    states = (f'<input class="wcc-ba__radio wcc-ba__radio--before" type="radio" '
+              f'name="wcc-ba-state" id="wcc-ba-before" value="before">'
+              f'<input class="wcc-ba__radio wcc-ba__radio--after" type="radio" '
+              f'name="wcc-ba-state" id="wcc-ba-after" value="after" checked>')
     switch = (f'<fieldset class="wcc-ba__switch">'
               f'<legend class="visually-hidden">Show before or after photos</legend>'
-              f'<input class="wcc-ba__radio" type="radio" name="wcc-ba-state" '
-              f'id="wcc-ba-before" value="before">'
               f'<label class="wcc-ba__btn wcc-ba__btn--before" for="wcc-ba-before" '
               f'data-ba-state="before" role="button" tabindex="0" aria-pressed="false">Before</label>'
-              f'<input class="wcc-ba__radio" type="radio" name="wcc-ba-state" '
-              f'id="wcc-ba-after" value="after" checked>'
               f'<label class="wcc-ba__btn wcc-ba__btn--after" for="wcc-ba-after" '
               f'data-ba-state="after" role="button" tabindex="0" aria-pressed="true">After</label>'
               f'</fieldset>')
 
     return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec"><div class="wcc-wrap">'
+            f'{states}'
             f'<div class="wcc-ba__head">'
-            f'<div data-reveal style="max-width:52ch"><p class="kicker">{e(b["kicker"])}</p>'
-            f'<h2 style="margin:12px 0 14px">{e(b["h2"])}</h2>'
+            f'<div class="wcc-ba__intro" data-reveal><p class="kicker">{e(b["kicker"])}</p>'
+            f'<h2 class="wcc-heading-standard">{e(b["h2"])}</h2>'
             f'<p class="lede">{e(b["intro"])}</p></div>'
             f'{switch}</div>'
             f'<div class="wcc-ba">{cards}</div>{note}'
             f'</div></section>')
 
 def instagram_section(ig):
-    """Branded frame around the official embed. Falls back to a profile link if the
-       embed script is blocked or stripped by the GitPress sanitiser."""
+    """Linked project grid. Instagram does not support profile URL embeds, and its
+       external embed script is commonly stripped by GitPress."""
     arrow = (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
              f'stroke-linecap="round" stroke-linejoin="round">{_I["arrow"]}</svg>')
+    camera = (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+              f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+              f'<rect x="3" y="3" width="18" height="18" rx="5"></rect>'
+              f'<circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle>'
+              f'</svg>')
+    tiles = "".join(
+        f'<a class="wcc-ig__tile" href="{ig["url"]}" target="_blank" rel="noopener" '
+        f'aria-label="View {e(ig["handle"])} on Instagram">'
+        f'<img src="{tile["image"]}" loading="lazy" alt="{e(tile["alt"])}">'
+        f'<span class="wcc-ig__tile-icon">{camera}</span></a>'
+        for tile in ig["tiles"])
     return (f'<section class="wcc-section wcc-section--dark"><div class="wcc-wrap"><div class="wcc-ig">'
             f'<div data-reveal="left"><p class="kicker">{e(ig["kicker"])}</p>'
-            f'<h2 style="margin:12px 0 14px;max-width:18ch">{e(ig["h2"])}</h2>'
-            f'<p class="lede" style="margin-bottom:18px;max-width:44ch">{e(ig["intro"])}</p>'
+            f'<h2 class="wcc-ig__heading">{e(ig["h2"])}</h2>'
+            f'<p class="lede wcc-ig__intro">{e(ig["intro"])}</p>'
             f'<span class="wcc-ig__handle">{e(ig["handle"])}</span>'
             f'<a class="btn btn-primary" href="{ig["url"]}" target="_blank" rel="noopener">'
             f'Follow on Instagram{arrow}</a></div>'
-            f'<div class="wcc-ig__embed" data-reveal="right">'
-            f'<blockquote class="instagram-media" data-instgrm-version="14" '
-            f'data-instgrm-permalink="{ig["url"]}?utm_source=ig_embed&amp;utm_campaign=loading">'
-            f'<div class="wcc-ig__fallback">Our latest Instagram posts load here. '
-            f'<a href="{ig["url"]}" target="_blank" rel="noopener">Open the profile</a></div>'
-            f'</blockquote>'
-            f'<script async src="https://www.instagram.com/embed.js"></script>'
-            f'</div></div></div></section>')
+            f'<div class="wcc-ig__gallery" data-reveal="right">{tiles}</div>'
+            f'</div></div></section>')
 
 def final_cta(h2, p, primary, primary_url, emergency=False):
     if emergency:
@@ -339,7 +346,7 @@ def build_home():
                   f'{arrow_link(s["cta"], IDX[s["id"]]["url"])}</div>')
     silo_sec = (f'<section class="wcc-section wcc-section--alt"><div class="wcc-wrap">'
                 f'<p class="kicker">Three Ways We Build</p>'
-                f'<h2 style="margin:12px 0 34px;max-width:20ch">Residential, commercial, and 24/7 emergency construction</h2>'
+                f'<h2 class="wcc-home-silos__heading">Residential, commercial, and 24/7 emergency construction</h2>'
                 f'<div class="wcc-silos">{silos}</div></div></section>')
 
     def feature(block, parent_id, tone="", media_right=False):
@@ -348,7 +355,7 @@ def build_home():
         media = (f'<div class="wcc-split__media" data-reveal>'
                  f'<img src="{block["image"]}" width="720" height="540" loading="lazy" alt="{e(block["alt"])}"></div>')
         copy = (f'<div data-reveal><p class="kicker">{e(block["kicker"])}</p>'
-                f'<h2 style="margin:12px 0 14px">{e(block["h2"])}</h2>'
+                f'<h2 class="wcc-heading-standard">{e(block["h2"])}</h2>'
                 f'<p class="lede">{e(block["intro"])}</p><ul>{lis}</ul>'
                 f'<a class="btn btn-outline" href="{IDX[parent_id]["url"]}">View all {block["kicker"].lower()}'
                 f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
@@ -365,7 +372,7 @@ def build_home():
            f'<h2>Urgent damage? We respond fast.</h2>'
            f'<p>Roof leaks, storm damage, water intrusion, and structural issues don\'t wait. '
            f'We prioritize containment and stabilization first, then a clear repair plan.</p>'
-           f'<div style="margin-top:20px">{arrowish("Emergency services", IDX["emergency"]["url"])}</div></div>'
+           f'<div class="wcc-inline-action wcc-inline-action--20">{arrowish("Emergency services", IDX["emergency"]["url"])}</div></div>'
            f'<div class="wcc-emg__call"><span class="num">{SITE["phone"]}</span>'
            f'<a class="btn btn-primary" href="tel:{SITE["phoneHref"]}">Call now</a></div>'
            f'</div></div></section>')
@@ -374,29 +381,28 @@ def build_home():
     why_items = "".join(f'<div class="wcc-why__item" data-reveal>{icon(i["icon"], "ico ico--box")}'
                         f'<h3>{e(i["h3"])}</h3><p>{e(i["p"])}</p></div>' for i in w["items"])
     why = (f'<section class="wcc-section"><div class="wcc-wrap">'
-           f'<p class="kicker">{e(w["kicker"])}</p><h2 style="margin:12px 0 34px;max-width:24ch">{e(w["h2"])}</h2>'
+            f'<p class="kicker">{e(w["kicker"])}</p><h2 class="wcc-home-why__heading">{e(w["h2"])}</h2>'
            f'<div class="wcc-why">{why_items}</div></div></section>')
 
     pr = d["process"]
     steps = "".join(f'<div class="wcc-step" data-reveal><div class="wcc-step__n">{str(i+1).zfill(2)}</div>'
                     f'<h3>{e(s["h3"])}</h3><p>{e(s["p"])}</p></div>' for i, s in enumerate(pr["steps"]))
     proc = (f'<section class="wcc-section wcc-section--dark"><div class="wcc-wrap">'
-            f'<p class="kicker">{e(pr["kicker"])}</p><h2 style="margin:12px 0 40px;max-width:24ch">{e(pr["h2"])}</h2>'
+             f'<p class="kicker">{e(pr["kicker"])}</p><h2 class="wcc-home-process__heading">{e(pr["h2"])}</h2>'
             f'<div class="wcc-process">{steps}</div></div></section>')
 
     sa = d["serviceArea"]
     area = (f'<section class="wcc-section wcc-section--alt"><div class="wcc-wrap"><div class="wcc-local">'
             f'<div data-reveal><p class="kicker">{e(sa["kicker"])}</p>'
-            f'<h2 style="margin:12px 0 16px">{e(sa["h2"])}</h2>'
+            f'<h2 class="wcc-home-area__heading">{e(sa["h2"])}</h2>'
             f'<p class="prose">{e(sa["intro"])}</p>'
-            f'<div style="margin-top:22px">{arrowish("Contact our team", "/contact/")}</div></div>'
+            f'<div class="wcc-inline-action wcc-inline-action--22">{arrowish("Contact our team", "/contact/")}</div></div>'
             f'<div class="wcc-local__media" data-reveal><img src="{sa["image"]}" width="640" height="512" loading="lazy" alt="{e(sa["alt"])}"></div>'
             f'</div></div></section>')
 
-    fin = (f'<section class="wcc-section--tight wcc-section"><div class="wcc-wrap">'
-           f'<div style="display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;'
-           f'border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:6px;padding:28px 32px;background:var(--paper-2)">'
-           f'<div><p class="kicker">Financing</p><h3 style="margin-top:8px">We offer financing options</h3></div>'
+    fin = (f'<section class="wcc-section wcc-section--tight wcc-financing-section"><div class="wcc-wrap">'
+           f'<div class="wcc-financing">'
+           f'<div><p class="kicker">Financing</p><h3>We offer financing options</h3></div>'
            f'<a class="btn btn-outline" href="/contact/">Ask about financing</a></div></div></section>')
 
     qs = "".join(
@@ -404,12 +410,12 @@ def build_home():
         f'<div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
         f'<blockquote>{e(t["quote"])}</blockquote><cite>{e(t["cite"])}</cite></div>'
         for t in DATA["testimonials"])
-    test = (f'<section class="wcc-section"><div class="wcc-wrap">'
-            f'<p class="kicker">Reviews</p><h2 style="margin:12px 0 34px">What clients say</h2>'
+    test = (f'<section class="wcc-section wcc-reviews-section"><div class="wcc-wrap">'
+            f'<p class="kicker">Reviews</p><h2 class="wcc-heading-list">What clients say</h2>'
             f'<div class="wcc-quotes">{qs}</div></div></section>')
 
     faqs = (f'<section class="wcc-section wcc-section--alt"><div class="wcc-wrap">'
-            f'<p class="kicker">FAQ</p><h2 style="margin:12px 0 30px">General contractor FAQs</h2>'
+            f'<p class="kicker">FAQ</p><h2 class="wcc-heading-faq">General contractor FAQs</h2>'
             f'<div class="wcc-faq">{faq_block(d["faqs"])}</div></div></section>')
 
     fc = d["finalCta"]
@@ -574,7 +580,7 @@ def build_service(sid):
 
 # ---------------------------------------------------------------- assemble
 def assemble(page_id, main_html, jsonld):
-    return (f"<!-- wcc build: {MARK} | page: {page_id} | render_mode: theme_wrapped -->\n"
+    return (f"<!-- wcc build: {MARK} | revision: {REVISION} | page: {page_id} | render_mode: theme_wrapped -->\n"
             f"<style>\n{CSS}\n</style>\n\n"
             f'<div class="wcc wcc-has-sticky">\n'
             f"<main>\n{main_html}\n</main>\n"

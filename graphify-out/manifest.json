@@ -1,0 +1,267 @@
+{
+  "assets/js/wcc.js": {
+    "mtime": 1785370247.9653978,
+    "ast_hash": "88b399f4271a14e9459d0f28a5734242",
+    "semantic_hash": "88b399f4271a14e9459d0f28a5734242"
+  },
+  "build.py": {
+    "mtime": 1785370684.8012908,
+    "ast_hash": "f39c5a3875ea3f654477e32f482d716a",
+    "semantic_hash": "f39c5a3875ea3f654477e32f482d716a"
+  },
+  "data/services.json": {
+    "mtime": 1785370247.9575384,
+    "ast_hash": "a9acd958abf404f030b1e862205591d0",
+    "semantic_hash": "a9acd958abf404f030b1e862205591d0"
+  },
+  "_preview/1-home.html": {
+    "mtime": 1784777811.861623,
+    "ast_hash": "4213cef499ef454a74472633ea248d75",
+    "semantic_hash": "4213cef499ef454a74472633ea248d75"
+  },
+  "_preview/10-commercial-gc.html": {
+    "mtime": 1784784965.684494,
+    "ast_hash": "abb9365792dfbe154429a55720edfc41",
+    "semantic_hash": "abb9365792dfbe154429a55720edfc41"
+  },
+  "_preview/11-tenant-improvements.html": {
+    "mtime": 1784784965.7327328,
+    "ast_hash": "c0c6563756df435dd5da566282ce6279",
+    "semantic_hash": "c0c6563756df435dd5da566282ce6279"
+  },
+  "_preview/12-commercial-remodeling.html": {
+    "mtime": 1784784965.8978865,
+    "ast_hash": "22cfdfdad50367505469b808bffd71b8",
+    "semantic_hash": "22cfdfdad50367505469b808bffd71b8"
+  },
+  "_preview/13-new-commercial.html": {
+    "mtime": 1784784966.0881586,
+    "ast_hash": "317811ec007c06fe282d29672a30e75a",
+    "semantic_hash": "317811ec007c06fe282d29672a30e75a"
+  },
+  "_preview/14-concrete-asphalt.html": {
+    "mtime": 1784784966.2516892,
+    "ast_hash": "55571859f562f46df4abad503e2de58b",
+    "semantic_hash": "55571859f562f46df4abad503e2de58b"
+  },
+  "_preview/15-facility-maintenance.html": {
+    "mtime": 1784784966.4010696,
+    "ast_hash": "8c5c9ae8b811c89799da916a7b805b53",
+    "semantic_hash": "8c5c9ae8b811c89799da916a7b805b53"
+  },
+  "_preview/16-emergency-hub.html": {
+    "mtime": 1784929915.229688,
+    "ast_hash": "772297ab698b6f5ff91c55696a14564c",
+    "semantic_hash": "772297ab698b6f5ff91c55696a14564c"
+  },
+  "_preview/17-water-damage.html": {
+    "mtime": 1784929915.3398416,
+    "ast_hash": "02e5d6afe5364da02eb43d8a777c38ca",
+    "semantic_hash": "02e5d6afe5364da02eb43d8a777c38ca"
+  },
+  "_preview/18-emergency-roof-leaks.html": {
+    "mtime": 1784929915.4490652,
+    "ast_hash": "a2f10f4da82db3374ecb1e9a6627fc04",
+    "semantic_hash": "a2f10f4da82db3374ecb1e9a6627fc04"
+  },
+  "_preview/19-storm-damage.html": {
+    "mtime": 1784929915.5639567,
+    "ast_hash": "78107894c2a73b1f88a1b4a92bd0ce63",
+    "semantic_hash": "78107894c2a73b1f88a1b4a92bd0ce63"
+  },
+  "_preview/2-residential-hub.html": {
+    "mtime": 1784777811.9559498,
+    "ast_hash": "4ef40b9d3fd6c3676a06b090ad256fbd",
+    "semantic_hash": "4ef40b9d3fd6c3676a06b090ad256fbd"
+  },
+  "_preview/20-property-damage.html": {
+    "mtime": 1784929915.6849432,
+    "ast_hash": "9444196a96d8135b1de1ac068e9d8372",
+    "semantic_hash": "9444196a96d8135b1de1ac068e9d8372"
+  },
+  "_preview/21-ceiling-collapse.html": {
+    "mtime": 1784929915.7888093,
+    "ast_hash": "eceb1438e2f6361ed680eeef73147799",
+    "semantic_hash": "eceb1438e2f6361ed680eeef73147799"
+  },
+  "_preview/22-structural-stabilization.html": {
+    "mtime": 1784929915.89519,
+    "ast_hash": "24acff6b4aec14c792c8b929999841e8",
+    "semantic_hash": "24acff6b4aec14c792c8b929999841e8"
+  },
+  "_preview/3-custom-home-building.html": {
+    "mtime": 1784777812.0548446,
+    "ast_hash": "7f31d6b0090ccd3b3492e9486e45a5cb",
+    "semantic_hash": "7f31d6b0090ccd3b3492e9486e45a5cb"
+  },
+  "_preview/4-adu-garage-conversions.html": {
+    "mtime": 1784777812.217876,
+    "ast_hash": "70445bc1ba876e518c5529a4770c2641",
+    "semantic_hash": "70445bc1ba876e518c5529a4770c2641"
+  },
+  "_preview/5-home-additions.html": {
+    "mtime": 1784777812.3326135,
+    "ast_hash": "142dec06934d741bdb5ec6e2e0a334a9",
+    "semantic_hash": "142dec06934d741bdb5ec6e2e0a334a9"
+  },
+  "_preview/6-remodeling.html": {
+    "mtime": 1784777812.427251,
+    "ast_hash": "2b83f19aa39df96256ad73082ab5464c",
+    "semantic_hash": "2b83f19aa39df96256ad73082ab5464c"
+  },
+  "_preview/7-roofing-leak-repair.html": {
+    "mtime": 1784777812.5139897,
+    "ast_hash": "51aa4bb79f07a26e76dd0f91ca8c9e70",
+    "semantic_hash": "51aa4bb79f07a26e76dd0f91ca8c9e70"
+  },
+  "_preview/8-outdoor-living.html": {
+    "mtime": 1784777812.6122644,
+    "ast_hash": "240c7b15b45c7e131daccc9babb27970",
+    "semantic_hash": "240c7b15b45c7e131daccc9babb27970"
+  },
+  "_preview/9-commercial-hub.html": {
+    "mtime": 1784784965.5187118,
+    "ast_hash": "bcf28191e1a65b7739b6daafe422a8ca",
+    "semantic_hash": "bcf28191e1a65b7739b6daafe422a8ca"
+  },
+  "docs/Bakersfield-SEO-Expansion-and-Homepage-Rebuild.md": {
+    "mtime": 1784751201.6677058,
+    "ast_hash": "82c775e0372c4a11619f1b5ea052df65",
+    "semantic_hash": "82c775e0372c4a11619f1b5ea052df65"
+  },
+  "home.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "3e63aafabd4849bc8e17c24de80e9705",
+    "semantic_hash": "3e63aafabd4849bc8e17c24de80e9705"
+  },
+  "old-pages/24 Hour Emergency Contractor Bakersfield CA _ Roof & Repairs.html": {
+    "mtime": 1785347716.5323627,
+    "ast_hash": "0f9f8b016d67390ab87358a5d4b0b868",
+    "semantic_hash": "0f9f8b016d67390ab87358a5d4b0b868"
+  },
+  "old-pages/Commercial Contractor Bakersfield CA _ Tenant Improvements.html": {
+    "mtime": 1785347716.7475195,
+    "ast_hash": "c6786af2dd8b12afc3287116ea298fcb",
+    "semantic_hash": "c6786af2dd8b12afc3287116ea298fcb"
+  },
+  "old-pages/Residential Construction Bakersfield CA _ Home Remodeling.html": {
+    "mtime": 1785347716.9436145,
+    "ast_hash": "345b31ee7a4e8ded6c25f0395f92e521",
+    "semantic_hash": "345b31ee7a4e8ded6c25f0395f92e521"
+  },
+  "old-pages/home-page-old.html": {
+    "mtime": 1784748527.5295997,
+    "ast_hash": "b8840f0e6415c0de5e100b0f6bc514d1",
+    "semantic_hash": "b8840f0e6415c0de5e100b0f6bc514d1"
+  },
+  "redirects.md": {
+    "mtime": 1784929682.1067631,
+    "ast_hash": "99926c379d24242e8d07523a7e520c8c",
+    "semantic_hash": "99926c379d24242e8d07523a7e520c8c"
+  },
+  "services/commercial.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "7a33c1bb3609517625066c5526579a2f",
+    "semantic_hash": "7a33c1bb3609517625066c5526579a2f"
+  },
+  "services/commercial/commercial-gc-project-management.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "98e2f017546207ab93a0c3d9059c1a74",
+    "semantic_hash": "98e2f017546207ab93a0c3d9059c1a74"
+  },
+  "services/commercial/commercial-remodeling-renovations.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "e3dcc2644a6469c79afafe9a1c4f4e22",
+    "semantic_hash": "e3dcc2644a6469c79afafe9a1c4f4e22"
+  },
+  "services/commercial/concrete-asphalt-parking-lots-flatwork.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "8d609aba9afb2188ac56dd968dc35501",
+    "semantic_hash": "8d609aba9afb2188ac56dd968dc35501"
+  },
+  "services/commercial/facility-maintenance-on-call-repairs.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "0573baa741285b7b9509a7a7168b08ad",
+    "semantic_hash": "0573baa741285b7b9509a7a7168b08ad"
+  },
+  "services/commercial/new-commercial-construction.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "ee087f79c190435a66099cf658f2c8a3",
+    "semantic_hash": "ee087f79c190435a66099cf658f2c8a3"
+  },
+  "services/commercial/tenant-improvements-build-outs.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "22ece6a0ef5c5e78cb1876375b52e1d4",
+    "semantic_hash": "22ece6a0ef5c5e78cb1876375b52e1d4"
+  },
+  "services/emergency.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "5b60d0edd9db972e1d05e3d2d5ce0d8f",
+    "semantic_hash": "5b60d0edd9db972e1d05e3d2d5ce0d8f"
+  },
+  "services/emergency/ceiling-collapse-drywall-failure-emergency-repairs.html": {
+    "mtime": 1785370688.7909715,
+    "ast_hash": "16bfed5f45c6c7f6cc829d9f505af856",
+    "semantic_hash": "16bfed5f45c6c7f6cc829d9f505af856"
+  },
+  "services/emergency/emergency-property-damage-repairs.html": {
+    "mtime": 1785370688.790198,
+    "ast_hash": "e88fdc941f25515f663e05e5439cafa3",
+    "semantic_hash": "e88fdc941f25515f663e05e5439cafa3"
+  },
+  "services/emergency/emergency-roof-leaks.html": {
+    "mtime": 1785370688.78916,
+    "ast_hash": "9c9078bb7cc5f4c65a811ba1c9e73ad1",
+    "semantic_hash": "9c9078bb7cc5f4c65a811ba1c9e73ad1"
+  },
+  "services/emergency/emergency-structural-stabilization.html": {
+    "mtime": 1785370688.7909715,
+    "ast_hash": "f4495b54923900101643456b9610f142",
+    "semantic_hash": "f4495b54923900101643456b9610f142"
+  },
+  "services/emergency/emergency-water-damage-response.html": {
+    "mtime": 1785370688.784352,
+    "ast_hash": "8e9ccdd552edd8ddbf318dde4c76274b",
+    "semantic_hash": "8e9ccdd552edd8ddbf318dde4c76274b"
+  },
+  "services/emergency/storm-damage-emergency-repairs.html": {
+    "mtime": 1785370688.78916,
+    "ast_hash": "3a94859ef1c9f664d64a7b1d15bf3a55",
+    "semantic_hash": "3a94859ef1c9f664d64a7b1d15bf3a55"
+  },
+  "services/residential.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "743f458d2e6063f55b2e4c6a2766cec3",
+    "semantic_hash": "743f458d2e6063f55b2e4c6a2766cec3"
+  },
+  "services/residential/adu-garage-conversions.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "3255b8c729028940c94c4ad0a21ac67e",
+    "semantic_hash": "3255b8c729028940c94c4ad0a21ac67e"
+  },
+  "services/residential/custom-home-building.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "d9deae74ef4677a48afc3e6479fd7145",
+    "semantic_hash": "d9deae74ef4677a48afc3e6479fd7145"
+  },
+  "services/residential/home-additions-expansions.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "f38b141a90b072495d9eab558732bf00",
+    "semantic_hash": "f38b141a90b072495d9eab558732bf00"
+  },
+  "services/residential/outdoor-living-patios-patio-covers-pergolas-pool-areas.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "c74062c90f9ead45ac77ee55b7637b38",
+    "semantic_hash": "c74062c90f9ead45ac77ee55b7637b38"
+  },
+  "services/residential/remodeling-home-renovations.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "8ad9e84133e51ac416488273111932cf",
+    "semantic_hash": "8ad9e84133e51ac416488273111932cf"
+  },
+  "services/residential/roofing-roof-leak-repair.html": {
+    "mtime": 1785370688.777046,
+    "ast_hash": "c84ab226eba3a29acf41592a0a1b57f6",
+    "semantic_hash": "c84ab226eba3a29acf41592a0a1b57f6"
+  }
+}

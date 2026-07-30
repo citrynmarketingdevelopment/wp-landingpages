@@ -186,7 +186,21 @@
       "h2": "Project updates on Instagram",
       "intro": "We post progress photos and finished work from jobs around Bakersfield and Kern County.",
       "handle": "@west_coast_construction_grp",
-      "url": "https://www.instagram.com/west_coast_construction_grp/"
+      "url": "https://www.instagram.com/west_coast_construction_grp/",
+      "tiles": [
+        {
+          "image": "https://wccgrp.com/wp-content/uploads/2026/03/Kitchen-remodel.webp",
+          "alt": "Finished kitchen remodel by West Coast Construction Group"
+        },
+        {
+          "image": "https://wccgrp.com/wp-content/uploads/2026/03/COMMERCIAL-cONTRACTOR-IN-BAKERSFIELD.webp",
+          "alt": "Commercial construction project by West Coast Construction Group"
+        },
+        {
+          "image": "https://wccgrp.com/wp-content/uploads/2026/03/Residential-General-Contracting-Services-in-Bakersfield-CA.webp",
+          "alt": "Finished residential construction project by West Coast Construction Group"
+        }
+      ]
     },
     "faqs": [
       { "q": "What areas do you serve?", "a": "We serve Bakersfield and Kern County, and take on San Luis Obispo County projects based on scope and scheduling. Let us know your city and service and we'll confirm coverage." },

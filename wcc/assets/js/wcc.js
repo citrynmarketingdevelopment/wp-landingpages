@@ -28,6 +28,8 @@
   function initFaq() {
     var items = root.querySelectorAll('.wcc-faq__item');
     items.forEach(function (item) {
+      // Native details/summary is the GitPress-safe implementation.
+      if (item.tagName.toLowerCase() === 'details') return;
       var btn = item.querySelector('.wcc-faq__q');
       var panel = item.querySelector('.wcc-faq__a');
       if (!btn || !panel) return;

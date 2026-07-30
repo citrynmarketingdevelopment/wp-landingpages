@@ -56,6 +56,15 @@
 .wcc-section--alt { background: var(--paper-2); }
 .wcc-section--dark { background: var(--carbon); color: #f3f3ee; }
 .wcc-section--dark h2, .wcc-section--dark h3 { color: #fff !important; }
+.wcc-heading-standard { margin: 12px 0 14px !important; }
+.wcc-heading-list { margin: 12px 0 34px !important; }
+.wcc-heading-faq { margin: 12px 0 30px !important; }
+.wcc-home-silos__heading { margin: 12px 0 34px !important; max-width: 20ch; }
+.wcc-home-why__heading { margin: 12px 0 34px !important; max-width: 24ch; }
+.wcc-home-process__heading { margin: 12px 0 40px !important; max-width: 24ch; }
+.wcc-home-area__heading { margin: 12px 0 16px !important; }
+.wcc-inline-action--20 { margin-top: 20px; }
+.wcc-inline-action--22 { margin-top: 22px; }
 
 /* ---------- typography ---------- */
 .wcc h1, .wcc h2, .wcc h3, .wcc h4 { font-family: var(--font-head); font-weight: 600; }
@@ -276,17 +285,22 @@
   width: 100%; text-align: left; background: none; border: 0; cursor: pointer;
   display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0;
   font-family: var(--font-head); font-weight: 500; font-size: clamp(1.1rem, 1.5vw, 1.3rem); color: var(--ink); line-height: 1.3;
+  list-style: none;
 }
+.wcc-faq__q::-webkit-details-marker { display: none; }
 .wcc-faq__icon { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 6px; background: var(--paper-2); position: relative; transition: background .2s; }
 .wcc-faq__icon::before, .wcc-faq__icon::after { content: ""; position: absolute; background: var(--ink); top: 50%; left: 50%; transform: translate(-50%,-50%); transition: opacity .2s, background .2s; }
 .wcc-faq__icon::before { width: 12px; height: 2px; }
 .wcc-faq__icon::after { width: 2px; height: 12px; }
-.wcc-faq__q[aria-expanded="true"] .wcc-faq__icon { background: var(--accent); }
-.wcc-faq__q[aria-expanded="true"] .wcc-faq__icon::after { opacity: 0; }
+.wcc-faq__q[aria-expanded="true"] .wcc-faq__icon,
+.wcc-faq__item[open] .wcc-faq__icon { background: var(--accent); }
+.wcc-faq__q[aria-expanded="true"] .wcc-faq__icon::after,
+.wcc-faq__item[open] .wcc-faq__icon::after { opacity: 0; }
 .wcc-faq__a { overflow: hidden; }
 .wcc-js .wcc-faq__a { transition: height .32s ease; }
 .wcc-faq__a-inner { padding: 0 0 26px; color: var(--ink-soft); max-width: 70ch; }
 .wcc:not(.wcc-js) .wcc-faq__a { height: auto !important; }
+.wcc-faq__item[open] .wcc-faq__a { height: auto !important; }
 
 /* ---------- testimonials ---------- */
 .wcc-quotes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
@@ -365,6 +379,8 @@
 
 /* ---------- video gallery: featured stage + playlist rail ---------- */
 .wcc-vg { display: grid; grid-template-columns: 1.8fr 1fr; gap: 22px; align-items: start; }
+.wcc-vg__heading { margin: 12px 0 14px !important; max-width: 22ch; }
+.wcc-vg__intro { margin-bottom: 38px !important; max-width: 62ch; }
 .wcc-vg__now {
   margin-top: 16px; font-family: var(--font-head); font-size: 1.15rem;
   letter-spacing: .02em; color: #fff !important;
@@ -401,9 +417,7 @@
 }
 .wcc-vg__note { margin-top: 18px; font-size: .85rem; color: var(--dim); }
 
-/* ---------- before / after toggle gallery (built for vertical photos) ----------
-   Radio inputs + :has() drive the crossfade, so it works with no JavaScript
-   and keeps native radio keyboard behaviour. */
+/* ---------- before / after toggle gallery (built for vertical photos) ---------- */
 .wcc-ba__head {
   display: flex; justify-content: space-between; align-items: flex-end;
   gap: 26px; flex-wrap: wrap; margin-bottom: 38px;
@@ -413,6 +427,7 @@
   background: #fff; border: 1px solid var(--line); border-radius: 999px;
   box-shadow: 0 2px 6px rgba(20,20,20,.06);
 }
+.wcc-ba__intro { max-width: 52ch; }
 .wcc-ba__radio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 .wcc-ba__btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -422,9 +437,6 @@
   transition: background .25s ease, color .25s ease;
 }
 .wcc-ba__btn:hover { background: var(--paper-2); }
-.wcc-ba__radio:checked + .wcc-ba__btn { background: var(--accent); color: var(--ink); }
-.wcc-ba__radio:focus-visible + .wcc-ba__btn { outline: 3px solid var(--accent); outline-offset: 3px; }
-
 .wcc-ba { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .wcc-ba__card { margin: 0; }
 .wcc-ba__frame {
@@ -446,23 +458,24 @@
 }
 .wcc-ba__pill--before { opacity: 0; }
 .wcc-ba__pill--after { opacity: 1; }
-/* Flip everything when "Before" is selected. Two independent paths:
-   :has() keeps it working with no JavaScript at all, and the .show-before
-   class (set by JS) covers engines without :has() support. */
-.wcc-ba-sec:has(.wcc-ba__radio[value="before"]:checked) .wcc-ba__img--before,
-.wcc-ba-sec:has(.wcc-ba__radio[value="before"]:checked) .wcc-ba__pill--before,
+/* The radios are direct children before the controls and gallery. General
+   sibling selectors survive GitPress and work even if every script is stripped. */
+.wcc-ba__radio--before:checked ~ .wcc-ba__head .wcc-ba__btn--before,
+.wcc-ba__radio--after:checked ~ .wcc-ba__head .wcc-ba__btn--after {
+  background: var(--accent); color: var(--ink);
+}
+.wcc-ba__radio--before:focus-visible ~ .wcc-ba__head .wcc-ba__btn--before,
+.wcc-ba__radio--after:focus-visible ~ .wcc-ba__head .wcc-ba__btn--after {
+  outline: 3px solid var(--accent); outline-offset: 3px;
+}
+.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__img--before,
+.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__pill--before,
 .wcc-ba-sec.show-before .wcc-ba__img--before,
 .wcc-ba-sec.show-before .wcc-ba__pill--before { opacity: 1; }
-.wcc-ba-sec:has(.wcc-ba__radio[value="before"]:checked) .wcc-ba__img--after,
-.wcc-ba-sec:has(.wcc-ba__radio[value="before"]:checked) .wcc-ba__pill--after,
+.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__img--after,
+.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__pill--after,
 .wcc-ba-sec.show-before .wcc-ba__img--after,
 .wcc-ba-sec.show-before .wcc-ba__pill--after { opacity: 0; }
-/* active state on the switch, class-driven only when JS is running so it can
-   never disagree with the :checked styling in the no-JS case */
-.wcc-js .wcc-ba-sec.show-before .wcc-ba__btn--before,
-.wcc-js .wcc-ba-sec:not(.show-before) .wcc-ba__btn--after { background: var(--accent); color: var(--ink); }
-.wcc-js .wcc-ba-sec.show-before .wcc-ba__btn--after,
-.wcc-js .wcc-ba-sec:not(.show-before) .wcc-ba__btn--before { background: transparent; }
 .wcc-ba__card figcaption {
   margin-top: 14px; font-family: var(--font-head); font-size: 1.02rem;
   color: var(--ink); letter-spacing: .01em;
@@ -472,22 +485,41 @@
 
 /* ---------- instagram ---------- */
 .wcc-ig { display: grid; grid-template-columns: 1fr minmax(320px, 500px); gap: clamp(28px,4vw,60px); align-items: center; }
+.wcc-ig__heading { margin: 12px 0 14px !important; max-width: 18ch; }
+.wcc-ig__intro { margin-bottom: 18px !important; max-width: 44ch; }
 .wcc-ig__handle {
   font-family: var(--font-head); color: var(--accent); letter-spacing: .06em;
   font-size: 1.15rem; margin-bottom: 22px; display: block;
 }
-.wcc-ig__embed {
-  background: #fff; border-radius: 14px; padding: 12px; border-top: 4px solid var(--accent);
-  box-shadow: 0 34px 64px -36px rgba(0,0,0,.7); min-height: 260px;
-  max-width: 100%; overflow: hidden;
+.wcc-ig__gallery {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  border-top: 4px solid var(--accent); background: #fff; padding: 10px;
+  border-radius: 12px; box-shadow: 0 34px 64px -36px rgba(0,0,0,.7);
 }
-/* Instagram sets its own min-width/width inline on the embed and the rendered
-   iframe; override both or it blows out the layout on small screens. */
-.wcc-ig__embed .instagram-media,
-.wcc-ig__embed iframe.instagram-media { margin: 0 auto !important; min-width: 0 !important; max-width: 100% !important; width: 100% !important; }
+.wcc-ig__tile { position: relative; overflow: hidden; aspect-ratio: 4/5; background: var(--carbon-2); }
+.wcc-ig__tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease, opacity .35s ease; }
+.wcc-ig__tile::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.12); transition: background .25s ease; }
+.wcc-ig__tile-icon {
+  position: absolute; z-index: 2; inset: 0; margin: auto; width: 42px; height: 42px;
+  display: grid; place-items: center; border-radius: 50%; color: #fff;
+  background: rgba(20,20,20,.78); opacity: 0; transform: scale(.85); transition: opacity .25s ease, transform .25s ease;
+}
+.wcc-ig__tile-icon svg { width: 22px; height: 22px; }
+.wcc-ig__tile:hover img { transform: scale(1.06); }
+.wcc-ig__tile:hover::after { background: rgba(0,0,0,.28); }
+.wcc-ig__tile:hover .wcc-ig__tile-icon { opacity: 1; transform: scale(1); }
 /* grid children must be allowed to shrink below their content width */
 .wcc-ig > *, .wcc-split > *, .wcc-local > *, .wcc-signs > * { min-width: 0; }
-.wcc-ig__fallback { text-align: center; padding: 26px 18px; color: var(--ink-soft); font-size: .92rem; }
+
+/* ---------- homepage financing / review rhythm ---------- */
+.wcc-financing-section { padding-bottom: clamp(28px, 3vw, 42px); }
+.wcc-financing {
+  display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: var(--radius);
+  padding: 28px 32px; background: var(--paper-2);
+}
+.wcc-financing h3 { margin-top: 8px !important; }
+.wcc-reviews-section { padding-top: clamp(34px, 4vw, 58px); }
 
 /* ---------- desktop motion polish ---------- */
 .wcc-split__media img, .wcc-local__media img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }

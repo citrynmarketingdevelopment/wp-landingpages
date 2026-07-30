@@ -1,0 +1,290 @@
+{
+  "communities": {
+    "0": [
+      "wcc__preview_8_outdoor_living_page",
+      "wcc__preview_9_commercial_hub_page",
+      "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_accessibility_and_mobile_requirements",
+      "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_reusable_service_page_system",
+      "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_search_intent_separation",
+      "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_service_architecture",
+      "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_specification",
+      "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_wordpress_fragment_migration",
+      "wcc_home_homepage",
+      "wcc_old_pages_24_hour_emergency_contractor_bakersfield_ca_roof_repairs_page",
+      "wcc_old_pages_commercial_contractor_bakersfield_ca_tenant_improvements_page",
+      "wcc_old_pages_home_page_old_page",
+      "wcc_old_pages_residential_construction_bakersfield_ca_home_remodeling_page",
+      "wcc_redirects_emergency_parent_redirect",
+      "wcc_redirects_redirect_configuration",
+      "wcc_redirects_wordpress_redirect_layer_rationale",
+      "wcc_services_commercial_commercial_gc_project_management_page",
+      "wcc_services_commercial_commercial_hub",
+      "wcc_services_commercial_commercial_remodeling_renovations_page",
+      "wcc_services_commercial_concrete_asphalt_parking_lots_flatwork_page",
+      "wcc_services_commercial_facility_maintenance_on_call_repairs_page",
+      "wcc_services_commercial_new_commercial_construction_page",
+      "wcc_services_commercial_tenant_improvements_build_outs_page",
+      "wcc_services_emergency_ceiling_collapse_drywall_failure_emergency_repairs_page",
+      "wcc_services_emergency_emergency_hub",
+      "wcc_services_emergency_emergency_property_damage_repairs_page",
+      "wcc_services_emergency_emergency_roof_leaks_page"
+    ],
+    "1": [
+      "wcc_services_emergency_emergency_water_damage_response_page",
+      "wcc_services_emergency_emergency_water_damage_response_water_damage_response",
+      "wcc_services_emergency_emergency_water_damage_response_water_response_process",
+      "wcc_services_residential_adu_garage_conversions_adu_construction",
+      "wcc_services_residential_adu_garage_conversions_adu_project_process",
+      "wcc_services_residential_adu_garage_conversions_page",
+      "wcc_services_residential_custom_home_building_custom_home_building",
+      "wcc_services_residential_custom_home_building_custom_home_process",
+      "wcc_services_residential_custom_home_building_page",
+      "wcc_services_residential_home_additions_expansions_addition_process",
+      "wcc_services_residential_home_additions_expansions_home_additions",
+      "wcc_services_residential_home_additions_expansions_page",
+      "wcc_services_residential_outdoor_living_patios_patio_covers_pergolas_pool_areas_outdoor_living",
+      "wcc_services_residential_outdoor_living_patios_patio_covers_pergolas_pool_areas_outdoor_project_process",
+      "wcc_services_residential_outdoor_living_patios_patio_covers_pergolas_pool_areas_page",
+      "wcc_services_residential_page",
+      "wcc_services_residential_remodeling_home_renovations_home_remodeling",
+      "wcc_services_residential_remodeling_home_renovations_page",
+      "wcc_services_residential_remodeling_home_renovations_remodeling_process",
+      "wcc_services_residential_residential_construction",
+      "wcc_services_residential_residential_project_process",
+      "wcc_services_residential_roofing_roof_leak_repair_page",
+      "wcc_services_residential_roofing_roof_leak_repair_roof_repair_process",
+      "wcc_services_residential_roofing_roof_leak_repair_roofing_repair"
+    ],
+    "2": [
+      "wcc__preview_10_commercial_gc_page",
+      "wcc__preview_11_tenant_improvements_page",
+      "wcc__preview_12_commercial_remodeling_page",
+      "wcc__preview_13_new_commercial_page",
+      "wcc__preview_14_concrete_asphalt_page",
+      "wcc__preview_15_facility_maintenance_page",
+      "wcc__preview_16_emergency_hub_page",
+      "wcc__preview_17_water_damage_page",
+      "wcc__preview_18_emergency_roof_leaks_page",
+      "wcc__preview_19_storm_damage_page",
+      "wcc__preview_1_home_page",
+      "wcc__preview_20_property_damage_page",
+      "wcc__preview_21_ceiling_collapse_page",
+      "wcc__preview_22_structural_stabilization_page",
+      "wcc__preview_2_residential_hub_page",
+      "wcc__preview_3_custom_home_building_page",
+      "wcc__preview_4_adu_garage_conversions_page",
+      "wcc__preview_5_home_additions_page",
+      "wcc__preview_6_remodeling_page",
+      "wcc__preview_7_roofing_leak_repair_page"
+    ],
+    "3": [
+      "build_arrow_link",
+      "build_arrowish",
+      "build_before_after_section",
+      "build_build_home",
+      "build_e",
+      "build_icon",
+      "build_instagram_section",
+      "build_rationale_166",
+      "build_rationale_206",
+      "build_rationale_247",
+      "build_related_block",
+      "build_trust_bar",
+      "build_video_gallery_section",
+      "build_website_node"
+    ],
+    "4": [
+      "build_build_parent",
+      "build_build_service",
+      "build_business_node",
+      "build_crumbs",
+      "build_emergency_band",
+      "build_faq_block",
+      "build_ldjson",
+      "build_rationale_59",
+      "build_rationale_95",
+      "build_rich",
+      "build_service_schema",
+      "build_webpage_node"
+    ],
+    "5": [
+      "build",
+      "build_assemble",
+      "build_block_icon",
+      "build_main",
+      "build_preview_wrap",
+      "build_sticky_bar",
+      "build_write"
+    ],
+    "6": [
+      "assets_js_wcc",
+      "assets_js_wcc_initbeforeafter",
+      "assets_js_wcc_initfaq",
+      "assets_js_wcc_initreveal",
+      "assets_js_wcc_initvideo",
+      "assets_js_wcc_initvideogallery"
+    ],
+    "7": [
+      "wcc_services_emergency_emergency_structural_stabilization_page",
+      "wcc_services_emergency_emergency_structural_stabilization_structural_response_process",
+      "wcc_services_emergency_emergency_structural_stabilization_structural_stabilization",
+      "wcc_services_emergency_storm_damage_emergency_repairs_page",
+      "wcc_services_emergency_storm_damage_emergency_repairs_storm_damage_repairs",
+      "wcc_services_emergency_storm_damage_emergency_repairs_storm_response_process"
+    ],
+    "8": [
+      "build_call_btn",
+      "build_cta_buttons",
+      "build_final_cta",
+      "build_hero_dark",
+      "build_phone_btn"
+    ],
+    "9": [
+      "build_placeholder",
+      "build_rationale_588"
+    ]
+  },
+  "cohesion": {
+    "0": 0.22507122507122507,
+    "1": 0.11956521739130435,
+    "2": 0.2894736842105263,
+    "3": 0.23076923076923078,
+    "4": 0.2878787878787879,
+    "5": 0.42857142857142855,
+    "6": 0.3333333333333333,
+    "7": 0.3333333333333333,
+    "8": 0.5,
+    "9": 1.0
+  },
+  "gods": [
+    {
+      "id": "wcc_docs_bakersfield_seo_expansion_and_homepage_rebuild_specification",
+      "label": "Bakersfield SEO Expansion and Homepage Rebuild Specification",
+      "degree": 23
+    },
+    {
+      "id": "build_build_home",
+      "label": "build_home()",
+      "degree": 18
+    },
+    {
+      "id": "build_e",
+      "label": "e()",
+      "degree": 17
+    },
+    {
+      "id": "build_build_parent",
+      "label": "build_parent()",
+      "degree": 17
+    },
+    {
+      "id": "build_build_service",
+      "label": "build_service()",
+      "degree": 16
+    },
+    {
+      "id": "wcc_home_homepage",
+      "label": "General Contractor in Bakersfield Homepage",
+      "degree": 15
+    },
+    {
+      "id": "wcc__preview_1_home_page",
+      "label": "General Contractor in Bakersfield, CA",
+      "degree": 13
+    },
+    {
+      "id": "wcc_services_commercial_commercial_hub",
+      "label": "Commercial Construction Services Hub",
+      "degree": 10
+    },
+    {
+      "id": "wcc__preview_16_emergency_hub_page",
+      "label": "24/7 Emergency Construction Contractor in Bakersfield, CA",
+      "degree": 9
+    },
+    {
+      "id": "wcc__preview_9_commercial_hub_page",
+      "label": "Commercial Construction Services Preview",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Commercial Construction Services Preview",
+      "target": "Commercial Construction Services Hub",
+      "source_files": [
+        "_preview/9-commercial-hub.html",
+        "services/commercial.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "WordPress Redirect Configuration",
+      "target": "Bakersfield SEO Expansion and Homepage Rebuild Specification",
+      "source_files": [
+        "redirects.md",
+        "docs/Bakersfield-SEO-Expansion-and-Homepage-Rebuild.md"
+      ],
+      "confidence": "AMBIGUOUS",
+      "relation": "references",
+      "why": "ambiguous connection - not explicitly stated in source; connects across different repos/directories; peripheral node `WordPress Redirect Configuration` unexpectedly reaches hub `Bakersfield SEO Expansion and Homepage Rebuild Specification`"
+    },
+    {
+      "source": "Legacy General Contractor Homepage",
+      "target": "General Contractor in Bakersfield Homepage",
+      "source_files": [
+        "old-pages/home-page-old.html",
+        "home.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Legacy Emergency Contractor Page",
+      "target": "24/7 Emergency Construction Services Hub",
+      "source_files": [
+        "old-pages/24 Hour Emergency Contractor Bakersfield CA _ Roof & Repairs.html",
+        "services/emergency.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Legacy Commercial Contractor Page",
+      "target": "Commercial Construction Services Hub",
+      "source_files": [
+        "old-pages/Commercial Contractor Bakersfield CA _ Tenant Improvements.html",
+        "services/commercial.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    }
+  ],
+  "questions": [
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Bakersfield SEO Expansion and Homepage Rebuild Specification` and `WordPress Redirect Configuration`?",
+      "why": "Edge tagged AMBIGUOUS (relation: references) - confidence is low."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Emergency Water Damage Response Page` connect `Community 1` to `Community 7`?",
+      "why": "High betweenness centrality (0.024) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Escape copy, then turn [[page-id|anchor text]] tokens into contextual        int`, `items: list of (name, url|None). Last item = current page (url None).`, `Dark band. Featured bracketed player plus a playlist rail that swaps the` to the rest of the system?",
+      "why": "25 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11956521739130435 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
