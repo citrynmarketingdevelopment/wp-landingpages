@@ -1,27 +1,4 @@
 <!-- webhook retrigger 2026-07-30 rcm-page -->
-<!--
-  Converted from optimax/reference html/rev-cycle-example.html (client mockup) into a
-  GitPress body partial matching the coding.html / credentialing.html house style (.rcm-page
-  scoped classes, Plus Jakarta Sans + Poppins, no header/footer, no JS).
-
-  Removed from the mockup, per client feedback:
-    - standalone <header>/nav/logo <img> and <footer>/logo <img> — the real WP theme
-      header/footer + global nav already provide these in theme_wrapped mode; keeping the
-      mockup's own copy would duplicate them on the live page.
-    - trust-bar (6-item checkmark strip) and the "Explore Optimax Services" subnav tab bar —
-      redundant with the site's real global navigation.
-    - all JS (scroll-reveal animation, animated KPI counters, the executive-dashboard mock
-      widget) — coding.html/credentialing.html ship fully static, so this page matches.
-    - the raw <form> in the final CTA (its own comment admitted it wasn't wired to a real
-      endpoint) — replaced with the [gravityform id="1"] shortcode pattern used on the two
-      sibling pages. Confirm the actual RCM form's Gravity Forms ID before publishing if it
-      differs from id 1.
-    - several inline style="..." attributes in the mockup — moved to CSS classes, since the
-      GitPress sanitizer can strip inline style attributes on the live page.
-
-  Hero background reuses the existing, already-live medical-billing-hero.webp from
-  coding.html. Swap in a dedicated RCM photo if/when the client provides one.
--->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800');
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800');
