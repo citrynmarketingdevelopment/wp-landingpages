@@ -22,7 +22,7 @@ SITE = DATA["site"]
 IDX  = DATA["pageIndex"]
 BASE = "https://wccgrp.com"   # confirmed from live asset URLs on the old pages
 MARK = datetime.date.today().isoformat()
-REVISION = "gitpress-interactions-2026-07-29-v2"
+REVISION = "gitpress-interactions-2026-07-29-v3"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -204,8 +204,8 @@ def video_gallery_section(v):
             f'</div>{note}</div></section>')
 
 def before_after_section(b):
-    """Toggle gallery sized for vertical photos. Direct-child radio inputs and
-       general-sibling CSS keep the crossfade working when GitPress strips JS."""
+    """Toggle gallery sized for vertical photos. Hash-backed controls keep the
+       crossfade usable when WordPress interferes with form labels."""
     cards = ""
     for it in b["items"]:
         cards += (
@@ -223,20 +223,17 @@ def before_after_section(b):
 
     note = f'<p class="wcc-ba__note">{e(b["note"])}</p>' if b.get("note") else ""
 
-    states = (f'<input class="wcc-ba__radio wcc-ba__radio--before" type="radio" '
-              f'name="wcc-ba-state" id="wcc-ba-before" value="before">'
-              f'<input class="wcc-ba__radio wcc-ba__radio--after" type="radio" '
-              f'name="wcc-ba-state" id="wcc-ba-after" value="after" checked>')
-    switch = (f'<fieldset class="wcc-ba__switch">'
-              f'<legend class="visually-hidden">Show before or after photos</legend>'
-              f'<label class="wcc-ba__btn wcc-ba__btn--before" for="wcc-ba-before" '
-              f'data-ba-state="before" role="button" tabindex="0" aria-pressed="false">Before</label>'
-              f'<label class="wcc-ba__btn wcc-ba__btn--after" for="wcc-ba-after" '
-              f'data-ba-state="after" role="button" tabindex="0" aria-pressed="true">After</label>'
-              f'</fieldset>')
+    targets = (f'<span class="wcc-ba__target wcc-ba__target--before" id="wcc-ba-before"></span>'
+               f'<span class="wcc-ba__target wcc-ba__target--after" id="wcc-ba-after"></span>')
+    switch = (f'<div class="wcc-ba__switch" role="group" aria-label="Show before or after photos">'
+              f'<a class="wcc-ba__btn wcc-ba__btn--before" href="#wcc-ba-before" '
+              f'data-ba-state="before" role="button" aria-pressed="false">Before</a>'
+              f'<a class="wcc-ba__btn wcc-ba__btn--after is-active" href="#wcc-ba-after" '
+              f'data-ba-state="after" role="button" aria-pressed="true">After</a>'
+              f'</div>')
 
-    return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec"><div class="wcc-wrap">'
-            f'{states}'
+    return (f'<section class="wcc-section wcc-section--alt wcc-ba-sec show-after" data-ba-state="after"><div class="wcc-wrap">'
+            f'{targets}'
             f'<div class="wcc-ba__head">'
             f'<div class="wcc-ba__intro" data-reveal><p class="kicker">{e(b["kicker"])}</p>'
             f'<h2 class="wcc-heading-standard">{e(b["h2"])}</h2>'
@@ -246,21 +243,17 @@ def before_after_section(b):
             f'</div></section>')
 
 def instagram_section(ig):
-    """Linked project grid. Instagram does not support profile URL embeds, and its
-       external embed script is commonly stripped by GitPress."""
+    """Official Instagram profile embed with a plain link fallback."""
     arrow = (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
              f'stroke-linecap="round" stroke-linejoin="round">{_I["arrow"]}</svg>')
-    camera = (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
-              f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-              f'<rect x="3" y="3" width="18" height="18" rx="5"></rect>'
-              f'<circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle>'
-              f'</svg>')
-    tiles = "".join(
-        f'<a class="wcc-ig__tile" href="{ig["url"]}" target="_blank" rel="noopener" '
-        f'aria-label="View {e(ig["handle"])} on Instagram">'
-        f'<img src="{tile["image"]}" loading="lazy" alt="{e(tile["alt"])}">'
-        f'<span class="wcc-ig__tile-icon">{camera}</span></a>'
-        for tile in ig["tiles"])
+    embed_url = ig.get("embedUrl", ig["url"])
+    embed = (f'<div class="wcc-ig__embed" data-reveal="right">'
+             f'<blockquote class="instagram-media" data-instgrm-permalink="{embed_url}" '
+             f'data-instgrm-version="14">'
+             f'<a class="wcc-ig__embed-fallback" href="{ig["url"]}" target="_blank" rel="noopener">'
+             f'View {e(ig["handle"])} on Instagram</a>'
+             f'</blockquote></div>'
+             f'<script async src="https://www.instagram.com/embed.js"></script>')
     return (f'<section class="wcc-section wcc-section--dark"><div class="wcc-wrap"><div class="wcc-ig">'
             f'<div data-reveal="left"><p class="kicker">{e(ig["kicker"])}</p>'
             f'<h2 class="wcc-ig__heading">{e(ig["h2"])}</h2>'
@@ -268,7 +261,7 @@ def instagram_section(ig):
             f'<span class="wcc-ig__handle">{e(ig["handle"])}</span>'
             f'<a class="btn btn-primary" href="{ig["url"]}" target="_blank" rel="noopener">'
             f'Follow on Instagram{arrow}</a></div>'
-            f'<div class="wcc-ig__gallery" data-reveal="right">{tiles}</div>'
+            f'{embed}'
             f'</div></div></section>')
 
 def final_cta(h2, p, primary, primary_url, emergency=False):

@@ -116,28 +116,33 @@
     });
   }
 
-  /* ---- before/after toggle ----
-     The gallery already works with no JS via :has(). This mirrors the state onto
-     a class so engines without :has() support behave identically. */
+  /* ---- before/after toggle ---- */
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
-      var radios = sec.querySelectorAll('.wcc-ba__radio');
       var buttons = sec.querySelectorAll('.wcc-ba__btn');
-      if (!radios.length) return;
-      function sync() {
-        var checked = sec.querySelector('.wcc-ba__radio:checked');
-        var showBefore = !!checked && checked.value === 'before';
+      if (!buttons.length) return;
+
+      function setState(state) {
+        var showBefore = state === 'before';
+        sec.dataset.baState = showBefore ? 'before' : 'after';
         sec.classList.toggle('show-before', showBefore);
+        sec.classList.toggle('show-after', !showBefore);
+
         buttons.forEach(function (btn) {
           var state = btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after');
-          btn.setAttribute('aria-pressed', state === (showBefore ? 'before' : 'after') ? 'true' : 'false');
+          var active = state === (showBefore ? 'before' : 'after');
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        sec.querySelectorAll('.wcc-ba__img--before, .wcc-ba__pill--before').forEach(function (el) {
+          el.style.opacity = showBefore ? '1' : '0';
+        });
+        sec.querySelectorAll('.wcc-ba__img--after, .wcc-ba__pill--after').forEach(function (el) {
+          el.style.opacity = showBefore ? '0' : '1';
         });
       }
-      function setState(state) {
-        radios.forEach(function (radio) { radio.checked = radio.value === state; });
-        sync();
-      }
-      radios.forEach(function (r) { r.addEventListener('change', sync); });
+
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function (event) {
           event.preventDefault();
@@ -149,8 +154,39 @@
           setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
         });
       });
-      sync();
+
+      var beforeTarget = sec.querySelector('.wcc-ba__target--before');
+      var initial = beforeTarget && window.location.hash === '#' + beforeTarget.id ? 'before' : (sec.dataset.baState || 'after');
+      setState(initial);
     });
+  }
+
+  /* ---- Instagram embed ---- */
+  function initInstagram() {
+    if (!root.querySelector('blockquote.instagram-media')) return;
+
+    function processEmbeds() {
+      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
+        window.instgrm.Embeds.process();
+      }
+    }
+
+    if (window.instgrm && window.instgrm.Embeds) {
+      processEmbeds();
+      return;
+    }
+
+    if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.instagram.com/embed.js';
+      script.onload = processEmbeds;
+      document.head.appendChild(script);
+      return;
+    }
+
+    setTimeout(processEmbeds, 800);
+    window.addEventListener('load', processEmbeds);
   }
 
   initReveal();
@@ -158,5 +194,6 @@
   initVideo();
   initVideoGallery();
   initBeforeAfter();
+  initInstagram();
   requestAnimationFrame(function () { root.classList.add('loaded'); });
 })();

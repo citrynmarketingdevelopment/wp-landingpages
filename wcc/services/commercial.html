@@ -1,4 +1,4 @@
-<!-- wcc build: 2026-07-29 | revision: gitpress-interactions-2026-07-29-v2 | page: commercial | render_mode: theme_wrapped -->
+<!-- wcc build: 2026-07-29 | revision: gitpress-interactions-2026-07-29-v3 | page: commercial | render_mode: theme_wrapped -->
 <style>
 /* ============================================================
    West Coast Construction Group shared design system (v2)
@@ -430,7 +430,10 @@
   box-shadow: 0 2px 6px rgba(20,20,20,.06);
 }
 .wcc-ba__intro { max-width: 52ch; }
-.wcc-ba__radio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.wcc-ba__target {
+  display: block; position: relative; top: -96px; width: 1px; height: 1px;
+  overflow: hidden; pointer-events: none;
+}
 .wcc-ba__btn {
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--font-head); text-transform: uppercase; letter-spacing: .12em;
@@ -438,7 +441,13 @@
   color: var(--ink); cursor: pointer; user-select: none;
   transition: background .25s ease, color .25s ease;
 }
+.wcc-ba__btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .wcc-ba__btn:hover { background: var(--paper-2); }
+.wcc-ba__btn.is-active,
+.wcc-ba-sec[data-ba-state="after"] .wcc-ba__btn--after,
+.wcc-ba-sec.show-after .wcc-ba__btn--after {
+  background: var(--accent); color: var(--ink);
+}
 .wcc-ba { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .wcc-ba__card { margin: 0; }
 .wcc-ba__frame {
@@ -460,22 +469,28 @@
 }
 .wcc-ba__pill--before { opacity: 0; }
 .wcc-ba__pill--after { opacity: 1; }
-/* The radios are direct children before the controls and gallery. General
-   sibling selectors survive GitPress and work even if every script is stripped. */
-.wcc-ba__radio--before:checked ~ .wcc-ba__head .wcc-ba__btn--before,
-.wcc-ba__radio--after:checked ~ .wcc-ba__head .wcc-ba__btn--after {
+/* Hash targets survive WordPress form filtering and still work if scripts fail. */
+#wcc-ba-before:target ~ .wcc-ba__head .wcc-ba__btn--before,
+#wcc-ba-after:target ~ .wcc-ba__head .wcc-ba__btn--after,
+.wcc-ba-sec[data-ba-state="before"] .wcc-ba__btn--before,
+.wcc-ba-sec.show-before .wcc-ba__btn--before {
   background: var(--accent); color: var(--ink);
 }
-.wcc-ba__radio--before:focus-visible ~ .wcc-ba__head .wcc-ba__btn--before,
-.wcc-ba__radio--after:focus-visible ~ .wcc-ba__head .wcc-ba__btn--after {
-  outline: 3px solid var(--accent); outline-offset: 3px;
+#wcc-ba-before:target ~ .wcc-ba__head .wcc-ba__btn--after,
+.wcc-ba-sec[data-ba-state="before"] .wcc-ba__btn--after,
+.wcc-ba-sec.show-before .wcc-ba__btn--after {
+  background: transparent; color: var(--ink);
 }
-.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__img--before,
-.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__pill--before,
+#wcc-ba-before:target ~ .wcc-ba .wcc-ba__img--before,
+#wcc-ba-before:target ~ .wcc-ba .wcc-ba__pill--before,
+.wcc-ba-sec[data-ba-state="before"] .wcc-ba__img--before,
+.wcc-ba-sec[data-ba-state="before"] .wcc-ba__pill--before,
 .wcc-ba-sec.show-before .wcc-ba__img--before,
 .wcc-ba-sec.show-before .wcc-ba__pill--before { opacity: 1; }
-.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__img--after,
-.wcc-ba__radio--before:checked ~ .wcc-ba .wcc-ba__pill--after,
+#wcc-ba-before:target ~ .wcc-ba .wcc-ba__img--after,
+#wcc-ba-before:target ~ .wcc-ba .wcc-ba__pill--after,
+.wcc-ba-sec[data-ba-state="before"] .wcc-ba__img--after,
+.wcc-ba-sec[data-ba-state="before"] .wcc-ba__pill--after,
 .wcc-ba-sec.show-before .wcc-ba__img--after,
 .wcc-ba-sec.show-before .wcc-ba__pill--after { opacity: 0; }
 .wcc-ba__card figcaption {
@@ -493,23 +508,19 @@
   font-family: var(--font-head); color: var(--accent); letter-spacing: .06em;
   font-size: 1.15rem; margin-bottom: 22px; display: block;
 }
-.wcc-ig__gallery {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+.wcc-ig__embed {
+  min-height: 430px; display: flex; align-items: center; justify-content: center;
   border-top: 4px solid var(--accent); background: #fff; padding: 10px;
   border-radius: 12px; box-shadow: 0 34px 64px -36px rgba(0,0,0,.7);
 }
-.wcc-ig__tile { position: relative; overflow: hidden; aspect-ratio: 4/5; background: var(--carbon-2); }
-.wcc-ig__tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease, opacity .35s ease; }
-.wcc-ig__tile::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.12); transition: background .25s ease; }
-.wcc-ig__tile-icon {
-  position: absolute; z-index: 2; inset: 0; margin: auto; width: 42px; height: 42px;
-  display: grid; place-items: center; border-radius: 50%; color: #fff;
-  background: rgba(20,20,20,.78); opacity: 0; transform: scale(.85); transition: opacity .25s ease, transform .25s ease;
+.wcc-ig__embed blockquote.instagram-media {
+  margin: 0 !important; width: 100% !important; min-width: 0 !important;
+  max-width: 540px !important; border-radius: 8px !important;
 }
-.wcc-ig__tile-icon svg { width: 22px; height: 22px; }
-.wcc-ig__tile:hover img { transform: scale(1.06); }
-.wcc-ig__tile:hover::after { background: rgba(0,0,0,.28); }
-.wcc-ig__tile:hover .wcc-ig__tile-icon { opacity: 1; transform: scale(1); }
+.wcc-ig__embed-fallback {
+  display: grid; min-height: 340px; place-items: center; padding: 24px;
+  color: var(--ink); font-weight: 800; text-align: center;
+}
 /* grid children must be allowed to shrink below their content width */
 .wcc-ig > *, .wcc-split > *, .wcc-local > *, .wcc-signs > * { min-width: 0; }
 
@@ -788,28 +799,33 @@
     });
   }
 
-  /* ---- before/after toggle ----
-     The gallery already works with no JS via :has(). This mirrors the state onto
-     a class so engines without :has() support behave identically. */
+  /* ---- before/after toggle ---- */
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
-      var radios = sec.querySelectorAll('.wcc-ba__radio');
       var buttons = sec.querySelectorAll('.wcc-ba__btn');
-      if (!radios.length) return;
-      function sync() {
-        var checked = sec.querySelector('.wcc-ba__radio:checked');
-        var showBefore = !!checked && checked.value === 'before';
+      if (!buttons.length) return;
+
+      function setState(state) {
+        var showBefore = state === 'before';
+        sec.dataset.baState = showBefore ? 'before' : 'after';
         sec.classList.toggle('show-before', showBefore);
+        sec.classList.toggle('show-after', !showBefore);
+
         buttons.forEach(function (btn) {
           var state = btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after');
-          btn.setAttribute('aria-pressed', state === (showBefore ? 'before' : 'after') ? 'true' : 'false');
+          var active = state === (showBefore ? 'before' : 'after');
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        sec.querySelectorAll('.wcc-ba__img--before, .wcc-ba__pill--before').forEach(function (el) {
+          el.style.opacity = showBefore ? '1' : '0';
+        });
+        sec.querySelectorAll('.wcc-ba__img--after, .wcc-ba__pill--after').forEach(function (el) {
+          el.style.opacity = showBefore ? '0' : '1';
         });
       }
-      function setState(state) {
-        radios.forEach(function (radio) { radio.checked = radio.value === state; });
-        sync();
-      }
-      radios.forEach(function (r) { r.addEventListener('change', sync); });
+
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function (event) {
           event.preventDefault();
@@ -821,8 +837,39 @@
           setState(btn.dataset.baState || (btn.classList.contains('wcc-ba__btn--before') ? 'before' : 'after'));
         });
       });
-      sync();
+
+      var beforeTarget = sec.querySelector('.wcc-ba__target--before');
+      var initial = beforeTarget && window.location.hash === '#' + beforeTarget.id ? 'before' : (sec.dataset.baState || 'after');
+      setState(initial);
     });
+  }
+
+  /* ---- Instagram embed ---- */
+  function initInstagram() {
+    if (!root.querySelector('blockquote.instagram-media')) return;
+
+    function processEmbeds() {
+      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
+        window.instgrm.Embeds.process();
+      }
+    }
+
+    if (window.instgrm && window.instgrm.Embeds) {
+      processEmbeds();
+      return;
+    }
+
+    if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.instagram.com/embed.js';
+      script.onload = processEmbeds;
+      document.head.appendChild(script);
+      return;
+    }
+
+    setTimeout(processEmbeds, 800);
+    window.addEventListener('load', processEmbeds);
   }
 
   initReveal();
@@ -830,6 +877,7 @@
   initVideo();
   initVideoGallery();
   initBeforeAfter();
+  initInstagram();
   requestAnimationFrame(function () { root.classList.add('loaded'); });
 })();
 
