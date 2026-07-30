@@ -2,6 +2,14 @@
 
 These entries are written to stay within practical Yoast length targets for title and description fields.
 
+## Core Service Pages
+
+### `revenue-cycle-management.html` → `/revenue-cycle-management/`
+- Focus keyphrase: `revenue cycle management services`
+- Meta title: `Revenue Cycle Management Services | Optimax`
+- Meta description: `Improve cash flow, reduce claim denials, lower days in A/R, and strengthen financial performance with Optimax end-to-end revenue cycle management.`
+- Sibling pages: `/coding/`, `/credentialing/` — the WordPress global nav is the source of truth for cross-linking between the three core service pages; this page's own body no longer includes an in-content subnav (removed per client feedback, see file header note).
+
 ## Orange County, CA
 
 ### `revenue-cycle-management-orange-county-ca.html`

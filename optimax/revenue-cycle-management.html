@@ -1,0 +1,1416 @@
+<!-- webhook retrigger 2026-07-30 rcm-page -->
+<!--
+  Converted from optimax/reference html/rev-cycle-example.html (client mockup) into a
+  GitPress body partial matching the coding.html / credentialing.html house style (.rcm-page
+  scoped classes, Plus Jakarta Sans + Poppins, no header/footer, no JS).
+
+  Removed from the mockup, per client feedback:
+    - standalone <header>/nav/logo <img> and <footer>/logo <img> — the real WP theme
+      header/footer + global nav already provide these in theme_wrapped mode; keeping the
+      mockup's own copy would duplicate them on the live page.
+    - trust-bar (6-item checkmark strip) and the "Explore Optimax Services" subnav tab bar —
+      redundant with the site's real global navigation.
+    - all JS (scroll-reveal animation, animated KPI counters, the executive-dashboard mock
+      widget) — coding.html/credentialing.html ship fully static, so this page matches.
+    - the raw <form> in the final CTA (its own comment admitted it wasn't wired to a real
+      endpoint) — replaced with the [gravityform id="1"] shortcode pattern used on the two
+      sibling pages. Confirm the actual RCM form's Gravity Forms ID before publishing if it
+      differs from id 1.
+    - several inline style="..." attributes in the mockup — moved to CSS classes, since the
+      GitPress sanitizer can strip inline style attributes on the live page.
+
+  Hero background reuses the existing, already-live medical-billing-hero.webp from
+  coding.html. Swap in a dedicated RCM photo if/when the client provides one.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800');
+
+  .rcm-page {
+    --navy: #0d2335;
+    --blue: #234275;
+    --blue-mid: #3b75ac;
+    --sky: #eaf5fb;
+    --orange: #ff914d;
+    --orange-dark: #ef7d1d;
+    --ink: #0d2335;
+    --copy: #44535f;
+    --muted: #6a7b88;
+    --line: rgba(33, 74, 131, .14);
+    --white: #fff;
+    --soft: #f6f9fd;
+    --shadow: 0 24px 58px rgba(13, 35, 53, .13);
+    --card-shadow: 0 14px 34px rgba(13, 35, 53, .1);
+    --max: 1160px;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+    color: var(--ink) !important;
+    background: linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%);
+    overflow: hidden;
+  }
+
+  .rcm-page *,
+  .rcm-page *::before,
+  .rcm-page *::after {
+    box-sizing: border-box;
+  }
+
+  .rcm-page h1,
+  .rcm-page h2,
+  .rcm-page h3,
+  .rcm-page h4,
+  .rcm-page h5,
+  .rcm-page h6,
+  .rcm-page p,
+  .rcm-page ul,
+  .rcm-page ol,
+  .rcm-page li,
+  .rcm-page figure,
+  .rcm-page blockquote {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .rcm-page img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .rcm-page a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .rcm-page .wrap {
+    width: min(calc(100% - 28px), var(--max));
+    margin: 0 auto;
+  }
+
+  .rcm-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 13px 30px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: .96rem;
+    transition: transform .25s ease, filter .25s ease, background-color .25s ease;
+  }
+
+  .rcm-page .btn-orange {
+    background: var(--orange);
+    color: var(--white) !important;
+    box-shadow: 0 12px 26px rgba(255, 145, 77, .34);
+  }
+
+  .rcm-page .btn-orange:hover {
+    filter: brightness(106%);
+    transform: translateY(-2px);
+  }
+
+  .rcm-page .btn-white {
+    background: var(--white);
+    color: var(--blue) !important;
+  }
+
+  .rcm-page .btn-white:hover {
+    filter: brightness(98%);
+    transform: translateY(-2px);
+  }
+
+  .rcm-page .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .rcm-page .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--orange) !important;
+    font-size: .78rem;
+    font-weight: 900;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+  }
+
+  .rcm-page .eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 3px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  /* Hero */
+  .rcm-page .rcm-hero {
+    position: relative;
+    padding: 130px 0 112px !important;
+    background:
+      linear-gradient(118deg, rgba(13, 35, 53, .96) 0%, rgba(20, 64, 95, .9) 54%, rgba(30, 95, 132, .82) 100%),
+      url('https://optimaxcs.net/wp-content/uploads/2025/01/medical-billing-hero.webp');
+    background-color: #10334d !important;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+
+  .rcm-page .rcm-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -120px -10%;
+    height: 210px;
+    background: #f9fbff;
+    transform: rotate(-3deg);
+    transform-origin: center;
+  }
+
+  .rcm-page .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(330px, .76fr);
+    gap: 46px;
+    align-items: center;
+  }
+
+  .rcm-page .hero-copy h1 {
+    margin-top: 18px;
+    color: var(--white) !important;
+    font-weight: 700;
+    font-size: clamp(2.3rem, 4.4vw, 4.1rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+    max-width: 860px;
+  }
+
+  .rcm-page .hero-copy p {
+    color: rgba(255, 255, 255, .9) !important;
+    line-height: 1.58;
+    font-weight: 300;
+    font-size: 1.08rem;
+    max-width: 700px;
+  }
+
+  .rcm-page .hero-copy .lead {
+    margin-top: 24px;
+  }
+
+  .rcm-page .hero-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, .24);
+    backdrop-filter: blur(12px);
+  }
+
+  .rcm-page .hero-card h2 {
+    color: var(--white) !important;
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.22;
+  }
+
+  .rcm-page .check-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+    list-style: none;
+  }
+
+  .rcm-page .check-list li {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    color: rgba(255, 255, 255, .92) !important;
+    line-height: 1.48;
+  }
+
+  .rcm-page .check-list li::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--orange);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* dark-on-light checklist used outside the hero */
+  .rcm-page .check-list.on-light li {
+    color: var(--ink) !important;
+    font-weight: 600;
+  }
+
+  .rcm-page .check-list.on-light li::before {
+    background: var(--sky);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%233b75ac' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  }
+
+  /* Feature band */
+  .rcm-page .feature-band {
+    position: relative;
+    z-index: 4;
+    margin-top: -52px;
+  }
+
+  .rcm-page .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px rgba(13, 35, 53, .22);
+  }
+
+  .rcm-page .feature-tile {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    min-height: 148px;
+    padding: 28px 30px;
+    color: var(--white) !important;
+  }
+
+  .rcm-page .feature-tile:nth-child(1) {
+    background: var(--orange);
+  }
+
+  .rcm-page .feature-tile:nth-child(2) {
+    background: var(--blue-mid);
+  }
+
+  .rcm-page .feature-tile:nth-child(3) {
+    background: var(--blue);
+  }
+
+  .rcm-page .feature-tile h3 {
+    color: var(--white) !important;
+    font-size: 1.08rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .rcm-page .feature-tile p {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .88) !important;
+    font-size: .94rem;
+    line-height: 1.48;
+  }
+
+  .rcm-page .ico {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: currentColor;
+  }
+
+  .rcm-page .ico svg {
+    width: 42px;
+    height: 42px;
+    display: block;
+  }
+
+  /* Sections */
+  .rcm-page .section {
+    padding: 78px 0;
+  }
+
+  .rcm-page .section-head {
+    max-width: 830px;
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .rcm-page .section-head.left {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .rcm-page .section-head h2 {
+    color: var(--navy) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(2rem, 3.2vw, 3.05rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: 0;
+  }
+
+  .rcm-page .section-head p {
+    margin-top: 16px;
+    color: var(--copy) !important;
+    font-size: 1.04rem;
+    line-height: 1.75;
+  }
+
+  .rcm-page .soft-section {
+    background: var(--soft);
+  }
+
+  /* Problem: two-column pain-point checklist */
+  .rcm-page .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Workflow stage strip */
+  .rcm-page .workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 40px;
+  }
+
+  .rcm-page .workflow-step {
+    position: relative;
+    min-height: 168px;
+    padding: 22px 12px;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    text-align: center;
+    box-shadow: var(--card-shadow);
+  }
+
+  .rcm-page .workflow-step.is-focus {
+    border-color: rgba(255, 145, 77, .5);
+    box-shadow: 0 16px 34px rgba(239, 125, 29, .18);
+  }
+
+  .rcm-page .workflow-step:not(:last-child)::after {
+    content: "\203A";
+    position: absolute;
+    right: -9px;
+    top: 45%;
+    color: var(--orange-dark);
+    font-size: 1.5rem;
+    font-weight: 900;
+    z-index: 2;
+  }
+
+  .rcm-page .workflow-num {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--sky);
+    color: var(--blue-mid) !important;
+    font-weight: 900;
+    font-size: .85rem;
+  }
+
+  .rcm-page .workflow-step.is-focus .workflow-num {
+    background: var(--orange);
+    color: var(--white) !important;
+  }
+
+  .rcm-page .workflow-step strong {
+    display: block;
+    color: var(--navy) !important;
+    font-size: .82rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .rcm-page .workflow-step span {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted) !important;
+    font-size: .74rem;
+    line-height: 1.35;
+  }
+
+  /* Financial impact */
+  .rcm-page .stat-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 760px;
+    margin: 0 auto 40px;
+  }
+
+  .rcm-page .stat-card {
+    position: relative;
+    padding: 26px;
+    border-radius: 8px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--card-shadow);
+  }
+
+  .rcm-page .stat-card.featured {
+    border-color: rgba(255, 145, 77, .36);
+    background: linear-gradient(135deg, #fff 0%, #fff8f3 100%);
+  }
+
+  .rcm-page .stat-kicker {
+    color: var(--orange-dark) !important;
+    font-size: .78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+  }
+
+  .rcm-page .stat-card strong {
+    display: block;
+    margin-top: 8px;
+    color: var(--navy) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(1.55rem, 2.4vw, 2.25rem);
+    line-height: 1.05;
+  }
+
+  .rcm-page .stat-card p {
+    margin-top: 12px;
+    color: var(--copy) !important;
+    line-height: 1.62;
+  }
+
+  .rcm-page .impact-example {
+    padding: 34px;
+    border-radius: 8px;
+    background: var(--navy);
+    box-shadow: var(--shadow);
+  }
+
+  .rcm-page .impact-example-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.18;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .rcm-page .impact-example-title::before,
+  .rcm-page .impact-example-title::after {
+    content: "";
+    flex: 1 1 44px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3));
+  }
+
+  .rcm-page .impact-example-title::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, .3), transparent);
+  }
+
+  .rcm-page .impact-flow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .rcm-page .impact-flow-step {
+    padding: 22px 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .16);
+    text-align: center;
+  }
+
+  .rcm-page .impact-flow-step strong {
+    display: block;
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.05;
+  }
+
+  .rcm-page .impact-flow-step span {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .78) !important;
+    font-size: .86rem;
+    line-height: 1.42;
+  }
+
+  .rcm-page .impact-note {
+    margin-top: 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, .58) !important;
+    font-size: .78rem !important;
+    line-height: 1.5;
+  }
+
+  /* Service accordion */
+  .rcm-page .service-accordion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 6px;
+  }
+
+  .rcm-page .service-detail {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .rcm-page .service-detail[open] {
+    border-color: rgba(59, 117, 172, .4);
+    box-shadow: 0 18px 38px rgba(13, 35, 53, .1);
+  }
+
+  .rcm-page .service-detail summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 19px 21px;
+    font-weight: 800;
+    color: var(--navy) !important;
+  }
+
+  .rcm-page .service-detail summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .rcm-page .service-detail .ico {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    margin: 0;
+    border-radius: 10px;
+    background: var(--sky);
+    color: var(--blue-mid) !important;
+  }
+
+  .rcm-page .service-detail .ico svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rcm-page .service-title {
+    flex: 1;
+  }
+
+  .rcm-page .service-toggle {
+    font-size: 1.35rem;
+    color: var(--orange-dark) !important;
+    transition: transform .2s ease;
+  }
+
+  .rcm-page .service-detail[open] .service-toggle {
+    transform: rotate(45deg);
+  }
+
+  .rcm-page .service-body {
+    padding: 0 21px 22px 76px;
+  }
+
+  .rcm-page .service-body p {
+    color: var(--copy) !important;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .rcm-page .service-body ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--copy) !important;
+  }
+
+  .rcm-page .service-body li {
+    margin-bottom: 5px;
+    color: var(--copy) !important;
+    line-height: 1.55;
+  }
+
+  /* Flexible solutions callout */
+  .rcm-page .flex-callout-section {
+    padding-top: 0;
+  }
+
+  .rcm-page .flex-callout {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 26px 30px;
+    background: var(--white);
+    border-left: 4px solid var(--orange);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .rcm-page .flex-callout h2 {
+    color: var(--navy) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .rcm-page .flex-callout p {
+    margin-top: 10px;
+    color: var(--copy) !important;
+    line-height: 1.7;
+  }
+
+  .rcm-page .flex-callout strong {
+    color: var(--navy) !important;
+    font-weight: 800;
+  }
+
+  /* Why Optimax / content cards */
+  .rcm-page .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .rcm-page .content-card {
+    min-height: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--card-shadow);
+  }
+
+  .rcm-page .content-card .card-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: var(--sky);
+    color: var(--blue-mid) !important;
+  }
+
+  .rcm-page .content-card .card-icon svg {
+    width: 29px;
+    height: 29px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rcm-page .content-card h3 {
+    color: var(--navy) !important;
+    font-size: 1.22rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .rcm-page .content-card p {
+    margin-top: 11px;
+    color: var(--copy) !important;
+    line-height: 1.68;
+  }
+
+  /* Outcome chips */
+  .rcm-page .outcome-band {
+    background:
+      radial-gradient(circle at 18% 20%, rgba(255, 145, 77, .1), transparent 30%),
+      linear-gradient(135deg, #eef4fb, #f6f9fd);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .rcm-page .outcome-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .rcm-page .outcome-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 13px 20px;
+    box-shadow: 0 8px 20px rgba(13, 35, 53, .06);
+  }
+
+  .rcm-page .outcome-chip .arrow {
+    color: var(--orange-dark) !important;
+    font-size: 1.2rem;
+    font-weight: 900;
+  }
+
+  .rcm-page .outcome-chip h3 {
+    color: var(--navy) !important;
+    font-size: .96rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  /* Specialty marquee */
+  .rcm-page .specialty-marquee {
+    overflow: hidden;
+    margin-top: 32px;
+    padding: 8px 0;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .rcm-page .specialty-track {
+    display: flex;
+    width: max-content;
+    gap: 14px;
+    animation: rcm-specialty-scroll 34s linear infinite;
+  }
+
+  .rcm-page .specialty-marquee:hover .specialty-track {
+    animation-play-state: paused;
+  }
+
+  .rcm-page .specialty-pill {
+    white-space: nowrap;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 13px 22px;
+    font-weight: 800;
+    color: var(--navy) !important;
+    background: var(--white);
+    box-shadow: 0 6px 18px rgba(13, 35, 53, .04);
+  }
+
+  @keyframes rcm-specialty-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rcm-page .specialty-track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+      justify-content: center;
+    }
+  }
+
+  /* Final CTA */
+  .rcm-page .cta-final .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    align-items: start;
+  }
+
+  .rcm-page .cta-final {
+    background: #f9fbff;
+  }
+
+  .rcm-page .cta-copy {
+    background: linear-gradient(118deg, #0d2335 0%, #14405f 60%, #1c5478 100%);
+    border-radius: 20px;
+    padding: 54px 48px;
+    min-height: 0;
+    height: fit-content;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: start;
+  }
+
+  .rcm-page .cta-copy .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .rcm-page .cta-copy h2 {
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .rcm-page .cta-copy p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .88) !important;
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .rcm-page .cta-copy .check-list {
+    margin-top: 26px;
+  }
+
+  .rcm-page .form-shell {
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .rcm-page .form-embed {
+    margin: 0;
+    width: 100%;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px 22px;
+    text-align: left;
+    border: 1px solid rgba(33, 74, 131, .12);
+    box-shadow: 0 20px 42px rgba(13, 35, 53, .14);
+  }
+
+  @media (min-width: 981px) {
+    body.dgs-theme-wrapped.dgs-full-width-content #main-content .dgs-gitpress-content .rcm-page .rcm-hero {
+      padding-top: 108px !important;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .rcm-page .rcm-hero {
+      padding: 92px 0 92px !important;
+    }
+
+    .rcm-page .hero-grid,
+    .rcm-page .impact-flow,
+    .rcm-page .cta-final .wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .rcm-page .feature-grid,
+    .rcm-page .card-grid,
+    .rcm-page .problem-grid,
+    .rcm-page .stat-stack,
+    .rcm-page .service-accordion {
+      grid-template-columns: 1fr;
+    }
+
+    .rcm-page .workflow-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .rcm-page .workflow-step::after {
+      display: none;
+    }
+
+    .rcm-page .impact-example-title {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .rcm-page .section {
+      padding: 58px 0;
+    }
+
+    .rcm-page .hero-copy h1 {
+      font-size: clamp(2.1rem, 12vw, 3.25rem);
+    }
+
+    .rcm-page .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .rcm-page .btn {
+      width: 100%;
+      padding-left: 18px;
+      padding-right: 18px;
+      text-align: center;
+    }
+
+    .rcm-page .hero-card,
+    .rcm-page .content-card,
+    .rcm-page .stat-card,
+    .rcm-page .impact-example,
+    .rcm-page .cta-copy,
+    .rcm-page .flex-callout {
+      padding: 24px;
+    }
+
+    .rcm-page .cta-copy {
+      min-height: 0;
+    }
+
+    .rcm-page .form-embed {
+      padding: 20px 18px;
+    }
+
+    .rcm-page .feature-tile {
+      padding: 24px;
+    }
+
+    .rcm-page .workflow-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rcm-page .impact-flow-step strong {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+<main class="rcm-page">
+  <!-- HERO -->
+  <section class="rcm-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">End-to-End Revenue Cycle Management</p>
+        <h1>Maximize Revenue. Accelerate Cash Flow. Strengthen Financial Performance.</h1>
+        <p class="lead">Optimax helps healthcare organizations overcome rising denials, staffing pressure, payer complexity, and revenue leakage through a complete revenue cycle solution built around measurable financial performance.</p>
+        <div class="hero-actions">
+          <a class="btn btn-orange" href="https://optimaxcs.net/contact-us/">Schedule a Free RCM Assessment</a>
+          <a class="btn btn-white" href="tel:+18889591014">Call (888) 959-1014</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="What Optimax RCM delivers">
+        <h2>What Optimax RCM Delivers</h2>
+        <ul class="check-list">
+          <li>Reduce claim denials</li>
+          <li>Improve clean claim performance</li>
+          <li>Lower days in A/R</li>
+          <li>Increase net collections</li>
+          <li>Gain executive visibility</li>
+          <li>Reduce administrative burden</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FEATURE BAND -->
+  <section class="feature-band">
+    <div class="wrap">
+      <div class="feature-grid">
+        <div class="feature-tile">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>
+            </svg>
+          </span>
+          <div>
+            <h3>End-to-End Coverage</h3>
+            <p>Registration through analytics, managed as one connected workflow instead of disconnected billing tasks.</p>
+          </div>
+        </div>
+        <div class="feature-tile">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3 6 6 .8-4.5 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 8.8 9 8z"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Certified Coding Expertise</h3>
+            <p>Accurate, defensible coding and documentation review that protects reimbursement across specialties.</p>
+          </div>
+        </div>
+        <div class="feature-tile">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/>
+              <path d="m19 9-5 5-4-4-4 4"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Executive-Level Visibility</h3>
+            <p>KPI dashboards and reporting that translate operational activity into decision-ready financial data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section id="problem" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The Problem</p>
+        <h2>Healthcare Organizations Are Experiencing More Revenue Cycle Pressures Than Ever</h2>
+        <p>Organizations are being asked to collect more revenue with fewer resources while navigating increasingly complex payer rules, patient responsibility, documentation requirements, and regulatory demands. Revenue leakage rarely comes from one major failure &mdash; it develops through small breakdowns across patient access, coding, claims, payment posting, denial follow-up, and patient collections.</p>
+      </div>
+      <div class="problem-grid">
+        <ul class="check-list on-light">
+          <li>Rising claim denials</li>
+          <li>Delayed reimbursements</li>
+          <li>Increasing A/R</li>
+          <li>Preventable write-offs</li>
+        </ul>
+        <ul class="check-list on-light">
+          <li>Staffing and training gaps</li>
+          <li>Documentation deficiencies</li>
+          <li>Underpayments</li>
+          <li>Limited KPI visibility</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW / WHERE REVENUE LEAKS -->
+  <section id="leakage" class="section soft-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Where Performance Breaks Down</p>
+        <h2>Revenue Leakage Can Occur at Every Stage</h2>
+        <p>A high-performing revenue cycle requires connected workflows, clear ownership with tracking and accountability, trained people, and consistent performance management.</p>
+      </div>
+      <div class="workflow-grid" aria-label="Revenue cycle workflow from registration through analytics">
+        <div class="workflow-step"><div class="workflow-num">1</div><strong>Registration</strong><span>Demographics</span></div>
+        <div class="workflow-step"><div class="workflow-num">2</div><strong>Eligibility</strong><span>Coverage</span></div>
+        <div class="workflow-step"><div class="workflow-num">3</div><strong>Authorization</strong><span>Approval</span></div>
+        <div class="workflow-step"><div class="workflow-num">4</div><strong>Charge Capture</strong><span>Omissions</span></div>
+        <div class="workflow-step is-focus"><div class="workflow-num">5</div><strong>Coding</strong><span>Accuracy</span></div>
+        <div class="workflow-step"><div class="workflow-num">6</div><strong>Claims</strong><span>Rejections</span></div>
+        <div class="workflow-step"><div class="workflow-num">7</div><strong>Remittance</strong><span>Underpayments</span></div>
+        <div class="workflow-step"><div class="workflow-num">8</div><strong>Denials &amp; A/R</strong><span>Follow-up</span></div>
+        <div class="workflow-step"><div class="workflow-num">9</div><strong>Analytics</strong><span>Visibility</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL IMPACT -->
+  <section id="impact" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The Financial Impact</p>
+        <h2>Small Revenue Cycle Problems Create Significant Financial Consequences</h2>
+        <p>Every avoidable denial, delayed charge, coding error, underpayment, and unresolved balance increases the cost to collect and weakens cash flow.</p>
+      </div>
+
+      <div class="stat-stack">
+        <div class="stat-card featured">
+          <span class="stat-kicker">Industry Benchmark</span>
+          <strong>5% to 15%</strong>
+          <p>Ambulatory organizations may experience initial claim denial rates in this range, creating rework and delaying reimbursement.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-kicker">AMA Coding Estimate</span>
+          <strong>Up to 12%</strong>
+          <p>Claims may be submitted with coding inaccuracies that contribute to denials, delayed payments, and missed reimbursement.</p>
+        </div>
+      </div>
+
+      <div class="impact-example" aria-label="Illustrative cumulative revenue cycle financial impact">
+        <h3 class="impact-example-title">The Compounding Financial Impact</h3>
+        <div class="impact-flow">
+          <div class="impact-flow-step">
+            <strong>8% / $880K</strong>
+            <span>Initial denials requiring follow-up or rework</span>
+          </div>
+          <div class="impact-flow-step">
+            <strong>12% / $1.2M</strong>
+            <span>Potential revenue exposed to coding inaccuracies</span>
+          </div>
+          <div class="impact-flow-step">
+            <strong>+ Labor &amp; Aging A/R</strong>
+            <span>Additional staff time and slower-moving receivables</span>
+          </div>
+        </div>
+        <p class="impact-note">Illustration only. These categories may overlap and should not be added together as a precise loss calculation. Actual financial impact depends on claim volume, payer mix, denial causes, coding accuracy, recovery rates, staffing, and other factors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution" class="section soft-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How Optimax Solves It</p>
+        <h2>Revenue Cycle Management Designed Around Financial Performance</h2>
+        <p>Optimax combines end-to-end operational support, certified coding expertise, quality assurance, denial management, and executive analytics to improve financial performance across every stage of the revenue cycle &mdash; not just individual billing activities.</p>
+      </div>
+
+      <div class="service-accordion">
+        <details class="service-detail" open>
+          <summary>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20v-9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9M8 9V5a4 4 0 0 1 8 0v4M8 14h8M12 11v6"/></svg>
+            </span>
+            <span class="service-title">Patient Access &amp; Eligibility</span>
+            <span class="service-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-body">
+            <p>Improve front-end accuracy before services are billed.</p>
+            <ul>
+              <li>Demographic review</li>
+              <li>Insurance eligibility</li>
+              <li>Authorization support</li>
+              <li>Patient responsibility workflows</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-detail">
+          <summary>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h5M9 8h2"/></svg>
+            </span>
+            <span class="service-title">Charge Capture &amp; Coding</span>
+            <span class="service-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-body">
+            <p>Support complete, accurate, and compliant billing.</p>
+            <ul>
+              <li>Certified coding professionals</li>
+              <li>Documentation review</li>
+              <li>Charge capture controls</li>
+              <li>Specialty-specific expertise</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-detail">
+          <summary>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16v12H4zM7 4h10v3M7 12h10M7 16h6"/></svg>
+            </span>
+            <span class="service-title">Claim Management</span>
+            <span class="service-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-body">
+            <p>Submit cleaner claims and resolve issues earlier.</p>
+            <ul>
+              <li>Claim editing and submission</li>
+              <li>Rejection management</li>
+              <li>Payer follow-up</li>
+              <li>Timely filing controls</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-detail">
+          <summary>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM7 10h4M7 14h7M17 10h1"/></svg>
+            </span>
+            <span class="service-title">Remittance Processing</span>
+            <span class="service-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-body">
+            <p>Protect revenue through accurate posting and reconciliation.</p>
+            <ul>
+              <li>Payment posting</li>
+              <li>Adjustment review</li>
+              <li>Secondary processing</li>
+              <li>Contract variance identification</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-detail">
+          <summary>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v18M17 7.5A4 4 0 0 0 13 5H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6h-4a4 4 0 0 1-4-2.5"/></svg>
+            </span>
+            <span class="service-title">Denial Management &amp; A/R</span>
+            <span class="service-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-body">
+            <p>Prioritize root causes, recovery, and prevention.</p>
+            <ul>
+              <li>Denial categorization</li>
+              <li>Appeals and follow-up</li>
+              <li>Aging A/R work queues</li>
+              <li>Root-cause reporting</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-detail">
+          <summary>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2M3 6l6-3 6 5 6-5"/></svg>
+            </span>
+            <span class="service-title">Quality Assurance &amp; Analytics</span>
+            <span class="service-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-body">
+            <p>Give leadership the visibility needed to drive improvement.</p>
+            <ul>
+              <li>Quality controls</li>
+              <li>KPI dashboards</li>
+              <li>Payer trend reporting</li>
+              <li>Executive performance reviews</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEXIBLE SOLUTIONS CALLOUT -->
+  <section class="section flex-callout-section">
+    <div class="wrap">
+      <div class="flex-callout">
+        <h2>Flexible Revenue Cycle Solutions</h2>
+        <p>Every healthcare organization has unique operational needs. Whether you need <strong>complete Revenue Cycle Management</strong> or expert support for a specific function &mdash; such as medical coding, denial management, credentialing, patient collections, or accounts receivable &mdash; <strong>Optimax delivers flexible solutions tailored to your organization.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY OPTIMAX -->
+  <section id="why-optimax" class="section soft-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why Optimax</p>
+        <h2>More Than Medical Billing</h2>
+        <p>Optimax acts as an extension of your organization, aligning revenue cycle operations with leadership priorities, patient experience, compliance, and financial goals.</p>
+      </div>
+      <div class="card-grid">
+        <div class="content-card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7zM8 12l2.5 2.5L16 9"/></svg>
+          </span>
+          <h3>Revenue Integrity Focus</h3>
+          <p>Identify process gaps, prevent avoidable leakage, and improve reimbursement reliability.</p>
+        </div>
+        <div class="content-card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .8-4.5 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 8.8 9 8z"/></svg>
+          </span>
+          <h3>Certified Coding Expertise</h3>
+          <p>Support accurate, defensible coding and documentation across multiple specialties.</p>
+        </div>
+        <div class="content-card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+          </span>
+          <h3>Executive-Level Reporting</h3>
+          <p>Translate operational activity into decision-ready financial and performance metrics.</p>
+        </div>
+        <div class="content-card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9M12 7v5l3 2M18 3v5h5"/></svg>
+          </span>
+          <h3>Quality Assurance</h3>
+          <p>Use structured controls, tracking, accountability, and trend analysis to improve consistency.</p>
+        </div>
+        <div class="content-card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20V10h6v10M14 20V4h6v16M2 20h20"/></svg>
+          </span>
+          <h3>Scalable Resources</h3>
+          <p>Adapt staffing and workflows as patient volume, provider count, and organizational needs change.</p>
+        </div>
+        <div class="content-card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 11a4 4 0 1 1 4-4M3 21v-2a6 6 0 0 1 12 0v2M17 11a4 4 0 0 1 0 8"/></svg>
+          </span>
+          <h3>Dedicated Client Support</h3>
+          <p>Maintain clear communication, shared priorities, and ongoing performance improvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" class="section outcome-band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The Measurable Business Outcome</p>
+        <h2>Operational Improvements That Strengthen Financial Performance</h2>
+        <p>A stronger revenue cycle produces faster collections, fewer preventable losses, and clearer financial visibility.</p>
+      </div>
+      <div class="outcome-chips">
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&darr;</span><h3>Fewer Denials</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&rarr;</span><h3>Faster Reimbursement</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&darr;</span><h3>Lower Days in A/R</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&uarr;</span><h3>Higher Net Collections</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&darr;</span><h3>Lower Administrative Burden</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&uarr;</span><h3>Greater Financial Visibility</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&uarr;</span><h3>Improved Compliance</h3></div>
+        <div class="outcome-chip"><span class="arrow" aria-hidden="true">&uarr;</span><h3>Scalable Operations</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Who We Support</p>
+        <h2>Revenue Cycle Expertise Across Healthcare Organizations</h2>
+        <p>Optimax supports independent practices, multi-specialty groups, ambulatory organizations, and hospital-based physician services nationwide.</p>
+      </div>
+      <div class="specialty-marquee" aria-label="Healthcare specialties supported">
+        <div class="specialty-track">
+          <span class="specialty-pill">Physician Practices</span>
+          <span class="specialty-pill">Multi-Specialty Groups</span>
+          <span class="specialty-pill">Behavioral Health</span>
+          <span class="specialty-pill">Cardiology</span>
+          <span class="specialty-pill">Orthopedics</span>
+          <span class="specialty-pill">Gastroenterology</span>
+          <span class="specialty-pill">Neurology</span>
+          <span class="specialty-pill">OB/GYN</span>
+          <span class="specialty-pill">Radiology</span>
+          <span class="specialty-pill">Pain Management</span>
+          <span class="specialty-pill">Ambulatory Surgery</span>
+          <span class="specialty-pill">Hospital-Based Groups</span>
+          <span class="specialty-pill" aria-hidden="true">Physician Practices</span>
+          <span class="specialty-pill" aria-hidden="true">Multi-Specialty Groups</span>
+          <span class="specialty-pill" aria-hidden="true">Behavioral Health</span>
+          <span class="specialty-pill" aria-hidden="true">Cardiology</span>
+          <span class="specialty-pill" aria-hidden="true">Orthopedics</span>
+          <span class="specialty-pill" aria-hidden="true">Gastroenterology</span>
+          <span class="specialty-pill" aria-hidden="true">Neurology</span>
+          <span class="specialty-pill" aria-hidden="true">OB/GYN</span>
+          <span class="specialty-pill" aria-hidden="true">Radiology</span>
+          <span class="specialty-pill" aria-hidden="true">Pain Management</span>
+          <span class="specialty-pill" aria-hidden="true">Ambulatory Surgery</span>
+          <span class="specialty-pill" aria-hidden="true">Hospital-Based Groups</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="section cta-final">
+    <div class="wrap">
+      <div class="cta-copy">
+        <p class="eyebrow">Complimentary Revenue Cycle Assessment</p>
+        <h2>Discover Where Revenue Is Being Lost</h2>
+        <p>Our assessment helps identify operational gaps, financial performance issues, and opportunities to strengthen the revenue cycle. Complete the intake form or call <strong>(888)&nbsp;959-1014</strong>.</p>
+        <ul class="check-list">
+          <li>Revenue leakage review</li>
+          <li>Denial trend analysis</li>
+          <li>Accounts receivable review</li>
+          <li>Coding and charge capture review</li>
+          <li>Workflow and staffing efficiency review</li>
+          <li>Executive recommendations</li>
+        </ul>
+      </div>
+      <div class="form-shell">
+        <div class="form-embed">
+          [gravityform id="1" title="false"]
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
