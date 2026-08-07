@@ -61,6 +61,20 @@
     });
   }
 
+  /* ---- video: no poster images. Seek a hair past 0 once metadata loads so
+     the browser paints the clip's own first frame instead of a black box
+     (Safari/iOS in particular won't paint anything until asked). Re-runs
+     automatically on every future load() since the listener stays bound. ---- */
+  function primeFirstFrame(vid) {
+    function seek() {
+      if (vid.readyState >= 1 && vid.currentTime === 0) {
+        try { vid.currentTime = 0.01; } catch (e) {}
+      }
+    }
+    vid.addEventListener('loadedmetadata', seek);
+    seek();
+  }
+
   /* ---- video: click-to-play so nothing autoplays or preloads ---- */
   function initVideo() {
     root.querySelectorAll('[data-video]').forEach(function (wrap) {
@@ -94,23 +108,18 @@
           thumbs.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
           btn.setAttribute('aria-pressed', 'true');
 
+          // Switching a thumb loads and previews the new clip's first frame;
+          // it does not auto-play. That keeps this consistent with the
+          // click-to-play design elsewhere, and avoids a real race where a
+          // concurrent play() attempt interrupts the first-frame seek below
+          // and leaves the player showing a blank/black frame instead.
           vid.pause();
+          g.classList.remove('is-playing');
           if (source) { source.setAttribute('src', btn.dataset.src); }
           else { vid.setAttribute('src', btn.dataset.src); }
-          vid.setAttribute('poster', btn.dataset.poster);
           vid.setAttribute('aria-label', btn.dataset.alt || btn.dataset.title || '');
           vid.load();
           if (now) now.textContent = btn.dataset.title;
-
-          // Clicking a thumb is a user gesture, so playback should be allowed.
-          // If a browser still blocks it, restore the play overlay.
-          var p = vid.play();
-          if (p && p.then) {
-            p.then(function () { g.classList.add('is-playing'); })
-             .catch(function () { g.classList.remove('is-playing'); });
-          } else {
-            g.classList.add('is-playing');
-          }
         });
       });
     });
@@ -200,6 +209,7 @@
   initFaq();
   initVideo();
   initVideoGallery();
+  root.querySelectorAll('.wcc-video__frame video, .wcc-vg__thumbvideo').forEach(primeFirstFrame);
   initBeforeAfter();
   initInstagram();
   requestAnimationFrame(function () { root.classList.add('loaded'); });

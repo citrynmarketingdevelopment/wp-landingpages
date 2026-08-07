@@ -22,6 +22,14 @@ SITE = DATA["site"]
 IDX  = DATA["pageIndex"]
 BASE = "https://wccgrp.com"   # confirmed from live asset URLs on the old pages
 MARK = datetime.date.today().isoformat()
+
+# Images committed to the GitHub repo are served through the jsDelivr CDN.
+# In content, write image paths as "asset:img/foo.jpg"; assemble() rewrites the
+# "asset:" prefix to this base for production, and preview_wrap() rewrites it to a
+# local path so the preview shows the images before anything is pushed.
+# NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
+# make it public, or upload these images to the WordPress media library instead.
+ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
 REVISION = "gitpress-interactions-2026-07-29-v6"
 
 # ---------------------------------------------------------------- icons
@@ -165,8 +173,11 @@ def related_block(ids, heading="Related services"):
 
 def video_gallery_section(v):
     """Dark band. Featured bracketed player plus a playlist rail that swaps the
-       source in. Nothing preloads or autoplays; the first item is usable with
-       native controls even if the gallery JS never runs."""
+       source in. No poster images: both the featured player and every rail
+       thumbnail are real <video> elements set to preload="metadata", and a
+       tiny JS nudge (see wcc.js primeFirstFrame) seeks to ~0.01s so the
+       browser paints the clip's own first frame instead of a black box.
+       Nothing plays or downloads in full until the visitor clicks."""
     items = v["items"]
     first = items[0]
     play_path = '<path d="M8 5v14l11-7z"/>'
@@ -175,10 +186,10 @@ def video_gallery_section(v):
     for i, it in enumerate(items):
         thumbs += (
             f'<button class="wcc-vg__thumb" type="button" aria-pressed="{"true" if i == 0 else "false"}" '
-            f'data-src="{it["src"]}" data-poster="{it["poster"]}" '
-            f'data-title="{e(it["title"])}" data-alt="{e(it["alt"])}">'
+            f'data-src="{it["src"]}" data-title="{e(it["title"])}" data-alt="{e(it["alt"])}">'
             f'<span class="wcc-vg__thumbimg">'
-            f'<img src="{it["poster"]}" loading="lazy" alt="" width="216" height="135">'
+            f'<video class="wcc-vg__thumbvideo" muted playsinline preload="metadata" '
+            f'aria-hidden="true" tabindex="-1"><source src="{it["src"]}" type="video/mp4"></video>'
             f'<span class="wcc-vg__badge" aria-hidden="true">'
             f'<svg viewBox="0 0 24 24" fill="currentColor">{play_path}</svg></span></span>'
             f'<span class="wcc-vg__label">{e(it["title"])}</span></button>')
@@ -193,7 +204,7 @@ def video_gallery_section(v):
             f'<div class="wcc-vg">'
             f'<div class="wcc-vg__stage" data-reveal>'
             f'<div class="wcc-video__frame">'
-            f'<video poster="{first["poster"]}" preload="none" playsinline controls '
+            f'<video preload="metadata" playsinline controls '
             f'aria-label="{e(first["alt"])}"><source src="{first["src"]}" type="video/mp4"></video>'
             f'<button class="wcc-video__play" type="button" aria-label="Play video">'
             f'<svg viewBox="0 0 24 24" fill="currentColor">{play_path}</svg></button></div>'
@@ -237,6 +248,20 @@ def before_after_section(b):
             f'<p class="lede">{e(b["intro"])}</p></div>'
             f'{switch}</div>'
             f'<div class="wcc-ba">{cards}</div>{note}'
+            f'</div></section>')
+
+def gallery_section(g):
+    """Simple project-photo grid for a service page (e.g. bathroom remodels)."""
+    imgs = "".join(
+        f'<figure class="wcc-gallery__item" data-reveal>'
+        f'<img src="{im["src"]}" loading="lazy" alt="{e(im["alt"])}"></figure>'
+        for im in g["images"])
+    note = f'<p class="wcc-ba__note">{e(g["note"])}</p>' if g.get("note") else ""
+    return (f'<section class="wcc-section wcc-section--alt"><div class="wcc-wrap">'
+            f'<div class="wcc-ba__intro" data-reveal><p class="kicker">{e(g["kicker"])}</p>'
+            f'<h2 class="wcc-heading-standard">{e(g["h2"])}</h2>'
+            f'<p class="lede">{e(g["intro"])}</p></div>'
+            f'<div class="wcc-gallery" style="margin-top:34px">{imgs}</div>{note}'
             f'</div></section>')
 
 def instagram_section(ig):
@@ -555,12 +580,14 @@ def build_service(sid):
             f'<p class="kicker">FAQ</p><h2 style="margin:12px 0 30px">Frequently asked questions</h2>'
             f'<div class="wcc-faq">{faq_block(d["faqs"])}</div></div></section>')
 
+    gallery = gallery_section(d["gallery"]) if d.get("gallery") else ""
+
     sc = d.get("cta", {})
     cta = final_cta(sc.get("h2", "Ready to start your project?"),
                     sc.get("p", "Tell us about your project and we will help you plan scope, timeline, and next steps."),
                     "Get an estimate", "/contact/", emergency=emg_page)
 
-    main = "".join([hero, band, overview, scope, signs, proc, local, why, faqs, cta])
+    main = "".join([hero, band, overview, scope, signs, proc, local, gallery, why, faqs, cta])
 
     graph = [website_node(), business_node(),
              webpage_node(IDX[sid]["url"], d["h1"], d["metaDescription"]),
@@ -570,7 +597,7 @@ def build_service(sid):
 
 # ---------------------------------------------------------------- assemble
 def assemble(page_id, main_html, jsonld):
-    return (f"<!-- wcc build: {MARK} | revision: {REVISION} | page: {page_id} | render_mode: theme_wrapped -->\n"
+    frag = (f"<!-- wcc build: {MARK} | revision: {REVISION} | page: {page_id} | render_mode: theme_wrapped -->\n"
             f"<style>\n{CSS}\n</style>\n\n"
             f'<div class="wcc wcc-has-sticky">\n'
             f"<main>\n{main_html}\n</main>\n"
@@ -578,6 +605,8 @@ def assemble(page_id, main_html, jsonld):
             f"</div>\n\n"
             f"{jsonld}\n"
             f"<script>\n{JS}\n</script>\n")
+    # resolve GitHub-hosted image references to the jsDelivr CDN
+    return frag.replace("asset:", ASSET_CDN)
 
 # ---------------------------------------------------------------- preview harness
 def placeholder(label, w, h):
@@ -598,7 +627,9 @@ def placeholder(label, w, h):
 
 def preview_wrap(fragment, title):
     # Real wccgrp.com image URLs are kept so the preview shows actual photos.
-    frag = fragment
+    # jsDelivr URLs aren't live until pushed, so point them at the local copies
+    # that main() mirrors into <preview_dir>/assets/.
+    frag = fragment.replace(ASSET_CDN, "assets/")
     nav = ('<div class="pv-top"><div class="pv-bar"><a class="pv-brand" href="#">WEST COAST '
            '<b>CONSTRUCTION</b> GRP</a><nav class="pv-nav"><a href="#">Home</a><a href="#">Services</a>'
            '<a href="#">Commercial</a><a href="#">Residential</a><a href="#">24/7 Emergency</a>'
@@ -639,6 +670,15 @@ def main():
     if "--preview" in sys.argv:
         preview_dir = sys.argv[sys.argv.index("--preview") + 1]
         os.makedirs(preview_dir, exist_ok=True)
+        # mirror committed assets into the preview dir so asset: URLs resolve locally
+        import shutil
+        for sub in ("img", "video"):
+            src = os.path.join(ROOT, "assets", sub)
+            if os.path.isdir(src):
+                dst = os.path.join(preview_dir, "assets", sub)
+                os.makedirs(dst, exist_ok=True)
+                for fn in os.listdir(src):
+                    shutil.copy2(os.path.join(src, fn), os.path.join(dst, fn))
 
     print("Building fragments:")
     pages = [("home.html", build_home, ())]

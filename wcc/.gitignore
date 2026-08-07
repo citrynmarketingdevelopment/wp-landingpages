@@ -1,0 +1,20 @@
+# Video is hosted on WordPress, never committed to GitHub.
+assets/time-lapse/
+assets/video-before-after/
+*.mp4
+*.mov
+*.m4v
+
+# Raw camera/MLS source photos. The web-optimized copies that the site
+# actually uses live in assets/img/ and ARE committed. These originals are
+# large and redundant; keep them out of the repo.
+before-after/
+assets/bathroom-remodels/
+
+# Throwaway local preview output
+_preview/
+
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store

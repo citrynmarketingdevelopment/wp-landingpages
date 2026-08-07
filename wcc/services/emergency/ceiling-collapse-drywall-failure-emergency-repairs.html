@@ -1,4 +1,4 @@
-<!-- wcc build: 2026-07-29 | revision: gitpress-interactions-2026-07-29-v6 | page: ceiling-collapse-drywall-failure-emergency-repairs | render_mode: theme_wrapped -->
+<!-- wcc build: 2026-08-06 | revision: gitpress-interactions-2026-07-29-v6 | page: ceiling-collapse-drywall-failure-emergency-repairs | render_mode: theme_wrapped -->
 <style>
 /* ============================================================
    West Coast Construction Group shared design system (v2)
@@ -350,12 +350,17 @@
 .wcc-js .wcc-servicegrid > *:nth-child(5) { transition-delay: .40s; }
 .wcc-js .wcc-servicegrid > *:nth-child(6) { transition-delay: .50s; }
 
-/* ---------- video (WordPress-hosted, click to play) ---------- */
+/* ---------- video (WordPress-hosted, click to play) ----------
+   Frame is portrait (9:16) to match the vertical phone clips in the gallery,
+   capped so it doesn't dominate the page, and centered in its column.
+   object-fit:contain (not cover) so nothing is ever cropped, even if a future
+   clip has a different aspect ratio - it letterboxes instead of cutting off. */
 .wcc-video__frame {
-  position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden;
-  background: #000; box-shadow: 0 40px 80px -40px rgba(0,0,0,.8);
+  position: relative; aspect-ratio: 9/16; max-width: 320px; margin-inline: auto;
+  border-radius: 14px; overflow: hidden; background: #000;
+  box-shadow: 0 40px 80px -40px rgba(0,0,0,.8);
 }
-.wcc-video__frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wcc-video__frame video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
 /* orange corner brackets */
 .wcc-video__frame::before, .wcc-video__frame::after {
   content: ""; position: absolute; width: 58px; height: 58px; border: 3px solid var(--accent);
@@ -380,14 +385,14 @@
 .wcc-video.is-playing .wcc-video__frame::after { opacity: 0; transition: opacity .3s ease; }
 
 /* ---------- video gallery: featured stage + playlist rail ---------- */
-.wcc-vg { display: grid; grid-template-columns: 1.8fr 1fr; gap: 22px; align-items: start; }
+.wcc-vg { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: 32px; align-items: start; }
 .wcc-vg__heading { margin: 12px 0 14px !important; max-width: 22ch; }
 .wcc-vg__intro { margin-bottom: 38px !important; max-width: 62ch; }
 .wcc-vg__now {
   margin-top: 16px; font-family: var(--font-head); font-size: 1.15rem;
-  letter-spacing: .02em; color: #fff !important;
+  letter-spacing: .02em; color: #fff !important; text-align: center;
 }
-.wcc-vg__count { color: var(--dim); font-size: .82rem; margin-top: 4px; }
+.wcc-vg__count { color: var(--dim); font-size: .82rem; margin-top: 4px; text-align: center; }
 .wcc-vg__rail {
   display: grid; gap: 12px; max-height: 486px; overflow-y: auto;
   padding-right: 6px; scrollbar-width: thin; scrollbar-color: var(--accent) rgba(255,255,255,.1);
@@ -396,15 +401,16 @@
 .wcc-vg__rail::-webkit-scrollbar-track { background: rgba(255,255,255,.08); border-radius: 3px; }
 .wcc-vg__rail::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 .wcc-vg__thumb {
-  display: grid; grid-template-columns: 108px 1fr; gap: 13px; align-items: center;
+  display: grid; grid-template-columns: 66px 1fr; gap: 13px; align-items: center;
   background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13);
   border-radius: 10px; padding: 9px; cursor: pointer; text-align: left; font: inherit; color: inherit;
   transition: background .22s ease, border-color .22s ease, transform .22s ease;
 }
 .wcc-vg__thumb:hover { background: rgba(255,255,255,.1); transform: translateX(3px); }
 .wcc-vg__thumb[aria-pressed="true"] { border-color: var(--accent); background: rgba(247,100,0,.14); }
-.wcc-vg__thumbimg { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 16/10; }
-.wcc-vg__thumbimg img { width: 100%; height: 100%; object-fit: cover; }
+/* portrait box to match the vertical phone clips; a light crop here is fine, a thumbnail is a preview, not the viewer */
+.wcc-vg__thumbimg { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 3/4; background: #000; }
+.wcc-vg__thumbimg img, .wcc-vg__thumbimg video { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
 .wcc-vg__thumbimg::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.3); }
 .wcc-vg__badge {
   position: absolute; inset: 0; margin: auto; width: 28px; height: 28px; border-radius: 50%;
@@ -447,14 +453,18 @@
 .wcc-ba-sec[data-ba-state="after"] .wcc-ba__btn--after {
   background: var(--accent); color: var(--ink);
 }
-.wcc-ba { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.wcc-ba { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; max-width: 860px; margin-inline: auto; }
 .wcc-ba__card { margin: 0; }
 .wcc-ba__frame {
-  position: relative; aspect-ratio: 4/5; border-radius: 12px; overflow: hidden;
+  position: relative; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden;
   box-shadow: var(--shadow); background: var(--carbon);
 }
+/* The image derives its OWN height from its width + aspect-ratio (both images
+   overlap at top-left and fully cover the square). height:100% is avoided
+   because it can't reliably resolve against an aspect-ratio container. */
 .wcc-ba__img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1 / 1;
+  object-fit: cover; object-position: center;
   transition: opacity .55s ease, transform .8s cubic-bezier(.2,.7,.2,1);
 }
 .wcc-ba__img--before { opacity: 0; }
@@ -497,6 +507,12 @@
 }
 .wcc-ba__sub { display: block; font-family: var(--font-body); font-size: .85rem; color: var(--ink-soft); margin-top: 3px; }
 .wcc-ba__note { margin-top: 22px; font-size: .85rem; color: var(--ink-soft); }
+
+/* ---------- project photo gallery (service page) ---------- */
+.wcc-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.wcc-gallery__item { margin: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); background: var(--carbon); }
+.wcc-gallery__item img { width: 100%; height: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.wcc-gallery__item:hover img { transform: scale(1.05); }
 
 /* ---------- instagram ---------- */
 .wcc-ig { display: grid; grid-template-columns: 1fr minmax(320px, 500px); gap: clamp(28px,4vw,60px); align-items: center; }
@@ -592,6 +608,7 @@
   .wcc-silos, .wcc-servicegrid, .wcc-related { grid-template-columns: 1fr; }
   .wcc-scope, .wcc-signs, .wcc-local, .wcc-split, .wcc-quotes, .wcc-ig { grid-template-columns: 1fr; }
   .wcc-ba { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .wcc-gallery { grid-template-columns: repeat(2, 1fr); }
   .wcc-local__media, .wcc-split__media { order: -1; }
   .wcc-emg { grid-template-columns: 1fr; }
   .wcc-emg__call { text-align: left; }
@@ -621,7 +638,7 @@
     overflow-x: auto; overflow-y: visible; scroll-snap-type: x mandatory;
     padding: 2px 2px 8px; gap: 10px;
   }
-  .wcc-vg__thumb { scroll-snap-align: start; grid-template-columns: 92px 1fr; }
+  .wcc-vg__thumb { scroll-snap-align: start; grid-template-columns: 58px 1fr; }
 }
 @media (max-width: 620px) {
   .wcc { font-size: 16px; }
@@ -635,6 +652,7 @@
   .wcc-trust__card .ico--box { width: 42px; height: 42px; }
   .wcc-why { grid-template-columns: 1fr; }
   .wcc-ba { grid-template-columns: 1fr; gap: 20px; }
+  .wcc-gallery { grid-template-columns: 1fr; }
 
   /* full-width, thumb-friendly CTAs */
   .wcc-hero__cta, .wcc-cta__actions { flex-direction: column; align-items: stretch; gap: 12px; }
@@ -651,9 +669,11 @@
   .wcc-video__play { width: 68px; height: 68px; }
   .wcc-video__play svg { width: 26px; height: 26px; }
   .wcc-video__frame::before, .wcc-video__frame::after { width: 34px; height: 34px; }
-  .wcc-video__frame { border-radius: 12px; }
-  .wcc-ba__switch { width: 100%; justify-content: stretch; }
-  .wcc-ba__btn { flex: 1; text-align: center; padding: .8em 1em; }
+  .wcc-video__frame { border-radius: 12px; max-width: 260px; }
+  /* auto margins center the toggle on its own wrapped line and keep it
+     sized to its content instead of stretching full width */
+  .wcc-ba__switch { margin-inline: auto; }
+  .wcc-ba__btn { padding: .8em 1.4em; }
   .wcc-ba__pill { font-size: .64rem; padding: 5px 9px; top: 12px; left: 12px; }
 
   .wcc-faq__q { font-size: 1.06rem; padding: 20px 0; gap: 14px; }
@@ -742,6 +762,20 @@
     });
   }
 
+  /* ---- video: no poster images. Seek a hair past 0 once metadata loads so
+     the browser paints the clip's own first frame instead of a black box
+     (Safari/iOS in particular won't paint anything until asked). Re-runs
+     automatically on every future load() since the listener stays bound. ---- */
+  function primeFirstFrame(vid) {
+    function seek() {
+      if (vid.readyState >= 1 && vid.currentTime === 0) {
+        try { vid.currentTime = 0.01; } catch (e) {}
+      }
+    }
+    vid.addEventListener('loadedmetadata', seek);
+    seek();
+  }
+
   /* ---- video: click-to-play so nothing autoplays or preloads ---- */
   function initVideo() {
     root.querySelectorAll('[data-video]').forEach(function (wrap) {
@@ -775,23 +809,18 @@
           thumbs.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
           btn.setAttribute('aria-pressed', 'true');
 
+          // Switching a thumb loads and previews the new clip's first frame;
+          // it does not auto-play. That keeps this consistent with the
+          // click-to-play design elsewhere, and avoids a real race where a
+          // concurrent play() attempt interrupts the first-frame seek below
+          // and leaves the player showing a blank/black frame instead.
           vid.pause();
+          g.classList.remove('is-playing');
           if (source) { source.setAttribute('src', btn.dataset.src); }
           else { vid.setAttribute('src', btn.dataset.src); }
-          vid.setAttribute('poster', btn.dataset.poster);
           vid.setAttribute('aria-label', btn.dataset.alt || btn.dataset.title || '');
           vid.load();
           if (now) now.textContent = btn.dataset.title;
-
-          // Clicking a thumb is a user gesture, so playback should be allowed.
-          // If a browser still blocks it, restore the play overlay.
-          var p = vid.play();
-          if (p && p.then) {
-            p.then(function () { g.classList.add('is-playing'); })
-             .catch(function () { g.classList.remove('is-playing'); });
-          } else {
-            g.classList.add('is-playing');
-          }
         });
       });
     });
@@ -881,6 +910,7 @@
   initFaq();
   initVideo();
   initVideoGallery();
+  root.querySelectorAll('.wcc-video__frame video, .wcc-vg__thumbvideo').forEach(primeFirstFrame);
   initBeforeAfter();
   initInstagram();
   requestAnimationFrame(function () { root.classList.add('loaded'); });

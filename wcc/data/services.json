@@ -121,63 +121,50 @@
       "kicker": "On the Job",
       "h2": "See the work for yourself",
       "intro": "Walk through recent residential and commercial projects across Bakersfield and Kern County, and see how our crews keep a job site organized from start to closeout.",
-      "note": "PLACEHOLDER VIDEOS: replace each source with a real project video uploaded to WordPress.",
+      "note": "Videos are hosted in the WordPress media library. Thumbnails show each clip's own first frame automatically. Confirm the before/after order and the titles.",
       "items": [
         {
-          "title": "Custom home build walkthrough",
-          "src": "https://wccgrp.com/wp-content/uploads/2026/03/wcc-custom-home-walkthrough.mp4",
-          "poster": "https://wccgrp.com/wp-content/uploads/2026/03/West-Coast-Construction-Homes.webp",
-          "alt": "Walkthrough of a custom home built by West Coast Construction Group in Bakersfield, CA"
+          "title": "Remodel walkthrough: before",
+          "src": "https://wccgrp.com/wp-content/uploads/2026/08/wcc-remodel-before.mp4",
+          "alt": "Before video of a remodel project by West Coast Construction Group in Bakersfield, CA"
         },
         {
-          "title": "Kitchen remodel, start to finish",
-          "src": "https://wccgrp.com/wp-content/uploads/2026/03/wcc-kitchen-remodel.mp4",
-          "poster": "https://wccgrp.com/wp-content/uploads/2026/03/Kitchen-remodel.webp",
-          "alt": "Kitchen remodel completed by West Coast Construction Group in Bakersfield"
+          "title": "Remodel walkthrough: after",
+          "src": "https://wccgrp.com/wp-content/uploads/2026/08/wcc-remodel-after.mp4",
+          "alt": "After video of a finished remodel by West Coast Construction Group in Bakersfield, CA"
         },
         {
-          "title": "Commercial build-out in progress",
-          "src": "https://wccgrp.com/wp-content/uploads/2026/03/wcc-commercial-buildout.mp4",
-          "poster": "https://wccgrp.com/wp-content/uploads/2026/03/Commercial-Construction-in-Bakersfield-CA.jpg",
-          "alt": "Commercial build-out project by West Coast Construction Group in Kern County"
+          "title": "Project time-lapse",
+          "src": "https://wccgrp.com/wp-content/uploads/2026/08/Video_20260730_174747_794.mp4",
+          "alt": "Time-lapse of a construction project by West Coast Construction Group in Bakersfield, CA"
         },
         {
-          "title": "Residential project overview",
-          "src": "https://wccgrp.com/wp-content/uploads/2026/03/wcc-residential-overview.mp4",
-          "poster": "https://wccgrp.com/wp-content/uploads/2026/03/Resdential-services-in-bakersfield-ca.webp",
-          "alt": "Residential construction project by West Coast Construction Group in Bakersfield, CA"
+          "title": "Build time-lapse",
+          "src": "https://wccgrp.com/wp-content/uploads/2026/08/compressed-video.mp4",
+          "alt": "Time-lapse of a build by West Coast Construction Group in Bakersfield, CA"
         }
       ]
     },
     "beforeAfter": {
       "kicker": "Before & After",
       "h2": "The difference a finished build makes",
-      "intro": "Switch between before and after to see how these projects changed.",
-      "note": "PLACEHOLDER PAIRS: replace each card with real before and after photos from the same project.",
+      "intro": "Switch between before and after to see how these Bakersfield projects changed.",
       "items": [
         {
+          "label": "Bathroom remodel",
+          "sub": "Dated bath to a walk-in shower",
+          "before": "asset:img/ba-bathroom-before.jpg",
+          "after": "asset:img/ba-bathroom-after.jpg",
+          "beforeAlt": "Dated bathroom with a glass-block window and carpet before remodeling by West Coast Construction Group in Bakersfield",
+          "afterAlt": "Finished walk-in tile shower after a bathroom remodel by West Coast Construction Group in Bakersfield"
+        },
+        {
           "label": "Kitchen remodel",
-          "sub": "Residential interior",
-          "before": "https://wccgrp.com/wp-content/uploads/2026/03/Home-Remodel-in-bakersfield.webp",
-          "after": "https://wccgrp.com/wp-content/uploads/2026/03/Kitchen-remodel.webp",
-          "beforeAlt": "Kitchen before remodeling work by West Coast Construction Group",
-          "afterAlt": "Finished kitchen remodel by West Coast Construction Group"
-        },
-        {
-          "label": "Commercial build-out",
-          "sub": "Tenant improvement",
-          "before": "https://wccgrp.com/wp-content/uploads/2026/03/COMMERCIAL-CONSTRUUCTION-IN-BAKERSFIELD.webp",
-          "after": "https://wccgrp.com/wp-content/uploads/2026/03/COMMERCIAL-cONTRACTOR-IN-BAKERSFIELD.webp",
-          "beforeAlt": "Commercial space before build-out by West Coast Construction Group",
-          "afterAlt": "Completed commercial build-out by West Coast Construction Group"
-        },
-        {
-          "label": "Home renovation",
-          "sub": "Whole-home update",
-          "before": "https://wccgrp.com/wp-content/uploads/2026/03/Resdential-services-in-bakersfield-ca.webp",
-          "after": "https://wccgrp.com/wp-content/uploads/2026/03/Residential-General-Contracting-Services-in-Bakersfield-CA.webp",
-          "beforeAlt": "Home before renovation work by West Coast Construction Group",
-          "afterAlt": "Finished home renovation by West Coast Construction Group"
+          "sub": "Full gut to a finished kitchen",
+          "before": "asset:img/ba-kitchen-before.jpg",
+          "after": "asset:img/ba-kitchen-after.jpg",
+          "beforeAlt": "Kitchen gutted to the studs during remodeling by West Coast Construction Group in Bakersfield",
+          "afterAlt": "Finished kitchen with white cabinets and a center island after a remodel by West Coast Construction Group in Bakersfield"
         }
       ]
     },
@@ -800,6 +787,16 @@
         { "q": "Can I supply my own materials and fixtures?", "a": "Selections are confirmed during planning, and we will talk through what you want to supply yourself versus what we source. Locking selections before construction is the single best way to keep a remodel on schedule." },
         { "q": "How long will my remodel take?", "a": "It depends on the rooms involved, the extent of the layout and system changes, and how quickly selections are confirmed. We set a realistic timeline as part of your written scope rather than quoting a generic number." }
       ],
+      "gallery": {
+        "kicker": "Recent Work",
+        "h2": "A recent Bakersfield bathroom remodel",
+        "intro": "A few shots from a completed bathroom remodel: marble-look tile, updated fixtures, and a clean, modern finish.",
+        "images": [
+          { "src": "asset:img/bath-remodel-1.jpg", "alt": "Remodeled bathroom with a white vanity, gold fixtures, and a marble-tile walk-in shower by West Coast Construction Group in Bakersfield" },
+          { "src": "asset:img/bath-remodel-2.jpg", "alt": "Marble-tile tub and shower surround with matte-black fixtures, bathroom remodel by West Coast Construction Group in Bakersfield" },
+          { "src": "asset:img/bath-remodel-3.jpg", "alt": "Remodeled bathroom with a marble tub surround, black fixtures, and a niche by West Coast Construction Group in Bakersfield" }
+        ]
+      },
       "related": ["home-additions-expansions", "adu-garage-conversions", "outdoor-living-patios-patio-covers-pergolas-pool-areas"],
       "cta": { "h2": "Ready to remodel?", "p": "Tell us which rooms you are looking at and we will walk you through scope, timeline, and next steps." }
     },
