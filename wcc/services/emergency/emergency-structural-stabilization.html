@@ -1,4 +1,4 @@
-<!-- wcc build: 2026-08-06 | revision: gitpress-interactions-2026-07-29-v6 | page: emergency-structural-stabilization | render_mode: theme_wrapped -->
+<!-- wcc build: 2026-08-07 | revision: video-src-on-element-2026-08-07-v7 | page: emergency-structural-stabilization | render_mode: theme_wrapped -->
 <style>
 /* ============================================================
    West Coast Construction Group shared design system (v2)
@@ -816,8 +816,10 @@
           // and leaves the player showing a blank/black frame instead.
           vid.pause();
           g.classList.remove('is-playing');
+          // The src attribute on the video element wins over any source child,
+          // so set it first and keep the child in sync for markup consistency.
+          vid.setAttribute('src', btn.dataset.src);
           if (source) { source.setAttribute('src', btn.dataset.src); }
-          else { vid.setAttribute('src', btn.dataset.src); }
           vid.setAttribute('aria-label', btn.dataset.alt || btn.dataset.title || '');
           vid.load();
           if (now) now.textContent = btn.dataset.title;

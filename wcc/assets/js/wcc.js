@@ -115,8 +115,10 @@
           // and leaves the player showing a blank/black frame instead.
           vid.pause();
           g.classList.remove('is-playing');
+          // The src attribute on the video element wins over any source child,
+          // so set it first and keep the child in sync for markup consistency.
+          vid.setAttribute('src', btn.dataset.src);
           if (source) { source.setAttribute('src', btn.dataset.src); }
-          else { vid.setAttribute('src', btn.dataset.src); }
           vid.setAttribute('aria-label', btn.dataset.alt || btn.dataset.title || '');
           vid.load();
           if (now) now.textContent = btn.dataset.title;
