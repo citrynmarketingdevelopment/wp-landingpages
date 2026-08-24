@@ -340,16 +340,6 @@
     color: var(--ink) !important;
   }
 
-  .ama-donate .way-card .way-tag {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: .72rem;
-    font-weight: 700;
-    letter-spacing: .24em;
-    text-transform: uppercase;
-    color: var(--peri-deep) !important;
-  }
-
   .ama-donate .way-card p {
     margin-top: 16px;
     flex: 1 1 auto;
@@ -368,13 +358,8 @@
     box-shadow: 0 22px 52px rgba(82, 86, 140, .32);
   }
 
-  .ama-donate .way-card.featured h3,
-  .ama-donate .way-card.featured .way-tag {
+  .ama-donate .way-card.featured h3 {
     color: var(--white) !important;
-  }
-
-  .ama-donate .way-card.featured .way-tag {
-    color: var(--gold-soft) !important;
   }
 
   .ama-donate .way-card.featured p {
@@ -414,7 +399,7 @@
   /* ---------- IMPACT TIERS ---------- */
   .ama-donate .tier-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
     align-items: stretch;
   }
@@ -817,12 +802,16 @@
     <div class="wrap">
       <span class="eyebrow" data-reveal>
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
+          <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
         </svg>
-        Support Amelia Molloy&rsquo;s Angels
+        Because every family begins with hope
       </span>
       <h1 data-reveal>Your gift helps build <em>a family</em></h1>
-      <p class="hero-lede" data-reveal>Every gift is a reminder to someone facing infertility that they don&rsquo;t have to walk this journey alone. Your generosity brings comfort, community, and financial support, helping families take one step closer to the children they&rsquo;ve been praying for. Give today and help give the gift of family.</p>
+      <p class="hero-lede" data-reveal>Behind every family is a story. For couples facing infertility, that story can be filled with waiting, heartbreak, unanswered prayers, and moments when hope feels almost impossible to hold onto.</p>
+      <p class="hero-lede" data-reveal>Your gift can be the reminder that they are not alone.</p>
+      <p class="hero-lede" data-reveal>It can provide comfort on the days that hurt, community when they need someone who understands, and financial support that can help make the dream of becoming parents possible. It can tell a couple, &ldquo;We see you. We believe in your family. And we&rsquo;re walking with you.&rdquo;</p>
+      <p class="hero-lede" data-reveal>Your generosity can help a couple take that next step toward the family they&rsquo;ve been praying for.</p>
+      <p class="hero-lede" data-reveal><strong>Give today. Give hope. Help build a family.</strong></p>
       <div class="hero-actions" data-reveal>
         <a class="btn btn-peri" href="https://ameliamolloysangels.networkforgood.com/projects/231684-help-give-the-gift-of-family-with-amelia-molloy-s-angels" target="_blank" rel="noopener">Donate Now</a>
         <a class="btn btn-ghost" href="#ama-monthly">Explore Monthly Giving</a>
@@ -839,6 +828,28 @@
   <section class="section" id="ama-ways">
     <div class="wrap">
       <div class="ways-grid">
+        <div class="way-card featured" id="ama-monthly" data-reveal>
+          <span class="way-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
+            </svg>
+            Most Impact
+          </span>
+          <span class="way-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
+            </svg>
+          </span>
+          <h3>Give hope all year long.</h3>
+          <p>Become an Angel of Hope and make a lasting difference in the lives of families facing infertility.</p>
+          <p>When you give each month, your generosity becomes a steady source of hope, helping us confidently provide Family Grants, Comfort Kits, support groups, prayer, and ongoing encouragement to families throughout the year.</p>
+          <p>Your monthly gift means that when a couple receives difficult news, faces another heartbreaking loss, or wonders how they will ever reach the family they&rsquo;ve been praying for, hope is there.</p>
+          <p>It means we can continue showing up, not just once, but month after month, with the comfort, community, and support families need along the way.</p>
+          <p>Your monthly gift isn&rsquo;t just a donation. It&rsquo;s a promise to walk alongside a family until hope feels possible again.</p>
+          <p><strong>Become an Angel of Hope. Give hope all year long.</strong></p>
+          <a class="btn btn-solid-white" href="https://ameliamolloysangels.networkforgood.com/projects/231684-help-give-the-gift-of-family-with-amelia-molloy-s-angels" target="_blank" rel="noopener">Become an Angel of Hope</a>
+        </div>
+
         <div class="way-card" data-reveal>
           <span class="way-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -848,30 +859,13 @@
               <path d="M12 7c-2.5 0-4.5-1.1-4.5-2.5S9.5 2.6 12 7c2.5-4.4 4.5-3.9 4.5-2.5S14.5 7 12 7Z"/>
             </svg>
           </span>
-          <h3>One-Time Donation</h3>
-          <span class="way-tag">Give once, bless a family</span>
-          <p>Your gift today can make all the difference for a family facing infertility. Every one-time donation helps provide comfort through our Comfort Kits, meaningful connection through our monthly support groups, and financial assistance through Family Grants for IVF, adoption, and surrogacy. Give today and help couples take one step closer to the families they&rsquo;ve been dreaming of.</p>
+          <h3>Give once. Give hope.</h3>
+          <p>For a couple facing infertility, a single gift can be a powerful reminder: you are not alone, and your dream of becoming a family matters.</p>
+          <p>Your one-time gift helps meet families in the moments they need it most. It can bring comfort through a thoughtfully created Comfort Kit, connection through our monthly support groups, and meaningful financial support through Family Grants that help make IVF, adoption, or surrogacy possible.</p>
+          <p>Behind every gift is a family carrying a dream, a prayer, and a hope for the child they&rsquo;ve been longing for.</p>
+          <p>Your generosity helps carry that hope with them and brings them one step closer to the family they&rsquo;ve been praying for.</p>
+          <p><strong>Give today. Give hope. Be part of their story.</strong></p>
           <a class="btn btn-peri" href="https://ameliamolloysangels.networkforgood.com/projects/231684-help-give-the-gift-of-family-with-amelia-molloy-s-angels" target="_blank" rel="noopener">Give Once</a>
-        </div>
-
-        <div class="way-card featured" id="ama-monthly" data-reveal>
-          <span class="way-badge">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
-            </svg>
-            Most Impact
-          </span>
-          <span class="way-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-            </svg>
-          </span>
-          <h3>Monthly Giving - Angels of Hope</h3>
-          <span class="way-tag">Our monthly giving community</span>
-          <p>Make a consistent impact as part of Angels of Hope, our monthly giving community. Faithful monthly givers
-            allow us to confidently plan family grants, comfort kits, and support programs twelve months a year,
-            sustaining the work of walking beside families through infertility.</p>
-          <a class="btn btn-solid-white" href="https://ameliamolloysangels.networkforgood.com/projects/231684-help-give-the-gift-of-family-with-amelia-molloy-s-angels" target="_blank" rel="noopener">Become an Angel of Hope</a>
         </div>
       </div>
     </div>
@@ -881,48 +875,64 @@
   <section class="section">
     <div class="wrap">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
-          </svg>
-          What impact does my gift make?
-        </span>
-        <h2>Every level of giving builds hope</h2>
-        <p>Concrete examples of how your gift comes alongside couples in our community who are struggling with
-          infertility.</p>
+        <h2>Every Gift Carries Hope</h2>
+        <p>No matter the amount, your generosity becomes part of a family&rsquo;s story.</p>
+        <p>See how your gift can turn compassion into comfort, support, and hope for families in our community.</p>
       </div>
 
       <div class="tier-grid">
         <div class="tier-card" data-reveal>
-          <span class="tier-amount"><span>$</span>25</span>
+          <span class="tier-amount"><span>$</span>25<span>/mo</span></span>
           <h3>Comfort Giver</h3>
           <span class="tier-rule" aria-hidden="true"></span>
-          <p>Helps place a comfort kit into the hands of a couple walking through loss or treatment, a tangible
-            reminder that they are loved and not alone.</p>
+          <p><strong>Brings comfort and hope to families in the waiting.</strong> Your gift reminds couples they are
+            not forgotten by providing meaningful encouragement, resources, and a reminder that they never have to
+            walk this journey alone.</p>
         </div>
 
         <div class="tier-card" data-reveal>
-          <span class="tier-amount"><span>$</span>75</span>
+          <span class="tier-amount"><span>$</span>50<span>/mo</span></span>
           <h3>Prayer Partner</h3>
           <span class="tier-rule" aria-hidden="true"></span>
-          <p>Sustains our prayer team and support group gatherings, giving couples a safe, faith-filled place to share
-            their journey and be encouraged.</p>
+          <p><strong>Creates a place where couples feel seen and supported.</strong> Your gift provides opportunities
+            for connection, prayer, and encouragement through support groups and resources that remind families they
+            are surrounded by a community that understands.</p>
         </div>
 
         <div class="tier-card" data-reveal>
-          <span class="tier-amount"><span>$</span>125</span>
+          <span class="tier-amount"><span>$</span>100<span>/mo</span></span>
           <h3>Hope Builder</h3>
           <span class="tier-rule" aria-hidden="true"></span>
-          <p>Fuels community events and outreach that break the stigma surrounding infertility and connect more
-            families to the resources they need.</p>
+          <p><strong>Helps families take the next step toward parenthood.</strong> Your generosity strengthens our
+            Family Grant Fund, helping ease the financial burden of fertility treatments, adoption, or surrogacy and
+            bringing families closer to the dreams they&rsquo;ve prayed for.</p>
         </div>
 
         <div class="tier-card" data-reveal>
-          <span class="tier-amount"><span>$</span>250</span>
+          <span class="tier-amount"><span>$</span>150<span>/mo</span></span>
           <h3>Angel Partner</h3>
           <span class="tier-rule" aria-hidden="true"></span>
-          <p>Goes directly toward AMA Family Grants, easing the financial burden of IVF, adoption, and surrogacy
-            and helping make someone&rsquo;s dream of family come true.</p>
+          <p><strong>Expands hope to more families throughout the year.</strong> Your faithful partnership provides
+            the dependable support needed to grow our programs, serve more couples, and continue walking beside
+            families through every season of their journey.</p>
+        </div>
+
+        <div class="tier-card" data-reveal>
+          <span class="tier-amount"><span>$</span>200<span>/mo</span></span>
+          <h3>Miracle Maker</h3>
+          <span class="tier-rule" aria-hidden="true"></span>
+          <p><strong>Creates life-changing opportunities for families pursuing parenthood.</strong> Your generosity
+            helps remove financial barriers, expand life-giving support, and provide hope during some of the most
+            challenging moments families face.</p>
+        </div>
+
+        <div class="tier-card" data-reveal>
+          <span class="tier-amount"><span>$</span>250<span>/mo</span></span>
+          <h3>Legacy Angel</h3>
+          <span class="tier-rule" aria-hidden="true"></span>
+          <p><strong>Leaves a lasting legacy of hope for generations.</strong> Your commitment helps strengthen our
+            ministry, expand our reach, and ensure more families have the support, encouragement, and opportunity to
+            experience the joy of parenthood.</p>
         </div>
       </div>
     </div>
@@ -934,7 +944,7 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
+            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
           </svg>
           Why give monthly?
         </span>
@@ -990,7 +1000,7 @@
         <div class="check-copy">
           <span class="eyebrow">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
+              <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
             </svg>
             Prefer to give by mail?
           </span>
@@ -1022,7 +1032,7 @@
             </span>
             <span>
               <span class="d-label">Call us</span>
-              <span class="d-value">(661) 593-4777</span>
+              <span class="d-value" style="white-space:nowrap;">(661) 593-4777</span>
             </span>
           </div>
 
@@ -1069,7 +1079,7 @@
       <div class="cta-card" data-reveal>
         <span class="eyebrow">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.6 13.8 8l5.6.1-4.5 3.4 1.6 5.4L12 13.7l-4.5 3.2 1.6-5.4L4.6 8.1 10.2 8z"/>
+            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
           </svg>
           Join us today
         </span>

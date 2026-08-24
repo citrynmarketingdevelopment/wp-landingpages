@@ -1,0 +1,1219 @@
+<!-- webhook retrigger 2026-08-21 home-page -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800');
+
+  .opx-home {
+    --navy: #0d2335;
+    --blue: #234275;
+    --blue-mid: #3b75ac;
+    --sky: #eaf5fb;
+    --orange: #ff914d;
+    --orange-dark: #ef7d1d;
+    --ink: #0d2335;
+    --copy: #44535f;
+    --muted: #6a7b88;
+    --line: rgba(33, 74, 131, .14);
+    --white: #fff;
+    --soft: #f6f9fd;
+    --shadow: 0 24px 58px rgba(13, 35, 53, .13);
+    --card-shadow: 0 14px 34px rgba(13, 35, 53, .1);
+    --max: 1160px;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+    color: var(--ink) !important;
+    background: linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%);
+    overflow: hidden;
+  }
+
+  .opx-home *,
+  .opx-home *::before,
+  .opx-home *::after {
+    box-sizing: border-box;
+  }
+
+  .opx-home h1,
+  .opx-home h2,
+  .opx-home h3,
+  .opx-home h4,
+  .opx-home h5,
+  .opx-home h6,
+  .opx-home p,
+  .opx-home ul,
+  .opx-home ol,
+  .opx-home li,
+  .opx-home figure,
+  .opx-home blockquote {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .opx-home img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .opx-home a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .opx-home .wrap {
+    width: min(calc(100% - 28px), var(--max));
+    margin: 0 auto;
+  }
+
+  /* ---------- SHARED PRIMITIVES ---------- */
+  .opx-home .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 13px 30px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: .96rem;
+    transition: transform .25s ease, filter .25s ease, background-color .25s ease;
+  }
+
+  .opx-home .btn-orange {
+    background: var(--orange);
+    color: var(--white) !important;
+    box-shadow: 0 12px 26px rgba(255, 145, 77, .34);
+  }
+
+  .opx-home .btn-orange:hover {
+    filter: brightness(106%);
+    transform: translateY(-2px);
+  }
+
+  .opx-home .btn-white {
+    background: var(--white);
+    color: var(--blue) !important;
+  }
+
+  .opx-home .btn-white:hover {
+    filter: brightness(98%);
+    transform: translateY(-2px);
+  }
+
+  .opx-home .btn-navy {
+    background: var(--blue);
+    color: var(--white) !important;
+    box-shadow: 0 12px 26px rgba(35, 66, 117, .24);
+  }
+
+  .opx-home .btn-navy:hover {
+    filter: brightness(112%);
+    transform: translateY(-2px);
+  }
+
+  .opx-home .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .opx-home .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--orange) !important;
+    font-size: .78rem;
+    font-weight: 900;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+  }
+
+  .opx-home .eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 3px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .opx-home .section {
+    padding: 78px 0;
+  }
+
+  .opx-home .soft-section {
+    background: var(--soft);
+  }
+
+  .opx-home .section-head {
+    max-width: 830px;
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .opx-home .section-head.left {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .opx-home .section-head h2 {
+    color: var(--navy) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(2rem, 3.2vw, 3.05rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: 0;
+  }
+
+  .opx-home .section-head p {
+    margin-top: 16px;
+    color: var(--copy) !important;
+    font-size: 1.04rem;
+    line-height: 1.75;
+  }
+
+  .opx-home .ico {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: currentColor;
+  }
+
+  .opx-home .ico svg {
+    width: 42px;
+    height: 42px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .opx-home .check-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+    list-style: none;
+  }
+
+  .opx-home .check-list li {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    color: rgba(255, 255, 255, .92) !important;
+    line-height: 1.48;
+  }
+
+  .opx-home .check-list li::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--orange);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .opx-home .check-list.on-light li {
+    color: var(--ink) !important;
+    font-weight: 600;
+  }
+
+  .opx-home .check-list.on-light li::before {
+    background: var(--sky);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%233b75ac' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- HERO ---------- */
+  .opx-home .home-hero {
+    position: relative;
+    padding: 118px 0 104px !important;
+    background:
+      linear-gradient(112deg, rgba(13, 35, 53, .97) 0%, rgba(20, 64, 95, .92) 52%, rgba(30, 95, 132, .8) 100%),
+      url('https://optimaxcs.net/wp-content/uploads/2025/01/medical-billing-hero.webp');
+    background-color: #10334d !important;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+
+  .opx-home .hero-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .18);
+    color: var(--navy) !important;
+    font-size: .86rem;
+    font-weight: 800;
+  }
+
+  .opx-home .hero-badge .ico {
+    width: 22px;
+    height: 22px;
+    color: var(--orange-dark) !important;
+  }
+
+  .opx-home .hero-badge .ico svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .opx-home .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(330px, .76fr);
+    gap: 46px;
+    align-items: center;
+  }
+
+  .opx-home .hero-copy h1 {
+    margin-top: 16px;
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.3rem, 4.4vw, 4.05rem);
+    line-height: 1.03;
+    letter-spacing: 0;
+    max-width: 860px;
+  }
+
+  .opx-home .hero-copy .hero-sub {
+    margin-top: 16px;
+    color: var(--orange) !important;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .opx-home .hero-copy .lead {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, .9) !important;
+    line-height: 1.6;
+    font-weight: 300;
+    font-size: 1.08rem;
+    max-width: 700px;
+  }
+
+  .opx-home .hero-copy .lead strong {
+    color: var(--white) !important;
+    font-weight: 700;
+  }
+
+  .opx-home .hero-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, .24);
+    backdrop-filter: blur(12px);
+  }
+
+  .opx-home .hero-card h2 {
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.18;
+  }
+
+  /* ---------- TRUST BAND ---------- */
+  .opx-home .trust-band {
+    position: relative;
+    z-index: 4;
+    margin-top: -52px;
+  }
+
+  .opx-home .trust-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) repeat(3, minmax(0, 1fr));
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 24px 50px rgba(13, 35, 53, .22);
+  }
+
+  .opx-home .trust-head {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background: var(--blue);
+    color: var(--white) !important;
+  }
+
+  .opx-home .trust-head h2 {
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: 1.32rem;
+    font-weight: 800;
+    line-height: 1.22;
+  }
+
+  .opx-home .trust-item {
+    padding: 26px 20px;
+    border-left: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .opx-home .trust-item .ico {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: var(--sky);
+    color: var(--blue-mid) !important;
+  }
+
+  .opx-home .trust-item .ico svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .opx-home .trust-item h3 {
+    color: var(--navy) !important;
+    font-size: .92rem;
+    font-weight: 800;
+    line-height: 1.34;
+  }
+
+  /* ---------- SERVICES SPLIT ---------- */
+  .opx-home .split-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 52px;
+    align-items: center;
+  }
+
+  .opx-home .split-grid .section-head {
+    margin-bottom: 0;
+  }
+
+  .opx-home .service-label {
+    margin-top: 26px;
+    color: var(--navy) !important;
+    font-weight: 900;
+    font-size: .82rem;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+
+  .opx-home .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .opx-home .service-tile {
+    display: block;
+    padding: 20px 14px;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+
+  .opx-home a.service-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 145, 77, .5);
+    box-shadow: 0 18px 38px rgba(239, 125, 29, .18);
+  }
+
+  .opx-home .service-tile .ico {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+    background: var(--sky);
+    color: var(--blue-mid) !important;
+  }
+
+  .opx-home .service-tile .ico svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .opx-home .service-tile h3 {
+    color: var(--navy) !important;
+    font-size: .92rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .opx-home .wheel-frame {
+    padding: 24px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #f6f9fe, #fff);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .opx-home .wheel-frame img {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  /* ---------- EFFICIENT BAND ---------- */
+  .opx-home .efficient-band {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .opx-home .efficient-copy {
+    padding: 76px max(30px, calc((100vw - var(--max)) / 2));
+    padding-right: 52px;
+  }
+
+  .opx-home .efficient-copy h2 {
+    margin-top: 10px;
+    color: var(--navy) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.08;
+  }
+
+  .opx-home .efficient-copy p {
+    margin-top: 16px;
+    color: var(--copy) !important;
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .opx-home .efficient-copy .check-list {
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+
+  .opx-home .efficient-photo {
+    min-height: 520px;
+    background-image: url('https://optimaxcs.net/wp-content/uploads/2026/02/Optimax-obgyn-billing-requirements.webp');
+    background-color: #10334d;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ---------- DIGITAL STRATEGY ---------- */
+  .opx-home .digital-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    gap: 44px;
+    align-items: start;
+  }
+
+  .opx-home .strategy-list {
+    display: grid;
+    gap: 24px;
+    margin-top: 30px;
+  }
+
+  .opx-home .strategy-item {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  .opx-home .strategy-item .ico {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: #fff0e4;
+    color: var(--orange-dark) !important;
+  }
+
+  .opx-home .strategy-item .ico svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .opx-home .strategy-item h3 {
+    color: var(--navy) !important;
+    font-size: 1.16rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .opx-home .strategy-item p {
+    margin-top: 8px;
+    color: var(--copy) !important;
+    line-height: 1.66;
+  }
+
+  .opx-home .dash-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .opx-home .chart-card {
+    padding: 18px 16px;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--card-shadow);
+  }
+
+  .opx-home .chart-card h3 {
+    color: var(--navy) !important;
+    font-size: .84rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .opx-home .bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 168px;
+    margin-top: 12px;
+    padding: 10px 8px 0;
+    border-left: 1px solid rgba(33, 74, 131, .2);
+    border-bottom: 1px solid rgba(33, 74, 131, .2);
+  }
+
+  .opx-home .bars span {
+    display: block;
+    width: 14%;
+    border-radius: 5px 5px 0 0;
+    background: var(--blue-mid);
+  }
+
+  .opx-home .bars.is-orange span {
+    background: var(--orange);
+  }
+
+  .opx-home .bars.is-navy span {
+    background: var(--blue);
+  }
+
+  /* Bar heights are classes, not inline styles: the GitPress sanitizer
+     can strip style="..." attributes on the live WordPress page. */
+  .opx-home .bars .h20 { height: 20%; }
+  .opx-home .bars .h31 { height: 31%; }
+  .opx-home .bars .h40 { height: 40%; }
+  .opx-home .bars .h48 { height: 48%; }
+  .opx-home .bars .h53 { height: 53%; }
+  .opx-home .bars .h55 { height: 55%; }
+  .opx-home .bars .h65 { height: 65%; }
+  .opx-home .bars .h70 { height: 70%; }
+  .opx-home .bars .h73 { height: 73%; }
+  .opx-home .bars .h77 { height: 77%; }
+  .opx-home .bars .h81 { height: 81%; }
+  .opx-home .bars .h85 { height: 85%; }
+  .opx-home .bars .h88 { height: 88%; }
+  .opx-home .bars .h90 { height: 90%; }
+
+  .opx-home .pie {
+    width: 148px;
+    height: 148px;
+    margin: 16px auto 4px;
+    border-radius: 50%;
+    background: conic-gradient(var(--blue) 0 38%, var(--orange) 38% 66%, var(--blue-mid) 66% 100%);
+    box-shadow: inset -8px -8px 0 rgba(13, 35, 53, .07);
+  }
+
+  .opx-home .pie-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .opx-home .pie-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted) !important;
+    font-size: .72rem;
+    font-weight: 700;
+  }
+
+  .opx-home .pie-legend span::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--blue);
+  }
+
+  .opx-home .pie-legend span.k2::before {
+    background: var(--orange);
+  }
+
+  .opx-home .pie-legend span.k3::before {
+    background: var(--blue-mid);
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .opx-home .review-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+    gap: 44px;
+    align-items: start;
+  }
+
+  .opx-home .review-stack {
+    display: grid;
+    gap: 20px;
+  }
+
+  .opx-home .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px 30px;
+    border-radius: 12px;
+    background: var(--white);
+    border-left: 4px solid var(--orange);
+    box-shadow: var(--card-shadow);
+  }
+
+  .opx-home .stars {
+    display: inline-flex;
+    gap: 3px;
+    color: var(--orange) !important;
+  }
+
+  .opx-home .stars svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: currentColor;
+    stroke: none;
+  }
+
+  .opx-home .review-card p {
+    color: var(--copy) !important;
+    font-size: .97rem;
+    font-weight: 300;
+    line-height: 1.68;
+  }
+
+  .opx-home .t-divider {
+    height: 1px;
+    background: var(--line);
+  }
+
+  .opx-home .review-card strong {
+    color: var(--navy) !important;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .opx-home .review-card .role {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted) !important;
+    font-size: .84rem;
+    font-weight: 600;
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .opx-home .cta-final {
+    background: #f9fbff;
+  }
+
+  .opx-home .cta-final .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    align-items: start;
+  }
+
+  .opx-home .cta-copy {
+    align-self: start;
+    height: fit-content;
+    padding: 54px 48px;
+    border-radius: 20px;
+    background: linear-gradient(118deg, #0d2335 0%, #14405f 60%, #1c5478 100%);
+    text-align: left;
+  }
+
+  .opx-home .cta-copy .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .opx-home .cta-copy h2 {
+    color: var(--white) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .opx-home .cta-copy p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .88) !important;
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .opx-home .cta-copy p strong {
+    color: var(--white) !important;
+    font-weight: 700;
+  }
+
+  .opx-home .step-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+    list-style: none;
+  }
+
+  .opx-home .step-list li {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 13px;
+    align-items: center;
+    color: rgba(255, 255, 255, .92) !important;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .opx-home .step-list li span {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--white) !important;
+    font-size: .88rem;
+    font-weight: 900;
+  }
+
+  .opx-home .form-shell {
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .opx-home .form-embed {
+    margin: 0;
+    width: 100%;
+    padding: 24px 22px;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid rgba(33, 74, 131, .12);
+    box-shadow: 0 20px 42px rgba(13, 35, 53, .14);
+    text-align: left;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (min-width: 981px) {
+    body.dgs-theme-wrapped.dgs-full-width-content #main-content .dgs-gitpress-content .opx-home .home-hero {
+      padding-top: 100px !important;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .opx-home .home-hero {
+      padding: 88px 0 88px !important;
+    }
+
+    .opx-home .hero-grid,
+    .opx-home .split-grid,
+    .opx-home .digital-grid,
+    .opx-home .review-grid,
+    .opx-home .efficient-band,
+    .opx-home .cta-final .wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .opx-home .trust-card {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .opx-home .trust-head {
+      grid-column: 1 / -1;
+    }
+
+    .opx-home .efficient-copy {
+      padding: 62px 24px;
+    }
+
+    .opx-home .efficient-photo {
+      min-height: 360px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .opx-home .section {
+      padding: 58px 0;
+    }
+
+    .opx-home .hero-copy h1 {
+      font-size: clamp(2.1rem, 11vw, 3.2rem);
+    }
+
+    .opx-home .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .opx-home .btn {
+      width: 100%;
+      padding-left: 18px;
+      padding-right: 18px;
+      text-align: center;
+    }
+
+    .opx-home .hero-card,
+    .opx-home .review-card,
+    .opx-home .cta-copy,
+    .opx-home .wheel-frame {
+      padding: 24px;
+    }
+
+    .opx-home .trust-card,
+    .opx-home .service-grid,
+    .opx-home .dash-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .opx-home .trust-item {
+      border-top: 1px solid var(--line);
+    }
+
+    .opx-home .form-embed {
+      padding: 20px 18px;
+    }
+  }
+</style>
+
+<main class="opx-home">
+  <!-- HERO -->
+  <section class="home-hero">
+    <div class="wrap">
+      <p class="hero-badge">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+        </span>
+        Optimax was featured in USA Today | 2026
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Revenue Cycle Management</p>
+          <h1>Your Trusted Revenue Cycle Management Partner</h1>
+          <p class="hero-sub">Maximize Revenue. Improve Cash Flow. Focus on Patient Care.</p>
+          <p class="lead">Optimax Consulting Services is a full-service <strong>Revenue Cycle Management</strong>
+            company helping healthcare organizations increase collections, reduce denials, and improve operational
+            efficiency across the entire revenue cycle.</p>
+          <div class="hero-actions">
+            <a class="btn btn-orange" href="/contact-us/">Schedule Your Free Assessment</a>
+            <a class="btn btn-white" href="tel:+18889591014">Call (888) 959-1014</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Better revenue, better outcomes">
+          <h2>Better Revenue.<br>Better Outcomes.</h2>
+          <ul class="check-list">
+            <li>Improve first-pass claim acceptance</li>
+            <li>Reduce denials and A/R days</li>
+            <li>Increase collections and cash flow</li>
+            <li>Gain real-time insights and reporting</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAND -->
+  <section class="trust-band" aria-label="Why healthcare organizations trust Optimax">
+    <div class="wrap">
+      <div class="trust-card">
+        <div class="trust-head">
+          <h2>Trusted Revenue Integrity Experts</h2>
+        </div>
+        <div class="trust-item">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7zM8 12l2.5 2.5L16 9"/></svg>
+          </span>
+          <h3>Certified Coding Professionals</h3>
+        </div>
+        <div class="trust-item">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18M17 7.5A4 4 0 0 0 13 5H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6h-4a4 4 0 0 1-4-2.5"/></svg>
+          </span>
+          <h3>Revenue Cycle Experts</h3>
+        </div>
+        <div class="trust-item">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6M11 8v6M8 11h6"/></svg>
+          </span>
+          <h3>Specialty-Specific Coding Reviews</h3>
+        </div>
+        <div class="trust-item">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h5"/></svg>
+          </span>
+          <h3>Documentation Improvement</h3>
+        </div>
+        <div class="trust-item">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM9 12l2 2 4-4"/></svg>
+          </span>
+          <h3>Denial Prevention</h3>
+        </div>
+        <div class="trust-item">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>
+          </span>
+          <h3>Compliance-Focused Audits</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="wrap split-grid">
+      <div>
+        <div class="section-head left">
+          <p class="eyebrow">Our Services</p>
+          <h2>RCM Solutions Built for Your Success</h2>
+          <p>Whether you need end-to-end revenue cycle management or support at a specific stage, Optimax delivers the
+            expertise, technology, and strategy to optimize every step of your revenue cycle and drive measurable
+            financial performance.</p>
+        </div>
+
+        <p class="service-label">Core Services</p>
+        <div class="service-grid">
+          <a class="service-tile" href="/revenue-cycle-management/">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v18M17 7.5A4 4 0 0 0 13 5H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6h-4a4 4 0 0 1-4-2.5"/></svg>
+            </span>
+            <h3>Revenue Cycle Management</h3>
+          </a>
+          <a class="service-tile" href="/credentialing/">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v10H4zM8 19h8M12 15v4M9 10l2 2 4-4"/></svg>
+            </span>
+            <h3>Credentialing</h3>
+          </a>
+          <div class="service-tile">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 8-5 4 5 4M15 8l5 4-5 4"/></svg>
+            </span>
+            <h3>Coding</h3>
+          </div>
+          <div class="service-tile">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6M8.5 11l2 2 4-4"/></svg>
+            </span>
+            <h3>Auditing</h3>
+          </div>
+          <a class="service-tile" href="/human-resources-and-staffing/">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 11a4 4 0 1 1 4-4M3 21v-2a6 6 0 0 1 12 0v2M17 11a4 4 0 0 1 0 8"/></svg>
+            </span>
+            <h3>Staff Augmentation</h3>
+          </a>
+          <div class="service-tile">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+            </span>
+            <h3>A/R Clean Up &amp; Rundown</h3>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-navy" href="/consulting-services/">Explore All Services</a>
+        </div>
+      </div>
+
+      <div class="wheel-frame">
+        <img src="https://optimaxcs.net/wp-content/uploads/2026/03/Service-wheel-new.webp"
+          alt="Optimax revenue cycle management service wheel covering registration, coding, claims, denials, and analytics"
+          loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- EFFICIENT RCM BAND -->
+  <section class="efficient-band">
+    <div class="efficient-copy">
+      <p class="eyebrow">Optimized Solutions for Healthcare</p>
+      <h2>Efficient Revenue Cycle Management</h2>
+      <p>Healthcare organizations today face rising costs, shrinking reimbursement, and staffing shortages that strain
+        both operations and care quality. Optimax provides revenue cycle management and consulting solutions that
+        streamline processes and strengthen financial performance. We manage the administrative complexities so your
+        team can stay focused on delivering exceptional patient care.</p>
+      <ul class="check-list on-light">
+        <li>Provide a dedicated client management team.</li>
+        <li>Handle patient interactions with understanding and compassion.</li>
+        <li>Use analytics to drive near real-time decisions and troubleshooting.</li>
+      </ul>
+      <a class="btn btn-navy" href="/consulting-services/">Learn More</a>
+    </div>
+    <div class="efficient-photo" role="img"
+      aria-label="Healthcare professional reviewing revenue cycle reporting in a medical office"></div>
+  </section>
+
+  <!-- DIGITAL STRATEGY -->
+  <section id="analytics" class="section soft-section">
+    <div class="wrap digital-grid">
+      <div>
+        <div class="section-head left">
+          <p class="eyebrow">Digital Strategy</p>
+          <h2>Empowering Your Success with Digital Strategy</h2>
+        </div>
+        <div class="strategy-list">
+          <div class="strategy-item">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+            </span>
+            <div>
+              <h3>Data That Drives Decision Making</h3>
+              <p>Data should do more than report the past, it should power what comes next. At Optimax, we transform raw
+                operational and revenue cycle data into clear, strategic direction.</p>
+            </div>
+          </div>
+          <div class="strategy-item">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9M12 7v5l3 2M18 3v5h5"/></svg>
+            </span>
+            <div>
+              <h3>Real-Time Analytics</h3>
+              <p>Optimax delivers real-time analysis that gives leadership immediate visibility into revenue
+                performance, payer trends, operational bottlenecks, and staffing efficiency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid" aria-label="Illustrative revenue cycle reporting dashboard">
+        <div class="chart-card">
+          <h3>YTD Provider Revenue</h3>
+          <div class="bars is-navy" aria-hidden="true">
+            <span class="h55"></span><span class="h85"></span><span class="h65"></span><span class="h77"></span>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>Revenue &ndash; Top 5 Payers</h3>
+          <div class="bars is-orange" aria-hidden="true">
+            <span class="h20"></span><span class="h90"></span><span class="h53"></span><span class="h40"></span><span class="h31"></span>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>% Revenue by Location</h3>
+          <div class="pie" aria-hidden="true"></div>
+          <div class="pie-legend" aria-hidden="true">
+            <span>Main</span><span class="k2">Satellite</span><span class="k3">Ambulatory</span>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>YTD Procedure Productivity</h3>
+          <div class="bars" aria-hidden="true">
+            <span class="h81"></span><span class="h88"></span><span class="h73"></span><span class="h70"></span><span class="h48"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section">
+    <div class="wrap review-grid">
+      <div>
+        <div class="section-head left">
+          <p class="eyebrow">Proven Results</p>
+          <h2>Trusted by Healthcare Professionals</h2>
+          <p>Healthcare professionals rely on Optimax to strengthen operations, maximize revenue, and position their
+            organizations for sustainable profitability. The result is greater confidence at the executive level and
+            stronger performance across the board.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-navy" href="/about-us/">More About Optimax</a>
+        </div>
+      </div>
+
+      <div class="review-stack">
+        <div class="review-card">
+          <span class="stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+          </span>
+          <p>We could not be more pleased with our Optimax partnership. Optimax has not only improved our financial
+            outcomes but also led to better patient satisfaction. By simplifying billing and providing clearer patient
+            statements, we have minimized confusion and complaints.</p>
+          <div class="t-divider"></div>
+          <div>
+            <strong>Raymond Shaheen</strong>
+            <span class="role">Healthcare Practice Leader</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <span class="stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.8 5.9 20.9 7.1 14l-5-4.8 6.9-.9z"/></svg>
+          </span>
+          <p>I recently had the pleasure of working with Optimax for our medical practice, and I can confidently say
+            they have been a game-changer. Their team demonstrated unparalleled expertise in revenue cycle management,
+            streamlining our billing processes with precision and efficiency.</p>
+          <div class="t-divider"></div>
+          <div>
+            <strong>Joe Handy</strong>
+            <span class="role">Medical Practice Administrator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA / INTAKE FORM -->
+  <section id="contact" class="section cta-final">
+    <div class="wrap">
+      <div class="cta-copy">
+        <p class="eyebrow">Complimentary Revenue Cycle Assessment</p>
+        <h2>Ready to Improve Your Financial Performance?</h2>
+        <p>Discover opportunities. Drive more revenue. Focus on what matters most, your patients. Complete the intake
+          form or call <strong>(888)&nbsp;959-1014</strong>.</p>
+        <ul class="step-list">
+          <li><span>1</span>Schedule your free assessment</li>
+          <li><span>2</span>Get a customized plan</li>
+          <li><span>3</span>Start seeing better results</li>
+        </ul>
+      </div>
+      <div class="form-shell">
+        <div class="form-embed">
+          [gravityform id="1" title="false"]
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
