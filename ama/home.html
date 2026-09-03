@@ -536,6 +536,20 @@
     aspect-ratio: 16 / 9;
   }
 
+  .ama-home .video-popup {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ama-home .video-popup > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .ama-home .video-popup > summary::-webkit-details-marker {
+    display: none;
+  }
+
   .ama-home .video-tile.featured .video-stage {
     aspect-ratio: 16 / 9.5;
   }
@@ -544,6 +558,11 @@
     position: absolute;
     inset: 0;
     display: block;
+  }
+
+  .ama-home .video-poster:focus-visible {
+    outline: 3px solid var(--gold-soft);
+    outline-offset: -6px;
   }
 
   .ama-home .video-poster img {
@@ -637,11 +656,134 @@
   }
 
   .ama-home .video-stage iframe {
-    position: absolute;
-    inset: 0;
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  .ama-home .video-open-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .ama-home .video-close-label {
+    display: none;
+  }
+
+  .ama-home .video-popup:not([open]) > .video-modal {
+    display: none;
+  }
+
+  .ama-home .video-popup[open] > .video-poster {
+    position: fixed;
+    inset: auto max(18px, env(safe-area-inset-right)) auto auto;
+    top: max(18px, env(safe-area-inset-top));
+    z-index: 1002;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .96);
+    color: var(--peri-ink) !important;
+    box-shadow: 0 12px 34px rgba(24, 25, 50, .34);
+  }
+
+  .ama-home .video-popup[open] > .video-poster::after,
+  .ama-home .video-popup[open] > .video-poster > img,
+  .ama-home .video-popup[open] > .video-poster > .play-orb,
+  .ama-home .video-popup[open] > .video-poster > .video-caption,
+  .ama-home .video-popup[open] > .video-poster > .video-open-label {
+    display: none;
+  }
+
+  .ama-home .video-popup[open] > .video-poster > .video-close-label {
+    display: inline;
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .ama-home .video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 74px 24px 24px;
+    background: rgba(30, 32, 64, .9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .ama-home .video-dialog {
+    width: min(100%, 980px);
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 26px;
+    background: #2A2D59;
+    box-shadow: 0 28px 80px rgba(20, 21, 45, .48);
+  }
+
+  .ama-home .video-dialog.portrait {
+    width: min(100%, 430px);
+  }
+
+  .ama-home .video-modal-title {
+    margin: 0 4px 12px;
+    color: var(--white) !important;
+    font-family: 'Faustina', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .ama-home .video-embed {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    background: #1E2040;
+  }
+
+  .ama-home .video-dialog.portrait .video-embed {
+    max-height: calc(100dvh - 150px);
+    margin-inline: auto;
+    aspect-ratio: 9 / 16;
+  }
+
+  .ama-home .video-fallback {
+    display: block;
+    margin-top: 12px;
+    color: var(--gold-soft) !important;
+    font-size: .84rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  html:has(.ama-home .video-popup[open]),
+  body:has(.ama-home .video-popup[open]) {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .ama-home .video-modal {
+      background: #26284C;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
   }
 
   /* ---------- MISSION + SCRIPTURE ---------- */
@@ -1237,18 +1379,31 @@
               </div>
             </div>
 
-            <div class="video-tile featured hero-video" data-reveal data-embed="https://www.youtube.com/embed/XNHDlIijBq4?autoplay=1">
+            <div class="video-tile featured hero-video" data-reveal>
               <div class="video-stage">
-                <a class="video-poster" href="https://www.youtube.com/watch?v=XNHDlIijBq4" target="_blank" rel="noopener" aria-label="Play: We Help Create Families">
-                  <img src="https://img.youtube.com/vi/XNHDlIijBq4/maxresdefault.jpg" data-fallback="https://img.youtube.com/vi/XNHDlIijBq4/hqdefault.jpg" alt="Amelia Molloy's Angels - We Help Create Families video" loading="lazy">
-                  <span class="play-orb" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
-                  </span>
-                  <span class="video-caption">
-                    <span class="kicker">Our Story</span>
-                    <span class="title">We Help Create Families</span>
-                  </span>
-                </a>
+                <details class="video-popup" name="ama-video-popup">
+                  <summary class="video-poster">
+                    <img src="https://img.youtube.com/vi/XNHDlIijBq4/maxresdefault.jpg" data-fallback="https://img.youtube.com/vi/XNHDlIijBq4/hqdefault.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span class="play-orb" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+                    </span>
+                    <span class="video-caption" aria-hidden="true">
+                      <span class="kicker">Our Story</span>
+                      <span class="title">We Help Create Families</span>
+                    </span>
+                    <span class="video-open-label">Play video: We Help Create Families</span>
+                    <span class="video-close-label">Close video</span>
+                  </summary>
+                  <div class="video-modal" role="dialog" aria-modal="true" aria-labelledby="ama-story-video-title">
+                    <div class="video-dialog">
+                      <h3 class="video-modal-title" id="ama-story-video-title">We Help Create Families</h3>
+                      <div class="video-embed">
+                        <iframe src="https://www.youtube-nocookie.com/embed/XNHDlIijBq4?rel=0" data-autoplay-src="https://www.youtube-nocookie.com/embed/XNHDlIijBq4?rel=0&amp;autoplay=1" title="We Help Create Families" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <a class="video-fallback" href="https://www.youtube.com/watch?v=XNHDlIijBq4" target="_blank" rel="noopener">Open on YouTube if the player does not load</a>
+                    </div>
+                  </div>
+                </details>
               </div>
             </div>
           </div>
@@ -1293,33 +1448,59 @@
 
       <div class="cinema-grid">
         <div class="cinema-side">
-          <div class="video-tile compact" data-reveal data-embed="https://www.youtube.com/embed/5VgeKBIdCYc?autoplay=1">
+          <div class="video-tile compact" data-reveal>
             <div class="video-stage">
-              <a class="video-poster" href="https://www.youtube.com/shorts/5VgeKBIdCYc" target="_blank" rel="noopener" aria-label="Play: 1 in 6 - you are not alone">
-                <img src="https://img.youtube.com/vi/5VgeKBIdCYc/maxresdefault.jpg" data-fallback="https://img.youtube.com/vi/5VgeKBIdCYc/hqdefault.jpg" alt="1 in 6 struggle with infertility video" loading="lazy">
-                <span class="play-orb" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
-                </span>
-                <span class="video-caption">
-                  <span class="kicker">Awareness</span>
-                  <span class="title">1 in 6 - You Are Not Alone</span>
-                </span>
-              </a>
+              <details class="video-popup" name="ama-video-popup">
+                <summary class="video-poster">
+                  <img src="https://img.youtube.com/vi/5VgeKBIdCYc/maxresdefault.jpg" data-fallback="https://img.youtube.com/vi/5VgeKBIdCYc/hqdefault.jpg" alt="" aria-hidden="true" loading="lazy">
+                  <span class="play-orb" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+                  </span>
+                  <span class="video-caption" aria-hidden="true">
+                    <span class="kicker">Awareness</span>
+                    <span class="title">1 in 6 - You Are Not Alone</span>
+                  </span>
+                  <span class="video-open-label">Play video: 1 in 6 - You Are Not Alone</span>
+                  <span class="video-close-label">Close video</span>
+                </summary>
+                <div class="video-modal" role="dialog" aria-modal="true" aria-labelledby="ama-awareness-video-title">
+                  <div class="video-dialog portrait">
+                    <h3 class="video-modal-title" id="ama-awareness-video-title">1 in 6 - You Are Not Alone</h3>
+                    <div class="video-embed">
+                      <iframe src="https://www.youtube-nocookie.com/embed/5VgeKBIdCYc?rel=0" data-autoplay-src="https://www.youtube-nocookie.com/embed/5VgeKBIdCYc?rel=0&amp;autoplay=1" title="1 in 6 - You Are Not Alone" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <a class="video-fallback" href="https://www.youtube.com/shorts/5VgeKBIdCYc" target="_blank" rel="noopener">Open on YouTube if the player does not load</a>
+                  </div>
+                </div>
+              </details>
             </div>
           </div>
 
-          <div class="video-tile compact" data-reveal data-embed="https://player.vimeo.com/video/1141592988?autoplay=1">
+          <div class="video-tile compact" data-reveal>
             <div class="video-stage">
-              <a class="video-poster" href="https://vimeo.com/1141592988" target="_blank" rel="noopener" aria-label="Play: 2025 Winter Gala highlights">
-                <img src="https://vumbnail.com/1141592988.jpg" data-fallback="" alt="Amelia Molloy's Angels 2025 Winter Gala video" loading="lazy">
-                <span class="play-orb" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
-                </span>
-                <span class="video-caption">
-                  <span class="kicker">Community</span>
-                  <span class="title">2025 Winter Gala Highlights</span>
-                </span>
-              </a>
+              <details class="video-popup" name="ama-video-popup">
+                <summary class="video-poster">
+                  <img src="https://vumbnail.com/1141592988.jpg" data-fallback="" alt="" aria-hidden="true" loading="lazy">
+                  <span class="play-orb" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+                  </span>
+                  <span class="video-caption" aria-hidden="true">
+                    <span class="kicker">Community</span>
+                    <span class="title">2025 Winter Gala Highlights</span>
+                  </span>
+                  <span class="video-open-label">Play video: 2025 Winter Gala Highlights</span>
+                  <span class="video-close-label">Close video</span>
+                </summary>
+                <div class="video-modal" role="dialog" aria-modal="true" aria-labelledby="ama-gala-video-title">
+                  <div class="video-dialog">
+                    <h3 class="video-modal-title" id="ama-gala-video-title">2025 Winter Gala Highlights</h3>
+                    <div class="video-embed">
+                      <iframe src="https://player.vimeo.com/video/1141592988" data-autoplay-src="https://player.vimeo.com/video/1141592988?autoplay=1" title="2025 Winter Gala Highlights" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <a class="video-fallback" href="https://vimeo.com/1141592988" target="_blank" rel="noopener">Open on Vimeo if the player does not load</a>
+                  </div>
+                </div>
+              </details>
             </div>
           </div>
         </div>
@@ -1530,14 +1711,15 @@
     nums.forEach(function (el) { io.observe(el); });
   }
 
-  /* Video facades: posters are plain links (work without JS); with JS a click
-     swaps the poster for the real embed. No iframes exist in the fragment
-     itself, so nothing here depends on the sanitizer allowing iframe markup. */
+  /* Native details elements open every video popup even if GitPress removes
+     this script. JavaScript only adds autoplay, playback cleanup, and Escape. */
   function amaHomeInitVideos() {
-    var tiles = document.querySelectorAll('.ama-home .video-tile[data-embed]');
-    tiles.forEach(function (tile) {
-      var poster = tile.querySelector('.video-poster');
-      var img = tile.querySelector('img');
+    var popups = document.querySelectorAll('.ama-home .video-popup');
+    popups.forEach(function (popup) {
+      if (popup.getAttribute('data-video-ready') === 'true') { return; }
+      popup.setAttribute('data-video-ready', 'true');
+
+      var img = popup.querySelector('.video-poster img');
       if (img) {
         img.addEventListener('error', function () {
           var fb = img.getAttribute('data-fallback');
@@ -1545,19 +1727,35 @@
           else { img.style.visibility = 'hidden'; }
         });
       }
-      if (!poster) { return; }
-      poster.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        var stage = tile.querySelector('.video-stage');
-        var frame = document.createElement('iframe');
-        frame.src = tile.getAttribute('data-embed');
-        frame.title = poster.getAttribute('aria-label') || 'Video player';
-        frame.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
-        frame.setAttribute('allowfullscreen', '');
-        stage.innerHTML = '';
-        stage.appendChild(frame);
+
+      var frame = popup.querySelector('iframe');
+      if (frame) {
+        frame.setAttribute('data-fallback-src', frame.getAttribute('src') || '');
+        frame.removeAttribute('src');
+      }
+
+      popup.addEventListener('toggle', function () {
+        if (!frame) { return; }
+        if (popup.open) {
+          var source = frame.getAttribute('data-autoplay-src') || frame.getAttribute('data-fallback-src');
+          if (source) { frame.setAttribute('src', source); }
+        } else {
+          frame.removeAttribute('src');
+        }
       });
     });
+
+    if (!document.documentElement.hasAttribute('data-ama-video-keys')) {
+      document.documentElement.setAttribute('data-ama-video-keys', 'true');
+      document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape') { return; }
+        var openPopup = document.querySelector('.ama-home .video-popup[open]');
+        if (!openPopup) { return; }
+        openPopup.open = false;
+        var summary = openPopup.querySelector('summary');
+        if (summary) { summary.focus(); }
+      });
+    }
   }
 
   amaHomeInitReveal();
