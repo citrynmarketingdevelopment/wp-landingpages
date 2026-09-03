@@ -60,6 +60,8 @@ Confirm those behaviors against the exact hooks above before publishing. Without
 
 - Contact uses `[fluentform id="3"]`.
 - The preview substitutes a non-submitting form facsimile.
-- The pending email and Privacy Policy link remain unpublished.
+- The approved public email is `info@sanjoaquinoperators.com`.
+- The Privacy Policy link remains unpublished pending an approved policy and URL.
 - The header and footer wordmarks are temporary assets pending an approved client logo package.
-- Home uses the supplied official affiliation logos. The global footer retains text fallbacks so the same logos are not repeated in every page shell.
+- Home retains the current affiliation logos pending the client&rsquo;s replacement logo package. The global footer keeps text fallbacks so the same logos are not repeated in every page shell.
+- Home&rsquo;s Quick Access section uses `home-field-team.webp` as a temporary project image. Replace that asset when the client-supplied project photo arrives; the edge-grading treatment is already applied in the page CSS.

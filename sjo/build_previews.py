@@ -529,10 +529,15 @@ def fragment_errors(page: Page, fragment: str) -> list[str]:
             errors.append(f"{label}: approved Fluent Forms shortcode must appear exactly once")
         if LEGACY_FORM_MARKER in fragment:
             errors.append(f"{label}: legacy pending form marker must be removed")
-        if "mailto:" in fragment or re.search(
-            r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", fragment
+        for required_contact in (
+            "tel:+16616718475",
+            "mailto:info@sanjoaquinoperators.com",
+            "info@sanjoaquinoperators.com",
         ):
-            errors.append(f"{label}: pending contact email must not be published")
+            if required_contact not in fragment:
+                errors.append(f"{label}: missing approved contact content: {required_contact}")
+        if "Service Area" in fragment:
+            errors.append(f"{label}: removed Service Area content must not be published")
         if re.search(r"<a\b[^>]*>[^<]*Privacy Policy", fragment, re.IGNORECASE):
             errors.append(f"{label}: pending Privacy Policy must remain unlinked")
     elif FORM_SHORTCODE in fragment or LEGACY_FORM_MARKER in fragment:
@@ -656,7 +661,8 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
         "/",
         "/services/",
         "/contact-us/",
-        "tel:+16618660219",
+        "tel:+16616718475",
+        "mailto:info@sanjoaquinoperators.com",
         "https://www.linkedin.com/company/sanjoaquin-operators",
     }
     for link in structure.links:
@@ -695,11 +701,6 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
         asset = ROOT / "assets" / "images" / filename
         if not asset.is_file():
             errors.append(f"{label}: referenced asset is missing: {filename}")
-
-    if "mailto:" in fragment or re.search(
-        r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", fragment
-    ):
-        errors.append(f"{label}: pending contact email must not be published")
 
     if re.search(r"<a\b[^>]*>[^<]*Privacy Policy", fragment, re.IGNORECASE):
         errors.append(f"{label}: pending Privacy Policy must remain unlinked")
@@ -780,8 +781,9 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
         if 'id="siteFooter"' not in fragment:
             errors.append(f"{label}: footer root must use id=siteFooter")
         for required_copy in (
-            "tel:+16618660219",
-            "California and Western U.S.",
+            "tel:+16616718475",
+            "mailto:info@sanjoaquinoperators.com",
+            "info@sanjoaquinoperators.com",
             "https://www.linkedin.com/company/sanjoaquin-operators",
             "United Way of Central Eastern California",
             "Greater Bakersfield Chamber of Commerce",
@@ -789,6 +791,8 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
         ):
             if required_copy not in fragment:
                 errors.append(f"{label}: missing approved footer content: {required_copy}")
+        if "Service Area" in fragment:
+            errors.append(f"{label}: removed Service Area content must not be published")
         if re.search(
             r"Business Park|5401\b|#208\b|93309\b", fragment, re.IGNORECASE
         ):

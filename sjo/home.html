@@ -1,4 +1,4 @@
-<!-- SJO_HOME_VERSION: 2026-08-25.2 -->
+<!-- SJO_HOME_VERSION: 2026-09-03.1 -->
 <style>
   .sjo-page.sjo-home {
     --sjo-ink: #071514;
@@ -378,28 +378,41 @@
 
   /* Quick access */
   .sjo-home__quick {
-    padding-block: clamp(76px, 9vw, 128px);
+    padding-block: clamp(46px, 6vw, 76px);
     background: var(--sjo-soft);
   }
 
   .sjo-home__quick-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.18fr) minmax(350px, .82fr);
-    min-height: 570px;
+    min-height: 440px;
     background: var(--sjo-ink);
   }
 
   .sjo-home__quick-photo {
+    position: relative;
     min-height: 100%;
     overflow: hidden;
-    background: var(--sjo-ink-soft);
+    background: var(--sjo-ink);
+  }
+
+  .sjo-home__quick-photo::after {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 46% 48%, transparent 42%, rgba(7, 21, 20, .18) 63%, rgba(7, 21, 20, .78) 100%),
+      linear-gradient(90deg, rgba(7, 21, 20, .45) 0%, transparent 16%, transparent 70%, rgba(7, 21, 20, .94) 100%);
+    content: "";
+    pointer-events: none;
   }
 
   .sjo-home__quick-photo img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
+    filter: saturate(.82) contrast(.96);
     transition: transform .45s ease;
   }
 
@@ -411,12 +424,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: clamp(38px, 6vw, 74px);
+    padding: clamp(28px, 4.5vw, 52px);
     color: var(--sjo-light);
   }
 
   .sjo-home__quick-panel .sjo-home__section-title {
-    margin-bottom: 35px;
+    margin-bottom: 22px;
     color: var(--sjo-light) !important;
     font-size: clamp(2.15rem, 3.4vw, 3.55rem);
   }
@@ -427,7 +440,7 @@
   }
 
   .sjo-home__quick-link {
-    min-height: 82px;
+    min-height: 66px;
     display: grid;
     grid-template-columns: 48px minmax(0, 1fr) 24px;
     gap: 17px;
@@ -441,8 +454,8 @@
   }
 
   .sjo-home__quick-link > .sjo-home__icon:first-child {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     border: 1px solid rgba(43, 158, 80, .55);
     border-radius: 50%;
     color: var(--sjo-accent);
@@ -469,11 +482,12 @@
   }
 
   .sjo-home__affiliations .sjo-home__section-title {
-    max-width: 18ch;
+    max-width: none;
     margin-inline: auto;
     text-align: center;
-    font-size: clamp(1.75rem, 3vw, 2.8rem);
+    font-size: clamp(1.15rem, 4.4vw, 2.8rem);
     text-transform: uppercase !important;
+    white-space: nowrap;
   }
 
   .sjo-home__affiliation-list {
@@ -573,11 +587,11 @@
     }
 
     .sjo-home__quick-photo {
-      min-height: 420px;
+      min-height: 340px;
     }
 
     .sjo-home__quick-panel {
-      padding: 50px var(--sjo-gutter) 58px;
+      padding: 36px var(--sjo-gutter) 42px;
     }
   }
 
@@ -647,9 +661,12 @@
       width: 100%;
     }
 
-    .sjo-home__mission,
-    .sjo-home__quick {
+    .sjo-home__mission {
       padding-block: 68px;
+    }
+
+    .sjo-home__quick {
+      padding-block: 46px;
     }
 
     .sjo-home__mission-grid {
@@ -684,16 +701,16 @@
     }
 
     .sjo-home__quick-photo {
-      min-height: 320px;
+      min-height: 270px;
     }
 
     .sjo-home__quick-panel {
-      padding: 42px 20px 50px;
+      padding: 32px 20px 36px;
     }
 
     .sjo-home__quick-link {
       grid-template-columns: 44px minmax(0, 1fr) 22px;
-      min-height: 76px;
+      min-height: 64px;
     }
 
     .sjo-home__affiliation-list {
@@ -858,6 +875,7 @@
   <section class="sjo-home__quick" aria-labelledby="sjo-quick-title">
     <div class="sjo-home__shell">
       <div class="sjo-home__quick-grid">
+        <!-- Replace this temporary project image with the client-supplied photo when received. -->
         <figure class="sjo-home__quick-photo">
           <img src="https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/sjo/assets/images/home-field-team.webp" alt="Renewable energy inspector reviewing project work beside a solar field" width="1448" height="1086" loading="lazy" decoding="async">
         </figure>
