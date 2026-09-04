@@ -164,6 +164,19 @@
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800');
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800');
 
+  /* Keep the live Divi header and its dropdowns above this page's hero content. */
+  body.dgs-theme-wrapped.dgs-full-width-content header.et-l.et-l--header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  body.dgs-theme-wrapped.dgs-full-width-content header.et-l.et-l--header .et_builder_inner_content,
+  body.dgs-theme-wrapped.dgs-full-width-content header.et-l.et-l--header .et_pb_section--with-menu,
+  body.dgs-theme-wrapped.dgs-full-width-content header.et-l.et-l--header .et_pb_menu,
+  body.dgs-theme-wrapped.dgs-full-width-content header.et-l.et-l--header .et-menu-nav .sub-menu {
+    z-index: 1001 !important;
+  }
+
   .opx-home {
     --navy: #266FA5;
     --blue: #266FA5;
@@ -406,12 +419,27 @@
     background-repeat: no-repeat;
   }
 
-  .opx-home .hero-badge {
+  .opx-home .hero-feature {
     position: relative;
     z-index: 2;
     display: inline-flex;
     align-items: center;
+    gap: 14px;
     margin-bottom: 26px;
+    text-decoration: none !important;
+    transition: transform .2s ease;
+  }
+
+  .opx-home .hero-feature-logo {
+    display: block;
+    width: 112px;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .opx-home .hero-badge {
+    display: inline-flex;
+    align-items: center;
     padding: 10px 18px;
     border-radius: 999px;
     background: rgba(255, 255, 255, .95);
@@ -419,17 +447,20 @@
     color: var(--navy) !important;
     font-size: .86rem;
     font-weight: 800;
-    text-decoration: none !important;
-    transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+    min-width: 0;
+    transition: background-color .2s ease, box-shadow .2s ease;
   }
 
-  .opx-home .hero-badge:hover {
+  .opx-home .hero-feature:hover {
     transform: translateY(-1px);
+  }
+
+  .opx-home .hero-feature:hover .hero-badge {
     background: var(--white);
     box-shadow: 0 12px 30px rgba(0, 0, 0, .22);
   }
 
-  .opx-home .hero-badge:focus-visible {
+  .opx-home .hero-feature:focus-visible {
     outline: 3px solid var(--orange);
     outline-offset: 3px;
   }
@@ -792,39 +823,6 @@
     box-shadow: inset -8px -8px 0 rgba(38, 111, 165, .07);
   }
 
-  .opx-home .pie-legend {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
-  }
-
-  .opx-home .pie-legend span {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--muted) !important;
-    font-size: .72rem;
-    font-weight: 700;
-  }
-
-  .opx-home .pie-legend span::before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 3px;
-    background: var(--blue);
-  }
-
-  .opx-home .pie-legend span.k2::before {
-    background: var(--orange);
-  }
-
-  .opx-home .pie-legend span.k3::before {
-    background: var(--blue-mid);
-  }
-
   /* ---------- REVIEWS ---------- */
   .opx-home .review-grid {
     display: grid;
@@ -1025,6 +1023,20 @@
       padding: 58px 0;
     }
 
+    .opx-home .hero-feature {
+      gap: 10px;
+    }
+
+    .opx-home .hero-feature-logo {
+      width: 72px;
+    }
+
+    .opx-home .hero-badge {
+      padding: 9px 12px;
+      font-size: .74rem;
+      line-height: 1.25;
+    }
+
     .opx-home .hero-copy h1 {
       font-size: clamp(2.1rem, 11vw, 3.2rem);
     }
@@ -1068,8 +1080,9 @@
   <!-- HERO -->
   <section class="home-hero">
     <div class="wrap">
-      <a class="hero-badge" href="https://www.usatoday.com/story/sponsor-story/optimax-consulting/2026/02/17/maximizing-your-physician-practices-revenue-amid-2026-cms-changes/88701479007/" target="_blank" rel="noopener noreferrer">
-        Optimax was featured in USA Today | 2026
+      <a class="hero-feature" href="https://www.usatoday.com/story/sponsor-story/optimax-consulting/2026/02/17/maximizing-your-physician-practices-revenue-amid-2026-cms-changes/88701479007/" target="_blank" rel="noopener noreferrer">
+        <img class="hero-feature-logo" src="https://optimaxcs.net/wp-content/uploads/2026/01/usa-today-logo.webp" alt="">
+        <span class="hero-badge">Optimax was featured in USA Today | 2026</span>
       </a>
 
       <div class="hero-grid">
@@ -1275,9 +1288,6 @@
         <div class="chart-card">
           <h3>% Revenue by Location</h3>
           <div class="pie" aria-hidden="true"></div>
-          <div class="pie-legend" aria-hidden="true">
-            <span>Main</span><span class="k2">Satellite</span><span class="k3">Ambulatory</span>
-          </div>
         </div>
         <div class="chart-card">
           <h3>YTD Procedure Productivity</h3>
