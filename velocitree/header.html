@@ -1,0 +1,149 @@
+<!-- Velocitree GitPress managed header | version 2026-09-08.2 -->
+<style>
+  @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-400.ttf") format("truetype"); }
+  @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-500.ttf") format("truetype"); }
+  @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-600.ttf") format("truetype"); }
+  @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-700.ttf") format("truetype"); }
+  @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 800; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-800.ttf") format("truetype"); }
+  .vts-header, .vts-header * { box-sizing: border-box; }
+  .vts-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgb(195 139 89 / 19%);
+    background: #111511;
+    color: #f3f3ec !important;
+    font-family: "VTS Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .vts-header p, .vts-header ul, .vts-header li, .vts-header summary {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+  .vts-header a { text-decoration: none !important; }
+  .vts-header .vts-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    width: min(1280px, calc(100% - 80px));
+    height: 79px;
+    margin-inline: auto;
+  }
+  .vts-header .vts-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    color: #f3f3ec !important;
+  }
+  .vts-header .vts-brand-emblem {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 47px;
+    overflow: hidden;
+    flex: 0 0 46px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%);
+    mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%);
+  }
+  .vts-header .vts-brand-emblem img {
+    position: absolute;
+    top: -5px;
+    left: -39px;
+    display: block;
+    width: 282px;
+    height: 336px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .vts-header .vts-brand-wordmark { display: block; font-size: 27px; font-weight: 500; letter-spacing: -1.45px; line-height: 1; }
+  .vts-header .vts-brand-wordmark > span { color: #c38b59 !important; }
+  .vts-header .vts-brand-subline { display: block; margin-top: 6px; color: #b8beb1 !important; font-size: 8px; font-weight: 400; letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+  .vts-header .vts-desktop-nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
+  .vts-header .vts-desktop-nav > a { display: inline-flex; align-items: center; min-height: 44px; color: #b8beb1 !important; font-weight: 400; white-space: nowrap; transition: color 160ms ease; }
+  .vts-header .vts-desktop-nav > a:hover, .vts-header .vts-desktop-nav > a[aria-current] { color: #f3f3ec !important; }
+  .vts-header .vts-header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 44px;
+    padding: 11px 20px;
+    border: 1px solid #526c25;
+    border-radius: 3px;
+    background: #526c25;
+    color: #fff !important;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+  .vts-header .vts-header-cta:hover { background: #42581d; border-color: #718d39; }
+  .vts-header .vts-header-cta > span { font-size: 18px; line-height: 1; }
+  .vts-header a:focus-visible, .vts-header summary:focus-visible { outline: 2px solid #9db64d; outline-offset: 5px; }
+  .vts-header .vts-skip-link { position: absolute; top: 8px; left: 20px; z-index: 105; padding: 12px 18px; transform: translateY(-150%); background: #f3f3ec; color: #111511 !important; font-weight: 700; }
+  .vts-header .vts-skip-link:focus { transform: translateY(0); }
+  .vts-header .vts-mobile-menu { display: none; }
+  .vts-header.scrolled { box-shadow: 0 8px 26px rgb(0 0 0 / 12%); }
+  @media (max-width: 850px) {
+    .vts-header .vts-header-inner { width: calc(100% - 40px); height: 73px; gap: 16px; }
+    .vts-header .vts-desktop-nav, .vts-header .vts-desktop-cta { display: none; }
+    .vts-header .vts-mobile-menu { display: block; }
+    .vts-header .vts-mobile-menu > summary { display: flex; align-items: center; justify-content: center; gap: 10px; min-width: 78px; min-height: 44px; padding: 8px 0 8px 12px; color: #f3f3ec !important; cursor: pointer; list-style: none; font-size: 13px; }
+    .vts-header .vts-mobile-menu > summary::-webkit-details-marker { display: none; }
+    .vts-header .vts-menu-icon { position: relative; width: 19px; height: 14px; }
+    .vts-header .vts-menu-icon::before, .vts-header .vts-menu-icon::after { content: ""; position: absolute; left: 0; width: 19px; height: 1px; background: currentColor; transition: transform 160ms ease; }
+    .vts-header .vts-menu-icon::before { top: 3px; }
+    .vts-header .vts-menu-icon::after { top: 10px; }
+    .vts-header .vts-mobile-menu[open] .vts-menu-icon::before { transform: translateY(3.5px) rotate(45deg); }
+    .vts-header .vts-mobile-menu[open] .vts-menu-icon::after { transform: translateY(-3.5px) rotate(-45deg); }
+    .vts-header .vts-mobile-nav { position: absolute; top: 100%; right: 0; left: 0; display: grid; gap: 0; max-height: calc(100dvh - 74px); overflow-y: auto; padding: 18px 20px 24px; border-top: 1px solid rgb(195 139 89 / 19%); border-bottom: 1px solid rgb(195 139 89 / 28%); background: #191e17; box-shadow: 0 24px 40px rgb(0 0 0 / 24%); }
+    .vts-header .vts-mobile-nav > a { display: flex; align-items: center; min-height: 50px; color: #f3f3ec !important; font-size: 17px; }
+    .vts-header .vts-mobile-nav > a:hover, .vts-header .vts-mobile-nav > a[aria-current] { color: #9db64d !important; }
+    .vts-header .vts-mobile-nav > .vts-header-cta { justify-content: space-between; margin-top: 12px; color: #fff !important; font-size: 15px; }
+  }
+  @media (max-width: 380px) {
+    .vts-header .vts-brand { gap: 7px; }
+    .vts-header .vts-brand-wordmark { font-size: 24px; }
+    .vts-header .vts-brand-subline { font-size: 7px; letter-spacing: 3.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .vts-header .vts-desktop-nav > a, .vts-header .vts-header-cta, .vts-header .vts-menu-icon::before, .vts-header .vts-menu-icon::after { transition: none; }
+  }
+</style>
+<header class="vts-header site-header" id="siteHeader" data-vts-header>
+  <a class="vts-skip-link" href="#main-content">Skip to content</a>
+  <div class="vts-header-inner">
+    <a class="vts-brand" href="/" aria-label="Velocitree Solutions home">
+      <span class="vts-brand-emblem" aria-hidden="true"><img src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/velocitree-logo.png" width="1149" height="1369" alt=""></span>
+      <span><span class="vts-brand-wordmark"><span>Veloci</span>tree</span><span class="vts-brand-subline">Solutions</span></span>
+    </a>
+    <nav class="vts-desktop-nav" aria-label="Main navigation">
+      <a href="/" data-nav="home">Home</a>
+      <a href="/#expertise" data-nav="expertise">Expertise</a>
+      <a href="/#who-we-support" data-nav="who-we-support">Who we support</a>
+    </nav>
+    <a class="vts-header-cta vts-desktop-cta" href="/contact/">Let's connect <span aria-hidden="true">↗</span></a>
+    <details class="vts-mobile-menu" id="vtsMobileMenu">
+      <summary id="vtsMenuToggle" aria-controls="vtsMobileNav">Menu <span class="vts-menu-icon" aria-hidden="true"></span></summary>
+      <nav class="vts-mobile-nav" id="vtsMobileNav" aria-label="Mobile navigation">
+        <a href="/" data-nav="home">Home</a>
+        <a href="/#expertise" data-nav="expertise">Expertise</a>
+        <a href="/#who-we-support" data-nav="who-we-support">Who we support</a>
+        <a href="/#perspective" data-nav="perspective">Our perspective</a>
+        <a class="vts-header-cta" href="/contact/" data-nav="contact">Let's connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </details>
+  </div>
+</header>
