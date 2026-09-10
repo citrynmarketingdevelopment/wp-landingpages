@@ -241,68 +241,6 @@
     font-weight: 500;
   }
 
-  /* ------------------------------------------------------------------
-     Table presentation lock.
-
-     The four rules below (full-width/centred table, visible cell borders,
-     red first column, centred text) are the intended look for every table
-     on this page. Divi's own table styles are more specific than the plain
-     element selectors above and strip them on the live site, so they are
-     pinned here rather than left to cascade order.
-     ------------------------------------------------------------------ */
-
-  .an-cap-page table {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    border-collapse: collapse !important;
-    border: 1px solid var(--an-line) !important;
-    background: #fff !important;
-  }
-
-  .an-cap-page th,
-  .an-cap-page td {
-    border: 1px solid var(--an-line) !important;
-    text-align: center !important;
-    vertical-align: middle !important;
-  }
-
-  .an-cap-page th {
-    background: #050505 !important;
-    border-color: #333 !important;
-    color: #fff !important;
-  }
-
-  .an-cap-page tbody td:first-child,
-  .an-cap-page .an-red-cell {
-    background: var(--an-red) !important;
-    color: #fff !important;
-    font-weight: 900 !important;
-  }
-
-  .an-cap-page .takeaways-table {
-    border-color: #111 !important;
-  }
-
-  .an-cap-page .takeaways-table th,
-  .an-cap-page .takeaways-table td {
-    border-color: #111 !important;
-  }
-
-  .an-cap-page .takeaways-table tbody td:first-child {
-    font-weight: 500 !important;
-  }
-
-  /* The loss table is a four-across grid, not a label/description pair, so it
-     keeps white cells; this must outrank the first-column rule above. */
-  .an-cap-page .loss-table tbody td,
-  .an-cap-page .loss-table tbody td:first-child {
-    background: #fff !important;
-    color: #333 !important;
-    font-weight: 600 !important;
-  }
-
   .an-cap-cta {
     display: block;
     width: 80%;
