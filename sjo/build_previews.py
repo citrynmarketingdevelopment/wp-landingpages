@@ -21,6 +21,14 @@ CDN_BASE = (
     "wp-landingpages@main/sjo/assets/images/"
 )
 WP_MEDIA_BASE = "https://sanjoaquinoperators.com/wp-content/uploads/2026/09/"
+# Heroes are served from the WordPress media library under the filenames the
+# client uploaded. Map those back to the optimised local copies so previews
+# resolve offline and the asset check still means something.
+WP_MEDIA_ALIASES = {
+    "pexels-kelly-9229396.webp": "hero-home.webp",
+    "sub-station.webp": "hero-services.webp",
+    "andreas-troll-solar-system-191692.webp": "hero-contact.webp",
+}
 FORM_SHORTCODE = '[fluentform id="3"]'
 LEGACY_FORM_MARKER = "<!-- BROSEPH_FORM: general-contact -->"
 
@@ -316,6 +324,8 @@ def source_digest(*fragments: str) -> str:
 
 def rewrite_for_preview(fragment: str) -> str:
     rendered = fragment.replace(CDN_BASE, "../assets/images/")
+    for remote, local in WP_MEDIA_ALIASES.items():
+        rendered = rendered.replace(WP_MEDIA_BASE + remote, f"../assets/images/{local}")
     rendered = rendered.replace(WP_MEDIA_BASE, "../assets/images/")
     route_rewrites = (
         ('href="/services/"', 'href="services-preview.html"'),
@@ -604,7 +614,10 @@ def fragment_errors(page: Page, fragment: str) -> list[str]:
 
     for base in (CDN_BASE, WP_MEDIA_BASE):
         for filename in re.findall(re.escape(base) + r"([^\"')\s]+)", fragment):
-            asset = ROOT / "assets" / "images" / filename
+            local = filename
+            if base == WP_MEDIA_BASE:
+                local = WP_MEDIA_ALIASES.get(filename, filename)
+            asset = ROOT / "assets" / "images" / local
             if not asset.is_file():
                 errors.append(f"{label}: referenced asset is missing: {filename}")
 
@@ -721,7 +734,10 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
 
     for base in (CDN_BASE, WP_MEDIA_BASE):
         for filename in re.findall(re.escape(base) + r"([^\"')\s]+)", fragment):
-            asset = ROOT / "assets" / "images" / filename
+            local = filename
+            if base == WP_MEDIA_BASE:
+                local = WP_MEDIA_ALIASES.get(filename, filename)
+            asset = ROOT / "assets" / "images" / local
             if not asset.is_file():
                 errors.append(f"{label}: referenced asset is missing: {filename}")
 
