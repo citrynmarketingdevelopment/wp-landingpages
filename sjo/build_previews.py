@@ -20,6 +20,7 @@ CDN_BASE = (
     "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/"
     "wp-landingpages@main/sjo/assets/images/"
 )
+WP_MEDIA_BASE = "https://sanjoaquinoperators.com/wp-content/uploads/2026/09/"
 FORM_SHORTCODE = '[fluentform id="3"]'
 LEGACY_FORM_MARKER = "<!-- BROSEPH_FORM: general-contact -->"
 
@@ -315,6 +316,7 @@ def source_digest(*fragments: str) -> str:
 
 def rewrite_for_preview(fragment: str) -> str:
     rendered = fragment.replace(CDN_BASE, "../assets/images/")
+    rendered = rendered.replace(WP_MEDIA_BASE, "../assets/images/")
     route_rewrites = (
         ('href="/services/"', 'href="services-preview.html"'),
         ('href="/contact-us/"', 'href="contact-preview.html"'),
@@ -564,10 +566,10 @@ def fragment_errors(page: Page, fragment: str) -> list[str]:
             "2-LINE-UW-First-RGB-United-Way-Logo-Localization-Tool.webp": (
                 "United Way of Central Eastern California"
             ),
-            "bakersfield-chamber.png": (
+            "bakersfield-chamber-color.png": (
                 "Greater Bakersfield Chamber of Commerce"
             ),
-            "KEDC-Final-Logo-wTagLine-1024x289.png": (
+            "kern-edc-plain.png": (
                 "Kern Economic Development Corporation"
             ),
         }
@@ -578,13 +580,33 @@ def fragment_errors(page: Page, fragment: str) -> list[str]:
                 errors.append(
                     f"{label}: affiliation logo requires approved alt text: {alt_text}"
                 )
+        if len(
+            re.findall(
+                r'<li\b[^>]*class="sjo-home__qualification-item"',
+                fragment,
+            )
+        ) != 1:
+            errors.append(f"{label}: home page must contain one qualification item")
+        qualification_logos = {
+            "isnetworld-ravs-360.png": "ISNetworld RAVS 360 Participant",
+        }
+        for filename, alt_text in qualification_logos.items():
+            if filename not in fragment:
+                errors.append(
+                    f"{label}: missing approved qualification logo: {filename}"
+                )
+            if f'alt="{alt_text}"' not in fragment:
+                errors.append(
+                    f"{label}: qualification logo requires approved alt text: {alt_text}"
+                )
         if "PENDING LOGO" in fragment:
             errors.append(f"{label}: outdated affiliation-logo placeholder remains")
 
-    for filename in re.findall(re.escape(CDN_BASE) + r"([^\"')\s]+)", fragment):
-        asset = ROOT / "assets" / "images" / filename
-        if not asset.is_file():
-            errors.append(f"{label}: referenced asset is missing: {filename}")
+    for base in (CDN_BASE, WP_MEDIA_BASE):
+        for filename in re.findall(re.escape(base) + r"([^\"')\s]+)", fragment):
+            asset = ROOT / "assets" / "images" / filename
+            if not asset.is_file():
+                errors.append(f"{label}: referenced asset is missing: {filename}")
 
     return errors
 
@@ -697,10 +719,11 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
             except ValueError:
                 errors.append(f"{label}: malformed rgba alpha value")
 
-    for filename in re.findall(re.escape(CDN_BASE) + r"([^\"')\s]+)", fragment):
-        asset = ROOT / "assets" / "images" / filename
-        if not asset.is_file():
-            errors.append(f"{label}: referenced asset is missing: {filename}")
+    for base in (CDN_BASE, WP_MEDIA_BASE):
+        for filename in re.findall(re.escape(base) + r"([^\"')\s]+)", fragment):
+            asset = ROOT / "assets" / "images" / filename
+            if not asset.is_file():
+                errors.append(f"{label}: referenced asset is missing: {filename}")
 
     if re.search(r"<a\b[^>]*>[^<]*Privacy Policy", fragment, re.IGNORECASE):
         errors.append(f"{label}: pending Privacy Policy must remain unlinked")

@@ -99,4 +99,4 @@ The existing background images contain branding; account for it when placing HTM
 - Contact intro: Tell us where you want to go—and what's standing in the way.
 - Advisor introduction: Work with Ed Martinez and a select network of experienced industry professionals, matched to the challenge in front of you.
 
-No contact form destination or backend configuration is supplied in the reference material. Use the supported phone and email or integrate the existing GitPress form facility if repository guidance defines one.
+The reference files do not contain a form configuration. The user subsequently supplied `[fluentform id="1"]`; it is embedded in the contact page. The latest hero screenshot supersedes the concise copy options above: it places the Jobsite-to-Boardroom tagline under the headline, uses a longer UVM introduction and puts What We Do before Let's Connect. See `content-audit.md` for the completed homepage coverage review.

@@ -387,11 +387,32 @@
     color: var(--vts-contact-green) !important;
     text-decoration: underline;
   }
+  .vts-contact .vts-contact-inquiry { padding-bottom: 80px; }
+  .vts-contact .vts-contact-inquiry-grid { display: grid; grid-template-columns: .85fr 1.25fr; gap: 80px; border-top: 1px solid var(--vts-contact-line); padding-top: 48px; }
+  .vts-contact .vts-contact-inquiry h2 { font-size: clamp(30px, 3vw, 40px); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+  .vts-contact .vts-contact-inquiry-intro p { margin-top: 18px; max-width: 350px; color: var(--vts-contact-muted) !important; font-size: 16px; }
+  .vts-contact .vts-contact-form { min-width: 0; padding: 32px; border-radius: 3px; background: var(--vts-contact-surface); }
+  .vts-contact .vts-contact-form .fluentform { font-family: inherit; font-size: 15px; color: var(--vts-contact-text); }
+  .vts-contact .vts-contact-form .ff-el-input--label label { color: #f3f3ec !important; font-weight: 600; }
+  .vts-contact .vts-contact-form .ff-el-form-control { width: 100%; min-height: 48px; border: 1px solid #77816c; border-radius: 3px; background: #111511; color: #f3f3ec !important; font: inherit; padding: 12px 14px; }
+  .vts-contact .vts-contact-form .ff-el-form-control::placeholder { color: #b8beb1; opacity: 1; }
+  .vts-contact .vts-contact-form .ff-el-form-control:focus { outline: 2px solid #a6bf58; outline-offset: 2px; border-color: #a6bf58; box-shadow: none; }
+  .vts-contact .vts-contact-form .ff-btn-submit { min-height: 50px; border: 1px solid #a6bf58; border-radius: 3px; background: #a6bf58; color: #172010 !important; padding: 13px 24px; font: inherit; font-weight: 700; cursor: pointer; }
+  .vts-contact .vts-contact-form .ff-btn-submit:hover { background: #bed181; }
+  .vts-contact .vts-contact-form .ff-btn-submit:focus-visible { outline: 2px solid #d8e5ab; outline-offset: 4px; }
+  .vts-contact .vts-contact-form .ff-btn-submit:disabled { opacity: .65; cursor: wait; }
+  .vts-contact .vts-contact-form :is(.error, .text-danger, .ff-el-error, .ff-el-help-message) { color: #ffb4ab !important; }
+  .vts-contact .vts-contact-form .ff-message-success { color: #e2ecc8; border-color: #a6bf58; box-shadow: none; }
+  .vts-contact .vts-contact-form .ff-el-input--label.ff-el-is-required.asterisk-right > label:after { color: #ffb4ab; }
   @media (max-width: 1024px) {
+    .vts-contact .vts-contact-inquiry-grid { gap: 40px; }
     .vts-contact .vts-contact-grid { gap: 40px; }
     .vts-contact .vts-contact-preparation { padding: 26px; }
   }
   @media (max-width: 767px) {
+    .vts-contact .vts-contact-inquiry { padding-bottom: 56px; }
+    .vts-contact .vts-contact-inquiry-grid { grid-template-columns: 1fr; gap: 28px; padding-top: 32px; }
+    .vts-contact .vts-contact-form { padding: 24px 20px; }
     .vts-contact .vts-contact-wrap { width: calc(100% - 40px); }
     .vts-contact .vts-contact-hero { padding: 48px 0 36px; }
     .vts-contact .vts-contact-eyebrow { margin-bottom: 18px; }
@@ -471,7 +492,7 @@
   <a class="vts-skip-link" href="#main-content">Skip to content</a>
   <div class="vts-header-inner">
     <a class="vts-brand" href="velocitree-home-preview.html" aria-label="Velocitree Solutions home">
-      <span class="vts-brand-emblem" aria-hidden="true"><img src="../assets/images/velocitree-logo.png" width="1149" height="1369" alt=""></span>
+      <span class="vts-brand-emblem" aria-hidden="true"><img src="../assets/images/velocitree-logo.webp" width="1149" height="1369" alt=""></span>
       <span><span class="vts-brand-wordmark"><span>Veloci</span>tree</span><span class="vts-brand-subline">Solutions</span></span>
     </a>
     <nav class="vts-desktop-nav" aria-label="Main navigation">
@@ -493,7 +514,7 @@
   </div>
 </header>
 
-<!-- webhook retrigger 2026-09-08 | Velocitree contact v2 -->
+<!-- VTS version 2026-09-09.1 | Velocitree contact with Fluent Form 1 -->
 <!-- GitPress Managed body partial. Contact links and disclosures work without JavaScript. -->
 
 
@@ -548,6 +569,18 @@
     </div>
   </section>
 
+  <section class="vts-contact-inquiry" id="inquiry" aria-labelledby="vts-contact-inquiry-title">
+    <div class="vts-contact-wrap vts-contact-inquiry-grid">
+      <div class="vts-contact-inquiry-intro">
+        <h2 id="vts-contact-inquiry-title">Tell us what’s next.</h2>
+        <p>Share a little about your business and the challenge you are working through.</p>
+      </div>
+      <div class="vts-contact-form">
+        <div class="vts-form-preview"><p><strong>Contact form</strong></p><p>Fluent Forms form 1 renders here on WordPress.</p><p>For now, you can contact Ed using the email or phone links above.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="vts-contact-faq" aria-labelledby="vts-contact-faq-title">
     <div class="vts-contact-wrap vts-contact-faq-inner">
       <h2 id="vts-contact-faq-title">Before we connect</h2>
@@ -574,7 +607,7 @@
     <div class="vts-footer-grid">
       <div class="vts-footer-identity">
         <a class="vts-footer-brand" href="velocitree-home-preview.html" aria-label="Velocitree Solutions home">
-          <span class="vts-footer-emblem" aria-hidden="true"><img src="../assets/images/velocitree-logo.png" width="1149" height="1369" alt="" loading="lazy"></span>
+          <span class="vts-footer-emblem" aria-hidden="true"><img src="../assets/images/velocitree-logo.webp" width="1149" height="1369" alt="" loading="lazy"></span>
           <span><span class="vts-footer-wordmark"><span>Veloci</span>tree</span><span class="vts-footer-subline">Solutions</span></span>
         </a>
         <p class="vts-footer-description">Connecting strategy, execution, and people to help businesses grow.</p>

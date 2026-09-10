@@ -1,50 +1,53 @@
-<!-- VTS version 2026-09-08.2 | Reusable home hero; included inside home.html. -->
+<!-- VTS version 2026-09-09.2 | Client-reference hero; included inside home.html. -->
 <style>
   .vts-hero, .vts-hero * { box-sizing: border-box; }
   .vts-hero { position: relative; isolation: isolate; overflow: hidden; background: #111511; color: #f3f3ec; font-family: 'VTS Sans', Arial, sans-serif; }
-  .vts-hero .vts-hero__image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
-  .vts-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10,15,11,.95), rgba(10,15,11,.79) 34%, rgba(10,15,11,.2) 65%, rgba(10,15,11,.04)), linear-gradient(0deg, rgba(10,15,11,.48), transparent 28%); }
-  .vts-hero .vts-hero__wrap { width: min(1280px, calc(100% - 80px)); min-height: 584px; margin-inline: auto; display: flex; align-items: center; padding-block: 72px 78px; }
-  .vts-hero .vts-hero__copy { width: 720px; max-width: 68%; }
-  .vts-hero .vts-hero__eyebrow { margin: 0 0 24px; padding: 0; display: flex; align-items: center; gap: 12px; font-size: 11px; line-height: 1.5; letter-spacing: .16em; font-weight: 700; text-transform: uppercase; color: #dddccf !important; }
-  .vts-hero .vts-hero__eyebrow::before { content: ''; width: 28px; height: 1px; background: #c38b59; flex: 0 0 auto; }
-  .vts-hero .vts-hero__title { margin: 0; padding: 0; color: #f3f3ec !important; font-family: inherit; font-size: clamp(44px, 4.8vw, 68px); line-height: 1.04; font-weight: 800; letter-spacing: -.045em; text-transform: uppercase; }
-  .vts-hero .vts-hero__title span { display: block; color: #a6bf58 !important; }
-  .vts-hero .vts-hero__description { margin: 27px 0 0; padding: 0; max-width: 430px; color: #dedfd5 !important; font-size: 17px; font-weight: 400; line-height: 1.75; }
-  .vts-hero .vts-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 31px; }
-  .vts-hero .vts-hero__button { display: inline-flex; align-items: center; justify-content: center; gap: 26px; min-height: 51px; padding: 13px 23px; border: 1px solid #526c25; border-radius: 3px; background: #526c25; color: #fff !important; text-decoration: none; font-family: inherit; font-size: 13px; line-height: 1.5; font-weight: 700; white-space: nowrap; transition: background .2s, border-color .2s, transform .2s; }
-  .vts-hero .vts-hero__button--secondary { background: rgba(17,21,17,.4); border-color: #989c8e; }
+  .vts-hero .vts-hero__image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 43%; }
+  .vts-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10,15,11,.92), rgba(10,15,11,.73) 31%, rgba(10,15,11,.15) 60%, transparent 80%), linear-gradient(0deg, rgba(10,15,11,.35), transparent 25%); }
+  .vts-hero .vts-hero__wrap { width: min(1280px, calc(100% - 80px)); min-height: 470px; margin-inline: auto; display: flex; align-items: center; padding-block: 40px 44px; }
+  .vts-hero .vts-hero__copy { width: 560px; max-width: 51%; }
+  .vts-hero .vts-hero__title { margin: 0; padding: 0; color: #f3f3ec !important; font-family: inherit; font-size: clamp(42px, 4vw, 58px); line-height: 1.03; font-weight: 800; letter-spacing: -.025em; text-transform: uppercase; }
+  .vts-hero .vts-hero__title span { display: block; color: #9db64d !important; }
+  .vts-hero .vts-hero__tagline { margin: 10px 0 0; padding: 0; color: #f3f3ec !important; font-size: 22px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; }
+  .vts-hero .vts-hero__description { margin: 17px 0 0; padding: 0; max-width: 475px; color: #e0e2da !important; font-size: 17px; font-weight: 400; line-height: 1.65; }
+  .vts-hero .vts-hero__actions { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 25px; }
+  .vts-hero .vts-hero__button { display: inline-flex; align-items: center; justify-content: center; min-width: 178px; min-height: 48px; padding: 12px 25px; border: 1px solid #526c25; border-radius: 3px; background: #526c25; color: #fff !important; text-decoration: none; font-family: inherit; font-size: 12px; line-height: 1.5; font-weight: 800; letter-spacing: .015em; text-transform: uppercase; white-space: nowrap; transition: background .2s, border-color .2s, transform .2s; }
+  .vts-hero .vts-hero__button--secondary { background: rgba(17,21,17,.4); border-color: #c6cbc0; }
   .vts-hero .vts-hero__button:hover { background: #607d2d; border-color: #a6bf58; }
   .vts-hero .vts-hero__button--secondary:hover { background: #252e20; }
   .vts-hero .vts-hero__button:active { transform: translateY(1px); }
   .vts-hero a:focus-visible { outline: 3px solid #d8e5ab; outline-offset: 5px; }
-  .vts-hero .vts-hero__button svg { width: 18px; height: 18px; fill: currentColor; }
-  @media (min-width: 1600px) { .vts-hero .vts-hero__wrap { min-height: 640px; } }
-  @media (max-width: 1023px) { .vts-hero .vts-hero__wrap { min-height: 560px; } .vts-hero .vts-hero__copy { max-width: 77%; } .vts-hero .vts-hero__title { font-size: clamp(41px, 5.6vw, 57px); } }
+  @media (min-width: 1600px) { .vts-hero .vts-hero__wrap { min-height: 520px; } }
+  @media (min-width: 768px) and (max-width: 1100px) {
+    .vts-hero .vts-hero__copy { max-width: 58%; }
+    .vts-hero .vts-hero__title { font-size: clamp(33px, 4vw, 44px); }
+    .vts-hero .vts-hero__tagline { font-size: 18px; }
+    .vts-hero .vts-hero__description { font-size: 15px; }
+    .vts-hero .vts-hero__button { min-width: 145px; padding-inline: 17px; }
+  }
   @media (max-width: 767px) {
-    .vts-hero .vts-hero__wrap { width: calc(100% - 40px); min-height: 680px; align-items: flex-start; padding-block: 47px 260px; }
+    .vts-hero .vts-hero__wrap { width: calc(100% - 40px); min-height: 690px; align-items: flex-start; padding-block: 37px 285px; }
     .vts-hero .vts-hero__copy { max-width: 100%; width: 100%; }
-    .vts-hero .vts-hero__image { object-position: 88% 50%; }
-    .vts-hero::before { background: linear-gradient(180deg, rgba(10,15,11,.96), rgba(10,15,11,.9) 37%, rgba(10,15,11,.18) 72%, rgba(10,15,11,.35)); }
-    .vts-hero .vts-hero__eyebrow { font-size: 9px; letter-spacing: .115em; margin-bottom: 22px; gap: 8px; }
-    .vts-hero .vts-hero__eyebrow::before { width: 18px; }
-    .vts-hero .vts-hero__title { font-size: clamp(37px, 8.6vw, 58px); line-height: 1.06; }
-    .vts-hero .vts-hero__description { max-width: 340px; font-size: 15px; line-height: 1.7; margin-top: 21px; }
-    .vts-hero .vts-hero__actions { margin-top: 25px; gap: 10px; }
-    .vts-hero .vts-hero__button { padding: 12px 17px; gap: 19px; min-height: 48px; font-size: 12px; }
+    .vts-hero .vts-hero__image { object-position: 85% 50%; }
+    .vts-hero::before { background: linear-gradient(180deg, rgba(10,15,11,.97), rgba(10,15,11,.9) 44%, rgba(10,15,11,.12) 75%, rgba(10,15,11,.25)); }
+    .vts-hero .vts-hero__title { font-size: clamp(30px, 8vw, 49px); line-height: 1.08; letter-spacing: -.035em; }
+    .vts-hero .vts-hero__tagline { font-size: clamp(14px, 3.8vw, 20px); margin-top: 10px; }
+    .vts-hero .vts-hero__description { max-width: 410px; font-size: 14px; line-height: 1.7; margin-top: 16px; }
+    .vts-hero .vts-hero__actions { margin-top: 22px; gap: 10px; }
+    .vts-hero .vts-hero__button { min-width: 0; padding: 12px 21px; min-height: 45px; font-size: 11px; }
   }
   @media (prefers-reduced-motion: reduce) { .vts-hero .vts-hero__button { transition: none; } }
 </style>
 <section class="vts-hero" aria-labelledby="vts-home-title">
-  <img class="vts-hero__image" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/uvm-hero.png" width="1672" height="941" alt="Arborist working above a forested utility corridor at sunset" fetchpriority="high">
+  <img class="vts-hero__image" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/uvm-hero.webp" width="1672" height="941" alt="Arborist working above a forested utility corridor at sunset" fetchpriority="high">
   <div class="vts-hero__wrap">
     <div class="vts-hero__copy">
-      <p class="vts-hero__eyebrow">Strategic advisory for the UVM industry</p>
       <h1 class="vts-hero__title" id="vts-home-title">Growth changes<span>the business.</span></h1>
-      <p class="vts-hero__description">Practical experience and strategic insight to navigate growth in the Utility Vegetation Management industry.</p>
+      <p class="vts-hero__tagline">From the Jobsite to the Boardroom&trade;</p>
+      <p class="vts-hero__description">Velocitree helps organizations in the Utility Vegetation Management industry navigate growth, leadership, financial demands, safety, operations, and the challenges that come with increasing complexity.</p>
       <div class="vts-hero__actions">
-        <a class="vts-hero__button" href="/contact/">Let’s connect <svg class="vts-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
-        <a class="vts-hero__button vts-hero__button--secondary" href="/#expertise">What we do <svg class="vts-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"/></svg></a>
+        <a class="vts-hero__button" href="/#expertise">What we do</a>
+        <a class="vts-hero__button vts-hero__button--secondary" href="/contact/">Let&rsquo;s connect</a>
       </div>
     </div>
   </div>

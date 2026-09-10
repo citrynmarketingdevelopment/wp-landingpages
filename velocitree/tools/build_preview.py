@@ -48,6 +48,9 @@ def build(page, title, description):
         css.append(match.group(1))
         return ''
     body = re.sub(r'<style>(.*?)</style>', collect, '\n'.join(parts), flags=re.S)
+    # WordPress owns the form fields and submission behavior. Never simulate a
+    # working form in the standalone preview or guess the configured fields.
+    body = body.replace('[fluentform id="1"]', '<div class="vts-form-preview"><p><strong>Contact form</strong></p><p>Fluent Forms form 1 renders here on WordPress.</p><p>For now, you can contact Ed using the email or phone links above.</p></div>')
     document = f'''<!DOCTYPE html>
 <html lang="en">
 <head>

@@ -73,6 +73,20 @@ with sync_playwright() as p:
         context.close()
     context = browser.new_context(viewport={'width': 1440, 'height': 1000}, device_scale_factor=1, reduced_motion='reduce')
     page = context.new_page()
+    navigate(page, 'home')
+    for area in ('leadership', 'financial', 'operations', 'safety', 'contracts', 'technology'):
+        page.locator(f'.vts-overview__item[href$="#{area}"]').click()
+        page.wait_for_function('(id) => document.getElementById(id).open', arg=area)
+        assert page.locator(f'#{area} p').is_visible()
+    report['checks'].append('home: all six service links reveal their matching expertise descriptions')
+    page.goto((ROOT / 'preview/velocitree-home-preview.html').as_uri() + '#technology')
+    page.wait_for_function('document.getElementById("technology").open')
+    report['checks'].append('home: direct expertise anchor opens on initial load')
+    assert '[fluentform id="1"]' in (ROOT / 'contact.html').read_text(encoding='utf-8')
+    navigate(page, 'contact')
+    assert page.locator('.vts-contact-form .vts-form-preview').is_visible()
+    assert page.locator('.vts-contact-form form').count() == 0
+    report['checks'].append('contact: real shortcode in source; clearly labeled preview without simulated submission')
     for name in ('home', 'contact'):
         navigate(page, name)
         page.screenshot(path=str(ROOT / f'preview/{name}-desktop.png'), full_page=True)

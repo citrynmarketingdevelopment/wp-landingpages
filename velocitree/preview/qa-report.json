@@ -27,6 +27,9 @@
     "contact: 1024px, JS False: no overflow; images, fonts and shell OK",
     "contact: 1440px, JS False: no overflow; images, fonts and shell OK",
     "contact: native menu and disclosures pass with JS False",
+    "home: all six service links reveal their matching expertise descriptions",
+    "home: direct expertise anchor opens on initial load",
+    "contact: real shortcode in source; clearly labeled preview without simulated submission",
     "home: keyboard skip link and reduced-motion rendering pass",
     "contact: keyboard skip link and reduced-motion rendering pass"
   ],

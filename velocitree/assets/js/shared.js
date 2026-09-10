@@ -64,6 +64,16 @@
 
   function init() {
     document.querySelectorAll('[data-vts-header]').forEach(initHeader);
+    function revealExpertise() {
+      var id = window.location.hash.slice(1);
+      var target = document.getElementById(id);
+      if (target && target.matches('.vts-expertise__item')) target.open = true;
+    }
+    revealExpertise();
+    if (!document.documentElement.hasAttribute('data-vts-anchor-initialized')) {
+      document.documentElement.setAttribute('data-vts-anchor-initialized', 'true');
+      window.addEventListener('hashchange', revealExpertise);
+    }
     document.querySelectorAll('[data-vts-year]').forEach(function (year) {
       year.textContent = String(new Date().getFullYear());
     });

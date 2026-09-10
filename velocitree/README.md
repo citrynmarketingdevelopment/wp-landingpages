@@ -67,7 +67,7 @@ Production images/fonts/capability-card links point at this repository’s raw `
 
 For optional enhancements, enqueue `assets/js/shared.js` once through an approved WordPress shared asset mechanism after the managed shell renders. If loaded after DOM ready, it initializes immediately; dynamically replaced shells can call `VelocitreeSite.init()`. The header/footer contain no inline scripts, and the menu and all FAQs still open with JavaScript disabled. No page body initializes global navigation. The custom native mobile-menu hooks intentionally avoid the legacy GitPress hamburger IDs.
 
-The contact page is functional through `mailto:velocitreesolutions@outlook.com` and `tel:+19095618661`. No inquiry form ID or submission endpoint was supplied, so it has no simulated submission or invented Fluent Forms ID. To add a WordPress form later, embed the actual raw `[fluentform id="..."]` shortcode in the contact body and let Fluent Forms handle submissions.
+The contact page includes the supplied raw `[fluentform id="1"]` shortcode in its inquiry section, with scoped styling for Fluent Forms fields, labels, validation and buttons. Fluent Forms controls the configured fields and submissions on WordPress. The standalone preview replaces the shortcode with a clearly labeled form area; it does not simulate fields or submission. Direct email and phone links remain available. Verify form 1 renders and delivers an actual test inquiry on the target WordPress site after deployment.
 
 Set the following SEO metadata in WordPress/Yoast (previews carry the same titles/descriptions solely for review):
 
@@ -80,7 +80,13 @@ Set the following SEO metadata in WordPress/Yoast (previews carry the same title
 
 The charcoal, green and copper palette, light audience section, tree-and-gear emblem and sunset arborist composition follow the supplied artwork. CSS is scoped and the native HTML approach follows `GITPRESS_WEBSITE_STRUCTURE.md`. Manrope supplies the bold geometric typography. Phosphor Regular SVGs provide a consistent icon family. The header’s compact horizontal lockup uses a CSS viewport onto the existing emblem plus typeset lettering.
 
-The six capability descriptions, five audiences, contact information and positioning come from the reference folder. No years in business, results, certifications, address or response-time promise have been invented. Industry affiliation marks remain in the linked original capability/business-card materials; they are not presented as certifications.
+The six capability descriptions, five audiences, contact information and positioning come from the reference folder. No years in business, results, certifications, address or response-time promise have been invented. The supplied UAA, TCIA and ISA affiliation marks appear on the home page under the “Proud industry affiliations” heading, following their business-card placement. They are presented as affiliations, not certifications.
+
+The latest September 9 redesign follows the client's hero reference: uppercase two-line headline, the Jobsite-to-Boardroom tagline directly beneath it, the full supplied introduction, What We Do as the first CTA and Let's Connect as the outlined second CTA. Six centered service panels include icons and short descriptions. Below them, the page uses a light background, a prominent brand introduction and photo-led audience cards. All six detailed capabilities start expanded. A forest-green experience section replaces the generic process steps with the capability card's actual advisor specialties and Ed Martinez's title. Navigation labels, routes and anchor IDs remain stable. Mobile layouts reflow without horizontal scrolling, and interaction feedback respects reduced motion.
+
+See `content-audit.md` for a section-by-section comparison against the capability card, including restored content.
+
+The three displayed images use WebP copies of the original PNGs at the same dimensions (Pillow WebP quality 88, method 6). Originals remain in the repository. Combined image payload falls from 6,116,391 to 624,220 bytes, about 90% smaller. A local Lighthouse mobile audit scored 68 performance, 100 accessibility and 96 best practices, with 0 ms total blocking time and 0.001 layout shift. Simulated LCP was 6.6 seconds, so the mobile performance target is not yet met; production hosting, caching and further font/image optimization need separate verification. The standalone previews intentionally remain noindex.
 
 Image preparation used the built-in image-generation tool:
 
@@ -90,6 +96,6 @@ Image preparation used the built-in image-generation tool:
 
 ## Deployment verification
 
-Local validation passed: 7 HTML files checked for GitPress boundaries, IDs, asset references and navigation; 28 Chrome browser checks covered both pages at 320, 390, 768, 1024 and 1440px, with and without JavaScript, plus native menus/disclosures, Escape/outside-click closing, contact navigation, keyboard skip links and reduced-motion rendering. Full screenshots and `qa-report.json` are in `preview/`. Browser verification can be rerun with `python velocitree/tools/qa_browser.py` after installing the optional `playwright` Python package; it uses installed Google Chrome.
+Local validation covers 7 HTML files for GitPress boundaries, IDs, asset references and navigation; 31 Chrome browser checks cover both pages at 320, 390, 768, 1024 and 1440px, with and without JavaScript, plus native menus/disclosures, Escape/outside-click closing, contact navigation, keyboard skip links, reduced-motion rendering, service deep links and the form preview boundary. Full screenshots and `qa-report.json` are in `preview/`. Browser verification can be rerun with `python velocitree/tools/qa_browser.py` after installing the optional `playwright` Python package; it uses installed Google Chrome.
 
 This package is prepared locally. Live WordPress rendering, GitPress sanitization/caching and form integration require the target WordPress site. After deploying, confirm the fragment version markers, exactly one header/footer, fonts and images, native menu/FAQ behavior, mobile layout and SEO settings. Purge GitPress’s content cache if the deployed marker is stale.

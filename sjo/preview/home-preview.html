@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- SJO_PREVIEW_BUNDLE_SHA256: da4c22806538807e5f66bef9fc757855709e8faa409d90f2c04901c22b2cf763 -->
+<!-- SJO_PREVIEW_BUNDLE_SHA256: 28760212cba6f4ea7abfd21dcd4867aac74b8b7bac47140d8e7e72e157ea7625 -->
 <!-- SJO_PREVIEW_HEADER_SHA256: dbfb6ee6340310a61ccea1f6288a32d015e7af5e924cfea846be1761c9220bf7 -->
-<!-- SJO_PREVIEW_PAGE_SHA256: 3c740d8c38cd5402b9c610b552d3c11661fbd648739d827994092024fc84cc06 -->
+<!-- SJO_PREVIEW_PAGE_SHA256: 19b48afb8f38db43b99131c1ebc14ed67367d2c757707e2911a42cd88e2bd41b -->
 <!-- SJO_PREVIEW_FOOTER_SHA256: b762b1ebc713dbf0fe1b6c980d2d0f30177947fc84ef9fad863c3b28a2c1d54b -->
 <html lang="en">
 <head>
@@ -1124,6 +1124,58 @@
     border-left: 0;
   }
 
+  /* Industry qualifications */
+  .sjo-home__qualifications {
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+
+  .sjo-home__qualifications-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 2vw, 22px);
+    color: var(--sjo-ink) !important;
+    font-size: clamp(.74rem, 1.5vw, .9rem);
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .18em !important;
+    text-transform: uppercase !important;
+  }
+
+  .sjo-home__qualifications-title::before,
+  .sjo-home__qualifications-title::after {
+    content: "";
+    height: 1px;
+    max-width: 230px;
+    flex: 1 1 auto;
+    background: var(--sjo-line);
+  }
+
+  .sjo-home__qualification-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(20px, 3vw, 38px);
+    margin-top: clamp(24px, 3vw, 36px);
+  }
+
+  .sjo-home__qualification-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(6px, 1vw, 12px) clamp(10px, 1.6vw, 18px);
+  }
+
+  .sjo-home__qualification-logo {
+    width: auto;
+    max-width: min(100%, 292px);
+    max-height: 84px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
   @media (max-width: 1024px) {
     .sjo-home__hero-copy {
       width: min(76%, 700px);
@@ -1329,6 +1381,15 @@
 
     .sjo-home__affiliation-item:first-child {
       border-top: 0;
+    }
+
+    .sjo-home__qualifications-title::before,
+    .sjo-home__qualifications-title::after {
+      max-width: 64px;
+    }
+
+    .sjo-home__qualification-logo {
+      max-height: 62px;
     }
   }
 
@@ -1659,15 +1720,15 @@
 </aside>
 
     <div class="sjo-preview-stage">
-<!-- SJO_HOME_VERSION: 2026-09-03.1 -->
+<!-- SJO_HOME_VERSION: 2026-09-10.1 -->
 
 
 <main class="sjo-page sjo-home">
   <section class="sjo-home__hero" aria-labelledby="sjo-home-title">
     <figure class="sjo-home__hero-media">
       <picture>
-        <source media="(max-width: 680px)" srcset="../assets/images/hero-home-mobile.webp" width="1122" height="1402">
-        <img src="../assets/images/hero-home.webp" alt="Two renewable energy professionals inspecting a utility-scale solar project" width="1672" height="941" fetchpriority="high" decoding="async">
+        <source media="(max-width: 680px)" srcset="../assets/images/hero-home-mobile.webp" width="315" height="438">
+        <img src="../assets/images/hero-home.webp" alt="Aerial view of a utility-scale solar project in the western desert" width="780" height="438" fetchpriority="high" decoding="async">
       </picture>
     </figure>
 
@@ -1862,12 +1923,21 @@
           <img class="sjo-home__affiliation-logo sjo-home__affiliation-logo--united-way" src="../assets/images/2-LINE-UW-First-RGB-United-Way-Logo-Localization-Tool.webp" alt="United Way of Central Eastern California" width="2610" height="900" loading="lazy" decoding="async">
         </li>
         <li class="sjo-home__affiliation-item">
-          <img class="sjo-home__affiliation-logo sjo-home__affiliation-logo--bakersfield-chamber" src="../assets/images/bakersfield-chamber.png" alt="Greater Bakersfield Chamber of Commerce" width="520" height="204" loading="lazy" decoding="async">
+          <img class="sjo-home__affiliation-logo sjo-home__affiliation-logo--bakersfield-chamber" src="../assets/images/bakersfield-chamber-color.png" alt="Greater Bakersfield Chamber of Commerce" width="1201" height="370" loading="lazy" decoding="async">
         </li>
         <li class="sjo-home__affiliation-item">
-          <img class="sjo-home__affiliation-logo sjo-home__affiliation-logo--kedc" src="../assets/images/KEDC-Final-Logo-wTagLine-1024x289.png" alt="Kern Economic Development Corporation" width="529" height="259" loading="lazy" decoding="async">
+          <img class="sjo-home__affiliation-logo sjo-home__affiliation-logo--kedc" src="../assets/images/kern-edc-plain.png" alt="Kern Economic Development Corporation" width="1666" height="787" loading="lazy" decoding="async">
         </li>
       </ul>
+
+      <div class="sjo-home__qualifications">
+        <h3 class="sjo-home__qualifications-title" id="sjo-qualifications-title">Industry Qualifications</h3>
+        <ul class="sjo-home__qualification-list" aria-labelledby="sjo-qualifications-title">
+          <li class="sjo-home__qualification-item">
+            <img class="sjo-home__qualification-logo sjo-home__qualification-logo--isnetworld" src="../assets/images/isnetworld-ravs-360.png" alt="ISNetworld RAVS 360 Participant" width="932" height="272" loading="lazy" decoding="async">
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </main>
