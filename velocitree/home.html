@@ -192,10 +192,18 @@
     .vts-hero .vts-hero__actions { margin-top: 22px; gap: 10px; }
     .vts-hero .vts-hero__button { min-width: 0; padding: 12px 21px; min-height: 45px; font-size: 11px; }
   }
+  /* Phones load a pre-cropped portrait frame, so the art is already positioned. */
+  @media (max-width: 480px) { .vts-hero .vts-hero__image { object-position: center 50%; } }
   @media (prefers-reduced-motion: reduce) { .vts-hero .vts-hero__button { transition: none; } }
 </style>
 <section class="vts-hero" aria-labelledby="vts-home-title">
-  <img class="vts-hero__image" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/uvm-hero.webp" width="1672" height="941" alt="Arborist working above a forested utility corridor at sunset" fetchpriority="high">
+  <picture>
+    <source media="(max-width: 480px)" srcset="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-hero-mobile.webp" width="640" height="941">
+    <img class="vts-hero__image" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-hero-1280.webp"
+         srcset="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-hero-640.webp 640w, https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-hero-960.webp 960w, https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-hero-1280.webp 1280w, https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-hero-1672.webp 1672w"
+         sizes="(max-width: 767px) 1226px, 100vw"
+         width="1672" height="941" alt="Arborist climbing a tree above a forested utility corridor at sunset" fetchpriority="high">
+  </picture>
   <div class="vts-hero__wrap">
     <div class="vts-hero__copy">
       <h1 class="vts-hero__title" id="vts-home-title">Growth changes<span>the business.</span></h1>

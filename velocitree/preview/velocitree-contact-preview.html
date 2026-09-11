@@ -59,27 +59,22 @@
     flex: 0 0 auto;
     color: #f3f3ec !important;
   }
+  /* The emblem art is pre-trimmed with a transparent field, so it needs no crop or mask. */
   .vts-header .vts-brand-emblem {
-    position: relative;
     display: block;
-    width: 46px;
-    height: 47px;
-    overflow: hidden;
-    flex: 0 0 46px;
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%);
-    mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%);
+    flex: 0 0 52px;
+    width: 52px;
+    height: 42px;
   }
   .vts-header .vts-brand-emblem img {
-    position: absolute;
-    top: -5px;
-    left: -39px;
     display: block;
-    width: 282px;
-    height: 336px;
+    width: 100%;
+    height: 100%;
     max-width: none;
     margin: 0;
     padding: 0;
     border: 0;
+    object-fit: contain;
   }
   .vts-header .vts-brand-wordmark { display: block; font-size: 27px; font-weight: 500; letter-spacing: -1.45px; line-height: 1; }
   .vts-header .vts-brand-wordmark > span { color: #c38b59 !important; }
@@ -457,8 +452,8 @@
   .vts-footer .vts-footer-inner { width: min(1280px, calc(100% - 80px)); margin-inline: auto; }
   .vts-footer .vts-footer-grid { display: grid; grid-template-columns: 1.3fr .65fr 1fr; gap: 76px; }
   .vts-footer .vts-footer-brand { display: inline-flex; align-items: center; gap: 12px; width: fit-content; color: #f3f3ec !important; }
-  .vts-footer .vts-footer-emblem { position: relative; display: block; flex: 0 0 46px; width: 46px; height: 47px; overflow: hidden; -webkit-mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%); mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%); }
-  .vts-footer .vts-footer-emblem img { position: absolute; top: -5px; left: -39px; display: block; width: 282px; height: 336px; max-width: none; margin: 0; padding: 0; border: 0; }
+  .vts-footer .vts-footer-emblem { display: block; flex: 0 0 52px; width: 52px; height: 42px; }
+  .vts-footer .vts-footer-emblem img { display: block; width: 100%; height: 100%; max-width: none; margin: 0; padding: 0; border: 0; object-fit: contain; }
   .vts-footer .vts-footer-wordmark { display: block; color: #f3f3ec !important; font-size: 29px; font-weight: 500; line-height: 1; letter-spacing: -1.6px; }
   .vts-footer .vts-footer-wordmark > span { color: #c38b59 !important; }
   .vts-footer .vts-footer-subline { display: block; margin-top: 7px; color: #b8beb1 !important; font-size: 8px; line-height: 1; letter-spacing: 4.3px; text-transform: uppercase; }
@@ -494,13 +489,13 @@
   <script src="../assets/js/shared.js" defer></script>
 </head>
 <body data-vts-preview-page="contact">
-<!-- Velocitree GitPress managed header | version 2026-09-11.5 -->
+<!-- Velocitree GitPress managed header | version 2026-09-11.6 -->
 
 <header class="vts-header site-header" id="siteHeader" data-vts-header>
   <a class="vts-skip-link" href="#main-content">Skip to content</a>
   <div class="vts-header-inner">
     <a class="vts-brand" href="velocitree-home-preview.html" aria-label="Velocitree Solutions home">
-      <span class="vts-brand-emblem" aria-hidden="true"><img src="../assets/images/velocitree-logo.webp" width="1149" height="1369" alt=""></span>
+      <span class="vts-brand-emblem" aria-hidden="true"><img src="../assets/images/vts-emblem.webp" srcset="../assets/images/vts-emblem.webp 1x, ../assets/images/vts-emblem-2x.webp 2x, ../assets/images/vts-emblem-3x.webp 3x" width="52" height="42" alt=""></span>
       <span><span class="vts-brand-wordmark"><span>Veloci</span>tree</span><span class="vts-brand-subline">Solutions</span></span>
     </a>
     <nav class="vts-desktop-nav" aria-label="Main navigation">
@@ -606,7 +601,7 @@
     <div class="vts-footer-grid">
       <div class="vts-footer-identity">
         <a class="vts-footer-brand" href="velocitree-home-preview.html" aria-label="Velocitree Solutions home">
-          <span class="vts-footer-emblem" aria-hidden="true"><img src="../assets/images/velocitree-logo.webp" width="1149" height="1369" alt="" loading="lazy"></span>
+          <span class="vts-footer-emblem" aria-hidden="true"><img src="../assets/images/vts-emblem.webp" srcset="../assets/images/vts-emblem.webp 1x, ../assets/images/vts-emblem-2x.webp 2x, ../assets/images/vts-emblem-3x.webp 3x" width="52" height="42" alt="" loading="lazy"></span>
           <span><span class="vts-footer-wordmark"><span>Veloci</span>tree</span><span class="vts-footer-subline">Solutions</span></span>
         </a>
         <p class="vts-footer-description">Connecting strategy, execution, and people to help businesses grow.</p>

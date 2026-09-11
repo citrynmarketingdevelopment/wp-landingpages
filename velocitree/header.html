@@ -1,4 +1,4 @@
-<!-- Velocitree GitPress managed header | version 2026-09-11.5 -->
+<!-- Velocitree GitPress managed header | version 2026-09-11.6 -->
 <style>
   @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-400.ttf") format("truetype"); }
   @font-face { font-family: "VTS Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/fonts/manrope-500.ttf") format("truetype"); }
@@ -46,27 +46,22 @@
     flex: 0 0 auto;
     color: #f3f3ec !important;
   }
+  /* The emblem art is pre-trimmed with a transparent field, so it needs no crop or mask. */
   .vts-header .vts-brand-emblem {
-    position: relative;
     display: block;
-    width: 46px;
-    height: 47px;
-    overflow: hidden;
-    flex: 0 0 46px;
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%);
-    mask-image: radial-gradient(ellipse at center, #000 56%, transparent 74%);
+    flex: 0 0 52px;
+    width: 52px;
+    height: 42px;
   }
   .vts-header .vts-brand-emblem img {
-    position: absolute;
-    top: -5px;
-    left: -39px;
     display: block;
-    width: 282px;
-    height: 336px;
+    width: 100%;
+    height: 100%;
     max-width: none;
     margin: 0;
     padding: 0;
     border: 0;
+    object-fit: contain;
   }
   .vts-header .vts-brand-wordmark { display: block; font-size: 27px; font-weight: 500; letter-spacing: -1.45px; line-height: 1; }
   .vts-header .vts-brand-wordmark > span { color: #c38b59 !important; }
@@ -133,7 +128,7 @@
   <a class="vts-skip-link" href="#main-content">Skip to content</a>
   <div class="vts-header-inner">
     <a class="vts-brand" href="/" aria-label="Velocitree Solutions home">
-      <span class="vts-brand-emblem" aria-hidden="true"><img src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/velocitree-logo.webp" width="1149" height="1369" alt=""></span>
+      <span class="vts-brand-emblem" aria-hidden="true"><img src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-emblem.webp" srcset="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-emblem.webp 1x, https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-emblem-2x.webp 2x, https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/velocitree/assets/images/vts-emblem-3x.webp 3x" width="52" height="42" alt=""></span>
       <span><span class="vts-brand-wordmark"><span>Veloci</span>tree</span><span class="vts-brand-subline">Solutions</span></span>
     </a>
     <nav class="vts-desktop-nav" aria-label="Main navigation">

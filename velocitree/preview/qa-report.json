@@ -35,6 +35,10 @@
     "contact: header CTA stays on one line from 320 to 430px under theme overrides",
     "home: all six service links reveal their matching expertise descriptions",
     "home: direct expertise anchor opens on initial load",
+    "phone: hero serves vts-hero-mobile.webp and the emblem serves vts-emblem-3x.webp",
+    "phone-2x: hero serves vts-hero-mobile.webp and the emblem serves vts-emblem-2x.webp",
+    "tablet: hero serves vts-hero-1672.webp and the emblem serves vts-emblem-2x.webp",
+    "desktop: hero serves vts-hero-1672.webp and the emblem serves vts-emblem.webp",
     "contact: real shortcode in source; clearly labeled preview without simulated submission",
     "home: keyboard skip link and reduced-motion rendering pass",
     "contact: keyboard skip link and reduced-motion rendering pass"

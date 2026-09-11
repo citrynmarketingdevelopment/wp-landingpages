@@ -108,6 +108,30 @@ with sync_playwright() as p:
     page.goto((ROOT / 'preview/velocitree-home-preview.html').as_uri() + '#technology')
     page.wait_for_function('document.getElementById("technology").open')
     report['checks'].append('home: direct expertise anchor opens on initial load')
+
+    # Responsive art: phones take the pre-cropped portrait frame, wider screens the width ladder,
+    # and the emblem steps up by device pixel ratio.
+    for label, vp, dpr, expect_hero, expect_emblem in (
+        ('phone', {'width': 390, 'height': 844}, 3, 'vts-hero-mobile.webp', 'vts-emblem-3x.webp'),
+        ('phone-2x', {'width': 430, 'height': 932}, 2, 'vts-hero-mobile.webp', 'vts-emblem-2x.webp'),
+        ('tablet', {'width': 768, 'height': 1024}, 2, 'vts-hero-1672.webp', 'vts-emblem-2x.webp'),
+        ('desktop', {'width': 1440, 'height': 900}, 1, 'vts-hero-1672.webp', 'vts-emblem.webp'),
+    ):
+        art = browser.new_context(viewport=vp, device_scale_factor=dpr)
+        art_page = art.new_page()
+        navigate(art_page, 'home')
+        hero = art_page.locator('.vts-hero__image')
+        emblem = art_page.locator('.vts-brand-emblem img')
+        assert hero.evaluate('(e)=>e.currentSrc').endswith(expect_hero), (label, hero.evaluate('(e)=>e.currentSrc'))
+        assert emblem.evaluate('(e)=>e.currentSrc').endswith(expect_emblem), (label, emblem.evaluate('(e)=>e.currentSrc'))
+        assert hero.evaluate('(e)=>e.complete && e.naturalWidth > 0')
+        # The portrait crop is already framed, so it must not be re-offset.
+        pos = hero.evaluate('(e)=>getComputedStyle(e).objectPosition')
+        assert pos == ('50% 50%' if expect_hero == 'vts-hero-mobile.webp' else '50% 43%'), (label, pos)
+        # The emblem keys to transparency; a stray opaque field would break the dark bar.
+        assert emblem.evaluate('(e)=>e.naturalWidth') <= 156
+        report['checks'].append(f'{label}: hero serves {expect_hero} and the emblem serves {expect_emblem}')
+        art.close()
     assert '[fluentform id="1"]' in (ROOT / 'contact.html').read_text(encoding='utf-8')
     navigate(page, 'contact')
     assert page.locator('.vts-contact-form .vts-form-preview').is_visible()
