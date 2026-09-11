@@ -97,6 +97,34 @@ with sync_playwright() as p:
                 report['checks'].append(f'{name}: contact navigation closes menu and reaches contact page')
         assert not errors, errors
         context.close()
+    # The live WordPress theme outranks plain class selectors with ID-scoped and !important
+    # rules, and resets summary display, which is what shrank the menu text and brought back
+    # the disclosure triangle. Re-run the mobile menu under those rules.
+    HOSTILE_THEME_CSS = '''
+    #page-container a, body #page-container .et_pb_section a { font-size: 14px; font-weight: 400; line-height: 1.7; }
+    body a { font-size: 15px !important; }
+    body summary { display: list-item !important; list-style: disclosure-closed !important; }
+    body details > summary { list-style-type: disclosure-closed; }
+    '''
+    context = browser.new_context(viewport={'width': 390, 'height': 844}, device_scale_factor=1)
+    page = context.new_page()
+    for name in ('home', 'contact'):
+        navigate(page, name)
+        page.add_style_tag(content=HOSTILE_THEME_CSS)
+        toggle = page.locator('#vtsMenuToggle')
+        assert toggle.evaluate('(e)=>getComputedStyle(e).display') == 'flex'
+        assert toggle.evaluate('(e)=>getComputedStyle(e).listStyleType') == 'none'
+        assert toggle.evaluate("(e)=>getComputedStyle(e, '::marker').content") in ('""', 'none')
+        assert toggle.bounding_box()['width'] <= 46
+        toggle.click()
+        link = page.locator('.vts-mobile-nav > a').first
+        assert float(link.evaluate('(e)=>getComputedStyle(e).fontSize')[:-2]) >= 26
+        assert float(link.evaluate('(e)=>getComputedStyle(e).minHeight')[:-2]) >= 60
+        cta = page.locator('.vts-mobile-nav > .vts-header-cta')
+        assert float(cta.evaluate('(e)=>getComputedStyle(e).fontSize')[:-2]) >= 17
+        report['checks'].append(f'{name}: menu keeps its size and hides the triangle under theme overrides')
+    context.close()
+
     context = browser.new_context(viewport={'width': 1440, 'height': 1000}, device_scale_factor=1, reduced_motion='reduce')
     page = context.new_page()
     navigate(page, 'home')

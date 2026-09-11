@@ -31,6 +31,8 @@
     "contact: 1440px, JS False: no overflow; images, fonts and shell OK",
     "contact: mobile bar stays pinned and the menu opens full screen with JS False",
     "contact: native menu and disclosures pass with JS False",
+    "home: menu keeps its size and hides the triangle under theme overrides",
+    "contact: menu keeps its size and hides the triangle under theme overrides",
     "home: all six service links reveal their matching expertise descriptions",
     "home: direct expertise anchor opens on initial load",
     "contact: real shortcode in source; clearly labeled preview without simulated submission",
