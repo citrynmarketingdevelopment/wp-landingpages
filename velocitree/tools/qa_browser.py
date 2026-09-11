@@ -11,6 +11,8 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 CHROME = Path(os.environ.get('PROGRAMFILES', 'C:/Program Files')) / 'Google/Chrome/Application/chrome.exe'
 report = {'status': 'running', 'checks': [], 'scope': 'Local previews; live WordPress is not configured'}
+# Number of line boxes the element's contents actually render on.
+LINE_COUNT = '(e) => { const r = document.createRange(); r.selectNodeContents(e); return r.getClientRects().length; }'
 
 
 def navigate(page, name):
@@ -39,47 +41,22 @@ with sync_playwright() as p:
                 report['checks'].append(f'{name}: {width}px, JS {js}: no overflow; images, fonts and shell OK')
             page.set_viewport_size({'width': 390, 'height': 844})
             navigate(page, name)
-            menu = page.locator('#vtsMobileMenu')
-            toggle = page.locator('#vtsMenuToggle')
-            toggle.click()
-            assert menu.get_attribute('open') is not None
-            assert page.locator('.vts-mobile-nav').is_visible()
-            # The panel is a full-screen overlay: it spans the viewport and clears the fixed bar.
-            nav_bounds = page.locator('.vts-mobile-nav').bounding_box()
-            header_height = page.locator('#siteHeader').bounding_box()['height']
-            assert nav_bounds['width'] == 390, nav_bounds
-            assert round(nav_bounds['y']) == round(header_height), (nav_bounds, header_height)
-            assert round(nav_bounds['y'] + nav_bounds['height']) == 844, nav_bounds
-            assert page.locator('#main-content').evaluate('(e)=>e.getBoundingClientRect().top') >= header_height - 0.5
-            link = page.locator('.vts-mobile-nav > a').first
-            link_bounds = link.bounding_box()
-            assert float(link.evaluate('(e)=>getComputedStyle(e).fontSize')[:-2]) >= 26
-            assert abs((link_bounds['x'] + link_bounds['width'] / 2) - 195) < 1, link_bounds
-            assert page.locator('#vtsMenuToggle').bounding_box()['width'] <= 46
-            # Open state: the toggle sits at the overlay's top-left and keeps a 44px tap target.
-            toggle_box = page.locator('#vtsMenuToggle').bounding_box()
-            assert toggle_box['x'] == 20 and toggle_box['y'] >= header_height, toggle_box
-            assert min(toggle_box['width'], toggle_box['height']) >= 44, toggle_box
-            assert toggle_box['y'] + toggle_box['height'] <= link_bounds['y'], (toggle_box, link_bounds)
-            assert '157, 182, 77' in page.locator('.vts-mobile-nav > .vts-header-cta').evaluate('(e)=>getComputedStyle(e).boxShadow')
-            if js:
-                page.wait_for_function('document.querySelector("#vtsMenuToggle").getAttribute("aria-expanded") === "true"')
-                assert page.evaluate('getComputedStyle(document.body).overflow') == 'hidden'
-                page.keyboard.press('Escape')
-                assert menu.get_attribute('open') is None
-                assert page.evaluate('getComputedStyle(document.body).overflow') != 'hidden'
-                assert toggle.evaluate('(e)=>e===document.activeElement')
-                toggle.click()
-                # Empty space in the bar itself is outside the menu, so it dismisses.
-                page.mouse.click(200, 36)
-                assert menu.get_attribute('open') is None
-            else:
-                toggle.click()
-                assert menu.get_attribute('open') is None
+            # No hamburger anywhere: the bar is the brand plus one call to action.
+            assert page.locator('#vtsMobileMenu').count() == 0
+            assert page.locator('summary', has_text='Menu').count() == 0
+            assert page.locator('#siteHeader details').count() == 0
+            cta = page.locator('#siteHeader .vts-header-cta')
+            assert cta.count() == 1 and cta.is_visible()
+            # One line: count the rendered line boxes of the label rather than trusting height,
+            # which the button's min-height floor would mask.
+            assert cta.evaluate(LINE_COUNT) == 1, cta.inner_text()
+            assert cta.locator('span').evaluate('(e)=>getComputedStyle(e).display') == 'none'
+            assert cta.evaluate('(e)=>e.scrollWidth <= e.clientWidth + 1')
+            # The bar stays pinned while the page scrolls.
             page.evaluate('window.scrollTo(0, 1200)')
             assert page.locator('#siteHeader').evaluate('(e)=>getComputedStyle(e).position') == 'fixed'
             assert round(page.locator('#siteHeader').bounding_box()['y']) == 0
-            report['checks'].append(f'{name}: mobile bar stays pinned and the menu opens full screen with JS {js}')
+            report['checks'].append(f'{name}: mobile bar stays pinned; CTA replaces the menu on one line with JS {js}')
             page.evaluate('window.scrollTo(0, 0)')
             first = page.locator('main details').first
             prior = first.get_attribute('open') is not None
@@ -87,14 +64,12 @@ with sync_playwright() as p:
             assert (first.get_attribute('open') is not None) != prior
             report['checks'].append(f'{name}: native menu and disclosures pass with JS {js}')
             if js:
-                toggle.click()
-                page.locator('.vts-mobile-nav [data-nav="contact"]').click()
+                page.locator('#siteHeader .vts-header-cta').click()
                 page.wait_for_url('**/velocitree-contact-preview.html')
-                assert page.locator('#vtsMobileMenu').get_attribute('open') is None
                 assert page.locator('a[href="tel:+19095618661"]').count() >= 1
                 assert page.locator('a[href^="mailto:ed@velocitreegroup.com"]').count() >= 1
                 assert page.locator('.vts-contact-button[href="#inquiry"]').count() == 1
-                report['checks'].append(f'{name}: contact navigation closes menu and reaches contact page')
+                report['checks'].append(f'{name}: header call to action reaches the contact page')
         assert not errors, errors
         context.close()
     # The live WordPress theme outranks plain class selectors with ID-scoped and !important
@@ -109,20 +84,15 @@ with sync_playwright() as p:
     context = browser.new_context(viewport={'width': 390, 'height': 844}, device_scale_factor=1)
     page = context.new_page()
     for name in ('home', 'contact'):
-        navigate(page, name)
-        page.add_style_tag(content=HOSTILE_THEME_CSS)
-        toggle = page.locator('#vtsMenuToggle')
-        assert toggle.evaluate('(e)=>getComputedStyle(e).display') == 'flex'
-        assert toggle.evaluate('(e)=>getComputedStyle(e).listStyleType') == 'none'
-        assert toggle.evaluate("(e)=>getComputedStyle(e, '::marker').content") in ('""', 'none')
-        assert toggle.bounding_box()['width'] <= 46
-        toggle.click()
-        link = page.locator('.vts-mobile-nav > a').first
-        assert float(link.evaluate('(e)=>getComputedStyle(e).fontSize')[:-2]) >= 26
-        assert float(link.evaluate('(e)=>getComputedStyle(e).minHeight')[:-2]) >= 60
-        cta = page.locator('.vts-mobile-nav > .vts-header-cta')
-        assert float(cta.evaluate('(e)=>getComputedStyle(e).fontSize')[:-2]) >= 17
-        report['checks'].append(f'{name}: menu keeps its size and hides the triangle under theme overrides')
+        for width in (320, 360, 390, 430):
+            page.set_viewport_size({'width': width, 'height': 844})
+            navigate(page, name)
+            page.add_style_tag(content=HOSTILE_THEME_CSS)
+            cta = page.locator('#siteHeader .vts-header-cta')
+            assert cta.evaluate(LINE_COUNT) == 1, (name, width, cta.inner_text())
+            assert cta.evaluate('(e)=>e.scrollWidth <= e.clientWidth + 1'), (name, width)
+            assert page.evaluate('document.documentElement.scrollWidth') <= width, (name, width)
+        report['checks'].append(f'{name}: header CTA stays on one line from 320 to 430px under theme overrides')
     context.close()
 
     context = browser.new_context(viewport={'width': 1440, 'height': 1000}, device_scale_factor=1, reduced_motion='reduce')
