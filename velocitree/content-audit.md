@@ -23,7 +23,7 @@ Checked visually against `reference/VTS Capability Card.png` on September 9, 202
 | The Velocitree perspective | `#perspective` | Subcontractor-to-prime transition, all seven growing requirements including compliance and working capital, and the growth-risk message |
 | Let's start with the challenge | Closing invitation | Business-direction question and the approach of matching experience/resources to the challenge |
 | Ed Martinez and founder/advisor title | Experience section | Full capability-card title included |
-| Phone and email | Shared footer | 909-561-8661 and velocitreesolutions@outlook.com retained |
+| Phone and email | Shared footer | 909-561-8661 and ed@velocitreegroup.com retained |
 | Proud Industry Affiliations: UAA, TCIA and ISA | Affiliation band between Experience and Perspective | All three supplied logo assets displayed with their organization names in alt text; affiliation status only |
 | From the Jobsite to the Boardroom | Hero | Visible directly below the main headline, with trademark symbol |
 

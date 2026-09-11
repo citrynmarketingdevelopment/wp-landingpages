@@ -7,7 +7,7 @@ Transcribed from the seven user-supplied files in `reference/`. No external veri
 - Company: Velocitree Solutions.
 - Founder: Ed Martinez.
 - Phone: 909-561-8661.
-- Email: velocitreesolutions@outlook.com.
+- Email: ed@velocitreegroup.com.
 - Capability-card title: Founder | Growth Advisor & Leadership Partner.
 - Business-card title: Founder | Growth & Strategic Advisor.
 - Positioning: Strategic Advisory for the UVM Industry.

@@ -1,4 +1,4 @@
-/* Velocitree shell enhancements | version 2026-09-08.1
+/* Velocitree shell enhancements | version 2026-09-11.1
  * Enqueue once as a deferred shared asset in GitPress Managed settings.
  * The mobile menu uses native details/summary and works without this file.
  * A canvas inserting fragments after DOM ready can call VelocitreeSite.init().
@@ -33,11 +33,22 @@
       function closeMenu(returnFocus) {
         if (!menu.open) return;
         menu.open = false;
+        // The toggle event is async; release the scroll lock now so it never lags a frame.
+        setScrollLock();
         if (returnFocus) toggle.focus();
+      }
+
+      // The full-screen mobile panel covers the page; stop the page behind it scrolling too.
+      var mobileQuery = window.matchMedia('(max-width: 850px)');
+      function setScrollLock() {
+        var lock = menu.open && mobileQuery.matches;
+        document.documentElement.style.overflow = lock ? 'hidden' : '';
+        document.body.style.overflow = lock ? 'hidden' : '';
       }
 
       menu.addEventListener('toggle', function () {
         toggle.setAttribute('aria-expanded', String(menu.open));
+        setScrollLock();
       });
       toggle.setAttribute('aria-expanded', String(menu.open));
 
@@ -51,12 +62,12 @@
         if (event.key === 'Escape' && menu.open) closeMenu(true);
       });
 
-      var desktopQuery = window.matchMedia('(min-width: 851px)');
-      function onViewportChange(event) {
-        if (event.matches) closeMenu(false);
+      function onViewportChange() {
+        if (!mobileQuery.matches) closeMenu(false);
+        setScrollLock();
       }
-      if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', onViewportChange);
-      else if (desktopQuery.addListener) desktopQuery.addListener(onViewportChange);
+      if (mobileQuery.addEventListener) mobileQuery.addEventListener('change', onViewportChange);
+      else if (mobileQuery.addListener) mobileQuery.addListener(onViewportChange);
     }
 
     window.addEventListener('hashchange', function () { setActiveNavigation(header); });
