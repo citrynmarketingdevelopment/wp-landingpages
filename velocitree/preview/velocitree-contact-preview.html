@@ -91,7 +91,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
     min-height: 44px;
     padding: 11px 20px;
     border: 1px solid #526c25;
@@ -103,7 +102,6 @@
     transition: background 160ms ease, border-color 160ms ease;
   }
   .vts-header .vts-header-cta:hover { background: #42581d; border-color: #718d39; }
-  .vts-header .vts-header-cta > span { font-size: 18px; line-height: 1; }
   .vts-header a:focus-visible { outline: 2px solid #9db64d; outline-offset: 5px; }
   .vts-header .vts-skip-link { position: absolute; top: 8px; left: 20px; z-index: 105; padding: 12px 18px; transform: translateY(-150%); background: #f3f3ec; color: #111511 !important; font-weight: 700; }
   .vts-header .vts-skip-link:focus { transform: translateY(0); }
@@ -125,7 +123,6 @@
        where the toggle used to. Keeping it on one line is what drives the tighter metrics. */
     .vts-header .vts-header-cta {
       flex: 0 0 auto;
-      gap: 0;
       min-height: 40px !important;
       padding: 9px 14px !important;
       font-size: 14px !important;
@@ -135,7 +132,6 @@
       white-space: nowrap !important;
       box-shadow: 0 0 22px 1px rgb(157 182 77 / 38%), 0 0 54px 10px rgb(157 182 77 / 15%);
     }
-    .vts-header .vts-header-cta > span { display: none !important; }
   }
   @media (max-width: 380px) {
     .vts-header .vts-brand { gap: 7px; }
@@ -498,7 +494,7 @@
   <script src="../assets/js/shared.js" defer></script>
 </head>
 <body data-vts-preview-page="contact">
-<!-- Velocitree GitPress managed header | version 2026-09-11.4 -->
+<!-- Velocitree GitPress managed header | version 2026-09-11.5 -->
 
 <header class="vts-header site-header" id="siteHeader" data-vts-header>
   <a class="vts-skip-link" href="#main-content">Skip to content</a>
@@ -512,7 +508,7 @@
       <a href="velocitree-home-preview.html#expertise" data-nav="expertise">Expertise</a>
       <a href="velocitree-home-preview.html#who-we-support" data-nav="who-we-support">Who we support</a>
     </nav>
-    <a class="vts-header-cta" href="velocitree-contact-preview.html">Let's connect <span aria-hidden="true">↗</span></a>
+    <a class="vts-header-cta" href="velocitree-contact-preview.html">Let's connect</a>
   </div>
 </header>
 <div class="vts-header-spacer" aria-hidden="true"></div>

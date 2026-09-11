@@ -50,7 +50,9 @@ with sync_playwright() as p:
             # One line: count the rendered line boxes of the label rather than trusting height,
             # which the button's min-height floor would mask.
             assert cta.evaluate(LINE_COUNT) == 1, cta.inner_text()
-            assert cta.locator('span').evaluate('(e)=>getComputedStyle(e).display') == 'none'
+            assert cta.locator('span, svg').count() == 0
+            assert cta.inner_text().strip() == "Let's connect"
+
             assert cta.evaluate('(e)=>e.scrollWidth <= e.clientWidth + 1')
             # The bar stays pinned while the page scrolls.
             page.evaluate('window.scrollTo(0, 1200)')
