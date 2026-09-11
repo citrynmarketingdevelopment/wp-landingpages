@@ -318,10 +318,10 @@
     .vts-hero .vts-hero__button { min-width: 145px; padding-inline: 17px; }
   }
   @media (max-width: 767px) {
-    .vts-hero .vts-hero__wrap { width: calc(100% - 40px); min-height: 840px; align-items: flex-end; padding-block: 150px 34px; }
+    .vts-hero .vts-hero__wrap { width: calc(100% - 40px); min-height: 840px; align-items: flex-start; padding-block: 34px 150px; }
     .vts-hero .vts-hero__copy { max-width: 100%; width: 100%; }
     .vts-hero .vts-hero__image { object-position: 85% 50%; }
-    .vts-hero::before { background: linear-gradient(180deg, rgba(10,15,11,.42), rgba(10,15,11,.14) 22%, rgba(10,15,11,.16) 42%, rgba(10,15,11,.72) 55%, rgba(10,15,11,.95) 66%, rgba(10,15,11,.97)); }
+    .vts-hero::before { background: linear-gradient(180deg, rgba(10,15,11,.9), rgba(10,15,11,.86) 38%, rgba(10,15,11,.5) 50%, rgba(10,15,11,.12) 60%, rgba(10,15,11,.1) 80%, rgba(10,15,11,.3)); }
     .vts-hero .vts-hero__title { font-size: clamp(30px, 8vw, 49px); line-height: 1.08; letter-spacing: -.035em; }
     .vts-hero .vts-hero__tagline { font-size: clamp(14px, 3.8vw, 20px); margin-top: 10px; }
     .vts-hero .vts-hero__description { max-width: 410px; font-size: 14px; line-height: 1.7; margin-top: 16px; }
@@ -415,7 +415,9 @@
 
 <section class="vts-hero" aria-labelledby="vts-home-title">
   <picture>
-    <source media="(max-width: 480px)" srcset="../assets/images/vts-hero-mobile.webp" width="640" height="941">
+    <source media="(max-width: 480px)" sizes="100vw"
+            srcset="../assets/images/vts-hero-mobile-720.webp 720w, ../assets/images/vts-hero-mobile.webp 1440w"
+            width="1440" height="2520">
     <img class="vts-hero__image" src="../assets/images/vts-hero-1280.webp"
          srcset="../assets/images/vts-hero-640.webp 640w, ../assets/images/vts-hero-960.webp 960w, ../assets/images/vts-hero-1280.webp 1280w, ../assets/images/vts-hero-1672.webp 1672w"
          sizes="(max-width: 767px) 1226px, 100vw"

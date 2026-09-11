@@ -132,14 +132,15 @@ with sync_playwright() as p:
         assert emblem.evaluate('(e)=>e.naturalWidth') <= 156
         report['checks'].append(f'{label}: hero serves {expect_hero} and the emblem serves {expect_emblem}')
         if label == 'phone':
-            # The climber's head and torso occupy 24-55% of the frame, so the copy must stay
-            # clear of that band; it is anchored to the bottom of the mobile hero for that reason.
+            # The portrait frame keeps its sky clear to 45% and puts the helmet at 57%, so the
+            # top-anchored copy has to finish above that band.
             hero_box = art_page.locator('.vts-hero').bounding_box()
             copy_box = art_page.locator('.vts-hero__copy').bounding_box()
             copy_top = (copy_box['y'] - hero_box['y']) / hero_box['height']
-            assert copy_top >= 0.58, copy_top
-            assert copy_box['y'] + copy_box['height'] <= hero_box['y'] + hero_box['height'], copy_box
-            report['checks'].append(f'phone: hero copy starts at {copy_top:.0%}, clearing the climber')
+            copy_bottom = (copy_box['y'] + copy_box['height'] - hero_box['y']) / hero_box['height']
+            assert copy_top <= 0.08, copy_top
+            assert copy_bottom <= 0.55, copy_bottom
+            report['checks'].append(f'phone: hero copy runs {copy_top:.0%}-{copy_bottom:.0%}, clearing the climber at 57%')
         art.close()
     assert '[fluentform id="1"]' in (ROOT / 'contact.html').read_text(encoding='utf-8')
     navigate(page, 'contact')
