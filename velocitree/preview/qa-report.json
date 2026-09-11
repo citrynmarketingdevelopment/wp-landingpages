@@ -36,6 +36,7 @@
     "home: all six service links reveal their matching expertise descriptions",
     "home: direct expertise anchor opens on initial load",
     "phone: hero serves vts-hero-mobile.webp and the emblem serves vts-emblem-3x.webp",
+    "phone: hero copy starts at 63%, clearing the climber",
     "phone-2x: hero serves vts-hero-mobile.webp and the emblem serves vts-emblem-2x.webp",
     "tablet: hero serves vts-hero-1672.webp and the emblem serves vts-emblem-2x.webp",
     "desktop: hero serves vts-hero-1672.webp and the emblem serves vts-emblem.webp",

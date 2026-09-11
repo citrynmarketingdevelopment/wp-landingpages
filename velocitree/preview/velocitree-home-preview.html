@@ -195,16 +195,17 @@
   .vts-home .vts-experience { background: #24331e; color: #f3f3ec; padding-block: 80px; }
   .vts-home .vts-experience__layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 86px; align-items: start; }
   .vts-home .vts-experience .vts-section-title { color: #f3f3ec !important; }
-  .vts-home .vts-experience__intro { color: #d0d8c6 !important; max-width: 440px; font-size: 16px; margin-top: 22px; line-height: 1.85; }
+  .vts-home .vts-experience__copy p { color: #d0d8c6 !important; font-size: 16px; line-height: 1.85; margin-bottom: 18px; }
+  .vts-home .vts-experience__copy p:last-child { margin-bottom: 0; }
+  .vts-home .vts-experience__statement { margin-top: 25px; max-width: 420px; color: #d1dfa8 !important; font-size: 24px; font-weight: 600; line-height: 1.4; letter-spacing: -.03em; }
+  .vts-home .vts-experience__copy .vts-experience__promise { color: #f3f3ec !important; font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin-top: 26px; }
   .vts-home .vts-experience__advisor { margin-top: 32px; padding-left: 20px; border-left: 2px solid #b08b5d; }
   .vts-home .vts-experience__advisor strong { display: block; font-size: 19px; font-weight: 600; }
   .vts-home .vts-experience__advisor p { color: #d0d8c6 !important; font-size: 13px; margin-top: 5px; }
-  .vts-home .vts-network { display: grid; }
-  .vts-home .vts-network > div { display: grid; grid-template-columns: .8fr 1.2fr; gap: 26px; padding-block: 20px; border-bottom: 1px solid #526047; }
-  .vts-home .vts-network > div:first-child { padding-top: 4px; }
-  .vts-home .vts-network > div:last-child { border-bottom: 0; padding-bottom: 0; }
-  .vts-home .vts-network dt { color: #d1dfa8 !important; font-size: 16px; font-weight: 700; }
-  .vts-home .vts-network dd { color: #e0e5d8 !important; font-size: 14px; line-height: 1.8; }
+  .vts-home .vts-credentials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 64px; padding-top: 40px; border-top: 1px solid #526047; }
+  .vts-home .vts-credentials > div { min-width: 0; }
+  .vts-home .vts-credentials dt { color: #d1dfa8 !important; font-size: 13px; font-weight: 800; letter-spacing: .09em; line-height: 1.4; text-transform: uppercase; }
+  .vts-home .vts-credentials dd { color: #e0e5d8 !important; font-size: 15px; line-height: 1.7; margin-top: 10px; }
   .vts-home .vts-affiliations { padding-block: 68px 72px; background: #f8f9f4; border-bottom: 1px solid #d5dacb; }
   .vts-home .vts-affiliations__heading { display: flex; align-items: center; justify-content: center; gap: 22px; margin-bottom: 42px; }
   .vts-home .vts-affiliations__heading::before, .vts-home .vts-affiliations__heading::after { content: ''; flex: 1; max-width: 260px; height: 1px; background: #8f9d7b; }
@@ -271,7 +272,9 @@
     .vts-home .vts-expertise__item summary::after { right: 18px; }
     .vts-home .vts-expertise__item h3 { font-size: 16px; }
     .vts-home .vts-expertise__item p { padding: 0 23px 24px 49px; }
-    .vts-home .vts-experience__intro { font-size: 15px; }
+    .vts-home .vts-experience__copy p { font-size: 15px; }
+    .vts-home .vts-experience__statement { font-size: 21px; margin-top: 18px; }
+    .vts-home .vts-credentials { grid-template-columns: 1fr; gap: 22px; margin-top: 40px; padding-top: 30px; }
     .vts-home .vts-network > div { grid-template-columns: 1fr; gap: 6px; }
     .vts-home .vts-affiliations { padding-block: 50px; }
     .vts-home .vts-affiliations__heading { gap: 13px; margin-bottom: 30px; }
@@ -315,10 +318,10 @@
     .vts-hero .vts-hero__button { min-width: 145px; padding-inline: 17px; }
   }
   @media (max-width: 767px) {
-    .vts-hero .vts-hero__wrap { width: calc(100% - 40px); min-height: 690px; align-items: flex-start; padding-block: 37px 285px; }
+    .vts-hero .vts-hero__wrap { width: calc(100% - 40px); min-height: 840px; align-items: flex-end; padding-block: 150px 34px; }
     .vts-hero .vts-hero__copy { max-width: 100%; width: 100%; }
     .vts-hero .vts-hero__image { object-position: 85% 50%; }
-    .vts-hero::before { background: linear-gradient(180deg, rgba(10,15,11,.97), rgba(10,15,11,.9) 44%, rgba(10,15,11,.12) 75%, rgba(10,15,11,.25)); }
+    .vts-hero::before { background: linear-gradient(180deg, rgba(10,15,11,.42), rgba(10,15,11,.14) 22%, rgba(10,15,11,.16) 42%, rgba(10,15,11,.72) 55%, rgba(10,15,11,.95) 66%, rgba(10,15,11,.97)); }
     .vts-hero .vts-hero__title { font-size: clamp(30px, 8vw, 49px); line-height: 1.08; letter-spacing: -.035em; }
     .vts-hero .vts-hero__tagline { font-size: clamp(14px, 3.8vw, 20px); margin-top: 10px; }
     .vts-hero .vts-hero__description { max-width: 410px; font-size: 14px; line-height: 1.7; margin-top: 16px; }
@@ -481,19 +484,25 @@
   </section>
 
   <section class="vts-experience" aria-labelledby="vts-experience-title">
-    <div class="vts-wrap vts-experience__layout">
-      <div>
-        <h2 class="vts-section-title" id="vts-experience-title">Experience<br>when you need it.</h2>
-        <p class="vts-experience__intro">Velocitree combines core leadership with a select network of experienced industry professionals and subject-matter advisors. This allows each engagement to be matched with the expertise required for the client&rsquo;s specific challenge.</p>
-        <div class="vts-experience__advisor"><strong>Ed Martinez</strong><p>Founder | Growth Advisor &amp; Leadership Partner</p></div>
+    <div class="vts-wrap">
+      <div class="vts-experience__layout">
+        <div>
+          <h2 class="vts-section-title" id="vts-experience-title">Built from experience.<br>Not theory.</h2>
+          <p class="vts-experience__statement">Growth doesn&rsquo;t just make a company bigger. It changes what the company needs to succeed.</p>
+          <div class="vts-experience__advisor"><strong>Ed Martinez</strong><p>Founder | Growth Advisor &amp; Leadership Partner</p></div>
+        </div>
+        <div class="vts-experience__copy">
+          <p>Ed Martinez, Founder of Velocitree Solutions, brings years of executive and operational experience in Utility Vegetation Management and the infrastructure services industry.</p>
+          <p>He has been on both sides of the growth equation, working through the operational, financial, leadership, safety and cultural challenges that emerge as companies move from a family-owned operation or subcontractor into a larger, more complex organization.</p>
+          <p>His perspective was shaped by helping build and transform UVM businesses through significant growth, not simply advising from the outside.</p>
+          <p>Today, Velocitree brings that experience to contractors, utilities, equipment manufacturers, suppliers and emerging companies facing their next stage of growth.</p>
+          <p class="vts-experience__promise">Practical Experience. Strategic Insight. Sustainable Growth.</p>
+        </div>
       </div>
-      <dl class="vts-network">
-        <div><dt>Executive advisory</dt><dd>Leadership &middot; Growth &middot; Strategy</dd></div>
-        <div><dt>Financial</dt><dd>Forecasting &middot; Cost Management &middot; Business Intelligence</dd></div>
-        <div><dt>Operations</dt><dd>UVM Expertise &middot; Fleet &middot; Productivity &middot; Procurement</dd></div>
-        <div><dt>Safety</dt><dd>Culture &middot; Compliance &middot; Operational Readiness</dd></div>
-        <div><dt>Technology</dt><dd>ERP &middot; Telematics &middot; Dashboards &middot; Process</dd></div>
-        <div><dt>Industry</dt><dd>Utility &middot; Contractor &middot; Supplier &middot; Equipment</dd></div>
+      <dl class="vts-credentials">
+        <div><dt>Executive leadership</dt><dd>UVM &middot; Operations &middot; Finance &middot; Growth</dd></div>
+        <div><dt>Industry experience</dt><dd>Contractors &middot; Utilities &middot; Equipment &middot; Suppliers</dd></div>
+        <div><dt>Field &rarr; executive</dt><dd>Jobsite &rarr; Operations &rarr; Leadership &rarr; Boardroom</dd></div>
       </dl>
     </div>
   </section>

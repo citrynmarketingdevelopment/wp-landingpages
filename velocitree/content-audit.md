@@ -13,7 +13,8 @@ Checked visually against `reference/VTS Capability Card.png` on September 9, 202
 | Safety & Operational Culture | `#safety` | Safety leadership, accountability, field-to-management communication and organizational culture |
 | Utility & Contract Strategy | `#contracts` | Contract readiness, utility relationships, prime-contractor preparation, pricing, compliance and organizational capacity |
 | Technology, Systems & Process | `#technology` | ERP, expense management, dashboards, telematics, implementation, data visibility and scalable processes |
-| Experience when you need it | Experience section | Full explanation of core leadership and the select advisor network; all six specialty groups now visible |
+| Built from experience, not theory | Experience section | Client-supplied founder narrative in full; the growth statement is pulled out beside the heading and the brand promise closes the column |
+| Executive leadership, industry experience, field to executive | Experience section | Three supplied credential groups in a row beneath the narrative; replaces the earlier six-row advisor-specialty list |
 | Executive advisory specialties | Experience section | Leadership, Growth, Strategy |
 | Financial specialties | Experience section | Forecasting, Cost Management, Business Intelligence |
 | Operations specialties | Experience section | UVM Expertise, Fleet, Productivity, Procurement |

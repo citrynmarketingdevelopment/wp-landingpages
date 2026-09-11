@@ -131,6 +131,15 @@ with sync_playwright() as p:
         # The emblem keys to transparency; a stray opaque field would break the dark bar.
         assert emblem.evaluate('(e)=>e.naturalWidth') <= 156
         report['checks'].append(f'{label}: hero serves {expect_hero} and the emblem serves {expect_emblem}')
+        if label == 'phone':
+            # The climber's head and torso occupy 24-55% of the frame, so the copy must stay
+            # clear of that band; it is anchored to the bottom of the mobile hero for that reason.
+            hero_box = art_page.locator('.vts-hero').bounding_box()
+            copy_box = art_page.locator('.vts-hero__copy').bounding_box()
+            copy_top = (copy_box['y'] - hero_box['y']) / hero_box['height']
+            assert copy_top >= 0.58, copy_top
+            assert copy_box['y'] + copy_box['height'] <= hero_box['y'] + hero_box['height'], copy_box
+            report['checks'].append(f'phone: hero copy starts at {copy_top:.0%}, clearing the climber')
         art.close()
     assert '[fluentform id="1"]' in (ROOT / 'contact.html').read_text(encoding='utf-8')
     navigate(page, 'contact')
