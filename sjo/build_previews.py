@@ -149,6 +149,8 @@ PREVIEW_FORM = """
               <textarea class="ff-el-form-control" id="sjo-preview-message" rows="6" placeholder="Tell us about your project or how we can help."></textarea>
             </div>
 
+            <div class="sjo-preview-captcha" aria-hidden="true">Human verification (Cloudflare Turnstile) renders here</div>
+
             <button class="ff-btn ff-btn-submit" type="button">SEND MESSAGE</button>
           </div>
 """.strip("\n")
@@ -212,6 +214,19 @@ PREVIEW_CSS = """
     }
 
     .sjo-preview-form-facsimile .ff-t-cell { min-width: 0; }
+
+    .sjo-preview-captcha {
+      width: min(100%, 300px);
+      min-height: 65px;
+      display: grid;
+      place-items: center;
+      margin: 4px 0 22px;
+      padding: 8px 12px;
+      border: 1px dashed #aeb9b5;
+      color: #52605d;
+      font-size: 12px;
+      text-align: center;
+    }
 
     @media (max-width: 760px) {
       .sjo-preview-form-facsimile .ff-t-container { grid-template-columns: 1fr; }
@@ -824,9 +839,6 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
             "mailto:info@sanjoaquinoperators.com",
             "info@sanjoaquinoperators.com",
             "https://www.linkedin.com/company/sanjoaquin-operators",
-            "United Way of Central Eastern California",
-            "Greater Bakersfield Chamber of Commerce",
-            "Kern Economic Development Corporation",
         ):
             if required_copy not in fragment:
                 errors.append(f"{label}: missing approved footer content: {required_copy}")
@@ -836,15 +848,10 @@ def shell_errors(kind: str, path: Path, fragment: str) -> list[str]:
             r"Business Park|5401\b|#208\b|93309\b", fragment, re.IGNORECASE
         ):
             errors.append(f"{label}: screenshot-only street address must remain unpublished")
-        affiliation_match = re.search(
-            r'<ul\b[^>]*class="[^"]*\bsjo-site-footer__affiliations\b[^"]*"[^>]*>(.*?)</ul>',
-            fragment,
-            re.IGNORECASE | re.DOTALL,
-        )
-        if not affiliation_match or len(
-            re.findall(r"<li\b", affiliation_match.group(1), re.IGNORECASE)
-        ) != 3:
-            errors.append(f"{label}: footer must contain three affiliation fallbacks")
+        if re.search(r"affiliation", fragment, re.IGNORECASE):
+            errors.append(
+                f"{label}: affiliations belong on the Home page only, not the footer"
+            )
 
     return errors
 

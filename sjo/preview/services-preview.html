@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- SJO_PREVIEW_BUNDLE_SHA256: dcda86131a976d2a0304ccfbf177859ef141f6757d7f574324afb2b004e7e70a -->
-<!-- SJO_PREVIEW_HEADER_SHA256: dbfb6ee6340310a61ccea1f6288a32d015e7af5e924cfea846be1761c9220bf7 -->
-<!-- SJO_PREVIEW_PAGE_SHA256: 74269037194c9619ef936857393e5e0ac8bd7a66e0af75e8b69aa5e5407f25e4 -->
-<!-- SJO_PREVIEW_FOOTER_SHA256: b762b1ebc713dbf0fe1b6c980d2d0f30177947fc84ef9fad863c3b28a2c1d54b -->
+<!-- SJO_PREVIEW_BUNDLE_SHA256: 2d40c29218568d3b580fe33bb2be77e2df404ce8b4e3230fdbc837d941e586d4 -->
+<!-- SJO_PREVIEW_HEADER_SHA256: 63d844453381643e40d370e3dbc163138d6dde545e0834d9a3c8b01f4c6e03c4 -->
+<!-- SJO_PREVIEW_PAGE_SHA256: 166cc8a39b1ed9075afaa9d684f7fcc4b0a563a09d374626e73d6f28f253a84b -->
+<!-- SJO_PREVIEW_FOOTER_SHA256: db99ef11e3b55109e2ff082902e2511860d39e4bb5bc7127ffe5ff891b0152f7 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -68,6 +68,19 @@
     }
 
     .sjo-preview-form-facsimile .ff-t-cell { min-width: 0; }
+
+    .sjo-preview-captcha {
+      width: min(100%, 300px);
+      min-height: 65px;
+      display: grid;
+      place-items: center;
+      margin: 4px 0 22px;
+      padding: 8px 12px;
+      border: 1px dashed #aeb9b5;
+      color: #52605d;
+      font-size: 12px;
+      text-align: center;
+    }
 
     @media (max-width: 760px) {
       .sjo-preview-form-facsimile .ff-t-container { grid-template-columns: 1fr; }
@@ -833,8 +846,8 @@
 
   .sjo-page .sjo-services-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    max-width: 1180px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1120px;
     margin: 64px auto 0;
   }
 
@@ -844,25 +857,19 @@
     min-width: 0;
     flex-direction: column;
     align-items: center;
-    padding: 8px 28px 38px;
+    padding: 10px 36px 44px;
     text-align: center;
   }
 
-  .sjo-page .sjo-service:nth-child(2),
-  .sjo-page .sjo-service:nth-child(3),
-  .sjo-page .sjo-service:nth-child(4),
-  .sjo-page .sjo-service:nth-child(6) {
+  .sjo-page .sjo-service:nth-child(3n + 2),
+  .sjo-page .sjo-service:nth-child(3n) {
     border-left: 1px solid var(--sjo-line);
   }
 
-  .sjo-page .sjo-service:nth-child(5) {
-    grid-column: 2;
-  }
-
-  .sjo-page .sjo-service:nth-child(5),
-  .sjo-page .sjo-service:nth-child(6) {
+  .sjo-page .sjo-service:nth-child(n + 4) {
     border-top: 1px solid var(--sjo-line);
-    padding-top: 42px;
+    padding-top: 44px;
+    padding-bottom: 10px;
   }
 
   .sjo-page .sjo-service-icon {
@@ -1020,14 +1027,15 @@
     }
 
     .sjo-page .sjo-service,
-    .sjo-page .sjo-service:nth-child(2),
-    .sjo-page .sjo-service:nth-child(3),
-    .sjo-page .sjo-service:nth-child(4),
-    .sjo-page .sjo-service:nth-child(5),
-    .sjo-page .sjo-service:nth-child(6) {
-      grid-column: auto;
+    .sjo-page .sjo-service:nth-child(3n + 2),
+    .sjo-page .sjo-service:nth-child(3n),
+    .sjo-page .sjo-service:nth-child(n + 4) {
       border: 0;
-      padding-top: 36px;
+      padding: 36px 28px 38px;
+    }
+
+    .sjo-page .sjo-service:nth-child(-n + 2) {
+      padding-top: 10px;
     }
 
     .sjo-page .sjo-service:nth-child(n + 3) {
@@ -1101,11 +1109,11 @@
     }
 
     .sjo-page .sjo-service,
-    .sjo-page .sjo-service:nth-child(2),
-    .sjo-page .sjo-service:nth-child(3),
-    .sjo-page .sjo-service:nth-child(4),
-    .sjo-page .sjo-service:nth-child(5),
-    .sjo-page .sjo-service:nth-child(6) {
+    .sjo-page .sjo-service:nth-child(3n + 2),
+    .sjo-page .sjo-service:nth-child(3n),
+    .sjo-page .sjo-service:nth-child(n + 4),
+    .sjo-page .sjo-service:nth-child(-n + 2),
+    .sjo-page .sjo-service:nth-child(n + 3) {
       border: 0;
       padding: 34px 10px;
     }
@@ -1187,7 +1195,7 @@
   .sjo-site-footer__inner {
     width: min(100%, 1280px);
     display: grid;
-    grid-template-columns: minmax(180px, .8fr) minmax(170px, .65fr) minmax(300px, 1.25fr) minmax(280px, 1.35fr);
+    grid-template-columns: minmax(200px, 1fr) minmax(170px, .75fr) minmax(300px, 1.25fr);
     margin-inline: auto;
     padding: 58px clamp(20px, 5vw, 72px) 60px;
   }
@@ -1248,8 +1256,7 @@
   }
 
   .sjo-site-footer__links,
-  .sjo-site-footer__details,
-  .sjo-site-footer__affiliations {
+  .sjo-site-footer__details {
     display: grid;
     gap: 7px;
     margin: 0 !important;
@@ -1262,8 +1269,7 @@
   }
 
   .sjo-site-footer__links li,
-  .sjo-site-footer__details li,
-  .sjo-site-footer__affiliations li {
+  .sjo-site-footer__details li {
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -1294,19 +1300,18 @@
     flex: 0 0 auto;
     background: #2b9e50;
     content: "";
-    transition: width .18s ease;
+  }
+
+  .sjo-site-footer__links a,
+  .sjo-site-footer__detail {
+    transition: color .18s ease;
   }
 
   .sjo-site-footer__links a:hover,
   .sjo-site-footer__links a:focus-visible,
   .sjo-site-footer__detail[href]:hover,
   .sjo-site-footer__detail[href]:focus-visible {
-    color: #ffffff !important;
-  }
-
-  .sjo-site-footer__links a:hover::before,
-  .sjo-site-footer__links a:focus-visible::before {
-    width: 14px;
+    color: #57cb7a !important;
   }
 
   .sjo-site-footer__icon {
@@ -1341,28 +1346,6 @@
     text-transform: uppercase;
   }
 
-  .sjo-site-footer__affiliations {
-    gap: 13px;
-  }
-
-  .sjo-site-footer__affiliations li {
-    position: relative;
-    padding-left: 17px !important;
-    color: #c7d2ce;
-    font-size: 13px;
-    line-height: 1.55;
-  }
-
-  .sjo-site-footer__affiliations li::before {
-    position: absolute;
-    top: .58em;
-    left: 0;
-    width: 7px;
-    height: 7px;
-    border: 2px solid #2b9e50;
-    content: "";
-  }
-
   .sjo-site-footer a:focus-visible {
     outline: 3px solid rgba(87, 203, 122, .55);
     outline-offset: 4px;
@@ -1374,21 +1357,24 @@
       row-gap: 0;
     }
 
-    .sjo-site-footer__column {
+    .sjo-site-footer__column,
+    .sjo-site-footer__column:nth-child(2) {
       padding: 34px clamp(24px, 5vw, 44px);
     }
 
-    .sjo-site-footer__column:nth-child(odd) {
+    .sjo-site-footer__column:first-child {
+      grid-column: 1 / -1;
+      padding: 0 0 34px;
+    }
+
+    .sjo-site-footer__column:nth-child(2) {
       padding-left: 0;
+      border-top: 1px solid rgba(255, 255, 255, .17);
       border-left: 0;
     }
 
-    .sjo-site-footer__column:nth-child(even) {
+    .sjo-site-footer__column:nth-child(3) {
       padding-right: 0;
-      border-left: 1px solid rgba(255, 255, 255, .17);
-    }
-
-    .sjo-site-footer__column:nth-child(n + 3) {
       border-top: 1px solid rgba(255, 255, 255, .17);
     }
   }
@@ -1401,8 +1387,8 @@
     }
 
     .sjo-site-footer__column,
-    .sjo-site-footer__column:nth-child(odd),
-    .sjo-site-footer__column:nth-child(even) {
+    .sjo-site-footer__column:nth-child(2),
+    .sjo-site-footer__column:nth-child(3) {
       padding: 30px 0;
       border-top: 1px solid rgba(255, 255, 255, .17);
       border-left: 0;
@@ -1435,14 +1421,14 @@
   <p class="sjo-preview-notice" role="note">Preview only: the GitPress Managed header and footer shown are production fragments. The WordPress canvas is simulated locally, and the Contact form does not submit.</p>
 
   <div class="sjo-preview-canvas">
-<!-- SJO_HEADER_VERSION: 2026-08-25.1 -->
+<!-- SJO_HEADER_VERSION: 2026-09-15.1 -->
 
 
 <header class="site-header sjo-site-header" id="siteHeader">
   <div class="sjo-site-header__inner">
     <a class="sjo-site-header__brand" href="home-preview.html" aria-label="San Joaquin Operators home">
       <span class="sjo-site-header__brand-mark" aria-hidden="true">
-        <img class="sjo-site-header__brand-mark--dark" src="../assets/images/sjo-wordmark-temp.png" alt="" width="640" height="271" decoding="async">
+        <img class="sjo-site-header__brand-mark--dark" src="../assets/images/sjo-wordmark-temp-dark.png" alt="" width="640" height="254" decoding="async">
         <img class="sjo-site-header__brand-mark--light" src="../assets/images/sjo-wordmark-temp-light.png" alt="" width="640" height="254" decoding="async">
       </span>
       <span class="sjo-site-header__brand-copy" aria-hidden="true">
@@ -1479,7 +1465,7 @@
 </aside>
 
     <div class="sjo-preview-stage">
-<!-- SJO_SERVICES_VERSION: 2026-09-10.1 -->
+<!-- SJO_SERVICES_VERSION: 2026-09-15.1 -->
 
 
 <main class="sjo-page sjo-services">
@@ -1627,7 +1613,7 @@
 </main>
     </div>
 
-<!-- SJO_FOOTER_VERSION: 2026-09-03.1 -->
+<!-- SJO_FOOTER_VERSION: 2026-09-15.1 -->
 
 
 <footer class="sjo-site-footer" id="siteFooter">
@@ -1685,15 +1671,6 @@
             </span>
           </a>
         </li>
-      </ul>
-    </div>
-
-    <div class="sjo-site-footer__column">
-      <h2 class="sjo-site-footer__heading">Affiliations</h2>
-      <ul class="sjo-site-footer__affiliations" aria-label="Affiliation text placeholders">
-        <li>United Way of Central Eastern California</li>
-        <li>Greater Bakersfield Chamber of Commerce</li>
-        <li>Kern Economic Development Corporation</li>
       </ul>
     </div>
   </div>

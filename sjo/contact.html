@@ -1,4 +1,4 @@
-<!-- SJO_CONTACT_VERSION: 2026-09-10.1 -->
+<!-- SJO_CONTACT_VERSION: 2026-09-15.1 -->
 <style>
   .sjo-page {
     --sjo-ink: #071514;
@@ -491,6 +491,22 @@
     background: #e7f3ea;
     color: #0d5127 !important;
     box-shadow: none;
+  }
+
+  /* Human verification (Turnstile, hCaptcha, or reCAPTCHA) added in Fluent Forms. */
+  .sjo-page .sjo-form-host .cf-turnstile,
+  .sjo-page .sjo-form-host .h-captcha,
+  .sjo-page .sjo-form-host .g-recaptcha {
+    max-width: 100%;
+    margin: 4px 0 22px;
+    overflow: hidden;
+  }
+
+  .sjo-page .sjo-form-host .cf-turnstile iframe,
+  .sjo-page .sjo-form-host .h-captcha iframe,
+  .sjo-page .sjo-form-host .g-recaptcha iframe {
+    max-width: 100%;
+    border: 0 !important;
   }
 
   .sjo-page .sjo-form-host .ff-btn-submit {

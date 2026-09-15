@@ -63,5 +63,7 @@ Confirm those behaviors against the exact hooks above before publishing. Without
 - The approved public email is `info@sanjoaquinoperators.com`.
 - The Privacy Policy link remains unpublished pending an approved policy and URL.
 - The header and footer wordmarks are temporary assets pending an approved client logo package.
-- Home retains the current affiliation logos pending the client&rsquo;s replacement logo package. The global footer keeps text fallbacks so the same logos are not repeated in every page shell.
+- Home retains the current affiliation logos pending the client&rsquo;s replacement logo package. Affiliations appear on Home only; the client asked for the footer Affiliations column to be removed.
+- Logos use the slanted SJO wordmark everywhere: `sjo-wordmark-temp-light.png` on dark backgrounds, `sjo-wordmark-temp-dark.png` on light backgrounds.
+- Contact spam protection is configured in WordPress, not in this repo: Fluent Forms &rarr; Global Settings &rarr; Security (Cloudflare Turnstile keys and Honeypot), then add the Turnstile field to form 3 above the submit button.
 - Home&rsquo;s Quick Access section uses `home-field-team.webp` as a temporary project image. Replace that asset when the client-supplied project photo arrives; the edge-grading treatment is already applied in the page CSS.
