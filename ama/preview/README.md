@@ -10,14 +10,15 @@ never served:
 
 ## Why the folder exists
 
-`ama/home.html`, `ama/donate.html` and `ama/our-team.html` are body partials. Per
-`GITPRESS_WEBSITE_STRUCTURE.md` section 3, they must not contain `<!DOCTYPE>`,
+Everything in `ama/` — `home.html`, `donate.html`, `our-team.html`,
+`our-programs.html` and the six pages under `our-programs/` — is a body partial.
+Per `GITPRESS_WEBSITE_STRUCTURE.md` section 3, they must not contain `<!DOCTYPE>`,
 `<html>`, `<head>` or `<body>` — GitPress Managed mode supplies the document shell
 and the global header/footer. That rule is also what stops you double-clicking a
 partial to look at it.
 
-`build.py` writes a `*.preview.html` beside each partial with the shell added and
-the fragment left byte-for-byte intact.
+`build.py` writes a `*.preview.html` per partial with the shell added, plus an
+`index.html` listing every page with its live slug and version marker.
 
 ## Use
 
@@ -25,9 +26,23 @@ the fragment left byte-for-byte intact.
 python ama/preview/build.py
 ```
 
-Then open `ama/preview/home.preview.html` in a browser. Re-run after every edit to
-a partial — the previews are generated, so edits made to them are overwritten and
-never reach the live site. Edit `ama/home.html`.
+Then open `ama/preview/index.html` and click through from there. Re-run after every
+edit to a partial — the previews are generated, so edits made to them are
+overwritten and never reach the live site. Edit the file in `ama/`.
+
+## Adding a page
+
+Add it to `PAGES`, `INDEX_GROUPS` and `SLUGS` in `build.py`. The build fails loudly
+if those three disagree, so a new partial cannot silently miss the index.
+
+## Links in the preview
+
+The partials use real WordPress permalinks (`/our-programs/comfort-kits/`), which do
+not resolve from the filesystem. The build repoints only those hrefs whose slug
+matches a page in the set at the sibling `*.preview.html`, so the Programs set is
+clickable offline. Anchors, `mailto:`, `tel:`, external URLs, and links to site pages
+we do not build here are left verbatim — so a genuinely broken link still reads as
+broken. The files in `ama/` are untouched and keep the real permalinks.
 
 ## What this preview does not tell you
 
