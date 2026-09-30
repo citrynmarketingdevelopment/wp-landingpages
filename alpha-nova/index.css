@@ -17,9 +17,11 @@
 .page-id-1607 #et-top-navigation,
 .page-id-2265 #et-top-navigation,
 .page-id-21387 #et-top-navigation,
-.page-id-2276 #et-top-navigation {
+.page-id-2276 #et-top-navigation,
+.page-id-21543 #et-top-navigation {
   display: none;
 }
-.page-id-2276 footer{
+.page-id-2276 footer,
+.page-id-21543 footer {
   display: none;
 }
