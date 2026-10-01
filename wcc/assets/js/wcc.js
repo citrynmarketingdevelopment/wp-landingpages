@@ -180,6 +180,19 @@
     });
   }
 
+  /* ---- Instagram: recreate the iframe after GitPress sanitizes the fragment ---- */
+  function initInstagram() {
+    var embed = root.querySelector('.wcc-ig__embed');
+    if (!embed || embed.querySelector('.wcc-ig__frame')) return;
+    var frame = document.createElement('iframe');
+    frame.className = 'wcc-ig__frame';
+    frame.title = 'West Coast Construction Group on Instagram';
+    frame.src = 'https://www.instagram.com/west_coast_construction_grp/embed/';
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    embed.appendChild(frame);
+  }
+
   /* ---- homepage customer review slider ---- */
   function initReviews() {
     var section = root.querySelector('.wcc-reviews-section');
@@ -257,6 +270,7 @@
   initVideoGallery();
   root.querySelectorAll('.wcc-video__frame video, .wcc-vg__thumbvideo').forEach(primeFirstFrame);
   initBeforeAfter();
+  initInstagram();
   initReviews();
   requestAnimationFrame(function () { root.classList.add('loaded'); });
 })();

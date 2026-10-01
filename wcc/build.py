@@ -30,7 +30,7 @@ MARK = datetime.date.today().isoformat()
 # NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
 # make it public, or upload these images to the WordPress media library instead.
 ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
-REVISION = "review-padding-instagram-slider-2026-10-01-v2"
+REVISION = "review-padding-instagram-slider-2026-10-01-v3"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -622,10 +622,6 @@ def build_service(sid):
 
 # ---------------------------------------------------------------- assemble
 def assemble(page_id, main_html, jsonld):
-    # GitPress may strip inline page scripts. The homepage also loads the same
-    # guarded script as an external asset so review controls can still initialize.
-    external_js = (f'<script defer src="{ASSET_CDN}js/wcc.js?rev={REVISION}"></script>\n'
-                   if page_id == "home" else "")
     frag = (f"<!-- wcc build: {MARK} | revision: {REVISION} | page: {page_id} | render_mode: theme_wrapped -->\n"
             f"<style>\n{CSS}\n</style>\n\n"
             f'<div class="wcc wcc-has-sticky">\n'
@@ -633,8 +629,7 @@ def assemble(page_id, main_html, jsonld):
             f"{sticky_bar()}\n"
             f"</div>\n\n"
             f"{jsonld}\n"
-            f"<script>\n{JS}\n</script>\n"
-            f"{external_js}")
+            f"<script>\n{JS}\n</script>\n")
     # resolve GitHub-hosted image references to the jsDelivr CDN
     return frag.replace("asset:", ASSET_CDN)
 
