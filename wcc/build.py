@@ -30,7 +30,7 @@ MARK = datetime.date.today().isoformat()
 # NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
 # make it public, or upload these images to the WordPress media library instead.
 ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
-REVISION = "review-padding-instagram-slider-2026-10-01-v3"
+REVISION = "review-padding-instagram-slider-2026-10-01-v4"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).

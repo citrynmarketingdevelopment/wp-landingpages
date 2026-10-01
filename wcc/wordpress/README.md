@@ -8,4 +8,4 @@ adds the Instagram profile iframe after GitPress finishes sanitizing the page.
 The plugin runs only on the WordPress front page. It pins the script to the
 verified `31d929c` commit so jsDelivr cannot serve an older `@main` copy.
 After activating it, clear the WordPress page cache and check that the live
-homepage contains the `review-padding-instagram-slider-2026-10-01-v3` marker.
+homepage contains the `review-padding-instagram-slider-2026-10-01-v4` marker.
