@@ -30,7 +30,7 @@ MARK = datetime.date.today().isoformat()
 # NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
 # make it public, or upload these images to the WordPress media library instead.
 ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
-REVISION = "native-video-gallery-2026-10-01-v6"
+REVISION = "featured-video-gallery-2026-10-01-v7"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -179,16 +179,17 @@ def video_gallery_section(v):
     cards = ""
     for i, it in enumerate(items):
         cards += (
-            f'<details class="wcc-vg__item"{" open" if i == 0 else ""}>'
+            f'<details class="wcc-vg__item" name="wcc-project-video"{" open" if i == 0 else ""}>'
             f'<summary class="wcc-vg__thumb">'
             f'<span class="wcc-vg__thumbimg"><img src="{it["poster"]}" '
             f'width="480" height="854" loading="lazy" alt="">'
             f'<span class="wcc-vg__badge" aria-hidden="true">'
             f'<svg viewBox="0 0 24 24" fill="currentColor">{play_path}</svg></span></span>'
-            f'<span class="wcc-vg__label">{e(it["title"])}'
-            f'<small>Show video</small></span></summary>'
+            f'<span class="wcc-vg__label">{e(it["title"])}</span></summary>'
             f'<div class="wcc-vg__player"><video src="{it["src"]}" poster="{it["poster"]}" '
-            f'preload="none" playsinline controls aria-label="{e(it["alt"])}"></video></div>'
+            f'preload="none" playsinline controls aria-label="{e(it["alt"])}"></video>'
+            f'<h3 class="wcc-vg__now">{e(it["title"])}</h3>'
+            f'<p class="wcc-vg__count">{len(items)} project videos</p></div>'
             f'</details>')
 
     return (f'<section class="wcc-section wcc-section--dark wcc-video">'
@@ -196,7 +197,9 @@ def video_gallery_section(v):
             f'<div data-reveal><p class="kicker">{e(v["kicker"])}</p>'
             f'<h2 class="wcc-vg__heading">{e(v["h2"])}</h2>'
             f'<p class="lede wcc-vg__intro">{e(v["intro"])}</p></div>'
-            f'<div class="wcc-vg" aria-label="Choose a project video">{cards}</div>'
+            f'<div class="wcc-vg" aria-label="Choose a project video">'
+            f'<div class="wcc-vg__stage-base" aria-hidden="true"><img src="{items[0]["poster"]}" alt=""></div>'
+            f'<div class="wcc-vg__rail">{cards}</div></div>'
             f'</div></section>')
 
 def before_after_section(b):
