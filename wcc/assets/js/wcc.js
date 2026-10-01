@@ -3,7 +3,8 @@
    Inlined into each fragment by build.py. */
 (function () {
   var root = document.querySelector('.wcc');
-  if (!root) return;
+  if (!root || root.dataset.wccInitialized === 'true') return;
+  root.dataset.wccInitialized = 'true';
   root.classList.add('wcc-js');
 
   /* ---- reveal on scroll (content already visible if this never runs) ---- */
@@ -179,34 +180,6 @@
     });
   }
 
-  /* ---- Instagram embed ---- */
-  function initInstagram() {
-    if (!root.querySelector('blockquote.instagram-media')) return;
-
-    function processEmbeds() {
-      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
-        window.instgrm.Embeds.process();
-      }
-    }
-
-    if (window.instgrm && window.instgrm.Embeds) {
-      processEmbeds();
-      return;
-    }
-
-    if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.instagram.com/embed.js';
-      script.onload = processEmbeds;
-      document.head.appendChild(script);
-      return;
-    }
-
-    setTimeout(processEmbeds, 800);
-    window.addEventListener('load', processEmbeds);
-  }
-
   /* ---- homepage customer review slider ---- */
   function initReviews() {
     var section = root.querySelector('.wcc-reviews-section');
@@ -221,8 +194,6 @@
 
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     var inView = false;
-    var hovered = false;
-    var focused = false;
     var paused = false;
     var timer = null;
     var current = 0;
@@ -236,13 +207,14 @@
     }
     function go(index) {
       var last = maxIndex();
+      var wrapped = index > last || index < 0;
       current = index > last ? 0 : index < 0 ? last : index;
-      track.scrollTo({ left: current * step(), behavior: reduced.matches || index > last ? 'auto' : 'smooth' });
+      track.scrollTo({ left: current * step(), behavior: reduced.matches || wrapped ? 'auto' : 'smooth' });
       position.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
     }
     function sync() {
       if (timer) { clearInterval(timer); timer = null; }
-      if (inView && !hovered && !focused && !paused && !reduced.matches && !document.hidden) {
+      if (inView && !paused && !reduced.matches && !document.hidden) {
         timer = setInterval(function () { go(current + 1); }, 6500);
       }
     }
@@ -266,12 +238,6 @@
       if (raf) cancelAnimationFrame(raf);
       raf = requestAnimationFrame(update);
     }, { passive: true });
-    section.addEventListener('mouseenter', function () { hovered = true; sync(); });
-    section.addEventListener('mouseleave', function () { hovered = false; sync(); });
-    section.addEventListener('focusin', function () { focused = true; sync(); });
-    section.addEventListener('focusout', function (event) {
-      if (!section.contains(event.relatedTarget)) { focused = false; sync(); }
-    });
     document.addEventListener('visibilitychange', sync);
     window.addEventListener('resize', update);
     if (reduced.addEventListener) reduced.addEventListener('change', sync);
@@ -291,7 +257,6 @@
   initVideoGallery();
   root.querySelectorAll('.wcc-video__frame video, .wcc-vg__thumbvideo').forEach(primeFirstFrame);
   initBeforeAfter();
-  initInstagram();
   initReviews();
   requestAnimationFrame(function () { root.classList.add('loaded'); });
 })();

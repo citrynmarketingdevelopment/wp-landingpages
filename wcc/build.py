@@ -30,7 +30,7 @@ MARK = datetime.date.today().isoformat()
 # NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
 # make it public, or upload these images to the WordPress media library instead.
 ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
-REVISION = "video-src-on-element-2026-08-07-v7"
+REVISION = "review-padding-instagram-slider-2026-10-01-v2"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -273,17 +273,23 @@ def gallery_section(g):
             f'</div></section>')
 
 def instagram_section(ig):
-    """Official Instagram profile embed with a plain link fallback."""
+    """Profile iframe with a useful static fallback if GitPress blocks embeds."""
     arrow = (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
              f'stroke-linecap="round" stroke-linejoin="round">{_I["arrow"]}</svg>')
-    embed_url = ig.get("embedUrl", ig["url"])
+    embed_url = ig.get("embedUrl", ig["url"].rstrip("/") + "/embed/")
+    tiles = "".join(
+        f'<img src="{tile["image"]}" alt="{e(tile["alt"])}" loading="lazy">'
+        for tile in ig["tiles"])
     embed = (f'<div class="wcc-ig__embed" data-reveal="right">'
-             f'<blockquote class="instagram-media" data-instgrm-permalink="{embed_url}" '
-             f'data-instgrm-version="14">'
-             f'<a class="wcc-ig__embed-fallback" href="{ig["url"]}" target="_blank" rel="noopener">'
-             f'View {e(ig["handle"])} on Instagram</a>'
-             f'</blockquote></div>'
-             f'<script async src="https://www.instagram.com/embed.js"></script>')
+             f'<div class="wcc-ig__preview">'
+             f'<span class="wcc-ig__preview-label">Project gallery</span>'
+             f'<div class="wcc-ig__preview-tiles">{tiles}</div>'
+             f'<a class="wcc-ig__preview-link" href="{ig["url"]}" target="_blank" rel="noopener">'
+             f'View {e(ig["handle"])} on Instagram {arrow}</a>'
+             f'</div>'
+             f'<iframe class="wcc-ig__frame" title="West Coast Construction Group on Instagram" '
+             f'src="{embed_url}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>'
+             f'</div>')
     return (f'<section class="wcc-section wcc-section--dark"><div class="wcc-wrap"><div class="wcc-ig">'
             f'<div data-reveal="left"><p class="kicker">{e(ig["kicker"])}</p>'
             f'<h2 class="wcc-ig__heading">{e(ig["h2"])}</h2>'
@@ -429,9 +435,9 @@ def build_home():
            f'<a class="btn btn-outline" href="/contact/">Ask about financing</a></div></div></section>')
 
     qs = "".join(
-        f'<article class="wcc-review">'
+        f'<div class="wcc-review">'
         f'<div class="wcc-review__stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
-        f'<blockquote>{e(t["quote"])}</blockquote><cite>{e(t["cite"])}</cite></article>'
+        f'<blockquote>{e(t["quote"])}</blockquote><cite>{e(t["cite"])}</cite></div>'
         for t in DATA["testimonials"])
     test = (f'<section class="wcc-section wcc-reviews-section" aria-labelledby="wcc-reviews-heading">'
             f'<div class="wcc-wrap"><div class="wcc-reviews-head"><div>'
@@ -616,6 +622,10 @@ def build_service(sid):
 
 # ---------------------------------------------------------------- assemble
 def assemble(page_id, main_html, jsonld):
+    # GitPress may strip inline page scripts. The homepage also loads the same
+    # guarded script as an external asset so review controls can still initialize.
+    external_js = (f'<script defer src="{ASSET_CDN}js/wcc.js?rev={REVISION}"></script>\n'
+                   if page_id == "home" else "")
     frag = (f"<!-- wcc build: {MARK} | revision: {REVISION} | page: {page_id} | render_mode: theme_wrapped -->\n"
             f"<style>\n{CSS}\n</style>\n\n"
             f'<div class="wcc wcc-has-sticky">\n'
@@ -623,7 +633,8 @@ def assemble(page_id, main_html, jsonld):
             f"{sticky_bar()}\n"
             f"</div>\n\n"
             f"{jsonld}\n"
-            f"<script>\n{JS}\n</script>\n")
+            f"<script>\n{JS}\n</script>\n"
+            f"{external_js}")
     # resolve GitHub-hosted image references to the jsDelivr CDN
     return frag.replace("asset:", ASSET_CDN)
 
