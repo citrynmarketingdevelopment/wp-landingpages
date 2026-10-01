@@ -62,6 +62,24 @@
     });
   }
 
+  /* Keep only one project clip playing when WordPress loads this script. */
+  function initVideoCards() {
+    root.querySelectorAll('.wcc-vg').forEach(function (gallery) {
+      var cards = gallery.querySelectorAll('.wcc-vg__item');
+      cards.forEach(function (card) {
+        card.addEventListener('toggle', function () {
+          if (!card.open) return;
+          cards.forEach(function (other) {
+            if (other === card) return;
+            var video = other.querySelector('video');
+            if (video) video.pause();
+            other.open = false;
+          });
+        });
+      });
+    });
+  }
+
   /* ---- before/after toggle ---- */
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
@@ -200,6 +218,7 @@
 
   initReveal();
   initFaq();
+  initVideoCards();
   initBeforeAfter();
   initInstagram();
   initReviews();

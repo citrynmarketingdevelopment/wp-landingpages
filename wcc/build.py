@@ -30,7 +30,7 @@ MARK = datetime.date.today().isoformat()
 # NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
 # make it public, or upload these images to the WordPress media library instead.
 ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
-REVISION = "native-video-gallery-2026-10-01-v5"
+REVISION = "native-video-gallery-2026-10-01-v6"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -179,7 +179,7 @@ def video_gallery_section(v):
     cards = ""
     for i, it in enumerate(items):
         cards += (
-            f'<details class="wcc-vg__item" name="wcc-project-video"{" open" if i == 0 else ""}>'
+            f'<details class="wcc-vg__item"{" open" if i == 0 else ""}>'
             f'<summary class="wcc-vg__thumb">'
             f'<span class="wcc-vg__thumbimg"><img src="{it["poster"]}" '
             f'width="480" height="854" loading="lazy" alt="">'
