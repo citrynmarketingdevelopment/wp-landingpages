@@ -30,7 +30,7 @@ MARK = datetime.date.today().isoformat()
 # NOTE: jsDelivr only serves PUBLIC repos. If wp-landingpages is private, either
 # make it public, or upload these images to the WordPress media library instead.
 ASSET_CDN = "https://cdn.jsdelivr.net/gh/citrynmarketingdevelopment/wp-landingpages@main/wcc/assets/"
-REVISION = "review-padding-instagram-slider-2026-10-01-v4"
+REVISION = "native-video-gallery-2026-10-01-v5"
 
 # ---------------------------------------------------------------- icons
 # Inline, stroke-based, GitPress-safe (no script/href/foreignObject).
@@ -172,55 +172,32 @@ def related_block(ids, heading="Related services"):
             f'<div class="wcc-related" style="margin-top:34px">{cards}</div></div></section>')
 
 def video_gallery_section(v):
-    """Dark band. Featured bracketed player plus a playlist rail that swaps the
-       source in. No poster images: both the featured player and every rail
-       thumbnail are real <video> elements set to preload="metadata", and a
-       tiny JS nudge (see wcc.js primeFirstFrame) seeks to ~0.01s so the
-       browser paints the clip's own first frame instead of a black box.
-       Nothing plays or downloads in full until the visitor clicks.
-
-       Every <video> carries src BOTH as an attribute on the element and as a
-       <source> child. HTML sanitizers (WordPress KSES / the GitPress filter)
-       commonly allow <video src> but drop the <source> child element, which
-       leaves a player with no media: controls render, duration reads 0:00 and
-       the frame stays black. The attribute is the resilient one; the child is
-       harmless redundancy, since a src attribute makes the browser ignore
-       <source> children entirely."""
+    """Native details and video controls survive GitPress script sanitization."""
     items = v["items"]
-    first = items[0]
     play_path = '<path d="M8 5v14l11-7z"/>'
 
-    thumbs = ""
+    cards = ""
     for i, it in enumerate(items):
-        thumbs += (
-            f'<button class="wcc-vg__thumb" type="button" aria-pressed="{"true" if i == 0 else "false"}" '
-            f'data-src="{it["src"]}" data-title="{e(it["title"])}" data-alt="{e(it["alt"])}">'
-            f'<span class="wcc-vg__thumbimg">'
-            f'<video class="wcc-vg__thumbvideo" src="{it["src"]}" muted playsinline preload="metadata" '
-            f'aria-hidden="true" tabindex="-1"><source src="{it["src"]}" type="video/mp4"></video>'
+        cards += (
+            f'<details class="wcc-vg__item" name="wcc-project-video"{" open" if i == 0 else ""}>'
+            f'<summary class="wcc-vg__thumb">'
+            f'<span class="wcc-vg__thumbimg"><img src="{it["poster"]}" '
+            f'width="480" height="854" loading="lazy" alt="">'
             f'<span class="wcc-vg__badge" aria-hidden="true">'
             f'<svg viewBox="0 0 24 24" fill="currentColor">{play_path}</svg></span></span>'
-            f'<span class="wcc-vg__label">{e(it["title"])}</span></button>')
+            f'<span class="wcc-vg__label">{e(it["title"])}'
+            f'<small>Show video</small></span></summary>'
+            f'<div class="wcc-vg__player"><video src="{it["src"]}" poster="{it["poster"]}" '
+            f'preload="none" playsinline controls aria-label="{e(it["alt"])}"></video></div>'
+            f'</details>')
 
-    note = f'<p class="wcc-vg__note">{e(v["note"])}</p>' if v.get("note") else ""
-
-    return (f'<section class="wcc-section wcc-section--dark wcc-video" data-video data-video-gallery>'
+    return (f'<section class="wcc-section wcc-section--dark wcc-video">'
             f'<div class="wcc-wrap">'
             f'<div data-reveal><p class="kicker">{e(v["kicker"])}</p>'
             f'<h2 class="wcc-vg__heading">{e(v["h2"])}</h2>'
             f'<p class="lede wcc-vg__intro">{e(v["intro"])}</p></div>'
-            f'<div class="wcc-vg">'
-            f'<div class="wcc-vg__stage" data-reveal>'
-            f'<div class="wcc-video__frame">'
-            f'<video src="{first["src"]}" preload="metadata" playsinline controls '
-            f'aria-label="{e(first["alt"])}"><source src="{first["src"]}" type="video/mp4"></video>'
-            f'<button class="wcc-video__play" type="button" aria-label="Play video">'
-            f'<svg viewBox="0 0 24 24" fill="currentColor">{play_path}</svg></button></div>'
-            f'<h3 class="wcc-vg__now">{e(first["title"])}</h3>'
-            f'<p class="wcc-vg__count">{len(items)} project videos</p>'
-            f'</div>'
-            f'<div class="wcc-vg__rail" aria-label="Choose a project video">{thumbs}</div>'
-            f'</div>{note}</div></section>')
+            f'<div class="wcc-vg" aria-label="Choose a project video">{cards}</div>'
+            f'</div></section>')
 
 def before_after_section(b):
     """Toggle gallery sized for vertical photos. Native details elements keep the

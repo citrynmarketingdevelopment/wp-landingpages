@@ -132,26 +132,29 @@
       "kicker": "On the Job",
       "h2": "See the work for yourself",
       "intro": "Walk through recent residential and commercial projects across Bakersfield and Kern County, and see how our crews keep a job site organized from start to closeout.",
-      "note": "Videos are hosted in the WordPress media library. Thumbnails show each clip's own first frame automatically. Confirm the before/after order and the titles.",
       "items": [
         {
           "title": "Remodel walkthrough: before",
           "src": "https://wccgrp.com/wp-content/uploads/2026/08/wcc-remodel-before.mp4",
+          "poster": "asset:img/video-remodel-before.jpg",
           "alt": "Before video of a remodel project by West Coast Construction Group in Bakersfield, CA"
         },
         {
           "title": "Remodel walkthrough: after",
           "src": "https://wccgrp.com/wp-content/uploads/2026/08/wcc-remodel-after.mp4",
+          "poster": "asset:img/video-remodel-after.jpg",
           "alt": "After video of a finished remodel by West Coast Construction Group in Bakersfield, CA"
         },
         {
           "title": "Project time-lapse",
           "src": "https://wccgrp.com/wp-content/uploads/2026/08/Video_20260730_174747_794.mp4",
+          "poster": "asset:img/video-project-timelapse.jpg",
           "alt": "Time-lapse of a construction project by West Coast Construction Group in Bakersfield, CA"
         },
         {
           "title": "Build time-lapse",
           "src": "https://wccgrp.com/wp-content/uploads/2026/08/compressed-video.mp4",
+          "poster": "asset:img/video-build-timelapse.jpg",
           "alt": "Time-lapse of a build by West Coast Construction Group in Bakersfield, CA"
         }
       ]

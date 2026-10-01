@@ -383,7 +383,7 @@
 .wcc-video.is-playing .wcc-video__frame::after { opacity: 0; transition: opacity .3s ease; }
 
 /* ---------- video gallery: featured stage + playlist rail ---------- */
-.wcc-vg { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: 32px; align-items: start; }
+.wcc-vg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 .wcc-vg__heading { margin: 12px 0 14px !important; max-width: 22ch; }
 .wcc-vg__intro { margin-bottom: 38px !important; max-width: 62ch; }
 .wcc-vg__now {
@@ -422,6 +422,17 @@
   color: #fff; letter-spacing: .02em;
 }
 .wcc-vg__note { margin-top: 18px; font-size: .85rem; color: var(--dim); }
+
+/* Each thumbnail opens its own native player. GitPress removes page scripts. */
+.wcc-vg__item { min-width: 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 10px; overflow: hidden; }
+.wcc-vg__item[open] { border-color: var(--accent); background: rgba(247,100,0,.1); }
+.wcc-vg__item .wcc-vg__thumb { list-style: none; border: 0; border-radius: 0; background: none; padding: 10px; grid-template-columns: 76px 1fr; }
+.wcc-vg__thumb::-webkit-details-marker { display: none; }
+.wcc-vg__item .wcc-vg__thumb:hover { background: rgba(255,255,255,.07); transform: none; }
+.wcc-vg__thumb:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.wcc-vg__label small { display: block; margin-top: 8px; color: var(--accent); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+.wcc-vg__player { padding: 6px 14px 16px; }
+.wcc-vg__player video { display: block; width: 100%; max-width: 320px; max-height: 520px; aspect-ratio: 9/16; margin-inline: auto; border-radius: 8px; background: #000; object-fit: contain; }
 
 /* ---------- before / after toggle gallery (built for vertical photos) ---------- */
 .wcc-ba__head {

@@ -62,72 +62,6 @@
     });
   }
 
-  /* ---- video: no poster images. Seek a hair past 0 once metadata loads so
-     the browser paints the clip's own first frame instead of a black box
-     (Safari/iOS in particular won't paint anything until asked). Re-runs
-     automatically on every future load() since the listener stays bound. ---- */
-  function primeFirstFrame(vid) {
-    function seek() {
-      if (vid.readyState >= 1 && vid.currentTime === 0) {
-        try { vid.currentTime = 0.01; } catch (e) {}
-      }
-    }
-    vid.addEventListener('loadedmetadata', seek);
-    seek();
-  }
-
-  /* ---- video: click-to-play so nothing autoplays or preloads ---- */
-  function initVideo() {
-    root.querySelectorAll('[data-video]').forEach(function (wrap) {
-      var vid = wrap.querySelector('video');
-      var btn = wrap.querySelector('.wcc-video__play');
-      if (!vid || !btn) return;
-      btn.addEventListener('click', function () {
-        var p = vid.play();
-        if (p && p.catch) p.catch(function () {});
-        wrap.classList.add('is-playing');
-      });
-      vid.addEventListener('play', function () { wrap.classList.add('is-playing'); });
-      vid.addEventListener('pause', function () {
-        if (vid.currentTime === 0) wrap.classList.remove('is-playing');
-      });
-    });
-  }
-
-  /* ---- video gallery: rail swaps the source into the featured player ---- */
-  function initVideoGallery() {
-    root.querySelectorAll('[data-video-gallery]').forEach(function (g) {
-      var vid = g.querySelector('video');
-      var source = vid && vid.querySelector('source');
-      var now = g.querySelector('.wcc-vg__now');
-      var thumbs = g.querySelectorAll('.wcc-vg__thumb');
-      if (!vid || !thumbs.length) return;
-
-      thumbs.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          if (btn.getAttribute('aria-pressed') === 'true') return;
-          thumbs.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-          btn.setAttribute('aria-pressed', 'true');
-
-          // Switching a thumb loads and previews the new clip's first frame;
-          // it does not auto-play. That keeps this consistent with the
-          // click-to-play design elsewhere, and avoids a real race where a
-          // concurrent play() attempt interrupts the first-frame seek below
-          // and leaves the player showing a blank/black frame instead.
-          vid.pause();
-          g.classList.remove('is-playing');
-          // The src attribute on the video element wins over any source child,
-          // so set it first and keep the child in sync for markup consistency.
-          vid.setAttribute('src', btn.dataset.src);
-          if (source) { source.setAttribute('src', btn.dataset.src); }
-          vid.setAttribute('aria-label', btn.dataset.alt || btn.dataset.title || '');
-          vid.load();
-          if (now) now.textContent = btn.dataset.title;
-        });
-      });
-    });
-  }
-
   /* ---- before/after toggle ---- */
   function initBeforeAfter() {
     root.querySelectorAll('.wcc-ba-sec').forEach(function (sec) {
@@ -266,9 +200,6 @@
 
   initReveal();
   initFaq();
-  initVideo();
-  initVideoGallery();
-  root.querySelectorAll('.wcc-video__frame video, .wcc-vg__thumbvideo').forEach(primeFirstFrame);
   initBeforeAfter();
   initInstagram();
   initReviews();
