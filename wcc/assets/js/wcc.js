@@ -207,6 +207,84 @@
     window.addEventListener('load', processEmbeds);
   }
 
+  /* ---- homepage customer review slider ---- */
+  function initReviews() {
+    var section = root.querySelector('.wcc-reviews-section');
+    if (!section) return;
+    var track = section.querySelector('.wcc-review-track');
+    var cards = Array.prototype.slice.call(track.querySelectorAll('.wcc-review'));
+    var position = section.querySelector('.wcc-review-position');
+    var prev = section.querySelector('.wcc-review-prev');
+    var next = section.querySelector('.wcc-review-next');
+    var play = section.querySelector('.wcc-review-play');
+    if (cards.length < 2) return;
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var inView = false;
+    var hovered = false;
+    var focused = false;
+    var paused = false;
+    var timer = null;
+    var current = 0;
+    var raf = null;
+
+    function step() { return cards[1].offsetLeft - cards[0].offsetLeft; }
+    function maxIndex() { return Math.max(0, Math.round((track.scrollWidth - track.clientWidth) / step())); }
+    function update() {
+      current = Math.min(maxIndex(), Math.max(0, Math.round(track.scrollLeft / step())));
+      position.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
+    }
+    function go(index) {
+      var last = maxIndex();
+      current = index > last ? 0 : index < 0 ? last : index;
+      track.scrollTo({ left: current * step(), behavior: reduced.matches || index > last ? 'auto' : 'smooth' });
+      position.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
+    }
+    function sync() {
+      if (timer) { clearInterval(timer); timer = null; }
+      if (inView && !hovered && !focused && !paused && !reduced.matches && !document.hidden) {
+        timer = setInterval(function () { go(current + 1); }, 6500);
+      }
+    }
+
+    prev.addEventListener('click', function () { go(current - 1); sync(); });
+    next.addEventListener('click', function () { go(current + 1); sync(); });
+    play.addEventListener('click', function () {
+      paused = !paused;
+      play.textContent = paused ? 'Play' : 'Pause';
+      play.setAttribute('aria-label', paused ? 'Resume automatic review slider' : 'Pause automatic review slider');
+      play.setAttribute('aria-pressed', String(paused));
+      sync();
+    });
+    track.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        go(current + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    track.addEventListener('scroll', function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    }, { passive: true });
+    section.addEventListener('mouseenter', function () { hovered = true; sync(); });
+    section.addEventListener('mouseleave', function () { hovered = false; sync(); });
+    section.addEventListener('focusin', function () { focused = true; sync(); });
+    section.addEventListener('focusout', function (event) {
+      if (!section.contains(event.relatedTarget)) { focused = false; sync(); }
+    });
+    document.addEventListener('visibilitychange', sync);
+    window.addEventListener('resize', update);
+    if (reduced.addEventListener) reduced.addEventListener('change', sync);
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        sync();
+      }, { threshold: 0.3 });
+      observer.observe(section);
+    } else { inView = true; sync(); }
+    update();
+  }
+
   initReveal();
   initFaq();
   initVideo();
@@ -214,5 +292,6 @@
   root.querySelectorAll('.wcc-video__frame video, .wcc-vg__thumbvideo').forEach(primeFirstFrame);
   initBeforeAfter();
   initInstagram();
+  initReviews();
   requestAnimationFrame(function () { root.classList.add('loaded'); });
 })();

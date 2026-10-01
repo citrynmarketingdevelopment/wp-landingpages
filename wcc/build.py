@@ -429,13 +429,24 @@ def build_home():
            f'<a class="btn btn-outline" href="/contact/">Ask about financing</a></div></div></section>')
 
     qs = "".join(
-        f'<div class="wcc-quote" data-reveal>'
-        f'<div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
-        f'<blockquote>{e(t["quote"])}</blockquote><cite>{e(t["cite"])}</cite></div>'
+        f'<article class="wcc-review">'
+        f'<div class="wcc-review__stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
+        f'<blockquote>{e(t["quote"])}</blockquote><cite>{e(t["cite"])}</cite></article>'
         for t in DATA["testimonials"])
-    test = (f'<section class="wcc-section wcc-reviews-section"><div class="wcc-wrap">'
-            f'<p class="kicker">Reviews</p><h2 class="wcc-heading-list">What clients say</h2>'
-            f'<div class="wcc-quotes">{qs}</div></div></section>')
+    test = (f'<section class="wcc-section wcc-reviews-section" aria-labelledby="wcc-reviews-heading">'
+            f'<div class="wcc-wrap"><div class="wcc-reviews-head"><div>'
+            f'<p class="kicker">Customer Reviews</p><h2 id="wcc-reviews-heading">Built on trust. Backed by our clients.</h2>'
+            f'<p class="wcc-reviews-intro">Recent five-star feedback from projects across Bakersfield and beyond.</p>'
+            f'</div><div class="wcc-reviews-score" aria-label="All 15 featured reviews are five stars">'
+            f'<strong>5.0</strong><span><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>15 featured reviews</small></span>'
+            f'</div></div><div class="wcc-review-track" id="wcc-review-track" tabindex="0" '
+            f'aria-label="Customer reviews; use arrow keys to browse">{qs}</div>'
+            f'<div class="wcc-review-controls"><span class="wcc-review-position" aria-live="off">01 / 15</span>'
+            f'<div class="wcc-review-buttons"><button type="button" class="wcc-review-play" '
+            f'aria-label="Pause automatic review slider" aria-pressed="false">Pause</button>'
+            f'<button type="button" class="wcc-review-prev" aria-label="Previous review">&#8592;</button>'
+            f'<button type="button" class="wcc-review-next" aria-label="Next review">&#8594;</button>'
+            f'</div></div></div></section>')
 
     faqs = (f'<section class="wcc-section wcc-section--alt"><div class="wcc-wrap">'
             f'<p class="kicker">FAQ</p><h2 class="wcc-heading-faq">General contractor FAQs</h2>'
@@ -448,7 +459,7 @@ def build_home():
     ba  = before_after_section(d["beforeAfter"])
     ig  = instagram_section(d["instagram"])
 
-    main = "".join([hero, tb, silo_sec, res, com, vid, emg, ba, why, proc, area, fin, test, ig, faqs, cta])
+    main = "".join([hero, tb, silo_sec, res, com, vid, emg, ba, why, proc, area, fin, ig, faqs, test, cta])
 
     graph = [website_node(), business_node(),
              webpage_node("/", "General Contractor in Bakersfield, CA", d["hero"]["intro"][:180])]
