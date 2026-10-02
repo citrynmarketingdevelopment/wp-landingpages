@@ -58,7 +58,7 @@ Confirm those behaviors against the exact hooks above before publishing. Without
 
 ## Contact and pending assets
 
-- Contact uses `[fluentform id="3"]`.
+- Contact uses `[gitpress_form id="2"]`.
 - The preview substitutes a non-submitting form facsimile.
 - The approved public email is `info@sanjoaquinoperators.com`.
 - The Privacy Policy link remains unpublished pending an approved policy and URL.
