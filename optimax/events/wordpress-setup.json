@@ -1,0 +1,41 @@
+{
+  "built_for_date": "2026-10-12",
+  "render_settings": {
+    "render_mode": "theme_wrapped",
+    "render_position": "replace",
+    "full_width_content": true,
+    "full_page_canvas": false
+  },
+  "pages": [
+    {
+      "slug": "events",
+      "title": "Events",
+      "meta_description": "Meet Optimax at upcoming healthcare conferences and community events.",
+      "source": "optimax/events.html",
+      "url": "https://optimaxcs.net/events/",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"optimax/events.html\" format=\"html\"]"
+    },
+    {
+      "slug": "event-mgma-2026",
+      "title": "MGMA Annual Conference",
+      "meta_description": "Connect with Optimax and explore practical support for your practice, from revenue cycle management to coding and credentialing.",
+      "source": "optimax/event-mgma-2026.html",
+      "url": "https://optimaxcs.net/event-mgma-2026/",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"optimax/event-mgma-2026.html\" format=\"html\"]"
+    },
+    {
+      "slug": "event-namiwalks-kern-county-2026",
+      "title": "NAMIWalks Kern County",
+      "meta_description": "Come see us at NAMIWalks Kern County. Join Optimax in supporting mental health awareness and our local community.",
+      "source": "optimax/event-namiwalks-kern-county-2026.html",
+      "url": "https://optimaxcs.net/event-namiwalks-kern-county-2026/",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"optimax/event-namiwalks-kern-county-2026.html\" format=\"html\"]"
+    }
+  ],
+  "menu_entry": {
+    "label": "Events",
+    "url": "/events/",
+    "placement": "After Resources in the existing primary menu",
+    "include_in_mobile_menu": true
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$title | Optimax Consulting Services</title>
+  <meta name="description" content="$description">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Standalone preview only. WordPress/Divi owns the live header and footer. -->
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif; background: #fff; }
+    .pv-header { position: relative; z-index: 60; background: #fff; border-bottom: 1px solid #edf1f6; }
+    .pv-navrow { width: min(calc(100% - 36px), 1160px); min-height: 86px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .pv-brand img { display: block; width: 180px; height: auto; }
+    .pv-links { display: flex; gap: 21px; align-items: center; }
+    .pv-header a, .pv-header summary { color: #234275; font-size: .85rem; font-weight: 700; text-decoration: none; }
+    .pv-header a:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .pv-links .pv-current { color: #266fa5; text-decoration: underline; text-decoration-color: #ff914d; text-decoration-thickness: 3px; text-underline-offset: 9px; }
+    .pv-header .pv-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border-radius: 12px; color: #102b47; background: #ff914d; font-weight: 800; }
+    .pv-mobile { display: none; }
+    .pv-header a:focus-visible, .pv-header summary:focus-visible, .pv-footer a:focus-visible { outline: 3px solid #266fa5; outline-offset: 5px; }
+    .pv-skip { position: absolute; top: -100px; left: 18px; z-index: 100; background: #fff; padding: 12px; }
+    .pv-skip:focus { top: 10px; }
+    .pv-footer { background: #0d2335; color: #d8e6f7; padding: 34px 0; }
+    .pv-footrow { width: min(calc(100% - 36px), 1160px); margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .pv-footrow img { width: 180px; display: block; background: #fff; padding: 5px; border-radius: 8px; }
+    .pv-footlinks { display: flex; gap: 20px; flex-wrap: wrap; }
+    .pv-footer a { color: #d8e6f7; text-decoration: none; font-size: .86rem; }
+    .pv-footer a:hover { text-decoration: underline; }
+    .pv-copy { font-size: .82rem; }
+    @media (max-width: 1100px) {
+      .pv-links { display: none; }
+      .pv-mobile { display: block; margin-left: auto; }
+      .pv-mobile summary { padding: 12px 5px; cursor: pointer; }
+      .pv-mobile nav { position: absolute; top: 100%; right: 18px; width: min(310px, calc(100vw - 36px)); padding: 16px; background: #fff; box-shadow: 0 16px 32px rgb(35 66 117 / 15%); border: 1px solid #dae7f0; border-radius: 0 0 14px 14px; }
+      .pv-mobile nav a { display: block; padding: 12px 10px; }
+    }
+    @media (max-width: 480px) {
+      .pv-navrow { min-height: 74px; gap: 12px; }
+      .pv-brand img { width: 145px; }
+      .pv-navrow > .pv-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="pv-skip" href="#$main_id">Skip to content</a>
+  <header class="pv-header">
+    <div class="pv-navrow">
+      <a class="pv-brand" href="/" aria-label="Optimax Consulting Services home"><img src="https://optimaxcs.net/wp-content/uploads/2025/01/Logo-02.webp" alt="Optimax Consulting Services"></a>
+      <nav class="pv-links" aria-label="Primary navigation">$nav_links</nav>
+      <details class="pv-mobile">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">$nav_links<a href="/contact-us/">Contact Us</a></nav>
+      </details>
+      <a class="pv-cta" href="/contact-us/">Contact Us</a>
+    </div>
+  </header>
+  $content
+  <footer class="pv-footer">
+    <div class="pv-footrow">
+      <a href="/" aria-label="Optimax home"><img src="https://optimaxcs.net/wp-content/uploads/2025/01/Logo-02.webp" alt="Optimax Consulting Services"></a>
+      <nav class="pv-footlinks" aria-label="Footer navigation"><a href="/events/">Events</a><a href="/contact-us/">Contact Us</a><a href="tel:+18889591014">(888) 959-1014</a></nav>
+      <span class="pv-copy">&copy; $year Optimax Consulting Services</span>
+    </div>
+  </footer>
+</body>
+</html>
