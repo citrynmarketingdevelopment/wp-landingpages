@@ -1,0 +1,65 @@
+{
+  "source": "amicusfoundation-com-v1",
+  "forms": [
+    {
+      "id": "amicus-contact",
+      "title": "Amicus Foundation - Contact",
+      "definition": {
+        "schemaVersion": 1,
+        "fields": [
+          {
+            "id": "contact_name",
+            "name": "name",
+            "type": "text",
+            "label": "Name",
+            "required": true,
+            "width": 12
+          },
+          {
+            "id": "contact_email",
+            "name": "email",
+            "type": "email",
+            "label": "Email Address",
+            "required": true,
+            "width": 12
+          },
+          {
+            "id": "contact_message",
+            "name": "message",
+            "type": "textarea",
+            "label": "Message",
+            "required": true,
+            "width": 12
+          }
+        ],
+        "settings": {
+          "submitLabel": "Submit",
+          "confirmation": "Thank you. Your message has been sent.",
+          "requireLogin": false,
+          "saveResume": false,
+          "mode": "standard",
+          "notifications": [
+            {
+              "id": "amicus-contact-notification",
+              "to": "info@amicusfoundation.com",
+              "subject": "New message from Amicus Foundation website",
+              "message": "{all_fields}",
+              "attachPdf": false
+            }
+          ]
+        },
+        "style": {
+          "primary": "#329c54",
+          "text": "#191529",
+          "background": "#ffffff",
+          "border": "#d9ded9",
+          "radius": 8,
+          "gap": 20,
+          "fontSize": 16,
+          "maxWidth": 920,
+          "labelPosition": "top"
+        }
+      }
+    }
+  ]
+}

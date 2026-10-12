@@ -1,0 +1,13 @@
+{
+    "environment": "isolated WordPress",
+    "native_import": "passed",
+    "idempotent_import": "passed",
+    "rendered_fields_and_states": "passed",
+    "gitpress_fragment_rendering": "passed",
+    "required_and_email_validation": "passed",
+    "session_token_rejection": "passed",
+    "synthetic_submission": "passed",
+    "intercepted_mail_recipient": "info@amicusfoundation.com",
+    "mail_failure_retry": "passed",
+    "production_form_id_bound": false
+}

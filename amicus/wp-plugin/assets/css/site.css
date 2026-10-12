@@ -1,0 +1,112 @@
+/* Site-specific presentation for GitPress Managed. Original page rules are in
+   the route CSS files captured from the WordPress source. */
+:root{--amicus-green:#329c54;--amicus-mint:#70c1b3;--amicus-dark:#191529;--amicus-purple:#6f5fab}
+body.dgs-gitpress-managed{margin:0;overflow-x:hidden;background:#fff;color:#333}
+.dgs-managed-page{min-height:100dvh;padding-top:0!important}
+.dgs-managed-header,.dgs-managed-footer{display:block}
+.dgs-managed-header{position:sticky;top:0;z-index:1000}
+.dgs-managed-header .amicus-header{position:relative;background:#fff;box-shadow:0 5px 30px rgba(0,0,0,.11);font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif}
+.amicus-header *,.amicus-footer *{box-sizing:border-box}
+.amicus-header a,.amicus-footer a{text-decoration:none}
+.amicus-header-inner{width:95%;max-width:1560px;margin:auto;min-height:90px;display:grid;grid-template-columns:150px minmax(0,1fr) 220px;align-items:center;gap:135px}
+.amicus-brand{display:block;min-width:0}
+.amicus-brand img{display:block;width:100%;height:auto;max-width:150px}
+.amicus-desktop-nav{display:flex;align-items:center;justify-content:flex-start}
+.amicus-nav-list,.amicus-mobile-list,.amicus-nav-list ul,.amicus-mobile-list ul{list-style:none;margin:0;padding:0}
+.amicus-nav-list{display:flex;align-items:center;justify-content:flex-start;gap:clamp(9px,1.3vw,23px)}
+.amicus-nav-list li{position:relative}
+.amicus-nav-list>li>a{display:block;padding:14px 0;color:#000!important;font-size:14px;font-weight:600;line-height:1.3;white-space:nowrap}
+.amicus-nav-list>li.menu-item-has-children>a::after{content:'\25be';display:inline-block;margin-left:7px;font-size:12px;vertical-align:1px}
+.amicus-nav-list a:hover,.amicus-nav-list a:focus-visible,.amicus-mobile-list a:hover{color:var(--amicus-mint)!important}
+.amicus-nav-list a[aria-current=page]{color:#003d34!important}
+.amicus-nav-list .sub-menu{position:absolute;left:50%;top:100%;width:260px;transform:translate(-50%,-8px);visibility:hidden;opacity:0;padding:6px 0;background:#fff;border:2px solid var(--amicus-mint);border-radius:5px;box-shadow:0 15px 26px rgba(0,0,0,.13);transition:opacity .2s,transform .2s,visibility .2s}
+.amicus-nav-list li:hover>.sub-menu,.amicus-nav-list li:focus-within>.sub-menu{transform:translate(-50%,0);visibility:visible;opacity:1}
+.amicus-nav-list .sub-menu a{display:block;padding:12px 20px;color:#000!important;font-size:14px;line-height:1.35;white-space:normal}
+.amicus-nav-list .sub-menu li+li{border-top:1px solid rgba(0,0,0,.1)}
+.amicus-header-cta,.amicus-grant-bar a{display:inline-block;padding:9px 24px;border:2px solid var(--amicus-green);border-radius:8px;background:var(--amicus-green);color:#fff!important;font-weight:700;font-size:14px;text-align:center;white-space:nowrap}
+.amicus-header-cta:hover,.amicus-header-cta:focus-visible{background:#fff;color:var(--amicus-green)!important}
+.amicus-grant-bar,.amicus-hamburger,.amicus-mobile-sheet,.amicus-scrim{display:none}
+.amicus-page{position:relative;max-width:none;overflow-x:clip}
+.amicus-page .entry-content{padding:0}
+.amicus-page .et_pb_section{position:relative}
+.amicus-page .et_pb_number_counter .percent-value{display:inline-block}
+.amicus-page .et_pb_counter_amount[data-width="100%"]{width:100%!important}
+.amicus-page .et_pb_slider .et_pb_slide{display:block!important}
+.amicus-enhanced .amicus-page .et_pb_slider .et_pb_slide:not(.is-active){display:none!important}
+.amicus-page .et_pb_slider{position:relative}
+.amicus-slide-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin:20px auto 0}
+.amicus-slide-controls button{border:1px solid currentColor;background:transparent;color:inherit;min-width:38px;min-height:38px;border-radius:50%;cursor:pointer;font-size:21px;line-height:1}
+.amicus-slide-controls button:hover,.amicus-slide-controls button:focus-visible{background:var(--amicus-purple);border-color:var(--amicus-purple);color:#fff}
+.amicus-slide-dots{display:flex;gap:5px;align-items:center}
+.amicus-slide-dots button{min-width:12px;min-height:12px;width:12px;height:12px;background:transparent;border:1px solid currentColor;padding:0;font-size:0}
+.amicus-slide-dots button[aria-current=true]{background:currentColor}
+.amicus-page details.amicus-toggle{display:block}
+.amicus-page details.amicus-toggle summary{cursor:pointer;list-style:none}
+.amicus-page details.amicus-toggle summary::-webkit-details-marker{display:none}
+.amicus-page details.amicus-toggle .et_pb_toggle_content{display:block!important}
+.amicus-page details.amicus-toggle:not([open]) .et_pb_toggle_content{display:none!important}
+.amicus-page details.amicus-toggle summary:focus-visible{outline:3px solid var(--amicus-green);outline-offset:3px}
+.amicus-page .et_parallax_bg{background-position:center;background-size:cover}
+.amicus-page .et_pb_section_parallax{overflow:hidden}
+.amicus-page .amicus-contact-form{max-width:920px;margin:auto}
+.amicus-page .amicus-contact-form .gpf-form{max-width:none!important}
+.amicus-page .amicus-jotform{width:100%;min-height:980px}
+.amicus-page .amicus-jotform iframe{width:100%;min-height:980px;border:0}
+.amicus-page .amicus-video-embed{width:100%;aspect-ratio:16/9}
+.amicus-page .amicus-video-embed iframe{display:block;width:100%;height:100%;border:0}
+.amicus-page img,.amicus-footer img{max-width:100%;height:auto}
+.amicus-page :focus-visible,.amicus-header :focus-visible,.amicus-footer :focus-visible{outline:3px solid var(--amicus-green);outline-offset:3px}
+.amicus-footer{background:linear-gradient(180deg,rgba(255,255,255,.98) 7%,rgba(102,102,102,.35) 96%),url(https://amicusfoundation.com/wp-content/uploads/2024/07/energy-4.jpg) center bottom/cover #afafaf;color:#000}
+.amicus-footer-grid{width:min(90%,1200px);margin:auto;padding:78px 0 52px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+.amicus-footer-brand img{width:auto;max-height:64px;margin-bottom:20px}
+.amicus-footer h5{margin:0 0 10px;padding:0;font-family:Urbanist,Helvetica,Arial,sans-serif;font-size:32px;font-weight:700;line-height:1.4;color:#fff!important;text-shadow:0 0 .3em rgba(0,0,0,.4)}
+.amicus-footer-brand h5{color:#666!important;font-size:20px;font-weight:400;text-shadow:none}
+.amicus-footer p,.amicus-footer p a{font-family:Inter,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.8;color:#000!important}
+.amicus-footer a:hover,.amicus-footer a:focus-visible{text-decoration:underline}
+.amicus-footer-cta{display:inline-block;margin-top:12px;padding:8px 40px;border-radius:8px;background:#fff;color:#000!important;font:700 14px Inter,Helvetica,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.amicus-footer-cta:hover{background:#000;color:#fff!important}
+.amicus-footer-bottom{padding:17px 20px 14px;background:#666;color:#fff;text-align:center;font:700 14px/1.3 'DM Sans',Helvetica,Arial,sans-serif}
+@media (min-width:981px) and (max-width:1300px){.amicus-header-inner{grid-template-columns:150px minmax(0,1fr) 188px;gap:clamp(18px,3vw,45px)}.amicus-nav-list{gap:9px}.amicus-nav-list>li>a{font-size:12px}.amicus-header-cta{padding:7px 14px;font-size:12px}}
+@media (min-width:981px) and (max-width:1100px){
+ .amicus-header-inner{height:170px;position:relative;display:block}
+ .amicus-brand{position:absolute;left:0;top:76px;width:70px}
+ .amicus-desktop-nav{position:absolute;left:20%;right:23%;top:26px;display:block}
+ .amicus-nav-list{justify-content:center;flex-wrap:wrap;gap:32px 27px}
+ .amicus-nav-list>li>a{font-size:14px;padding:9px 0}
+ .amicus-header-cta{position:absolute;right:0;top:65px;width:220px}
+}
+@media (max-width:980px){
+ .amicus-grant-bar{display:block}.amicus-grant-bar a{display:block;width:100%;min-height:41px;border-radius:0;padding:6px 16px}
+ .amicus-header-inner{width:80%;min-height:80px;display:flex;justify-content:space-between}
+ .amicus-brand{flex:0 0 35%;min-width:0}
+ .amicus-brand img{max-width:190px}
+ .amicus-desktop-nav,.amicus-header-cta{display:none}
+ .amicus-hamburger{display:grid;gap:6px;padding:8px;border:0;background:transparent;cursor:pointer}
+ .amicus-hamburger span{display:block;width:32px;height:3px;background:var(--amicus-green)}
+ .amicus-mobile-sheet{display:block;position:absolute;left:0;right:0;top:100%;max-height:calc(100dvh - 125px);overflow-y:auto;background:#fff;border:2px solid var(--amicus-mint);border-radius:5px;box-shadow:0 15px 35px rgba(0,0,0,.15);visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
+ body.menu-open .amicus-mobile-sheet{visibility:visible;opacity:1;transform:none}
+ .amicus-mobile-list a{display:block;padding:12px 20px;color:#000!important;font:600 15px/1.35 'Plus Jakarta Sans',Helvetica,Arial,sans-serif;border-bottom:1px solid rgba(0,0,0,.09)}
+ .amicus-mobile-list a[aria-current=page]{color:#003d34!important}
+ .amicus-mobile-list .sub-menu{display:none;padding:7px 20px;background:#fafafa}
+ .amicus-mobile-list li.is-expanded>.sub-menu{display:block}
+ .amicus-mobile-list li.menu-item-has-children>a::after{content:'▼';float:right;font-size:12px}
+ .amicus-mobile-list li.is-expanded>a::after{content:'▲'}
+ .amicus-scrim{position:fixed;inset:0;background:rgba(0,0,0,.2)}
+ body.menu-open .amicus-scrim{display:block}
+ .amicus-footer-grid{grid-template-columns:1fr 1fr;padding-top:48px}
+ .amicus-footer-grid>div:first-child{grid-column:1/-1}
+}
+@media (max-width:767px){
+ .amicus-header-inner{width:90%;min-height:64px}
+ .amicus-brand{flex-basis:50%}
+ .amicus-brand img{max-width:140px}
+ .amicus-hamburger{margin-right:10px}
+ .amicus-mobile-sheet{max-height:calc(100dvh - 115px)}
+ .amicus-footer-grid{grid-template-columns:1fr;gap:18px}
+ .amicus-footer-grid>div:first-child{grid-column:auto}
+ .amicus-footer h5{font-size:18px}
+ .amicus-footer p,.amicus-footer p a{font-size:15px}
+ .amicus-page .et_pb_row{max-width:100%}
+}
+@media (max-width:479px){.amicus-brand{flex-basis:50%}.amicus-footer-grid{padding-top:34px}}
+@media (prefers-reduced-motion:reduce){.amicus-header *,.amicus-page *{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}

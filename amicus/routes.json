@@ -1,0 +1,327 @@
+{
+  "origin": "https://amicusfoundation.com",
+  "owner": "citrynmarketingdevelopment",
+  "repo": "wp-landingpages",
+  "branch": "main",
+  "managed_header_shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/header.html\" format=\"html\"]",
+  "managed_footer_shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/footer.html\" format=\"html\"]",
+  "pages": {
+    "/": {
+      "source_url": "https://amicusfoundation.com/",
+      "file": "home.html",
+      "css": "assets/css/home.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/home.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Amicus Foundation | Matching Grants for Charities",
+        "description": "Amicus Foundation supports faith-based, family-focused nonprofits through matching grants, charitable giving, and partnerships in education, conservation, health, veterans, and more.",
+        "canonical": "https://amicusfoundation.com/",
+        "og_image": "https://amicusfoundation.com/wp-content/uploads/2022/07/beyond-measure-logo-header.png",
+        "source_post_id": "324539",
+        "source_slug": "home",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/zakouma/": {
+      "source_url": "https://amicusfoundation.com/zakouma/",
+      "file": "zakouma.html",
+      "css": "assets/css/zakouma.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/zakouma.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Zakouma - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/zakouma/",
+        "og_image": "",
+        "source_post_id": "183",
+        "source_slug": "zakouma",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/ww2-memorial/": {
+      "source_url": "https://amicusfoundation.com/ww2-memorial/",
+      "file": "ww2-memorial.html",
+      "css": "assets/css/ww2-memorial.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/ww2-memorial.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "WWII Memorial - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/ww2-memorial/",
+        "og_image": "",
+        "source_post_id": "250",
+        "source_slug": "ww2-memorial",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/contact-us/": {
+      "source_url": "https://amicusfoundation.com/contact-us/",
+      "file": "contact-us.html",
+      "css": "assets/css/contact-us.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/contact-us.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Contact Us - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/contact-us/",
+        "og_image": "",
+        "source_post_id": "66",
+        "source_slug": "contact-us",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/dolly-parton-imagination/": {
+      "source_url": "https://amicusfoundation.com/dolly-parton-imagination/",
+      "file": "dolly-parton-imagination.html",
+      "css": "assets/css/dolly-parton-imagination.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/dolly-parton-imagination.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Dolly Parton Imagination Library - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/dolly-parton-imagination/",
+        "og_image": "",
+        "source_post_id": "567",
+        "source_slug": "dolly-parton-imagination",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/warriors-quiet-waters/": {
+      "source_url": "https://amicusfoundation.com/warriors-quiet-waters/",
+      "file": "warriors-quiet-waters.html",
+      "css": "assets/css/warriors-quiet-waters.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/warriors-quiet-waters.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Warriors & Quiet Waters - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/warriors-quiet-waters/",
+        "og_image": "",
+        "source_post_id": "362",
+        "source_slug": "warriors-quiet-waters",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/montana-wild-sheep-foundation/": {
+      "source_url": "https://amicusfoundation.com/montana-wild-sheep-foundation/",
+      "file": "montana-wild-sheep-foundation.html",
+      "css": "assets/css/montana-wild-sheep-foundation.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/montana-wild-sheep-foundation.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Montana Wild Sheep Foundation - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/montana-wild-sheep-foundation/",
+        "og_image": "",
+        "source_post_id": "746",
+        "source_slug": "montana-wild-sheep-foundation",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/returning-charities-application/": {
+      "source_url": "https://amicusfoundation.com/returning-charities-application/",
+      "file": "returning-charities-application.html",
+      "css": "assets/css/returning-charities-application.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/returning-charities-application.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Returning charities application - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/returning-charities-application/",
+        "og_image": "",
+        "source_post_id": "779",
+        "source_slug": "returning-charities-application",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/bakersfield-pregnancy-center/": {
+      "source_url": "https://amicusfoundation.com/bakersfield-pregnancy-center/",
+      "file": "bakersfield-pregnancy-center.html",
+      "css": "assets/css/bakersfield-pregnancy-center.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/bakersfield-pregnancy-center.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Bakersfield Pregnancy Center - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/bakersfield-pregnancy-center/",
+        "og_image": "",
+        "source_post_id": "571",
+        "source_slug": "bakersfield-pregnancy-center",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/independence-through-grace/": {
+      "source_url": "https://amicusfoundation.com/independence-through-grace/",
+      "file": "independence-through-grace.html",
+      "css": "assets/css/independence-through-grace.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/independence-through-grace.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Independence Through Grace - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/independence-through-grace/",
+        "og_image": "",
+        "source_post_id": "833",
+        "source_slug": "independence-through-grace",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/recommended-charities/": {
+      "source_url": "https://amicusfoundation.com/recommended-charities/",
+      "file": "recommended-charities.html",
+      "css": "assets/css/recommended-charities.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/recommended-charities.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Recommended Charities - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/recommended-charities/",
+        "og_image": "",
+        "source_post_id": "425",
+        "source_slug": "recommended-charities",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/grant-forms/": {
+      "source_url": "https://amicusfoundation.com/grant-forms/",
+      "file": "grant-forms.html",
+      "css": "assets/css/grant-forms.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/grant-forms.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Grant Forms - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/grant-forms/",
+        "og_image": "",
+        "source_post_id": "777",
+        "source_slug": "grant-forms",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/new-charities-application/": {
+      "source_url": "https://amicusfoundation.com/new-charities-application/",
+      "file": "new-charities-application.html",
+      "css": "assets/css/new-charities-application.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/new-charities-application.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "New Charities Application - Amicus Foundation",
+        "description": "Amicus Foundation",
+        "canonical": "https://amicusfoundation.com/new-charities-application/",
+        "og_image": "",
+        "source_post_id": "216",
+        "source_slug": "new-charities-application",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/montana-classrooms/": {
+      "source_url": "https://amicusfoundation.com/montana-classrooms/",
+      "file": "montana-classrooms.html",
+      "css": "assets/css/montana-classrooms.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/montana-classrooms.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "Montana Classroom Grants | Amicus Foundation",
+        "description": "Amicus Foundation offers matching grants for Montana private, faith-based classroom teachers, helping fund projects that create vibrant learning environments.",
+        "canonical": "https://amicusfoundation.com/montana-classrooms/",
+        "og_image": "",
+        "source_post_id": "281",
+        "source_slug": "montana-classrooms",
+        "source_parent_id": 0,
+        "source_status": "publish"
+      }
+    },
+    "/project/test/": {
+      "source_url": "https://amicusfoundation.com/project/test/",
+      "file": "project-test.html",
+      "css": "assets/css/project-test.css",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/project-test.html\" format=\"html\"]",
+      "render_mode": "gitpress_managed",
+      "render_position": "replace",
+      "full_page_canvas": true,
+      "full_width_content": false,
+      "seo": {
+        "title": "test - Amicus Foundation",
+        "description": "",
+        "canonical": "https://amicusfoundation.com/project/test/",
+        "og_image": "https://amicusfoundation.com/wp-content/uploads/2025/06/Non-Profit-Hero-Img.jpg",
+        "source_post_id": "324530",
+        "source_slug": "test",
+        "source_parent_id": null,
+        "source_status": "publish"
+      }
+    }
+  },
+  "archives": {
+    "/project/": {
+      "handler": "native-project-archive",
+      "source_url": "https://amicusfoundation.com/project/",
+      "file": "project-archive.html",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/project-archive.html\" format=\"html\"]"
+    },
+    "/author/amicus/": {
+      "handler": "native-author-archive",
+      "source_url": "https://amicusfoundation.com/author/amicus/",
+      "file": "author-amicus.html",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"amicus/author-amicus.html\" format=\"html\"]"
+    }
+  },
+  "redirects": {
+    "/layout_tag/light/": "/"
+  }
+}

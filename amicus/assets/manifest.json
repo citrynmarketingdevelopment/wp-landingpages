@@ -1,0 +1,1352 @@
+[
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.eot",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.eot",
+    "bytes": 136822,
+    "sha256": "6128dd44fed3a046ff8d835d677e0a837c70c64dc1c944b7edfde04eb8d8b879"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.svg",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.svg",
+    "bytes": 747545,
+    "sha256": "e2749cb24a77208abdd9fda35f0d14f091948c44d21f977c8048a3b13e4beccb"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.ttf",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.ttf",
+    "bytes": 136516,
+    "sha256": "404d6083193e569bc5c28c7b1bc0e13ece80c6e0f5a50ad8e9633f48f3c09155"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.woff",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.woff",
+    "bytes": 92136,
+    "sha256": "a0375c054a0041bd58e2a0bf7fa3df7c3904bfc4f790fd24e32ff3ee70fd0eef"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.woff2",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.woff2",
+    "bytes": 78460,
+    "sha256": "71b3ce72680f4183d28db86b184542051fd533bb1146933233e4f6a20cf98cba"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.eot",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.eot",
+    "bytes": 34350,
+    "sha256": "f9853ad337d523c0b35fe7ac306268a7035ce0ff7624710ed8b39c2b88b20a33"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.svg",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.svg",
+    "bytes": 144714,
+    "sha256": "d42a64dc349a98075e8be12587943f2bd52065a8bb18960d7dc7390b535117e0"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.ttf",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.ttf",
+    "bytes": 34052,
+    "sha256": "5e811f0b32d488b9a183b77cfc7ac1ef44b3ea7aaed014e83975dfe597d221f6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.woff",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.woff",
+    "bytes": 16772,
+    "sha256": "6799c999e422710f40f70a60a6138fc38106226c44d7bd1b1023f5bb65befef9"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.woff2",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-regular-400.woff2",
+    "bytes": 13548,
+    "sha256": "ce20ed8a323117c8a718ff1ddc6dabb997373b575a8e896f2bf02b846c082c9d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.eot",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.eot",
+    "bytes": 204814,
+    "sha256": "e0e3c4af28348d721f8af603595c15d273a56f2b03392f9a413255fe5635f536"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.svg",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.svg",
+    "bytes": 917575,
+    "sha256": "1a46e780ce5beb6507d62af8b20a92b33c8f042e87c612f4bbf8330bfc353419"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.ttf",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.ttf",
+    "bytes": 204528,
+    "sha256": "2caded242c04139761742fe0cda7f6592df1b6686857532c8a7c2e2536b976e4"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.woff",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.woff",
+    "bytes": 104280,
+    "sha256": "aab971ade1633ab836222074ceae0aad8a082d900908f27491b221d6e83998ca"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.woff2",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.woff2",
+    "bytes": 80300,
+    "sha256": "6b555920e358f8a25a422988b448615c33bcccb4f932e8331cebfc8e2a737fc7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.eot",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.eot",
+    "bytes": 92172,
+    "sha256": "cf6d04a40db9a4b45f66768418911721fb0bc7f440a0bd08f6bc6c4492ac975c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg",
+    "bytes": 299189,
+    "sha256": "639567f000acf215bbe0bf97270b6ef3db269d1f9245ae2f1dfdcc4e3759315c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.ttf",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.ttf",
+    "bytes": 92008,
+    "sha256": "e157a805df2257515250ff4c91e5abde50f7e0d9634946878dbb132159e0e97e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.woff",
+    "local": "assets/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.woff",
+    "bytes": 92084,
+    "sha256": "fe67b77ac7e0ef4b482dafb86adfa403db1b89a2f337d2dc8bd1278cfe975196"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/themes/Divi/includes/builder/styles/images/preloader.gif",
+    "local": "assets/wp-content/themes/Divi/includes/builder/styles/images/preloader.gif",
+    "bytes": 9427,
+    "sha256": "27422f830d71474144ea902369ce78d178d1ace4e38a029ba2e359b7b55b4176"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/05/IMG-8486-1.jpg",
+    "local": "assets/wp-content/uploads/2022/05/IMG-8486-1.jpg",
+    "bytes": 195430,
+    "sha256": "e39785ead7d06479da5350bb62ce589a053785ea205bcc09e608065854f17078"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/05/IMG-8938-2.jpg",
+    "local": "assets/wp-content/uploads/2022/05/IMG-8938-2.jpg",
+    "bytes": 157089,
+    "sha256": "2e1fc10805c6f45791f2da95921f53b2ff7bda761a8db004abf0b1cb39f1a27e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/05/Montana-Mountains.jpg",
+    "local": "assets/wp-content/uploads/2022/05/Montana-Mountains.jpg",
+    "bytes": 296140,
+    "sha256": "86793131a27fb23e5df30d3ae4f224495566f85ab14718f95a855e9c86f73fd8"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/05/certificate.png",
+    "local": "assets/wp-content/uploads/2022/05/certificate.png",
+    "bytes": 1334,
+    "sha256": "fb0e0e9391b3ffe50d7df989c3d4ff2cc3d38e4c2681c90a3d7420f02784b6a7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/05/house.png",
+    "local": "assets/wp-content/uploads/2022/05/house.png",
+    "bytes": 582,
+    "sha256": "8546103f69e7efd329b27266e63f6fa5c9b8e6aff47a410a948ae1efc0cef928"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/05/paw.png",
+    "local": "assets/wp-content/uploads/2022/05/paw.png",
+    "bytes": 2026,
+    "sha256": "f55e58baed131c2eaa2897c24f12e54b91ff054fd92b32687406f38bdab4c6c0"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/1576579244867-150x150.jpg",
+    "local": "assets/wp-content/uploads/2022/07/1576579244867-150x150.jpg",
+    "bytes": 7307,
+    "sha256": "156a320c9860e15ee5d0b33b3a217a5f3c9c369eae9f46eb11603a1774151de9"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/1576579244867.jpg",
+    "local": "assets/wp-content/uploads/2022/07/1576579244867.jpg",
+    "bytes": 15330,
+    "sha256": "e157cf2a9c14a1c3c6107c74627bb4291bb4b9a133636ee41feca84c59d6b382"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/1580487583936-150x150.jpg",
+    "local": "assets/wp-content/uploads/2022/07/1580487583936-150x150.jpg",
+    "bytes": 3322,
+    "sha256": "ca27b51eeaab3dfe5ca2e2cff422e7f26bde82def8a6bcb07854d54c5723bf87"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/1580487583936.jpg",
+    "local": "assets/wp-content/uploads/2022/07/1580487583936.jpg",
+    "bytes": 6385,
+    "sha256": "0ddacf733a6ed7b2944f030257baa9188b8c57594cb962a1fb453fa9c4daae52"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/291567764_400339672120529_2558143689053171117_n-480x480.jpg",
+    "local": "assets/wp-content/uploads/2022/07/291567764_400339672120529_2558143689053171117_n-480x480.jpg",
+    "bytes": 43994,
+    "sha256": "fa3cae4ba62bc444a9cbeabaf638aa0a08392be635cc7cfa30048ff4f6528496"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/291567764_400339672120529_2558143689053171117_n.jpg",
+    "local": "assets/wp-content/uploads/2022/07/291567764_400339672120529_2558143689053171117_n.jpg",
+    "bytes": 54986,
+    "sha256": "c5539a40d0cc5f00e69502143c105a13cc8f50d3748b3eb322514e8a870e669b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/5b842c85f125dfdc1387e058_logo-at-red.png",
+    "local": "assets/wp-content/uploads/2022/07/5b842c85f125dfdc1387e058_logo-at-red.png",
+    "bytes": 8329,
+    "sha256": "ab0634fc9094b50cfcaa38c2882519fa2c2ab7f33d036eb2facc0cbed1b5b524"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/976699a9191ae514eea56ad5e88634ea-480x480.webp",
+    "local": "assets/wp-content/uploads/2022/07/976699a9191ae514eea56ad5e88634ea-480x480.webp",
+    "bytes": 13676,
+    "sha256": "ebe450e7d07198625b0183a5c8e5c3fc6467fb53bdfc3ce289fa24c2191892b1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/976699a9191ae514eea56ad5e88634ea.webp",
+    "local": "assets/wp-content/uploads/2022/07/976699a9191ae514eea56ad5e88634ea.webp",
+    "bytes": 19826,
+    "sha256": "bccee7e9125f8b07804a61c606c0edccf4bc5bde336ce514d02a0d9167b32a9f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/African-Parks-logo-transparent-2-150x150.png",
+    "local": "assets/wp-content/uploads/2022/07/African-Parks-logo-transparent-2-150x150.png",
+    "bytes": 13180,
+    "sha256": "37396c6f3a20bce098752d4c299dc3374f56a5a7469f1ba313930d8e0fbb7d2b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/African-Parks-logo-transparent-2-300x300.png",
+    "local": "assets/wp-content/uploads/2022/07/African-Parks-logo-transparent-2-300x300.png",
+    "bytes": 35761,
+    "sha256": "3f14d232187065bdefbcc807d6e93250edd7ad3c2ba9b94cf1ba1a3ab2d7a441"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/African-Parks-logo-transparent-2.png",
+    "local": "assets/wp-content/uploads/2022/07/African-Parks-logo-transparent-2.png",
+    "bytes": 44799,
+    "sha256": "1dc02c8bb0fe0b09fed5f57bb313dbeb3fa4b2fe709343e87780e5509a539f63"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/Asset-1.png",
+    "local": "assets/wp-content/uploads/2022/07/Asset-1.png",
+    "bytes": 3731,
+    "sha256": "42bc613e69edb03a0bf22b76e9704d59d36f7db0f8b5e836d12e84a0d952b328"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/Asset-2.png",
+    "local": "assets/wp-content/uploads/2022/07/Asset-2.png",
+    "bytes": 1631,
+    "sha256": "6af800712994d61f39142c9034ceda9db5ff2a86a10b1f97428149f561a65786"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/Boy_Scouts_of_America_corporate_trademark.svg_-480x552.png",
+    "local": "assets/wp-content/uploads/2022/07/Boy_Scouts_of_America_corporate_trademark.svg_-480x552.png",
+    "bytes": 64301,
+    "sha256": "71d2daf10e3110082b75695289de523d93218e75a3dc8c9b4c2ede47fc009742"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/Boy_Scouts_of_America_corporate_trademark.svg_.png",
+    "local": "assets/wp-content/uploads/2022/07/Boy_Scouts_of_America_corporate_trademark.svg_.png",
+    "bytes": 58784,
+    "sha256": "7ef8860facba8738003b5cd609b97ef860ec980897944e2d56258aead0c55712"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/ICM-logo.png",
+    "local": "assets/wp-content/uploads/2022/07/ICM-logo.png",
+    "bytes": 18549,
+    "sha256": "0ed1d91e01d27c1c348a94e4c9a65e5beb7d97e2c1cd0325b054d14d2497862d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/JSWyvUws_400x400-150x150.jpg",
+    "local": "assets/wp-content/uploads/2022/07/JSWyvUws_400x400-150x150.jpg",
+    "bytes": 6381,
+    "sha256": "c53346880ab642d4cbbc45067cbde056d7d29e7cd2a4bea22617a3d8fe64f370"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/JSWyvUws_400x400-300x300.jpg",
+    "local": "assets/wp-content/uploads/2022/07/JSWyvUws_400x400-300x300.jpg",
+    "bytes": 13246,
+    "sha256": "9f1bd2ee54fb6e4afcb0ee265a18c40ef2175b3093be0b6c97afba4fdfadb5aa"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/JSWyvUws_400x400.jpg",
+    "local": "assets/wp-content/uploads/2022/07/JSWyvUws_400x400.jpg",
+    "bytes": 20011,
+    "sha256": "f71b5025aca093abc0c8ada26e5cc162f124e5939ad9e0b1719b69409bf3ba54"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/afasdfa.jpg",
+    "local": "assets/wp-content/uploads/2022/07/afasdfa.jpg",
+    "bytes": 3270,
+    "sha256": "c2aa5da66604d6906150265f55c869c166452757b2fd871f0ff1ec30f8fbc119"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/beyond-measure-logo-header.png",
+    "local": "assets/wp-content/uploads/2022/07/beyond-measure-logo-header.png",
+    "bytes": 6300,
+    "sha256": "384449c2b7a98c5b19e3bee26ce99292b68c96b39f72579137e8b4505a4567d1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/billy-graham-evangelistic-association-480x212.png",
+    "local": "assets/wp-content/uploads/2022/07/billy-graham-evangelistic-association-480x212.png",
+    "bytes": 16610,
+    "sha256": "89a77f60e936b7ac4ce378ee8e6d7c5018bc584858d8f1325d738ab8270865cf"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/billy-graham-evangelistic-association.png",
+    "local": "assets/wp-content/uploads/2022/07/billy-graham-evangelistic-association.png",
+    "bytes": 6975,
+    "sha256": "d63725a59791e9ba36e8332028912473a399467f6c04b19f5dd26c921d3163f0"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/c02744a1-11b8-4288-a3f3-1083c828b280-150x150.png",
+    "local": "assets/wp-content/uploads/2022/07/c02744a1-11b8-4288-a3f3-1083c828b280-150x150.png",
+    "bytes": 29832,
+    "sha256": "8e11f3c07abe35a42c50cff1418d278ffb5f8560219aa65309ce4235a6bb3de6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/c02744a1-11b8-4288-a3f3-1083c828b280.png",
+    "local": "assets/wp-content/uploads/2022/07/c02744a1-11b8-4288-a3f3-1083c828b280.png",
+    "bytes": 95271,
+    "sha256": "6536dbbe308b180225b9bc21d56f9f0df54c6333b3772218d236cce4639f9081"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/cropped-Asset-1-180x180.png",
+    "local": "assets/wp-content/uploads/2022/07/cropped-Asset-1-180x180.png",
+    "bytes": 13155,
+    "sha256": "316f004ea352d4735ab6778c3c26637edd63804c6d15d50eadddb19c1c197c99"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/cropped-Asset-1-192x192.png",
+    "local": "assets/wp-content/uploads/2022/07/cropped-Asset-1-192x192.png",
+    "bytes": 14375,
+    "sha256": "8d1ce06b76dee12699a7013487500c09d40ebc1815a93d04ccbed15be48529a2"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/cropped-Asset-1-270x270.png",
+    "local": "assets/wp-content/uploads/2022/07/cropped-Asset-1-270x270.png",
+    "bytes": 22486,
+    "sha256": "5354436f9756fd48eb2ed5379319d52dc72dd1f256f25800a31855fa25b342fd"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/cropped-Asset-1-32x32.png",
+    "local": "assets/wp-content/uploads/2022/07/cropped-Asset-1-32x32.png",
+    "bytes": 1224,
+    "sha256": "5f886cb428e815c425a97f32c40a5856486130e114d15a659b093def19407683"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/cru_logo-300x187.png",
+    "local": "assets/wp-content/uploads/2022/07/cru_logo-300x187.png",
+    "bytes": 5755,
+    "sha256": "1beb60dc33c7593370fc87b13c475f781d43f842b6af5cb43c3d5dd40699b2e1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/cru_logo.png",
+    "local": "assets/wp-content/uploads/2022/07/cru_logo.png",
+    "bytes": 3029,
+    "sha256": "72d68ec82f37e0dd6c0202ddeb5a3e3af518aef299874a022ff2b8c756450484"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-1-150x150.jpg",
+    "local": "assets/wp-content/uploads/2022/07/download-1-150x150.jpg",
+    "bytes": 4042,
+    "sha256": "394118ae1f0d3a9fcb94a575efaca99569561bba2cccf0b28eac255fea3c38d6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-1.jpg",
+    "local": "assets/wp-content/uploads/2022/07/download-1.jpg",
+    "bytes": 5416,
+    "sha256": "eb5ef5b7ac0621767922030826ce5163e15110c5e1820a48d5dfbe26e5a2604f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-2-150x150.jpg",
+    "local": "assets/wp-content/uploads/2022/07/download-2-150x150.jpg",
+    "bytes": 4558,
+    "sha256": "b73f6c5738610b010a967831a815b05e65d789ccf735f525206edb6b8ddada03"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-2-150x150.png",
+    "local": "assets/wp-content/uploads/2022/07/download-2-150x150.png",
+    "bytes": 18989,
+    "sha256": "dc1f7dbbbbc7a19bb3dcd3b2587a0b9f5d7e2b86ebac415e2f3b2b015b2682c8"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-2.jpg",
+    "local": "assets/wp-content/uploads/2022/07/download-2.jpg",
+    "bytes": 5111,
+    "sha256": "190fb6f70e4ffd8c639dbe4f9938ca1df17c79c831352a9cedd91c07dff4c54b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-2.png",
+    "local": "assets/wp-content/uploads/2022/07/download-2.png",
+    "bytes": 9299,
+    "sha256": "a52c257e9739b7b37ef6def2bdbe0b38c77cf852a14c20f7e76acddb8b6f4f72"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-3-150x150.png",
+    "local": "assets/wp-content/uploads/2022/07/download-3-150x150.png",
+    "bytes": 6235,
+    "sha256": "6e01d7817c4ff639ee9dc77f68d92f9f13998d143b8b74542a99e58b0f82f803"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/download-3.png",
+    "local": "assets/wp-content/uploads/2022/07/download-3.png",
+    "bytes": 3072,
+    "sha256": "0c4a1a202e267b39ae0bdb4f0bfe155011484d06d3a3b6a84544e326c049d47f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/images-150x150.jpg",
+    "local": "assets/wp-content/uploads/2022/07/images-150x150.jpg",
+    "bytes": 3864,
+    "sha256": "09a6d2f6d9e4b1c73003ca439914e7b869720e5497b9264de273933ea223a999"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/images.jpg",
+    "local": "assets/wp-content/uploads/2022/07/images.jpg",
+    "bytes": 5524,
+    "sha256": "58dba64a3baed6f243e78d12b12db94614ab42c7f6c442eb899f8a622d131696"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/kl-appicon-logo-480x480.png",
+    "local": "assets/wp-content/uploads/2022/07/kl-appicon-logo-480x480.png",
+    "bytes": 25796,
+    "sha256": "dd0b3678d01b9e287defe750a2f4dcffb6b4e426b79ebb8804b4abcff0b8d13f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/kl-appicon-logo.png",
+    "local": "assets/wp-content/uploads/2022/07/kl-appicon-logo.png",
+    "bytes": 22104,
+    "sha256": "e5e5ff7de60bb4f0e1d52e9ff41d8d325fd1f093642b26f0228f9995765c7b32"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/logo-footer.png",
+    "local": "assets/wp-content/uploads/2022/07/logo-footer.png",
+    "bytes": 13650,
+    "sha256": "af7ba2557f95d271de1e8895f38f67fdec1dfd5f68dee29b1abce98bd3ce6492"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/logo-oval-300x233.png",
+    "local": "assets/wp-content/uploads/2022/07/logo-oval-300x233.png",
+    "bytes": 24949,
+    "sha256": "a0e5b90aae38397280cd7c4b8ab15fac512c008a7ee64414cd095642e043930b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/07/logo-oval.png",
+    "local": "assets/wp-content/uploads/2022/07/logo-oval.png",
+    "bytes": 33097,
+    "sha256": "8ad969f40d3d2f40f115d18418fc1195646d255500de4ca4836adfeed3383254"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/10074-1280x960.jpg",
+    "local": "assets/wp-content/uploads/2022/08/10074-1280x960.jpg",
+    "bytes": 238622,
+    "sha256": "93f31931e41d644772644e9ba9410ea196637dbe46248d446fd6e74e19fdd91a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/10074-480x360.jpg",
+    "local": "assets/wp-content/uploads/2022/08/10074-480x360.jpg",
+    "bytes": 36283,
+    "sha256": "8f1f9ce969d2dfb00195037ca8f47ac71acec06b8a411f7d392ddf6eba3421db"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/10074-980x735.jpg",
+    "local": "assets/wp-content/uploads/2022/08/10074-980x735.jpg",
+    "bytes": 147409,
+    "sha256": "a03e9907edf567afee01c26bd8114c15f26623c87d1e7d2e8635f98df1b6c26c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/10074.jpg",
+    "local": "assets/wp-content/uploads/2022/08/10074.jpg",
+    "bytes": 2037806,
+    "sha256": "ce7348a9e00c65368e94626c325eaaac840df80fbf0b3c75a37cd4cf54d13c67"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7524-3-480x639.jpg",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7524-3-480x639.jpg",
+    "bytes": 67748,
+    "sha256": "8b971086f0f5b1164114d83418ebea426c27873fa8a73911910615d3bd0af5b1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7524-3.jpg",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7524-3.jpg",
+    "bytes": 109612,
+    "sha256": "1e84d69ef2b1b5638cd499a3360aecc3934104609db42fc68cb10c6201e88bc0"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7552-3-480x360.jpg",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7552-3-480x360.jpg",
+    "bytes": 37015,
+    "sha256": "b44da366199d61051e1f90a760be2ca943957c7784242a2842bc998295f064d6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7552-3-980x735.jpg",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7552-3-980x735.jpg",
+    "bytes": 118714,
+    "sha256": "1ee9ad9c5c6538e65145a36034a01ead3204803690183b866fa1562f924eee29"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7552-3.jpg",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7552-3.jpg",
+    "bytes": 124726,
+    "sha256": "8e778536dece889975fe66afa7a38ec763fe574b031a7a1bba188bcf5d5fc770"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7585-3.jpg",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7585-3.jpg",
+    "bytes": 165616,
+    "sha256": "9ef8d5bf5bc36bebeb5efa41d155cfa033da4836b6a6b0d370f2c601e580019d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/IMG-7600.mp4",
+    "local": "assets/wp-content/uploads/2022/08/IMG-7600.mp4",
+    "bytes": 8041278,
+    "sha256": "20ebfdd92fa0c04f54fa7a259c828067e1435e805f47225d71d293a8cf549ec5"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/Luwire-CBNRM-Programme-July-2022.pdf",
+    "local": "assets/wp-content/uploads/2022/08/Luwire-CBNRM-Programme-July-2022.pdf",
+    "bytes": 138754,
+    "sha256": "8cf84baa3922ada1903664c63bb030e68f5b1649e06b7e271848501047e41a18"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/Luwire-Camera-Trap-Analysis-140722.pdf",
+    "local": "assets/wp-content/uploads/2022/08/Luwire-Camera-Trap-Analysis-140722.pdf",
+    "bytes": 5160223,
+    "sha256": "31646756f3bba4e70edd9e8eba5b710323000f23b83fad6a0a3c2d332379655a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/Luwire-Camera-Trap-Project-1.pdf",
+    "local": "assets/wp-content/uploads/2022/08/Luwire-Camera-Trap-Project-1.pdf",
+    "bytes": 1099125,
+    "sha256": "d747aec28b9cd72c01a35dbf0cf6d9aa0bb5442180aa3da63449b4bbdbdb237d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/WSF_Black-1280x585.png",
+    "local": "assets/wp-content/uploads/2022/08/WSF_Black-1280x585.png",
+    "bytes": 71319,
+    "sha256": "6494a141004b1c024a400b4fc142555fef274de521d9857cea440077c3b2a311"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/WSF_Black-480x219.png",
+    "local": "assets/wp-content/uploads/2022/08/WSF_Black-480x219.png",
+    "bytes": 20360,
+    "sha256": "d74e1f5f00216c2f3e57fdde46c60bdae54ea4657f0274723db222eb8c5df97f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/WSF_Black-980x448.png",
+    "local": "assets/wp-content/uploads/2022/08/WSF_Black-980x448.png",
+    "bytes": 52807,
+    "sha256": "6eae16dfde336ec6e308d45b124cebc7530c2ce8836fea3602708a36cb43e37b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2022/08/WSF_Black.png",
+    "local": "assets/wp-content/uploads/2022/08/WSF_Black.png",
+    "bytes": 59606,
+    "sha256": "96e4c9a9d48d480e662dbf7fc23c3491e971440b7d645bca0341b7600a29c5ed"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/Group-3-Copy-6.jpg",
+    "local": "assets/wp-content/uploads/2023/10/Group-3-Copy-6.jpg",
+    "bytes": 36297,
+    "sha256": "eab6eafdbf694c20e13bf4521a190897c4ca747d0aaf960e554d48f42fa1fdb1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/Group-3-Copy.jpg",
+    "local": "assets/wp-content/uploads/2023/10/Group-3-Copy.jpg",
+    "bytes": 24751,
+    "sha256": "b5734d850ebcb462e126171709fff99c08112639e227e6a8f40f9f8f5ac29c4e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/Into_the_Jaws_of_Death_23-0455M_edit-480x379.webp",
+    "local": "assets/wp-content/uploads/2023/10/Into_the_Jaws_of_Death_23-0455M_edit-480x379.webp",
+    "bytes": 21560,
+    "sha256": "a5a6399f98101bd281ec19d0b37256c81c469430da969ef06a72fae18b72778b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/Into_the_Jaws_of_Death_23-0455M_edit.webp",
+    "local": "assets/wp-content/uploads/2023/10/Into_the_Jaws_of_Death_23-0455M_edit.webp",
+    "bytes": 40288,
+    "sha256": "71e202d35abdb33912e4472ce537f5aa4d13d2ec3a92bf219453887cb143ba89"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/Montana-Teachers.jpg",
+    "local": "assets/wp-content/uploads/2023/10/Montana-Teachers.jpg",
+    "bytes": 120961,
+    "sha256": "560695a8aeb91f624b11ddcb9774c8560aa05c97bf2e12aa946a0e32401a38fb"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-101316.jpg",
+    "local": "assets/wp-content/uploads/2023/10/Screenshot-2023-10-24-101316.jpg",
+    "bytes": 186624,
+    "sha256": "0080f75e487b451924a3f645adcbfae5e13b166ee4e00d6cd7dd9359c0fcc39d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/WWII-Monument-Test-Demonstration-Video-Private-use-only.mp4",
+    "local": "assets/wp-content/uploads/2023/10/WWII-Monument-Test-Demonstration-Video-Private-use-only.mp4",
+    "bytes": 52743787,
+    "sha256": "479befdb5e4e36b91d53a7bacfa933c5be688415f579b746ad6daf9b19b037c1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/dhmffh.jpg",
+    "local": "assets/wp-content/uploads/2023/10/dhmffh.jpg",
+    "bytes": 46716,
+    "sha256": "d317bb4d5da94d1ba9bc1f1fd1ea5ac659f8973f2a3705f0ad9bfc3b09dc036a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/jess-watters-483666-unsplash.jpg",
+    "local": "assets/wp-content/uploads/2023/10/jess-watters-483666-unsplash.jpg",
+    "bytes": 82276,
+    "sha256": "dec39bc318e1e177c6b75285c455f66c4b2c1b8d561b9082fa6a57a64f8fd3e7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/pearl_harbor_1430166244-480x370.webp",
+    "local": "assets/wp-content/uploads/2023/10/pearl_harbor_1430166244-480x370.webp",
+    "bytes": 19902,
+    "sha256": "60cec776fd92651fd0b8907457100d7f8d692dca5182793f507ff880fe6757da"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/pearl_harbor_1430166244.webp",
+    "local": "assets/wp-content/uploads/2023/10/pearl_harbor_1430166244.webp",
+    "bytes": 29644,
+    "sha256": "bd39087e37542c3debb38a2d5e7d213b3d3abdea696067f115f69d2d9de31d97"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/10/pencils-1.png",
+    "local": "assets/wp-content/uploads/2023/10/pencils-1.png",
+    "bytes": 265921,
+    "sha256": "8573020595d5f4974d1287435fc904c6f2aef2b93db0ecd65a69a23110525b53"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/Horizons-Fall-2023-WQW-article-1-480x640.jpg",
+    "local": "assets/wp-content/uploads/2023/11/Horizons-Fall-2023-WQW-article-1-480x640.jpg",
+    "bytes": 81390,
+    "sha256": "3fb03f5d9005cfd1403eaf9a4ebf74fcbaf29039fa0b65dcca53bf628b4006cf"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/Horizons-Fall-2023-WQW-article-1.jpg",
+    "local": "assets/wp-content/uploads/2023/11/Horizons-Fall-2023-WQW-article-1.jpg",
+    "bytes": 202256,
+    "sha256": "1863376269d3801e6df7049e743b5e9a5834e171def678d6cdb0eddbdde6da3a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/Horizons-Fall-2023-WQW-article-1.pdf",
+    "local": "assets/wp-content/uploads/2023/11/Horizons-Fall-2023-WQW-article-1.pdf",
+    "bytes": 214733,
+    "sha256": "9308d8790cb65d2de96b8651665f815196e9fee6b383959e320e12c7007b95c6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/WQW220519-006-copy-480x640.jpg",
+    "local": "assets/wp-content/uploads/2023/11/WQW220519-006-copy-480x640.jpg",
+    "bytes": 78140,
+    "sha256": "c8efb6a68ed97b35b5f85044b35279d2088454c2a61eebb2ed54b2b6422e983d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/WQW220519-006-copy.jpg",
+    "local": "assets/wp-content/uploads/2023/11/WQW220519-006-copy.jpg",
+    "bytes": 214641,
+    "sha256": "60a7bb136d5a7d85c952adb8af87d45fed760b677fec0ceb7d1ff03b32b7dc2e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/WQW230528-20433-480x320.jpg",
+    "local": "assets/wp-content/uploads/2023/11/WQW230528-20433-480x320.jpg",
+    "bytes": 47558,
+    "sha256": "e35e4bdd22c700b9a1568dc78920e0054b379cb29f8acb833d151a29018b74b1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/WQW230528-20433.jpg",
+    "local": "assets/wp-content/uploads/2023/11/WQW230528-20433.jpg",
+    "bytes": 258286,
+    "sha256": "616c5ff16154b2dd380b2f5b0221b3655ef9e14f8cce886fb572e337f0d3bbec"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/WQW230528-20632.jpg",
+    "local": "assets/wp-content/uploads/2023/11/WQW230528-20632.jpg",
+    "bytes": 205495,
+    "sha256": "de028a96bef86b3971f2c8dc0f8fcfcb25fbc8dd1a03035f4ad245843d95082e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/WQW230528-20633.jpg",
+    "local": "assets/wp-content/uploads/2023/11/WQW230528-20633.jpg",
+    "bytes": 205746,
+    "sha256": "0d6b5bae0beafccc5ebdd7133cdd025f3240066f6e8321df51433f6734c269f1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-1.jpg",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-1.jpg",
+    "bytes": 159115,
+    "sha256": "afcf844486b47cd7f435389a19ba987618f96f2ad668dedfb654f458c24551dc"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-16b-300x287.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-16b-300x287.png",
+    "bytes": 14590,
+    "sha256": "7f94c03af841326bdb564a2e9c2e5ed6d9521c25b73f32587718a90d47534dcc"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-16b.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-16b.png",
+    "bytes": 5070,
+    "sha256": "632e42c1d0d69309ca6d8139d3b81885a260ed2a148bc38eb6d314e79bc460e7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-19-297x300.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-19-297x300.png",
+    "bytes": 13242,
+    "sha256": "b0b17f404ff9ba0e0c41987f9142857ae2e703c94f04119e27d1fcc580760888"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-19.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-19.png",
+    "bytes": 4092,
+    "sha256": "f38e59ceb15cfeb9d0224f35d33c388ae0a3fdfc02867c446ae936cebcb54b57"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-20-480x520.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-20-480x520.png",
+    "bytes": 12930,
+    "sha256": "b6cf00c8bfaef8c6a7124c7b1741bb730e7b410b595ecc735898c25172a5042f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-20-980x1061.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-20-980x1061.png",
+    "bytes": 27195,
+    "sha256": "6964fbf952de54f2d4ba09223b381d636dbfe61b0b33f41efe7c0c0866b2fa4f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-20.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-20.png",
+    "bytes": 12464,
+    "sha256": "f3b0e72b1104e83fd83ff111c6e43f4584c172450aa8ea5390363f94f4e6ee0a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-21-252x300.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-21-252x300.png",
+    "bytes": 11936,
+    "sha256": "c8eab3a31027406c458df4a2011fdb17a608682bcef78653624e1c9e1ead1c0d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-21.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-21.png",
+    "bytes": 7030,
+    "sha256": "fbcf30808f6139a7d38c21d93705e84cab6fa845c2a1251f4adbdaabe2724240"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-7.png",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-7.png",
+    "bytes": 2917,
+    "sha256": "2a38808fc82119ccbb6f6c51b26f1ca077d44b9e29b041b1e0f7528ded664ed1"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/senior-care-9.jpg",
+    "local": "assets/wp-content/uploads/2023/11/senior-care-9.jpg",
+    "bytes": 39829,
+    "sha256": "4b8339cadaaf47b066626704369a58e713549bfa3445f6886ac840b831e53332"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/wqw-2023-logo-horizontal-1280x383.png",
+    "local": "assets/wp-content/uploads/2023/11/wqw-2023-logo-horizontal-1280x383.png",
+    "bytes": 25407,
+    "sha256": "afd521620e46f56689286e246c6dca003e6dcc67a152c79925692556b4b99010"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/wqw-2023-logo-horizontal-480x144.png",
+    "local": "assets/wp-content/uploads/2023/11/wqw-2023-logo-horizontal-480x144.png",
+    "bytes": 9529,
+    "sha256": "f719ffda019a28fee793e485e0e4837df172c1c0d6431718c4242db0a595c993"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/wqw-2023-logo-horizontal-980x293.png",
+    "local": "assets/wp-content/uploads/2023/11/wqw-2023-logo-horizontal-980x293.png",
+    "bytes": 19272,
+    "sha256": "7c4e4996bef2809a6c2c13dbce873c9c944132fb277ee7bac7a821f61cdc9656"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2023/11/wqw-2023-logo-horizontal.png",
+    "local": "assets/wp-content/uploads/2023/11/wqw-2023-logo-horizontal.png",
+    "bytes": 33635,
+    "sha256": "7c56fe0bae5336d803a83ce7bc2cc37d84bc020af4f2c7483d40ae8b4a8ff51f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/AL_logo@3x-480x138.png",
+    "local": "assets/wp-content/uploads/2024/01/AL_logo@3x-480x138.png",
+    "bytes": 27626,
+    "sha256": "4e4924fb359ce11dfc9a4a9ce8c43f3cf769b43cdd10d9bb2d834f09f1f2d98e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/AL_logo@3x.png",
+    "local": "assets/wp-content/uploads/2024/01/AL_logo@3x.png",
+    "bytes": 38696,
+    "sha256": "9e68ae842d0b2ce620a5ea052ca2aa23c7063c5427cf58531871d5d3e608003a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/BPC-Logo-online-transparent-200-1.png",
+    "local": "assets/wp-content/uploads/2024/01/BPC-Logo-online-transparent-200-1.png",
+    "bytes": 6312,
+    "sha256": "007070590c4e12708d4033e8f0cba261a0d981c6be25c286635ad3c8c4a770a4"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/DPIL-Logo-195.png",
+    "local": "assets/wp-content/uploads/2024/01/DPIL-Logo-195.png",
+    "bytes": 15678,
+    "sha256": "bfce62b29b60141b2f2877b30a0d04e7ea5e6cf394d4a85c817556b5580ab015"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/HFN_logo.png",
+    "local": "assets/wp-content/uploads/2024/01/HFN_logo.png",
+    "bytes": 23583,
+    "sha256": "f267ff426eb0006b99db5895da144405c38ce6c20d0ff175d73eb52f99a2aca7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/Life-fm-150x150.png",
+    "local": "assets/wp-content/uploads/2024/01/Life-fm-150x150.png",
+    "bytes": 21702,
+    "sha256": "924b667cd77f0fb9bd630970e1302e7c6916bc556576d4aca775bd3cf9c01f3e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/Life-fm.png",
+    "local": "assets/wp-content/uploads/2024/01/Life-fm.png",
+    "bytes": 53831,
+    "sha256": "0e6824a9c65e52fedadd92143c478b015812a7ade40da4009ea4812f389f6f1b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/MYCA-SUPPLY-BALLCAP_black-300x202.png",
+    "local": "assets/wp-content/uploads/2024/01/MYCA-SUPPLY-BALLCAP_black-300x202.png",
+    "bytes": 15804,
+    "sha256": "a3a39f0905d4a7b58088602443e97f1baf72d03c55c49b215ed44ac5b7f5b79e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/MYCA-SUPPLY-BALLCAP_black.png",
+    "local": "assets/wp-content/uploads/2024/01/MYCA-SUPPLY-BALLCAP_black.png",
+    "bytes": 4388,
+    "sha256": "64b95dd835724c2bbb87fff98fcbf9f9dd42f9a86671306871ed3641bd7f9cf6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/Prison-Fellowship-480x176.png",
+    "local": "assets/wp-content/uploads/2024/01/Prison-Fellowship-480x176.png",
+    "bytes": 13833,
+    "sha256": "9409f1d7ffeab448febd7184232d78328020bd8d660cff3b5bb53a3007a8d2cb"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/Prison-Fellowship-980x359.png",
+    "local": "assets/wp-content/uploads/2024/01/Prison-Fellowship-980x359.png",
+    "bytes": 39432,
+    "sha256": "2d30511db46fec49cb414454d90ad4345c57a60dfbf6b7e90035eaf22f45424c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/Prison-Fellowship.png",
+    "local": "assets/wp-content/uploads/2024/01/Prison-Fellowship.png",
+    "bytes": 37209,
+    "sha256": "cda1de143f056f2e3cddc673c21235800bee8b624b57da426fedae7e94da182e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/SEE_Logo-color-01-300x182.webp",
+    "local": "assets/wp-content/uploads/2024/01/SEE_Logo-color-01-300x182.webp",
+    "bytes": 8582,
+    "sha256": "6498cd8cc12767e7b93ce1302d9a530b7e659d52f4e8c876e8c4cceeb963fd6b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/SEE_Logo-color-01.webp",
+    "local": "assets/wp-content/uploads/2024/01/SEE_Logo-color-01.webp",
+    "bytes": 5852,
+    "sha256": "fd65146d5108b91b62d4f179fd87b9d1e2475dbde6227fefc35207b4b74782b6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/cropped-cropped-cropped-WFWF-®-small-no-background-e1551461501428-3.png",
+    "local": "assets/wp-content/uploads/2024/01/cropped-cropped-cropped-WFWF-®-small-no-background-e1551461501428-3.png",
+    "bytes": 7357,
+    "sha256": "8bbab2bc99a8d3a8d1e3dbda200c6bd2ad4aaefc00a37ff802bad9f0b1df95e6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/01/joni-and-friends-logo-web.webp",
+    "local": "assets/wp-content/uploads/2024/01/joni-and-friends-logo-web.webp",
+    "bytes": 3840,
+    "sha256": "4155282192fa1e64af7d8dff3c3b7824ce79281c07fa4d56bf2b4c1fab400dd0"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/05/NewLogo1-2024onblue-480x506.jpg",
+    "local": "assets/wp-content/uploads/2024/05/NewLogo1-2024onblue-480x506.jpg",
+    "bytes": 40202,
+    "sha256": "23052c54638a379692fd522e92df2b62895a1da4731b9280371def53448503e6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/05/NewLogo1-2024onblue.jpg",
+    "local": "assets/wp-content/uploads/2024/05/NewLogo1-2024onblue.jpg",
+    "bytes": 52290,
+    "sha256": "9d8ce890d52079204411c605b776e68571912aac15e32fe0b06625904c625598"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/123403354_469454380699131_8656964027907131541_n.jpg",
+    "local": "assets/wp-content/uploads/2024/07/123403354_469454380699131_8656964027907131541_n.jpg",
+    "bytes": 547141,
+    "sha256": "9d2d3d90f57f65d91d0a575ba2ca8f774b2191eaf7cc2240dd457769fb2a773d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/AL_logo@3x-480x138.png",
+    "local": "assets/wp-content/uploads/2024/07/AL_logo@3x-480x138.png",
+    "bytes": 27626,
+    "sha256": "4e4924fb359ce11dfc9a4a9ce8c43f3cf769b43cdd10d9bb2d834f09f1f2d98e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/AL_logo@3x.png",
+    "local": "assets/wp-content/uploads/2024/07/AL_logo@3x.png",
+    "bytes": 38696,
+    "sha256": "9e68ae842d0b2ce620a5ea052ca2aa23c7063c5427cf58531871d5d3e608003a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/DSC_0392-scaled-1-1280x852.jpg",
+    "local": "assets/wp-content/uploads/2024/07/DSC_0392-scaled-1-1280x852.jpg",
+    "bytes": 164382,
+    "sha256": "30426f02be7ca70e5e199c18c64736ee0af8e0eb5b2e9e950c864b79d156c79f"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/DSC_0392-scaled-1-480x319.jpg",
+    "local": "assets/wp-content/uploads/2024/07/DSC_0392-scaled-1-480x319.jpg",
+    "bytes": 32275,
+    "sha256": "0ce50112951f49ab8cc8b272499a9200ea891fb2be0a9cfb0b0529d09d0b9cc8"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/DSC_0392-scaled-1-980x652.jpg",
+    "local": "assets/wp-content/uploads/2024/07/DSC_0392-scaled-1-980x652.jpg",
+    "bytes": 104412,
+    "sha256": "09a98ddf3a1949f3c8d70730d0123043ead1dfa45d74e67d65d6150a24d27251"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/DSC_0392-scaled-1.jpg",
+    "local": "assets/wp-content/uploads/2024/07/DSC_0392-scaled-1.jpg",
+    "bytes": 540719,
+    "sha256": "aa6a0a515aac47e33341cf8f2f6c6c20f7b3f4a629597a6b99d0cd5c928dba57"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/Group-10930-300x163.png",
+    "local": "assets/wp-content/uploads/2024/07/Group-10930-300x163.png",
+    "bytes": 11965,
+    "sha256": "8789d68e8ab2899dc36236e3de0363f79b72547b8f6119e22fb456a56079aa3d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/Group-10930.png",
+    "local": "assets/wp-content/uploads/2024/07/Group-10930.png",
+    "bytes": 4235,
+    "sha256": "76b741af85d2e5312bbbc187d8fc0d8b843bea35169e3341bdac4af6d31cad6c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/Hoffmann-Hospice-Palliative-Logo-2021-clear-480x195.png",
+    "local": "assets/wp-content/uploads/2024/07/Hoffmann-Hospice-Palliative-Logo-2021-clear-480x195.png",
+    "bytes": 27677,
+    "sha256": "5468d80c53781d735443861d8d4a20762aa0bbd54475d945411ebdf9060d1970"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/Hoffmann-Hospice-Palliative-Logo-2021-clear.png",
+    "local": "assets/wp-content/uploads/2024/07/Hoffmann-Hospice-Palliative-Logo-2021-clear.png",
+    "bytes": 12659,
+    "sha256": "7636ce5ba4dcc049298ccd119d1d985375d50a9564e92476f3a242513971b751"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/ITG-LOGO-FINAL-HIGH-RES-2.webp",
+    "local": "assets/wp-content/uploads/2024/07/ITG-LOGO-FINAL-HIGH-RES-2.webp",
+    "bytes": 4088,
+    "sha256": "2a6432e6f29e62e92f4722d076171eb2426f015d9222a8f00457c87ac9307265"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/KTHKeepersTransformationHouseLogo-Icon-480x504.png",
+    "local": "assets/wp-content/uploads/2024/07/KTHKeepersTransformationHouseLogo-Icon-480x504.png",
+    "bytes": 39494,
+    "sha256": "bfc6ee522b6ad06a0f6de52cf3404420dbde82ae5aa32a9412f1ede96680d4e5"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/KTHKeepersTransformationHouseLogo-Icon.png",
+    "local": "assets/wp-content/uploads/2024/07/KTHKeepersTransformationHouseLogo-Icon.png",
+    "bytes": 33950,
+    "sha256": "63966fbc5a4db9bebbe4de780ca26535807f38f6533dd7bdcfa37cc815b3ec18"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MIP_Logo_1-01-1280x785.png",
+    "local": "assets/wp-content/uploads/2024/07/MIP_Logo_1-01-1280x785.png",
+    "bytes": 84046,
+    "sha256": "a3edf160efce34ec45faac53b150c644a865b3b8b2f330d5241c14584a84156c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MIP_Logo_1-01-480x294.png",
+    "local": "assets/wp-content/uploads/2024/07/MIP_Logo_1-01-480x294.png",
+    "bytes": 25272,
+    "sha256": "c4bd5bafe70a2a63310762ad6d2e10a85057f7d74aa036e081202257846cdb71"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MIP_Logo_1-01-980x601.png",
+    "local": "assets/wp-content/uploads/2024/07/MIP_Logo_1-01-980x601.png",
+    "bytes": 60450,
+    "sha256": "64065bb4ff221079d02041c9e37280b06c5ec7185cc2fce9cee21a6ebd4da719"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MIP_Logo_1-01.png",
+    "local": "assets/wp-content/uploads/2024/07/MIP_Logo_1-01.png",
+    "bytes": 37642,
+    "sha256": "875626fd985b8659b08393f47fc5f4a4a6ee4cd8dbc1c64915b4751ec95abb2e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MONTANA_h_RedBlue-480x260.png",
+    "local": "assets/wp-content/uploads/2024/07/MONTANA_h_RedBlue-480x260.png",
+    "bytes": 50072,
+    "sha256": "c9dd73aebeb60e596bfed5da3b11564e7e56375eb1a828f26091dc6ecfe0bff5"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MONTANA_h_RedBlue.png",
+    "local": "assets/wp-content/uploads/2024/07/MONTANA_h_RedBlue.png",
+    "bytes": 32433,
+    "sha256": "cbb03e1a167faa7c5d9ffe5d99df363db7052889d794ba5b18b95767309acb60"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MSU-horiz-reverse-web-header.webp",
+    "local": "assets/wp-content/uploads/2024/07/MSU-horiz-reverse-web-header.webp",
+    "bytes": 6564,
+    "sha256": "eac0b73adc8478a28ffdf0444ffa4b0c10c7041c211a89ddc2f855947ebabd14"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MontanaHopeLogo_4-480x130.png",
+    "local": "assets/wp-content/uploads/2024/07/MontanaHopeLogo_4-480x130.png",
+    "bytes": 70632,
+    "sha256": "63915b96e5e5fcd6abc0f52b9b7a0c46f26d276bf251d6dd0dae80b5617900e2"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/MontanaHopeLogo_4.png",
+    "local": "assets/wp-content/uploads/2024/07/MontanaHopeLogo_4.png",
+    "bytes": 23936,
+    "sha256": "26bfcd98a141fa57df1cfd9f2dd725ed4d0a0921e208a92e24d0a3eea5cffab5"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/OTF_PrimaryLogo_FullColor-1-480x448.png",
+    "local": "assets/wp-content/uploads/2024/07/OTF_PrimaryLogo_FullColor-1-480x448.png",
+    "bytes": 47312,
+    "sha256": "eedcabc21df92f2e7bb8c65858ea5e7947d998e6476bcacdc2ae672187553ba5"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/OTF_PrimaryLogo_FullColor-1.png",
+    "local": "assets/wp-content/uploads/2024/07/OTF_PrimaryLogo_FullColor-1.png",
+    "bytes": 22067,
+    "sha256": "8587238ddc25469d1f04e36f4f0a7fe98eea214b566986c0262b2280268e2b5b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/SOMT_logo-b-300x87.png",
+    "local": "assets/wp-content/uploads/2024/07/SOMT_logo-b-300x87.png",
+    "bytes": 6317,
+    "sha256": "7ce6999285ebf454bbccec3b26c14addf59cdf9a40abc4f8df364685462a3265"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/SOMT_logo-b.png",
+    "local": "assets/wp-content/uploads/2024/07/SOMT_logo-b.png",
+    "bytes": 5268,
+    "sha256": "aef0eb5c2ce32c9ae4c95e478bb9cb93c5d72949c6f18eb2fbbaab6e9696de1e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/TCSC_Logos_Updated-SQ-Teen_Blue_rev2.png",
+    "local": "assets/wp-content/uploads/2024/07/TCSC_Logos_Updated-SQ-Teen_Blue_rev2.png",
+    "bytes": 4090,
+    "sha256": "bdd556f544b8908096a1a252a5d42cb3ff721242c716cbdac4ac225df530446d"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/celebrating-1-in-7-en-1280x420.jpg",
+    "local": "assets/wp-content/uploads/2024/07/celebrating-1-in-7-en-1280x420.jpg",
+    "bytes": 82957,
+    "sha256": "9f92f3a36f0c8591f0d1de677282a11a0aca3e958cde6cb7425667e3e78c61ba"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/celebrating-1-in-7-en-480x158.jpg",
+    "local": "assets/wp-content/uploads/2024/07/celebrating-1-in-7-en-480x158.jpg",
+    "bytes": 17032,
+    "sha256": "f38db951d13935252e198aaecfb5823272b1bb7f4fe43c8aab79f32a3ebcff57"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/celebrating-1-in-7-en-980x322.jpg",
+    "local": "assets/wp-content/uploads/2024/07/celebrating-1-in-7-en-980x322.jpg",
+    "bytes": 54419,
+    "sha256": "c206e354480527fe5c6e64237d5416701cdb36fe9f44ef455047b09b7fd1d033"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/celebrating-1-in-7-en.jpg",
+    "local": "assets/wp-content/uploads/2024/07/celebrating-1-in-7-en.jpg",
+    "bytes": 274781,
+    "sha256": "90dae872e8c885216eca58863d3250c687d458f9bb631842520164348eff8f7a"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/energy-4.jpg",
+    "local": "assets/wp-content/uploads/2024/07/energy-4.jpg",
+    "bytes": 14574,
+    "sha256": "aaf707e8650986f8bf7f46000c99922ee575cdf29e1b33ac3f5c6f76fa3bc007"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/logo-480x158.jpg",
+    "local": "assets/wp-content/uploads/2024/07/logo-480x158.jpg",
+    "bytes": 16142,
+    "sha256": "1d325fb5754dc1f1e985b965a6e999a906f7572a925d748ff7a307140b87aac7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/logo-hi2-202x90-1.webp",
+    "local": "assets/wp-content/uploads/2024/07/logo-hi2-202x90-1.webp",
+    "bytes": 5126,
+    "sha256": "15cdd921aa19ba24321e61c02818c0066805d05211cf45f5a5aea2abd65bfd8c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/logo.jpg",
+    "local": "assets/wp-content/uploads/2024/07/logo.jpg",
+    "bytes": 72013,
+    "sha256": "d809d9e53dfa81e43d1c239ad5c3f3159d5b44975a38f38de0df58412b8e3ec7"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/perter-White-Logo-480x120.png",
+    "local": "assets/wp-content/uploads/2024/07/perter-White-Logo-480x120.png",
+    "bytes": 8311,
+    "sha256": "eda0cf38b777a012cdba2ef6c52e8e90f9e75ab23ab2c2f8b641290fce62b5d3"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/perter-White-Logo.png",
+    "local": "assets/wp-content/uploads/2024/07/perter-White-Logo.png",
+    "bytes": 5902,
+    "sha256": "9b7ac282b47d4ec879225c3e39bbea63f08050c1f33e61a5a110686093ab12e3"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/sponsor-a-child.webp",
+    "local": "assets/wp-content/uploads/2024/07/sponsor-a-child.webp",
+    "bytes": 6270,
+    "sha256": "a54cc6d3044e15f105e6d80339b31225ca61ea4ab083d97d984b84816e22e37b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/swhlogo-300x127.jpg",
+    "local": "assets/wp-content/uploads/2024/07/swhlogo-300x127.jpg",
+    "bytes": 7263,
+    "sha256": "3d9dc8a2b335ab92cf73107c250ec7aebb38697818ef2d1c01cd6cafcce4d01b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/swhlogo.jpg",
+    "local": "assets/wp-content/uploads/2024/07/swhlogo.jpg",
+    "bytes": 8856,
+    "sha256": "a4103132fba6766f2067a9e65163788d3e6abcf2a935591ff60fba5db1d8f262"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/war-seal-288x300.png",
+    "local": "assets/wp-content/uploads/2024/07/war-seal-288x300.png",
+    "bytes": 93407,
+    "sha256": "b543adc297c134e0f57282fe950cd9ee83bc7e0eb1ccf99cb958254d93fb50eb"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/07/war-seal.png",
+    "local": "assets/wp-content/uploads/2024/07/war-seal.png",
+    "bytes": 100675,
+    "sha256": "ad6a5df08419ad96667d35cb6afc967b465583a3ec07b5d44097b9ca15f5fd77"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/09/2019_image_dolly-kids-chair-reading-blue-bokeh-2-480x617.webp",
+    "local": "assets/wp-content/uploads/2024/09/2019_image_dolly-kids-chair-reading-blue-bokeh-2-480x617.webp",
+    "bytes": 60528,
+    "sha256": "be07d23bad26085b61055a88d70b8e0a33194cecfcd256c991d7f9cfb8c86457"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/09/2019_image_dolly-kids-chair-reading-blue-bokeh-2.webp",
+    "local": "assets/wp-content/uploads/2024/09/2019_image_dolly-kids-chair-reading-blue-bokeh-2.webp",
+    "bytes": 159050,
+    "sha256": "dc3817e82a5745e8b039b3ff7ed6adaa3fdcaed4d3c709181e4c7769ef4072e8"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/09/Bookshelf-USA-2-480x480.webp",
+    "local": "assets/wp-content/uploads/2024/09/Bookshelf-USA-2-480x480.webp",
+    "bytes": 61832,
+    "sha256": "f7fd942bab5b154dbd6441ae16b5d9ed435e81dedbec6557e609a9517bdcf496"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/09/Bookshelf-USA-2.webp",
+    "local": "assets/wp-content/uploads/2024/09/Bookshelf-USA-2.webp",
+    "bytes": 229652,
+    "sha256": "d6c80fa6b4e78f277ce290fd38c5ab1d941f3548b5ee3a9d1b62748c36c8d583"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/09/Group-9.png",
+    "local": "assets/wp-content/uploads/2024/09/Group-9.png",
+    "bytes": 1438374,
+    "sha256": "1a042cc30718e891f89817a834c2743bc269a86f950b2b05bdec481617b23848"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/09/NGO-img-26.png",
+    "local": "assets/wp-content/uploads/2024/09/NGO-img-26.png",
+    "bytes": 2287,
+    "sha256": "998ae73e4f292124d72e8cbba73be704c0d180d70c51ddc1628e754a646a3b16"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/MT-WSF_logo-web_USE-sticky2.png",
+    "local": "assets/wp-content/uploads/2024/11/MT-WSF_logo-web_USE-sticky2.png",
+    "bytes": 2696,
+    "sha256": "5e078b1b8721a99edd4a724343b5a80af73b0141617f970317703d88a91294f8"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/mtfwpproject_HeroSmall.jpg",
+    "local": "assets/wp-content/uploads/2024/11/mtfwpproject_HeroSmall.jpg",
+    "bytes": 267303,
+    "sha256": "12beb82408560adf14089c3f593d8ae70c96923b05c7ed8e14d6bb87b59ff487"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/non-profit-03.jpg",
+    "local": "assets/wp-content/uploads/2024/11/non-profit-03.jpg",
+    "bytes": 92439,
+    "sha256": "8ee77088078fb5bd69b5f83dc120e8ccc175057dc20c44750ef649d9dd2ce01b"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/world-record-bighorn-bynum-750-1280x960.jpg",
+    "local": "assets/wp-content/uploads/2024/11/world-record-bighorn-bynum-750-1280x960.jpg",
+    "bytes": 205634,
+    "sha256": "f5027e5122680788f58ad1b315a99c52b192e1d6d92b009bf4bd91766c84e611"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/world-record-bighorn-bynum-750-480x360.jpg",
+    "local": "assets/wp-content/uploads/2024/11/world-record-bighorn-bynum-750-480x360.jpg",
+    "bytes": 35505,
+    "sha256": "e8ef7d407328c24219acab27f749fa6fac9bd144d8d18578e80a20b66b5b5304"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/world-record-bighorn-bynum-750-980x735.jpg",
+    "local": "assets/wp-content/uploads/2024/11/world-record-bighorn-bynum-750-980x735.jpg",
+    "bytes": 126633,
+    "sha256": "fceaf7120ff86ebeeb00e961c6397ee4a06c4d90909e437ffa644e6f3618baee"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2024/11/world-record-bighorn-bynum-750.jpg",
+    "local": "assets/wp-content/uploads/2024/11/world-record-bighorn-bynum-750.jpg",
+    "bytes": 343587,
+    "sha256": "499537aae9725e1fa2be82303fb29a5c3816818dae4cd1d85e2ac00a4aca0c9c"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/2017-P686-U-Transprt-White-Logo-Tagline-1-e1495053241861-480x155.png",
+    "local": "assets/wp-content/uploads/2025/03/2017-P686-U-Transprt-White-Logo-Tagline-1-e1495053241861-480x155.png",
+    "bytes": 20106,
+    "sha256": "ef472b379736c4139eeb6c4eafcf3b4db44a07faf3d5fac139a57069c733fee3"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/2017-P686-U-Transprt-White-Logo-Tagline-1-e1495053241861-980x317.png",
+    "local": "assets/wp-content/uploads/2025/03/2017-P686-U-Transprt-White-Logo-Tagline-1-e1495053241861-980x317.png",
+    "bytes": 47970,
+    "sha256": "1244e3392b40352de7bb7a056c8a6a33b9486093a11c0ab7241b4e5be3d69b65"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/2017-P686-U-Transprt-White-Logo-Tagline-1-e1495053241861.png",
+    "local": "assets/wp-content/uploads/2025/03/2017-P686-U-Transprt-White-Logo-Tagline-1-e1495053241861.png",
+    "bytes": 36528,
+    "sha256": "06e6a3b3e9fa9c4b209924a5182f5548a44445020a3e7ff435305d08af414932"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/6421bfea98e5de9997d2078e_alternate-logo-teal-01.webp",
+    "local": "assets/wp-content/uploads/2025/03/6421bfea98e5de9997d2078e_alternate-logo-teal-01.webp",
+    "bytes": 5262,
+    "sha256": "cada4198439f4eb4ada958e6243c5095e0e9c412e88365519cc8ebd852076ac6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/NewLogo1-2024onblue-480x506.jpg",
+    "local": "assets/wp-content/uploads/2025/03/NewLogo1-2024onblue-480x506.jpg",
+    "bytes": 40202,
+    "sha256": "23052c54638a379692fd522e92df2b62895a1da4731b9280371def53448503e6"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/NewLogo1-2024onblue.jpg",
+    "local": "assets/wp-content/uploads/2025/03/NewLogo1-2024onblue.jpg",
+    "bytes": 52290,
+    "sha256": "9d8ce890d52079204411c605b776e68571912aac15e32fe0b06625904c625598"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/logo_eaglemount-01-480x297.webp",
+    "local": "assets/wp-content/uploads/2025/03/logo_eaglemount-01-480x297.webp",
+    "bytes": 10212,
+    "sha256": "66823e2db89ccff0044e43413cc5bbe64a7e2540c6ec8e1068d493a3f9df8d72"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/logo_eaglemount-01.webp",
+    "local": "assets/wp-content/uploads/2025/03/logo_eaglemount-01.webp",
+    "bytes": 8970,
+    "sha256": "2003d506cfd9786b04bf5a469d897d1cad57fe1acd06c716edc9c4d9203b671e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/03/website-gwdc-logo-2024_300x_cropped_entropy_t0.jpg",
+    "local": "assets/wp-content/uploads/2025/03/website-gwdc-logo-2024_300x_cropped_entropy_t0.jpg",
+    "bytes": 16397,
+    "sha256": "38e7e72e9e3bfa63c64c6a4a9a5adbc533a293007f1e0fb3f75d42d4ad82b206"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/04/Luis_at_BakoRoco.jpg",
+    "local": "assets/wp-content/uploads/2025/04/Luis_at_BakoRoco.jpg",
+    "bytes": 316448,
+    "sha256": "43883a7f59523809c8fd2f78466f6ed15029264398a4bb495eefd37bdd1234c0"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/04/MattMatt_in_the_Kitchen_1.jpg",
+    "local": "assets/wp-content/uploads/2025/04/MattMatt_in_the_Kitchen_1.jpg",
+    "bytes": 317142,
+    "sha256": "29780b8cb6a2f808b21667028c85a4072ca194631a6b087a061438e45cb4521e"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/04/Scott-Client-Benefits-Consult-8.webp",
+    "local": "assets/wp-content/uploads/2025/04/Scott-Client-Benefits-Consult-8.webp",
+    "bytes": 250556,
+    "sha256": "555739dc443ef765109e19214c6aa8bb1d00d4cbdcfa1fd34983cd2277622dce"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/04/cb0508_42db972c4da64e02b47d51c844a41395mv2.avif",
+    "local": "assets/wp-content/uploads/2025/04/cb0508_42db972c4da64e02b47d51c844a41395mv2.avif",
+    "bytes": 83593,
+    "sha256": "c84beb0515076d839735b82ad40c6b93e723f8d76f0ec00412d5062833f41b65"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/05/2024_Ministry_Highlights.pdf",
+    "local": "assets/wp-content/uploads/2025/05/2024_Ministry_Highlights.pdf",
+    "bytes": 7189903,
+    "sha256": "eecb0f388fc5683809a1558ff9e6c85e9dc21369545087115f8a5c342dc8f264"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Child-Bridge-01.webp",
+    "local": "assets/wp-content/uploads/2025/06/Child-Bridge-01.webp",
+    "bytes": 4704,
+    "sha256": "895277cffb7498b782a537d9d6b04f730fc11bbe2c5ed52cc899dc98e210bfca"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Non-Profit-Hero-Img-1080x1080.jpg",
+    "local": "assets/wp-content/uploads/2025/06/Non-Profit-Hero-Img-1080x1080.jpg",
+    "bytes": 120328,
+    "sha256": "502faa0ea873935ba2d5e272697471f70782a47866adb22b4205e33d0d73aa67"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Non-Profit-Hero-Img-480x480.jpg",
+    "local": "assets/wp-content/uploads/2025/06/Non-Profit-Hero-Img-480x480.jpg",
+    "bytes": 32061,
+    "sha256": "fec51ce42476ac6b1f4704551a1000184bfeb9431f5513a7cd7d156cf177c637"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Non-Profit-Hero-Img-980x980.jpg",
+    "local": "assets/wp-content/uploads/2025/06/Non-Profit-Hero-Img-980x980.jpg",
+    "bytes": 102720,
+    "sha256": "5b9bfddb2a9176eaf04d35f8697a5fcd7d946fdff53da2a550878ad424a5ad93"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Non-Profit-Hero-Img.jpg",
+    "local": "assets/wp-content/uploads/2025/06/Non-Profit-Hero-Img.jpg",
+    "bytes": 145863,
+    "sha256": "f565e6f24f73d592d8d1c09ade658feabb412b7467ca0cac93a643ae73ded5ac"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Non-Profit-Nxt-Img.webp",
+    "local": "assets/wp-content/uploads/2025/06/Non-Profit-Nxt-Img.webp",
+    "bytes": 142796,
+    "sha256": "a569761877237ff7d29b7fd2716139dac5d799f57cb61c5f76fca0e7add33cc8"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Promise2-01.webp",
+    "local": "assets/wp-content/uploads/2025/06/Promise2-01.webp",
+    "bytes": 5172,
+    "sha256": "bf1e453e7e76d5bf59bf747ec1b0a47dbefcf0f964ddc465d06c92bc6efc24aa"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/Standing-with-hope-01.webp",
+    "local": "assets/wp-content/uploads/2025/06/Standing-with-hope-01.webp",
+    "bytes": 4164,
+    "sha256": "4aa729250e9a35f558137b639ff062d372aaf95e1f38f06127d079000ae9b250"
+  },
+  {
+    "source": "https://amicusfoundation.com/wp-content/uploads/2025/06/montana-amicus-small.webp",
+    "local": "assets/wp-content/uploads/2025/06/montana-amicus-small.webp",
+    "bytes": 368588,
+    "sha256": "501300e12722d5fd0237c50d528d75a7aee539a4d71ef0b060f39617a5c48f6c"
+  }
+]

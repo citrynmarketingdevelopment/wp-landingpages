@@ -1,0 +1,62 @@
+{
+  "routes": 17,
+  "widths": [
+    1440,
+    1024,
+    820,
+    768,
+    390,
+    375
+  ],
+  "checks": 102,
+  "failures": [],
+  "boundaries": [
+    {
+      "width": 1100,
+      "overflow": 0,
+      "mobile_menu_visible": false,
+      "expected_mobile_menu": false
+    },
+    {
+      "width": 981,
+      "overflow": 0,
+      "mobile_menu_visible": false,
+      "expected_mobile_menu": false
+    },
+    {
+      "width": 980,
+      "overflow": 0,
+      "mobile_menu_visible": true,
+      "expected_mobile_menu": true
+    },
+    {
+      "width": 767,
+      "overflow": 0,
+      "mobile_menu_visible": true,
+      "expected_mobile_menu": true
+    },
+    {
+      "width": 480,
+      "overflow": 0,
+      "mobile_menu_visible": true,
+      "expected_mobile_menu": true
+    },
+    {
+      "width": 479,
+      "overflow": 0,
+      "mobile_menu_visible": true,
+      "expected_mobile_menu": true
+    }
+  ],
+  "boundary_failures": [],
+  "interactions": {
+    "menu_open": true,
+    "submenu_open": true,
+    "menu_closed_with_escape": true,
+    "slider_advanced": true,
+    "accordion_toggled": true,
+    "counter_finishes": true,
+    "reduced_motion_final": true,
+    "content_without_js": true
+  }
+}

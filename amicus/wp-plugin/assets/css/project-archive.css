@@ -1,0 +1,8 @@
+.amicus-archive-container{width:min(90%,1200px);margin:auto}
+.amicus-archive-intro{padding:65px 0 30px}
+.amicus-archive-content{padding:40px 0 90px}
+.amicus-archive-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.amicus-project-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.amicus-project-card h2{font-size:24px}
+@media(max-width:980px){.amicus-archive-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.amicus-archive-list{grid-template-columns:1fr}}
