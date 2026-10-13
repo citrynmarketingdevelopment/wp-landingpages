@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "site": "ama",
+  "site_url": "https://ameliamolloysangels.com",
+  "rest_base": "https://ameliamolloysangels.com/wp-json/broseph/v1",
+  "site_id": "9a3bf61a-b3bc-4126-b538-4edfc50e9a85",
+  "env_file": ".env.broseph",
+  "github": {
+    "owner": "citrynmarketingdevelopment",
+    "repo": "wp-landingpages",
+    "branch": "main",
+    "base_path": "ama/"
+  },
+  "defaults": {
+    "render_mode": "theme_wrapped",
+    "render_position": "replace",
+    "full_width_content": true,
+    "full_page_canvas": false,
+    "seo_plugin": "auto"
+  }
+}

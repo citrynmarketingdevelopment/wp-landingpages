@@ -1501,6 +1501,18 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* "More ways we help" cards, purple per AMA request. */
+  .ama-prog .more-programs .more-card {
+    background:
+      radial-gradient(420px 220px at 15% 0%, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0) 62%),
+      linear-gradient(160deg, var(--peri-veil) 0%, var(--peri-mist) 100%);
+    border-color: var(--peri);
+  }
+
+  .ama-prog .more-programs .more-card .ico {
+    background: rgba(255, 255, 255, .82);
+  }
 </style>
 
 <main class="ama-prog">
@@ -1517,10 +1529,8 @@
       <div data-reveal>
         <span class="hero-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="5.4" r="2"/>
-            <path d="M12 9.2c-2.1 0-3.8 1.7-3.8 3.8v7.5h7.6V13c0-2.1-1.7-3.8-3.8-3.8Z"/>
-            <path d="M8.2 13.6c-2-1-4.5-.7-5.5 1 1.6 1.4 3.9 1.6 5.5.7"/>
-            <path d="M15.8 13.6c2-1 4.5-.7 5.5 1-1.6 1.4-3.9 1.6-5.5.7"/>
+            <ellipse cx="12" cy="8.2" rx="7.2" ry="2.7"/>
+            <path d="M7.4 10.2c-.2 3.3 1.8 5.2 4.6 5.2s4.8-1.9 4.6-5.2"/>
           </svg>
         </span>
       </div>
@@ -1533,8 +1543,8 @@
       <p class="hero-quote" data-reveal>&ldquo;It takes a village to create a family.&rdquo;</p>
 
       <div class="hero-actions" data-reveal>
-        <a class="btn btn-peri" href="#ama-angel-request">Ask for an Angel</a>
-        <a class="btn btn-ghost" href="#ama-become-angel">Become an Angel</a>
+        <a class="btn btn-peri" href="#ama-angel-request">Request a Journey Angel</a>
+        <a class="btn btn-ghost" href="#ama-become-angel">Become a Journey Angel</a>
       </div>
 
       <div class="hero-meta" data-reveal>
@@ -1579,8 +1589,6 @@
             <p>An Angel of Comfort is exactly that person. Someone from Amelia Molloy&rsquo;s Angels who knows what
               you are walking into this week, who checks in before the appointment rather than after, and who is still
               there in the long stretch where nothing is happening.</p>
-            <p>Angels are not counselors or medical advisors, and they will not tell you what to do next. They are
-              company, steady and unglamorous, from people who mostly know this road because they have walked it.</p>
           </div>
         </div>
 
@@ -1608,7 +1616,8 @@
           What we provide
         </span>
         <h2>For the best days <em>and the worst ones</em></h2>
-        <p>An Angel does not appear only when things fall apart. That is half of what makes it work.</p>
+        <p>An angel does not appear only when things fall apart. An angel is there to celebrate the wins, mourn the
+          losses, and sit with you in the waiting, walking alongside you through every season of your journey.</p>
       </div>
 
       <div class="moments stagger" data-reveal>
@@ -1617,7 +1626,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v2.4M12 18.1v2.4M4.7 4.7l1.7 1.7M17.6 17.6l1.7 1.7M3.5 12h2.4M18.1 12h2.4M4.7 19.3l1.7-1.7M17.6 6.4l1.7-1.7"/><circle cx="12" cy="12" r="3.6"/></svg>
           </span>
           <h3>The milestones</h3>
-          <p>The moments worth marking, that most people around you do not know to celebrate.</p>
           <ul>
             <li>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
@@ -1635,6 +1643,10 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
               A match, a placement, a finalized adoption
             </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
+              ...and more!
+            </li>
           </ul>
         </div>
 
@@ -1643,7 +1655,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 15.5a8.6 8.6 0 0 1-11.8-11 8.9 8.9 0 1 0 11.8 11Z"/></svg>
           </span>
           <h3>The hard days</h3>
-          <p>The ones where you do not want advice, a silver lining, or a story about someone&rsquo;s cousin.</p>
           <ul>
             <li>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
@@ -1661,55 +1672,9 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
               Mother&rsquo;s Day, Father&rsquo;s Day, the holidays, and the anniversary of a loss
             </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHO IT IS FOR ============ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-          </svg>
-          Who it is for
-        </span>
-        <h2>Especially if a group <em>is not for you</em></h2>
-        <p>Some people find their footing in a room full of others. Some need one person. Both are completely valid.</p>
-      </div>
-
-      <div class="panel mist" data-reveal>
-        <div class="panel-grid">
-          <ul class="check-list">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>People who are private about this</strong>If sharing in a group feels like too much, one trusted person may be exactly right.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Families in an intense stretch</strong>A cycle underway, a surgery scheduled, a wait that is eating you alive.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Anyone grieving</strong>After a loss, when the casseroles stop and everyone assumes you have moved on.</span>
-            </li>
-          </ul>
-
-          <ul class="check-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>People without local support</strong>New to the area, far from family, or surrounded by people who mean well and keep saying the wrong thing.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Partners</strong>Angels can walk with one of you or both. The partner who keeps holding it together also needs someone.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Anyone already in our other programs</strong>An Angel sits alongside support groups, prayer, grants, and relief. It replaces nothing.</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/></svg>
+              ...and more!
             </li>
           </ul>
         </div>
@@ -1727,33 +1692,33 @@
           </svg>
           How it works
         </span>
-        <h2>Being matched with an Angel</h2>
+        <h2>Being matched with a Journey Angel</h2>
         <p>It starts with a conversation, not a form. You stay in control of every part of it.</p>
       </div>
 
       <div class="steps three-up stagger" data-reveal>
         <div class="step">
           <span class="step-num" aria-hidden="true">1</span>
-          <h3>Tell us you would like one</h3>
-          <p>Reach out and say you are interested. We will set up a short conversation to understand where you are and
-            what kind of support would actually help.</p>
+          <h3>Request a Journey Angel</h3>
+          <p>Let us know you&rsquo;d like someone to walk alongside you. We&rsquo;ll learn a little about your journey
+            and the support you need.</p>
         </div>
         <div class="step">
           <span class="step-num" aria-hidden="true">2</span>
-          <h3>We make a thoughtful match</h3>
-          <p>We introduce you to someone whose experience and personality fit yours. If the match is not right, tell
-            us, and we will find you a different one without any awkwardness.</p>
+          <h3>Find Your Journey Angel</h3>
+          <p>We&rsquo;ll thoughtfully match you with someone who understands and can offer encouragement, prayer, and
+            support.</p>
         </div>
         <div class="step">
           <span class="step-num" aria-hidden="true">3</span>
-          <h3>You set the rhythm</h3>
-          <p>Texts, calls, coffee, or a check-in before each appointment. Weekly or only when something big is coming.
-            You decide, and you can change it whenever.</p>
+          <h3>Support Your Way</h3>
+          <p>From monthly check-ins to celebrating wins, mourning losses, and waiting together, your Journey Angel is
+            there for you at your pace.</p>
         </div>
       </div>
 
       <div class="panel gap-lg" data-reveal>
-        <h3>What your Angel promises</h3>
+        <h3>What Your Journey Angel Promises</h3>
         <ul class="pledge">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
@@ -1765,7 +1730,7 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-            <span><strong>To follow your lead on faith</strong>We are a Christian organization, and prayer is offered, never imposed. Say the word and it simply is not part of your check-ins.</span>
+            <span><strong>To follow your lead on faith</strong>We are a Christian organization, and prayer is offered, never imposed.</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
@@ -1786,7 +1751,7 @@
           </div>
 
           <div class="hero-actions actions-left gap-lg">
-            <a class="btn btn-peri" href="mailto:info@ameliamolloysangels.com?subject=Angels%20of%20Comfort%20Request">Request an Angel</a>
+            <a class="btn btn-peri" href="mailto:info@ameliamolloysangels.com?subject=Angels%20of%20Comfort%20Request">Request A Journey Angel</a>
             <a class="btn btn-ghost" href="tel:+16615934777">Call Us Instead</a>
           </div>
         </div>
@@ -1838,7 +1803,7 @@
             </svg>
             Become an Angel
           </span>
-          <h2 data-reveal>You already know <em>what to say</em></h2>
+          <h2 data-reveal>Be a reminder of <em>God&rsquo;s love</em> in a season that feels uncertain</h2>
           <div data-reveal>
             <p>The people who make the best Angels are usually the ones who once needed one. If you have walked
               through infertility, loss, surrogacy, or adoption and come out the other side, you have something no
@@ -1846,7 +1811,7 @@
             <p>Being an Angel is not a heavy time commitment, and it is not counseling. It is remembering someone
               else&rsquo;s appointment date, sending a text the morning of, and being reachable on a bad afternoon.
               We will talk with you first about what it involves and match you with a family thoughtfully.</p>
-            <a class="btn btn-ghost" href="mailto:info@ameliamolloysangels.com?subject=Becoming%20an%20Angel%20of%20Comfort">Tell Us You Are In</a>
+            <a class="btn btn-ghost" href="mailto:info@ameliamolloysangels.com?subject=Becoming%20an%20Angel%20of%20Comfort">Become A Journey Angel</a>
           </div>
         </div>
 
@@ -1874,7 +1839,7 @@
               <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
             </svg>
           </span>
-          <h2>Angel questions</h2>
+          <h2>Journey Angel Questions</h2>
           <p>What this is, what it is not, and what you are agreeing to.</p>
         </div>
 
@@ -1917,7 +1882,7 @@
             <summary><span class="faq-question">Will my Angel pray with me?</span></summary>
             <div class="faq-answer">
               <p>If you want them to. We are a faith-led organization and prayer is offered gladly, but it is never a
-                condition of support. Say you would rather not and that is simply how it will be.</p>
+                condition of support.</p>
             </div>
           </details>
 
@@ -1990,26 +1955,6 @@
     </div>
   </section>
 
-  <!-- ============ CLOSING CTA ============ -->
-  <section class="cta-final">
-    <div class="wrap">
-      <div class="cta-card" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-          </svg>
-          Nobody should do this alone
-        </span>
-        <h2>Let someone <em>walk with you</em></h2>
-        <p>Whether you need an Angel or you are ready to be one for somebody else, it starts the same way, with one
-          message telling us you are there.</p>
-        <div class="cta-actions">
-          <a class="btn btn-solid-white" href="mailto:info@ameliamolloysangels.com?subject=Angels%20of%20Comfort">Get in Touch</a>
-          <a class="btn btn-outline-white" href="our-programs.preview.html">See All Programs</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </main>
 
