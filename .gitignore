@@ -1,0 +1,8 @@
+# Local connection credentials. Commit only redacted example files.
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/.broseph/
+__pycache__/
+*.pyc

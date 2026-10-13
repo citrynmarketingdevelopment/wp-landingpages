@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "site": "optimax",
+  "site_url": "https://optimaxcs.net",
+  "rest_base": "https://optimaxcs.net/wp-json/broseph/v1",
+  "site_id": "3387d0b6-839a-4db3-98b9-accf7948d4aa",
+  "env_file": ".env.broseph",
+  "github": {
+    "owner": "citrynmarketingdevelopment",
+    "repo": "wp-landingpages",
+    "branch": "main",
+    "base_path": "optimax/"
+  },
+  "defaults": {
+    "render_mode": "theme_wrapped",
+    "render_position": "replace",
+    "full_width_content": true,
+    "full_page_canvas": false,
+    "seo_plugin": "yoast"
+  }
+}

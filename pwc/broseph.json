@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "site": "pwc",
+  "site_url": "https://psychwellnesscenter.com",
+  "rest_base": "https://psychwellnesscenter.com/wp-json/broseph/v1",
+  "site_id": "",
+  "env_file": ".env.broseph",
+  "github": {
+    "owner": "citrynmarketingdevelopment",
+    "repo": "wp-landingpages",
+    "branch": "main",
+    "base_path": "pwc/"
+  },
+  "defaults": {
+    "render_mode": "theme_wrapped",
+    "render_position": "replace",
+    "full_width_content": true,
+    "full_page_canvas": false,
+    "seo_plugin": "auto"
+  }
+}

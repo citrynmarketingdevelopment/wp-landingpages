@@ -17,12 +17,15 @@ Core rules:
 - never commit raw secrets to GitHub
 
 ## Multi-site env model
-Use site-specific env files outside version control.
-Typical keys:
-- `BROSEPH_SITE_URL`
-- `BROSEPH_REST_BASE`
-- `BROSEPH_SITE_ID`
-- `BROSEPH_SHARED_SECRET`
+For this repository, use the shared `node broseph/cli.mjs` client. Read [the connection guide](../../CONNECTIONS.md) when onboarding or operating a live connection.
+
+- Discover site aliases with `sites`; select the named client explicitly.
+- Public URL, REST base, Site ID, GitHub mapping, and render defaults are in `<client>/broseph.json`.
+- The full `BROSEPH_SHARED_SECRET` is in the Git-ignored `<client>/.env.broseph`. Never print it or use another site's/global credentials as a fallback.
+- `doctor <site>` verifies signed auth, returned site identity, GitPress, and live permissions.
+- `call <site> <tool>` uses the fresh live manifest; `--write` marks an intended mutation and does not substitute for user authorization.
+- `plan` prepares a scoped GitPress draft payload locally; `draft` verifies matching GitHub source and checks for existing slugs before creation. Publishing stays separate.
+- Treat cached `.broseph/` files as local records, not fresh permissions. Report capabilities missing from the live manifest rather than guessing routes.
 
 ## Default page creation rule
 Use GitPress page-level creation for new AI-generated pages unless the operator explicitly asks for Divi template mode.

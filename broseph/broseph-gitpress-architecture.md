@@ -8,7 +8,7 @@ Use it to understand where workflow rules live, where secrets live, where site-s
 
 Preserve all working Broseph + GitPress workflows while making the system easier to understand, safer to operate, and easier to scale to more WordPress sites.
 
-This is a docs-and-structure layer only. It does not change runtime behavior.
+The shared runtime client is now `cli.mjs` / `client.mjs`. See [CONNECTIONS.md](CONNECTIONS.md) for the executable setup; this document describes its workflow layers.
 
 ## Current architecture in plain terms
 
@@ -23,7 +23,9 @@ The system already has five working layers:
 ### 1. Skill layer
 
 Primary skill:
-- `skills/wp-gitpress-landing-pages/SKILL.md`
+- `skill/wp-gitpress-landing-pages/SKILL.md`
+
+Repository discovery guidance: `../AGENTS.md`.
 
 Purpose:
 - global workflow rules
@@ -34,15 +36,13 @@ Purpose:
 
 ### 2. Runtime env layer
 
-Per-site runtime env files should exist outside version control.
+Per-site runtime env files exist in each client folder, excluded from version control by the root `.gitignore`.
 
-Typical keys:
-- `BROSEPH_SITE_URL`
-- `BROSEPH_REST_BASE`
-- `BROSEPH_SITE_ID`
-- `BROSEPH_SHARED_SECRET`
+Public site URL, REST base, Site ID, GitHub mapping and render defaults live in `<client>/broseph.json`. Only `BROSEPH_SHARED_SECRET` is needed in `<client>/.env.broseph`. Legacy URL/ID env keys are supported only when they agree with the public mapping.
 
 ### 3. Helper/client code layer
+
+Shared client: `client.mjs`. Entry point: `node broseph/cli.mjs`.
 
 Purpose:
 - working request signing/auth

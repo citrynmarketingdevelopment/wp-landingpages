@@ -1,11 +1,14 @@
 # Broseph Workflow Bundle
 
-This folder contains a safe, repo-friendly copy of the Broseph + GitPress workflow documentation used for WordPress site operations.
+This folder contains the shared Broseph multi-site client and the Broseph + GitPress workflow documentation used for WordPress site operations.
 
 It is intended to preserve the operating model without exposing secrets.
 
 ## Included here
 
+- `cli.mjs` and `client.mjs` — signed REST client with explicit site selection
+- `CONNECTIONS.md` — setup, onboarding, daily commands, and draft workflow
+- `tests/client.test.mjs` — signing, isolation, permission, and draft checks
 - `broseph-gitpress-architecture.md`
 - `broseph-sites-registry.md`
 - `skill/wp-gitpress-landing-pages/SKILL.md`
@@ -21,8 +24,18 @@ It is intended to preserve the operating model without exposing secrets.
 
 - Do not commit real `.env` secrets.
 - Keep raw `BROSEPH_SHARED_SECRET` values out of GitHub.
-- Treat this folder as documentation/templates only.
 - Real runtime env files stay outside version control.
+- Each client uses `broseph.json` for public mapping and `.env.broseph` for its local secret.
+- Existing `env/.env.*.example` files remain legacy templates; use the client-local examples for the new CLI.
+
+## Start here
+
+```powershell
+node broseph/cli.mjs sites
+node broseph/cli.mjs doctor optimax
+```
+
+See [CONNECTIONS.md](CONNECTIONS.md) for the complete operating guide.
 
 ## Purpose
 

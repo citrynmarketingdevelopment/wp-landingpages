@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "site": "citryn",
+  "site_url": "https://citryn.com",
+  "rest_base": "https://citryn.com/wp-json/broseph/v1",
+  "site_id": "",
+  "env_file": ".env.broseph",
+  "github": {
+    "owner": "citrynmarketingdevelopment",
+    "repo": "wp-landingpages",
+    "branch": "main",
+    "base_path": "test-web/"
+  },
+  "defaults": {
+    "render_mode": "full_canvas",
+    "render_position": "replace",
+    "full_width_content": false,
+    "full_page_canvas": true,
+    "seo_plugin": "auto"
+  }
+}
