@@ -3,7 +3,7 @@
   "site": "pwc",
   "site_url": "https://psychwellnesscenter.com",
   "rest_base": "https://psychwellnesscenter.com/wp-json/broseph/v1",
-  "site_id": "",
+  "site_id": "fdb4d796-2042-4347-93d1-8e92670810ff",
   "env_file": ".env.broseph",
   "github": {
     "owner": "citrynmarketingdevelopment",
