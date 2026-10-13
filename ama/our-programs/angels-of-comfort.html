@@ -1471,6 +1471,33 @@
     }
   }
 
+  /* Hero logo icon (wings), sized down from the source asset and pulled
+     tighter to the title per AMA request. Overrides the shared kit's
+     generic SVG-icon spacing for this page only. */
+  .ama-prog .prog-hero .hero-icon {
+    margin-bottom: 8px;
+  }
+
+  .ama-prog .prog-hero .hero-icon img {
+    width: 58px;
+    height: auto;
+    display: block;
+  }
+
+  .ama-prog .prog-hero h1 {
+    margin-top: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .ama-prog .prog-hero .hero-icon {
+      margin-bottom: 6px;
+    }
+
+    .ama-prog .prog-hero .hero-icon img {
+      width: 48px;
+    }
+  }
+
   /* "More ways we help" cards, purple per AMA request. */
   .ama-prog .more-programs .more-card {
     background:
@@ -1497,10 +1524,7 @@
 
       <div data-reveal>
         <span class="hero-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="12" cy="8.2" rx="7.2" ry="2.7"/>
-            <path d="M7.4 10.2c-.2 3.3 1.8 5.2 4.6 5.2s4.8-1.9 4.6-5.2"/>
-          </svg>
+          <img src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/ama/assets/angels-of-comfort-wings.webp" width="320" height="162" alt="" />
         </span>
       </div>
 
