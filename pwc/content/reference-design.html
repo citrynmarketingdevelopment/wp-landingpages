@@ -402,6 +402,74 @@ jQuery(document).ready(function($) {
 /*# sourceURL=global-styles-inline-css */
 </style>
 
+<!-- PWC San Diego page updates: 2026-10-13 -->
+<style id="pwc-san-diego-updates-css">
+  /* Preserve the contact card's hero overlap without overlapping the new highlights. */
+  #post-280338 .pwc-sd-contact { margin-bottom: 0; }
+  #post-280338 .pwc-sd-contact-details { margin-bottom: -110px !important; }
+  #post-280338 .pwc-sd-highlights {
+    width: 80%;
+    max-width: 1080px;
+    margin: 24px auto 0;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: #e3edef;
+    color: #305e78;
+    font-family: 'Open Sans', Arial, sans-serif;
+  }
+  #post-280338 .pwc-sd-highlights ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #post-280338 .pwc-sd-highlights li {
+    margin: 0;
+    padding: 0 24px 0 0;
+    border-right: 1px solid rgba(57, 101, 126, .2);
+    list-style: none;
+  }
+  #post-280338 .pwc-sd-highlights li:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+  #post-280338 .pwc-sd-highlights strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #305e78;
+  }
+  #post-280338 .pwc-sd-highlights span {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #26404e;
+  }
+  @media (max-width: 980px) {
+    #post-280338 .pwc-sd-highlights { padding: 24px; }
+    #post-280338 .pwc-sd-highlights ul { grid-template-columns: 1fr; gap: 18px; }
+    #post-280338 .pwc-sd-highlights li {
+      padding: 0 0 18px;
+      border-right: 0;
+      border-bottom: 1px solid rgba(57, 101, 126, .2);
+    }
+    #post-280338 .pwc-sd-highlights li:last-child { padding-bottom: 0; border-bottom: 0; }
+    /* Use the current text list instead of the retired mobile insurance graphic. */
+    #post-280338 .pwc-sd-insurance-logos { display: none; }
+    #post-280338 .pwc-sd-insurance-list {
+      display: block !important;
+      margin-bottom: 0 !important;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  }
+</style>
 </head>
 <body class="wp-singular page-template-default page page-id-280338 logged-in admin-bar no-customize-support custom-background wp-theme-Divi wp-child-theme-Divi-Child-Theme et-tb-has-template et-tb-has-header et-tb-has-footer et_pb_button_helper_class et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_smooth_scroll et_no_sidebar et_divi_theme et-db">
 	<div id="page-container">
@@ -823,35 +891,7 @@ jQuery(document).ready(function($) {
 					<div class="entry-content">
 					<div class="et-l et-l--post">
 			<div class="et_builder_inner_content et_pb_gutters3">
-		<div class="et_pb_section et_pb_section_1 et_section_regular" >
-				
-				
-				
-				
-				
-				
-				<div class="et_pb_row et_pb_row_0">
-				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
-				
-				
-				
-				
-				<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light">
-				
-				
-				
-				
-				<div class="et_pb_text_inner"><p data-pm-slice="1 1 &#091;&quot;list&quot;,{},&quot;list_item&quot;,{&quot;indent&quot;:1,&quot;type&quot;:&quot;numbered&quot;}&#093;">OUR NEW LOCATION IS NOW OPEN!</p></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div>
-				
-				
-			</div><div class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular" >
+		<div class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular" >
 				
 				
 				
@@ -918,14 +958,14 @@ jQuery(document).ready(function($) {
 			</div>
 				
 				
-			</div><div class="et_pb_section et_pb_section_3 et_section_regular" >
+			</div><div class="et_pb_section et_pb_section_3 pwc-sd-contact et_section_regular" >
 				
 				
 				
 				
 				
 				
-				<div class="et_pb_row et_pb_row_3">
+				<div class="et_pb_row et_pb_row_3 pwc-sd-contact-details">
 				<div class="et_pb_column et_pb_column_1_3 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough">
 				
 				
@@ -997,7 +1037,14 @@ Encinitas, CA 92024</div>
 			</div>
 				
 				
-			</div><div class="et_pb_section et_pb_section_4 et_section_regular" >
+			<section class="pwc-sd-highlights" aria-label="Care at a glance">
+              <ul>
+                <li><strong>Insurance accepted</strong><span>Medicare, Carelon, United Healthcare, and other major plans.</span></li>
+                <li><strong>In-person &amp; telehealth</strong><span>Visit our Encinitas office or connect with us online.</span></li>
+                <li><strong>Accepting new patients</strong><span>Contact our team to schedule your first appointment.</span></li>
+              </ul>
+            </section>
+            </div><div class="et_pb_section et_pb_section_4 et_section_regular" >
 				
 				
 				
@@ -1068,7 +1115,7 @@ Encinitas, CA 92024</div>
 				
 				
 				
-				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="409" height="683" src="https://psychwellnesscenter.com/wp-content/uploads/2025/01/image-10.png" alt="Dr. Kharkar " title="Dr. Kharkar " srcset="https://psychwellnesscenter.com/wp-content/uploads/2025/01/image-10.png 409w, https://psychwellnesscenter.com/wp-content/uploads/2025/01/image-10-180x300.png 180w" sizes="(max-width: 409px) 100vw, 409px" class="wp-image-280722" /></span>
+				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="409" height="683" src="https://psychwellnesscenter.com/wp-content/uploads/2025/01/image-10.png" alt="Dr. Kharkar" title="Dr. Kharkar" srcset="https://psychwellnesscenter.com/wp-content/uploads/2025/01/image-10.png 409w, https://psychwellnesscenter.com/wp-content/uploads/2025/01/image-10-180x300.png 180w" sizes="(max-width: 409px) 100vw, 409px" class="wp-image-280722" /></span>
 			</div><div class="et_pb_module et_pb_divider_0 et_pb_space et_pb_divider_hidden"><div class="et_pb_divider_internal"></div></div>
 			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough et-last-child">
 				
@@ -1167,7 +1214,7 @@ Encinitas, CA 92024</div>
 				
 				
 				
-				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="1900" height="2200" src="https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10.webp" alt="" title="image-10" srcset="https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10.webp 1900w, https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10-1280x1482.webp 1280w, https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10-980x1135.webp 980w, https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10-480x556.webp 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1900px, 100vw" class="wp-image-280798" /></span>
+				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="1900" height="2200" src="https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10.webp" alt="Dr. Kharkar" title="Dr. Kharkar" srcset="https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10.webp 1900w, https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10-1280x1482.webp 1280w, https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10-980x1135.webp 980w, https://psychwellnesscenter.com/wp-content/uploads/2025/04/image-10-480x556.webp 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1900px, 100vw" class="wp-image-280798" /></span>
 			</div><div class="et_pb_module et_pb_divider_1 et_pb_space et_pb_divider_hidden"><div class="et_pb_divider_internal"></div></div>
 			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_16  et_pb_css_mix_blend_mode_passthrough et-last-child">
 				
@@ -1378,7 +1425,7 @@ Encinitas, CA 92024</div>
 				
 				
 				<div class="et_pb_text_inner"><h3>Insurance Information</h3>
-<p><span>At Psychiatric Wellness Center, we accept most major insurance plans. Here is a list of some of the plans we accept. At Psychiatric Wellness Center we are currently accepting Medicare insurances and private insurances or self-pay. Please contact one of our offices if you do not see your insurance provider listed. *Service coverage varies by insurance plan.</span></p></div>
+<p><span>At our San Diego office, we accept most major insurance plans, including Medicare, Carelon, and United Healthcare. We also welcome self-pay patients. Please contact our office if you do not see your insurance provider listed. Service coverage varies by insurance plan.</span></p></div>
 			</div>
 			</div>
 				
@@ -1386,18 +1433,12 @@ Encinitas, CA 92024</div>
 				
 				
 			</div><div class="et_pb_row et_pb_row_12">
-				<div class="et_pb_column et_pb_column_1_4 et_pb_column_21  et_pb_css_mix_blend_mode_passthrough">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_21 pwc-sd-insurance-logos  et_pb_css_mix_blend_mode_passthrough">
 				
 				
 				
 				
-				<div class="et_pb_module et_pb_image et_pb_image_2">
-				
-				
-				
-				
-				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="2560" height="761" src="https://psychwellnesscenter.com/wp-content/uploads/2019/12/Mobile-Insurace-scaled.png" alt="" title="" srcset="https://psychwellnesscenter.com/wp-content/uploads/2019/12/Mobile-Insurace-scaled.png 2560w, https://psychwellnesscenter.com/wp-content/uploads/2019/12/Mobile-Insurace-1280x381.png 1280w, https://psychwellnesscenter.com/wp-content/uploads/2019/12/Mobile-Insurace-980x291.png 980w, https://psychwellnesscenter.com/wp-content/uploads/2019/12/Mobile-Insurace-480x143.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 2560px, 100vw" class="wp-image-258" /></span>
-			</div><div class="et_pb_module et_pb_image et_pb_image_3 et_animated et-waypoint">
+				<div class="et_pb_module et_pb_image et_pb_image_3 et_animated et-waypoint">
 				
 				
 				
@@ -1409,12 +1450,6 @@ Encinitas, CA 92024</div>
 				
 				
 				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="212" height="126" src="https://psychwellnesscenter.com/wp-content/uploads/2019/11/1773591.png" alt="" title="" class="wp-image-102" /></span>
-			</div><div class="et_pb_module et_pb_image et_pb_image_5 et_animated et-waypoint">
-				
-				
-				
-				
-				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="212" height="126" src="https://psychwellnesscenter.com/wp-content/uploads/2019/11/1790888.png" alt="" title="" class="wp-image-103" /></span>
 			</div><div class="et_pb_module et_pb_image et_pb_image_6 et_animated et-waypoint">
 				
 				
@@ -1427,24 +1462,23 @@ Encinitas, CA 92024</div>
 				
 				
 				
-				<div class="et_pb_module et_pb_text et_pb_text_23 et_animated  et_pb_text_align_left et_pb_bg_layout_light">
+				<div class="et_pb_module et_pb_text et_pb_text_23 pwc-sd-insurance-list et_animated  et_pb_text_align_left et_pb_bg_layout_light">
 				
 				
 				
 				
 				<div class="et_pb_text_inner"><ul>
-<li>Adventist Health</li>
 <li>Aetna PPO</li>
 <li>Anthem Blue Cross Blue Shield HMO</li>
 <li>Anthem Blue Cross Blue Shield PPO</li>
 <li>Anthem Blue Cross PPO</li>
-<li>Beacon Health Strategies</li>
 <li>Blue Cross Blue Shield Federal</li>
 <li>Blue Cross of California</li>
 <li>Blue Shield MHSA</li>
 <li>Blue Shield of California PPO</li>
 <li>Blue Shield Senior Plus Plan</li>
 <li>BlueCross SISC</li>
+<li>Carelon</li>
 <li>CHAMPVA</li>
 <li>Cigna</li>
 <li>ComPsych</li>
@@ -1455,7 +1489,7 @@ Encinitas, CA 92024</div>
 				
 				
 				
-				<div class="et_pb_module et_pb_text et_pb_text_24 et_animated  et_pb_text_align_left et_pb_bg_layout_light">
+				<div class="et_pb_module et_pb_text et_pb_text_24 pwc-sd-insurance-list et_animated  et_pb_text_align_left et_pb_bg_layout_light">
 				
 				
 				
@@ -1466,7 +1500,6 @@ Encinitas, CA 92024</div>
 <li>Health Edge</li>
 <li>HealthNet PPO</li>
 <li>Holman</li>
-<li>Kaiser Permanente PPO</li>
 <li>Medicare</li>
 <li>Optum Health</li>
 <li>Pacific Care</li>
@@ -1479,7 +1512,7 @@ Encinitas, CA 92024</div>
 <li>Western Growers</li>
 </ul></div>
 			</div>
-			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_24  et_pb_css_mix_blend_mode_passthrough et-last-child">
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_24 pwc-sd-insurance-logos  et_pb_css_mix_blend_mode_passthrough et-last-child">
 				
 				
 				
@@ -1490,12 +1523,6 @@ Encinitas, CA 92024</div>
 				
 				
 				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="1280" height="642" src="https://psychwellnesscenter.com/wp-content/uploads/2024/12/US-TRICARE-Logo.svg_.png" alt="" title="US-TRICARE-Logo.svg" srcset="https://psychwellnesscenter.com/wp-content/uploads/2024/12/US-TRICARE-Logo.svg_.png 1280w, https://psychwellnesscenter.com/wp-content/uploads/2024/12/US-TRICARE-Logo.svg_-980x492.png 980w, https://psychwellnesscenter.com/wp-content/uploads/2024/12/US-TRICARE-Logo.svg_-480x241.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" class="wp-image-280637" /></span>
-			</div><div class="et_pb_module et_pb_image et_pb_image_8 et_animated et-waypoint">
-				
-				
-				
-				
-				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="212" height="126" src="https://psychwellnesscenter.com/wp-content/uploads/2019/11/1773603.png" alt="" title="" class="wp-image-98" /></span>
 			</div><div class="et_pb_module et_pb_image et_pb_image_9 et_animated et-waypoint">
 				
 				
