@@ -6,3 +6,6 @@
 **/.broseph/
 __pycache__/
 *.pyc
+
+# Isolated git worktrees created by agent tooling (full repo checkouts; never commit)
+**/.claude/worktrees/
