@@ -25,6 +25,7 @@ ASSETS = [
     ('aspire-logo.png', BASE + '2020/12/ACS-min.png'),
     ('pwc-logo.png', BASE + '2020/12/PWC-1-min.png'),
     ('brs-logo.webp', BASE + '2026/10/BRS-Final.webp'),
+    ('inspire-me-logo.png', BASE + '2026/10/InspireMe-Logo-2024.png'),
     ('clients-hero.webp', BASE + '2019/08/OurClients1-min.jpeg'),
     ('tpmg-logo.png', BASE + '2019/08/Untitled-design-2.png'),
 ]

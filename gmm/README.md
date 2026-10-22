@@ -44,7 +44,8 @@ Design settings: `DESIGN_VARIANCE: 4`, `MOTION_INTENSITY: 2`, `VISUAL_DENSITY: 4
 Images and self-hosted fonts were downloaded from the public URLs in the supplied HTML. `assets/sources.json` records their origin. `scripts/prepare_assets.py` can retrieve them again; it needs Python, BeautifulSoup, and Pillow. Images were resized for web use while preserving the source files supplied by the user.
 
 - **Inspire Me:** the user supplied and confirmed `https://genesismedicalmanagement.com/wp-content/uploads/2026/01/pwc-san-diego.webp` for this location. It is used in the desktop tile and mobile photo gallery, stored locally as `assets/images/location-16.webp`.
-- **BRS:** the user supplied `https://genesismedicalmanagement.com/wp-content/uploads/2026/10/BRS-Final.webp`. Its transparent logo is stored as `assets/images/brs-logo.webp` and used in the organizations sections. Inspire Me's organization entry remains a readable name because no standalone logo was supplied.
+- **BRS:** the user supplied `https://genesismedicalmanagement.com/wp-content/uploads/2026/10/BRS-Final.webp`. Its transparent logo is stored as `assets/images/brs-logo.webp` and used in the organizations sections.
+- **Inspire Me logo:** the user supplied `https://genesismedicalmanagement.com/wp-content/uploads/2026/10/InspireMe-Logo-2024.png`. It is stored as `assets/images/inspire-me-logo.png` and replaces the text entry in the homepage's Our Organizations section on desktop and mobile.
 - The original hero artwork is served from `assets/images/original-hero.webp`. The closing background is in `assets/images/grow-background.jpg`.
 
 ## GitPress files
