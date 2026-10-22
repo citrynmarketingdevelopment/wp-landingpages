@@ -151,9 +151,9 @@ body:has(#gmm-home) .gmm-header a[data-nav=home],body:has(#gmm-clients) .gmm-hea
  #gmm-home .gmm-location-slide:only-child{flex-basis:100%}
  #gmm-home .gmm-location-slide>img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
  #gmm-home .gmm-location-slide__caption{display:grid;grid-template-columns:1fr 12px;align-items:center;gap:12px;min-height:100px;padding:17px 18px}
- #gmm-home .gmm-location-slide__caption>span:first-child{display:grid;gap:5px;min-width:0}
- #gmm-home .gmm-location-slide__caption strong{font-size:21px;line-height:1.2;color:var(--gmm-ink)}
- #gmm-home .gmm-location-slide__caption>span>span{font-size:16px;line-height:1.4;color:var(--gmm-copy)}
+ #gmm-home .gmm-location-slide__caption>span:first-child{display:block;min-width:0}
+ #gmm-home .gmm-location-slide__caption strong{display:block!important;width:100%;font-size:21px;line-height:1.2;color:var(--gmm-ink)}
+ #gmm-home .gmm-location-slide__caption>span>span{display:block!important;width:100%;margin-top:5px;font-size:16px;line-height:1.4;color:var(--gmm-copy)}
  #gmm-home .gmm-location-slide__arrow{width:8px;height:8px;border-top:2px solid var(--gmm-accent-dark);border-right:2px solid var(--gmm-accent-dark);transform:rotate(45deg)}
  #gmm-home .gmm-location-slide:focus-visible{outline:3px solid var(--gmm-accent-dark);outline-offset:-4px}
  #gmm-home .gmm-location-slide:active{background:#faf6ef}
