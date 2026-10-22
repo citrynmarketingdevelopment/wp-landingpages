@@ -1,0 +1,43 @@
+{
+  "status": "local_review_only",
+  "site_url": "https://genesismedicalmanagement.com",
+  "page": "Existing homepage; discover and preserve its WordPress ID and permalink before conversion",
+  "github": {
+    "owner": "citrynmarketingdevelopment",
+    "repo": "wp-landingpages",
+    "branch": "main"
+  },
+  "shortcodes": {
+    "body": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"gmm/home.html\" format=\"html\"]",
+    "managed_header": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"gmm/header.html\" format=\"html\"]",
+    "managed_footer": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"gmm/footer.html\" format=\"html\"]"
+  },
+  "additional_pages": [
+    {
+      "existing_path": "/clients/",
+      "source": "gmm/clients.html",
+      "label": "Our Organizations",
+      "shortcode": "[divi_github_content owner=\"citrynmarketingdevelopment\" repo=\"wp-landingpages\" branch=\"main\" path=\"gmm/clients.html\" format=\"html\"]",
+      "note": "Inspect and preserve the existing clients page ID, permalink, title, status, and SEO on conversion. Prepare a reviewable draft first."
+    }
+  ],
+  "render_settings": {
+    "render_mode": "gitpress_managed",
+    "render_position": "replace",
+    "full_width_content": false,
+    "full_page_canvas": true
+  },
+  "conversion_requirements": {
+    "backup_first": true,
+    "preserve_page_id": true,
+    "preserve_permalink": true,
+    "preserve_title_and_seo": true,
+    "inspect_expected_slug_and_status": true,
+    "create_reviewable_draft_first": true,
+    "publishing_authorized": false
+  },
+  "connection": {
+    "configured": false,
+    "note": "GMM needs its own verified Broseph site ID and local secret. This document is a deployment specification, not an executable Broseph plan."
+  }
+}

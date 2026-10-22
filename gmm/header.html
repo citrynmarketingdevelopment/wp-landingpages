@@ -1,0 +1,44 @@
+<!-- GMM managed header. Critical navigation uses native details/summary. -->
+<style>
+@font-face{font-family:'GMM Hind';src:url('https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/gmm/assets/fonts/hind-regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'GMM Hind';src:url('https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/gmm/assets/fonts/hind-bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+.gmm-header,.gmm-header *{box-sizing:border-box}
+.gmm-header{position:absolute;top:0;left:0;right:0;z-index:20;background:transparent;font-family:'GMM Hind',Arial,sans-serif;color:#434141}
+.gmm-header__inner{width:min(1080px,80%);min-height:80px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.gmm-header__brand{display:inline-flex;align-items:center;flex-shrink:0}
+.gmm-header__brand img{display:block;width:200px;height:auto}
+.gmm-header__nav{display:flex;align-items:center;gap:32px}
+.gmm-header a{color:#434141;text-decoration:none;font-size:16px;font-weight:700}
+.gmm-header a:hover,.gmm-header a[aria-current=page]{color:#a6570b}
+body:has(#gmm-home) .gmm-header a[data-nav=home],body:has(#gmm-clients) .gmm-header a[data-nav=clients]{color:#a6570b}
+.gmm-header a:focus-visible,.gmm-header summary:focus-visible{outline:3px solid #a6570b;outline-offset:6px}
+.gmm-header__mobile{display:none}
+@media(max-width:980px){
+ .gmm-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eeedf0}
+ .gmm-header__inner{width:calc(100% - 40px);min-height:64px;gap:16px}
+ .gmm-header__brand img{width:104px}
+ .gmm-header__nav{display:none}
+ .gmm-header__mobile{display:block}
+ .gmm-header__mobile summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:10px;list-style:none;font-weight:700;font-size:16px;padding:8px 0 8px 12px}
+ .gmm-header__mobile summary::-webkit-details-marker{display:none}
+ .gmm-header__menu-icon{display:block;width:21px;height:14px;border-top:2px solid currentColor;border-bottom:2px solid currentColor;position:relative}
+ .gmm-header__menu-icon:after{content:'';position:absolute;top:5px;left:0;width:21px;border-top:2px solid currentColor}
+ .gmm-header__mobile[open] .gmm-header__menu-icon{border-color:transparent}
+ .gmm-header__mobile[open] .gmm-header__menu-icon:before,.gmm-header__mobile[open] .gmm-header__menu-icon:after{content:'';position:absolute;top:5px;left:0;width:21px;border-top:2px solid currentColor;transform:rotate(45deg)}
+ .gmm-header__mobile[open] .gmm-header__menu-icon:after{transform:rotate(-45deg)}
+ .gmm-header__mobile nav{position:absolute;top:100%;left:0;right:0;background:#fff;padding:12px 20px 20px;box-shadow:0 12px 20px #27233712;border-top:2px solid #e18525;display:grid}
+ .gmm-header__mobile nav a{padding:12px 4px;min-height:48px}
+}
+</style>
+<header class="gmm-header" id="siteHeader">
+  <div class="gmm-header__inner">
+    <a class="gmm-header__brand" href="/" aria-label="Genesis Medical Management home"><img src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/gmm/assets/images/logo.png" alt="Genesis Medical Management" width="112" height="43"></a>
+    <nav class="gmm-header__nav" aria-label="Primary navigation">
+      <a href="/" data-nav="home">Home</a><a href="/about-us/" data-nav="about">About Us</a><a href="/clients/" data-nav="clients">Locations</a><a href="/#gmm-news" data-nav="news">News</a><a href="/contact-us/" data-nav="contact">Contact Us</a>
+    </nav>
+    <details class="gmm-header__mobile">
+      <summary>Menu <span class="gmm-header__menu-icon" aria-hidden="true"></span></summary>
+      <nav aria-label="Mobile navigation"><a href="/" data-nav="home">Home</a><a href="/about-us/" data-nav="about">About Us</a><a href="/clients/" data-nav="clients">Locations</a><a href="/#gmm-news" data-nav="news">News</a><a href="/contact-us/" data-nav="contact">Contact Us</a></nav>
+    </details>
+  </div>
+</header>

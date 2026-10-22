@@ -1,0 +1,14 @@
+{
+  "name": "Bakersfield Recovery Services",
+  "website": "https://bakersfieldrecoveryservices.com/",
+  "category": "Substance use disorder treatment",
+  "excerpt": "Residential and intensive outpatient substance use treatment focused on personal growth, accountability, and long-term recovery.",
+  "paragraph": "Bakersfield Recovery Services guides individuals toward a drug-free, empowered life through men’s, women’s, and perinatal residential treatment, along with intensive outpatient care. Its evidence-based programs emphasize personal growth, individual responsibility, and the coping skills that support long-term recovery. Guided by empathy, integrity, empowerment, and family and community involvement, BRS prioritizes the well-being of individuals, their families, and the community throughout the recovery journey.",
+  "services": [
+    {"name": "Jason’s Retreat", "description": "Men’s Residential Treatment"},
+    {"name": "Capistrano", "description": "Women’s Residential Treatment"},
+    {"name": "Lincoln Street", "description": "Perinatal Residential Treatment"},
+    {"name": "IOP", "description": "Intensive Outpatient Treatment"}
+  ],
+  "source": "Approved website verbiage supplied by the user in this conversation. Excerpt and paragraph are edited summaries of that material."
+}
