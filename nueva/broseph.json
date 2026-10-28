@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "site": "nueva",
+  "site_url": "https://neuvaaesthetics.com",
+  "rest_base": "https://neuvaaesthetics.com/wp-json/broseph/v1",
+  "site_id": "23b83f10-e835-4995-b5a1-3c71471e17b5",
+  "env_file": ".env.broseph",
+  "github": {
+    "owner": "citrynmarketingdevelopment",
+    "repo": "wp-landingpages",
+    "branch": "main",
+    "base_path": "nueva/"
+  },
+  "defaults": {
+    "render_mode": "theme_wrapped",
+    "render_position": "replace",
+    "full_width_content": true,
+    "full_page_canvas": false,
+    "seo_plugin": "auto"
+  }
+}
