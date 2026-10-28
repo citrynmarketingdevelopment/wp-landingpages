@@ -39,13 +39,19 @@
 .neuva-service .nv-treatment-content ul,.neuva-service .nv-treatment-content ol{padding-left:22px;margin:12px 0}
 .neuva-service .nv-treatment-content li+li{margin-top:8px}
 .neuva-service .nv-face-photo img{display:block;width:100%;height:auto}
-.neuva-service .nv-promos{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:80px;padding:24px;background:#fff}
-.neuva-service .nv-promos img{display:block;width:100%;height:auto}
-.neuva-service .nv-promos-copy{padding:18px 18px 18px 0}
-.neuva-service .nv-promos h2{margin-bottom:24px;font-family:"Montserrat",Arial,sans-serif;font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.1}
-.neuva-service .nv-promos .nv-monthly{margin-bottom:8px;font-size:12px;letter-spacing:1px;text-transform:uppercase}
-.neuva-service .nv-promos p{font-size:13px;line-height:1.6}
-.neuva-service .nv-promos p+p{margin-top:16px}
-.neuva-service .nv-promos .nv-text-link{display:inline-block;margin-top:24px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
-@media(max-width:800px){.neuva-service .nv-container{width:88%}.neuva-service .nv-hero{padding:46px 0 50px;background-position:65% center}.neuva-service .nv-coolpeel-grid,.neuva-service .nv-face-grid,.neuva-service .nv-promos{grid-template-columns:1fr}.neuva-service .nv-copy{padding:30px}.neuva-service .nv-photo{min-height:0;max-height:440px}.neuva-service .nv-photo img{height:440px}.neuva-service .nv-face-grid{gap:28px}.neuva-service .nv-face-photo{max-width:560px;margin-inline:auto}.neuva-service .nv-promos{gap:20px;margin-top:48px}.neuva-service .nv-promos-copy{padding:0 6px 12px}.neuva-service .nv-content{padding-bottom:50px}}
+.neuva-service .nv-promos{display:grid;grid-template-columns:1fr 1fr;column-gap:5.5%;align-items:start;margin-top:80px;padding:0 20px;background:#fff}
+.neuva-service .nv-promos-art{margin:0;padding:20px 0 20px 20px}
+.neuva-service .nv-promos img{display:block;width:100%;height:auto;margin-top:-85px}
+.neuva-service .nv-promos-copy{padding:60px 20px 20px 0;color:#333}
+.neuva-service .nv-promos-heading{margin-bottom:28px}
+.neuva-service .nv-promos h2{padding-bottom:10px;font-family:"Montserrat",Arial,sans-serif;font-size:64px;font-weight:500;line-height:1;color:#333!important}
+.neuva-service .nv-promos .nv-monthly{padding-bottom:10px;font-family:"Montserrat",Arial,sans-serif;font-size:12px;font-weight:500;line-height:1.8;letter-spacing:1px;text-transform:uppercase;color:rgba(0,0,0,.4)}
+.neuva-service .nv-promos-description{font-family:"Open Sans",Arial,sans-serif;font-size:13px;line-height:1.3}
+.neuva-service .nv-promos-description p{font:inherit;line-height:inherit}
+.neuva-service .nv-promos .nv-text-link{display:inline-block;margin-top:26px;padding:3.6px 0;color:#cbaf90!important;font-family:"Montserrat",Arial,sans-serif;font-size:12px;font-weight:600;line-height:1.7;letter-spacing:1px;text-transform:uppercase;text-decoration:none}
+.neuva-service .nv-promos .nv-text-link::after{content:"›";display:inline-block;margin-left:8px;font-weight:400}
+.neuva-service .nv-promos .nv-text-link:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:980px){.neuva-service .nv-promos{grid-template-columns:1fr;gap:0}.neuva-service .nv-promos-art{padding:20px}.neuva-service .nv-promos img{max-width:560px;margin-inline:auto}.neuva-service .nv-promos-copy{padding:0 20px 28px;text-align:center}}
+@media(max-width:800px){.neuva-service .nv-container{width:88%}.neuva-service .nv-hero{padding:46px 0 50px;background-position:65% center}.neuva-service .nv-coolpeel-grid,.neuva-service .nv-face-grid{grid-template-columns:1fr}.neuva-service .nv-copy{padding:30px}.neuva-service .nv-photo{min-height:0;max-height:440px}.neuva-service .nv-photo img{height:440px}.neuva-service .nv-face-grid{gap:28px}.neuva-service .nv-face-photo{max-width:560px;margin-inline:auto}.neuva-service .nv-promos{margin-top:80px}.neuva-service .nv-content{padding-bottom:50px}}
+@media(max-width:767px){.neuva-service .nv-promos h2{font-size:44px}.neuva-service .nv-promos{padding-inline:0}.neuva-service .nv-promos-art{padding-inline:20px}.neuva-service .nv-promos-copy{padding-inline:20px}}
 @media(max-width:480px){.neuva-service .nv-hero h1{font-size:44px}.neuva-service .nv-copy,.neuva-service .nv-face-copy{padding:24px}.neuva-service .nv-actions{align-items:stretch;flex-direction:column}.neuva-service .nv-button{width:100%;padding-inline:16px}.neuva-service .nv-award{margin-top:34px;padding-inline:8px}.neuva-service .nv-photo img{height:340px}.neuva-service .nv-lead{font-size:16px}}
