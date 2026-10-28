@@ -5,6 +5,8 @@
 .neuva-service a:focus-visible,.neuva-service summary:focus-visible{outline:3px solid var(--nv-accent);outline-offset:5px}
 .neuva-service .nv-container{width:min(1080px,82%);margin-inline:auto}
 .neuva-service .nv-hero{padding:64px 0 74px;background:linear-gradient(0deg,#f6f4f2 0%,rgba(246,244,242,.26) 100%),url("https://neuvaaesthetics.com/wp-content/uploads/2024/06/Face.jpg") center/cover no-repeat}
+/* GitPress resets the first section's top padding with !important on full-width pages. */
+body.dgs-theme-wrapped.dgs-full-width-content #main-content .neuva-service > .nv-hero{padding-top:64px!important}
 .neuva-service .nv-hero h1{max-width:840px;color:var(--nv-accent)!important;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(44px,5.4vw,74px);font-weight:500;line-height:1.08;text-wrap:balance}
 .neuva-service .nv-hero .nv-subtitle{max-width:560px;margin-top:22px;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,3vw,38px);line-height:1.2}
 .neuva-service .nv-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:28px}
@@ -62,3 +64,4 @@
 @media(max-width:800px){.neuva-service .nv-container{width:88%}.neuva-service .nv-hero{padding:46px 0 50px;background-position:65% center}.neuva-service .nv-coolpeel-grid,.neuva-service .nv-face-grid{grid-template-columns:1fr;gap:28px}.neuva-service .nv-copy{padding:30px}.neuva-service .nv-photo{min-height:0;max-height:440px;overflow:hidden}.neuva-service .nv-photo img{height:440px}.neuva-service .nv-face-photo{max-width:560px;margin-inline:auto}.neuva-service .nv-promos{margin-top:80px}.neuva-service .nv-content{padding-bottom:50px}}
 @media(max-width:767px){.neuva-service .nv-promos h2{font-size:44px}.neuva-service .nv-promos{padding-inline:0}.neuva-service .nv-promos-art{padding-inline:20px}.neuva-service .nv-promos-copy{padding-inline:20px}}
 @media(max-width:480px){.neuva-service .nv-hero h1{font-size:44px}.neuva-service .nv-copy,.neuva-service .nv-face-copy{padding:24px}.neuva-service .nv-actions{align-items:stretch;flex-direction:column}.neuva-service .nv-button{width:100%;padding-inline:16px}.neuva-service .nv-award{margin-top:34px;padding-inline:8px}.neuva-service .nv-photo img{height:340px}.neuva-service .nv-lead{font-size:16px}}
+@media(max-width:800px){body.dgs-theme-wrapped.dgs-full-width-content #main-content .neuva-service > .nv-hero{padding-top:46px!important}}
