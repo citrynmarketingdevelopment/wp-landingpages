@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-09-17a -->
+<!-- webhook retrigger 2026-10-30b -->
 <style>
   /* Single-family imports with NO "&" - WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -1354,9 +1354,10 @@
 
   .ama-prog .leader-card {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 26px;
-    padding: 48px 44px;
+    grid-template-columns: minmax(240px, .8fr) minmax(0, 1.4fr);
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
     background:
       radial-gradient(520px 260px at 10% 0%, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0) 62%),
       linear-gradient(160deg, var(--peri-veil) 0%, var(--peri-mist) 100%);
@@ -1395,21 +1396,45 @@
     color: var(--copy) !important;
   }
 
-  .ama-prog .prayer-promises {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+  /* Photo strip: three images on desktop, native swipe/scroll fallback. */
+  .ama-prog .photo-gallery { position: relative; padding: 0 56px; }
+  .ama-prog .photo-track {
+    display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    scrollbar-width: thin; scrollbar-color: var(--peri) transparent; padding-bottom: 12px;
+  }
+  .ama-prog .photo-slide { flex: 0 0 calc((100% - 32px) / 3); min-width: 0; scroll-snap-align: start; }
+  .ama-prog .photo-slide img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
+  .ama-prog .photo-arrow {
+    position: absolute; top: calc(50% - 6px); transform: translateY(-50%);
+    display: grid; place-items: center; width: 42px; height: 44px; padding: 0;
+    border: 0; border-radius: 50%; background: #888; color: #fff; cursor: pointer;
+  }
+  .ama-prog .photo-arrow svg { width: 22px; height: 22px; }
+  .ama-prog .photo-prev { left: 0; }
+  .ama-prog .photo-next { right: 0; }
+  .ama-prog .photo-arrow:disabled { background: #ddd; cursor: default; }
+  .ama-prog .photo-arrow[hidden] { display: none; }
+  .ama-prog .photo-arrow:focus-visible, .ama-prog .photo-track:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+  @media (max-width: 900px) { .ama-prog .photo-slide { flex-basis: calc((100% - 16px) / 2); } }
+  @media (max-width: 600px) {
+    .ama-prog .photo-gallery { padding: 0 38px; }
+    .ama-prog .photo-slide { flex-basis: 100%; }
+    .ama-prog .photo-arrow { width: 30px; height: 34px; }
   }
 
-  @media (max-width: 640px) {
+  .ama-prog .leader-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 860px) {
     .ama-prog .leader-card {
+      grid-template-columns: 1fr;
       padding: 34px 24px;
       border-radius: 24px;
     }
-
-    .ama-prog .prayer-promises {
-      grid-template-columns: 1fr;
-    }
+    .ama-prog .leader-photo { max-width: 357px; margin: 0 auto; }
   }
 </style>
 
@@ -1426,22 +1451,18 @@
 
       <div data-reveal>
         <span class="hero-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9.5 10.8h5v9.7h-5z"/>
-            <path d="M12 10.8V8.4"/>
-            <path d="M12 8.4c1.4-1 1.9-2.3 1.4-3.6-.4-1.2-1-1.8-1.4-2.4-.4.6-1 1.2-1.4 2.4-.5 1.3 0 2.6 1.4 3.6Z"/>
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 23V4c0-2-3-2-3 0l-1 9-3 4-2 7M16 4c0-2 3-2 3 0l1 9 3 4 2 7"/>
+            <path d="m11 19 2-4V8m8 11-2-4V8M3 26l4-4 9 4-3 5Zm26 0-4-4-9 4 3 5Z"/>
           </svg>
         </span>
       </div>
 
       <h1 data-reveal>Prayer Support</h1>
-      <p class="hero-lede" data-reveal>Tell us what you are carrying and our prayer team will carry it with you. Not
-        once, and not generally, but by name, through every transfer, every wait, and every result, for as long as
-        your journey takes.</p>
+      <p class="hero-lede" data-reveal>Infertility brings questions, uncertainty, and moments when words are hard to find. Our prayer team is here to bring your hopes, fears, and deepest longings before God, trusting Him to meet you in every season. Whatever is weighing on your heart, there is a place for it here.</p>
 
       <div class="hero-actions" data-reveal>
         <a class="btn btn-peri" href="#ama-prayer-request">Submit a Prayer Request</a>
-        <a class="btn btn-ghost" href="#ama-prayer-team">Meet the Prayer Team</a>
       </div>
 
       <div class="hero-meta" data-reveal>
@@ -1463,6 +1484,41 @@
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
         </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRAYER LEADERS ============ -->
+  <section class="section" id="ama-prayer-team">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
+          </svg>
+          Meet our prayer leaders
+        </span>
+        <h2>The people praying <em>for you</em></h2>
+      </div>
+
+      <div class="leader-card" data-reveal>
+        <figure class="leader-photo">
+          <img src="https://ameliamolloysangels.com/wp-content/uploads/2026/06/IMG_7046-1-1.jpg" width="357" height="439" alt="Monty and Cathy Gonzales standing in front of angel wings" loading="lazy">
+        </figure>
+        <div class="letter">
+          <p>We feel so blessed and honored to serve as prayer leaders for Amelia Molloy&rsquo;s Angels. From the
+            beginning, we have seen God&rsquo;s hand over this mission, guiding it, protecting it, and using it to
+            bring hope to couples walking through infertility.</p>
+          <p>We believe deeply in the power of prayer and in a God who is near to the brokenhearted. It is a joy for us
+            to lift up every family, every decision, and every step this ministry takes, trusting that He is the One
+            who brings comfort, strength, and the courage to keep hoping.</p>
+          <p>Serving in this role is not just a responsibility, it is a calling we embrace with grateful hearts. We
+            pray that everything Amelia Molloy&rsquo;s Angels does continues to reflect God&rsquo;s love,
+            faithfulness, and compassion.</p>
+          <p class="leader-sign">With love,
+            <span>Cathy &amp; Monty Gonzales, Prayer Leaders</span>
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -1506,104 +1562,17 @@
     </div>
   </section>
 
-  <!-- ============ WHO IT IS FOR ============ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-          </svg>
-          Who it is for
-        </span>
-        <h2>You do not have to know <em>how to pray</em></h2>
-        <p>Or be sure what you believe, or have the words for it yet. Send us what you have.</p>
+  <!-- ============ PHOTO GALLERY ============ -->
+  <section class="section" aria-label="Prayer Support photo gallery">
+    <div class="wrap photo-gallery">
+      <div class="photo-track" id="prayer-support-photos" tabindex="0" role="region" aria-label="Photo gallery; scroll or use arrow keys to explore">
+        <figure class="photo-slide"><img src="https://ameliamolloysangels.com/wp-content/uploads/2024/08/Untitled-design-69.jpg" alt="A circle of hands holding one another in support" loading="lazy"></figure>
+        <figure class="photo-slide"><img src="https://ameliamolloysangels.com/wp-content/uploads/2024/08/IMG_0012.jpg" alt="An AMA comfort kit with a blanket, journal, socks, and thoughtful gifts" loading="lazy"></figure>
+        <figure class="photo-slide"><img src="https://ameliamolloysangels.com/wp-content/uploads/2024/08/Untitled-design-65.png" alt="Two wooden figures with a heart-shaped opening between them" loading="lazy"></figure>
+        <figure class="photo-slide"><img src="https://ameliamolloysangels.com/wp-content/uploads/2026/06/IMG_7046-1-1.jpg" alt="Monty and Cathy Gonzales in front of angel wings" loading="lazy"></figure>
       </div>
-
-      <div class="panel mist" data-reveal>
-        <div class="panel-grid">
-          <ul class="check-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Anyone facing infertility</strong>Whether you are at the beginning, years in, or deciding what comes next.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Partners and spouses</strong>Infertility is carried by two people, and the one who is not in the stirrups is often forgotten.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Families in the middle of a decision</strong>A next cycle, a change of clinic, a move toward adoption, or a decision to stop.</span>
-            </li>
-          </ul>
-
-          <ul class="check-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Anyone grieving a loss</strong>A failed cycle, a miscarriage, a stillbirth, or an adoption that did not go through.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>Someone you love</strong>You can submit a request on another person&rsquo;s behalf, with or without using their name.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.3 2.4 2.4 4.8-5"/></svg>
-              <span><strong>People with good news too</strong>Praise reports are welcome here. Our team has prayed through a lot of waiting and loves hearing how a story turned.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHAT WE PROVIDE ============ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-          </svg>
-          What we provide
-        </span>
-        <h2>What happens to your request</h2>
-        <p>What we promise you, and what we will never do with what you share.</p>
-      </div>
-
-      <div class="prayer-promises stagger" data-reveal>
-        <div class="tile">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-6.5-4-6.5-8.5A6.5 6.5 0 0 1 12 6.4a6.5 6.5 0 0 1 6.5 5.6c0 4.5-6.5 8.5-6.5 8.5Z"/><path d="M12 3.5v2.9"/></svg>
-          </span>
-          <h3>It goes to the prayer team</h3>
-          <p>Your request is passed to the people who pray for this ministry and for the families in it. It is not
-            read aloud from a stage or posted anywhere.</p>
-        </div>
-        <div class="tile">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3 1.8"/></svg>
-          </span>
-          <h3>It keeps going</h3>
-          <p>You are not prayed for once and crossed off a list. Families stay on the team&rsquo;s hearts through the
-            whole journey, including the long quiet stretches.</p>
-        </div>
-        <div class="tile">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5"/><path d="M8.5 10.5V7.8a3.5 3.5 0 0 1 7 0v2.7"/></svg>
-          </span>
-          <h3>It stays private</h3>
-          <p>Prayer requests are confidential. We do not share names, details, or stories publicly, and we will never
-            use your request in fundraising.</p>
-        </div>
-        <div class="tile">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10.5H8.5L4 19.5Z"/><path d="M8.5 9h7M8.5 12.2h4.5"/></svg>
-          </span>
-          <h3>You decide what comes back</h3>
-          <p>Some families want to hear from us and some want to be left in peace. Tell us which, and we will respect
-            it without needing a reason.</p>
-        </div>
-      </div>
+      <button class="photo-arrow photo-prev" type="button" aria-label="Previous photo" aria-controls="prayer-support-photos" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m15 4-8 8 8 8"/></svg></button>
+      <button class="photo-arrow photo-next" type="button" aria-label="Next photo" aria-controls="prayer-support-photos" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg></button>
     </div>
   </section>
 
@@ -1617,7 +1586,7 @@
           </svg>
           Submit a request
         </span>
-        <h2>Share your prayer request</h2>
+        <h2>You don&rsquo;t have to face this season without prayer</h2>
         <p>As much or as little as you want to say. A single sentence is enough.</p>
       </div>
 
@@ -1636,7 +1605,6 @@
 
           <div class="hero-actions actions-left gap-lg">
             <a class="btn btn-peri" href="mailto:info@ameliamolloysangels.com?subject=Prayer%20Request">Send a Prayer Request</a>
-            <a class="btn btn-ghost" href="tel:+16615934777">Call the Office</a>
           </div>
         </div>
 
@@ -1680,38 +1648,6 @@
               </span>
             </li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRAYER LEADERS ============ -->
-  <section class="section" id="ama-prayer-team">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-          </svg>
-          Meet our prayer leaders
-        </span>
-        <h2>The people praying <em>for you</em></h2>
-      </div>
-
-      <div class="leader-card" data-reveal>
-        <div class="letter">
-          <p>We feel so blessed and honored to serve as prayer leaders for Amelia Molloy&rsquo;s Angels. From the
-            beginning, we have seen God&rsquo;s hand over this mission, guiding it, protecting it, and using it to
-            bring hope to couples walking through infertility.</p>
-          <p>We believe deeply in the power of prayer and in a God who is near to the brokenhearted. It is a joy for us
-            to lift up every family, every decision, and every step this ministry takes, trusting that He is the One
-            who brings comfort, strength, and the courage to keep hoping.</p>
-          <p>Serving in this role is not just a responsibility, it is a calling we embrace with grateful hearts. We
-            pray that everything Amelia Molloy&rsquo;s Angels does continues to reflect God&rsquo;s love,
-            faithfulness, and compassion.</p>
-          <p class="leader-sign">With love,
-            <span>Cathy &amp; Monty Gonzales, Prayer Leaders</span>
-          </p>
         </div>
       </div>
     </div>
@@ -1843,27 +1779,6 @@
     </div>
   </section>
 
-  <!-- ============ CLOSING CTA ============ -->
-  <section class="cta-final">
-    <div class="wrap">
-      <div class="cta-card" data-reveal>
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-7.5-4.6-9.8-9A5.6 5.6 0 0 1 12 6.4 5.6 5.6 0 0 1 21.8 12c-2.3 4.4-9.8 9-9.8 9Z"/>
-          </svg>
-          You are already on our hearts
-        </span>
-        <h2>Let us pray <em>with you</em></h2>
-        <p>You do not have to be at the end of your rope to ask, and you do not have to explain yourself. Send us one
-          line and it will be prayed over.</p>
-        <div class="cta-actions">
-          <a class="btn btn-solid-white" href="#ama-prayer-request">Submit a Request</a>
-          <a class="btn btn-outline-white" href="/our-programs/">See All Programs</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <script>
@@ -1890,4 +1805,26 @@
   }
 
   amaProgInitReveal();
+
+
+  document.querySelectorAll('.ama-prog .photo-gallery').forEach(function (gallery) {
+    var track = gallery.querySelector('.photo-track');
+    var prev = gallery.querySelector('.photo-prev');
+    var next = gallery.querySelector('.photo-next');
+    function update() {
+      prev.disabled = track.scrollLeft < 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    }
+    function move(direction) {
+      var step = track.querySelector('.photo-slide').getBoundingClientRect().width + 16;
+      track.scrollBy({ left: direction * step,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }
+    prev.hidden = next.hidden = false;
+    prev.addEventListener('click', function () { move(-1); });
+    next.addEventListener('click', function () { move(1); });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
 </script>

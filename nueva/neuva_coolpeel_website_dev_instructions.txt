@@ -1,0 +1,81 @@
+Website instructions � add CoolPeel® across neuvaaesthetics.com
+
+For: Neuva Aesthetics web developer From: Caesar Mazzeo, Neuva Aesthetics Priority: Please have this live before Monday, Oct 26, 2026, 6:15 PM PT � our CoolPeel launch reel posts then and sends people to the site. Send Caesar a preview link before go-live if possible.
+
+Background � read ?rst
+
+& Neuva o?ers CoolPeel® CO2 laser resurfacing, performed on the Cartessa Tetra PRO platform (full device name: DEKA SmartXide Tetra PRO). Use "Tetra PRO" everywhere � the older "SmartXide Tetra" name on the Face page is outdated.
+& The site already has a short CoolPeel block buried on the Face page under the misspelled heading "C02 Laser Peel." This job upgrades that block, gives CoolPeel its own page, and links it from every appropriate section � it is not a from-scratch add.
+& Use ONLY the copy supplied in this document. Do not add claims, treatment times, session counts, or pricing � no price for CoolPeel anywhere on the site (pricing is set at consultation).
+& Imagery: only Neuva's own photos, or manufacturer assets supplied by Cartessa/DEKA for practice use. Never use another clinic's patient photos or stock "laser treatment" photos of other devices.
+
+1. NEW dedicated page: /coolpeel/
+
+Create a standalone CoolPeel page (model it on /injectables-bakers?eld/) so Instagram and Google have a direct landing page.
+& URL: /coolpeel/
+& SEO title: CoolPeel® CO2 Laser Resurfacing in Bakers?eld, CA | Neuva Aesthetics
+& Meta description: CoolPeel CO2 laser resurfacing at Neuva Aesthetics in Bakers?eld smooths texture, evens tone, and fades sun damage � with just a few days of redness instead of weeks of downtime. Named NewBeauty's Best CO2 Laser Treatment 2023, 2024, and 2025. Call/Text 661-323-2884.
+& H1: CoolPeel® CO2 Laser Resurfacing
+& Page copy (paste as-is):
+
+Summer left its mark. Let's take it o?.
+
+CoolPeel CO2 laser resurfacing smooths texture, evens tone, and fades sun damage � with just a few days of redness instead of weeks of downtime.
+
+At Neuva Aesthetics, CoolPeel is performed on the Cartessa Tetra PRO platform (DEKA SmartXide Tetra PRO).
+?? CoolPeel was named NewBeauty's Best CO2 Laser Treatment in 2023, 2024, and 2025.
+
+Fall is laser season. Book your series now and start the new year with your best skin. Your provider will con?rm the right plan for your skin at your consultation.
+?? Call/Text 661-323-2884 or DM us to book ?? Neuva Aesthetics | 1801 16th St, Suite C, Bakers?eld, CA
+
+Individual results vary.
+
+& CTA buttons on the page: "Call/Text 661-323-2884" (tel: link) and a link to /contact-us/.
+& Image alt text (any device image used): "Cartessa Tetra PRO CoolPeel CO2 laser at Neuva Aesthetics, Bakers?eld."
+
+2. Face page (/face/) � ?x the existing block
+
+& Rename the "C02 Laser Peel" heading to "CoolPeel® CO2 Laser Resurfacing" (note: CO2 with the letter O, and ?x the zero typo everywhere it appears).
+& Replace "SmartXide Tetra CO2 laser" with "Cartessa Tetra PRO (DEKA SmartXide Tetra PRO)" in the "How Does it Work?" text.
+& Add the award line: "Named NewBeauty's Best CO2 Laser Treatment in 2023, 2024, and 2025."
+& Shorten the block to a summary and add a "Learn more about CoolPeel" link to the new
+/coolpeel/ page (avoid duplicating the full page copy in two places).
+
+3. Homepage (/)
+
+& In the Face category section/teaser, add CoolPeel as a named treatment linking to /coolpeel/ (alongside the existing Face treatments), so it is discoverable from the home page.
+& Optional while the fall campaign runs: a slim banner � "Fall is laser season ?? CoolPeel�
+CO2 laser resurfacing is here � NewBeauty's Best CO2 Laser Treatment 2023�2025" � linking to /coolpeel/. Coordinate with Caesar before adding the banner.
+
+4. Navigation
+
+& Add "CoolPeel�" to the main menu under Face (or Services, however the menu is structured), linking to /coolpeel/.
+& Add CoolPeel to the footer services/treatments list, if one exists, linking to /coolpeel/.
+& 
+5. Before & After page (/before-after/)
+
+& Make sure the existing CoolPeel entry is labeled "CoolPeel� CO2 Laser Resurfacing" and links to /coolpeel/.
+& The CoolPeel entry's video slot has been blank � either embed a working video (Neuva's own footage or the Cartessa-supplied practice video only) or remove the empty player. Do not leave a broken/blank embed live.
+& Keep "Individual results vary" with the gallery.
+
+6. Contact page (/contact-us/) and booking
+
+& Add "CoolPeel� CO2 Laser Resurfacing" to any services/treatments list, dropdown, or inquiry options so patients can name it when they reach out.
+
+7. Promos page (/promos/) � no change
+
+& Do NOT add CoolPeel pricing or a CoolPeel special � none exists. Leave this page as-is unless Caesar gives you a speci?c o?er.
+
+8. Men page (/men/) � optional
+
+& If the page lists face treatments, add a CoolPeel link to /coolpeel/. Low priority; skip if it doesn't ?t the page layout.
+
+9. Final checks before go-live
+
+& "Tetra PRO" (not "SmartXide Tetra" alone) and "CO2" (not "C02") spelled correctly site-wide for CoolPeel.
+& Award years read exactly: 2023, 2024, and 2025.
+& Phone number everywhere: 661-323-2884. Address: 1801 16th St, Suite C, Bakers?eld, CA 93301.
+& No CoolPeel price appears anywhere.
+& All new links work (/coolpeel/ from Face page, homepage, menu, footer, Before & After).
+& Send Caesar the preview link for a quick approval before publishing, and con?rm back once it's live.
+Questions � call/text Caesar at 661-323-2884.
