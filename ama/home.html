@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-10-30a -->
+<!-- webhook retrigger 2026-10-30-seo-a -->
 <style>
   /* Single-family imports with NO "&" - WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -253,6 +253,7 @@
 
   .ama-home .hero-problem {
     max-width: 650px;
+    font-size: 2em;
     color: var(--ink) !important;
   }
 
@@ -1210,6 +1211,20 @@
       animation: none !important;
     }
   }
+  /* SEO hierarchy uses the approved visual title and a quiet, readable eyebrow. */
+  .ama-home .seo-eyebrow {
+    display: block;
+    font-family: "Work Sans", sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.65;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--peri-deep) !important;
+    margin: 0 0 12px;
+    opacity: 1;
+  }
+  .ama-home .inline-link { color: var(--peri-deep) !important; text-decoration: underline; text-underline-offset: 3px; }
 </style>
 
 <main class="ama-home">
@@ -1221,10 +1236,11 @@
         <div class="hero-copy">
           <div class="hero-body">
             <div class="hero-text">
-              <h1 class="hero-problem" data-reveal>
+              <h1 class="eyebrow seo-eyebrow">Infertility Nonprofit in Bakersfield, CA</h1>
+              <h2 class="hero-problem" data-reveal>
                 <span class="problem-number">1 in 6</span>
                 <span class="problem-copy">people struggle with infertility</span>
-              </h1>
+              </h2>
               <div class="hero-vision" data-reveal>
                 <span class="eyebrow">
                   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -1327,13 +1343,16 @@
           </span>
           <h2 data-reveal>Hope, connection, and a path to parenthood</h2>
           <div data-reveal>
-            <p>Amelia Molloy&rsquo;s Angels is dedicated to helping individuals and families overcome the emotional and
-              financial challenges of infertility by providing compassionate support, meaningful resources, and
-              financial assistance. Through family grants, support programs, and a caring community, we empower
+            <p>Amelia Molloy&rsquo;s Angels is an infertility nonprofit in Bakersfield, CA, dedicated to helping
+              individuals and families overcome the emotional and financial challenges of infertility by providing compassionate support, meaningful resources, and
+              financial assistance. Through <a class="inline-link" href="/our-programs/family-grants/">family grants</a>,
+              <a class="inline-link" href="/our-programs/support-group/">support groups</a>, and a caring community, we empower
               families with hope, connection, and opportunities to pursue the path to parenthood that is right for
               them.</p>
             <p>We believe everyone deserves the chance to build the family they dream of, and we are committed to
-              walking beside them every step of the way.</p>
+              walking beside them every step of the way. For individuals and couples navigating infertility in
+              Bakersfield, CA, including those pursuing IVF, our Christian-centered community offers hope,
+              connection, and practical support.</p>
             <a class="btn btn-ghost" href="/get-involved">Get Involved</a>
           </div>
         </div>
@@ -1493,14 +1512,14 @@
           <details class="faq-item" name="ama-home-faq">
             <summary><span class="faq-question">Do you offer fertility grants?</span></summary>
             <div class="faq-answer">
-              <p>Yes. We award Family Grants to eligible couples to help ease the financial burden of infertility. Grants may be used toward fertility treatments such as IVF, gestational surrogacy, or adoption-related expenses. Grant applications are accepted during designated application periods each year, and eligibility requirements apply.</p>
+              <p>Yes. We award <a class="inline-link" href="/our-programs/family-grants/">Family Grants</a> to eligible couples to help ease the financial burden of infertility. Grants may be used toward fertility treatments such as IVF, gestational surrogacy, or adoption-related expenses. Grant applications are accepted during designated application periods each year, and eligibility requirements apply.</p>
             </div>
           </details>
 
           <details class="faq-item" name="ama-home-faq">
             <summary><span class="faq-question">Do you offer support groups?</span></summary>
             <div class="faq-answer">
-              <p>Yes! We host free monthly support groups for individuals and couples navigating infertility. Our support groups provide a safe, welcoming space to connect with others who understand the journey, share experiences, receive encouragement, and be reminded that you are never alone.</p>
+              <p>Yes! We host free <a class="inline-link" href="/our-programs/support-group/">monthly support groups</a> for individuals and couples navigating infertility. Our support groups provide a safe, welcoming space to connect with others who understand the journey, share experiences, receive encouragement, and be reminded that you are never alone.</p>
             </div>
           </details>
         </div>
