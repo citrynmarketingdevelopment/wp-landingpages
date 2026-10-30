@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-10-30b -->
+<!-- webhook retrigger 2026-10-30-programs-seo-a -->
 <style>
   /* Single-family imports with NO "&" - WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -407,15 +407,15 @@
     height: 36px;
   }
 
-  .ama-prog .prog-hero h1 {
+  .ama-prog .prog-hero .hero-title {
     font-size: clamp(2.6rem, 6.4vw, 4.4rem);
     font-weight: 600;
     line-height: 1.08;
     color: var(--ink) !important;
-    margin-top: 18px;
+    margin-top: 8px;
   }
 
-  .ama-prog .prog-hero h1 em {
+  .ama-prog .prog-hero .hero-title em {
     font-style: italic;
     color: var(--peri-deep) !important;
   }
@@ -1235,7 +1235,7 @@
       font-size: .98rem;
     }
 
-    .ama-prog .prog-hero h1 {
+    .ama-prog .prog-hero .hero-title {
       font-size: clamp(2.1rem, 9vw, 2.8rem);
     }
 
@@ -1345,6 +1345,19 @@
       animation: none !important;
     }
   }
+  /* A subtle SEO H1; the approved large title keeps its own styling. */
+  .ama-prog .seo-eyebrow {
+    display: block;
+    font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.65;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--peri-deep) !important;
+    margin: 18px 0 0;
+    opacity: 1;
+  }
 </style>
 
 <style>
@@ -1444,7 +1457,7 @@
   <section class="prog-hero">
     <div class="wrap">
       <span class="crumb" data-reveal>
-        <a href="/our-programs/">Programs</a>
+        <a href="/">Home</a><span aria-hidden="true"> / </span><a href="/our-programs/">Programs</a>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
         Prayer Support
       </span>
@@ -1458,7 +1471,8 @@
         </span>
       </div>
 
-      <h1 data-reveal>Prayer Support</h1>
+      <h1 class="eyebrow seo-eyebrow">Infertility Prayer Support in Bakersfield, CA</h1>
+      <h2 class="hero-title" data-reveal>Prayer Support</h2>
       <p class="hero-lede" data-reveal>Infertility brings questions, uncertainty, and moments when words are hard to find. Our prayer team is here to bring your hopes, fears, and deepest longings before God, trusting Him to meet you in every season. Whatever is weighing on your heart, there is a place for it here.</p>
 
       <div class="hero-actions" data-reveal>
@@ -1536,7 +1550,8 @@
           </span>
           <h2 data-reveal>Someone is praying for you <em>by name</em></h2>
           <div data-reveal>
-            <p>We understand that navigating infertility is a deeply personal and challenging journey. We also believe
+            <p>Our infertility prayer support in Bakersfield, CA offers spiritual encouragement through a deeply
+              personal and challenging journey. We believe
               in the power of community, and we would be honored to lift you up in our thoughts and prayers.</p>
             <p>Amelia Molloy&rsquo;s Angels has a dedicated team that prays continuously for those facing infertility
               and for this organization as a whole. We know firsthand how prayer sustained us through the most
@@ -1713,7 +1728,8 @@
           <details class="faq-item" name="ama-prayer-faq">
             <summary><span class="faq-question">How do I join the prayer team?</span></summary>
             <div class="faq-answer">
-              <p>Email us and say so. Our prayer team is made up of people who understand what this journey costs and
+              <p><a class="inline-link" href="/get-involved/prayer-team/">Learn about joining our prayer team</a> or email us.
+                Our prayer team is made up of people who understand what this journey costs and
                 who are willing to keep showing up for families they may never meet.</p>
             </div>
           </details>
@@ -1744,7 +1760,7 @@
           <p>A hand-packed basket for the hardest days.</p>
         </a>
 
-        <a class="more-card" href="/our-programs/family-relief-fund/">
+        <a class="more-card" href="mailto:info@ameliamolloysangels.com?subject=Family%20Relief%20Fund%20Information">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/><path d="M12 16.6s-2.6-1.6-2.6-3.2a1.5 1.5 0 0 1 2.6-1 1.5 1.5 0 0 1 2.6 1c0 1.6-2.6 3.2-2.6 3.2Z"/></svg>
           </span>
@@ -1765,10 +1781,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20.5a5.5 5.5 0 0 1 11 0"/><path d="M16 5.6a3 3 0 0 1 0 5.8"/><path d="M17.5 14.4a5.5 5.5 0 0 1 3 4.9"/></svg>
           </span>
           <h3>Support Groups</h3>
-          <p>Talking With Angels, our free co-ed group.</p>
+          <p>Talking With Angels, our free support groups.</p>
         </a>
 
-        <a class="more-card" href="/our-programs/angels-of-comfort/">
+        <a class="more-card" href="/angels-of-comfort/">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.4" r="2"/><path d="M12 9.2c-2.1 0-3.8 1.7-3.8 3.8v7.5h7.6V13c0-2.1-1.7-3.8-3.8-3.8Z"/><path d="M8.2 13.6c-2-1-4.5-.7-5.5 1 1.6 1.4 3.9 1.6 5.5.7"/><path d="M15.8 13.6c2-1 4.5-.7 5.5 1-1.6 1.4-3.9 1.6-5.5.7"/></svg>
           </span>
