@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-10-30-programs-seo-a -->
+<!-- webhook retrigger 2026-10-30-programs-seo-b -->
 <style>
   /* Single-family imports with NO "&" - WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -1383,6 +1383,55 @@
     color: var(--peri-deep) !important;
     margin: 18px 0 0;
     opacity: 1;
+  }
+  /* Native scroll controls work when WordPress removes the optional page script.
+     Browsers without scroll buttons retain the visible scrollbar and native swipe. */
+  @supports selector(::scroll-button(right)) {
+    .ama-prog .photo-track::scroll-button(left),
+    .ama-prog .photo-track::scroll-button(right) {
+      content: none;
+      position: absolute;
+      top: calc(50% - 6px);
+      transform: translateY(-50%);
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #888;
+      color: #fff;
+      font: 32px/1 Arial, sans-serif;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .ama-prog .photo-gallery:has(.photo-next[hidden]) .photo-track::scroll-button(left) {
+      content: "‹" / "Previous photos";
+      left: 0;
+    }
+    .ama-prog .photo-gallery:has(.photo-next[hidden]) .photo-track::scroll-button(right) {
+      content: "›" / "Next photos";
+      right: 0;
+    }
+    .ama-prog .photo-track::scroll-button(left):disabled,
+    .ama-prog .photo-track::scroll-button(right):disabled {
+      background: #ddd;
+      cursor: default;
+    }
+    .ama-prog .photo-track::scroll-button(left):focus-visible,
+    .ama-prog .photo-track::scroll-button(right):focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 3px;
+    }
+    @media (max-width: 600px) {
+      .ama-prog .photo-track::scroll-button(left),
+      .ama-prog .photo-track::scroll-button(right) {
+        width: 30px;
+        height: 34px;
+        font-size: 26px;
+      }
+    }
   }
 </style>
 
