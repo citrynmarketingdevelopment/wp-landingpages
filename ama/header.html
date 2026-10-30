@@ -1,0 +1,137 @@
+<!-- AMA shared GitPress header v2026-10-30a -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700');
+  .dgs-gitpress-managed { margin: 0; }
+  .ama-site-header, .ama-site-header * { box-sizing: border-box; }
+  .ama-site-header {
+    --ama-ink: #3D3D58; --ama-accent: #6F74AE; --ama-line: #E7E8F5;
+    position: relative; z-index: 100; background: #fff; color: var(--ama-ink);
+    font: 500 13px/1.5 'Work Sans', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid var(--ama-line);
+  }
+  .ama-site-header a { color: inherit !important; text-decoration: none; }
+  .ama-site-header a:focus-visible, .ama-site-header summary:focus-visible {
+    outline: 3px solid #0E7162; outline-offset: 5px; border-radius: 3px;
+  }
+  .ama-header-inner {
+    width: min(calc(100% - 48px), 1240px); min-height: 88px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .ama-site-header .ama-brand { display: block; flex: 0 0 110px; line-height: 0; }
+  .ama-site-header .ama-brand img { display: block; width: 110px; height: auto; }
+  .ama-desktop-nav { margin-left: auto; }
+  .ama-site-header ul { list-style: none; margin: 0; padding: 0; }
+  .ama-site-header .ama-nav-list { display: flex; align-items: center; gap: 22px; }
+  .ama-site-header .ama-nav-list > li { position: relative; margin: 0; padding: 0; }
+  .ama-site-header .ama-nav-list > li > a,
+  .ama-site-header .ama-nav-group > summary {
+    min-height: 44px; display: flex; align-items: center; gap: 7px;
+    padding: 8px 0; cursor: pointer; white-space: nowrap;
+  }
+  .ama-site-header summary { list-style: none; }
+  .ama-site-header summary::-webkit-details-marker { display: none; }
+  .ama-nav-chevron {
+    width: 6px; height: 6px; border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg);
+  }
+  .ama-nav-group[open] > summary .ama-nav-chevron { transform: translateY(1px) rotate(225deg); }
+  .ama-site-header .ama-nav-list > li > a:hover,
+  .ama-site-header .ama-nav-group > summary:hover,
+  .ama-site-header .ama-nav-group[open] > summary { color: var(--ama-accent) !important; }
+  .ama-site-header .ama-nav-submenu {
+    position: absolute; top: calc(100% + 10px); left: -20px;
+    min-width: 232px; padding: 12px; background: #fff;
+    border: 1px solid var(--ama-line); border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(61,61,88,.1); z-index: 110;
+  }
+  .ama-site-header .ama-nav-submenu li { margin: 0; padding: 0; }
+  .ama-site-header .ama-nav-submenu a {
+    display: block; padding: 10px 12px; min-height: 40px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .ama-site-header .ama-nav-submenu a:hover { background: #F4F4FB; color: var(--ama-accent) !important; }
+  .ama-site-header .ama-header-donate {
+    flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+    min-width: 112px; min-height: 44px; padding: 10px 22px; border-radius: 28px;
+    background: var(--ama-accent); color: #fff !important;
+    font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  }
+  .ama-site-header .ama-header-donate:hover { background: #52568C; }
+  .ama-campaign {
+    background: #EAF4F1; color: #225F55; padding: 10px 24px;
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+    gap: 6px 16px; font-size: 12px; text-align: center;
+  }
+  .ama-campaign p { margin: 0; padding: 0; color: inherit !important; font: inherit; }
+  .ama-campaign strong { font-weight: 600; }
+  .ama-site-header .ama-campaign a {
+    font-weight: 600; text-decoration: underline; text-underline-offset: 3px;
+    min-height: 24px; display: inline-flex; align-items: center;
+  }
+  .ama-site-header .ama-mobile-menu { display: none; }
+  .ama-skip-link {
+    position: absolute; left: 16px; top: -120px; padding: 12px 20px;
+    background: #fff; border: 2px solid #0E7162; z-index: 200;
+  }
+  .ama-skip-link:focus { top: 8px; }
+  @media (max-width: 1120px) {
+    .ama-desktop-nav { display: none; }
+    .ama-header-inner { gap: 16px; min-height: 82px; }
+    .ama-site-header .ama-brand { flex-basis: 96px; }
+    .ama-site-header .ama-brand img { width: 96px; }
+    .ama-site-header .ama-header-donate { margin-left: auto; }
+    .ama-site-header .ama-mobile-menu { display: block; }
+    .ama-mobile-menu > summary {
+      width: 44px; height: 44px; cursor: pointer; display: grid; place-items: center;
+      border: 1px solid var(--ama-line); border-radius: 50%; background: #F9F9FD;
+    }
+    .ama-menu-symbol, .ama-menu-symbol::before, .ama-menu-symbol::after {
+      display: block; width: 18px; height: 2px; background: var(--ama-ink); position: relative;
+    }
+    .ama-menu-symbol::before, .ama-menu-symbol::after { content: ''; position: absolute; left: 0; }
+    .ama-menu-symbol::before { top: -6px; }
+    .ama-menu-symbol::after { top: 6px; }
+    .ama-mobile-menu[open] .ama-menu-symbol { background: transparent; }
+    .ama-mobile-menu[open] .ama-menu-symbol::before { top: 0; transform: rotate(45deg); }
+    .ama-mobile-menu[open] .ama-menu-symbol::after { top: 0; transform: rotate(-45deg); }
+    .ama-mobile-panel {
+      position: absolute; top: 82px; left: 0; right: 0; padding: 16px 24px 24px;
+      max-height: calc(100dvh - 100px); overflow-y: auto;
+      background: #fff; border-block: 1px solid var(--ama-line);
+      box-shadow: 0 18px 32px rgba(61,61,88,.1); z-index: 120;
+    }
+    .ama-site-header .ama-mobile-panel .ama-nav-list { display: block; }
+    .ama-site-header .ama-mobile-panel .ama-nav-list > li { border-bottom: 1px solid #F0F0F7; }
+    .ama-site-header .ama-mobile-panel .ama-nav-list > li > a,
+    .ama-site-header .ama-mobile-panel .ama-nav-group > summary {
+      min-height: 48px; padding: 12px 0; justify-content: space-between; font-size: 15px;
+    }
+    .ama-site-header .ama-mobile-panel .ama-nav-submenu {
+      position: static; min-width: 0; margin: 0 0 12px; padding: 0 0 0 12px;
+      background: #F9F9FD; border: 0; border-radius: 8px; box-shadow: none;
+    }
+    .ama-site-header .ama-mobile-panel .ama-nav-submenu a { white-space: normal; }
+  }
+  @media (max-width: 520px) {
+    .ama-header-inner { width: calc(100% - 32px); gap: 12px; }
+    .ama-site-header .ama-header-donate { min-width: 94px; padding-inline: 16px; }
+    .ama-campaign { padding: 9px 16px; font-size: 11px; gap: 3px 10px; }
+    .ama-campaign p { max-width: 310px; }
+  }
+</style>
+<header class="ama-site-header" id="ama-site-header">
+  <a class="ama-skip-link" href="#main">Skip to content</a>
+  <div class="ama-header-inner">
+    <a class="ama-brand" href="/" aria-label="Amelia Molloy's Angels home"><img src="https://ameliamolloysangels.com/wp-content/uploads/2022/06/Final-Logo-3.png" width="360" height="237" alt="Amelia Molloy's Angels" fetchpriority="high"></a>
+    <nav class="ama-desktop-nav" aria-label="Primary navigation"><ul class="ama-nav-list"><li><a href="/">Home</a></li><li><details class="ama-nav-group" name="ama-desktop-sections"><summary>About Us<span class="ama-nav-chevron" aria-hidden="true"></span></summary><ul class="ama-nav-submenu"><li><a href="/who-we-are/">Who We Are</a></li><li><a href="/our-team/">Our Team</a></li></ul></details></li><li><details class="ama-nav-group" name="ama-desktop-sections"><summary>Our Programs<span class="ama-nav-chevron" aria-hidden="true"></span></summary><ul class="ama-nav-submenu"><li><a href="/our-programs/">All Programs</a></li><li><a href="/our-programs/comfort-kits/">Comfort Kits</a></li><li><a href="/our-programs/family-grants/">Family Grants</a></li><li><a href="/our-programs/prayer-support/">Prayer Support</a></li><li><a href="/our-programs/support-group/">Support Groups</a></li><li><a href="/angels-of-comfort/">Angels of Comfort</a></li></ul></details></li><li><details class="ama-nav-group" name="ama-desktop-sections"><summary>Get Involved<span class="ama-nav-chevron" aria-hidden="true"></span></summary><ul class="ama-nav-submenu"><li><a href="/get-involved/">Get Involved</a></li><li><a href="/get-involved/comfort-kit-program/">Comfort Kit Program</a></li><li><a href="/get-involved/prayer-team/">Prayer Team</a></li><li><a href="/get-involved/what-do-you-love-doing/">Share Your Talents</a></li><li><a href="/get-involved/newsletter-sign-up/">Newsletter Sign Up</a></li><li><a href="/get-involved/partnership/">Partnerships</a></li><li><a href="/get-involved/partnership/corporate-partnership/">Corporate Partnership</a></li><li><a href="/get-involved/partnership/faith-partnership/">Faith Partnership</a></li><li><a href="/get-involved/partnership/other-partnership/">Other Partnership</a></li></ul></details></li><li><a href="/ways-to-give/">Ways to Give</a></li><li><a href="/contact-us/">Contact Us</a></li><li><a href="/resources/">Resources</a></li></ul></nav>
+    <a class="ama-header-donate" href="/donate/">Donate</a>
+    <details class="ama-mobile-menu" id="ama-mobile-menu">
+      <summary aria-label="Open or close navigation"><span class="ama-menu-symbol" aria-hidden="true"></span></summary>
+      <nav class="ama-mobile-panel" aria-label="Mobile navigation"><ul class="ama-nav-list"><li><a href="/">Home</a></li><li><details class="ama-nav-group" name="ama-mobile-sections"><summary>About Us<span class="ama-nav-chevron" aria-hidden="true"></span></summary><ul class="ama-nav-submenu"><li><a href="/who-we-are/">Who We Are</a></li><li><a href="/our-team/">Our Team</a></li></ul></details></li><li><details class="ama-nav-group" name="ama-mobile-sections"><summary>Our Programs<span class="ama-nav-chevron" aria-hidden="true"></span></summary><ul class="ama-nav-submenu"><li><a href="/our-programs/">All Programs</a></li><li><a href="/our-programs/comfort-kits/">Comfort Kits</a></li><li><a href="/our-programs/family-grants/">Family Grants</a></li><li><a href="/our-programs/prayer-support/">Prayer Support</a></li><li><a href="/our-programs/support-group/">Support Groups</a></li><li><a href="/angels-of-comfort/">Angels of Comfort</a></li></ul></details></li><li><details class="ama-nav-group" name="ama-mobile-sections"><summary>Get Involved<span class="ama-nav-chevron" aria-hidden="true"></span></summary><ul class="ama-nav-submenu"><li><a href="/get-involved/">Get Involved</a></li><li><a href="/get-involved/comfort-kit-program/">Comfort Kit Program</a></li><li><a href="/get-involved/prayer-team/">Prayer Team</a></li><li><a href="/get-involved/what-do-you-love-doing/">Share Your Talents</a></li><li><a href="/get-involved/newsletter-sign-up/">Newsletter Sign Up</a></li><li><a href="/get-involved/partnership/">Partnerships</a></li><li><a href="/get-involved/partnership/corporate-partnership/">Corporate Partnership</a></li><li><a href="/get-involved/partnership/faith-partnership/">Faith Partnership</a></li><li><a href="/get-involved/partnership/other-partnership/">Other Partnership</a></li></ul></details></li><li><a href="/ways-to-give/">Ways to Give</a></li><li><a href="/contact-us/">Contact Us</a></li><li><a href="/resources/">Resources</a></li></ul></nav>
+    </details>
+  </div>
+  <div class="ama-campaign">
+    <p><strong>A little local love. A whole lot of hope.</strong> Gift cards from Butcher Block Quality Meats help families facing infertility.</p>
+    <a href="https://ameliamolloysangels.networkforgood.com/projects/308696-together-with-local-butch-block-quality-meats-fundraiser">Purchase a gift card</a>
+  </div>
+</header>
