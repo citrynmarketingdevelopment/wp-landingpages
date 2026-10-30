@@ -1,4 +1,4 @@
-<!-- webhook retrigger 2026-09-17a -->
+<!-- webhook retrigger 2026-10-30-seo-a -->
 <style>
   /* Single-family imports with NO "&" - WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -407,15 +407,15 @@
     height: 36px;
   }
 
-  .ama-prog .prog-hero h1 {
+  .ama-prog .prog-hero .hero-title {
     font-size: clamp(2.6rem, 6.4vw, 4.4rem);
     font-weight: 600;
     line-height: 1.08;
     color: var(--ink) !important;
-    margin-top: 18px;
+    margin-top: 8px;
   }
 
-  .ama-prog .prog-hero h1 em {
+  .ama-prog .prog-hero .hero-title em {
     font-style: italic;
     color: var(--peri-deep) !important;
   }
@@ -1235,7 +1235,7 @@
       font-size: .98rem;
     }
 
-    .ama-prog .prog-hero h1 {
+    .ama-prog .prog-hero .hero-title {
       font-size: clamp(2.1rem, 9vw, 2.8rem);
     }
 
@@ -1419,6 +1419,19 @@
       grid-template-columns: 1fr;
     }
   }
+  /* SEO hierarchy uses the approved visual title and a quiet, readable eyebrow. */
+  .ama-prog .seo-eyebrow {
+    display: block;
+    font-family: "Work Sans", sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.65;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--peri-deep) !important;
+    margin: 18px 0 0;
+    opacity: 1;
+  }
 </style>
 
 <main class="ama-prog">
@@ -1427,7 +1440,7 @@
   <section class="prog-hero">
     <div class="wrap">
       <span class="crumb" data-reveal>
-        <a href="/our-programs/">Programs</a>
+        <a href="/">Home</a><span aria-hidden="true"> / </span><a href="/our-programs/">Programs</a>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
         Gift of Family Grants
       </span>
@@ -1442,7 +1455,8 @@
         </span>
       </div>
 
-      <h1 data-reveal>Gift of Family Grants</h1>
+      <h1 class="eyebrow seo-eyebrow">Family Grants in Bakersfield, CA</h1>
+      <h2 class="hero-title" data-reveal>Gift of Family Grants</h2>
       <p class="hero-lede" data-reveal>When hopeful parents learn what treatment costs, the dream can start to feel out
         of reach. Our grants exist to close that distance, paid directly to your clinic, agency, or surrogacy
         professional so the next step is actually possible.</p>
@@ -1491,7 +1505,9 @@
             <p>The inability to conceive is stressful and emotional enough on its own. Then the estimates arrive, and
               for most families the number is not something a savings account absorbs. We established the Gift of
               Family Grant so that money is not the reason a family stops trying.</p>
-            <p>Grants can be awarded up to <strong>$25,000</strong> when funding permits, and are distributed to the
+            <p>Our family grants in Bakersfield, CA help eligible Kern County couples.
+              We offer IVF support in Bakersfield, CA through grants toward treatment costs.
+              Grants can be awarded up to <strong>$25,000</strong> when funding permits, and are distributed to the
               IVF, surrogacy, or adoption professionals you have chosen. Awards are held for up to a year, and
               invoices from your facility can be submitted to us for payment as costs come due.</p>
             <p>Both the number of grants and the size of each one depend on what our community raises during the
@@ -1555,16 +1571,16 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 16.8s-3.4-2.1-3.4-4.2a2 2 0 0 1 3.4-1.4 2 2 0 0 1 3.4 1.4c0 2.1-3.4 4.2-3.4 4.2Z"/></svg>
           </span>
           <h3>Gestational surrogacy</h3>
-          <p>Agency and professional costs associated with pursuing surrogacy, sent directly to the agency
-            coordinating your journey.</p>
+          <p>Surrogacy support in Bakersfield, CA helps eligible couples with agency and professional costs,
+            with grant payments sent directly to the professionals coordinating your journey.</p>
         </div>
         <div class="tile">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20.5v-9.8L12 5.2l7.5 5.5v9.8Z"/><path d="M10 20.5v-5h4v5"/><path d="M12 9.2v2.4M10.8 10.4h2.4"/></svg>
           </span>
           <h3>Adoption</h3>
-          <p>Adoption-related expenses, paid to the adoption agency handling your placement so the process can keep
-            moving forward.</p>
+          <p>Adoption support in Bakersfield, CA helps eligible couples with adoption-related expenses, paid
+            to the agency handling your placement so the process can keep moving forward.</p>
         </div>
       </div>
     </div>
@@ -1666,9 +1682,9 @@
       <div class="request-block gap-lg">
         <div class="form-slot" data-reveal>
           <h3>Ready to start, or have a question first?</h3>
-          <p>Application forms, guidelines, the file submission drive, and the residency appointment link are sent to
-            every applicant when a cycle opens. Contact us and we will get you what you need, walk you through the
-            timeline, and answer anything the application does not cover.</p>
+          <p>Download the application materials and use the file submission link below when applications are open.
+            Contact us to confirm the current timeline, arrange residency verification, or ask anything the
+            application does not cover.</p>
           <p class="gap-sm">Please make sure your application is complete before the closing date. Incomplete
             submissions cannot be reviewed in that cycle, though you are always welcome in the next one.</p>
 
@@ -1677,8 +1693,8 @@
           </div>
 
           <div class="hero-actions actions-left gap-lg">
-            <a class="btn btn-peri" href="mailto:info@ameliamolloysangels.com?subject=Gift%20of%20Family%20Grant%20Application">Request Application Materials</a>
-            <a class="btn btn-ghost" href="tel:+16615934777">Call With Questions</a>
+            <a class="btn btn-peri" href="https://ameliamolloysangels.com/wp-content/uploads/2024/07/Application-Family-Grant-DMR-Clean-07212024.pdf">Application Forms</a>
+            <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSf9xto8nDE5VKtEJbDj_pfBTJOR9WFXjcXwAvUpTIcVR49yVA/viewform">File Submissions</a>
           </div>
         </div>
 
@@ -1783,8 +1799,8 @@
           <details class="faq-item" name="ama-grant-faq">
             <summary><span class="faq-question">What counts as a permanent resident of the United States?</span></summary>
             <div class="faq-answer">
-              <p>Natural-born citizens and immigrants holding a green card. Work visas and student visas do not
-                qualify as permanent residency for this program.</p>
+              <p>For this program, applicants must be U.S. citizens or legal permanent residents (green card holders).
+                Work visas and student visas do not satisfy the permanent-residency requirement.</p>
             </div>
           </details>
 
@@ -1799,8 +1815,7 @@
           <details class="faq-item" name="ama-grant-faq">
             <summary><span class="faq-question">What if I need help before the next cycle opens?</span></summary>
             <div class="faq-answer">
-              <p>Tell us. Our <a class="inline-link" href="/our-programs/family-relief-fund/">Family Relief Fund</a> is
-                available year round for everyday bills, and our <a class="inline-link" href="/our-programs/support-group/">support
+              <p>Tell us. Our <a class="inline-link" href="/our-programs/support-group/">support
                 groups</a>, <a class="inline-link" href="/our-programs/prayer-support/">prayer team</a>, and
                 <a class="inline-link" href="/our-programs/comfort-kits/">Comfort Kits</a> are open to you at any point,
                 grant or no grant.</p>
@@ -1833,13 +1848,6 @@
           <p>A hand-packed basket for the hardest days.</p>
         </a>
 
-        <a class="more-card" href="/our-programs/family-relief-fund/">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/><path d="M12 16.6s-2.6-1.6-2.6-3.2a1.5 1.5 0 0 1 2.6-1 1.5 1.5 0 0 1 2.6 1c0 1.6-2.6 3.2-2.6 3.2Z"/></svg>
-          </span>
-          <h3>Family Relief Fund</h3>
-          <p>Help with everyday bills while you are in treatment.</p>
-        </a>
 
         <a class="more-card" href="/our-programs/prayer-support/">
           <span class="ico" aria-hidden="true">
@@ -1854,10 +1862,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20.5a5.5 5.5 0 0 1 11 0"/><path d="M16 5.6a3 3 0 0 1 0 5.8"/><path d="M17.5 14.4a5.5 5.5 0 0 1 3 4.9"/></svg>
           </span>
           <h3>Support Groups</h3>
-          <p>Talking With Angels, our free co-ed group.</p>
+          <p>Talking With Angels, our free support groups.</p>
         </a>
 
-        <a class="more-card" href="/our-programs/angels-of-comfort/">
+        <a class="more-card" href="/angels-of-comfort/">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.4" r="2"/><path d="M12 9.2c-2.1 0-3.8 1.7-3.8 3.8v7.5h7.6V13c0-2.1-1.7-3.8-3.8-3.8Z"/><path d="M8.2 13.6c-2-1-4.5-.7-5.5 1 1.6 1.4 3.9 1.6 5.5.7"/><path d="M15.8 13.6c2-1 4.5-.7 5.5 1-1.6 1.4-3.9 1.6-5.5.7"/></svg>
           </span>
