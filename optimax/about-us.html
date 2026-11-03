@@ -1,7 +1,13 @@
-<!-- Optimax About Us | GitPress theme_wrapped | revision 2026-11-03-about-v1 -->
+<!-- Optimax About Us | GitPress theme_wrapped | revision 2026-11-03-about-v2 -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@800&family=Titillium+Web:wght@600&family=Arimo:wght@400&family=Inter:wght@400;500&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap');
 /* GitPress body partial. WordPress owns the header, footer and Gravity Forms. */
+/* The native containers already span the page. Avoid 100vw including the scrollbar. */
+body.page-id-72331.dgs-theme-wrapped.dgs-full-width-content .dgs-gitpress-full-width { width:100% !important; max-width:100% !important; margin-left:0 !important; margin-right:0 !important; }
+/* GitPress otherwise removes the padding of every first-child section. */
+.opx-about .opx-hero { padding-top:100px !important; }
+@media(max-width:980px) { .opx-about .opx-hero { padding-top:82px !important; } }
+@media(max-width:767px) { .opx-about .opx-hero { padding-top:46px !important; } }
 .opx-about { color:#000; background:#fff; font:500 14px/1.7 'Open Sans',Arial,sans-serif; isolation:isolate; }
 .opx-about *, .opx-about *::before, .opx-about *::after { box-sizing:border-box; }
 .opx-about h1,.opx-about h2,.opx-about h3,.opx-about h4,.opx-about p { margin:0; }
@@ -86,7 +92,7 @@
  .opx-about .opx-form { padding:24px; }
 }
 </style>
-<main class="opx-about" data-version="2026-11-03-about-v1">
+<main class="opx-about" data-version="2026-11-03-about-v2">
  <section class="opx-hero" aria-labelledby="opx-about-title"><div class="opx-wrap"><h1 id="opx-about-title">About Optimax Consulting Services</h1><a class="opx-consult" href="/contact-us/">Free Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></a></div></section>
  <div class="opx-values opx-wrap" aria-label="Our values"><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Passion</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Integrity</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Customer Driven</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Innovation</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Diversity &amp; Inclusion</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Continuous Learning</span></div></div>
  <section class="opx-intro opx-wrap" aria-label="About our company"><div><img class="opx-office-photo" src="https://optimaxcs.net/wp-content/uploads/2026/04/optimax-orange-county.webp" alt="Palm-lined Southern California street at sunset" width="700" height="620" decoding="async"></div><div class="opx-history"><div class="opx-history-copy"><p>Optimax Consulting Services, established in 2011, boasts a powerhouse of industry professionals with decades of combined experience. Our team’s deep expertise spans consulting, implementation, support, and product management for Practice Management and Electronic Medical Records systems. We partner with a diverse range of practices nationwide, offering comprehensive revenue cycle management, consulting, and HR services to maximize revenue efficiency. We leverage our team’s experience, refined processes, and advanced technology to streamline practice operations and enhance revenue capture.</p>
