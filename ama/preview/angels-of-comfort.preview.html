@@ -15,7 +15,7 @@
 <!-- ==========================================================================
      GENERATED FILE - DO NOT EDIT. Edit ama/our-programs/angels-of-comfort.html instead, then re-run:
          python ama/preview/build.py
-     Source marker: webhook retrigger 2026-09-17a
+     Source marker: webhook retrigger 2026-11-03-journey-angel-form-b
      ==========================================================================
      This preview has no Divi and no GitPress managed header/footer, so it is
      a layout and content check only. Divi ships global !important rules on
@@ -29,7 +29,7 @@
      in ama/ keep the real WordPress permalinks.
 -->
 
-<!-- webhook retrigger 2026-09-17a -->
+<!-- webhook retrigger 2026-11-03-journey-angel-form-b -->
 <style>
   /* Single-family imports with NO "&" - WordPress encodes "&" to "&amp;",
      which breaks multi-family @import URLs on the live site. */
@@ -438,15 +438,15 @@
     height: 36px;
   }
 
-  .ama-prog .prog-hero h1 {
+  .ama-prog .prog-hero .hero-title {
     font-size: clamp(2.6rem, 6.4vw, 4.4rem);
     font-weight: 600;
     line-height: 1.08;
     color: var(--ink) !important;
-    margin-top: 18px;
+    margin-top: 8px;
   }
 
-  .ama-prog .prog-hero h1 em {
+  .ama-prog .prog-hero .hero-title em {
     font-style: italic;
     color: var(--peri-deep) !important;
   }
@@ -1266,7 +1266,7 @@
       font-size: .98rem;
     }
 
-    .ama-prog .prog-hero h1 {
+    .ama-prog .prog-hero .hero-title {
       font-size: clamp(2.1rem, 9vw, 2.8rem);
     }
 
@@ -1376,12 +1376,38 @@
       animation: none !important;
     }
   }
+  /* A subtle SEO H1; the approved large title keeps its own styling. */
+  .ama-prog .seo-eyebrow {
+    display: block;
+    font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.65;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--peri-deep) !important;
+    margin: 18px 0 0;
+    opacity: 1;
+  }
 </style>
 
 <style>
   /* ==========================================================================
      PAGE STYLES - Angels of Comfort only.
      ========================================================================== */
+
+  .ama-prog .journey-angel-form {
+    scroll-margin-top: 120px;
+  }
+
+  .ama-prog .journey-angel-form iframe {
+    display: block;
+    width: 450px;
+    max-width: 100%;
+    height: 550px;
+    margin: 0 auto;
+    border: 0;
+  }
 
   .ama-prog .moments {
     display: grid;
@@ -1515,7 +1541,7 @@
     display: block;
   }
 
-  .ama-prog .prog-hero h1 {
+  .ama-prog .prog-hero .hero-title {
     margin-top: 4px;
   }
 
@@ -1548,7 +1574,7 @@
   <section class="prog-hero">
     <div class="wrap">
       <span class="crumb" data-reveal>
-        <a href="our-programs.preview.html">Programs</a>
+        <a href="home.preview.html">Home</a><span aria-hidden="true"> / </span><a href="our-programs.preview.html">Programs</a>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
         Angels of Comfort
       </span>
@@ -1559,7 +1585,8 @@
         </span>
       </div>
 
-      <h1 data-reveal>Angels of Comfort</h1>
+      <h1 class="eyebrow seo-eyebrow">One-on-One Infertility Support in Bakersfield, CA</h1>
+      <h2 class="hero-title" data-reveal>Angels of Comfort</h2>
       <p class="hero-lede" data-reveal>Not a program so much as a person. An Angel of Comfort is someone from our
         community who walks alongside your family through the whole journey, the exciting milestones and the days that
         knock you flat, so that you never have to be the only one holding it.</p>
@@ -1567,7 +1594,7 @@
       <p class="hero-quote" data-reveal>&ldquo;It takes a village to create a family.&rdquo;</p>
 
       <div class="hero-actions" data-reveal>
-        <a class="btn btn-peri" href="#ama-angel-request">Request a Journey Angel</a>
+        <a class="btn btn-peri" href="https://ameliamolloysangels.dm.networkforgood.com/forms/318067?iframe=1" target="_blank" rel="noopener">Request a Journey Angel</a>
         <a class="btn btn-ghost" href="#ama-become-angel">Become a Journey Angel</a>
       </div>
 
@@ -1610,7 +1637,8 @@
             <p>Infertility has a calendar nobody else keeps. The transfer date. The blood draw. The call that comes on
               a Thursday. Most families go through all of it while the rest of the world carries on, and the loneliest
               part is not the diagnosis, it is the sense that nobody is tracking any of it with you.</p>
-            <p>An Angel of Comfort is exactly that person. Someone from Amelia Molloy&rsquo;s Angels who knows what
+            <p>Angels of Comfort offers one-on-one infertility support in Bakersfield, CA. Your Journey Angel is
+              someone from Amelia Molloy&rsquo;s Angels who knows what
               you are walking into this week, who checks in before the appointment rather than after, and who is still
               there in the long stretch where nothing is happening.</p>
           </div>
@@ -1717,7 +1745,7 @@
           How it works
         </span>
         <h2>Being matched with a Journey Angel</h2>
-        <p>It starts with a conversation, not a form. You stay in control of every part of it.</p>
+        <p>Start with a request, and our team will reach out for a conversation. You stay in control of every part of it.</p>
       </div>
 
       <div class="steps three-up stagger" data-reveal>
@@ -1770,12 +1798,12 @@
             would like support for yourself, your partner, or both of you. You do not have to write much, and nothing
             you say here commits you to anything.</p>
 
-          <div class="form-embed">
-            <!-- BROSEPH_FORM: angel-of-comfort-request -->
+          <div class="form-embed journey-angel-form" id="ama-journey-angel-form">
+            <iframe src="https://ameliamolloysangels.dm.networkforgood.com/forms/318067?iframe=1" width="450" height="550" frameborder="0" title="Request a Journey Angel"></iframe>
           </div>
 
           <div class="hero-actions actions-left gap-lg">
-            <a class="btn btn-peri" href="mailto:info@ameliamolloysangels.com?subject=Angels%20of%20Comfort%20Request">Request A Journey Angel</a>
+            <a class="btn btn-peri" href="https://ameliamolloysangels.dm.networkforgood.com/forms/318067?iframe=1" target="_blank" rel="noopener">Open Request Form In A New Tab</a>
             <a class="btn btn-ghost" href="tel:+16615934777">Call Us Instead</a>
           </div>
         </div>
@@ -1944,12 +1972,12 @@
           <p>A hand-packed basket for the hardest days.</p>
         </a>
 
-        <a class="more-card" href="family-relief-fund.preview.html">
+        <a class="more-card" href="mailto:info@ameliamolloysangels.com?subject=Hope%20%26%20Family%20Relief%20Fund%20Information">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/><path d="M12 16.6s-2.6-1.6-2.6-3.2a1.5 1.5 0 0 1 2.6-1 1.5 1.5 0 0 1 2.6 1c0 1.6-2.6 3.2-2.6 3.2Z"/></svg>
           </span>
-          <h3>Family Relief Fund</h3>
-          <p>Help with everyday bills while you are in treatment.</p>
+          <h3>Hope &amp; Family Relief Fund</h3>
+          <p>Financial relief for qualifying infertility-related expenses.</p>
         </a>
 
         <a class="more-card" href="family-grants.preview.html">
@@ -1973,7 +2001,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20.5a5.5 5.5 0 0 1 11 0"/><path d="M16 5.6a3 3 0 0 1 0 5.8"/><path d="M17.5 14.4a5.5 5.5 0 0 1 3 4.9"/></svg>
           </span>
           <h3>Support Groups</h3>
-          <p>Talking With Angels, our free co-ed group.</p>
+          <p>Talking With Angels, our free support groups.</p>
         </a>
       </div>
     </div>

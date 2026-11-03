@@ -27,7 +27,7 @@ PAGES = {
     "our-team.html": "Our Team",
     "our-programs.html": "Our Programs",
     "our-programs/comfort-kits.html": "Comfort Kits",
-    "our-programs/family-relief-fund.html": "Family Relief Fund",
+    "our-programs/family-relief-fund.html": "Hope & Family Relief Fund",
     "our-programs/family-grants.html": "Gift of Family Grants",
     "our-programs/prayer-support.html": "Prayer Support",
     "our-programs/support-group.html": "Support Groups",
