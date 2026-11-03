@@ -1,6 +1,6 @@
 # About page portraits
 
-The seven 600 × 600 WebP files are used by `optimax/about-us.html`. The supplied originals in `optimax/headshots/` remain unchanged. Jaclyn Jeffries keeps her existing WordPress portrait.
+The seven 600 × 600 WebP files are used by `optimax/about.html`. The supplied originals in `optimax/headshots/` remain unchanged. Jaclyn Jeffries keeps her existing WordPress portrait.
 
 | WebP | Supplied original |
 | --- | --- |
