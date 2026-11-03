@@ -1,0 +1,96 @@
+<!-- Optimax About Us | GitPress theme_wrapped | revision 2026-11-03-about-v1 -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@800&family=Titillium+Web:wght@600&family=Arimo:wght@400&family=Inter:wght@400;500&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap');
+/* GitPress body partial. WordPress owns the header, footer and Gravity Forms. */
+.opx-about { color:#000; background:#fff; font:500 14px/1.7 'Open Sans',Arial,sans-serif; isolation:isolate; }
+.opx-about *, .opx-about *::before, .opx-about *::after { box-sizing:border-box; }
+.opx-about h1,.opx-about h2,.opx-about h3,.opx-about h4,.opx-about p { margin:0; }
+.opx-about h1,.opx-about h2,.opx-about h3,.opx-about h4 { padding:0 0 10px; }
+.opx-about .opx-wrap { width:90%; max-width:1140px; margin:0 auto; }
+.opx-about .opx-hero { padding:100px 0 119px; background:#fff linear-gradient(90deg,rgba(255,255,255,.92) 22%,rgba(255,255,255,0) 100%) center/cover; background-image:linear-gradient(90deg,rgba(255,255,255,.92) 22%,rgba(255,255,255,0) 100%),url('https://optimaxcs.net/wp-content/uploads/2026/02/optimax-neurology-billing-services-meeting.jpg'); }
+.opx-about .opx-hero h1 { font:700 48px/1.1 Arial,sans-serif; color:#081a3b !important; margin:0 0 10px; padding-bottom:10px; }
+.opx-about .opx-consult { display:inline-flex; align-items:center; gap:5px; padding:13px 36px 13px 42px; border-radius:12px; background:#ff914d; color:#fff !important; font:800 14px/23.8px 'Plus Jakarta Sans',Arial,sans-serif; text-decoration:none; transition:filter .3s; }
+.opx-about .opx-consult:hover { filter:brightness(1.2); }
+.opx-about svg { display:block; flex:none; }
+.opx-about .opx-values { display:grid; grid-template-columns:repeat(6,1fr); padding-top:34px; padding-bottom:46px; }
+.opx-about .opx-value { display:flex; align-items:flex-start; gap:14px; font:600 18px/18px 'Titillium Web',Arial,sans-serif; padding-right:20px; }
+.opx-about .opx-check { width:20px; height:20px; color:#2561ef; }
+.opx-about .opx-intro { display:grid; grid-template-columns:1fr 2fr; padding-bottom:0; }
+.opx-about .opx-office-photo { display:block; width:100%; height:auto; }
+.opx-about .opx-history { padding-left:50px; }
+.opx-about .opx-history-copy { font:400 16px/1.6 Arial,sans-serif; color:#000 !important; margin-bottom:30px; }
+.opx-about .opx-history-copy p { padding:0 0 16px; }
+.opx-about .opx-history-copy p:last-child { padding-bottom:0; }
+.opx-about .opx-offices { display:grid; grid-template-columns:1fr 1fr; }
+.opx-about .opx-contact-item { display:flex; align-items:flex-start; gap:15px; padding:30px 0 0; border-top:1px solid rgba(0,0,0,.2); font:400 14px/1.7 Inter,Arial,sans-serif; color:#666; }
+.opx-about .opx-contact-item svg { width:32px; height:32px; color:#000; }
+.opx-about .opx-contact-item h3 { font:400 23px/1 Arimo,Arial,sans-serif; color:#333 !important; padding-bottom:10px; }
+.opx-about .opx-contact-item p { padding:0; }
+.opx-about .opx-contact-item a { color:#2ea3f2 !important; text-decoration:none; }
+.opx-about .opx-leadership { padding:39px 0 96px; background:#fff url('https://optimaxcs.net/wp-content/uploads/2026/02/textured-background.webp') center/cover no-repeat; }
+.opx-about .opx-mission { width:90%; margin:0 auto 61px; text-align:center; }
+.opx-about .opx-mission h2 { font:700 41px/1.2 Arial,sans-serif; color:#181b31 !important; padding-bottom:10px; }
+.opx-about .opx-mission p { color:#000 !important; font:500 14px/23.8px 'Open Sans',Arial,sans-serif; padding:0; }
+.opx-about .opx-team { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:3%; row-gap:54px; }
+.opx-about .opx-person { min-width:0; text-align:center; }
+.opx-about .opx-headshot { display:block; width:100%; aspect-ratio:1; object-fit:cover; object-position:center; background:#fff; border-radius:5px; box-shadow:0 20px 30px rgba(0,0,0,.13); }
+.opx-about .opx-nameplate { position:relative; display:block; width:80%; min-height:104px; margin:-55px auto 0; padding:18px 10px; border-radius:10px; background:#fff; color:#3b75ac !important; box-shadow:0 12px 18px -6px rgba(0,0,0,.3); text-decoration:none; text-transform:uppercase; transition:transform .3s,box-shadow .3s; }
+.opx-about .opx-nameplate:hover { transform:scale(1.05); box-shadow:0 12px 18px -6px rgba(0,0,0,.71); }
+.opx-about a:focus-visible { outline:3px solid #2561ef; outline-offset:5px; }
+.opx-about .opx-nameplate h3 { font:700 20px/1 'Roboto Condensed',Arial,sans-serif; color:#333 !important; padding-bottom:10px; }
+.opx-about .opx-nameplate p { font:italic 400 13px/1 'Roboto Condensed',Arial,sans-serif; color:#000 !important; padding:0 0 10px; }
+.opx-about .opx-learn { display:block; font:600 12px/15.6px 'Open Sans',Arial,sans-serif; color:#3b75ac; text-decoration:underline; }
+.opx-about .opx-contact { width:80%; max-width:1320px; margin:auto; padding:48px 0 51px; display:grid; grid-template-columns:57.8% 36.7%; gap:5.5%; }
+.opx-about .opx-form-shell { padding:30px; background:#f4f4f4; }
+.opx-about .opx-form { padding:40px; border-radius:20px; background:rgba(242,242,242,.61); box-shadow:0 12px 18px -6px rgba(0,0,0,.3); }
+.opx-about .opx-contact-list .opx-contact-item { margin-bottom:30px; }
+.opx-about .opx-form .gform_wrapper { margin:0; }
+.opx-about .opx-form .gform_fields { row-gap:36px !important; }
+.opx-about .opx-form .gfield_label,.opx-about .opx-form .gform-field-label { color:#3b75ac; font-weight:700; }
+.opx-about .opx-form .gform-field-label--type-sub { font-weight:400; }
+.opx-about .opx-form .gsection_title { color:#3b75ac !important; font:700 23px/1.2 Arial,sans-serif; }
+.opx-about .opx-form .gsection_description { color:#666; font-weight:400; }
+.opx-about .opx-form .gfield_required { color:#ff914d; font-size:11px; }
+.opx-about .opx-form input:not([type=checkbox]):not([type=radio]):not([type=submit]),.opx-about .opx-form textarea { background:#fff; border:1px solid #333; border-radius:3px; }
+.opx-about .opx-form .gform_footer { display:flex; justify-content:center; padding-top:24px; }
+.opx-about .opx-form input[type=submit],.opx-about .opx-form button[type=submit] { background:#ff914d !important; color:#fff !important; border:0; border-radius:3px; padding:10px 20% !important; cursor:pointer; }
+@media(max-width:980px) {
+ .opx-about .opx-hero { padding:82px 0 118px; }
+ .opx-about .opx-values { grid-template-columns:repeat(3,1fr); row-gap:24px; }
+ .opx-about .opx-intro { grid-template-columns:1fr; gap:30px; }
+ .opx-about .opx-office-photo { width:auto; max-width:100%; }
+ .opx-about .opx-history { padding:0; }
+ .opx-about .opx-offices h3 { font-size:15px; }
+ .opx-about .opx-leadership { padding:100px 0 90px; }
+ .opx-about .opx-team { grid-template-columns:1fr; gap:54px; }
+ .opx-about .opx-headshot { max-width:600px; margin:auto; }
+ .opx-about .opx-nameplate { max-width:480px; }
+ .opx-about .opx-contact { grid-template-columns:1fr; gap:30px; }
+}
+@media(max-width:767px) {
+ .opx-about .opx-hero { padding:46px 0 77px; }
+ .opx-about .opx-hero h1 { font-size:35px; }
+ .opx-about .opx-values { grid-template-columns:1fr; padding:20px 0 30px; row-gap:16px; }
+ .opx-about .opx-value { padding:0; }
+ .opx-about .opx-intro { gap:30px; }
+ .opx-about .opx-history-copy { font-size:15px; }
+ .opx-about .opx-offices h3 { font-size:14px; }
+ .opx-about .opx-offices { column-gap:15px; }
+ .opx-about .opx-offices .opx-contact-item { gap:10px; }
+ .opx-about .opx-offices .opx-contact-item svg { width:24px; }
+ .opx-about .opx-leadership { padding:40px 0 107px; }
+ .opx-about .opx-mission { width:90%; }
+ .opx-about .opx-mission h2 { font-size:34px; }
+ .opx-about .opx-contact { width:90%; }
+ .opx-about .opx-form-shell { padding:20px; }
+ .opx-about .opx-form { padding:24px; }
+}
+</style>
+<main class="opx-about" data-version="2026-11-03-about-v1">
+ <section class="opx-hero" aria-labelledby="opx-about-title"><div class="opx-wrap"><h1 id="opx-about-title">About Optimax Consulting Services</h1><a class="opx-consult" href="/contact-us/">Free Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></a></div></section>
+ <div class="opx-values opx-wrap" aria-label="Our values"><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Passion</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Integrity</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Customer Driven</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Innovation</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Diversity &amp; Inclusion</span></div><div class="opx-value"><svg class="opx-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 13 5 5L20 4"/></svg><span>Continuous Learning</span></div></div>
+ <section class="opx-intro opx-wrap" aria-label="About our company"><div><img class="opx-office-photo" src="https://optimaxcs.net/wp-content/uploads/2026/04/optimax-orange-county.webp" alt="Palm-lined Southern California street at sunset" width="700" height="620" decoding="async"></div><div class="opx-history"><div class="opx-history-copy"><p>Optimax Consulting Services, established in 2011, boasts a powerhouse of industry professionals with decades of combined experience. Our team’s deep expertise spans consulting, implementation, support, and product management for Practice Management and Electronic Medical Records systems. We partner with a diverse range of practices nationwide, offering comprehensive revenue cycle management, consulting, and HR services to maximize revenue efficiency. We leverage our team’s experience, refined processes, and advanced technology to streamline practice operations and enhance revenue capture.</p>
+<p>Over the years, we have expanded through several joint ventures and acquisitions, further enhancing our capabilities and experience. Today, our combined team has been transforming practices for over three decades. We continue to uphold a legacy of unparalleled expertise and dedication to our clients, ensuring their operations are streamlined and their revenue is optimized.</p></div><div class="opx-offices"><div class="opx-contact-item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg><div><h3>Headquarters</h3><p>4100 Truxtun Avenue,<br>Bakersfield, CA 93309</p></div></div><div class="opx-contact-item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg><div><h3>Southern California Office</h3><p>6851 Canby Ave. #101,<br>Reseda, CA 91335</p></div></div></div></div></section>
+ <section class="opx-leadership" aria-labelledby="opx-team-title"><div class="opx-wrap"><div class="opx-mission"><h2 id="opx-team-title">Leadership Team</h2><p><strong>Our Mission:</strong> At Optimax, our mission is to assist and support healthcare providers in achieving their goal of delivering world-class care. Our services increase efficiencies and allow providers more time to focus on patient care. By leveraging our experience, innovation, and commitment to excellence, we optimize practice operations and revenue cycle, achieving maximum clinical and financial outcomes for our clients.</p></div><div class="opx-team"><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/david-mizrahi.webp" alt="David Mizrahi" width="600" height="600" loading="lazy" decoding="async"><a class="opx-nameplate" href="/david-mizrahi/"><h3>David Mizrahi</h3><p>CEO</p><span class="opx-learn">Learn More</span></a></div><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/donald-keisler.webp" alt="Donald Keisler" width="600" height="600" loading="lazy" decoding="async"><a class="opx-nameplate" href="/donald-keisler/"><h3>Donald Keisler</h3><p>Chief Growth Officer</p><span class="opx-learn">Learn More</span></a></div><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/marquise-romero.webp" alt="Marquise Romero" width="600" height="600" loading="lazy" decoding="async"><div class="opx-nameplate"><h3>Marquise Romero</h3><p>Chief Operating Officer</p></div></div><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/omied-mizrahi.webp" alt="Omied Mizrahi" width="600" height="600" loading="lazy" decoding="async"><div class="opx-nameplate"><h3>Omied Mizrahi</h3><p>Director of HR Services</p></div></div><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/stephanie-padilla.webp" alt="Stephanie Padilla" width="600" height="600" loading="lazy" decoding="async"><a class="opx-nameplate" href="/stephanie-padilla/"><h3>Stephanie Padilla</h3><p>VP Global Operations</p><span class="opx-learn">Learn More</span></a></div><div class="opx-person"><img class="opx-headshot" src="https://optimaxcs.net/wp-content/uploads/2025/04/JJeffries5.webp" alt="Jaclyn Jeffries" width="600" height="600" loading="lazy" decoding="async"><a class="opx-nameplate" href="/jaclyn-jeffries/"><h3>Jaclyn Jeffries</h3><p>Director of Coding &amp; Auditing</p><span class="opx-learn">Learn More</span></a></div><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/gloria-cisneros.webp" alt="Gloria Cisneros" width="600" height="600" loading="lazy" decoding="async"><a class="opx-nameplate" href="/gloria-cisneros/"><h3>Gloria Cisneros</h3><p>Director of Credentialing</p><span class="opx-learn">Learn More</span></a></div><div class="opx-person"><img class="opx-headshot" src="https://raw.githubusercontent.com/citrynmarketingdevelopment/wp-landingpages/main/optimax/assets/images/team/michele-ballard.webp" alt="Michele Ballard" width="600" height="600" loading="lazy" decoding="async"><div class="opx-nameplate"><h3>Michele Ballard</h3><p>Director of Compliance</p></div></div></div></div></section>
+ <section class="opx-contact" aria-label="Contact Optimax"><div class="opx-form-shell"><div class="opx-form">[gravityform id="1" title="false" description="false" ajax="false"]</div></div><div class="opx-contact-list"><div class="opx-contact-item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg><div><h3>Headquarters</h3><p>4100 Truxtun Avenue,<br>Bakersfield, CA 93309</p></div></div><div class="opx-contact-item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg><div><h3>Southern California Office</h3><p>6851 Canby Ave. #101,<br>Reseda, CA 91335</p></div></div><div class="opx-contact-item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 1h10a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm5 17a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg><div><h3>Call</h3><p><a href="tel:+18889591014">(888) 959-1014</a></p></div></div><div class="opx-contact-item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m1 9 11 8L23 9v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9Zm2-2L12 0l9 7v1l-9 6-9-6V7Z"/></svg><div><h3>Email</h3><p><a href="mailto:info@optimaxcs.net">info@optimaxcs.net</a></p></div></div></div></section>
+</main>
